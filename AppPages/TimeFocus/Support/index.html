@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TimeFocus Support</title>
+  <meta name="description" content="Support page for TimeFocus, a local-first focus timer for Mac.">
+  <style type="text/css">
+    :root {
+      color-scheme: dark light;
+      --bg: #0b1020;
+      --panel: rgba(17, 24, 39, 0.78);
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --line: rgba(148, 163, 184, 0.24);
+      --accent: #60a5fa;
+      --accent-2: #a78bfa;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+      line-height: 1.65;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 20% 0%, rgba(96, 165, 250, 0.22), transparent 34rem),
+        radial-gradient(circle at 88% 10%, rgba(167, 139, 250, 0.16), transparent 30rem),
+        linear-gradient(135deg, #0b1020, #111827 48%, #0f172a);
+    }
+
+    .page {
+      width: min(900px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 56px 0;
+    }
+
+    .document {
+      padding: clamp(24px, 5vw, 48px);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--panel);
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.34);
+      backdrop-filter: blur(22px);
+    }
+
+    h1, h2, h3 {
+      line-height: 1.15;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 650;
+    }
+
+    h2 {
+      margin: 34px 0 14px;
+      font-size: 1.25rem;
+      font-weight: 650;
+    }
+
+    h3 {
+      margin: 22px 0 8px;
+      font-size: 1rem;
+      font-weight: 650;
+    }
+
+    p, li {
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    ul {
+      padding-left: 1.25rem;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    .eyebrow {
+      margin: 0 0 26px;
+      color: var(--accent);
+      font-weight: 650;
+    }
+
+    .contact {
+      display: grid;
+      gap: 12px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      margin: 22px 0;
+    }
+
+    .contact-card {
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(15, 23, 42, 0.66);
+    }
+
+    .contact-card strong {
+      display: block;
+      margin-bottom: 6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="document">
+      <p class="eyebrow">TimeFocus for Mac</p>
+      <h1>Support</h1>
+      <p>Need help with TimeFocus? Use the contact information below and include your macOS version, app version, and a short description of the issue.</p>
+
+      <div class="contact">
+        <div class="contact-card">
+          <strong>Email</strong>
+          <a href="mailto:kibernet@sina.com">kibernet@sina.com</a>
+        </div>
+        <div class="contact-card">
+          <strong>App</strong>
+          <span>TimeFocus for Mac</span>
+        </div>
+      </div>
+
+      <h2>Frequently Asked Questions</h2>
+
+      <h3>Does TimeFocus upload my focus records?</h3>
+      <p>No. TimeFocus is local-first. Focus records, projects, settings, and statistics are stored on your Mac.</p>
+
+      <h3>Why are global shortcuts not working?</h3>
+      <p>If another app already uses the same shortcut, TimeFocus may not be able to register it. Close the conflicting app or control the timer from the floating panel or menu bar.</p>
+
+      <h3>How do I back up my data?</h3>
+      <p>Open Settings and Statistics, go to the Statistics section, and use the backup option. TimeFocus exports a local JSON backup file that you can restore later.</p>
+
+      <h3>How do I export focus records?</h3>
+      <p>Open Settings and Statistics, go to the Statistics section, and use CSV export. The CSV contains focus session records and does not include device identifiers or account information.</p>
+
+      <h3>How do I turn off reminders?</h3>
+      <p>Open the Timer settings section and disable system notifications or completion sounds.</p>
+
+      <h3>How do I reset statistics?</h3>
+      <p>Open Settings and Statistics, go to the Statistics section, and use the reset statistics action. This clears local focus statistics in the app.</p>
+
+      <h2>Privacy</h2>
+      <p>Read the TimeFocus privacy policy here: <a href="https://github.com/kibernet/HomePage/blob/main/AppPages/TimeFocus/Privacy/index.html">Privacy Policy</a>.</p>
+    </div>
+  </div>
+</body>
+</html>
