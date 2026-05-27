@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ClearWatermark Support</title>
+  <meta name="description" content="Support page for ClearWatermark, a local AI photo repair app for iPhone, iPad, and Mac.">
+  <style type="text/css">
+    :root {
+      color-scheme: dark light;
+      --panel: rgba(17, 24, 39, 0.78);
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --line: rgba(148, 163, 184, 0.24);
+      --accent: #2dd4bf;
+      --accent-2: #60a5fa;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+      line-height: 1.65;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 20% 0%, rgba(45, 212, 191, 0.18), transparent 34rem),
+        radial-gradient(circle at 88% 10%, rgba(96, 165, 250, 0.14), transparent 30rem),
+        linear-gradient(135deg, #071314, #111827 50%, #0f172a);
+    }
+
+    .page {
+      width: min(900px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 56px 0;
+    }
+
+    .document {
+      padding: clamp(24px, 5vw, 48px);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--panel);
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.34);
+      backdrop-filter: blur(22px);
+    }
+
+    h1, h2, h3 {
+      line-height: 1.15;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 650;
+    }
+
+    h2 {
+      margin: 34px 0 14px;
+      font-size: 1.25rem;
+      font-weight: 650;
+    }
+
+    h3 {
+      margin: 22px 0 8px;
+      font-size: 1rem;
+      font-weight: 650;
+    }
+
+    p, li, span {
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    ul {
+      padding-left: 1.25rem;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    .eyebrow {
+      margin: 0 0 26px;
+      color: var(--accent);
+      font-weight: 650;
+    }
+
+    .contact {
+      display: grid;
+      gap: 12px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      margin: 22px 0;
+    }
+
+    .contact-card {
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(15, 23, 42, 0.66);
+    }
+
+    .contact-card strong {
+      display: block;
+      margin-bottom: 6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="document">
+      <p class="eyebrow">ClearWatermark for iPhone, iPad, and Mac</p>
+      <h1>Support</h1>
+      <p>Need help with ClearWatermark? Use the contact information below and include your device model, system version, app version, and a short description of the issue.</p>
+
+      <div class="contact">
+        <div class="contact-card">
+          <strong>Email</strong>
+          <a href="mailto:kibernet@sina.com">kibernet@sina.com</a>
+        </div>
+        <div class="contact-card">
+          <strong>App</strong>
+          <span>ClearWatermark</span>
+        </div>
+      </div>
+
+      <h2>Frequently Asked Questions</h2>
+
+      <h3>Does ClearWatermark upload my photos?</h3>
+      <p>No. ClearWatermark processes selected images, masks, and repair results locally on your device.</p>
+
+      <h3>What images should I use with ClearWatermark?</h3>
+      <p>Use ClearWatermark only with images you own, have licensed, or otherwise have permission to edit. Do not use it to remove copyrighted watermarks, platform marks, or rights notices you do not have permission to modify.</p>
+
+      <h3>How do I repair an image?</h3>
+      <p>Import a photo, brush over the area you want to repair, tap or click Repair, compare the result, and export or save the edited image.</p>
+
+      <h3>Why does processing take time?</h3>
+      <p>Image repair runs on device using the bundled Core ML model. Processing time can vary depending on image size, mask size, and device performance.</p>
+
+      <h3>Why does Photos permission appear on iPhone or iPad?</h3>
+      <p>Photos permission is used only when you choose an image from your library or save an edited result to Photos.</p>
+
+      <h3>Why does file access appear on Mac?</h3>
+      <p>File access is used only for files you explicitly choose through the system file picker, drag and drop, or export panel.</p>
+
+      <h2>Privacy</h2>
+      <p>Read the ClearWatermark privacy policy here: <a href="https://kibernet.github.io/HomePage/AppPages/ClearWatermark/Privacy/index.html">Privacy Policy</a>.</p>
+    </div>
+  </div>
+</body>
+</html>

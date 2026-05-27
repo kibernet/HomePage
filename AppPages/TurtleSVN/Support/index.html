@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TurtleSVN 支持</title>
+  <meta name="description" content="TurtleSVN for Mac 支持页面。">
+  <style type="text/css">
+    :root {
+      color-scheme: dark light;
+      --bg: #0a0f1a;
+      --panel: rgba(13, 20, 32, 0.78);
+      --card: rgba(17, 27, 42, 0.76);
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --line: rgba(148, 163, 184, 0.24);
+      --accent: #67e8f9;
+      --accent-2: #f8c35b;
+      --shadow: rgba(0, 0, 0, 0.34);
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f7fbff;
+        --panel: rgba(255, 255, 255, 0.84);
+        --card: rgba(255, 255, 255, 0.9);
+        --text: #0f172a;
+        --muted: #334155;
+        --line: rgba(15, 23, 42, 0.14);
+        --accent: #0891b2;
+        --accent-2: #b7791f;
+        --shadow: rgba(15, 23, 42, 0.12);
+      }
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+      line-height: 1.65;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 16% 0%, rgba(103, 232, 249, 0.24), transparent 34rem),
+        radial-gradient(circle at 92% 10%, rgba(248, 195, 91, 0.16), transparent 30rem),
+        linear-gradient(135deg, var(--bg), #101827 54%, #07111d);
+    }
+
+    @media (prefers-color-scheme: light) {
+      body {
+        background:
+          radial-gradient(circle at 16% 0%, rgba(8, 145, 178, 0.16), transparent 34rem),
+          radial-gradient(circle at 92% 10%, rgba(183, 121, 31, 0.12), transparent 30rem),
+          linear-gradient(135deg, #f7fbff, #edf6fb 54%, #f8fafc);
+      }
+    }
+
+    .page {
+      width: min(960px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 56px 0;
+    }
+
+    .document {
+      position: relative;
+      padding: clamp(24px, 5vw, 52px);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: var(--panel);
+      box-shadow: 0 28px 90px var(--shadow);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+    }
+
+    .language {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+
+    select {
+      max-width: 170px;
+      padding: 7px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--text);
+      background: var(--card);
+      font: inherit;
+      font-size: 0.92rem;
+    }
+
+    h1, h2, h3 { line-height: 1.15; letter-spacing: 0; }
+    h1 { margin: 0 0 10px; font-size: clamp(2.15rem, 5vw, 3.7rem); font-weight: 760; }
+    h2 { margin: 34px 0 14px; font-size: 1.25rem; font-weight: 720; }
+    h3 { margin: 22px 0 8px; font-size: 1rem; font-weight: 700; }
+    p, li { color: var(--muted); font-size: 1rem; }
+    ul { padding-left: 1.25rem; }
+    a { color: var(--accent); }
+    code { color: var(--accent-2); }
+    .eyebrow { margin: 0 0 26px; color: var(--accent); font-weight: 700; padding-right: 190px; }
+    .contact { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin: 24px 0; }
+    .contact-card { padding: 17px; border: 1px solid var(--line); border-radius: 16px; background: var(--card); }
+    .contact-card strong { display: block; margin-bottom: 6px; color: var(--text); }
+    .pill { display: inline-flex; margin: 8px 8px 0 0; padding: 7px 10px; border: 1px solid var(--line); border-radius: 999px; background: var(--card); font-size: 0.92rem; }
+
+    @media (max-width: 640px) {
+      .language { position: static; margin: 0 0 24px; }
+      .eyebrow { padding-right: 0; }
+      select { width: 100%; max-width: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <main class="document">
+      <div class="language">
+        <select id="language-select" aria-label="选择语言">
+          <option value="zh-Hans">简体中文</option>
+          <option value="en">English</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+          <option value="de">Deutsch</option>
+          <option value="fr">Français</option>
+          <option value="es">Español</option>
+        </select>
+      </div>
+
+      <p class="eyebrow" data-i18n="eyebrow">TurtleSVN for Mac</p>
+      <h1 data-i18n="title">支持</h1>
+      <p data-i18n="intro">如果你在使用 TurtleSVN 时需要帮助，请通过邮件联系我们，并尽量提供 macOS 版本、应用版本、Subversion 版本，以及遇到问题时正在执行的操作。</p>
+
+      <div class="contact">
+        <div class="contact-card">
+          <strong data-i18n="emailLabel">邮箱</strong>
+          <a href="mailto:kibernet@sina.com">kibernet@sina.com</a>
+        </div>
+        <div class="contact-card">
+          <strong data-i18n="appLabel">应用</strong>
+          <span>TurtleSVN for Mac</span>
+        </div>
+        <div class="contact-card">
+          <strong data-i18n="categoryLabel">类别</strong>
+          <span data-i18n="categoryValue">开发者工具</span>
+        </div>
+      </div>
+
+      <h2 data-i18n="includeTitle">建议提供的信息</h2>
+      <ul id="include-list">
+        <li>你的 macOS 版本和 Mac 型号。</li>
+        <li>TurtleSVN 应用版本。</li>
+        <li>Finder Sync 扩展是否已在系统设置中启用。</li>
+        <li>你正在执行的操作，例如更新、提交、日志、差异、清理、锁定、分支、合并、切换、补丁或版本库浏览。</li>
+        <li>可见的错误信息，但请不要包含密码、私钥、机密源代码或私有仓库内容。</li>
+      </ul>
+
+      <h2 data-i18n="faqTitle">常见问题</h2>
+      <div id="faq"></div>
+
+      <h2 data-i18n="linksTitle">相关链接</h2>
+      <p>
+        <span class="pill"><a href="https://kibernet.github.io/HomePage/AppPages/TurtleSVN/Privacy/index.html" data-i18n="privacyLink">隐私政策</a></span>
+        <span class="pill"><a href="https://kibernet.github.io/HomePage/AppPages/TurtleSVN/AgeRating/index.html" data-i18n="ageLink">适龄说明</a></span>
+      </p>
+    </main>
+  </div>
+
+  <script>
+    const translations = {
+      "zh-Hans": {
+        docTitle: "TurtleSVN 支持",
+        selectLabel: "选择语言",
+        eyebrow: "TurtleSVN for Mac",
+        title: "支持",
+        intro: "如果你在使用 TurtleSVN 时需要帮助，请通过邮件联系我们，并尽量提供 macOS 版本、应用版本、Subversion 版本，以及遇到问题时正在执行的操作。",
+        emailLabel: "邮箱",
+        appLabel: "应用",
+        categoryLabel: "类别",
+        categoryValue: "开发者工具",
+        includeTitle: "建议提供的信息",
+        includeList: ["你的 macOS 版本和 Mac 型号。", "TurtleSVN 应用版本。", "Finder Sync 扩展是否已在系统设置中启用。", "你正在执行的操作，例如更新、提交、日志、差异、清理、锁定、分支、合并、切换、补丁或版本库浏览。", "可见的错误信息，但请不要包含密码、私钥、机密源代码或私有仓库内容。"],
+        faqTitle: "常见问题",
+        faqs: [
+          ["如何启用 Finder 右键菜单和状态角标？", "打开系统设置，进入“登录项与扩展”，在 Finder 扩展中启用 TurtleSVN。你可能还需要授权包含 SVN 工作副本的文件夹。"],
+          ["TurtleSVN 会上传我的仓库数据吗？", "不会。TurtleSVN 本地优先。工作副本路径、仓库 URL、文件状态、日志、差异、提交说明和凭据会在你的 Mac 上处理，或直接发送到你配置的 SVN 仓库服务器。"],
+          ["为什么 SVN 命令会失败？", "常见原因包括仓库认证失败、网络不可用、工作副本路径无效、工作副本被锁定或存在冲突、仓库 URL 无法从你的 Mac 访问。"],
+          ["凭据保存在哪里？", "保存凭据时，TurtleSVN 会在适用时使用 macOS Keychain 或标准 Subversion 认证存储。应用不会把凭据发送到 TurtleSVN 服务器。"],
+          ["TurtleSVN 需要账号吗？", "不需要。TurtleSVN 不需要 TurtleSVN 账号。访问私有 SVN 仓库可能仍需要该仓库服务器控制的凭据。"]
+        ],
+        linksTitle: "相关链接",
+        privacyLink: "隐私政策",
+        ageLink: "适龄说明"
+      },
+      en: {
+        docTitle: "TurtleSVN Support",
+        selectLabel: "Choose language",
+        eyebrow: "TurtleSVN for Mac",
+        title: "Support",
+        intro: "Need help with TurtleSVN? Contact us by email and include your macOS version, app version, Subversion version if available, and a short description of the issue.",
+        emailLabel: "Email",
+        appLabel: "App",
+        categoryLabel: "Category",
+        categoryValue: "Developer Tools",
+        includeTitle: "What to Include",
+        includeList: ["Your macOS version and Mac model.", "The TurtleSVN app version.", "Whether the Finder Sync extension is enabled in System Settings.", "The operation you were trying to perform, such as update, commit, log, diff, cleanup, lock, branch, merge, switch, patch, or repository browsing.", "Any visible error message, excluding passwords, private keys, confidential source code, or private repository content."],
+        faqTitle: "Frequently Asked Questions",
+        faqs: [
+          ["How do I enable Finder context menus and status badges?", "Open System Settings, go to Login Items & Extensions, then enable the TurtleSVN Finder extension under Finder Extensions. You may also need to authorize the folders that contain your SVN working copies."],
+          ["Does TurtleSVN upload my repository data?", "No. TurtleSVN is local-first. Working copy paths, repository URLs, file status, logs, diffs, commit messages, and credentials are processed on your Mac or sent directly to the SVN repository server you configure."],
+          ["Why does an SVN command fail?", "Common causes include repository authentication failure, missing network access, an invalid working copy path, a locked or conflicted working copy, or a repository URL that is unreachable from your Mac."],
+          ["Where are credentials stored?", "When credentials are saved, TurtleSVN uses local credential storage such as macOS Keychain or standard Subversion authentication storage where applicable. The app does not send credentials to TurtleSVN servers."],
+          ["Does TurtleSVN require an account?", "No. TurtleSVN does not require a TurtleSVN account. Access to a private SVN repository may still require credentials controlled by that repository server."]
+        ],
+        linksTitle: "Helpful Links",
+        privacyLink: "Privacy Policy",
+        ageLink: "Age Rating Information"
+      }
+    };
+
+    translations.ja = { ...translations.en, docTitle: "TurtleSVN サポート", selectLabel: "言語を選択", title: "サポート", intro: "TurtleSVN についてサポートが必要な場合は、macOS のバージョン、アプリのバージョン、可能であれば Subversion のバージョン、問題の概要をメールでお送りください。", emailLabel: "メール", categoryLabel: "カテゴリ", categoryValue: "開発者ツール", includeTitle: "記載してほしい情報", faqTitle: "よくある質問", linksTitle: "関連リンク", privacyLink: "プライバシーポリシー", ageLink: "年齢レーティング情報" };
+    translations.ko = { ...translations.en, docTitle: "TurtleSVN 지원", selectLabel: "언어 선택", title: "지원", intro: "TurtleSVN 사용 중 도움이 필요하면 macOS 버전, 앱 버전, 가능한 경우 Subversion 버전과 문제 설명을 이메일로 보내 주세요.", emailLabel: "이메일", categoryLabel: "카테고리", categoryValue: "개발자 도구", includeTitle: "포함할 정보", faqTitle: "자주 묻는 질문", linksTitle: "관련 링크", privacyLink: "개인정보 처리방침", ageLink: "연령 등급 정보" };
+    translations.de = { ...translations.en, docTitle: "TurtleSVN Support", selectLabel: "Sprache wählen", title: "Support", intro: "Wenn Sie Hilfe mit TurtleSVN benötigen, kontaktieren Sie uns per E-Mail und nennen Sie Ihre macOS-Version, App-Version, falls verfügbar die Subversion-Version und eine kurze Beschreibung des Problems.", emailLabel: "E-Mail", categoryLabel: "Kategorie", categoryValue: "Entwicklertools", includeTitle: "Bitte angeben", faqTitle: "Häufige Fragen", linksTitle: "Hilfreiche Links", privacyLink: "Datenschutzrichtlinie", ageLink: "Altersfreigabe" };
+    translations.fr = { ...translations.en, docTitle: "Assistance TurtleSVN", selectLabel: "Choisir la langue", title: "Assistance", intro: "Besoin d'aide avec TurtleSVN ? Contactez-nous par e-mail avec votre version de macOS, la version de l'app, la version de Subversion si disponible et une courte description du problème.", emailLabel: "E-mail", categoryLabel: "Catégorie", categoryValue: "Outils de développement", includeTitle: "Informations à inclure", faqTitle: "Questions fréquentes", linksTitle: "Liens utiles", privacyLink: "Politique de confidentialité", ageLink: "Informations de classification" };
+    translations.es = { ...translations.en, docTitle: "Soporte de TurtleSVN", selectLabel: "Elegir idioma", title: "Soporte", intro: "¿Necesitas ayuda con TurtleSVN? Escríbenos por correo e incluye tu versión de macOS, la versión de la app, la versión de Subversion si está disponible y una breve descripción del problema.", emailLabel: "Correo", categoryLabel: "Categoría", categoryValue: "Herramientas para desarrolladores", includeTitle: "Qué incluir", faqTitle: "Preguntas frecuentes", linksTitle: "Enlaces útiles", privacyLink: "Política de privacidad", ageLink: "Información de clasificación por edad" };
+
+    const supported = Object.keys(translations);
+    const params = new URLSearchParams(window.location.search);
+    const lang = supported.includes(params.get("lang")) ? params.get("lang") : "zh-Hans";
+    const copy = translations[lang];
+    document.documentElement.lang = lang;
+    document.title = copy.docTitle;
+    document.querySelector("meta[name='description']").setAttribute("content", copy.docTitle);
+    const select = document.getElementById("language-select");
+    select.value = lang;
+    select.setAttribute("aria-label", copy.selectLabel);
+    select.addEventListener("change", () => {
+      const next = select.value;
+      window.location.href = next === "zh-Hans" ? window.location.pathname : `${window.location.pathname}?lang=${next}`;
+    });
+    document.querySelectorAll("[data-i18n]").forEach((node) => {
+      node.innerHTML = copy[node.dataset.i18n];
+    });
+    document.getElementById("include-list").innerHTML = copy.includeList.map((item) => `<li>${item}</li>`).join("");
+    document.getElementById("faq").innerHTML = copy.faqs.map(([q, a]) => `<h3>${q}</h3><p>${a}</p>`).join("");
+  </script>
+</body>
+</html>

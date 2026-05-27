@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SVNServer Studio Privacy Policy</title>
+  <meta name="description" content="Privacy policy for SVNServer Studio, a local-first Subversion server manager for Mac.">
+  <style type="text/css">
+    :root {
+      color-scheme: dark light;
+      --bg: #0a0f1a;
+      --panel: rgba(13, 20, 32, 0.78);
+      --panel-strong: rgba(17, 27, 42, 0.92);
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --quiet: #94a3b8;
+      --line: rgba(148, 163, 184, 0.24);
+      --accent: #67e8f9;
+      --accent-2: #f8c35b;
+      --shadow: rgba(0, 0, 0, 0.34);
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f7fbff;
+        --panel: rgba(255, 255, 255, 0.82);
+        --panel-strong: rgba(255, 255, 255, 0.96);
+        --text: #0f172a;
+        --muted: #334155;
+        --quiet: #64748b;
+        --line: rgba(15, 23, 42, 0.14);
+        --accent: #0891b2;
+        --accent-2: #b7791f;
+        --shadow: rgba(15, 23, 42, 0.12);
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+      line-height: 1.65;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 16% 0%, rgba(103, 232, 249, 0.24), transparent 34rem),
+        radial-gradient(circle at 92% 10%, rgba(248, 195, 91, 0.16), transparent 30rem),
+        linear-gradient(135deg, var(--bg), #101827 54%, #07111d);
+    }
+
+    @media (prefers-color-scheme: light) {
+      body {
+        background:
+          radial-gradient(circle at 16% 0%, rgba(8, 145, 178, 0.16), transparent 34rem),
+          radial-gradient(circle at 92% 10%, rgba(183, 121, 31, 0.12), transparent 30rem),
+          linear-gradient(135deg, #f7fbff, #edf6fb 54%, #f8fafc);
+      }
+    }
+
+    .page {
+      width: min(920px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 56px 0;
+    }
+
+    .document {
+      padding: clamp(24px, 5vw, 52px);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: var(--panel);
+      box-shadow: 0 28px 90px var(--shadow);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+    }
+
+    h1, h2, h3 {
+      line-height: 1.15;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(2.15rem, 5vw, 3.7rem);
+      font-weight: 760;
+    }
+
+    h2 {
+      margin: 34px 0 10px;
+      font-size: 1.18rem;
+      font-weight: 700;
+    }
+
+    h3 {
+      margin: 24px 0 8px;
+      color: var(--accent-2);
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    p, li {
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    ul {
+      padding-left: 1.25rem;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    .eyebrow {
+      margin: 0 0 26px;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .updated {
+      margin-top: 0;
+      color: var(--quiet);
+      font-size: 0.95rem;
+    }
+
+    .notice {
+      margin: 24px 0;
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--panel-strong);
+    }
+
+    .divider {
+      height: 1px;
+      margin: 42px 0 34px;
+      background: var(--line);
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <main class="document">
+      <p class="eyebrow">SVNServer Studio for Mac</p>
+      <h1>Privacy Policy</h1>
+      <p class="updated">Last updated: May 27, 2026</p>
+
+      <p>SVNServer Studio is a local-first Subversion server manager for Mac. It helps users create and manage local SVN repositories, start or stop a local <code>svnserve</code> service, manage SVN users and groups, configure repository permissions, run verification and backup jobs, and review local activity logs.</p>
+
+      <div class="notice">
+        <p><strong>Summary:</strong> SVNServer Studio does not collect personal data, does not require an account, does not include advertising SDKs, and does not include third-party tracking SDKs. App data is stored locally on your Mac to provide the app's core server-management features.</p>
+      </div>
+
+      <h2>Data We Collect</h2>
+      <p>SVNServer Studio does not collect personal data in the current version. The app does not operate a cloud account service, does not upload your repository data to a developer-controlled server, and does not sell, share, or track personal information.</p>
+
+      <h2>Data Stored Locally on Your Mac</h2>
+      <p>To provide its core features, SVNServer Studio stores configuration and operational data locally. This may include:</p>
+      <ul>
+        <li>Repository root path, backup path, host, port, auto-start preference, language preference, and layout settings.</li>
+        <li>Repository names, descriptions, file paths, UUIDs, revision information, size information, verification history, and backup history.</li>
+        <li>SVN user names, display names, account status, group membership, permission rules, and SVN password entries used to generate Subversion authentication files.</li>
+        <li>Local job records and activity logs, such as repository creation, verification, hotcopy backup, service start or stop, and configuration updates.</li>
+      </ul>
+      <p>This data is stored in the user's Mac account and in the repository folders selected by the user. SVNServer Studio uses this local data to generate standard Subversion files such as <code>svnserve.conf</code>, <code>passwd</code>, and <code>authz</code>.</p>
+
+      <h2>Repository Content</h2>
+      <p>SVN repositories and backups are stored in locations chosen by the user. Repository files, commits, imported assets, source code, and backup copies remain under the user's control on the Mac or storage locations selected by the user. SVNServer Studio does not upload repository content to a developer-operated service.</p>
+
+      <h2>Network Access</h2>
+      <p>SVNServer Studio can start a local <code>svnserve</code> process using the host and port configured by the user. The default host is local to the Mac. If the user changes the host, firewall, network, or router configuration to expose the SVN service to a local network or the Internet, the user is responsible for access control, credential strength, repository permissions, and network security.</p>
+
+      <h2>Passwords and Credentials</h2>
+      <p>SVNServer Studio manages SVN password entries for the local Subversion service. These credentials are used to generate Subversion authentication files inside repository configuration folders. Treat your Mac user account, app support folder, repository folders, and backup folders as sensitive locations. Use strong passwords and restrict file-system access to trusted administrators.</p>
+
+      <h2>Third-Party Services</h2>
+      <p>The current version does not include analytics, advertising networks, third-party tracking SDKs, cloud synchronization, crash-reporting SDKs, payment SDKs, or social sign-in. The app uses command line tools installed on the Mac, such as <code>svnserve</code>, <code>svnadmin</code>, <code>svnlook</code>, and <code>svn</code>, when available.</p>
+
+      <h2>Data Deletion</h2>
+      <p>You can delete repositories, backups, exported files, and local app state from the locations where they are stored. Removing local SVN users, groups, permission rules, repositories, backups, or the app support data from your Mac removes those local records from your device. SVNServer Studio does not maintain a remote account or server-side user profile.</p>
+
+      <h2>Children's Privacy</h2>
+      <p>SVNServer Studio is a developer and server administration utility. It is not directed to children and does not knowingly collect information from children or any other users.</p>
+
+      <h2>Changes to This Policy</h2>
+      <p>If this policy changes, the updated version will be posted on this page with a revised update date. If future versions add optional cloud features, analytics, crash reporting, subscriptions, or server-side processing, this policy and App Store privacy declarations will be updated before release.</p>
+
+      <h2>Contact</h2>
+      <p>If you have questions about this privacy policy, contact us at <a href="mailto:kibernet@sina.com">kibernet@sina.com</a>.</p>
+
+      <div class="divider"></div>
+
+      <h1>隐私政策</h1>
+      <p class="updated">最后更新：2026 年 5 月 27 日</p>
+
+      <p>SVNServer Studio 是一款面向 Mac 的本地优先 Subversion 服务器管理工具。它用于创建和管理本地 SVN 仓库、启动或停止本机 <code>svnserve</code> 服务、管理 SVN 用户和用户组、配置仓库权限、执行校验和热备份任务，并查看本地活动日志。</p>
+
+      <h2>我们收集的数据</h2>
+      <p>当前版本的 SVNServer Studio 不收集个人数据。应用不需要账号登录，不运营云端账号服务，不会把你的仓库数据上传到开发者控制的服务器，也不会出售、共享或追踪个人信息。</p>
+
+      <h2>本机保存的数据</h2>
+      <p>为了提供核心功能，SVNServer Studio 会在你的 Mac 本地保存配置和运行数据，包括仓库路径、备份路径、主机、端口、语言偏好、仓库信息、SVN 用户、用户组、权限规则、SVN 密码条目、任务记录和活动日志等。</p>
+      <p>这些数据保存在你的 Mac 用户账户和你选择的仓库目录中。应用会使用这些本地数据生成标准 Subversion 配置文件，例如 <code>svnserve.conf</code>、<code>passwd</code> 和 <code>authz</code>。</p>
+
+      <h2>仓库内容</h2>
+      <p>SVN 仓库和备份保存在用户选择的位置。仓库文件、提交内容、导入资源、源代码和备份副本均由用户控制。SVNServer Studio 不会把仓库内容上传到开发者运营的服务。</p>
+
+      <h2>网络访问</h2>
+      <p>SVNServer Studio 可以根据用户配置的主机和端口启动本机 <code>svnserve</code> 进程。默认主机只面向本机。如果用户修改主机、防火墙、网络或路由器配置，让 SVN 服务暴露到局域网或互联网，用户需要自行负责访问控制、密码强度、仓库权限和网络安全。</p>
+
+      <h2>密码和凭据</h2>
+      <p>SVNServer Studio 会管理本地 Subversion 服务使用的 SVN 密码条目，并将这些条目写入仓库配置目录中的认证文件。请将你的 Mac 用户账户、应用支持目录、仓库目录和备份目录视为敏感位置，并限制文件系统访问权限。</p>
+
+      <h2>第三方服务</h2>
+      <p>当前版本不包含分析、广告网络、第三方追踪 SDK、云同步、崩溃上报 SDK、支付 SDK 或社交登录。应用会在可用时调用 Mac 上已安装的命令行工具，例如 <code>svnserve</code>、<code>svnadmin</code>、<code>svnlook</code> 和 <code>svn</code>。</p>
+
+      <h2>数据删除</h2>
+      <p>你可以从本地存储位置删除仓库、备份、导出文件和应用状态。删除本地 SVN 用户、用户组、权限规则、仓库、备份或应用支持数据，即可从你的设备移除这些本地记录。SVNServer Studio 不维护远程账号或服务器端用户资料。</p>
+
+      <h2>儿童隐私</h2>
+      <p>SVNServer Studio 是开发者和服务器管理工具，不面向儿童。应用不会有意收集儿童或任何其他用户的信息。</p>
+
+      <h2>政策变更</h2>
+      <p>如本政策发生变化，更新后的版本会发布在本页面，并更新日期。如果未来版本增加可选云功能、分析、崩溃上报、订阅或服务器端处理，本政策和 App Store 隐私声明会在发布前同步更新。</p>
+
+      <h2>联系邮箱</h2>
+      <p>如对本隐私政策有疑问，请通过 <a href="mailto:kibernet@sina.com">kibernet@sina.com</a> 联系我们。</p>
+    </main>
+  </div>
+</body>
+</html>

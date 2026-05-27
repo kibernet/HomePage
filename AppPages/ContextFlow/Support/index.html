@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ContextFlow Support</title>
+  <meta name="description" content="Support page for ContextFlow, a local-first Finder right-click productivity tool for Mac.">
+  <style type="text/css">
+    :root {
+      color-scheme: dark light;
+      --panel: rgba(17, 24, 39, 0.78);
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --line: rgba(148, 163, 184, 0.24);
+      --accent: #60a5fa;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+      line-height: 1.65;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 20% 0%, rgba(96, 165, 250, 0.22), transparent 34rem),
+        radial-gradient(circle at 88% 10%, rgba(167, 139, 250, 0.16), transparent 30rem),
+        linear-gradient(135deg, #0b1020, #111827 48%, #0f172a);
+    }
+
+    .page {
+      width: min(900px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 56px 0;
+    }
+
+    .document {
+      padding: clamp(24px, 5vw, 48px);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--panel);
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.34);
+      backdrop-filter: blur(22px);
+    }
+
+    h1, h2, h3 {
+      line-height: 1.15;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 650;
+    }
+
+    h2 {
+      margin: 34px 0 14px;
+      font-size: 1.25rem;
+      font-weight: 650;
+    }
+
+    h3 {
+      margin: 22px 0 8px;
+      font-size: 1rem;
+      font-weight: 650;
+    }
+
+    p, li {
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    ul {
+      padding-left: 1.25rem;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    .eyebrow {
+      margin: 0 0 26px;
+      color: var(--accent);
+      font-weight: 650;
+    }
+
+    .contact {
+      display: grid;
+      gap: 12px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      margin: 22px 0;
+    }
+
+    .contact-card {
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(15, 23, 42, 0.66);
+    }
+
+    .contact-card strong {
+      display: block;
+      margin-bottom: 6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="document">
+      <p class="eyebrow">ContextFlow for Mac</p>
+      <h1>Support</h1>
+      <p>Need help with ContextFlow? Use the contact information below and include your macOS version, app version, and a short description of the issue.</p>
+
+      <div class="contact">
+        <div class="contact-card">
+          <strong>Email</strong>
+          <a href="mailto:kibernet@sina.com">kibernet@sina.com</a>
+        </div>
+        <div class="contact-card">
+          <strong>App</strong>
+          <span>ContextFlow for Mac</span>
+        </div>
+      </div>
+
+      <h2>Frequently Asked Questions</h2>
+
+      <h3>How do I enable the Finder extension?</h3>
+      <p>After installing ContextFlow, macOS may ask you to enable the Finder extension in System Settings. Open System Settings, find Login Items & Extensions or Extensions, and make sure ContextFlow is enabled for Finder.</p>
+
+      <h3>Why does the right-click menu not appear in Finder?</h3>
+      <p>Confirm that the Finder extension is enabled, then relaunch Finder or restart your Mac. Also check ContextFlow settings to make sure the menu scope includes the location where you are using Finder.</p>
+
+      <h3>Does ContextFlow upload my files?</h3>
+      <p>No. ContextFlow performs file actions locally on your Mac after you invoke a Finder right-click command. It does not upload selected files, copied paths, checksums, or encrypted DMG files.</p>
+
+      <h3>How do batch rename actions work?</h3>
+      <p>Batch rename workflows provide a preview before changes are applied. Review the preview carefully, then confirm the operation only when the result is correct.</p>
+
+      <h3>How are encrypted DMG files created?</h3>
+      <p>ContextFlow uses Apple's macOS system tool for user-initiated AES-256 encrypted DMG creation. You choose the selected files, password, and output location.</p>
+
+      <h3>Can I change the Terminal app or interface language?</h3>
+      <p>Yes. Open ContextFlow preferences to choose terminal behavior, menu options, Finder scope, completion alerts, and app language.</p>
+
+      <h2>Privacy</h2>
+      <p>Read the ContextFlow privacy policy here: <a href="https://kibernet.github.io/HomePage/AppPages/ContextFlow/Privacy/index.html">Privacy Policy</a>.</p>
+    </div>
+  </div>
+</body>
+</html>

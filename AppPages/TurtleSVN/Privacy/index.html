@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TurtleSVN 隐私政策</title>
+  <meta name="description" content="TurtleSVN for Mac 隐私政策。">
+  <style type="text/css">
+    :root {
+      color-scheme: dark light;
+      --bg: #0a0f1a;
+      --panel: rgba(13, 20, 32, 0.78);
+      --panel-strong: rgba(17, 27, 42, 0.92);
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --quiet: #94a3b8;
+      --line: rgba(148, 163, 184, 0.24);
+      --accent: #67e8f9;
+      --accent-2: #f8c35b;
+      --shadow: rgba(0, 0, 0, 0.34);
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f7fbff;
+        --panel: rgba(255, 255, 255, 0.84);
+        --panel-strong: rgba(255, 255, 255, 0.96);
+        --text: #0f172a;
+        --muted: #334155;
+        --quiet: #64748b;
+        --line: rgba(15, 23, 42, 0.14);
+        --accent: #0891b2;
+        --accent-2: #b7791f;
+        --shadow: rgba(15, 23, 42, 0.12);
+      }
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+      line-height: 1.65;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 16% 0%, rgba(103, 232, 249, 0.24), transparent 34rem),
+        radial-gradient(circle at 92% 10%, rgba(248, 195, 91, 0.16), transparent 30rem),
+        linear-gradient(135deg, var(--bg), #101827 54%, #07111d);
+    }
+
+    @media (prefers-color-scheme: light) {
+      body {
+        background:
+          radial-gradient(circle at 16% 0%, rgba(8, 145, 178, 0.16), transparent 34rem),
+          radial-gradient(circle at 92% 10%, rgba(183, 121, 31, 0.12), transparent 30rem),
+          linear-gradient(135deg, #f7fbff, #edf6fb 54%, #f8fafc);
+      }
+    }
+
+    .page {
+      width: min(920px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 56px 0;
+    }
+
+    .document {
+      position: relative;
+      padding: clamp(24px, 5vw, 52px);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: var(--panel);
+      box-shadow: 0 28px 90px var(--shadow);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+    }
+
+    .language {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+
+    select {
+      max-width: 170px;
+      padding: 7px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--text);
+      background: var(--panel-strong);
+      font: inherit;
+      font-size: 0.92rem;
+    }
+
+    h1, h2 { line-height: 1.15; letter-spacing: 0; }
+    h1 { margin: 0 0 10px; font-size: clamp(2.15rem, 5vw, 3.7rem); font-weight: 760; }
+    h2 { margin: 34px 0 10px; font-size: 1.18rem; font-weight: 700; }
+    p, li { color: var(--muted); font-size: 1rem; }
+    ul { padding-left: 1.25rem; }
+    a { color: var(--accent); }
+    code { color: var(--accent-2); }
+    .eyebrow { margin: 0 0 26px; color: var(--accent); font-weight: 700; padding-right: 190px; }
+    .updated { margin-top: 0; color: var(--quiet); font-size: 0.95rem; }
+    .notice { margin: 24px 0; padding: 16px 18px; border: 1px solid var(--line); border-radius: 16px; background: var(--panel-strong); }
+
+    @media (max-width: 640px) {
+      .language { position: static; margin: 0 0 24px; }
+      .eyebrow { padding-right: 0; }
+      select { width: 100%; max-width: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <main class="document">
+      <div class="language">
+        <select id="language-select" aria-label="选择语言">
+          <option value="zh-Hans">简体中文</option>
+          <option value="en">English</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+          <option value="de">Deutsch</option>
+          <option value="fr">Français</option>
+          <option value="es">Español</option>
+        </select>
+      </div>
+
+      <p class="eyebrow" data-i18n="eyebrow">TurtleSVN for Mac</p>
+      <h1 data-i18n="title">隐私政策</h1>
+      <p class="updated" data-i18n="updated">最后更新：2026 年 5 月 27 日</p>
+
+      <p data-i18n="intro">TurtleSVN 是一款原生 macOS Subversion 客户端，用于把常用 SVN 工作流带到 Finder 和 TurtleSVN 应用中。它帮助用户处理本地 SVN 工作副本、仓库 URL、提交、日志、差异、清理、锁定、分支、合并、补丁和版本库浏览。</p>
+
+      <div class="notice">
+        <p data-i18n="summary"><strong>摘要：</strong>TurtleSVN 不收集个人数据，不需要账号，不包含广告 SDK，也不包含第三方追踪 SDK。仓库数据会在你的 Mac 本地处理，或直接发送到你自己配置的 SVN 服务器。</p>
+      </div>
+
+      <h2 data-i18n="collectTitle">我们收集的数据</h2>
+      <p data-i18n="collectBody">当前版本的 TurtleSVN 不会向开发者运营的服务器收集、上传、出售或共享个人数据。应用不提供云同步、分析、广告、账号注册或跨 App 追踪。</p>
+
+      <h2 data-i18n="localTitle">保存在 Mac 本地的数据</h2>
+      <p data-i18n="localIntro">为了提供核心功能，TurtleSVN 可能会在你的 Mac 本地保存或处理以下数据：</p>
+      <ul id="local-list">
+        <li>用户选择的工作副本文件夹路径。</li>
+        <li>用户配置的仓库 URL。</li>
+        <li>SVN status、log、diff、blame、update、commit、cleanup、lock、merge、switch、patch 和 repository browser 等命令输出。</li>
+        <li>用户输入的提交说明，以及执行 SVN 操作时使用的文件选择。</li>
+        <li>应用偏好、语言设置、窗口状态、Finder 扩展状态和按工作副本保存的设置。</li>
+        <li>用户选择保存的凭据，例如 macOS Keychain 或标准 Subversion 认证存储中的凭据。</li>
+      </ul>
+      <p data-i18n="localEnd">这些数据仅用于在你的设备上提供本地 SVN 功能。除非你执行 SVN 操作并将相关数据发送到自己的 SVN 仓库服务器，否则这些数据由你在 Mac 上控制。</p>
+
+      <h2 data-i18n="repoTitle">仓库内容</h2>
+      <p data-i18n="repoBody">TurtleSVN 会处理用户选择的 SVN 工作副本中的文件和文件夹。源代码、文档、仓库路径、变更文件、差异、日志和提交说明不会上传到 TurtleSVN 服务器。当你执行提交、更新、检出、浏览、锁定、解锁或其他网络 SVN 操作时，数据会直接与你选择的仓库服务器交换。</p>
+
+      <h2 data-i18n="networkTitle">网络访问</h2>
+      <p data-i18n="networkBody">TurtleSVN 可能会连接用户配置的 SVN 仓库服务器，包括 Subversion 支持的 HTTP、HTTPS、SVN 或 SSH 仓库地址。这些连接直接发生在你的 Mac 和所选仓库服务器之间。TurtleSVN 不会通过开发者运营的基础设施代理仓库流量。</p>
+
+      <h2 data-i18n="credentialsTitle">凭据</h2>
+      <p data-i18n="credentialsBody">如果你保存凭据，TurtleSVN 会在适用时使用 macOS Keychain 或 Subversion 认证存储等本地凭据存储。你可以从应用设置、macOS Keychain 或相关 Subversion 本地认证文件中移除已保存的凭据。</p>
+
+      <h2 data-i18n="finderTitle">Finder 扩展</h2>
+      <p data-i18n="finderBody">Finder Sync 扩展用于在用户授权的文件夹中显示右键菜单操作和状态角标。扩展会处理展示这些功能所需的本地文件系统路径和 SVN 状态信息，但不会把这些信息发送到 TurtleSVN 服务器。</p>
+
+      <h2 data-i18n="thirdTitle">第三方服务</h2>
+      <p data-i18n="thirdBody">当前版本不包含广告网络、第三方分析 SDK、崩溃上报 SDK、支付 SDK、社交登录或云同步。TurtleSVN 使用与 Subversion 和安全网络通信相关的内置或系统命令行组件来执行本地 SVN 操作。</p>
+
+      <h2 data-i18n="supportTitle">支持请求</h2>
+      <p data-i18n="supportBody">如果你联系我们获取支持，我们会收到你选择发送的信息，例如邮箱地址、问题描述、截图、日志或诊断详情。请不要发送密码、私钥、机密源代码或私有仓库内容，除非你明确选择这样做。支持信息仅用于回复你的请求。</p>
+
+      <h2 data-i18n="deleteTitle">数据删除</h2>
+      <p data-i18n="deleteBody">你可以从数据所在位置删除本地工作副本、导出文件、应用设置和保存的凭据。卸载应用会移除应用本体，但用户创建的工作副本和仓库数据仍会保留在用户选择的位置，直到用户自行删除。</p>
+
+      <h2 data-i18n="childrenTitle">儿童隐私</h2>
+      <p data-i18n="childrenBody">TurtleSVN 是开发者工具，不面向儿童。应用不会 knowingly 收集儿童或任何其他用户的信息。</p>
+
+      <h2 data-i18n="changesTitle">政策变更</h2>
+      <p data-i18n="changesBody">如果本政策发生变更，更新后的版本会发布在本页面，并更新日期。如果未来版本增加可选云功能、分析、崩溃上报、订阅或服务端处理，我们会在发布前更新本政策和 App Store 隐私声明。</p>
+
+      <h2 data-i18n="contactTitle">联系我们</h2>
+      <p data-i18n="contactBody">如对本隐私政策有疑问，请通过 <a href="mailto:kibernet@sina.com">kibernet@sina.com</a> 联系我们。</p>
+    </main>
+  </div>
+
+  <script>
+    const translations = {
+      "zh-Hans": {
+        docTitle: "TurtleSVN 隐私政策",
+        selectLabel: "选择语言",
+        eyebrow: "TurtleSVN for Mac",
+        title: "隐私政策",
+        updated: "最后更新：2026 年 5 月 27 日",
+        intro: "TurtleSVN 是一款原生 macOS Subversion 客户端，用于把常用 SVN 工作流带到 Finder 和 TurtleSVN 应用中。它帮助用户处理本地 SVN 工作副本、仓库 URL、提交、日志、差异、清理、锁定、分支、合并、补丁和版本库浏览。",
+        summary: "<strong>摘要：</strong>TurtleSVN 不收集个人数据，不需要账号，不包含广告 SDK，也不包含第三方追踪 SDK。仓库数据会在你的 Mac 本地处理，或直接发送到你自己配置的 SVN 服务器。",
+        collectTitle: "我们收集的数据",
+        collectBody: "当前版本的 TurtleSVN 不会向开发者运营的服务器收集、上传、出售或共享个人数据。应用不提供云同步、分析、广告、账号注册或跨 App 追踪。",
+        localTitle: "保存在 Mac 本地的数据",
+        localIntro: "为了提供核心功能，TurtleSVN 可能会在你的 Mac 本地保存或处理以下数据：",
+        localList: ["用户选择的工作副本文件夹路径。", "用户配置的仓库 URL。", "SVN status、log、diff、blame、update、commit、cleanup、lock、merge、switch、patch 和 repository browser 等命令输出。", "用户输入的提交说明，以及执行 SVN 操作时使用的文件选择。", "应用偏好、语言设置、窗口状态、Finder 扩展状态和按工作副本保存的设置。", "用户选择保存的凭据，例如 macOS Keychain 或标准 Subversion 认证存储中的凭据。"],
+        localEnd: "这些数据仅用于在你的设备上提供本地 SVN 功能。除非你执行 SVN 操作并将相关数据发送到自己的 SVN 仓库服务器，否则这些数据由你在 Mac 上控制。",
+        repoTitle: "仓库内容",
+        repoBody: "TurtleSVN 会处理用户选择的 SVN 工作副本中的文件和文件夹。源代码、文档、仓库路径、变更文件、差异、日志和提交说明不会上传到 TurtleSVN 服务器。当你执行提交、更新、检出、浏览、锁定、解锁或其他网络 SVN 操作时，数据会直接与你选择的仓库服务器交换。",
+        networkTitle: "网络访问",
+        networkBody: "TurtleSVN 可能会连接用户配置的 SVN 仓库服务器，包括 Subversion 支持的 HTTP、HTTPS、SVN 或 SSH 仓库地址。这些连接直接发生在你的 Mac 和所选仓库服务器之间。TurtleSVN 不会通过开发者运营的基础设施代理仓库流量。",
+        credentialsTitle: "凭据",
+        credentialsBody: "如果你保存凭据，TurtleSVN 会在适用时使用 macOS Keychain 或 Subversion 认证存储等本地凭据存储。你可以从应用设置、macOS Keychain 或相关 Subversion 本地认证文件中移除已保存的凭据。",
+        finderTitle: "Finder 扩展",
+        finderBody: "Finder Sync 扩展用于在用户授权的文件夹中显示右键菜单操作和状态角标。扩展会处理展示这些功能所需的本地文件系统路径和 SVN 状态信息，但不会把这些信息发送到 TurtleSVN 服务器。",
+        thirdTitle: "第三方服务",
+        thirdBody: "当前版本不包含广告网络、第三方分析 SDK、崩溃上报 SDK、支付 SDK、社交登录或云同步。TurtleSVN 使用与 Subversion 和安全网络通信相关的内置或系统命令行组件来执行本地 SVN 操作。",
+        supportTitle: "支持请求",
+        supportBody: "如果你联系我们获取支持，我们会收到你选择发送的信息，例如邮箱地址、问题描述、截图、日志或诊断详情。请不要发送密码、私钥、机密源代码或私有仓库内容，除非你明确选择这样做。支持信息仅用于回复你的请求。",
+        deleteTitle: "数据删除",
+        deleteBody: "你可以从数据所在位置删除本地工作副本、导出文件、应用设置和保存的凭据。卸载应用会移除应用本体，但用户创建的工作副本和仓库数据仍会保留在用户选择的位置，直到用户自行删除。",
+        childrenTitle: "儿童隐私",
+        childrenBody: "TurtleSVN 是开发者工具，不面向儿童。应用不会有意收集儿童或任何其他用户的信息。",
+        changesTitle: "政策变更",
+        changesBody: "如果本政策发生变更，更新后的版本会发布在本页面，并更新日期。如果未来版本增加可选云功能、分析、崩溃上报、订阅或服务端处理，我们会在发布前更新本政策和 App Store 隐私声明。",
+        contactTitle: "联系我们",
+        contactBody: "如对本隐私政策有疑问，请通过 <a href=\"mailto:kibernet@sina.com\">kibernet@sina.com</a> 联系我们。"
+      },
+      en: {
+        docTitle: "TurtleSVN Privacy Policy",
+        selectLabel: "Choose language",
+        eyebrow: "TurtleSVN for Mac",
+        title: "Privacy Policy",
+        updated: "Last updated: May 27, 2026",
+        intro: "TurtleSVN is a native macOS Subversion client that brings everyday SVN workflows into Finder and the TurtleSVN app. It helps users work with local SVN working copies, repository URLs, commits, logs, diffs, cleanup, locks, branches, merges, patches, and repository browsing.",
+        summary: "<strong>Summary:</strong> TurtleSVN does not collect personal data, does not require an account, does not include advertising SDKs, and does not include third-party tracking SDKs. Repository data is processed locally on your Mac or sent directly to the SVN servers you configure.",
+        collectTitle: "Data We Collect",
+        collectBody: "TurtleSVN does not collect, upload, sell, or share personal data with developer-operated servers in the current version. The app does not provide cloud sync, analytics, advertising, account registration, or cross-app tracking.",
+        localTitle: "Data Stored Locally on Your Mac",
+        localIntro: "To provide the app's core features, TurtleSVN may store or process local data on your Mac, including:",
+        localList: ["Working copy folder paths selected by the user.", "Repository URLs configured by the user.", "SVN status, log, diff, blame, update, commit, cleanup, lock, merge, switch, patch, and repository browser output.", "Commit messages entered by the user and file selections used during SVN operations.", "App preferences, language settings, window state, Finder extension state, and per-working-copy settings.", "Credentials saved by the user in macOS Keychain or standard Subversion authentication storage, where applicable."],
+        localEnd: "This data is used only to provide local SVN functionality and remains under the user's control on the Mac unless the user sends it to their own SVN repository server as part of an SVN operation.",
+        repoTitle: "Repository Content",
+        repoBody: "TurtleSVN works with files and folders in SVN working copies selected by the user. Source code, documents, repository paths, changed files, diffs, logs, and commit messages are not uploaded to a TurtleSVN server. Network SVN operations exchange data directly with the repository server you choose.",
+        networkTitle: "Network Access",
+        networkBody: "TurtleSVN may connect to SVN repository servers configured by the user, including HTTP, HTTPS, SVN, or SSH-based endpoints supported by Subversion. Those connections are made directly between your Mac and the selected repository server.",
+        credentialsTitle: "Credentials",
+        credentialsBody: "If you save credentials, TurtleSVN uses local credential storage such as macOS Keychain or Subversion's authentication storage where applicable. You can remove saved credentials from the app settings, macOS Keychain, or the relevant local Subversion authentication files.",
+        finderTitle: "Finder Extension",
+        finderBody: "The Finder Sync extension is used to show context menu actions and status badges in folders authorized by the user. The extension processes local file-system paths and SVN status information needed to display those features, but does not send that information to TurtleSVN servers.",
+        thirdTitle: "Third-Party Services",
+        thirdBody: "The current version does not include advertising networks, third-party analytics SDKs, crash-reporting SDKs, payment SDKs, social sign-in, or cloud synchronization.",
+        supportTitle: "Support Requests",
+        supportBody: "If you contact us for support, we receive the information you choose to send, such as your email address, issue description, screenshots, logs, or diagnostic details. Please avoid sending passwords, private keys, confidential source code, or private repository content unless you intentionally choose to include it.",
+        deleteTitle: "Data Deletion",
+        deleteBody: "You can remove local working copy folders, exported files, app settings, and saved credentials from the locations where they are stored. Uninstalling the app removes the app binary, but user-created working copies and repository data remain in locations chosen by the user until the user deletes them.",
+        childrenTitle: "Children's Privacy",
+        childrenBody: "TurtleSVN is a developer tool and is not directed to children. The app does not knowingly collect information from children or any other users.",
+        changesTitle: "Changes to This Policy",
+        changesBody: "If this policy changes, the updated version will be posted on this page with a revised update date.",
+        contactTitle: "Contact",
+        contactBody: "If you have questions about this privacy policy, contact us at <a href=\"mailto:kibernet@sina.com\">kibernet@sina.com</a>."
+      }
+    };
+
+    translations.ja = { ...translations.en, docTitle: "TurtleSVN プライバシーポリシー", selectLabel: "言語を選択", title: "プライバシーポリシー", updated: "最終更新日：2026年5月27日", collectTitle: "収集するデータ", contactTitle: "お問い合わせ" };
+    translations.ko = { ...translations.en, docTitle: "TurtleSVN 개인정보 처리방침", selectLabel: "언어 선택", title: "개인정보 처리방침", updated: "마지막 업데이트: 2026년 5월 27일", collectTitle: "수집하는 데이터", contactTitle: "문의" };
+    translations.de = { ...translations.en, docTitle: "TurtleSVN Datenschutzrichtlinie", selectLabel: "Sprache wählen", title: "Datenschutzrichtlinie", updated: "Zuletzt aktualisiert: 27. Mai 2026", collectTitle: "Von uns erfasste Daten", contactTitle: "Kontakt" };
+    translations.fr = { ...translations.en, docTitle: "Politique de confidentialité de TurtleSVN", selectLabel: "Choisir la langue", title: "Politique de confidentialité", updated: "Dernière mise à jour : 27 mai 2026", collectTitle: "Données que nous collectons", contactTitle: "Contact" };
+    translations.es = { ...translations.en, docTitle: "Política de privacidad de TurtleSVN", selectLabel: "Elegir idioma", title: "Política de privacidad", updated: "Última actualización: 27 de mayo de 2026", collectTitle: "Datos que recopilamos", contactTitle: "Contacto" };
+
+    const supported = Object.keys(translations);
+    const params = new URLSearchParams(window.location.search);
+    const lang = supported.includes(params.get("lang")) ? params.get("lang") : "zh-Hans";
+    const copy = translations[lang];
+    document.documentElement.lang = lang;
+    document.title = copy.docTitle;
+    document.querySelector("meta[name='description']").setAttribute("content", copy.docTitle);
+    const select = document.getElementById("language-select");
+    select.value = lang;
+    select.setAttribute("aria-label", copy.selectLabel);
+    select.addEventListener("change", () => {
+      const next = select.value;
+      window.location.href = next === "zh-Hans" ? window.location.pathname : `${window.location.pathname}?lang=${next}`;
+    });
+    document.querySelectorAll("[data-i18n]").forEach((node) => {
+      node.innerHTML = copy[node.dataset.i18n];
+    });
+    document.getElementById("local-list").innerHTML = copy.localList.map((item) => `<li>${item}</li>`).join("");
+  </script>
+</body>
+</html>

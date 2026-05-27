@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SVNServer Studio Support</title>
+  <meta name="description" content="Support page for SVNServer Studio, a local-first Subversion server manager for Mac.">
+  <style type="text/css">
+    :root {
+      color-scheme: dark light;
+      --bg: #0a0f1a;
+      --panel: rgba(13, 20, 32, 0.78);
+      --card: rgba(17, 27, 42, 0.76);
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --line: rgba(148, 163, 184, 0.24);
+      --accent: #67e8f9;
+      --accent-2: #f8c35b;
+      --shadow: rgba(0, 0, 0, 0.34);
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f7fbff;
+        --panel: rgba(255, 255, 255, 0.84);
+        --card: rgba(255, 255, 255, 0.9);
+        --text: #0f172a;
+        --muted: #334155;
+        --line: rgba(15, 23, 42, 0.14);
+        --accent: #0891b2;
+        --accent-2: #b7791f;
+        --shadow: rgba(15, 23, 42, 0.12);
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+      line-height: 1.65;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 16% 0%, rgba(103, 232, 249, 0.24), transparent 34rem),
+        radial-gradient(circle at 92% 10%, rgba(248, 195, 91, 0.16), transparent 30rem),
+        linear-gradient(135deg, var(--bg), #101827 54%, #07111d);
+    }
+
+    @media (prefers-color-scheme: light) {
+      body {
+        background:
+          radial-gradient(circle at 16% 0%, rgba(8, 145, 178, 0.16), transparent 34rem),
+          radial-gradient(circle at 92% 10%, rgba(183, 121, 31, 0.12), transparent 30rem),
+          linear-gradient(135deg, #f7fbff, #edf6fb 54%, #f8fafc);
+      }
+    }
+
+    .page {
+      width: min(960px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 56px 0;
+    }
+
+    .document {
+      padding: clamp(24px, 5vw, 52px);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: var(--panel);
+      box-shadow: 0 28px 90px var(--shadow);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+    }
+
+    h1, h2, h3 {
+      line-height: 1.15;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(2.15rem, 5vw, 3.7rem);
+      font-weight: 760;
+    }
+
+    h2 {
+      margin: 34px 0 14px;
+      font-size: 1.25rem;
+      font-weight: 720;
+    }
+
+    h3 {
+      margin: 22px 0 8px;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    p, li {
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    ul {
+      padding-left: 1.25rem;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    .eyebrow {
+      margin: 0 0 26px;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .contact {
+      display: grid;
+      gap: 14px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      margin: 24px 0;
+    }
+
+    .contact-card {
+      padding: 17px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--card);
+    }
+
+    .contact-card strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--text);
+    }
+
+    .pill {
+      display: inline-flex;
+      margin: 8px 8px 0 0;
+      padding: 7px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      background: var(--card);
+      font-size: 0.92rem;
+    }
+
+    .divider {
+      height: 1px;
+      margin: 42px 0 34px;
+      background: var(--line);
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <main class="document">
+      <p class="eyebrow">SVNServer Studio for Mac</p>
+      <h1>Support</h1>
+      <p>Need help with SVNServer Studio? Contact us by email and include your macOS version, app version, Subversion version if available, and a short description of the issue.</p>
+
+      <div class="contact">
+        <div class="contact-card">
+          <strong>Email</strong>
+          <a href="mailto:kibernet@sina.com">kibernet@sina.com</a>
+        </div>
+        <div class="contact-card">
+          <strong>App</strong>
+          <span>SVNServer Studio for Mac</span>
+        </div>
+        <div class="contact-card">
+          <strong>Category</strong>
+          <span>Developer Tools</span>
+        </div>
+      </div>
+
+      <h2>What to Include</h2>
+      <ul>
+        <li>Your macOS version and Mac model.</li>
+        <li>The SVNServer Studio app version.</li>
+        <li>Whether Subversion command line tools are installed, for example through Homebrew.</li>
+        <li>The operation you were trying to perform, such as creating a repository, starting the service, editing permissions, verifying a repository, or creating a hotcopy backup.</li>
+        <li>Any visible error message, excluding passwords or private repository content.</li>
+      </ul>
+
+      <h2>Frequently Asked Questions</h2>
+
+      <h3>Does SVNServer Studio include Subversion itself?</h3>
+      <p>SVNServer Studio manages a local Subversion server by using command line tools available on your Mac, including <code>svnserve</code>, <code>svnadmin</code>, <code>svnlook</code>, and <code>svn</code>. If these tools are missing, install Subversion through a trusted package manager such as Homebrew.</p>
+
+      <h3>Where are repositories stored?</h3>
+      <p>Repositories are stored under the repository root selected in Settings. The default location is inside your home folder under <code>SVNServer Studio/Repositories</code>.</p>
+
+      <h3>Why can I not connect from another machine?</h3>
+      <p>Check the configured host and port, macOS firewall settings, local network permissions, router rules, and repository authentication. The default host is local to the Mac, which is safer for initial setup.</p>
+
+      <h3>How do user and group permissions work?</h3>
+      <p>SVNServer Studio writes standard Subversion authentication and authorization files into repository configuration folders. Users, groups, and permission rules are converted into <code>passwd</code> and <code>authz</code> files for <code>svnserve</code>.</p>
+
+      <h3>How do I back up a repository?</h3>
+      <p>Select a repository and run the hotcopy action. SVNServer Studio uses <code>svnadmin hotcopy</code> to create a local backup in the configured backup folder.</p>
+
+      <h3>How do I verify repository health?</h3>
+      <p>Select a repository and run verification. SVNServer Studio uses <code>svnadmin verify</code> and records the result in local job history.</p>
+
+      <h3>Does the app upload repositories or credentials?</h3>
+      <p>No. The current version is local-first and does not upload repositories, backups, users, groups, credentials, or permissions to a developer-operated cloud service.</p>
+
+      <h2>Helpful Links</h2>
+      <p>
+        <span class="pill"><a href="https://kibernet.github.io/HomePage/AppPages/SVNServer/Privacy/index.html">Privacy Policy</a></span>
+        <span class="pill"><a href="https://kibernet.github.io/HomePage/AppPages/SVNServer/AgeRating/index.html">Age Rating Information</a></span>
+      </p>
+
+      <div class="divider"></div>
+
+      <h1>支持</h1>
+      <p>如果你在使用 SVNServer Studio 时需要帮助，请通过邮件联系我们，并尽量提供 macOS 版本、应用版本、Subversion 版本，以及遇到问题时正在执行的操作。</p>
+
+      <h2>联系信息</h2>
+      <div class="contact">
+        <div class="contact-card">
+          <strong>邮箱</strong>
+          <a href="mailto:kibernet@sina.com">kibernet@sina.com</a>
+        </div>
+        <div class="contact-card">
+          <strong>应用</strong>
+          <span>SVNServer Studio for Mac</span>
+        </div>
+      </div>
+
+      <h2>常见问题</h2>
+
+      <h3>应用是否自带 Subversion？</h3>
+      <p>SVNServer Studio 会调用 Mac 上可用的 Subversion 命令行工具，包括 <code>svnserve</code>、<code>svnadmin</code>、<code>svnlook</code> 和 <code>svn</code>。如果缺少这些工具，请通过可信的软件包管理器安装，例如 Homebrew。</p>
+
+      <h3>仓库保存在哪里？</h3>
+      <p>仓库保存在设置中选择的仓库根目录下。默认位置位于你的用户主目录内的 <code>SVNServer Studio/Repositories</code>。</p>
+
+      <h3>为什么其他机器无法连接？</h3>
+      <p>请检查应用内配置的主机和端口、macOS 防火墙、本地网络权限、路由器规则以及仓库认证信息。默认主机仅面向本机，更适合初始配置。</p>
+
+      <h3>如何备份仓库？</h3>
+      <p>选择仓库后运行热备份操作。SVNServer Studio 会使用 <code>svnadmin hotcopy</code> 在配置的备份目录中创建本地备份。</p>
+
+      <h3>应用会上传仓库或凭据吗？</h3>
+      <p>不会。当前版本是本地优先应用，不会把仓库、备份、用户、用户组、凭据或权限上传到开发者运营的云服务。</p>
+    </main>
+  </div>
+</body>
+</html>

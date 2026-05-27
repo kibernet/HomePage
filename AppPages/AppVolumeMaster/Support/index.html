@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AppVolumeMaster Support</title>
+  <meta name="description" content="Support page for AppVolumeMaster, a local-first per-app audio control utility for Mac.">
+  <style type="text/css">
+    :root {
+      color-scheme: dark light;
+      --panel: rgba(17, 24, 39, 0.78);
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --line: rgba(148, 163, 184, 0.24);
+      --accent: #60a5fa;
+      --accent-2: #2dd4bf;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+      line-height: 1.65;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 20% 0%, rgba(96, 165, 250, 0.22), transparent 34rem),
+        radial-gradient(circle at 88% 10%, rgba(45, 212, 191, 0.14), transparent 30rem),
+        linear-gradient(135deg, #0b1020, #111827 48%, #0f172a);
+    }
+
+    .page {
+      width: min(900px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 56px 0;
+    }
+
+    .document {
+      padding: clamp(24px, 5vw, 48px);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--panel);
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.34);
+      backdrop-filter: blur(22px);
+    }
+
+    h1, h2, h3 {
+      line-height: 1.15;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 650;
+    }
+
+    h2 {
+      margin: 34px 0 14px;
+      font-size: 1.25rem;
+      font-weight: 650;
+    }
+
+    h3 {
+      margin: 22px 0 8px;
+      font-size: 1rem;
+      font-weight: 650;
+    }
+
+    p, li {
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    ul {
+      padding-left: 1.25rem;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    .eyebrow {
+      margin: 0 0 26px;
+      color: var(--accent);
+      font-weight: 650;
+    }
+
+    .contact {
+      display: grid;
+      gap: 12px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      margin: 22px 0;
+    }
+
+    .contact-card {
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(15, 23, 42, 0.66);
+    }
+
+    .contact-card strong {
+      display: block;
+      margin-bottom: 6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="document">
+      <p class="eyebrow">AppVolumeMaster for Mac</p>
+      <h1>Support</h1>
+      <p>Need help with AppVolumeMaster? Use the contact information below and include your macOS version, app version, and a short description of the issue.</p>
+
+      <div class="contact">
+        <div class="contact-card">
+          <strong>Email</strong>
+          <a href="mailto:kibernet@sina.com">kibernet@sina.com</a>
+        </div>
+        <div class="contact-card">
+          <strong>App</strong>
+          <span>AppVolumeMaster / 声控大师 for Mac</span>
+        </div>
+      </div>
+
+      <h2>Frequently Asked Questions</h2>
+
+      <h3>Why does AppVolumeMaster need system audio capture permission?</h3>
+      <p>AppVolumeMaster uses this permission to identify audio-producing apps and apply local audio control behavior. Audio is processed on your Mac and is not uploaded.</p>
+
+      <h3>Does AppVolumeMaster record or upload audio?</h3>
+      <p>No. AppVolumeMaster does not record audio files, upload audio content, or send audio data to a server.</p>
+
+      <h3>Why does the app not show a Dock icon?</h3>
+      <p>AppVolumeMaster is a menu bar utility. Click the menu bar icon to open the control panel and settings.</p>
+
+      <h3>How do I mute one app?</h3>
+      <p>Open the menu bar panel, find the app in the list, and use the mute control for that app. You can also search or filter the list when many apps are running.</p>
+
+      <h3>What do Mute All, Restore All, and Solo do?</h3>
+      <p>Mute All quiets controllable apps, Restore All brings them back to their remembered state, and Solo focuses on one selected app while muting other controllable apps.</p>
+
+      <h3>How do I make the app start automatically?</h3>
+      <p>Open the settings view from the menu bar panel and enable launch at login.</p>
+
+      <h3>How do I quit AppVolumeMaster?</h3>
+      <p>Open the menu bar panel and use the quit action from the settings or app menu.</p>
+
+      <h2>Privacy</h2>
+      <p>Read the AppVolumeMaster privacy policy here: <a href="https://kibernet.github.io/HomePage/AppPages/AppVolumeMaster/Privacy/index.html">Privacy Policy</a>.</p>
+    </div>
+  </div>
+</body>
+</html>

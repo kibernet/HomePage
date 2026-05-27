@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PanePilot Support</title>
+  <meta name="description" content="Support page for PanePilot, a local-first window layout assistant for Mac.">
+  <style type="text/css">
+    :root {
+      color-scheme: dark light;
+      --panel: rgba(18, 24, 38, 0.82);
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --line: rgba(148, 163, 184, 0.25);
+      --accent: #5eead4;
+      --accent-2: #fbbf24;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+      line-height: 1.65;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 18% 0%, rgba(94, 234, 212, 0.18), transparent 34rem),
+        radial-gradient(circle at 92% 12%, rgba(251, 191, 36, 0.12), transparent 30rem),
+        linear-gradient(135deg, #0f172a, #111827 50%, #111827);
+    }
+
+    .page {
+      width: min(900px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 56px 0;
+    }
+
+    .document {
+      padding: clamp(24px, 5vw, 48px);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--panel);
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.34);
+      backdrop-filter: blur(22px);
+    }
+
+    h1, h2, h3 {
+      line-height: 1.15;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 650;
+    }
+
+    h2 {
+      margin: 34px 0 14px;
+      font-size: 1.25rem;
+      font-weight: 650;
+    }
+
+    h3 {
+      margin: 22px 0 8px;
+      font-size: 1rem;
+      font-weight: 650;
+    }
+
+    p, li, span {
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    ul {
+      padding-left: 1.25rem;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    .eyebrow {
+      margin: 0 0 26px;
+      color: var(--accent);
+      font-weight: 650;
+    }
+
+    .contact {
+      display: grid;
+      gap: 12px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      margin: 22px 0;
+    }
+
+    .contact-card {
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(15, 23, 42, 0.66);
+    }
+
+    .contact-card strong {
+      display: block;
+      margin-bottom: 6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="document">
+      <p class="eyebrow">PanePilot for Mac</p>
+      <h1>Support</h1>
+      <p>Need help with PanePilot? Use the contact information below and include your macOS version, app version, display setup, and a short description of the issue.</p>
+
+      <div class="contact">
+        <div class="contact-card">
+          <strong>Email</strong>
+          <a href="mailto:kibernet@sina.com">kibernet@sina.com</a>
+        </div>
+        <div class="contact-card">
+          <strong>App</strong>
+          <span>PanePilot for Mac</span>
+        </div>
+      </div>
+
+      <h2>Frequently Asked Questions</h2>
+
+      <h3>Why does PanePilot ask for Accessibility permission?</h3>
+      <p>macOS requires Accessibility permission before an app can read window metadata and move or resize windows. PanePilot uses this permission only for window layout actions that you trigger.</p>
+
+      <h3>Why did a window not move?</h3>
+      <p>Some windows cannot be moved by third-party apps, including full-screen windows, minimized windows, protected system dialogs, and windows from apps that restrict automation. PanePilot avoids these windows to reduce disruption.</p>
+
+      <h3>How do I arrange multiple windows at once?</h3>
+      <p>Open the control panel, select the windows you want to arrange, choose a preset or custom split layout, then apply the layout to the target display.</p>
+
+      <h3>How do workspace snapshots work?</h3>
+      <p>A workspace snapshot saves selected window positions and display placement locally on your Mac. You can restore the snapshot later to return to a familiar working setup.</p>
+
+      <h3>Can I undo a layout action?</h3>
+      <p>Yes. PanePilot records the previous window positions before arrangement so you can undo the last layout action from the app or its global shortcut.</p>
+
+      <h3>Does PanePilot upload my window titles or app list?</h3>
+      <p>No. PanePilot processes window titles, app names, and window positions locally on your Mac and does not upload them to a server.</p>
+
+      <h3>What should I include in a support email?</h3>
+      <p>Please include your macOS version, PanePilot version, Mac model, number of displays, the layout or preset used, and screenshots if they help explain the issue.</p>
+
+      <h2>Privacy</h2>
+      <p>Read the PanePilot privacy policy here: <a href="https://kibernet.github.io/HomePage/AppPages/PanePilot/Privacy/index.html">Privacy Policy</a>.</p>
+    </div>
+  </div>
+</body>
+</html>
