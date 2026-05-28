@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>净像师适龄信息</title>
+  <meta name="description" content="净像师 LuminaSage 适龄分级说明。净像师是本地 AI 图片修复工具，建议 4+。">
+  <style>
+    :root {
+      color-scheme: dark light;
+      --panel: rgba(17, 24, 39, 0.78);
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --line: rgba(148, 163, 184, 0.24);
+      --accent: #2dd4bf;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+      line-height: 1.7;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 18% 0%, rgba(45, 212, 191, 0.18), transparent 34rem),
+        radial-gradient(circle at 88% 12%, rgba(96, 165, 250, 0.14), transparent 30rem),
+        linear-gradient(135deg, #071314, #111827 50%, #0f172a);
+    }
+    .page { width: min(920px, calc(100% - 40px)); margin: 0 auto; padding: 56px 0; }
+    .document {
+      padding: clamp(24px, 5vw, 48px);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--panel);
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.34);
+      backdrop-filter: blur(22px);
+    }
+    .toolbar { display: flex; justify-content: flex-end; margin-bottom: 22px; }
+    select {
+      color: var(--text);
+      background: rgba(15, 23, 42, 0.82);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 8px 12px;
+      font: inherit;
+    }
+    h1, h2 { line-height: 1.18; letter-spacing: 0; }
+    h1 { margin: 0 0 10px; font-size: clamp(2rem, 5vw, 3.35rem); font-weight: 700; }
+    h2 { margin: 34px 0 10px; font-size: 1.12rem; font-weight: 700; }
+    p, li, td, th { color: var(--muted); font-size: 1rem; }
+    a { color: var(--accent); }
+    table { width: 100%; border-collapse: collapse; margin-top: 16px; overflow: hidden; border-radius: 12px; }
+    th, td { text-align: left; border-bottom: 1px solid var(--line); padding: 12px 10px; vertical-align: top; }
+    th { color: var(--text); background: rgba(15, 23, 42, 0.55); }
+    .eyebrow { margin: 0 0 24px; color: var(--accent); font-weight: 700; }
+    .badge {
+      display: inline-flex;
+      margin-top: 12px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      color: #062321;
+      background: var(--accent);
+      font-weight: 800;
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <article class="document">
+      <div class="toolbar">
+        <label>
+          <span id="languageLabel">语言</span>
+          <select id="languageSelect" aria-label="Language">
+            <option value="zh-Hans">简体中文</option>
+            <option value="en">English</option>
+            <option value="ja">日本語</option>
+            <option value="ko">한국어</option>
+            <option value="fr">Français</option>
+            <option value="de">Deutsch</option>
+            <option value="es">Español</option>
+            <option value="pt">Português</option>
+          </select>
+        </label>
+      </div>
+      <p class="eyebrow" data-i18n="eyebrow"></p>
+      <h1 data-i18n="title"></h1>
+      <p data-i18n="intro"></p>
+      <span class="badge" data-i18n="rating"></span>
+      <div id="content"></div>
+    </article>
+  </main>
+
+  <script>
+    const privacyUrl = 'https://kibernet.github.io/HomePage/AppPages/LuminaSage/Privacy/index.html';
+    const translations = {
+      'zh-Hans': {
+        languageLabel: '语言',
+        eyebrow: '净像师 LuminaSage，适用于 iPhone、iPad 和 Mac',
+        title: '适龄分级信息',
+        intro: '净像师是一款本地 AI 图片修复与图像补全工具。应用不包含社交、赌博、浏览器、广告、用户生成内容社区或在线聊天功能。',
+        rating: '建议年龄分级：4+',
+        headers: ['类别', '净像师状态'],
+        rows: [
+          ['卡通或幻想暴力', '无'],
+          ['现实暴力', '无'],
+          ['成人或性暗示内容', '无'],
+          ['裸露', '无'],
+          ['粗俗语言或成人幽默', '无'],
+          ['酒精、烟草或毒品相关内容', '无'],
+          ['医疗或治疗信息', '无'],
+          ['赌博、竞赛或抽奖', '无'],
+          ['无限制网页访问', '无'],
+          ['用户生成内容、聊天或社交功能', '无'],
+          ['广告或第三方追踪', '无'],
+          ['账号登录或公开个人资料', '无']
+        ],
+        sections: [
+          ['内容说明', '净像师用于处理用户拥有版权、已获授权或有权编辑的图片。用户不应使用本应用移除无权修改的版权水印、平台标识或权利声明。'],
+          ['隐私与联网', `当前版本不要求账号，不包含追踪 SDK，并在用户设备本机处理所选图片。隐私政策：<a href="${privacyUrl}">${privacyUrl}</a>`],
+          ['分级建议', '基于当前功能范围，建议在 App Store Connect 中选择 4+。最终分级以 App Store Connect 问卷和 Apple 审核结果为准。'],
+          ['联系', '如对适龄分级信息有疑问，请通过 <a href="mailto:kibernet@sina.com">kibernet@sina.com</a> 联系我们。']
+        ]
+      },
+      en: {
+        languageLabel: 'Language',
+        eyebrow: 'LuminaSage for iPhone, iPad, and Mac',
+        title: 'Age Rating Information',
+        intro: 'LuminaSage is a local AI image repair and inpainting utility. It does not include social networking, gambling, browser access, advertising, user-generated content communities, or online chat features.',
+        rating: 'Suggested Age Rating: 4+',
+        headers: ['Category', 'LuminaSage Status'],
+        rows: [
+          ['Cartoon or fantasy violence', 'None'],
+          ['Realistic violence', 'None'],
+          ['Mature or suggestive themes', 'None'],
+          ['Nudity', 'None'],
+          ['Profanity or crude humor', 'None'],
+          ['Alcohol, tobacco, or drug references', 'None'],
+          ['Medical or treatment information', 'None'],
+          ['Gambling, contests, or sweepstakes', 'None'],
+          ['Unrestricted web access', 'None'],
+          ['User-generated content, chat, or social features', 'None'],
+          ['Advertising or third-party tracking', 'None'],
+          ['Account login or public profiles', 'None']
+        ],
+        sections: [
+          ['Content Guidance', 'LuminaSage is intended for images the user owns, has licensed, or otherwise has permission to edit. Users should not use the app to remove copyrighted watermarks, platform marks, or rights notices they do not have permission to modify.'],
+          ['Privacy and Network Access', `The current version does not require an account, does not include tracking SDKs, and processes selected images locally on the user’s device. Privacy policy: <a href="${privacyUrl}">${privacyUrl}</a>`],
+          ['Suggested Rating', 'Based on the current feature set, 4+ is the recommended App Store age rating. The final rating depends on the App Store Connect questionnaire and Apple review.'],
+          ['Contact', 'If you have questions about this age rating information, contact us at <a href="mailto:kibernet@sina.com">kibernet@sina.com</a>.']
+        ]
+      }
+    };
+    const fallback = {
+      ja: ['言語', 'LuminaSage - iPhone、iPad、Mac 向け', '年齢レーティング情報', '推奨年齢レーティング：4+'],
+      ko: ['언어', 'iPhone, iPad 및 Mac용 LuminaSage', '연령 등급 정보', '권장 연령 등급: 4+'],
+      fr: ['Langue', 'LuminaSage pour iPhone, iPad et Mac', 'Informations sur la classification par âge', 'Classification suggérée : 4+'],
+      de: ['Sprache', 'LuminaSage für iPhone, iPad und Mac', 'Informationen zur Altersfreigabe', 'Empfohlene Altersfreigabe: 4+'],
+      es: ['Idioma', 'LuminaSage para iPhone, iPad y Mac', 'Información de clasificación por edad', 'Clasificación sugerida: 4+'],
+      pt: ['Idioma', 'LuminaSage para iPhone, iPad e Mac', 'Informações de classificação etária', 'Classificação sugerida: 4+']
+    };
+    function build(locale) {
+      const base = translations[locale] || translations.en;
+      const t = { ...base };
+      if (!translations[locale] && fallback[locale]) {
+        t.languageLabel = fallback[locale][0];
+        t.eyebrow = fallback[locale][1];
+        t.title = fallback[locale][2];
+        t.rating = fallback[locale][3];
+      }
+      document.documentElement.lang = locale;
+      document.title = t.title + ' - LuminaSage';
+      document.getElementById('languageLabel').textContent = t.languageLabel;
+      document.querySelector('[data-i18n="eyebrow"]').textContent = t.eyebrow;
+      document.querySelector('[data-i18n="title"]').textContent = t.title;
+      document.querySelector('[data-i18n="intro"]').textContent = t.intro;
+      document.querySelector('[data-i18n="rating"]').textContent = t.rating;
+      const table = `<table><thead><tr><th>${t.headers[0]}</th><th>${t.headers[1]}</th></tr></thead><tbody>${t.rows.map(([a, b]) => `<tr><td>${a}</td><td>${b}</td></tr>`).join('')}</tbody></table>`;
+      const sections = t.sections.map(([h, p]) => `<section><h2>${h}</h2><p>${p}</p></section>`).join('');
+      document.getElementById('content').innerHTML = table + sections;
+    }
+    document.getElementById('languageSelect').addEventListener('change', (event) => build(event.target.value));
+    build('zh-Hans');
+  </script>
+</body>
+</html>

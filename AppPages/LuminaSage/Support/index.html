@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>净像师支持</title>
+  <meta name="description" content="净像师 LuminaSage 支持页面。获取帮助、查看常见问题并联系开发者。">
+  <style>
+    :root {
+      color-scheme: dark light;
+      --panel: rgba(17, 24, 39, 0.78);
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --line: rgba(148, 163, 184, 0.24);
+      --accent: #2dd4bf;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+      line-height: 1.7;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 18% 0%, rgba(45, 212, 191, 0.18), transparent 34rem),
+        radial-gradient(circle at 88% 12%, rgba(96, 165, 250, 0.14), transparent 30rem),
+        linear-gradient(135deg, #071314, #111827 50%, #0f172a);
+    }
+    .page { width: min(900px, calc(100% - 40px)); margin: 0 auto; padding: 56px 0; }
+    .document {
+      padding: clamp(24px, 5vw, 48px);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--panel);
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.34);
+      backdrop-filter: blur(22px);
+    }
+    .toolbar { display: flex; justify-content: flex-end; margin-bottom: 22px; }
+    select {
+      color: var(--text);
+      background: rgba(15, 23, 42, 0.82);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 8px 12px;
+      font: inherit;
+    }
+    h1, h2, h3 { line-height: 1.18; letter-spacing: 0; }
+    h1 { margin: 0 0 10px; font-size: clamp(2rem, 5vw, 3.35rem); font-weight: 700; }
+    h2 { margin: 34px 0 10px; font-size: 1.12rem; font-weight: 700; }
+    h3 { margin: 22px 0 6px; font-size: 1rem; font-weight: 700; }
+    p, li { color: var(--muted); font-size: 1rem; }
+    ul { padding-left: 1.25rem; }
+    a { color: var(--accent); }
+    .eyebrow { margin: 0 0 24px; color: var(--accent); font-weight: 700; }
+    .contact {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: rgba(15, 23, 42, 0.44);
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <article class="document">
+      <div class="toolbar">
+        <label>
+          <span id="languageLabel">语言</span>
+          <select id="languageSelect" aria-label="Language">
+            <option value="zh-Hans">简体中文</option>
+            <option value="en">English</option>
+            <option value="ja">日本語</option>
+            <option value="ko">한국어</option>
+            <option value="fr">Français</option>
+            <option value="de">Deutsch</option>
+            <option value="es">Español</option>
+            <option value="pt">Português</option>
+          </select>
+        </label>
+      </div>
+      <p class="eyebrow" data-i18n="eyebrow"></p>
+      <h1 data-i18n="title"></h1>
+      <p data-i18n="intro"></p>
+      <p class="contact"><span data-i18n="emailLabel"></span> <a href="mailto:kibernet@sina.com">kibernet@sina.com</a></p>
+      <div id="content"></div>
+    </article>
+  </main>
+
+  <script>
+    const privacyUrl = 'https://kibernet.github.io/HomePage/AppPages/LuminaSage/Privacy/index.html';
+    const translations = {
+      'zh-Hans': {
+        languageLabel: '语言',
+        eyebrow: '净像师 LuminaSage，适用于 iPhone、iPad 和 Mac',
+        title: '支持',
+        intro: '如果你在导入图片、画笔标记、本地 AI 修复、保存或导出时遇到问题，请通过邮件联系我们，并尽量附上设备型号、系统版本、App 版本和问题描述。',
+        emailLabel: '联系邮箱',
+        sections: [
+          ['常见问题', [
+            ['净像师会上传我的照片吗？', '不会。当前版本在设备本机处理用户选择的图片、遮罩和修复结果。'],
+            ['我应该使用哪些图片？', '请仅处理你拥有版权、已获授权，或有权编辑的图片。不要用于移除你无权修改的版权水印、平台标识或权利声明。'],
+            ['iPhone 和 iPad 如何导入图片？', '在 iPhone 和 iPad 上，应用通过系统照片选择器从相册选择图片，并在用户主动操作时保存结果到相册。'],
+            ['Mac 如何导入图片？', 'Mac 版本支持系统文件选择器、拖拽导入，以及导出面板保存结果。'],
+            ['为什么修复效果会不同？', '图像补全结果会受到图片内容、遮罩范围和边缘细节影响。通常建议只标记需要修复的区域，并避免一次涂抹过大范围。']
+          ]],
+          ['隐私政策', `你可以在这里查看隐私政策：<a href="${privacyUrl}">${privacyUrl}</a>`],
+          ['联系支持', '发送邮件时，请说明你的设备、系统版本、App 版本、操作步骤，以及问题是否可以稳定复现。']
+        ]
+      },
+      en: {
+        languageLabel: 'Language',
+        eyebrow: 'LuminaSage for iPhone, iPad, and Mac',
+        title: 'Support',
+        intro: 'If you need help with image import, brush masking, local AI repair, saving, or export, contact us by email and include your device model, system version, app version, and a short description of the issue.',
+        emailLabel: 'Email',
+        sections: [
+          ['FAQ', [
+            ['Does LuminaSage upload my photos?', 'No. The current version processes selected images, masks, and repair results locally on your device.'],
+            ['What images should I use with LuminaSage?', 'Use it only with images you own, have licensed, or otherwise have permission to edit. Do not use it to remove copyrighted watermarks, platform marks, or rights notices you do not have permission to modify.'],
+            ['How do I import images on iPhone and iPad?', 'On iPhone and iPad, the app uses the system Photos picker to choose images and saves results to Photos only when you explicitly request it.'],
+            ['How do I import images on Mac?', 'The Mac version supports the system file picker, drag and drop, and export panels.'],
+            ['Why can repair results vary?', 'Inpainting results depend on image content, mask size, and edge details. Mark only the area that needs repair and avoid covering unnecessarily large areas.']
+          ]],
+          ['Privacy Policy', `Read the privacy policy here: <a href="${privacyUrl}">${privacyUrl}</a>`],
+          ['Contact Support', 'When emailing support, include your device, system version, app version, steps to reproduce, and whether the issue happens consistently.']
+        ]
+      }
+    };
+    const fallback = {
+      ja: ['言語', 'LuminaSage - iPhone、iPad、Mac 向け', 'サポート'],
+      ko: ['언어', 'iPhone, iPad 및 Mac용 LuminaSage', '지원'],
+      fr: ['Langue', 'LuminaSage pour iPhone, iPad et Mac', 'Assistance'],
+      de: ['Sprache', 'LuminaSage für iPhone, iPad und Mac', 'Support'],
+      es: ['Idioma', 'LuminaSage para iPhone, iPad y Mac', 'Soporte'],
+      pt: ['Idioma', 'LuminaSage para iPhone, iPad e Mac', 'Suporte']
+    };
+    function build(locale) {
+      const base = translations[locale] || translations.en;
+      const t = { ...base };
+      if (!translations[locale] && fallback[locale]) {
+        t.languageLabel = fallback[locale][0];
+        t.eyebrow = fallback[locale][1];
+        t.title = fallback[locale][2];
+      }
+      document.documentElement.lang = locale;
+      document.title = t.title + ' - LuminaSage';
+      document.getElementById('languageLabel').textContent = t.languageLabel;
+      document.querySelector('[data-i18n="eyebrow"]').textContent = t.eyebrow;
+      document.querySelector('[data-i18n="title"]').textContent = t.title;
+      document.querySelector('[data-i18n="intro"]').textContent = t.intro;
+      document.querySelector('[data-i18n="emailLabel"]').textContent = t.emailLabel;
+      document.getElementById('content').innerHTML = t.sections.map(([title, body]) => {
+        if (Array.isArray(body)) {
+          return `<section><h2>${title}</h2>${body.map(([q, a]) => `<h3>${q}</h3><p>${a}</p>`).join('')}</section>`;
+        }
+        return `<section><h2>${title}</h2><p>${body}</p></section>`;
+      }).join('');
+    }
+    document.getElementById('languageSelect').addEventListener('change', (event) => build(event.target.value));
+    build('zh-Hans');
+  </script>
+</body>
+</html>

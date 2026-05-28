@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>净像师隐私政策</title>
+  <meta name="description" content="净像师 LuminaSage 隐私政策。本应用在设备本机处理图片，不上传用户图片，不收集个人数据。">
+  <style>
+    :root {
+      color-scheme: dark light;
+      --panel: rgba(17, 24, 39, 0.78);
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --line: rgba(148, 163, 184, 0.24);
+      --accent: #2dd4bf;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+      line-height: 1.7;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 18% 0%, rgba(45, 212, 191, 0.18), transparent 34rem),
+        radial-gradient(circle at 88% 12%, rgba(96, 165, 250, 0.14), transparent 30rem),
+        linear-gradient(135deg, #071314, #111827 50%, #0f172a);
+    }
+    .page { width: min(900px, calc(100% - 40px)); margin: 0 auto; padding: 56px 0; }
+    .document {
+      position: relative;
+      padding: clamp(24px, 5vw, 48px);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--panel);
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.34);
+      backdrop-filter: blur(22px);
+    }
+    .toolbar { display: flex; justify-content: flex-end; margin-bottom: 22px; }
+    select {
+      max-width: 100%;
+      color: var(--text);
+      background: rgba(15, 23, 42, 0.82);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 8px 12px;
+      font: inherit;
+    }
+    h1, h2 { line-height: 1.18; letter-spacing: 0; }
+    h1 { margin: 0 0 10px; font-size: clamp(2rem, 5vw, 3.35rem); font-weight: 700; }
+    h2 { margin: 34px 0 10px; font-size: 1.12rem; font-weight: 700; }
+    p, li { color: var(--muted); font-size: 1rem; }
+    ul { padding-left: 1.25rem; }
+    a { color: var(--accent); }
+    .eyebrow { margin: 0 0 24px; color: var(--accent); font-weight: 700; }
+    .updated { margin-top: 0; color: #94a3b8; font-size: 0.95rem; }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <article class="document">
+      <div class="toolbar">
+        <label>
+          <span id="languageLabel">语言</span>
+          <select id="languageSelect" aria-label="Language">
+            <option value="zh-Hans">简体中文</option>
+            <option value="en">English</option>
+            <option value="ja">日本語</option>
+            <option value="ko">한국어</option>
+            <option value="fr">Français</option>
+            <option value="de">Deutsch</option>
+            <option value="es">Español</option>
+            <option value="pt">Português</option>
+          </select>
+        </label>
+      </div>
+      <p class="eyebrow" data-i18n="eyebrow"></p>
+      <h1 data-i18n="title"></h1>
+      <p class="updated" data-i18n="updated"></p>
+      <div id="content"></div>
+    </article>
+  </main>
+
+  <script>
+    const email = '<a href="mailto:kibernet@sina.com">kibernet@sina.com</a>';
+    const translations = {
+      'zh-Hans': {
+        languageLabel: '语言',
+        eyebrow: '净像师 LuminaSage，适用于 iPhone、iPad 和 Mac',
+        title: '隐私政策',
+        updated: '最后更新：2026 年 5 月 29 日',
+        sections: [
+          ['概述', '净像师是一款本地 AI 图片修复与图像补全工具。用户导入图片后，可以用画笔标记需要修复的区域，并在设备本机完成处理。'],
+          ['我们收集的数据', '当前版本不收集个人数据。应用不要求登录账号，不提供云账号服务，不包含广告 SDK，也不包含第三方追踪 SDK。'],
+          ['图片与编辑数据', '用户选择的图片、遮罩、笔刷轨迹和修复结果均在用户设备本机处理。净像师不会把用户选择的图片、遮罩或编辑结果上传到服务器或第三方 AI 服务。'],
+          ['照片与文件权限', '<ul><li>在 iPhone 和 iPad 上，照片权限仅用于用户主动选择图片或保存编辑结果。</li><li>在 Mac 上，文件访问仅限用户通过系统文件选择器、拖拽或导出面板明确选择的文件。</li></ul>'],
+          ['本机模型处理', '净像师使用随 App 内置的 Core ML 图像补全模型在设备本机进行图片修复。当前版本不会把图片内容发送到远程 AI 服务。'],
+          ['分析、诊断与追踪', '当前版本不收集使用分析、崩溃日志、广告标识符、追踪标识符、位置数据、联系人信息、账号信息或使用历史。'],
+          ['数据删除', '净像师不维护远程账号或服务端用户记录。导入图片和导出文件由用户自行保存在所选位置，用户可以随时在设备上删除这些文件。'],
+          ['儿童隐私', '净像师是通用照片编辑工具，并非专门面向儿童。应用不会有意收集儿童或其他用户的信息。'],
+          ['政策变更', '如果本政策发生变化，我们会在本页面发布更新版本并修改更新日期。如果未来版本加入云功能、分析、崩溃报告、账号同步、订阅或服务端处理，我们会在发布前更新本政策和 App Store 隐私声明。'],
+          ['联系我们', `如对本隐私政策有疑问，请通过 ${email} 联系我们。`]
+        ]
+      },
+      en: {
+        languageLabel: 'Language',
+        eyebrow: 'LuminaSage for iPhone, iPad, and Mac',
+        title: 'Privacy Policy',
+        updated: 'Last updated: May 29, 2026',
+        sections: [
+          ['Overview', 'LuminaSage is a local AI image repair and inpainting app. Users import an image, brush over the area to repair, and process the result on device.'],
+          ['Data We Collect', 'The current version does not collect personal data. The app does not require sign-in, does not operate a cloud account service, does not include advertising SDKs, and does not include third-party tracking SDKs.'],
+          ['Images and Editing Data', 'Selected images, masks, brush strokes, and repair results are processed locally on the user’s device. LuminaSage does not upload selected images, masks, or edited results to a server or third-party AI service.'],
+          ['Photos and File Access', '<ul><li>On iPhone and iPad, Photos access is used only when the user chooses an image or saves an edited result.</li><li>On Mac, file access is limited to files the user explicitly selects through the system file picker, drag and drop, or export panel.</li></ul>'],
+          ['On-Device Model Processing', 'LuminaSage uses a bundled Core ML inpainting model for local image repair. The current version does not send image content to remote AI services.'],
+          ['Analytics, Diagnostics, and Tracking', 'The current version does not collect analytics, crash logs, advertising identifiers, tracking identifiers, location data, contact information, account information, or usage history.'],
+          ['Data Deletion', 'LuminaSage does not maintain a remote account or server-side user record. Imported images and exported files remain under the user’s control and can be deleted from the device at any time.'],
+          ['Children’s Privacy', 'LuminaSage is a general photo editing utility and is not directed to children. The app does not knowingly collect information from children or any other users.'],
+          ['Changes to This Policy', 'If this policy changes, the updated version will be posted on this page with a revised update date. If future versions add cloud features, analytics, crash reporting, account sync, subscriptions, or server-side processing, this policy and App Store privacy declarations will be updated before release.'],
+          ['Contact', `If you have questions about this privacy policy, contact us at ${email}.`]
+        ]
+      }
+    };
+    const fallback = {
+      ja: ['言語', 'LuminaSage - iPhone、iPad、Mac 向け', 'プライバシーポリシー', '最終更新日：2026年5月29日'],
+      ko: ['언어', 'iPhone, iPad 및 Mac용 LuminaSage', '개인정보 처리방침', '최종 업데이트: 2026년 5월 29일'],
+      fr: ['Langue', 'LuminaSage pour iPhone, iPad et Mac', 'Politique de confidentialité', 'Dernière mise à jour : 29 mai 2026'],
+      de: ['Sprache', 'LuminaSage für iPhone, iPad und Mac', 'Datenschutzerklärung', 'Zuletzt aktualisiert: 29. Mai 2026'],
+      es: ['Idioma', 'LuminaSage para iPhone, iPad y Mac', 'Política de privacidad', 'Última actualización: 29 de mayo de 2026'],
+      pt: ['Idioma', 'LuminaSage para iPhone, iPad e Mac', 'Política de Privacidade', 'Última atualização: 29 de maio de 2026']
+    };
+    function build(locale) {
+      const base = translations[locale] || translations.en;
+      const t = { ...base };
+      if (!translations[locale] && fallback[locale]) {
+        t.languageLabel = fallback[locale][0];
+        t.eyebrow = fallback[locale][1];
+        t.title = fallback[locale][2];
+        t.updated = fallback[locale][3];
+      }
+      document.documentElement.lang = locale;
+      document.title = t.title + ' - LuminaSage';
+      document.getElementById('languageLabel').textContent = t.languageLabel;
+      document.querySelector('[data-i18n="eyebrow"]').textContent = t.eyebrow;
+      document.querySelector('[data-i18n="title"]').textContent = t.title;
+      document.querySelector('[data-i18n="updated"]').textContent = t.updated;
+      document.getElementById('content').innerHTML = t.sections.map(([h, p]) => {
+        const body = p.trim().startsWith('<') ? p : `<p>${p}</p>`;
+        return `<section><h2>${h}</h2>${body}</section>`;
+      }).join('');
+    }
+    document.getElementById('languageSelect').addEventListener('change', (event) => build(event.target.value));
+    build('zh-Hans');
+  </script>
+</body>
+</html>
