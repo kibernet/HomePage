@@ -26,7 +26,7 @@
         radial-gradient(circle at 88% 12%, rgba(96, 165, 250, 0.14), transparent 30rem),
         linear-gradient(135deg, #071314, #111827 50%, #0f172a);
     }
-    .page { width: min(900px, calc(100% - 40px)); margin: 0 auto; padding: 56px 0; }
+    .page { width: min(920px, calc(100% - 40px)); margin: 0 auto; padding: 56px 0; }
     .document {
       padding: clamp(24px, 5vw, 48px);
       border: 1px solid var(--line);
@@ -37,6 +37,7 @@
     }
     .toolbar { display: flex; justify-content: flex-end; margin-bottom: 22px; }
     select {
+      max-width: 100%;
       color: var(--text);
       background: rgba(15, 23, 42, 0.82);
       border: 1px solid var(--line);
@@ -48,27 +49,25 @@
     h1 { margin: 0 0 10px; font-size: clamp(2rem, 5vw, 3.35rem); font-weight: 700; }
     h2 { margin: 34px 0 10px; font-size: 1.12rem; font-weight: 700; }
     h3 { margin: 22px 0 6px; font-size: 1rem; font-weight: 700; }
-    p, li { color: var(--muted); font-size: 1rem; }
+    p, li, td, th { color: var(--muted); font-size: 1rem; }
     ul { padding-left: 1.25rem; }
-    a { color: var(--accent); }
+    a { color: var(--accent); overflow-wrap: anywhere; }
     .eyebrow { margin: 0 0 24px; color: var(--accent); font-weight: 700; }
-    .contact {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 12px 14px;
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      background: rgba(15, 23, 42, 0.44);
-    }
+    .updated { margin-top: 0; color: #94a3b8; font-size: 0.95rem; }
+    .contact { display: inline-flex; align-items: center; gap: 10px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 12px; background: rgba(15, 23, 42, 0.44); }
+    .badge { display: inline-flex; margin-top: 12px; padding: 8px 12px; border-radius: 999px; color: #062321; background: var(--accent); font-weight: 800; }
+    table { width: 100%; border-collapse: collapse; margin-top: 16px; overflow: hidden; border-radius: 12px; }
+    th, td { text-align: left; border-bottom: 1px solid var(--line); padding: 12px 10px; vertical-align: top; }
+    th { color: var(--text); background: rgba(15, 23, 42, 0.55); }
+    [dir="rtl"] th, [dir="rtl"] td { text-align: right; }
+
   </style>
 </head>
 <body>
   <main class="page">
     <article class="document">
       <div class="toolbar">
-        <label>
-          <span id="languageLabel">语言</span>
+        <label><span id="languageLabel">语言</span>
           <select id="languageSelect" aria-label="Language">
             <option value="zh-Hans">简体中文</option>
             <option value="en">English</option>
@@ -88,64 +87,355 @@
       <div id="content"></div>
     </article>
   </main>
-
   <script>
-    const privacyUrl = 'https://kibernet.github.io/HomePage/AppPages/LuminaSage/Privacy/index.html';
+    const privacyLink = '<a href="https://kibernet.github.io/HomePage/AppPages/LuminaSage/Privacy/index.html">https://kibernet.github.io/HomePage/AppPages/LuminaSage/Privacy/index.html</a>';
     const translations = {
-      'zh-Hans': {
-        languageLabel: '语言',
-        eyebrow: '净像师 LuminaSage，适用于 iPhone、iPad 和 Mac',
-        title: '支持',
-        intro: '如果你在导入图片、画笔标记、本地 AI 修复、保存或导出时遇到问题，请通过邮件联系我们，并尽量附上设备型号、系统版本、App 版本和问题描述。',
-        emailLabel: '联系邮箱',
-        sections: [
-          ['常见问题', [
-            ['净像师会上传我的照片吗？', '不会。当前版本在设备本机处理用户选择的图片、遮罩和修复结果。'],
-            ['我应该使用哪些图片？', '请仅处理你拥有版权、已获授权，或有权编辑的图片。不要用于移除你无权修改的版权水印、平台标识或权利声明。'],
-            ['iPhone 和 iPad 如何导入图片？', '在 iPhone 和 iPad 上，应用通过系统照片选择器从相册选择图片，并在用户主动操作时保存结果到相册。'],
-            ['Mac 如何导入图片？', 'Mac 版本支持系统文件选择器、拖拽导入，以及导出面板保存结果。'],
-            ['为什么修复效果会不同？', '图像补全结果会受到图片内容、遮罩范围和边缘细节影响。通常建议只标记需要修复的区域，并避免一次涂抹过大范围。']
-          ]],
-          ['隐私政策', `你可以在这里查看隐私政策：<a href="${privacyUrl}">${privacyUrl}</a>`],
-          ['联系支持', '发送邮件时，请说明你的设备、系统版本、App 版本、操作步骤，以及问题是否可以稳定复现。']
+  "zh-Hans": {
+    "languageLabel": "语言",
+    "eyebrow": "净像师 LuminaSage，适用于 iPhone、iPad 和 Mac",
+    "title": "支持",
+    "intro": "如果你在导入图片、画笔标记、本地 AI 修复、保存或导出时遇到问题，请通过邮件联系我们，并尽量附上设备型号、系统版本、App 版本和问题描述。",
+    "emailLabel": "联系邮箱",
+    "sections": [
+      [
+        "常见问题",
+        [
+          [
+            "净像师会上传我的照片吗？",
+            "不会。当前版本在设备本机处理用户选择的图片、遮罩和修复结果。"
+          ],
+          [
+            "我应该使用哪些图片？",
+            "请仅处理你拥有版权、已获授权，或有权编辑的图片。不要用于移除你无权修改的版权水印、平台标识或权利声明。"
+          ],
+          [
+            "iPhone 和 iPad 如何导入图片？",
+            "在 iPhone 和 iPad 上，应用通过系统照片选择器从相册选择图片，并在用户主动操作时保存结果到相册。"
+          ],
+          [
+            "Mac 如何导入图片？",
+            "Mac 版本支持系统文件选择器、拖拽导入，以及导出面板保存结果。"
+          ],
+          [
+            "为什么修复效果会不同？",
+            "图像补全结果会受到图片内容、遮罩范围和边缘细节影响。通常建议只标记需要修复的区域，并避免一次涂抹过大范围。"
+          ]
         ]
-      },
-      en: {
-        languageLabel: 'Language',
-        eyebrow: 'LuminaSage for iPhone, iPad, and Mac',
-        title: 'Support',
-        intro: 'If you need help with image import, brush masking, local AI repair, saving, or export, contact us by email and include your device model, system version, app version, and a short description of the issue.',
-        emailLabel: 'Email',
-        sections: [
-          ['FAQ', [
-            ['Does LuminaSage upload my photos?', 'No. The current version processes selected images, masks, and repair results locally on your device.'],
-            ['What images should I use with LuminaSage?', 'Use it only with images you own, have licensed, or otherwise have permission to edit. Do not use it to remove copyrighted watermarks, platform marks, or rights notices you do not have permission to modify.'],
-            ['How do I import images on iPhone and iPad?', 'On iPhone and iPad, the app uses the system Photos picker to choose images and saves results to Photos only when you explicitly request it.'],
-            ['How do I import images on Mac?', 'The Mac version supports the system file picker, drag and drop, and export panels.'],
-            ['Why can repair results vary?', 'Inpainting results depend on image content, mask size, and edge details. Mark only the area that needs repair and avoid covering unnecessarily large areas.']
-          ]],
-          ['Privacy Policy', `Read the privacy policy here: <a href="${privacyUrl}">${privacyUrl}</a>`],
-          ['Contact Support', 'When emailing support, include your device, system version, app version, steps to reproduce, and whether the issue happens consistently.']
+      ],
+      [
+        "隐私政策",
+        "你可以在这里查看隐私政策：${privacyLink}"
+      ],
+      [
+        "联系支持",
+        "发送邮件时，请说明你的设备、系统版本、App 版本、操作步骤，以及问题是否可以稳定复现。"
+      ]
+    ]
+  },
+  "en": {
+    "languageLabel": "Language",
+    "eyebrow": "LuminaSage for iPhone, iPad, and Mac",
+    "title": "Support",
+    "intro": "If you need help with image import, brush masking, local AI repair, saving, or export, contact us by email and include your device model, system version, app version, and a short description of the issue.",
+    "emailLabel": "Email",
+    "sections": [
+      [
+        "FAQ",
+        [
+          [
+            "Does LuminaSage upload my photos?",
+            "No. The current version processes selected images, masks, and repair results locally on your device."
+          ],
+          [
+            "What images should I use with LuminaSage?",
+            "Use it only with images you own, have licensed, or otherwise have permission to edit. Do not use it to remove copyrighted watermarks, platform marks, or rights notices you do not have permission to modify."
+          ],
+          [
+            "How do I import images on iPhone and iPad?",
+            "On iPhone and iPad, the app uses the system Photos picker to choose images and saves results to Photos only when you explicitly request it."
+          ],
+          [
+            "How do I import images on Mac?",
+            "The Mac version supports the system file picker, drag and drop, and export panels."
+          ],
+          [
+            "Why can repair results vary?",
+            "Inpainting results depend on image content, mask size, and edge details. Mark only the area that needs repair and avoid covering unnecessarily large areas."
+          ]
         ]
-      }
-    };
-    const fallback = {
-      ja: ['言語', 'LuminaSage - iPhone、iPad、Mac 向け', 'サポート'],
-      ko: ['언어', 'iPhone, iPad 및 Mac용 LuminaSage', '지원'],
-      fr: ['Langue', 'LuminaSage pour iPhone, iPad et Mac', 'Assistance'],
-      de: ['Sprache', 'LuminaSage für iPhone, iPad und Mac', 'Support'],
-      es: ['Idioma', 'LuminaSage para iPhone, iPad y Mac', 'Soporte'],
-      pt: ['Idioma', 'LuminaSage para iPhone, iPad e Mac', 'Suporte']
-    };
+      ],
+      [
+        "Privacy Policy",
+        "Read the privacy policy here: ${privacyLink}"
+      ],
+      [
+        "Contact Support",
+        "When emailing support, include your device, system version, app version, steps to reproduce, and whether the issue happens consistently."
+      ]
+    ]
+  },
+  "ja": {
+    "languageLabel": "言語",
+    "eyebrow": "肖像画アプリ「LuminaSage」は、iPhone、iPad、Macに対応しています。",
+    "title": "サポート",
+    "intro": "画像のインポート、ブラシによるマーキング、ローカルAI修復、保存、エクスポートの際に問題が発生した場合は、メールにてご連絡ください。その際、お使いのデバイスの機種名、システムバージョン、アプリのバージョン、および問題の詳細を記載してください。",
+    "emailLabel": "お問い合わせメール",
+    "sections": [
+      [
+        "よくある質問",
+        [
+          [
+            "画像アップロードで私の写真がアップロードされますか？",
+            "いいえ。現行バージョンでは、ユーザーが選択した画像、マスク、および修復結果をデバイス上でローカルに処理します。"
+          ],
+          [
+            "どの画像を使えばいいですか？",
+            "著作権を所有している画像、使用許可を得ている画像、または編集権を有する画像のみを処理してください。著作権の透かし、プラットフォームのロゴ、または変更する権利のない権利表示を削除するために画像を使用しないでください。"
+          ],
+          [
+            "iPhoneやiPadに写真をインポートする方法は？",
+            "iPhoneとiPadでは、アプリはシステムの写真選択機能を使用して写真アプリから画像を選択し、ユーザーが積極的に選択した場合にその結果を写真アプリに保存します。"
+          ],
+          [
+            "Macに画像をインポートするにはどうすればよいですか？",
+            "Mac版は、システムファイルセレクター、ドラッグ＆ドロップによるインポート、および結果を保存するためのエクスポートパネルをサポートしています。"
+          ],
+          [
+            "修理結果に違いが生じるのはなぜですか？",
+            "画像の補完結果は、画像の内容、マスキング領域、およびエッジの詳細によって影響を受けます。一般的には、修復が必要な領域のみをマークし、一度に広範囲を塗装することは避けることをお勧めします。"
+          ]
+        ]
+      ],
+      [
+        "プライバシーポリシー",
+        "プライバシーポリシーはこちらからご覧いただけます：${privacyLink}"
+      ],
+      [
+        "サポートに問い合わせる",
+        "メール送信の際は、お使いのデバイス、システムバージョン、アプリバージョン、操作手順、および問題が確実に再現できるかどうかを明記してください。"
+      ]
+    ]
+  },
+  "ko": {
+    "languageLabel": "언어",
+    "eyebrow": "인물 사진 작가인 LuminaSage는 iPhone, iPad 및 Mac에서 사용할 수 있습니다.",
+    "title": "지원하다",
+    "intro": "이미지 가져오기, 브러시를 이용한 마킹, AI 로컬 복구, 저장 또는 내보내기 과정에서 문제가 발생하면 이메일로 문의해 주세요. 문의 시에는 기기 모델, 시스템 버전, 앱 버전 및 문제 설명을 포함해 주시면 더욱 좋습니다.",
+    "emailLabel": "연락처 이메일",
+    "sections": [
+      [
+        "자주 묻는 질문",
+        [
+          [
+            "내 사진이 업로드될까요?",
+            "아니요. 현재 버전은 사용자가 선택한 이미지, 마스크 및 복구 결과를 기기 내에서 로컬로 처리합니다."
+          ],
+          [
+            "어떤 이미지를 사용해야 할까요?",
+            "저작권을 소유하거나, 사용 허가를 받았거나, 편집할 권리가 있는 이미지만 사용하십시오. 저작권 워터마크, 플랫폼 로고 또는 수정 권한이 없는 권리 고지를 제거하는 데 이미지를 사용하지 마십시오."
+          ],
+          [
+            "아이폰과 아이패드에 사진을 가져오는 방법은 무엇인가요?",
+            "아이폰과 아이패드에서 이 앱은 시스템 사진 선택기를 사용하여 사진 앱에서 이미지를 선택하고, 사용자가 직접 이미지를 선택하면 그 결과를 사진 앱에 저장합니다."
+          ],
+          [
+            "맥에 이미지를 가져오는 방법은 무엇인가요?",
+            "맥 버전은 시스템 파일 선택기, 드래그 앤 드롭 가져오기, 결과 저장을 위한 내보내기 패널을 지원합니다."
+          ],
+          [
+            "수리 결과가 서로 다른 이유는 무엇일까요?",
+            "이미지 완성 결과는 이미지 내용, 마스킹 영역 및 가장자리 세부 정보의 영향을 받습니다. 일반적으로 수정이 필요한 영역만 표시하고 한 번에 너무 넓은 영역을 칠하지 않는 것이 좋습니다."
+          ]
+        ]
+      ],
+      [
+        "개인정보 보호정책",
+        "개인정보처리방침은 여기에서 확인하실 수 있습니다: ${privacyLink}"
+      ],
+      [
+        "고객 지원팀에 문의하세요",
+        "이메일을 보내실 때 사용하시는 기기, 시스템 버전, 앱 버전, 문제 해결 단계, 그리고 문제가 재현 가능한지 여부를 명시해 주시기 바랍니다."
+      ]
+    ]
+  },
+  "fr": {
+    "languageLabel": "langue",
+    "eyebrow": "LuminaSage, une artiste portraitiste, est disponible pour iPhone, iPad et Mac.",
+    "title": "soutien",
+    "intro": "Si vous rencontrez des problèmes lors de l'importation d'images, du marquage avec des pinceaux, de la réparation locale par IA, de l'enregistrement ou de l'exportation, veuillez nous contacter par e-mail et essayez d'inclure le modèle de votre appareil, la version du système, la version de l'application et une description du problème.",
+    "emailLabel": "Adresse électronique de contact",
+    "sections": [
+      [
+        "Foire aux questions",
+        [
+          [
+            "L'image va-t-elle télécharger ma photo ?",
+            "Non. La version actuelle traite localement sur l'appareil l'image, le masque et les résultats de réparation sélectionnés par l'utilisateur."
+          ],
+          [
+            "Quelles images dois-je utiliser ?",
+            "Veuillez ne traiter que les images dont vous détenez les droits d'auteur, pour lesquelles vous avez obtenu l'autorisation ou que vous êtes autorisé à modifier. Ne les utilisez pas pour supprimer les filigranes de droits d'auteur, les logos de plateformes ou les mentions de droits que vous n'êtes pas autorisé à modifier."
+          ],
+          [
+            "Comment importer des photos sur iPhone et iPad ?",
+            "Sur iPhone et iPad, l'application sélectionne les images de l'application Photos à l'aide du sélecteur de photos du système et enregistre les résultats dans l'application Photos lorsque l'utilisateur les sélectionne activement."
+          ],
+          [
+            "Comment importer des images sur un Mac ?",
+            "La version Mac prend en charge le sélecteur de fichiers système, l'importation par glisser-déposer et le panneau d'exportation pour enregistrer les résultats."
+          ],
+          [
+            "Pourquoi les résultats des réparations diffèrent-ils ?",
+            "Les résultats de la retouche d'image dépendent du contenu de l'image, de la zone de masquage et des détails des contours. Il est généralement conseillé de ne marquer que les zones à corriger et d'éviter de retoucher une trop grande surface en une seule fois."
+          ]
+        ]
+      ],
+      [
+        "politique de confidentialité",
+        "Vous pouvez consulter la politique de confidentialité ici : ${privacyLink}"
+      ],
+      [
+        "Contacter l'assistance",
+        "Lors de l'envoi de l'e-mail, veuillez préciser votre appareil, la version du système, la version de l'application, les étapes de manipulation et si le problème peut être reproduit de manière fiable."
+      ]
+    ]
+  },
+  "de": {
+    "languageLabel": "Sprache",
+    "eyebrow": "LuminaSage, eine Porträtkünstlerin, ist für iPhone, iPad und Mac erhältlich.",
+    "title": "Unterstützung",
+    "intro": "Sollten beim Importieren von Bildern, Markieren mit Pinseln, der lokalen KI-Reparatur, dem Speichern oder Exportieren Probleme auftreten, kontaktieren Sie uns bitte per E-Mail und geben Sie dabei bitte Ihr Gerätemodell, die Systemversion, die App-Version und eine Beschreibung des Problems an.",
+    "emailLabel": "Kontakt-E-Mail",
+    "sections": [
+      [
+        "Häufig gestellte Fragen",
+        [
+          [
+            "Wird das Bild mein Foto hochladen?",
+            "Nein. Die aktuelle Version verarbeitet das vom Benutzer ausgewählte Bild, die Maske und die Reparaturergebnisse lokal auf dem Gerät."
+          ],
+          [
+            "Welche Bilder soll ich verwenden?",
+            "Bitte bearbeiten Sie nur Bilder, an denen Sie die Urheberrechte besitzen, für die Sie eine Genehmigung haben oder die Sie bearbeiten dürfen. Verwenden Sie sie nicht, um Urheberrechtsvermerke, Plattformlogos oder Rechtehinweise zu entfernen, zu deren Änderung Sie nicht berechtigt sind."
+          ],
+          [
+            "Wie importiere ich Bilder auf mein iPhone und iPad?",
+            "Auf iPhone und iPad wählt die App mithilfe der Systemfotoauswahl Bilder aus der Fotos-App aus und speichert die Ergebnisse in der Fotos-App, wenn der Benutzer sie aktiv auswählt."
+          ],
+          [
+            "Wie importiere ich Bilder auf einen Mac?",
+            "Die Mac-Version unterstützt die Systemdateiauswahl, Drag-and-Drop-Import und ein Exportfenster zum Speichern der Ergebnisse."
+          ],
+          [
+            "Warum unterscheiden sich die Reparaturergebnisse?",
+            "Das Ergebnis der Bildvervollständigung hängt vom Bildinhalt, dem Maskierungsbereich und den Kantendetails ab. Generell empfiehlt es sich, nur die zu reparierenden Bereiche zu markieren und nicht zu große Flächen auf einmal zu übermalen."
+          ]
+        ]
+      ],
+      [
+        "Datenschutzrichtlinie",
+        "Die Datenschutzerklärung können Sie hier einsehen: ${privacyLink}"
+      ],
+      [
+        "Kontaktieren Sie den Support.",
+        "Bitte geben Sie bei der E-Mail Ihr Gerät, die Systemversion, die App-Version, die Bedienungsschritte und an, ob das Problem zuverlässig reproduziert werden kann."
+      ]
+    ]
+  },
+  "es": {
+    "languageLabel": "idioma",
+    "eyebrow": "LuminaSage, un programa para crear retratos, está disponible para iPhone, iPad y Mac.",
+    "title": "apoyo",
+    "intro": "Si encuentra algún problema al importar imágenes, marcar con pinceles, reparar la IA local, guardar o exportar, póngase en contacto con nosotros por correo electrónico e intente incluir el modelo de su dispositivo, la versión del sistema, la versión de la aplicación y una descripción del problema.",
+    "emailLabel": "Correo electrónico de contacto",
+    "sections": [
+      [
+        "Preguntas frecuentes",
+        [
+          [
+            "¿Se subirá la imagen a mi foto?",
+            "No. La versión actual procesa la imagen, la máscara y los resultados de reparación seleccionados por el usuario localmente en el dispositivo."
+          ],
+          [
+            "¿Qué imágenes debo usar?",
+            "Solo procese imágenes de las que posea los derechos de autor, para las que haya obtenido autorización o para las que tenga derecho a editar. No las utilice para eliminar marcas de agua de derechos de autor, logotipos de plataformas o avisos de derechos que no tenga derecho a modificar."
+          ],
+          [
+            "¿Cómo importar fotos a un iPhone y un iPad?",
+            "En iPhone y iPad, la aplicación selecciona imágenes de la aplicación Fotos mediante el selector de fotos del sistema y guarda los resultados en la aplicación Fotos cuando el usuario los selecciona activamente."
+          ],
+          [
+            "¿Cómo importo imágenes a una Mac?",
+            "La versión para Mac es compatible con el selector de archivos del sistema, la importación mediante arrastrar y soltar, y el panel de exportación para guardar los resultados."
+          ],
+          [
+            "¿Por qué difieren los resultados de la reparación?",
+            "Los resultados del retoque de imágenes se ven afectados por el contenido de la imagen, el área de enmascaramiento y los detalles de los bordes. Generalmente, se recomienda marcar solo las áreas que necesitan reparación y evitar pintar sobre un área demasiado grande a la vez."
+          ]
+        ]
+      ],
+      [
+        "política de privacidad",
+        "Puedes consultar la política de privacidad aquí: ${privacyLink}"
+      ],
+      [
+        "Contactar con soporte",
+        "Al enviar el correo electrónico, especifique su dispositivo, la versión del sistema, la versión de la aplicación, los pasos a seguir y si el problema se puede reproducir de forma fiable."
+      ]
+    ]
+  },
+  "pt": {
+    "languageLabel": "linguagem",
+    "eyebrow": "LuminaSage, um aplicativo de retratos, está disponível para iPhone, iPad e Mac.",
+    "title": "apoiar",
+    "intro": "Caso encontre algum problema ao importar imagens, marcar com pincéis, realizar reparos locais com IA, salvar ou exportar, entre em contato conosco por e-mail e tente incluir o modelo do seu dispositivo, a versão do sistema, a versão do aplicativo e uma descrição do problema.",
+    "emailLabel": "E-mail para contato",
+    "sections": [
+      [
+        "Perguntas frequentes",
+        [
+          [
+            "A imagem será carregada com a minha foto?",
+            "Não. A versão atual processa a imagem selecionada pelo usuário, a máscara e os resultados do reparo localmente no dispositivo."
+          ],
+          [
+            "Que imagens devo usar?",
+            "Por favor, processe apenas imagens para as quais você detém os direitos autorais, obteve autorização ou tem o direito de editar. Não as utilize para remover marcas d'água de direitos autorais, logotipos de plataformas ou avisos de direitos que você não tem o direito de modificar."
+          ],
+          [
+            "Como importar fotos para o iPhone e iPad?",
+            "No iPhone e iPad, o aplicativo seleciona imagens do aplicativo Fotos usando o seletor de fotos do sistema e salva os resultados no aplicativo Fotos quando o usuário os seleciona ativamente."
+          ],
+          [
+            "Como faço para importar imagens para um Mac?",
+            "A versão para Mac oferece suporte ao seletor de arquivos do sistema, à importação por arrastar e soltar e ao painel de exportação para salvar os resultados."
+          ],
+          [
+            "Por que os resultados dos reparos são diferentes?",
+            "Os resultados da conclusão da imagem são afetados pelo conteúdo da imagem, pela área de mascaramento e pelos detalhes das bordas. Geralmente, recomenda-se marcar apenas as áreas que precisam de reparo e evitar pintar sobre uma área muito grande de uma só vez."
+          ]
+        ]
+      ],
+      [
+        "política de Privacidade",
+        "Você pode consultar a política de privacidade aqui: ${privacyLink}"
+      ],
+      [
+        "Contate o suporte",
+        "Ao enviar o e-mail, especifique seu dispositivo, versão do sistema, versão do aplicativo, etapas de operação e se o problema pode ser reproduzido de forma consistente."
+      ]
+    ]
+  }
+};
+    function hydrateLinks(value) {
+      return String(value)
+        .replaceAll('${privacyLink}', privacyLink)
+        .replaceAll('PRIVACY_URL_PLACEHOLDER', privacyLink);
+    }
     function build(locale) {
-      const base = translations[locale] || translations.en;
-      const t = { ...base };
-      if (!translations[locale] && fallback[locale]) {
-        t.languageLabel = fallback[locale][0];
-        t.eyebrow = fallback[locale][1];
-        t.title = fallback[locale][2];
-      }
+      const t = translations[locale] || translations.en;
       document.documentElement.lang = locale;
+      document.documentElement.dir = locale === 'ar' ? 'rtl' : 'ltr';
       document.title = t.title + ' - LuminaSage';
       document.getElementById('languageLabel').textContent = t.languageLabel;
       document.querySelector('[data-i18n="eyebrow"]').textContent = t.eyebrow;
@@ -153,13 +443,11 @@
       document.querySelector('[data-i18n="intro"]').textContent = t.intro;
       document.querySelector('[data-i18n="emailLabel"]').textContent = t.emailLabel;
       document.getElementById('content').innerHTML = t.sections.map(([title, body]) => {
-        if (Array.isArray(body)) {
-          return `<section><h2>${title}</h2>${body.map(([q, a]) => `<h3>${q}</h3><p>${a}</p>`).join('')}</section>`;
-        }
-        return `<section><h2>${title}</h2><p>${body}</p></section>`;
+        if (Array.isArray(body)) { return `<section><h2>${hydrateLinks(title)}</h2>${body.map(([q, a]) => `<h3>${hydrateLinks(q)}</h3><p>${hydrateLinks(a)}</p>`).join('')}</section>`; }
+        return `<section><h2>${hydrateLinks(title)}</h2><p>${hydrateLinks(body)}</p></section>`;
       }).join('');
     }
-    document.getElementById('languageSelect').addEventListener('change', (event) => build(event.target.value));
+    document.getElementById('languageSelect').addEventListener('change', event => build(event.target.value));
     build('zh-Hans');
   </script>
 </body>
