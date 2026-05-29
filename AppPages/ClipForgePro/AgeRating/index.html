@@ -1,59 +1,155 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-Hans">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ClipForge Pro Age Rating Information</title>
-  <meta name="description" content="Age rating information for ClipForge Pro, a local video compression and conversion app for Mac.">
+  <title>影锻 年龄分级说明 | ClipForge Pro Age Rating</title>
+  <meta name="description" content="影锻（ClipForge Pro）年龄分级说明：本地视频压缩、格式转换和音频导出工具，建议 App Store 年龄分级 4+。">
   <style>
     :root {
       color-scheme: dark light;
-      --bg: #09111f;
-      --panel: rgba(15, 23, 42, 0.82);
+      --bg: #0b111c;
+      --panel: rgba(17, 24, 39, 0.88);
+      --card: rgba(30, 41, 59, 0.72);
       --text: #f8fafc;
       --muted: #cbd5e1;
-      --line: rgba(148, 163, 184, 0.24);
+      --line: rgba(148, 163, 184, 0.26);
       --accent: #38bdf8;
+      --accent-strong: #67e8f9;
       --ok: #67e8f9;
     }
+
     @media (prefers-color-scheme: light) {
       :root {
         --bg: #f8fafc;
-        --panel: rgba(255, 255, 255, 0.92);
+        --panel: rgba(255, 255, 255, 0.95);
+        --card: #eef6fb;
         --text: #0f172a;
         --muted: #334155;
         --line: rgba(15, 23, 42, 0.16);
         --accent: #0369a1;
+        --accent-strong: #0f766e;
         --ok: #047857;
       }
     }
+
     * { box-sizing: border-box; }
+
     body {
       margin: 0;
       min-height: 100vh;
       font-family: Inter, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
-      line-height: 1.65;
+      line-height: 1.68;
       color: var(--text);
-      background: var(--bg);
+      background:
+        radial-gradient(circle at 18% 0%, rgba(56, 189, 248, 0.20), transparent 32rem),
+        radial-gradient(circle at 92% 12%, rgba(20, 184, 166, 0.14), transparent 30rem),
+        var(--bg);
     }
-    .page { width: min(900px, calc(100% - 40px)); margin: 0 auto; padding: 56px 0; }
+
+    a { color: var(--accent); }
+
+    .page {
+      width: min(960px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 44px 0;
+    }
+
     .document {
-      padding: clamp(24px, 5vw, 48px);
+      padding: clamp(22px, 5vw, 48px);
       border: 1px solid var(--line);
       border-radius: 18px;
       background: var(--panel);
-      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.22);
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.24);
     }
-    h1, h2 { line-height: 1.15; letter-spacing: 0; }
-    h1 { margin: 0 0 10px; font-size: clamp(2rem, 5vw, 3.4rem); font-weight: 700; }
-    h2 { margin: 34px 0 12px; font-size: 1.18rem; font-weight: 700; }
-    p, li, td, th { color: var(--muted); font-size: 1rem; }
-    a { color: var(--accent); }
-    table { width: 100%; border-collapse: collapse; overflow: hidden; border: 1px solid var(--line); border-radius: 14px; }
-    th, td { padding: 12px 14px; border-bottom: 1px solid var(--line); text-align: left; }
+
+    .topbar {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 26px;
+    }
+
+    .eyebrow {
+      margin: 0;
+      color: var(--accent-strong);
+      font-weight: 700;
+    }
+
+    .language-control {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+    }
+
+    .language-control label {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    select {
+      max-width: 210px;
+      padding: 8px 32px 8px 10px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      color: var(--text);
+      background: var(--card);
+      font: inherit;
+    }
+
+    h1, h2 {
+      line-height: 1.16;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(2rem, 5vw, 3.35rem);
+      font-weight: 760;
+    }
+
+    h2 {
+      margin: 34px 0 12px;
+      font-size: 1.18rem;
+      font-weight: 730;
+    }
+
+    p, li, td, th {
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+    }
+
+    th, td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+
     tr:last-child td { border-bottom: 0; }
-    th { color: var(--text); background: rgba(148, 163, 184, 0.12); font-weight: 700; }
-    .eyebrow { margin: 0 0 26px; color: var(--accent); font-weight: 700; }
+
+    th {
+      color: var(--text);
+      background: var(--card);
+      font-weight: 730;
+    }
+
+    .updated {
+      margin-top: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
     .rating {
       display: inline-flex;
       align-items: center;
@@ -64,54 +160,542 @@
       border-radius: 999px;
       color: var(--ok);
       background: color-mix(in srgb, var(--ok) 10%, transparent);
-      font-weight: 700;
+      font-weight: 760;
     }
-    .updated { margin-top: 0; color: var(--muted); font-size: 0.95rem; }
-    .zh { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--line); }
+
+    [dir="rtl"] .document {
+      text-align: right;
+    }
+
+    [dir="rtl"] th,
+    [dir="rtl"] td {
+      text-align: right;
+    }
+
+    @media (max-width: 640px) {
+      .page { width: min(100% - 24px, 960px); padding: 18px 0; }
+      .topbar { flex-direction: column; }
+      .language-control { width: 100%; justify-content: space-between; }
+      select { width: min(100%, 260px); }
+      th, td { padding: 10px; }
+    }
   </style>
 </head>
 <body>
   <main class="page">
     <article class="document">
-      <p class="eyebrow">ClipForge Pro for Mac / 影锻</p>
-      <h1>Age Rating Information</h1>
-      <p class="updated">Last updated: May 27, 2026</p>
+      <div class="topbar">
+        <p class="eyebrow">ClipForge Pro for Mac / 影锻</p>
+        <div class="language-control">
+          <label for="languageSelect" id="languageLabel">语言</label>
+          <select id="languageSelect" aria-label="Language">
+            <option value="zh-Hans">简体中文</option>
+            <option value="en">English</option>
+            <option value="zh-Hant">繁體中文</option>
+            <option value="ja">日本語</option>
+            <option value="ko">한국어</option>
+            <option value="es">Español</option>
+            <option value="fr">Français</option>
+            <option value="de">Deutsch</option>
+            <option value="pt-BR">Português (Brasil)</option>
+            <option value="it">Italiano</option>
+            <option value="ru">Русский</option>
+            <option value="ar">العربية</option>
+            <option value="hi">हिन्दी</option>
+            <option value="id">Bahasa Indonesia</option>
+            <option value="th">ไทย</option>
+            <option value="vi">Tiếng Việt</option>
+          </select>
+        </div>
+      </div>
 
-      <p>ClipForge Pro is a local video compression, conversion, audio extraction, and lightweight editing utility for Mac. It is intended for general audiences and does not include social feeds, chat, gambling, advertising, user-generated public content, or unrestricted web browsing.</p>
-
-      <div class="rating">Recommended App Store Age Rating: 4+</div>
-
-      <h2>Content Summary</h2>
-      <table>
-        <tr><th>Category</th><th>ClipForge Pro Status</th></tr>
-        <tr><td>Mature or suggestive themes</td><td>None</td></tr>
-        <tr><td>Violence, horror, or fear content</td><td>None</td></tr>
-        <tr><td>Medical or regulated wellness content</td><td>None</td></tr>
-        <tr><td>Gambling, contests, or probability-based activities</td><td>None</td></tr>
-        <tr><td>User-generated content, chat, or public posting</td><td>Not included</td></tr>
-        <tr><td>Advertising or third-party ad networks</td><td>Not included</td></tr>
-        <tr><td>Unrestricted web access</td><td>Not included</td></tr>
-        <tr><td>In-app purchases or subscriptions</td><td>Not included</td></tr>
-      </table>
-
-      <h2>Intended Use</h2>
-      <p>The app helps users compress, convert, trim, rotate, crop, merge, and export local media files. These features are productivity and media utility workflows.</p>
-
-      <h2>Privacy and Safety</h2>
-      <p>ClipForge Pro does not require an account, does not include tracking SDKs, and processes selected files locally on the user's Mac. Read the privacy policy here: <a href="https://kibernet.github.io/HomePage/AppPages/ClipForgePro/Privacy/index.html">Privacy Policy</a>.</p>
-
-      <h2>Contact</h2>
-      <p>For questions about this age rating information, contact us at <a href="mailto:kibernet@sina.com">kibernet@sina.com</a>.</p>
-
-      <section class="zh" lang="zh-Hans">
+      <div id="content">
         <h1>年龄分级说明</h1>
-        <p class="updated">最后更新：2026 年 5 月 27 日</p>
-        <p>影锻是一款 Mac 本地视频压缩、格式转换、音频提取和轻量剪辑工具，面向普通用户使用。App 不包含社交信息流、聊天、赌博、广告、公开用户生成内容或不受限制的网页浏览。</p>
+        <p class="updated">最后更新：2026 年 5 月 29 日</p>
+        <p>影锻（ClipForge Pro）是一款 Mac 本地视频压缩、格式转换、音频提取和轻量剪辑工具，面向普通用户使用。App 不包含社交信息流、聊天、赌博、广告、公开用户生成内容或不受限制的网页浏览。</p>
         <div class="rating">建议 App Store 年龄分级：4+</div>
-        <h2>内容说明</h2>
-        <p>App 不包含成人主题、暴力、恐怖、医疗治疗信息、赌博、竞赛、广告网络、内购订阅、公开发布或社交内容。主要用途是处理用户本机选择的媒体文件。</p>
-      </section>
+        <h2>内容摘要</h2>
+        <table>
+          <tr><th>类别</th><th>状态</th></tr>
+          <tr><td>成人或暗示性主题</td><td>无</td></tr>
+          <tr><td>暴力、恐怖或惊吓内容</td><td>无</td></tr>
+          <tr><td>医疗或受监管健康内容</td><td>无</td></tr>
+          <tr><td>赌博、竞赛或概率活动</td><td>无</td></tr>
+          <tr><td>用户生成内容、聊天或公开发布</td><td>不包含</td></tr>
+          <tr><td>广告或第三方广告网络</td><td>不包含</td></tr>
+          <tr><td>不受限制的网页访问</td><td>不包含</td></tr>
+          <tr><td>App 内购买或订阅</td><td>不包含</td></tr>
+        </table>
+        <h2>用途</h2>
+        <p>App 用于压缩、转换、剪辑、旋转、裁切、合并和导出用户本机选择的媒体文件，属于生产力和媒体工具类工作流。</p>
+        <h2>隐私与安全</h2>
+        <p>影锻不需要账号，不包含追踪 SDK，并在用户的 Mac 本机处理所选文件。隐私政策见：<a href="https://kibernet.github.io/HomePage/AppPages/ClipForgePro/Privacy/index.html">隐私政策</a>。</p>
+        <h2>联系方式</h2>
+        <p>如有年龄分级相关问题，请发送邮件至 <a href="mailto:kibernet@sina.com">kibernet@sina.com</a>。</p>
+      </div>
     </article>
   </main>
+
+  <script>
+    const email = '<a href="mailto:kibernet@sina.com">kibernet@sina.com</a>';
+    const privacyLink = '<a href="https://kibernet.github.io/HomePage/AppPages/ClipForgePro/Privacy/index.html">Privacy Policy</a>';
+    const pages = {
+      'zh-Hans': {
+        dir: 'ltr',
+        langLabel: '语言',
+        title: '影锻 年龄分级说明 | ClipForge Pro Age Rating',
+        meta: '影锻（ClipForge Pro）年龄分级说明：本地视频压缩、格式转换和音频导出工具，建议 App Store 年龄分级 4+。',
+        h1: '年龄分级说明',
+        updated: '最后更新：2026 年 5 月 29 日',
+        intro: '影锻（ClipForge Pro）是一款 Mac 本地视频压缩、格式转换、音频提取和轻量剪辑工具，面向普通用户使用。App 不包含社交信息流、聊天、赌博、广告、公开用户生成内容或不受限制的网页浏览。',
+        rating: '建议 App Store 年龄分级：4+',
+        summaryTitle: '内容摘要',
+        headers: ['类别', '状态'],
+        rows: [
+          ['成人或暗示性主题', '无'],
+          ['暴力、恐怖或惊吓内容', '无'],
+          ['医疗或受监管健康内容', '无'],
+          ['赌博、竞赛或概率活动', '无'],
+          ['用户生成内容、聊天或公开发布', '不包含'],
+          ['广告或第三方广告网络', '不包含'],
+          ['不受限制的网页访问', '不包含'],
+          ['App 内购买或订阅', '不包含']
+        ],
+        sections: [
+          ['用途', 'App 用于压缩、转换、剪辑、旋转、裁切、合并和导出用户本机选择的媒体文件，属于生产力和媒体工具类工作流。'],
+          ['隐私与安全', '影锻不需要账号，不包含追踪 SDK，并在用户的 Mac 本机处理所选文件。隐私政策见：<a href="https://kibernet.github.io/HomePage/AppPages/ClipForgePro/Privacy/index.html">隐私政策</a>。'],
+          ['联系方式', `如有年龄分级相关问题，请发送邮件至 ${email}。`]
+        ]
+      },
+      en: {
+        dir: 'ltr',
+        langLabel: 'Language',
+        title: 'ClipForge Pro Age Rating Information',
+        meta: 'Age rating information for ClipForge Pro, a local video compression, conversion, and audio export app for Mac.',
+        h1: 'Age Rating Information',
+        updated: 'Last updated: May 29, 2026',
+        intro: 'ClipForge Pro is a local video compression, conversion, audio extraction, and lightweight editing utility for Mac. It is intended for general audiences and does not include social feeds, chat, gambling, advertising, user-generated public content, or unrestricted web browsing.',
+        rating: 'Recommended App Store Age Rating: 4+',
+        summaryTitle: 'Content Summary',
+        headers: ['Category', 'Status'],
+        rows: [
+          ['Mature or suggestive themes', 'None'],
+          ['Violence, horror, or fear content', 'None'],
+          ['Medical or regulated wellness content', 'None'],
+          ['Gambling, contests, or probability-based activities', 'None'],
+          ['User-generated content, chat, or public posting', 'Not included'],
+          ['Advertising or third-party ad networks', 'Not included'],
+          ['Unrestricted web access', 'Not included'],
+          ['In-app purchases or subscriptions', 'Not included']
+        ],
+        sections: [
+          ['Intended Use', 'The app helps users compress, convert, trim, rotate, crop, merge, and export local media files. These features are productivity and media utility workflows.'],
+          ['Privacy and Safety', `ClipForge Pro does not require an account, does not include tracking SDKs, and processes selected files locally on the user's Mac. Read the privacy policy here: ${privacyLink}.`],
+          ['Contact', `For questions about this age rating information, contact us at ${email}.`]
+        ]
+      },
+      'zh-Hant': {
+        dir: 'ltr',
+        langLabel: '語言',
+        title: '影鍛 年齡分級說明 | ClipForge Pro Age Rating',
+        meta: '影鍛（ClipForge Pro）年齡分級說明：本機影片壓縮、格式轉換與音訊匯出工具，建議 App Store 年齡分級 4+。',
+        h1: '年齡分級說明',
+        updated: '最後更新：2026 年 5 月 29 日',
+        intro: '影鍛（ClipForge Pro）是一款 Mac 本機影片壓縮、格式轉換、音訊擷取和輕量剪輯工具，面向一般使用者。App 不包含社交動態、聊天、賭博、廣告、公開使用者生成內容或不受限制的網頁瀏覽。',
+        rating: '建議 App Store 年齡分級：4+',
+        summaryTitle: '內容摘要',
+        headers: ['類別', '狀態'],
+        rows: [
+          ['成人或暗示性主題', '無'],
+          ['暴力、恐怖或驚嚇內容', '無'],
+          ['醫療或受監管健康內容', '無'],
+          ['賭博、競賽或機率活動', '無'],
+          ['使用者生成內容、聊天或公開發布', '不包含'],
+          ['廣告或第三方廣告網路', '不包含'],
+          ['不受限制的網頁存取', '不包含'],
+          ['App 內購買或訂閱', '不包含']
+        ],
+        sections: [
+          ['用途', 'App 用於壓縮、轉換、剪輯、旋轉、裁切、合併和匯出使用者本機選擇的媒體檔案，屬於生產力和媒體工具工作流程。'],
+          ['隱私與安全', '影鍛不需要帳號，不包含追蹤 SDK，並在使用者的 Mac 本機處理所選檔案。隱私政策請見：<a href="https://kibernet.github.io/HomePage/AppPages/ClipForgePro/Privacy/index.html">隱私政策</a>。'],
+          ['聯絡方式', `如有年齡分級相關問題，請寄信至 ${email}。`]
+        ]
+      },
+      ja: {
+        dir: 'ltr',
+        langLabel: '言語',
+        title: 'ClipForge Pro 年齢レーティング情報',
+        meta: 'ClipForge Pro の年齢レーティング情報。Mac 用ローカル動画圧縮、変換、音声書き出しアプリです。',
+        h1: '年齢レーティング情報',
+        updated: '最終更新日：2026年5月29日',
+        intro: 'ClipForge Pro は Mac 用のローカル動画圧縮、変換、音声抽出、軽量編集ユーティリティです。一般向けであり、ソーシャルフィード、チャット、ギャンブル、広告、公開ユーザー生成コンテンツ、無制限のウェブ閲覧は含まれません。',
+        rating: '推奨 App Store 年齢レーティング：4+',
+        summaryTitle: 'コンテンツ概要',
+        headers: ['カテゴリ', '状態'],
+        rows: [
+          ['成人向けまたは示唆的なテーマ', 'なし'],
+          ['暴力、ホラー、不安を与える内容', 'なし'],
+          ['医療または規制対象の健康情報', 'なし'],
+          ['ギャンブル、コンテスト、確率に基づく活動', 'なし'],
+          ['ユーザー生成コンテンツ、チャット、公開投稿', '含まれません'],
+          ['広告または第三者広告ネットワーク', '含まれません'],
+          ['無制限のウェブアクセス', '含まれません'],
+          ['アプリ内課金またはサブスクリプション', '含まれません']
+        ],
+        sections: [
+          ['用途', 'このアプリは、ユーザーがローカルで選択したメディアファイルの圧縮、変換、トリミング、回転、切り抜き、結合、書き出しを支援する生産性およびメディアユーティリティです。'],
+          ['プライバシーと安全性', `ClipForge Pro はアカウントを必要とせず、トラッキング SDK を含まず、選択したファイルを Mac 上でローカルに処理します。プライバシーポリシー：${privacyLink}.`],
+          ['お問い合わせ', `年齢レーティングに関する質問は ${email} までご連絡ください。`]
+        ]
+      },
+      ko: {
+        dir: 'ltr',
+        langLabel: '언어',
+        title: 'ClipForge Pro 연령 등급 정보',
+        meta: 'Mac용 로컬 비디오 압축, 변환, 오디오 추출 앱 ClipForge Pro의 연령 등급 정보입니다.',
+        h1: '연령 등급 정보',
+        updated: '최종 업데이트: 2026년 5월 29일',
+        intro: 'ClipForge Pro는 Mac용 로컬 비디오 압축, 변환, 오디오 추출 및 간단한 편집 유틸리티입니다. 일반 사용자를 위한 앱이며 소셜 피드, 채팅, 도박, 광고, 공개 사용자 생성 콘텐츠 또는 제한 없는 웹 탐색을 포함하지 않습니다.',
+        rating: '권장 App Store 연령 등급: 4+',
+        summaryTitle: '콘텐츠 요약',
+        headers: ['카테고리', '상태'],
+        rows: [
+          ['성인 또는 선정적 주제', '없음'],
+          ['폭력, 공포 또는 두려움 콘텐츠', '없음'],
+          ['의료 또는 규제 대상 건강 콘텐츠', '없음'],
+          ['도박, 경연 또는 확률 기반 활동', '없음'],
+          ['사용자 생성 콘텐츠, 채팅 또는 공개 게시', '포함되지 않음'],
+          ['광고 또는 타사 광고 네트워크', '포함되지 않음'],
+          ['제한 없는 웹 접근', '포함되지 않음'],
+          ['앱 내 구입 또는 구독', '포함되지 않음']
+        ],
+        sections: [
+          ['용도', '앱은 사용자가 로컬에서 선택한 미디어 파일을 압축, 변환, 트리밍, 회전, 자르기, 병합 및 내보내는 생산성 및 미디어 유틸리티 워크플로입니다.'],
+          ['개인정보 및 안전', `ClipForge Pro는 계정을 요구하지 않고 추적 SDK를 포함하지 않으며 선택한 파일을 사용자의 Mac에서 로컬로 처리합니다. 개인정보 처리방침: ${privacyLink}.`],
+          ['문의', `연령 등급 정보 관련 질문은 ${email} 으로 문의해 주세요.`]
+        ]
+      },
+      es: {
+        dir: 'ltr',
+        langLabel: 'Idioma',
+        title: 'Información de clasificación por edad de ClipForge Pro',
+        meta: 'Información de clasificación por edad de ClipForge Pro para Mac.',
+        h1: 'Información de clasificación por edad',
+        updated: 'Última actualización: 29 de mayo de 2026',
+        intro: 'ClipForge Pro es una utilidad local para Mac de compresión, conversión, extracción de audio y edición ligera. Está destinada a público general y no incluye redes sociales, chat, apuestas, publicidad, contenido público generado por usuarios ni navegación web sin restricciones.',
+        rating: 'Clasificación recomendada en App Store: 4+',
+        summaryTitle: 'Resumen de contenido',
+        headers: ['Categoría', 'Estado'],
+        rows: [
+          ['Temas maduros o sugerentes', 'Ninguno'],
+          ['Violencia, terror o miedo', 'Ninguno'],
+          ['Contenido médico o de bienestar regulado', 'Ninguno'],
+          ['Apuestas, concursos o actividades de probabilidad', 'Ninguno'],
+          ['Contenido generado por usuarios, chat o publicación pública', 'No incluido'],
+          ['Publicidad o redes publicitarias de terceros', 'No incluido'],
+          ['Acceso web sin restricciones', 'No incluido'],
+          ['Compras dentro de la app o suscripciones', 'No incluido']
+        ],
+        sections: [
+          ['Uso previsto', 'La app ayuda a comprimir, convertir, recortar, rotar, encuadrar, combinar y exportar archivos locales. Son flujos de productividad y utilidad multimedia.'],
+          ['Privacidad y seguridad', `ClipForge Pro no requiere cuenta, no incluye SDK de seguimiento y procesa archivos seleccionados localmente en el Mac. Política de privacidad: ${privacyLink}.`],
+          ['Contacto', `Para preguntas sobre esta información, escríbenos a ${email}.`]
+        ]
+      },
+      fr: {
+        dir: 'ltr',
+        langLabel: 'Langue',
+        title: 'Informations de classification d’âge de ClipForge Pro',
+        meta: 'Informations de classification d’âge de ClipForge Pro pour Mac.',
+        h1: 'Informations de classification d’âge',
+        updated: 'Dernière mise à jour : 29 mai 2026',
+        intro: 'ClipForge Pro est un utilitaire Mac local de compression vidéo, conversion, extraction audio et édition légère. Il s’adresse au grand public et n’inclut pas de flux social, chat, jeu d’argent, publicité, contenu public généré par l’utilisateur ni navigation web sans restriction.',
+        rating: 'Classification App Store recommandée : 4+',
+        summaryTitle: 'Résumé du contenu',
+        headers: ['Catégorie', 'Statut'],
+        rows: [
+          ['Thèmes adultes ou suggestifs', 'Aucun'],
+          ['Violence, horreur ou peur', 'Aucun'],
+          ['Contenu médical ou bien-être réglementé', 'Aucun'],
+          ['Jeux d’argent, concours ou hasard', 'Aucun'],
+          ['Contenu utilisateur, chat ou publication publique', 'Non inclus'],
+          ['Publicité ou réseaux publicitaires tiers', 'Non inclus'],
+          ['Accès web sans restriction', 'Non inclus'],
+          ['Achats intégrés ou abonnements', 'Non inclus']
+        ],
+        sections: [
+          ['Utilisation prévue', 'L’app aide à compresser, convertir, découper, faire pivoter, recadrer, fusionner et exporter des fichiers locaux. Ces fonctions relèvent de la productivité et de l’utilitaire média.'],
+          ['Confidentialité et sécurité', `ClipForge Pro ne nécessite pas de compte, n’inclut pas de SDK de suivi et traite les fichiers sélectionnés localement sur le Mac. Politique de confidentialité : ${privacyLink}.`],
+          ['Contact', `Pour toute question, contactez-nous à ${email}.`]
+        ]
+      },
+      de: {
+        dir: 'ltr',
+        langLabel: 'Sprache',
+        title: 'Informationen zur Altersfreigabe von ClipForge Pro',
+        meta: 'Informationen zur Altersfreigabe von ClipForge Pro für Mac.',
+        h1: 'Informationen zur Altersfreigabe',
+        updated: 'Zuletzt aktualisiert: 29. Mai 2026',
+        intro: 'ClipForge Pro ist ein lokales Mac-Werkzeug für Videokomprimierung, Konvertierung, Audioextraktion und einfache Bearbeitung. Es richtet sich an allgemeine Nutzer und enthält keine sozialen Feeds, Chats, Glücksspiel, Werbung, öffentlich nutzergenerierte Inhalte oder uneingeschränktes Surfen.',
+        rating: 'Empfohlene App Store-Altersfreigabe: 4+',
+        summaryTitle: 'Inhaltsübersicht',
+        headers: ['Kategorie', 'Status'],
+        rows: [
+          ['Erwachsene oder suggestive Themen', 'Keine'],
+          ['Gewalt, Horror oder Angstinhalte', 'Keine'],
+          ['Medizinische oder regulierte Wellness-Inhalte', 'Keine'],
+          ['Glücksspiel, Wettbewerbe oder Zufallsaktivitäten', 'Keine'],
+          ['Nutzergenerierte Inhalte, Chat oder öffentliche Beiträge', 'Nicht enthalten'],
+          ['Werbung oder Werbenetzwerke Dritter', 'Nicht enthalten'],
+          ['Uneingeschränkter Webzugriff', 'Nicht enthalten'],
+          ['In-App-Käufe oder Abonnements', 'Nicht enthalten']
+        ],
+        sections: [
+          ['Vorgesehene Nutzung', 'Die App unterstützt Nutzer beim Komprimieren, Konvertieren, Schneiden, Drehen, Zuschneiden, Zusammenführen und Exportieren lokaler Mediendateien.'],
+          ['Datenschutz und Sicherheit', `ClipForge Pro benötigt kein Konto, enthält keine Tracking-SDKs und verarbeitet ausgewählte Dateien lokal auf dem Mac. Datenschutzerklärung: ${privacyLink}.`],
+          ['Kontakt', `Fragen zu dieser Altersfreigabe bitte an ${email} senden.`]
+        ]
+      },
+      'pt-BR': {
+        dir: 'ltr',
+        langLabel: 'Idioma',
+        title: 'Informações de classificação etária do ClipForge Pro',
+        meta: 'Informações de classificação etária do ClipForge Pro para Mac.',
+        h1: 'Informações de classificação etária',
+        updated: 'Última atualização: 29 de maio de 2026',
+        intro: 'ClipForge Pro é um utilitário local para Mac de compressão de vídeo, conversão, extração de áudio e edição leve. É destinado ao público geral e não inclui feed social, chat, jogos de azar, publicidade, conteúdo público gerado por usuários ou navegação irrestrita.',
+        rating: 'Classificação recomendada na App Store: 4+',
+        summaryTitle: 'Resumo de conteúdo',
+        headers: ['Categoria', 'Status'],
+        rows: [
+          ['Temas adultos ou sugestivos', 'Nenhum'],
+          ['Violência, terror ou medo', 'Nenhum'],
+          ['Conteúdo médico ou wellness regulado', 'Nenhum'],
+          ['Jogos de azar, concursos ou atividades de probabilidade', 'Nenhum'],
+          ['Conteúdo gerado por usuários, chat ou postagem pública', 'Não incluído'],
+          ['Publicidade ou redes de anúncios de terceiros', 'Não incluído'],
+          ['Acesso irrestrito à web', 'Não incluído'],
+          ['Compras no app ou assinaturas', 'Não incluído']
+        ],
+        sections: [
+          ['Uso previsto', 'O app ajuda a comprimir, converter, cortar, girar, recortar, mesclar e exportar arquivos locais. São fluxos de produtividade e utilidade de mídia.'],
+          ['Privacidade e segurança', `ClipForge Pro não exige conta, não inclui SDKs de rastreamento e processa arquivos selecionados localmente no Mac. Política de privacidade: ${privacyLink}.`],
+          ['Contato', `Dúvidas sobre esta informação podem ser enviadas para ${email}.`]
+        ]
+      },
+      it: {
+        dir: 'ltr',
+        langLabel: 'Lingua',
+        title: 'Informazioni sulla classificazione per età di ClipForge Pro',
+        meta: 'Informazioni sulla classificazione per età di ClipForge Pro per Mac.',
+        h1: 'Informazioni sulla classificazione per età',
+        updated: 'Ultimo aggiornamento: 29 maggio 2026',
+        intro: 'ClipForge Pro è un’utilità locale per Mac per compressione video, conversione, estrazione audio e modifiche leggere. È destinata al pubblico generale e non include feed social, chat, gioco d’azzardo, pubblicità, contenuti pubblici generati dagli utenti o navigazione web illimitata.',
+        rating: 'Classificazione App Store consigliata: 4+',
+        summaryTitle: 'Riepilogo contenuti',
+        headers: ['Categoria', 'Stato'],
+        rows: [
+          ['Temi maturi o suggestivi', 'Nessuno'],
+          ['Violenza, horror o contenuti spaventosi', 'Nessuno'],
+          ['Contenuti medici o benessere regolamentato', 'Nessuno'],
+          ['Gioco d’azzardo, concorsi o attività probabilistiche', 'Nessuno'],
+          ['Contenuti generati dagli utenti, chat o pubblicazione pubblica', 'Non incluso'],
+          ['Pubblicità o reti pubblicitarie di terze parti', 'Non incluso'],
+          ['Accesso web illimitato', 'Non incluso'],
+          ['Acquisti in-app o abbonamenti', 'Non incluso']
+        ],
+        sections: [
+          ['Uso previsto', 'L’app aiuta a comprimere, convertire, tagliare, ruotare, ritagliare, unire ed esportare file locali. Sono flussi di produttività e utilità multimediale.'],
+          ['Privacy e sicurezza', `ClipForge Pro non richiede account, non include SDK di tracciamento e processa i file selezionati localmente sul Mac. Informativa sulla privacy: ${privacyLink}.`],
+          ['Contatto', `Per domande su queste informazioni, scrivere a ${email}.`]
+        ]
+      },
+      ru: {
+        dir: 'ltr',
+        langLabel: 'Язык',
+        title: 'Информация о возрастном рейтинге ClipForge Pro',
+        meta: 'Информация о возрастном рейтинге ClipForge Pro для Mac.',
+        h1: 'Информация о возрастном рейтинге',
+        updated: 'Последнее обновление: 29 мая 2026 г.',
+        intro: 'ClipForge Pro — локальная утилита для Mac для сжатия видео, конвертации, извлечения аудио и простой правки. Она предназначена для широкой аудитории и не содержит социальных лент, чатов, азартных игр, рекламы, публичного пользовательского контента или неограниченного веб-доступа.',
+        rating: 'Рекомендуемый рейтинг App Store: 4+',
+        summaryTitle: 'Сводка содержимого',
+        headers: ['Категория', 'Статус'],
+        rows: [
+          ['Взрослые или suggestive темы', 'Нет'],
+          ['Насилие, ужасы или пугающий контент', 'Нет'],
+          ['Медицинский или регулируемый wellness-контент', 'Нет'],
+          ['Азартные игры, конкурсы или вероятностные активности', 'Нет'],
+          ['Пользовательский контент, чат или публичные публикации', 'Не включено'],
+          ['Реклама или сторонние рекламные сети', 'Не включено'],
+          ['Неограниченный веб-доступ', 'Не включено'],
+          ['Покупки в приложении или подписки', 'Не включено']
+        ],
+        sections: [
+          ['Назначение', 'Приложение помогает сжимать, конвертировать, обрезать, поворачивать, кадрировать, объединять и экспортировать локальные медиафайлы. Это рабочие процессы продуктивности и медиаутилиты.'],
+          ['Конфиденциальность и безопасность', `ClipForge Pro не требует аккаунта, не содержит SDK отслеживания и обрабатывает выбранные файлы локально на Mac. Политика конфиденциальности: ${privacyLink}.`],
+          ['Контакты', `Вопросы об этой информации можно отправить на ${email}.`]
+        ]
+      },
+      ar: {
+        dir: 'rtl',
+        langLabel: 'اللغة',
+        title: 'معلومات التصنيف العمري لـ ClipForge Pro',
+        meta: 'معلومات التصنيف العمري لتطبيق ClipForge Pro على Mac.',
+        h1: 'معلومات التصنيف العمري',
+        updated: 'آخر تحديث: 29 مايو 2026',
+        intro: 'ClipForge Pro أداة محلية على Mac لضغط الفيديو وتحويله واستخراج الصوت والتحرير الخفيف. التطبيق موجه للجمهور العام ولا يتضمن موجزات اجتماعية أو دردشة أو مقامرة أو إعلانات أو محتوى عاماً من المستخدمين أو تصفح ويب غير مقيّد.',
+        rating: 'التصنيف العمري المقترح في App Store: +4',
+        summaryTitle: 'ملخص المحتوى',
+        headers: ['الفئة', 'الحالة'],
+        rows: [
+          ['موضوعات ناضجة أو إيحائية', 'لا يوجد'],
+          ['عنف أو رعب أو محتوى مخيف', 'لا يوجد'],
+          ['محتوى طبي أو صحي منظّم', 'لا يوجد'],
+          ['مقامرة أو مسابقات أو أنشطة احتمالية', 'لا يوجد'],
+          ['محتوى من المستخدمين أو دردشة أو نشر عام', 'غير مضمن'],
+          ['إعلانات أو شبكات إعلانات خارجية', 'غير مضمن'],
+          ['وصول ويب غير مقيّد', 'غير مضمن'],
+          ['مشتريات داخل التطبيق أو اشتراكات', 'غير مضمن']
+        ],
+        sections: [
+          ['الاستخدام المقصود', 'يساعد التطبيق المستخدمين على ضغط الملفات المحلية وتحويلها وقصها وتدويرها واقتطاعها ودمجها وتصديرها، وهي وظائف إنتاجية وأدوات وسائط.'],
+          ['الخصوصية والسلامة', `لا يتطلب ClipForge Pro حساباً ولا يتضمن حزم SDK للتتبع ويعالج الملفات المحددة محلياً على Mac. سياسة الخصوصية: ${privacyLink}.`],
+          ['التواصل', `لأي أسئلة حول التصنيف العمري راسلنا على ${email}.`]
+        ]
+      },
+      hi: {
+        dir: 'ltr',
+        langLabel: 'भाषा',
+        title: 'ClipForge Pro आयु रेटिंग जानकारी',
+        meta: 'Mac के लिए ClipForge Pro की आयु रेटिंग जानकारी।',
+        h1: 'आयु रेटिंग जानकारी',
+        updated: 'अंतिम अपडेट: 29 मई 2026',
+        intro: 'ClipForge Pro Mac के लिए local video compression, conversion, audio extraction और lightweight editing utility है। यह general audiences के लिए है और इसमें social feeds, chat, gambling, advertising, public user-generated content या unrestricted web browsing शामिल नहीं है।',
+        rating: 'Recommended App Store Age Rating: 4+',
+        summaryTitle: 'Content Summary',
+        headers: ['Category', 'Status'],
+        rows: [
+          ['Mature or suggestive themes', 'None'],
+          ['Violence, horror, or fear content', 'None'],
+          ['Medical or regulated wellness content', 'None'],
+          ['Gambling, contests, or probability-based activities', 'None'],
+          ['User-generated content, chat, or public posting', 'Not included'],
+          ['Advertising or third-party ad networks', 'Not included'],
+          ['Unrestricted web access', 'Not included'],
+          ['In-app purchases or subscriptions', 'Not included']
+        ],
+        sections: [
+          ['Intended Use', 'ऐप local media files को compress, convert, trim, rotate, crop, merge और export करने में मदद करता है। ये productivity और media utility workflows हैं।'],
+          ['Privacy and Safety', `ClipForge Pro account नहीं मांगता, tracking SDK शामिल नहीं करता और selected files को user के Mac पर local process करता है। Privacy policy: ${privacyLink}.`],
+          ['Contact', `इस age rating information के बारे में प्रश्नों के लिए ${email} पर संपर्क करें।`]
+        ]
+      },
+      id: {
+        dir: 'ltr',
+        langLabel: 'Bahasa',
+        title: 'Informasi Rating Usia ClipForge Pro',
+        meta: 'Informasi rating usia ClipForge Pro untuk Mac.',
+        h1: 'Informasi Rating Usia',
+        updated: 'Terakhir diperbarui: 29 Mei 2026',
+        intro: 'ClipForge Pro adalah utilitas lokal untuk Mac untuk kompresi video, konversi, ekstraksi audio, dan pengeditan ringan. Ditujukan untuk pengguna umum dan tidak menyertakan feed sosial, chat, perjudian, iklan, konten publik buatan pengguna, atau akses web tanpa batas.',
+        rating: 'Rating usia App Store yang disarankan: 4+',
+        summaryTitle: 'Ringkasan Konten',
+        headers: ['Kategori', 'Status'],
+        rows: [
+          ['Tema dewasa atau sugestif', 'Tidak ada'],
+          ['Kekerasan, horor, atau konten menakutkan', 'Tidak ada'],
+          ['Konten medis atau wellness teregulasi', 'Tidak ada'],
+          ['Perjudian, kontes, atau aktivitas berbasis peluang', 'Tidak ada'],
+          ['Konten buatan pengguna, chat, atau posting publik', 'Tidak termasuk'],
+          ['Iklan atau jaringan iklan pihak ketiga', 'Tidak termasuk'],
+          ['Akses web tanpa batas', 'Tidak termasuk'],
+          ['Pembelian dalam app atau langganan', 'Tidak termasuk']
+        ],
+        sections: [
+          ['Penggunaan', 'Aplikasi membantu pengguna mengompres, mengonversi, memotong, memutar, crop, menggabungkan, dan mengekspor file media lokal. Ini adalah alur produktivitas dan utilitas media.'],
+          ['Privasi dan Keamanan', `ClipForge Pro tidak memerlukan akun, tidak menyertakan SDK pelacakan, dan memproses file terpilih secara lokal di Mac pengguna. Kebijakan privasi: ${privacyLink}.`],
+          ['Kontak', `Pertanyaan tentang informasi rating usia dapat dikirim ke ${email}.`]
+        ]
+      },
+      th: {
+        dir: 'ltr',
+        langLabel: 'ภาษา',
+        title: 'ข้อมูลการจัดระดับอายุ ClipForge Pro',
+        meta: 'ข้อมูลการจัดระดับอายุของ ClipForge Pro สำหรับ Mac',
+        h1: 'ข้อมูลการจัดระดับอายุ',
+        updated: 'อัปเดตล่าสุด: 29 พฤษภาคม 2026',
+        intro: 'ClipForge Pro เป็นเครื่องมือ Mac แบบทำงานในเครื่องสำหรับบีบอัดวิดีโอ แปลงไฟล์ ดึงเสียง และแก้ไขเล็กน้อย เหมาะกับผู้ใช้ทั่วไป และไม่มีฟีดโซเชียล แชท การพนัน โฆษณา เนื้อหาสาธารณะจากผู้ใช้ หรือการท่องเว็บแบบไม่จำกัด',
+        rating: 'คำแนะนำการจัดระดับอายุใน App Store: 4+',
+        summaryTitle: 'สรุปเนื้อหา',
+        headers: ['หมวดหมู่', 'สถานะ'],
+        rows: [
+          ['ธีมผู้ใหญ่หรือส่อไปในทางล่อแหลม', 'ไม่มี'],
+          ['ความรุนแรง สยองขวัญ หรือเนื้อหาน่ากลัว', 'ไม่มี'],
+          ['ข้อมูลทางการแพทย์หรือสุขภาพที่ถูกกำกับ', 'ไม่มี'],
+          ['การพนัน การแข่งขัน หรือกิจกรรมตามความน่าจะเป็น', 'ไม่มี'],
+          ['เนื้อหาจากผู้ใช้ แชท หรือการโพสต์สาธารณะ', 'ไม่รวม'],
+          ['โฆษณาหรือเครือข่ายโฆษณาบุคคลที่สาม', 'ไม่รวม'],
+          ['การเข้าถึงเว็บแบบไม่จำกัด', 'ไม่รวม'],
+          ['การซื้อในแอปหรือการสมัครสมาชิก', 'ไม่รวม']
+        ],
+        sections: [
+          ['การใช้งาน', 'แอปช่วยบีบอัด แปลง ตัด หมุน ครอป รวม และส่งออกไฟล์สื่อในเครื่อง เป็นงานด้าน productivity และ media utility'],
+          ['ความเป็นส่วนตัวและความปลอดภัย', `ClipForge Pro ไม่ต้องใช้บัญชี ไม่มี SDK ติดตาม และประมวลผลไฟล์ที่เลือกในเครื่องบน Mac นโยบายความเป็นส่วนตัว: ${privacyLink}.`],
+          ['ติดต่อ', `หากมีคำถามเกี่ยวกับการจัดระดับอายุ โปรดติดต่อ ${email}`]
+        ]
+      },
+      vi: {
+        dir: 'ltr',
+        langLabel: 'Ngôn ngữ',
+        title: 'Thông tin xếp hạng độ tuổi ClipForge Pro',
+        meta: 'Thông tin xếp hạng độ tuổi của ClipForge Pro cho Mac.',
+        h1: 'Thông tin xếp hạng độ tuổi',
+        updated: 'Cập nhật lần cuối: 29 tháng 5, 2026',
+        intro: 'ClipForge Pro là tiện ích cục bộ trên Mac để nén video, chuyển đổi, trích xuất âm thanh và chỉnh sửa nhẹ. Ứng dụng dành cho người dùng phổ thông và không có bảng tin xã hội, chat, cờ bạc, quảng cáo, nội dung công khai do người dùng tạo hoặc truy cập web không giới hạn.',
+        rating: 'Xếp hạng App Store được đề xuất: 4+',
+        summaryTitle: 'Tóm tắt nội dung',
+        headers: ['Danh mục', 'Trạng thái'],
+        rows: [
+          ['Chủ đề người lớn hoặc gợi ý', 'Không có'],
+          ['Bạo lực, kinh dị hoặc gây sợ hãi', 'Không có'],
+          ['Nội dung y tế hoặc sức khỏe được quản lý', 'Không có'],
+          ['Cờ bạc, cuộc thi hoặc hoạt động xác suất', 'Không có'],
+          ['Nội dung do người dùng tạo, chat hoặc đăng công khai', 'Không bao gồm'],
+          ['Quảng cáo hoặc mạng quảng cáo bên thứ ba', 'Không bao gồm'],
+          ['Truy cập web không giới hạn', 'Không bao gồm'],
+          ['Mua trong ứng dụng hoặc đăng ký', 'Không bao gồm']
+        ],
+        sections: [
+          ['Mục đích sử dụng', 'Ứng dụng giúp nén, chuyển đổi, cắt, xoay, crop, ghép và xuất tệp media cục bộ. Đây là các luồng công việc năng suất và tiện ích media.'],
+          ['Quyền riêng tư và an toàn', `ClipForge Pro không cần tài khoản, không có SDK theo dõi và xử lý tệp đã chọn cục bộ trên Mac của người dùng. Chính sách quyền riêng tư: ${privacyLink}.`],
+          ['Liên hệ', `Nếu có câu hỏi về thông tin xếp hạng độ tuổi, hãy liên hệ ${email}.`]
+        ]
+      }
+    };
+
+    function render(lang) {
+      const data = pages[lang] || pages['zh-Hans'];
+      document.documentElement.lang = lang;
+      document.documentElement.dir = data.dir;
+      document.title = data.title;
+      document.querySelector('meta[name="description"]').setAttribute('content', data.meta);
+      document.getElementById('languageLabel').textContent = data.langLabel;
+      const tableRows = data.rows.map(([category, status]) => `<tr><td>${category}</td><td>${status}</td></tr>`).join('');
+      document.getElementById('content').innerHTML = [
+        `<h1>${data.h1}</h1>`,
+        `<p class="updated">${data.updated}</p>`,
+        `<p>${data.intro}</p>`,
+        `<div class="rating">${data.rating}</div>`,
+        `<h2>${data.summaryTitle}</h2>`,
+        `<table><tr><th>${data.headers[0]}</th><th>${data.headers[1]}</th></tr>${tableRows}</table>`,
+        ...data.sections.flatMap(([heading, body]) => [`<h2>${heading}</h2>`, `<p>${body}</p>`])
+      ].join('');
+    }
+
+    document.getElementById('languageSelect').addEventListener('change', (event) => {
+      render(event.target.value);
+    });
+  </script>
 </body>
 </html>

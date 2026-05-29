@@ -1,116 +1,503 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-Hans">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ClipForge Pro Support</title>
-  <meta name="description" content="Support page for ClipForge Pro, a local video compression and conversion app for Mac.">
+  <title>影锻 支持 | ClipForge Pro Support</title>
+  <meta name="description" content="影锻（ClipForge Pro）支持页面：本地视频压缩、格式转换和音频导出工具的帮助、常见问题和联系邮箱。">
   <style>
     :root {
       color-scheme: dark light;
-      --bg: #09111f;
-      --panel: rgba(15, 23, 42, 0.82);
+      --bg: #0b111c;
+      --panel: rgba(17, 24, 39, 0.88);
       --card: rgba(30, 41, 59, 0.72);
       --text: #f8fafc;
       --muted: #cbd5e1;
-      --line: rgba(148, 163, 184, 0.24);
+      --line: rgba(148, 163, 184, 0.26);
       --accent: #38bdf8;
+      --accent-strong: #67e8f9;
     }
+
     @media (prefers-color-scheme: light) {
       :root {
         --bg: #f8fafc;
-        --panel: rgba(255, 255, 255, 0.92);
-        --card: #f1f5f9;
+        --panel: rgba(255, 255, 255, 0.95);
+        --card: #eef6fb;
         --text: #0f172a;
         --muted: #334155;
         --line: rgba(15, 23, 42, 0.16);
         --accent: #0369a1;
+        --accent-strong: #0f766e;
       }
     }
+
     * { box-sizing: border-box; }
+
     body {
       margin: 0;
       min-height: 100vh;
       font-family: Inter, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
-      line-height: 1.65;
+      line-height: 1.68;
       color: var(--text);
-      background: var(--bg);
+      background:
+        radial-gradient(circle at 18% 0%, rgba(56, 189, 248, 0.20), transparent 32rem),
+        radial-gradient(circle at 92% 12%, rgba(20, 184, 166, 0.14), transparent 30rem),
+        var(--bg);
     }
-    .page { width: min(900px, calc(100% - 40px)); margin: 0 auto; padding: 56px 0; }
+
+    a { color: var(--accent); }
+
+    .page {
+      width: min(960px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 44px 0;
+    }
+
     .document {
-      padding: clamp(24px, 5vw, 48px);
+      padding: clamp(22px, 5vw, 48px);
       border: 1px solid var(--line);
       border-radius: 18px;
       background: var(--panel);
-      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.22);
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.24);
     }
-    h1, h2, h3 { line-height: 1.15; letter-spacing: 0; }
-    h1 { margin: 0 0 10px; font-size: clamp(2rem, 5vw, 3.4rem); font-weight: 700; }
-    h2 { margin: 34px 0 14px; font-size: 1.24rem; font-weight: 700; }
-    h3 { margin: 22px 0 8px; font-size: 1rem; font-weight: 700; }
-    p, li, span { color: var(--muted); font-size: 1rem; }
-    a { color: var(--accent); }
+
+    .topbar {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 26px;
+    }
+
+    .eyebrow {
+      margin: 0;
+      color: var(--accent-strong);
+      font-weight: 700;
+    }
+
+    .language-control {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+    }
+
+    .language-control label {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    select {
+      max-width: 210px;
+      padding: 8px 32px 8px 10px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      color: var(--text);
+      background: var(--card);
+      font: inherit;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.16;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(2rem, 5vw, 3.35rem);
+      font-weight: 760;
+    }
+
+    h2 {
+      margin: 34px 0 14px;
+      font-size: 1.24rem;
+      font-weight: 730;
+    }
+
+    h3 {
+      margin: 22px 0 8px;
+      font-size: 1rem;
+      font-weight: 730;
+    }
+
+    p, li, span {
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
     ul { padding-left: 1.25rem; }
-    .eyebrow { margin: 0 0 26px; color: var(--accent); font-weight: 700; }
-    .contact { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin: 22px 0; }
-    .contact-card { padding: 16px; border: 1px solid var(--line); border-radius: 14px; background: var(--card); }
-    .contact-card strong { display: block; margin-bottom: 6px; color: var(--text); }
-    .zh { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--line); }
+
+    .contact {
+      display: grid;
+      gap: 12px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      margin: 22px 0;
+    }
+
+    .contact-card {
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--card);
+    }
+
+    .contact-card strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--text);
+    }
+
+    [dir="rtl"] .document {
+      text-align: right;
+    }
+
+    @media (max-width: 640px) {
+      .page { width: min(100% - 24px, 960px); padding: 18px 0; }
+      .topbar { flex-direction: column; }
+      .language-control { width: 100%; justify-content: space-between; }
+      select { width: min(100%, 260px); }
+    }
   </style>
 </head>
 <body>
   <main class="page">
     <article class="document">
-      <p class="eyebrow">ClipForge Pro for Mac / 影锻</p>
-      <h1>Support</h1>
-      <p>Need help with ClipForge Pro? Email us and include your macOS version, app version, device model, export format, and a short description of the issue.</p>
-
-      <div class="contact">
-        <div class="contact-card">
-          <strong>Email</strong>
-          <a href="mailto:kibernet@sina.com">kibernet@sina.com</a>
-        </div>
-        <div class="contact-card">
-          <strong>App</strong>
-          <span>ClipForge Pro for Mac</span>
+      <div class="topbar">
+        <p class="eyebrow">ClipForge Pro for Mac / 影锻</p>
+        <div class="language-control">
+          <label for="languageSelect" id="languageLabel">语言</label>
+          <select id="languageSelect" aria-label="Language">
+            <option value="zh-Hans">简体中文</option>
+            <option value="en">English</option>
+            <option value="zh-Hant">繁體中文</option>
+            <option value="ja">日本語</option>
+            <option value="ko">한국어</option>
+            <option value="es">Español</option>
+            <option value="fr">Français</option>
+            <option value="de">Deutsch</option>
+            <option value="pt-BR">Português (Brasil)</option>
+            <option value="it">Italiano</option>
+            <option value="ru">Русский</option>
+            <option value="ar">العربية</option>
+            <option value="hi">हिन्दी</option>
+            <option value="id">Bahasa Indonesia</option>
+            <option value="th">ไทย</option>
+            <option value="vi">Tiếng Việt</option>
+          </select>
         </div>
       </div>
 
-      <h2>Frequently Asked Questions</h2>
-
-      <h3>Does ClipForge Pro upload my videos?</h3>
-      <p>No. Media probing, compression, conversion, audio extraction, trimming, rotating, cropping, and queue processing happen locally on your Mac.</p>
-
-      <h3>Why does the first export ask for folder permission?</h3>
-      <p>macOS sandboxing requires the app to use user-selected file and folder permissions. Choose an output folder that you can write to, such as your Movies folder.</p>
-
-      <h3>What should I do if an export fails?</h3>
-      <p>Try the HD MP4 preset first. If the issue continues, use Export Diagnostics in the app and email the generated report. The report remains local unless you choose to send it.</p>
-
-      <h3>Does the app require Homebrew or command-line FFmpeg?</h3>
-      <p>No. The Mac App Store package is designed to bundle FFmpeg and ffprobe, so users do not need Homebrew or command-line setup.</p>
-
-      <h3>Which formats are supported?</h3>
-      <p>The app supports common workflows including MP4, MOV, M4V, MKV, WebM, AVI, MPEG-TS, FLV, M4A, MP3, AAC, WAV, FLAC, AIFF, CAF, Opus, OGG/Vorbis, and ALAC, subject to the selected source file and encoder support.</p>
-
-      <h2>Useful Links</h2>
-      <ul>
-        <li><a href="https://kibernet.github.io/HomePage/AppPages/ClipForgePro/Privacy/index.html">Privacy Policy</a></li>
-        <li><a href="https://kibernet.github.io/HomePage/AppPages/ClipForgePro/AgeRating/index.html">Age Rating Information</a></li>
-      </ul>
-
-      <section class="zh" lang="zh-Hans">
+      <div id="content">
         <h1>支持</h1>
-        <p>如需帮助，请发送邮件并附上 macOS 版本、App 版本、设备型号、导出格式和问题描述。</p>
+        <p>如需帮助，请发送邮件，并附上 macOS 版本、App 版本、设备型号、源文件格式、导出格式和简短问题描述。</p>
+        <div class="contact">
+          <div class="contact-card"><strong>邮箱</strong><a href="mailto:kibernet@sina.com">kibernet@sina.com</a></div>
+          <div class="contact-card"><strong>App</strong><span>影锻 / ClipForge Pro for Mac</span></div>
+        </div>
         <h2>常见问题</h2>
         <h3>影锻会上传我的视频吗？</h3>
-        <p>不会。媒体分析、压缩、转换、音频提取、剪辑、旋转、裁切和队列处理都在你的 Mac 本机完成。</p>
-        <h3>为什么需要选择输出文件夹？</h3>
-        <p>macOS 沙盒要求 App 使用用户主动选择的文件和文件夹权限。请选择你有写入权限的输出目录。</p>
+        <p>不会。媒体分析、压缩、转换、音频提取、剪辑、旋转、裁切、合并和队列处理都在你的 Mac 本机完成。</p>
+        <h3>为什么首次导出时需要选择输出文件夹？</h3>
+        <p>macOS 沙盒要求 App 使用用户主动选择的文件和文件夹权限。请选择你有写入权限的输出目录，例如“影片”文件夹。</p>
         <h3>导出失败怎么办？</h3>
-        <p>可以先尝试 HD MP4 方案。如果仍然失败，在 App 中导出诊断报告并发送到 <a href="mailto:kibernet@sina.com">kibernet@sina.com</a>。诊断报告不会自动上传。</p>
-      </section>
+        <p>可以先尝试通用 MP4 或 HD MP4 方案。如果问题仍然存在，请在 App 中导出诊断报告并发送到支持邮箱。诊断报告不会自动上传。</p>
+        <h3>是否需要安装 Homebrew 或命令行 FFmpeg？</h3>
+        <p>不需要。Mac App Store 版本设计为随 App 打包 FFmpeg 和 ffprobe，下载后即可使用。</p>
+        <h3>支持哪些格式？</h3>
+        <p>常见工作流包括 MP4、MOV、M4V、MKV、WebM、AVI、MPEG-TS、FLV、M4A、MP3、AAC、WAV、FLAC、AIFF、CAF、Opus、OGG/Vorbis 和 ALAC，实际可用性取决于源文件和编码器支持。</p>
+        <h2>相关链接</h2>
+        <ul>
+          <li><a href="https://kibernet.github.io/HomePage/AppPages/ClipForgePro/Privacy/index.html">隐私政策</a></li>
+          <li><a href="https://kibernet.github.io/HomePage/AppPages/ClipForgePro/AgeRating/index.html">年龄分级说明</a></li>
+        </ul>
+      </div>
     </article>
   </main>
+
+  <script>
+    const email = '<a href="mailto:kibernet@sina.com">kibernet@sina.com</a>';
+    const privacyUrl = 'https://kibernet.github.io/HomePage/AppPages/ClipForgePro/Privacy/index.html';
+    const ageUrl = 'https://kibernet.github.io/HomePage/AppPages/ClipForgePro/AgeRating/index.html';
+    const pages = {
+      'zh-Hans': {
+        dir: 'ltr',
+        langLabel: '语言',
+        title: '影锻 支持 | ClipForge Pro Support',
+        meta: '影锻（ClipForge Pro）支持页面：本地视频压缩、格式转换和音频导出工具的帮助、常见问题和联系邮箱。',
+        h1: '支持',
+        intro: '如需帮助，请发送邮件，并附上 macOS 版本、App 版本、设备型号、源文件格式、导出格式和简短问题描述。',
+        labels: ['邮箱', 'App', '影锻 / ClipForge Pro for Mac', '常见问题', '相关链接', '隐私政策', '年龄分级说明'],
+        faqs: [
+          ['影锻会上传我的视频吗？', '不会。媒体分析、压缩、转换、音频提取、剪辑、旋转、裁切、合并和队列处理都在你的 Mac 本机完成。'],
+          ['为什么首次导出时需要选择输出文件夹？', 'macOS 沙盒要求 App 使用用户主动选择的文件和文件夹权限。请选择你有写入权限的输出目录，例如“影片”文件夹。'],
+          ['导出失败怎么办？', '可以先尝试通用 MP4 或 HD MP4 方案。如果问题仍然存在，请在 App 中导出诊断报告并发送到支持邮箱。诊断报告不会自动上传。'],
+          ['是否需要安装 Homebrew 或命令行 FFmpeg？', '不需要。Mac App Store 版本设计为随 App 打包 FFmpeg 和 ffprobe，下载后即可使用。'],
+          ['支持哪些格式？', '常见工作流包括 MP4、MOV、M4V、MKV、WebM、AVI、MPEG-TS、FLV、M4A、MP3、AAC、WAV、FLAC、AIFF、CAF、Opus、OGG/Vorbis 和 ALAC，实际可用性取决于源文件和编码器支持。']
+        ]
+      },
+      en: {
+        dir: 'ltr',
+        langLabel: 'Language',
+        title: 'ClipForge Pro Support',
+        meta: 'Support page for ClipForge Pro, a local video compression, conversion, and audio export app for Mac.',
+        h1: 'Support',
+        intro: 'Need help with ClipForge Pro? Email us and include your macOS version, app version, device model, source format, export format, and a short description of the issue.',
+        labels: ['Email', 'App', 'ClipForge Pro for Mac', 'Frequently Asked Questions', 'Useful Links', 'Privacy Policy', 'Age Rating Information'],
+        faqs: [
+          ['Does ClipForge Pro upload my videos?', 'No. Media probing, compression, conversion, audio extraction, trimming, rotating, cropping, merging, and queue processing happen locally on your Mac.'],
+          ['Why does the first export ask for folder permission?', 'macOS sandboxing requires the app to use user-selected file and folder permissions. Choose an output folder that you can write to, such as your Movies folder.'],
+          ['What should I do if an export fails?', 'Try the Universal MP4 or HD MP4 preset first. If the issue continues, export diagnostics in the app and email the generated report. The report is not uploaded automatically.'],
+          ['Does the app require Homebrew or command-line FFmpeg?', 'No. The Mac App Store package is designed to bundle FFmpeg and ffprobe, so users do not need Homebrew or command-line setup.'],
+          ['Which formats are supported?', 'Common workflows include MP4, MOV, M4V, MKV, WebM, AVI, MPEG-TS, FLV, M4A, MP3, AAC, WAV, FLAC, AIFF, CAF, Opus, OGG/Vorbis, and ALAC, subject to the selected source file and encoder support.']
+        ]
+      },
+      'zh-Hant': {
+        dir: 'ltr',
+        langLabel: '語言',
+        title: '影鍛 支援 | ClipForge Pro Support',
+        meta: '影鍛（ClipForge Pro）支援頁面：本機影片壓縮、格式轉換與音訊匯出工具的協助、常見問題與聯絡信箱。',
+        h1: '支援',
+        intro: '如需協助，請寄送電子郵件，並附上 macOS 版本、App 版本、裝置型號、來源格式、匯出格式和簡短問題描述。',
+        labels: ['信箱', 'App', '影鍛 / ClipForge Pro for Mac', '常見問題', '相關連結', '隱私政策', '年齡分級說明'],
+        faqs: [
+          ['影鍛會上傳我的影片嗎？', '不會。媒體分析、壓縮、轉換、音訊擷取、剪輯、旋轉、裁切、合併和佇列處理都在你的 Mac 本機完成。'],
+          ['為什麼首次匯出時需要選擇輸出資料夾？', 'macOS 沙盒要求 App 使用使用者主動選擇的檔案和資料夾權限。請選擇你有寫入權限的輸出位置，例如「影片」資料夾。'],
+          ['匯出失敗怎麼辦？', '可先嘗試通用 MP4 或 HD MP4 方案。如果問題仍存在，請在 App 中匯出診斷報告並寄到支援信箱。診斷報告不會自動上傳。'],
+          ['需要安裝 Homebrew 或命令列 FFmpeg 嗎？', '不需要。Mac App Store 版本設計為隨 App 打包 FFmpeg 和 ffprobe，下載後即可使用。'],
+          ['支援哪些格式？', '常見工作流程包括 MP4、MOV、M4V、MKV、WebM、AVI、MPEG-TS、FLV、M4A、MP3、AAC、WAV、FLAC、AIFF、CAF、Opus、OGG/Vorbis 和 ALAC，實際可用性取決於來源檔案和編碼器支援。']
+        ]
+      },
+      ja: {
+        dir: 'ltr',
+        langLabel: '言語',
+        title: 'ClipForge Pro サポート',
+        meta: 'ClipForge Pro のサポートページ。Mac 用ローカル動画圧縮、変換、音声書き出しアプリのヘルプと連絡先です。',
+        h1: 'サポート',
+        intro: 'サポートが必要な場合は、macOS のバージョン、アプリのバージョン、デバイスモデル、入力形式、出力形式、問題の概要を添えてメールでご連絡ください。',
+        labels: ['メール', 'アプリ', 'ClipForge Pro for Mac', 'よくある質問', '関連リンク', 'プライバシーポリシー', '年齢レーティング情報'],
+        faqs: [
+          ['ClipForge Pro は動画をアップロードしますか？', 'いいえ。解析、圧縮、変換、音声抽出、トリミング、回転、切り抜き、結合、キュー処理は Mac 上でローカルに実行されます。'],
+          ['初回の書き出しでフォルダ権限が必要なのはなぜですか？', 'macOS のサンドボックスにより、ユーザーが選択したファイルとフォルダの権限が必要です。Movies フォルダなど書き込み可能な出力先を選んでください。'],
+          ['書き出しに失敗した場合は？', 'まず Universal MP4 または HD MP4 プリセットを試してください。続く場合はアプリで診断レポートを書き出し、メールで送信してください。レポートは自動アップロードされません。'],
+          ['Homebrew やコマンドライン FFmpeg は必要ですか？', '不要です。Mac App Store 版は FFmpeg と ffprobe を同梱する設計です。'],
+          ['対応形式は？', 'MP4、MOV、M4V、MKV、WebM、AVI、MPEG-TS、FLV、M4A、MP3、AAC、WAV、FLAC、AIFF、CAF、Opus、OGG/Vorbis、ALAC などの一般的なワークフローに対応します。実際の利用可否は入力ファイルとエンコーダに依存します。']
+        ]
+      },
+      ko: {
+        dir: 'ltr',
+        langLabel: '언어',
+        title: 'ClipForge Pro 지원',
+        meta: 'Mac용 로컬 비디오 압축, 변환, 오디오 추출 앱 ClipForge Pro의 지원 페이지입니다.',
+        h1: '지원',
+        intro: '도움이 필요하면 macOS 버전, 앱 버전, 기기 모델, 원본 형식, 내보내기 형식, 간단한 문제 설명을 포함해 이메일을 보내 주세요.',
+        labels: ['이메일', '앱', 'ClipForge Pro for Mac', '자주 묻는 질문', '관련 링크', '개인정보 처리방침', '연령 등급 정보'],
+        faqs: [
+          ['ClipForge Pro가 제 비디오를 업로드하나요?', '아니요. 분석, 압축, 변환, 오디오 추출, 트리밍, 회전, 자르기, 병합 및 대기열 처리는 Mac에서 로컬로 수행됩니다.'],
+          ['처음 내보낼 때 폴더 권한이 필요한 이유는 무엇인가요?', 'macOS 샌드박스는 사용자가 선택한 파일과 폴더 권한을 사용해야 합니다. Movies 폴더처럼 쓸 수 있는 출력 폴더를 선택하세요.'],
+          ['내보내기가 실패하면 어떻게 해야 하나요?', '먼저 Universal MP4 또는 HD MP4 프리셋을 사용해 보세요. 문제가 계속되면 앱에서 진단 보고서를 내보내 이메일로 보내 주세요. 보고서는 자동 업로드되지 않습니다.'],
+          ['Homebrew 또는 명령줄 FFmpeg가 필요한가요?', '아니요. Mac App Store 패키지는 FFmpeg와 ffprobe를 포함하도록 설계되었습니다.'],
+          ['어떤 형식을 지원하나요?', '일반적으로 MP4, MOV, M4V, MKV, WebM, AVI, MPEG-TS, FLV, M4A, MP3, AAC, WAV, FLAC, AIFF, CAF, Opus, OGG/Vorbis, ALAC 워크플로를 지원하며 실제 사용 가능 여부는 원본 파일과 인코더에 따라 달라집니다.']
+        ]
+      },
+      es: {
+        dir: 'ltr',
+        langLabel: 'Idioma',
+        title: 'Soporte de ClipForge Pro',
+        meta: 'Página de soporte de ClipForge Pro para Mac.',
+        h1: 'Soporte',
+        intro: 'Si necesitas ayuda, envíanos un correo e incluye tu versión de macOS, versión de la app, modelo del dispositivo, formato de origen, formato de exportación y una breve descripción del problema.',
+        labels: ['Correo', 'App', 'ClipForge Pro for Mac', 'Preguntas frecuentes', 'Enlaces útiles', 'Política de privacidad', 'Información de clasificación por edad'],
+        faqs: [
+          ['¿ClipForge Pro sube mis videos?', 'No. El análisis, compresión, conversión, extracción de audio, recorte, rotación, encuadre, combinación y cola se ejecutan localmente en tu Mac.'],
+          ['¿Por qué la primera exportación pide permiso de carpeta?', 'El sandbox de macOS exige permisos de archivos y carpetas seleccionados por el usuario. Elige una carpeta de salida con permiso de escritura, como Movies.'],
+          ['¿Qué hago si falla una exportación?', 'Prueba primero Universal MP4 o HD MP4. Si continúa, exporta diagnósticos en la app y envía el informe por correo. No se sube automáticamente.'],
+          ['¿Necesito Homebrew o FFmpeg de línea de comandos?', 'No. La versión de Mac App Store está diseñada para incluir FFmpeg y ffprobe.'],
+          ['¿Qué formatos admite?', 'Incluye flujos comunes como MP4, MOV, M4V, MKV, WebM, AVI, MPEG-TS, FLV, M4A, MP3, AAC, WAV, FLAC, AIFF, CAF, Opus, OGG/Vorbis y ALAC, según el archivo y el codificador.']
+        ]
+      },
+      fr: {
+        dir: 'ltr',
+        langLabel: 'Langue',
+        title: 'Assistance ClipForge Pro',
+        meta: 'Page d’assistance de ClipForge Pro pour Mac.',
+        h1: 'Assistance',
+        intro: 'Pour obtenir de l’aide, envoyez un e-mail avec votre version de macOS, la version de l’app, le modèle de Mac, le format source, le format d’export et une courte description du problème.',
+        labels: ['E-mail', 'App', 'ClipForge Pro for Mac', 'Questions fréquentes', 'Liens utiles', 'Politique de confidentialité', 'Informations de classification d’âge'],
+        faqs: [
+          ['ClipForge Pro téléverse-t-il mes vidéos ?', 'Non. L’analyse, la compression, la conversion, l’extraction audio, le découpage, la rotation, le recadrage, la fusion et la file s’exécutent localement sur votre Mac.'],
+          ['Pourquoi le premier export demande-t-il une autorisation de dossier ?', 'Le sandbox macOS exige des autorisations de fichiers et dossiers choisis par l’utilisateur. Choisissez un dossier de sortie accessible en écriture, comme Films.'],
+          ['Que faire si un export échoue ?', 'Essayez d’abord Universal MP4 ou HD MP4. Si le problème continue, exportez les diagnostics dans l’app et envoyez le rapport. Il n’est pas téléversé automatiquement.'],
+          ['Faut-il Homebrew ou FFmpeg en ligne de commande ?', 'Non. La version Mac App Store est conçue pour inclure FFmpeg et ffprobe.'],
+          ['Quels formats sont pris en charge ?', 'Les flux courants incluent MP4, MOV, M4V, MKV, WebM, AVI, MPEG-TS, FLV, M4A, MP3, AAC, WAV, FLAC, AIFF, CAF, Opus, OGG/Vorbis et ALAC, selon le fichier et l’encodeur.']
+        ]
+      },
+      de: {
+        dir: 'ltr',
+        langLabel: 'Sprache',
+        title: 'ClipForge Pro Support',
+        meta: 'Supportseite für ClipForge Pro für Mac.',
+        h1: 'Support',
+        intro: 'Wenn du Hilfe brauchst, sende eine E-Mail mit macOS-Version, App-Version, Gerätemodell, Quellformat, Exportformat und einer kurzen Problembeschreibung.',
+        labels: ['E-Mail', 'App', 'ClipForge Pro for Mac', 'Häufige Fragen', 'Nützliche Links', 'Datenschutzerklärung', 'Informationen zur Altersfreigabe'],
+        faqs: [
+          ['Lädt ClipForge Pro meine Videos hoch?', 'Nein. Analyse, Komprimierung, Konvertierung, Audioextraktion, Schneiden, Drehen, Zuschneiden, Zusammenführen und Warteschlangenverarbeitung laufen lokal auf deinem Mac.'],
+          ['Warum fragt der erste Export nach Ordnerberechtigung?', 'Die macOS-Sandbox verlangt vom Nutzer ausgewählte Datei- und Ordnerberechtigungen. Wähle einen beschreibbaren Ausgabeordner, z. B. Filme.'],
+          ['Was tun, wenn ein Export fehlschlägt?', 'Probiere zuerst Universal MP4 oder HD MP4. Wenn das Problem bleibt, exportiere Diagnosen in der App und sende den Bericht per E-Mail. Er wird nicht automatisch hochgeladen.'],
+          ['Brauche ich Homebrew oder FFmpeg im Terminal?', 'Nein. Die Mac App Store-Version enthält FFmpeg und ffprobe.'],
+          ['Welche Formate werden unterstützt?', 'Typische Workflows umfassen MP4, MOV, M4V, MKV, WebM, AVI, MPEG-TS, FLV, M4A, MP3, AAC, WAV, FLAC, AIFF, CAF, Opus, OGG/Vorbis und ALAC, abhängig von Datei und Encoder.']
+        ]
+      },
+      'pt-BR': {
+        dir: 'ltr',
+        langLabel: 'Idioma',
+        title: 'Suporte do ClipForge Pro',
+        meta: 'Página de suporte do ClipForge Pro para Mac.',
+        h1: 'Suporte',
+        intro: 'Se precisar de ajuda, envie um e-mail com a versão do macOS, versão do app, modelo do dispositivo, formato de origem, formato de exportação e uma breve descrição do problema.',
+        labels: ['E-mail', 'App', 'ClipForge Pro for Mac', 'Perguntas frequentes', 'Links úteis', 'Política de Privacidade', 'Informações de classificação etária'],
+        faqs: [
+          ['O ClipForge Pro envia meus vídeos?', 'Não. Análise, compressão, conversão, extração de áudio, corte, rotação, recorte, mesclagem e fila acontecem localmente no Mac.'],
+          ['Por que a primeira exportação pede permissão de pasta?', 'O sandbox do macOS exige permissões de arquivos e pastas escolhidos pelo usuário. Escolha uma pasta de saída com permissão de escrita, como Movies.'],
+          ['O que fazer se a exportação falhar?', 'Tente Universal MP4 ou HD MP4 primeiro. Se continuar, exporte diagnósticos no app e envie o relatório por e-mail. Ele não é enviado automaticamente.'],
+          ['Preciso de Homebrew ou FFmpeg de linha de comando?', 'Não. A versão da Mac App Store foi projetada para incluir FFmpeg e ffprobe.'],
+          ['Quais formatos são compatíveis?', 'Fluxos comuns incluem MP4, MOV, M4V, MKV, WebM, AVI, MPEG-TS, FLV, M4A, MP3, AAC, WAV, FLAC, AIFF, CAF, Opus, OGG/Vorbis e ALAC, dependendo do arquivo e encoder.']
+        ]
+      },
+      it: {
+        dir: 'ltr',
+        langLabel: 'Lingua',
+        title: 'Supporto ClipForge Pro',
+        meta: 'Pagina di supporto per ClipForge Pro per Mac.',
+        h1: 'Supporto',
+        intro: 'Per assistenza, invia un’e-mail con versione macOS, versione dell’app, modello del dispositivo, formato sorgente, formato di esportazione e una breve descrizione del problema.',
+        labels: ['E-mail', 'App', 'ClipForge Pro for Mac', 'Domande frequenti', 'Link utili', 'Informativa sulla privacy', 'Informazioni sulla classificazione per età'],
+        faqs: [
+          ['ClipForge Pro carica i miei video?', 'No. Analisi, compressione, conversione, estrazione audio, taglio, rotazione, ritaglio, unione e coda avvengono localmente sul Mac.'],
+          ['Perché la prima esportazione chiede il permesso della cartella?', 'Il sandbox macOS richiede autorizzazioni su file e cartelle scelti dall’utente. Scegli una cartella di output scrivibile, come Filmati.'],
+          ['Cosa fare se un’esportazione fallisce?', 'Prova prima Universal MP4 o HD MP4. Se continua, esporta la diagnostica nell’app e invia il report. Non viene caricato automaticamente.'],
+          ['Serve Homebrew o FFmpeg da riga di comando?', 'No. La versione Mac App Store include FFmpeg e ffprobe.'],
+          ['Quali formati sono supportati?', 'I flussi comuni includono MP4, MOV, M4V, MKV, WebM, AVI, MPEG-TS, FLV, M4A, MP3, AAC, WAV, FLAC, AIFF, CAF, Opus, OGG/Vorbis e ALAC, secondo file ed encoder.']
+        ]
+      },
+      ru: {
+        dir: 'ltr',
+        langLabel: 'Язык',
+        title: 'Поддержка ClipForge Pro',
+        meta: 'Страница поддержки ClipForge Pro для Mac.',
+        h1: 'Поддержка',
+        intro: 'Если нужна помощь, отправьте письмо с версией macOS, версией приложения, моделью устройства, исходным форматом, форматом экспорта и кратким описанием проблемы.',
+        labels: ['Email', 'Приложение', 'ClipForge Pro for Mac', 'Частые вопросы', 'Полезные ссылки', 'Политика конфиденциальности', 'Информация о возрастном рейтинге'],
+        faqs: [
+          ['ClipForge Pro загружает мои видео?', 'Нет. Анализ, сжатие, конвертация, извлечение аудио, обрезка, поворот, кадрирование, объединение и очередь выполняются локально на вашем Mac.'],
+          ['Почему первый экспорт требует разрешение на папку?', 'Песочница macOS требует разрешений на файлы и папки, выбранные пользователем. Выберите доступную для записи папку вывода, например Movies.'],
+          ['Что делать, если экспорт не удался?', 'Сначала попробуйте Universal MP4 или HD MP4. Если проблема остается, экспортируйте диагностику в приложении и отправьте отчет. Он не загружается автоматически.'],
+          ['Нужен Homebrew или FFmpeg в командной строке?', 'Нет. Версия Mac App Store включает FFmpeg и ffprobe.'],
+          ['Какие форматы поддерживаются?', 'Обычные сценарии включают MP4, MOV, M4V, MKV, WebM, AVI, MPEG-TS, FLV, M4A, MP3, AAC, WAV, FLAC, AIFF, CAF, Opus, OGG/Vorbis и ALAC, в зависимости от файла и кодера.']
+        ]
+      },
+      ar: {
+        dir: 'rtl',
+        langLabel: 'اللغة',
+        title: 'دعم ClipForge Pro',
+        meta: 'صفحة دعم ClipForge Pro على Mac.',
+        h1: 'الدعم',
+        intro: 'إذا احتجت إلى مساعدة، أرسل بريداً يتضمن إصدار macOS وإصدار التطبيق وطراز الجهاز وتنسيق المصدر وتنسيق التصدير ووصفاً قصيراً للمشكلة.',
+        labels: ['البريد الإلكتروني', 'التطبيق', 'ClipForge Pro for Mac', 'الأسئلة الشائعة', 'روابط مفيدة', 'سياسة الخصوصية', 'معلومات التصنيف العمري'],
+        faqs: [
+          ['هل يرفع ClipForge Pro مقاطع الفيديو الخاصة بي؟', 'لا. التحليل والضغط والتحويل واستخراج الصوت والقص والتدوير والاقتطاع والدمج ومعالجة قائمة الانتظار تتم محلياً على Mac.'],
+          ['لماذا يطلب التصدير الأول إذن مجلد؟', 'يتطلب sandbox في macOS استخدام أذونات الملفات والمجلدات التي يختارها المستخدم. اختر مجلد إخراج يمكنك الكتابة إليه.'],
+          ['ماذا أفعل إذا فشل التصدير؟', 'جرّب Universal MP4 أو HD MP4 أولاً. إذا استمرت المشكلة، صدّر التشخيصات من التطبيق وأرسل التقرير بالبريد. لا يتم رفع التقرير تلقائياً.'],
+          ['هل أحتاج إلى Homebrew أو FFmpeg من سطر الأوامر؟', 'لا. إصدار Mac App Store مصمم ليتضمن FFmpeg و ffprobe.'],
+          ['ما التنسيقات المدعومة؟', 'تشمل السيناريوهات الشائعة MP4 و MOV و M4V و MKV و WebM و AVI و MPEG-TS و FLV و M4A و MP3 و AAC و WAV و FLAC و AIFF و CAF و Opus و OGG/Vorbis و ALAC، حسب الملف والمشفّر.']
+        ]
+      },
+      hi: {
+        dir: 'ltr',
+        langLabel: 'भाषा',
+        title: 'ClipForge Pro सहायता',
+        meta: 'Mac के लिए ClipForge Pro सहायता पेज।',
+        h1: 'सहायता',
+        intro: 'मदद के लिए macOS version, app version, device model, source format, export format और समस्या का छोटा विवरण ईमेल में भेजें।',
+        labels: ['ईमेल', 'ऐप', 'ClipForge Pro for Mac', 'अक्सर पूछे जाने वाले प्रश्न', 'उपयोगी लिंक', 'गोपनीयता नीति', 'आयु रेटिंग जानकारी'],
+        faqs: [
+          ['क्या ClipForge Pro मेरे वीडियो upload करता है?', 'नहीं। probing, compression, conversion, audio extraction, trimming, rotating, cropping, merging और queue processing आपके Mac पर local होती है।'],
+          ['पहले export में folder permission क्यों मांगता है?', 'macOS sandbox user-selected file और folder permissions मांगता है। Movies जैसे writable output folder चुनें।'],
+          ['Export fail हो तो क्या करें?', 'पहले Universal MP4 या HD MP4 preset आज़माएं। समस्या रहे तो app में diagnostics export करें और report ईमेल करें। Report automatic upload नहीं होती।'],
+          ['क्या Homebrew या command-line FFmpeg चाहिए?', 'नहीं। Mac App Store package में FFmpeg और ffprobe शामिल रहने के लिए design किया गया है।'],
+          ['कौन से formats supported हैं?', 'Common workflows में MP4, MOV, M4V, MKV, WebM, AVI, MPEG-TS, FLV, M4A, MP3, AAC, WAV, FLAC, AIFF, CAF, Opus, OGG/Vorbis और ALAC शामिल हैं, source file और encoder support पर निर्भर।']
+        ]
+      },
+      id: {
+        dir: 'ltr',
+        langLabel: 'Bahasa',
+        title: 'Dukungan ClipForge Pro',
+        meta: 'Halaman dukungan ClipForge Pro untuk Mac.',
+        h1: 'Dukungan',
+        intro: 'Jika perlu bantuan, kirim email berisi versi macOS, versi app, model perangkat, format sumber, format ekspor, dan deskripsi singkat masalah.',
+        labels: ['Email', 'App', 'ClipForge Pro for Mac', 'Pertanyaan Umum', 'Tautan Berguna', 'Kebijakan Privasi', 'Informasi Rating Usia'],
+        faqs: [
+          ['Apakah ClipForge Pro mengunggah video saya?', 'Tidak. Analisis, kompresi, konversi, ekstraksi audio, trim, rotasi, crop, gabung, dan antrean berjalan lokal di Mac.'],
+          ['Mengapa ekspor pertama meminta izin folder?', 'Sandbox macOS memerlukan izin file dan folder yang dipilih pengguna. Pilih folder keluaran yang bisa ditulis, seperti Movies.'],
+          ['Apa yang harus dilakukan jika ekspor gagal?', 'Coba Universal MP4 atau HD MP4 dulu. Jika berlanjut, ekspor diagnostik di app dan kirim laporannya. Laporan tidak diunggah otomatis.'],
+          ['Perlu Homebrew atau FFmpeg command-line?', 'Tidak. Paket Mac App Store dirancang menyertakan FFmpeg dan ffprobe.'],
+          ['Format apa yang didukung?', 'Alur umum mencakup MP4, MOV, M4V, MKV, WebM, AVI, MPEG-TS, FLV, M4A, MP3, AAC, WAV, FLAC, AIFF, CAF, Opus, OGG/Vorbis, dan ALAC, tergantung file dan encoder.']
+        ]
+      },
+      th: {
+        dir: 'ltr',
+        langLabel: 'ภาษา',
+        title: 'การสนับสนุน ClipForge Pro',
+        meta: 'หน้าสนับสนุน ClipForge Pro สำหรับ Mac',
+        h1: 'การสนับสนุน',
+        intro: 'หากต้องการความช่วยเหลือ โปรดส่งอีเมลพร้อมเวอร์ชัน macOS เวอร์ชันแอป รุ่นอุปกรณ์ รูปแบบต้นทาง รูปแบบส่งออก และคำอธิบายปัญหาแบบสั้น',
+        labels: ['อีเมล', 'App', 'ClipForge Pro for Mac', 'คำถามที่พบบ่อย', 'ลิงก์ที่เกี่ยวข้อง', 'นโยบายความเป็นส่วนตัว', 'ข้อมูลการจัดระดับอายุ'],
+        faqs: [
+          ['ClipForge Pro อัปโหลดวิดีโอของฉันหรือไม่?', 'ไม่ การวิเคราะห์ บีบอัด แปลง ดึงเสียง ตัด หมุน ครอป รวม และประมวลผลคิวทำในเครื่องบน Mac ของคุณ'],
+          ['ทำไมการส่งออกครั้งแรกต้องขอสิทธิ์โฟลเดอร์?', 'sandbox ของ macOS ต้องใช้สิทธิ์ไฟล์และโฟลเดอร์ที่ผู้ใช้เลือก เลือกโฟลเดอร์ส่งออกที่เขียนได้ เช่น Movies'],
+          ['ถ้าส่งออกล้มเหลวควรทำอย่างไร?', 'ลอง Universal MP4 หรือ HD MP4 ก่อน หากยังมีปัญหา ให้ส่งออก diagnostics ในแอปแล้วส่งรายงานทางอีเมล รายงานไม่ถูกอัปโหลดอัตโนมัติ'],
+          ['ต้องใช้ Homebrew หรือ FFmpeg แบบ command-line ไหม?', 'ไม่ เวอร์ชัน Mac App Store ออกแบบให้รวม FFmpeg และ ffprobe ไว้แล้ว'],
+          ['รองรับรูปแบบใดบ้าง?', 'งานทั่วไปมี MP4, MOV, M4V, MKV, WebM, AVI, MPEG-TS, FLV, M4A, MP3, AAC, WAV, FLAC, AIFF, CAF, Opus, OGG/Vorbis และ ALAC ขึ้นกับไฟล์และตัวเข้ารหัส']
+        ]
+      },
+      vi: {
+        dir: 'ltr',
+        langLabel: 'Ngôn ngữ',
+        title: 'Hỗ trợ ClipForge Pro',
+        meta: 'Trang hỗ trợ ClipForge Pro cho Mac.',
+        h1: 'Hỗ trợ',
+        intro: 'Nếu cần hỗ trợ, hãy gửi email kèm phiên bản macOS, phiên bản ứng dụng, mẫu thiết bị, định dạng nguồn, định dạng xuất và mô tả ngắn về sự cố.',
+        labels: ['Email', 'App', 'ClipForge Pro for Mac', 'Câu hỏi thường gặp', 'Liên kết hữu ích', 'Chính sách quyền riêng tư', 'Thông tin xếp hạng độ tuổi'],
+        faqs: [
+          ['ClipForge Pro có tải video của tôi lên không?', 'Không. Phân tích, nén, chuyển đổi, trích xuất âm thanh, cắt, xoay, crop, ghép và xử lý hàng đợi đều chạy cục bộ trên Mac.'],
+          ['Vì sao lần xuất đầu tiên cần quyền thư mục?', 'Sandbox macOS yêu cầu quyền với tệp và thư mục do người dùng chọn. Hãy chọn thư mục xuất có thể ghi, chẳng hạn Movies.'],
+          ['Nên làm gì nếu xuất thất bại?', 'Trước tiên thử Universal MP4 hoặc HD MP4. Nếu vẫn lỗi, xuất diagnostics trong app và gửi báo cáo qua email. Báo cáo không tự động tải lên.'],
+          ['Có cần Homebrew hoặc FFmpeg dòng lệnh không?', 'Không. Gói Mac App Store được thiết kế để bao gồm FFmpeg và ffprobe.'],
+          ['Hỗ trợ định dạng nào?', 'Các luồng phổ biến gồm MP4, MOV, M4V, MKV, WebM, AVI, MPEG-TS, FLV, M4A, MP3, AAC, WAV, FLAC, AIFF, CAF, Opus, OGG/Vorbis và ALAC, tùy tệp nguồn và encoder.']
+        ]
+      }
+    };
+
+    function render(lang) {
+      const data = pages[lang] || pages['zh-Hans'];
+      document.documentElement.lang = lang;
+      document.documentElement.dir = data.dir;
+      document.title = data.title;
+      document.querySelector('meta[name="description"]').setAttribute('content', data.meta);
+      document.getElementById('languageLabel').textContent = data.langLabel;
+      document.getElementById('content').innerHTML = [
+        `<h1>${data.h1}</h1>`,
+        `<p>${data.intro}</p>`,
+        `<div class="contact"><div class="contact-card"><strong>${data.labels[0]}</strong>${email}</div><div class="contact-card"><strong>${data.labels[1]}</strong><span>${data.labels[2]}</span></div></div>`,
+        `<h2>${data.labels[3]}</h2>`,
+        ...data.faqs.flatMap(([q, a]) => [`<h3>${q}</h3>`, `<p>${a}</p>`]),
+        `<h2>${data.labels[4]}</h2>`,
+        `<ul><li><a href="${privacyUrl}">${data.labels[5]}</a></li><li><a href="${ageUrl}">${data.labels[6]}</a></li></ul>`
+      ].join('');
+    }
+
+    document.getElementById('languageSelect').addEventListener('change', (event) => {
+      render(event.target.value);
+    });
+  </script>
 </body>
 </html>
