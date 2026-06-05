@@ -66,6 +66,8 @@
     p, li {
       color: var(--muted);
       font-size: 1rem;
+      overflow-wrap: anywhere;
+      word-break: break-word;
     }
 
     ul {
@@ -87,51 +89,202 @@
       color: #94a3b8;
       font-size: 0.95rem;
     }
+
+    .language-control {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .language-control select {
+      max-width: 170px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      color: var(--text);
+      background: rgba(15, 23, 42, 0.66);
+      font: inherit;
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 680px) {
+      .language-control {
+        justify-content: flex-start;
+      }
+
+      .language-control select {
+        width: 100%;
+        max-width: none;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="page">
     <div class="document">
-      <p class="eyebrow">AppVolumeMaster for Mac</p>
-      <h1>Privacy Policy</h1>
-      <p class="updated">Last updated: May 27, 2026</p>
+      <div class="language-control">
+        <label for="languageSelect" id="languageLabel">Language</label>
+        <select id="languageSelect" aria-label="Language">
+          <option value="en">English</option>
+          <option value="zh-Hans">简体中文</option>
+        </select>
+      </div>
 
-      <p>AppVolumeMaster, localized as 声控大师 in Simplified Chinese, is a local-first Mac menu bar utility for controlling audio behavior by application. It is designed to work without accounts, cloud sync, advertising, analytics, or tracking.</p>
+      <p class="eyebrow" data-i18n="eyebrow">AppVolumeMaster for Mac</p>
+      <h1 data-i18n="title">Privacy Policy</h1>
+      <p class="updated" data-i18n="updated">Last updated: May 27, 2026</p>
 
-      <h2>Data We Collect</h2>
-      <p>AppVolumeMaster does not collect personal data. The app does not require sign-in, does not operate a remote service, does not include advertising SDKs, and does not include third-party tracking or analytics SDKs.</p>
+      <p data-i18n="intro">AppVolumeMaster, localized as 声控大师 in Simplified Chinese, is a local-first Mac menu bar utility for controlling audio behavior by application. It is designed to work without accounts, cloud sync, advertising, analytics, or tracking.</p>
 
-      <h2>Data Stored on Your Mac</h2>
-      <p>To provide the app's core features, AppVolumeMaster stores preferences locally on your Mac. This may include:</p>
+      <h2 data-i18n="collectTitle">Data We Collect</h2>
+      <p data-i18n="collectBody">AppVolumeMaster does not collect personal data. The app does not require sign-in, does not operate a remote service, does not include advertising SDKs, and does not include third-party tracking or analytics SDKs.</p>
+
+      <h2 data-i18n="localTitle">Data Stored on Your Mac</h2>
+      <p data-i18n="localIntro">To provide the app's core features, AppVolumeMaster stores preferences locally on your Mac. This may include:</p>
       <ul>
-        <li>Per-application mute and volume preference choices.</li>
-        <li>Search, filter, panel, and app display preferences.</li>
-        <li>Launch at login and other local settings selected by you.</li>
-        <li>Diagnostic text that you explicitly copy when requesting support.</li>
+        <li data-i18n="localItem1">Per-application mute and volume preference choices.</li>
+        <li data-i18n="localItem2">Search, filter, panel, and app display preferences.</li>
+        <li data-i18n="localItem3">Launch at login and other local settings selected by you.</li>
+        <li data-i18n="localItem4">Diagnostic text that you explicitly copy when requesting support.</li>
       </ul>
-      <p>This data remains on your device. AppVolumeMaster does not upload these preferences to a server.</p>
+      <p data-i18n="localEnd">This data remains on your device. AppVolumeMaster does not upload these preferences to a server.</p>
 
-      <h2>Audio Handling</h2>
-      <p>AppVolumeMaster uses macOS audio APIs to identify audio-producing processes and apply local audio control behavior. Audio is processed locally on your Mac. The app does not record audio files, upload audio content, sell audio data, or share audio content with third parties.</p>
+      <h2 data-i18n="audioTitle">Audio Handling</h2>
+      <p data-i18n="audioBody">AppVolumeMaster uses macOS audio APIs to identify audio-producing processes and apply local audio control behavior. Audio is processed locally on your Mac. The app does not record audio files, upload audio content, sell audio data, or share audio content with third parties.</p>
 
-      <h2>System Permissions</h2>
-      <p>AppVolumeMaster may request system audio capture permission so it can identify and control audio-producing apps. This permission is used only for local audio control features.</p>
+      <h2 data-i18n="permissionTitle">System Permissions</h2>
+      <p data-i18n="permissionBody">AppVolumeMaster may request system audio capture permission so it can identify and control audio-producing apps. This permission is used only for local audio control features.</p>
 
-      <h2>Network Access</h2>
-      <p>AppVolumeMaster has no account system and no cloud service dependency. The current app does not use networking to collect user data.</p>
+      <h2 data-i18n="networkTitle">Network Access</h2>
+      <p data-i18n="networkBody">AppVolumeMaster has no account system and no cloud service dependency. The current app does not use networking to collect user data.</p>
 
-      <h2>Data Deletion</h2>
-      <p>You can remove AppVolumeMaster's local preferences by deleting the app's local settings from your Mac. Any diagnostic information is shared only when you choose to copy and send it yourself.</p>
+      <h2 data-i18n="deleteTitle">Data Deletion</h2>
+      <p data-i18n="deleteBody">You can remove AppVolumeMaster's local preferences by deleting the app's local settings from your Mac. Any diagnostic information is shared only when you choose to copy and send it yourself.</p>
 
-      <h2>Children's Privacy</h2>
-      <p>AppVolumeMaster is a general utility and is not directed to children. The app does not knowingly collect information from children or any other users.</p>
+      <h2 data-i18n="childTitle">Children's Privacy</h2>
+      <p data-i18n="childBody">AppVolumeMaster is a general utility and is not directed to children. The app does not knowingly collect information from children or any other users.</p>
 
-      <h2>Changes to This Policy</h2>
-      <p>If this policy changes, the updated version will be posted on this page with a revised update date.</p>
+      <h2 data-i18n="changeTitle">Changes to This Policy</h2>
+      <p data-i18n="changeBody">If this policy changes, the updated version will be posted on this page with a revised update date.</p>
 
-      <h2>Contact</h2>
-      <p>If you have questions about this privacy policy, contact us at <a href="mailto:kibernet@sina.com">kibernet@sina.com</a>.</p>
+      <h2 data-i18n="contactTitle">Contact</h2>
+      <p> <span data-i18n="contactPrefix">If you have questions about this privacy policy, contact us at</span> <a href="mailto:kibernet@sina.com">kibernet@sina.com</a>.</p>
     </div>
   </div>
+
+  <script>
+    const translations = {
+      en: {
+        docTitle: "AppVolumeMaster Privacy Policy",
+        docDescription: "Privacy policy for AppVolumeMaster, a local-first per-app audio control utility for Mac.",
+        languageLabel: "Language",
+        eyebrow: "AppVolumeMaster for Mac",
+        title: "Privacy Policy",
+        updated: "Last updated: May 27, 2026",
+        intro: "AppVolumeMaster, localized as 声控大师 in Simplified Chinese, is a local-first Mac menu bar utility for controlling audio behavior by application. It is designed to work without accounts, cloud sync, advertising, analytics, or tracking.",
+        collectTitle: "Data We Collect",
+        collectBody: "AppVolumeMaster does not collect personal data. The app does not require sign-in, does not operate a remote service, does not include advertising SDKs, and does not include third-party tracking or analytics SDKs.",
+        localTitle: "Data Stored on Your Mac",
+        localIntro: "To provide the app's core features, AppVolumeMaster stores preferences locally on your Mac. This may include:",
+        localItem1: "Per-application mute and volume preference choices.",
+        localItem2: "Search, filter, panel, and app display preferences.",
+        localItem3: "Launch at login and other local settings selected by you.",
+        localItem4: "Diagnostic text that you explicitly copy when requesting support.",
+        localEnd: "This data remains on your device. AppVolumeMaster does not upload these preferences to a server.",
+        audioTitle: "Audio Handling",
+        audioBody: "AppVolumeMaster uses macOS audio APIs to identify audio-producing processes and apply local audio control behavior. Audio is processed locally on your Mac. The app does not record audio files, upload audio content, sell audio data, or share audio content with third parties.",
+        permissionTitle: "System Permissions",
+        permissionBody: "AppVolumeMaster may request system audio capture permission so it can identify and control audio-producing apps. This permission is used only for local audio control features.",
+        networkTitle: "Network Access",
+        networkBody: "AppVolumeMaster has no account system and no cloud service dependency. The current app does not use networking to collect user data.",
+        deleteTitle: "Data Deletion",
+        deleteBody: "You can remove AppVolumeMaster's local preferences by deleting the app's local settings from your Mac. Any diagnostic information is shared only when you choose to copy and send it yourself.",
+        childTitle: "Children's Privacy",
+        childBody: "AppVolumeMaster is a general utility and is not directed to children. The app does not knowingly collect information from children or any other users.",
+        changeTitle: "Changes to This Policy",
+        changeBody: "If this policy changes, the updated version will be posted on this page with a revised update date.",
+        contactTitle: "Contact",
+        contactPrefix: "If you have questions about this privacy policy, contact us at"
+      },
+      "zh-Hans": {
+        docTitle: "AppVolumeMaster 隐私政策",
+        docDescription: "AppVolumeMaster（面向 Mac 的本地优先逐应用音频控制工具）隐私政策。",
+        languageLabel: "语言",
+        eyebrow: "AppVolumeMaster for Mac",
+        title: "隐私政策",
+        updated: "更新日期：2026 年 5 月 27 日",
+        intro: "AppVolumeMaster（中文名：声控大师）是面向 Mac 的本地优先菜单栏工具，用于按应用控制音频行为。应用不需要账户、不提供云同步、不包含广告、不进行分析和追踪。",
+        collectTitle: "我们收集的数据",
+        collectBody: "AppVolumeMaster 不收集个人数据。应用不需要登录、不依赖远程服务，不包含广告 SDK，不包含第三方追踪或分析 SDK。",
+        localTitle: "保存在本机的数据",
+        localIntro: "为提供核心功能，AppVolumeMaster 会在你的 Mac 上本地存储偏好设置，可能包括：",
+        localItem1: "每个应用的静音与音量偏好选择。",
+        localItem2: "搜索、筛选、面板和应用显示偏好。",
+        localItem3: "登录启动与其他你手动设置的本地选项。",
+        localItem4: "你在支持场景中手动复制并发送的诊断文本。",
+        localEnd: "以上数据始终保留在你的设备上，AppVolumeMaster 不会上传这些偏好数据。",
+        audioTitle: "音频处理",
+        audioBody: "AppVolumeMaster 使用 macOS 音频接口识别产生音频的进程，并在本地执行音量控制。音频仅在本机处理，应用不会录制音频文件、上传音频内容、出售音频数据或与第三方共享音频。",
+        permissionTitle: "系统权限",
+        permissionBody: "AppVolumeMaster 可能会请求系统音频采集权限，用于识别和控制产生音频的应用。该权限仅用于本地音频控制功能。",
+        networkTitle: "网络访问",
+        networkBody: "AppVolumeMaster 不含账号体系，也没有云服务依赖。当前版本不会使用网络收集用户数据。",
+        deleteTitle: "数据删除",
+        deleteBody: "你可以在 Mac 上删除 AppVolumeMaster 的本地设置以清理偏好数据。只有在你主动复制并发送时，诊断内容才会离开本机。",
+        childTitle: "未成年人隐私",
+        childBody: "AppVolumeMaster 属于通用工具型应用，不面向儿童，也不会有意收集儿童或其他用户信息。",
+        changeTitle: "隐私政策更新",
+        changeBody: "当本隐私政策有变更时，更新版本将发布在此页面并同步更新日期。",
+        contactTitle: "联系方式",
+        contactPrefix: "如果你对隐私政策有问题，请联系："
+      }
+    };
+
+    const supportedLanguages = Object.keys(translations);
+    const params = new URLSearchParams(window.location.search);
+    const initialLanguage = supportedLanguages.includes(params.get("lang")) ? params.get("lang") : "en";
+
+    function applyLanguage(lang) {
+      const t = translations[lang] || translations.en;
+      document.documentElement.lang = lang;
+      document.title = t.docTitle;
+      const metaDescription = document.querySelector("meta[name='description']");
+      if (metaDescription) {
+        metaDescription.setAttribute("content", t.docDescription);
+      }
+
+      const select = document.getElementById("languageSelect");
+      select.value = lang;
+      document.getElementById("languageLabel").textContent = t.languageLabel;
+      select.setAttribute("aria-label", t.languageLabel);
+
+      document.querySelectorAll("[data-i18n]").forEach((node) => {
+        const key = node.dataset.i18n;
+        if (Object.prototype.hasOwnProperty.call(t, key)) {
+          node.textContent = t[key];
+        }
+      });
+
+      const contactPrefixNode = document.querySelector("[data-i18n='contactPrefix']");
+      if (contactPrefixNode) {
+        const link = contactPrefixNode.parentElement.querySelector("a");
+        if (link) {
+          const newText = `${t.contactPrefix} `;
+          contactPrefixNode.textContent = newText;
+          link.textContent = "kibernet@sina.com";
+        }
+      }
+    }
+
+    document.getElementById("languageSelect").addEventListener("change", (event) => {
+      const next = event.target.value;
+      const baseUrl = window.location.pathname;
+      window.location.href = next === "en" ? baseUrl : `${baseUrl}?lang=${next}`;
+    });
+
+    applyLanguage(initialLanguage);
+  </script>
 </body>
 </html>

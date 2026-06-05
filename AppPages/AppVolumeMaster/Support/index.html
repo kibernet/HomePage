@@ -70,9 +70,11 @@
       font-weight: 650;
     }
 
-    p, li {
+    p, li, td, th {
       color: var(--muted);
       font-size: 1rem;
+      overflow-wrap: anywhere;
+      word-break: break-word;
     }
 
     ul {
@@ -97,6 +99,7 @@
     }
 
     .contact-card {
+      min-width: 0;
       padding: 16px;
       border: 1px solid var(--line);
       border-radius: 14px;
@@ -107,52 +110,254 @@
       display: block;
       margin-bottom: 6px;
     }
+
+    .language-control {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .language-control select {
+      max-width: 170px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      color: var(--text);
+      background: rgba(15, 23, 42, 0.66);
+      font: inherit;
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 680px) {
+      .language-control {
+        justify-content: flex-start;
+      }
+
+      .language-control select {
+        width: 100%;
+        max-width: none;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="page">
     <div class="document">
-      <p class="eyebrow">AppVolumeMaster for Mac</p>
-      <h1>Support</h1>
-      <p>Need help with AppVolumeMaster? Use the contact information below and include your macOS version, app version, and a short description of the issue.</p>
+      <div class="language-control">
+        <label for="languageSelect" id="languageLabel">Language</label>
+        <select id="languageSelect" aria-label="Language">
+          <option value="en">English</option>
+          <option value="zh-Hans">简体中文</option>
+        </select>
+      </div>
+
+      <p class="eyebrow" data-i18n="eyebrow">AppVolumeMaster for Mac</p>
+      <h1 data-i18n="title">Support</h1>
+      <p data-i18n="intro">Need help with AppVolumeMaster? Use the contact information below and include your macOS version, app version, and a short description of the issue.</p>
 
       <div class="contact">
         <div class="contact-card">
-          <strong>Email</strong>
+          <strong data-i18n="emailLabel">Email</strong>
           <a href="mailto:kibernet@sina.com">kibernet@sina.com</a>
         </div>
         <div class="contact-card">
-          <strong>App</strong>
-          <span>AppVolumeMaster / 声控大师 for Mac</span>
+          <strong data-i18n="appLabel">App</strong>
+          <span data-i18n="appValue">AppVolumeMaster / 声控大师 for Mac</span>
         </div>
       </div>
 
-      <h2>Frequently Asked Questions</h2>
+      <h2 data-i18n="faqTitle">Frequently Asked Questions</h2>
 
-      <h3>Why does AppVolumeMaster need system audio capture permission?</h3>
-      <p>AppVolumeMaster uses this permission to identify audio-producing apps and apply local audio control behavior. Audio is processed on your Mac and is not uploaded.</p>
+      <div id="faq"></div>
 
-      <h3>Does AppVolumeMaster record or upload audio?</h3>
-      <p>No. AppVolumeMaster does not record audio files, upload audio content, or send audio data to a server.</p>
-
-      <h3>Why does the app not show a Dock icon?</h3>
-      <p>AppVolumeMaster is a menu bar utility. Click the menu bar icon to open the control panel and settings.</p>
-
-      <h3>How do I mute one app?</h3>
-      <p>Open the menu bar panel, find the app in the list, and use the mute control for that app. You can also search or filter the list when many apps are running.</p>
-
-      <h3>What do Mute All, Restore All, and Solo do?</h3>
-      <p>Mute All quiets controllable apps, Restore All brings them back to their remembered state, and Solo focuses on one selected app while muting other controllable apps.</p>
-
-      <h3>How do I make the app start automatically?</h3>
-      <p>Open the settings view from the menu bar panel and enable launch at login.</p>
-
-      <h3>How do I quit AppVolumeMaster?</h3>
-      <p>Open the menu bar panel and use the quit action from the settings or app menu.</p>
-
-      <h2>Privacy</h2>
-      <p>Read the AppVolumeMaster privacy policy here: <a href="https://kibernet.github.io/HomePage/AppPages/AppVolumeMaster/Privacy/index.html">Privacy Policy</a>.</p>
+      <h2 data-i18n="privacyTitle">Privacy</h2>
+      <p data-i18n="privacyText">Read the AppVolumeMaster privacy policy here: <a href="https://kibernet.github.io/HomePage/AppPages/AppVolumeMaster/Privacy/index.html">Privacy Policy</a>.</p>
     </div>
   </div>
+
+  <script>
+    const translations = {
+      en: {
+        docTitle: "AppVolumeMaster Support",
+        docDescription: "Support page for AppVolumeMaster, a local-first per-app audio control utility for Mac.",
+        languageLabel: "Language",
+        eyebrow: "AppVolumeMaster for Mac",
+        title: "Support",
+        intro: "Need help with AppVolumeMaster? Use the contact information below and include your macOS version, app version, and a short description of the issue.",
+        emailLabel: "Email",
+        appLabel: "App",
+        appValue: "AppVolumeMaster / 声控大师 for Mac",
+        faqTitle: "Frequently Asked Questions",
+        faqs: [
+          [
+            "Why does AppVolumeMaster need system audio capture permission?",
+            "AppVolumeMaster uses this permission to identify audio-producing apps and apply local audio control behavior. Audio is processed on your Mac and is not uploaded."
+          ],
+          [
+            "Does AppVolumeMaster record or upload audio?",
+            "No. AppVolumeMaster does not record audio files, upload audio content, or send audio data to a server."
+          ],
+          [
+            "Why does the app not show a Dock icon?",
+            "AppVolumeMaster is a menu bar utility. Click the menu bar icon to open the control panel and settings."
+          ],
+          [
+            "How do I mute one app?",
+            "Open the menu bar panel, find the app in the list, and use the mute control for that app. You can also search or filter the list when many apps are running."
+          ],
+          [
+            "What do Mute All, Restore All, and Solo do?",
+            "Mute All quiets controllable apps. Restore All brings them back to their remembered state. Solo focuses on one selected app while muting other controllable apps."
+          ],
+          [
+            "How do I make the app start automatically?",
+            "Open the settings view from the menu bar panel and enable launch at login."
+          ],
+          [
+            "How do I quit AppVolumeMaster?",
+            "Open the menu bar panel and use the quit action from the settings or app menu."
+          ],
+          [
+            "How do I set up a stable language in app?",
+            "Open the Settings page and set Language to your preferred language: English or Simplified Chinese."
+          ],
+          [
+            "No apps appear in the list",
+            "Start audio in Safari, Music, Chrome, a meeting app, or another app you want to control. Then open AppVolumeMaster menu bar panel and click Refresh App List. Some apps only appear after they expose an active CoreAudio process."
+          ],
+          [
+            "Troubleshooting No Apps or No Audio Processes",
+            "Use a quiet list-reset flow: start target audio, open System Settings if needed for permission, and click Refresh App List. If rows are still missing, include the copied diagnostics in support email."
+          ],
+          [
+            "The permission prompt does not appear",
+            "Open macOS System Settings, review Privacy &amp; Security permissions for AppVolumeMaster, and allow system audio capture permission if macOS shows that option. Quit and reopen AppVolumeMaster after changing permissions."
+          ],
+          [
+            "An app appears as pending or cannot be controlled",
+            "Make the target app play audio again, switch the output device once, or restart the target app. Then refresh the app list. macOS 14.2 or later is required for process-level live mute behavior."
+          ],
+          [
+            "Send diagnostics for support",
+            "Open the settings view from the menu bar panel, click Copy Diagnostics, and include the copied report when emailing support. The report includes app version, macOS version, language, filter state, permission readiness, audio engine status, and visible application rows."
+          ]
+        ],
+        privacyTitle: "Privacy",
+        privacyText: "Read the AppVolumeMaster privacy policy here: <a href=\"https://kibernet.github.io/HomePage/AppPages/AppVolumeMaster/Privacy/index.html\">Privacy Policy</a>."
+      },
+      "zh-Hans": {
+        docTitle: "AppVolumeMaster 支持",
+        docDescription: "AppVolumeMaster，面向 Mac 的本地优先应用内逐应用音量控制支持页。",
+        languageLabel: "语言",
+        eyebrow: "AppVolumeMaster for Mac",
+        title: "支持",
+        intro: "使用 AppVolumeMaster 需要帮助时，请使用以下联系方式，并附上 macOS 版本、应用版本及问题简要描述。",
+        emailLabel: "邮箱",
+        appLabel: "应用",
+        appValue: "AppVolumeMaster / 声控大师（Mac）",
+        faqTitle: "常见问题",
+        faqs: [
+          [
+            "为什么 AppVolumeMaster 需要系统音频采集权限？",
+            "AppVolumeMaster 需要该权限识别正在输出音频的应用，并在本地执行音量控制策略。你的音频仅在设备本地处理，不会上传。"
+          ],
+          [
+            "AppVolumeMaster 会录音或上传音频吗？",
+            "不会。AppVolumeMaster 不会录制音频文件，不会上传音频内容，也不会将音频内容传输到任何服务器。"
+          ],
+          [
+            "为什么看不到 Dock 图标？",
+            "AppVolumeMaster 是菜单栏工具。请点击菜单栏图标打开面板和设置界面。"
+          ],
+          [
+            "如何静音某个应用？",
+            "在菜单栏面板找到目标应用并使用该应用的静音按钮。应用较多时，可先搜索或筛选列表。"
+          ],
+          [
+            "“静音全部”“恢复全部”“独奏”分别是什么意思？",
+            "静音全部会静音可控应用；恢复全部会把它们恢复到已记住的状态；独奏会保留一个应用可听，其余可控应用自动静音。"
+          ],
+          [
+            "如何设置开机启动？",
+            "打开菜单栏面板中的设置，勾选“登录后自动启动”。"
+          ],
+          [
+            "如何退出 AppVolumeMaster？",
+            "在菜单栏面板里从设置或菜单中选择退出。"
+          ],
+          [
+            "怎么设置应用语言？",
+            "打开设置中的语言选项，可直接切换为 English 或 简体中文。"
+          ],
+          [
+            "为什么列表中没有任何应用？",
+            "先在 Safari、音乐、Chrome、会议软件或你要控制的目标应用中播放音频，再打开 AppVolumeMaster 菜单栏面板点击刷新应用列表。部分应用只有在暴露音频进程后才会出现在列表。"
+          ],
+          [
+            "适配排障：应用列表为空或无音频进程",
+            "按排障流程处理：确认音频已播放，必要时检查系统权限，再点击刷新应用列表。若仍没有可见条目，请复制诊断信息并附带发送。"
+          ],
+          [
+            "没有弹出权限提示",
+            "打开系统设置-隐私与安全，确认 AppVolumeMaster 的系统音频采集权限。修改后请重启 AppVolumeMaster。"
+          ],
+          [
+            "应用显示待检测或无法控制",
+            "让目标应用再次发声，切换一次输出设备，或重启该应用后再刷新列表。进程级实时静音需要 macOS 14.2 或更高版本。"
+          ],
+          [
+            "如何发送诊断信息？",
+            "在菜单栏设置页面点击复制诊断，并将内容连同系统版本、应用版本、语言、筛选状态、权限状态、音频引擎状态与可见应用行一起发邮件给支持。"
+          ]
+        ],
+        privacyTitle: "隐私",
+        privacyText: "隐私政策请见：<a href=\"https://kibernet.github.io/HomePage/AppPages/AppVolumeMaster/Privacy/index.html\">Privacy Policy</a>."
+      }
+    };
+
+    const supportedLanguages = Object.keys(translations);
+    const params = new URLSearchParams(window.location.search);
+    const initialLanguage = supportedLanguages.includes(params.get("lang")) ? params.get("lang") : "en";
+
+    function applyLanguage(lang) {
+      const t = translations[lang] || translations.en;
+      document.documentElement.lang = lang;
+      document.title = t.docTitle;
+      const metaDescription = document.querySelector("meta[name='description']");
+      if (metaDescription) {
+        metaDescription.setAttribute("content", t.docDescription);
+      }
+
+      const select = document.getElementById("languageSelect");
+      select.value = lang;
+      document.getElementById("languageLabel").textContent = t.languageLabel;
+      select.setAttribute("aria-label", t.languageLabel);
+
+      document.querySelectorAll("[data-i18n]").forEach((node) => {
+        const key = node.dataset.i18n;
+        if (key === "faqs") {
+          return;
+        }
+        if (Object.prototype.hasOwnProperty.call(t, key)) {
+          node.innerHTML = t[key];
+        }
+      });
+
+      const faq = Array.isArray(t.faqs) ? t.faqs : [];
+      document.getElementById("faq").innerHTML = faq
+        .map(([question, answer]) => `<h3>${question}</h3><p>${answer}</p>`)
+        .join("");
+    }
+
+    document.getElementById("languageSelect").addEventListener("change", (event) => {
+      const next = event.target.value;
+      const baseUrl = window.location.pathname;
+      window.location.href = next === "en" ? baseUrl : `${baseUrl}?lang=${next}`;
+    });
+
+    applyLanguage(initialLanguage);
+  </script>
 </body>
 </html>
