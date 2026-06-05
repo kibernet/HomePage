@@ -1,0 +1,21 @@
+{
+  "artifact": {
+    "file": "PanePilot-1.0.0.dmg",
+    "sha256": "2468747f7e9002631db15313cbe2b8baf2dd213b39bbe7ffc26ffcf1ee610890",
+    "sizeBytes": 3116457
+  },
+  "build": "100",
+  "bundleIdentifier": "com.yaoji.ScreenSplitAssist",
+  "distributionChannel": "developer-id",
+  "minimumSystemVersion": "14.0",
+  "product": "PanePilot",
+  "schemaVersion": 1,
+  "support": {
+    "ageRatingURL": "https://kibernet.github.io/HomePage/AppPages/PanePilot/AgeRating/index.html",
+    "downloadURL": "https://kibernet.github.io/HomePage/AppPages/PanePilot/Download/index.html",
+    "email": "kibernet@sina.com",
+    "privacyPolicyURL": "https://kibernet.github.io/HomePage/AppPages/PanePilot/Privacy/index.html",
+    "supportURL": "https://kibernet.github.io/HomePage/AppPages/PanePilot/Support/index.html"
+  },
+  "version": "1.0.0"
+}
