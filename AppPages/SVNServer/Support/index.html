@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,244 +10,276 @@
       color-scheme: dark light;
       --bg: #0a0f1a;
       --panel: rgba(13, 20, 32, 0.78);
+      --panel-strong: rgba(17, 27, 42, 0.92);
       --card: rgba(17, 27, 42, 0.76);
+      --table: rgba(17, 27, 42, 0.76);
       --text: #f8fafc;
       --muted: #cbd5e1;
+      --quiet: #94a3b8;
       --line: rgba(148, 163, 184, 0.24);
       --accent: #67e8f9;
       --accent-2: #f8c35b;
+      --ok: #8df5c5;
       --shadow: rgba(0, 0, 0, 0.34);
     }
-
     @media (prefers-color-scheme: light) {
       :root {
         --bg: #f7fbff;
         --panel: rgba(255, 255, 255, 0.84);
+        --panel-strong: rgba(255, 255, 255, 0.96);
         --card: rgba(255, 255, 255, 0.9);
+        --table: rgba(255, 255, 255, 0.9);
         --text: #0f172a;
         --muted: #334155;
+        --quiet: #64748b;
         --line: rgba(15, 23, 42, 0.14);
         --accent: #0891b2;
         --accent-2: #b7791f;
+        --ok: #047857;
         --shadow: rgba(15, 23, 42, 0.12);
       }
     }
-
-    * {
-      box-sizing: border-box;
-    }
-
+    * { box-sizing: border-box; }
     body {
       margin: 0;
       min-height: 100vh;
       font-family: Inter, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
       line-height: 1.65;
       color: var(--text);
-      background:
-        radial-gradient(circle at 16% 0%, rgba(103, 232, 249, 0.24), transparent 34rem),
-        radial-gradient(circle at 92% 10%, rgba(248, 195, 91, 0.16), transparent 30rem),
-        linear-gradient(135deg, var(--bg), #101827 54%, #07111d);
+      background: radial-gradient(circle at 16% 0%, rgba(103, 232, 249, 0.24), transparent 34rem), radial-gradient(circle at 92% 10%, rgba(248, 195, 91, 0.16), transparent 30rem), linear-gradient(135deg, var(--bg), #101827 54%, #07111d);
     }
-
     @media (prefers-color-scheme: light) {
-      body {
-        background:
-          radial-gradient(circle at 16% 0%, rgba(8, 145, 178, 0.16), transparent 34rem),
-          radial-gradient(circle at 92% 10%, rgba(183, 121, 31, 0.12), transparent 30rem),
-          linear-gradient(135deg, #f7fbff, #edf6fb 54%, #f8fafc);
-      }
+      body { background: radial-gradient(circle at 16% 0%, rgba(8, 145, 178, 0.16), transparent 34rem), radial-gradient(circle at 92% 10%, rgba(183, 121, 31, 0.12), transparent 30rem), linear-gradient(135deg, #f7fbff, #edf6fb 54%, #f8fafc); }
     }
-
-    .page {
-      width: min(960px, calc(100% - 40px));
-      margin: 0 auto;
-      padding: 56px 0;
-    }
-
-    .document {
-      padding: clamp(24px, 5vw, 52px);
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      background: var(--panel);
-      box-shadow: 0 28px 90px var(--shadow);
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
-    }
-
-    h1, h2, h3 {
-      line-height: 1.15;
-      letter-spacing: 0;
-    }
-
-    h1 {
-      margin: 0 0 10px;
-      font-size: clamp(2.15rem, 5vw, 3.7rem);
-      font-weight: 760;
-    }
-
-    h2 {
-      margin: 34px 0 14px;
-      font-size: 1.25rem;
-      font-weight: 720;
-    }
-
-    h3 {
-      margin: 22px 0 8px;
-      font-size: 1rem;
-      font-weight: 700;
-    }
-
-    p, li {
-      color: var(--muted);
-      font-size: 1rem;
-    }
-
-    ul {
-      padding-left: 1.25rem;
-    }
-
-    a {
-      color: var(--accent);
-    }
-
-    .eyebrow {
-      margin: 0 0 26px;
-      color: var(--accent);
-      font-weight: 700;
-    }
-
-    .contact {
-      display: grid;
-      gap: 14px;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      margin: 24px 0;
-    }
-
-    .contact-card {
-      padding: 17px;
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      background: var(--card);
-    }
-
-    .contact-card strong {
-      display: block;
-      margin-bottom: 6px;
-      color: var(--text);
-    }
-
-    .pill {
-      display: inline-flex;
-      margin: 8px 8px 0 0;
-      padding: 7px 10px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      color: var(--muted);
-      background: var(--card);
-      font-size: 0.92rem;
-    }
-
-    .divider {
-      height: 1px;
-      margin: 42px 0 34px;
-      background: var(--line);
+    .page { width: min(960px, calc(100% - 40px)); margin: 0 auto; padding: 56px 0; }
+    .document { padding: clamp(24px, 5vw, 52px); border: 1px solid var(--line); border-radius: 24px; background: var(--panel); box-shadow: 0 28px 90px var(--shadow); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); }
+    .toolbar { display: flex; justify-content: flex-end; margin-bottom: 28px; }
+    .language-control { display: inline-flex; align-items: center; gap: 10px; padding: 8px 10px; border: 1px solid var(--line); border-radius: 999px; background: var(--panel-strong); color: var(--muted); box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12); }
+    .language-control label { color: var(--quiet); font-size: 0.9rem; white-space: nowrap; }
+    .language-control select { min-width: 180px; border: 0; color: var(--text); background: transparent; font: inherit; font-size: 0.95rem; outline: 0; }
+    .language-control option { color: #0f172a; background: #ffffff; }
+    .localized-content { display: none; }
+    .localized-content.is-active { display: block; }
+    .localized-content[data-lang="en"] { display: block; }
+    body.has-language .localized-content[data-lang="en"] { display: none; }
+    body.has-language .localized-content.is-active { display: block; }
+    h1, h2, h3 { line-height: 1.15; letter-spacing: 0; }
+    h1 { margin: 0 0 10px; font-size: clamp(2.15rem, 5vw, 3.7rem); font-weight: 760; }
+    h2 { margin: 34px 0 12px; font-size: 1.18rem; font-weight: 720; }
+    h3 { margin: 22px 0 8px; color: var(--accent-2); font-size: 1rem; font-weight: 700; }
+    p, li, td, th { color: var(--muted); font-size: 1rem; }
+    ul { padding-left: 1.25rem; }
+    [dir="rtl"] ul { padding-right: 1.25rem; padding-left: 0; }
+    a { color: var(--accent); }
+    .eyebrow { margin: 0 0 26px; color: var(--accent); font-weight: 700; }
+    .updated { margin-top: 0; color: var(--quiet); font-size: 0.95rem; }
+    .notice { margin: 24px 0; padding: 16px 18px; border: 1px solid var(--line); border-radius: 16px; background: var(--panel-strong); }
+    .contact { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin: 24px 0; }
+    .contact-card { padding: 17px; border: 1px solid var(--line); border-radius: 16px; background: var(--card); }
+    .contact-card strong { display: block; margin-bottom: 6px; color: var(--text); }
+    .pill { display: inline-flex; margin: 8px 8px 0 0; padding: 7px 10px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); background: var(--card); font-size: 0.92rem; }
+    table { width: 100%; border-collapse: separate; border-spacing: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 16px; background: var(--table); }
+    th, td { padding: 12px 14px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    [dir="rtl"] th, [dir="rtl"] td { text-align: right; }
+    tr:last-child td { border-bottom: 0; }
+    th { color: var(--text); background: rgba(103, 232, 249, 0.08); font-weight: 720; }
+    .rating { display: inline-flex; align-items: center; justify-content: center; margin: 20px 0 6px; padding: 10px 16px; border: 1px solid color-mix(in srgb, var(--ok) 40%, transparent); border-radius: 999px; color: var(--ok); background: color-mix(in srgb, var(--ok) 10%, transparent); font-weight: 760; }
+    @media (max-width: 620px) {
+      .page { width: min(100% - 24px, 960px); padding: 24px 0; }
+      .document { border-radius: 18px; }
+      .toolbar { justify-content: stretch; }
+      .language-control { width: 100%; justify-content: space-between; border-radius: 14px; }
+      .language-control select { min-width: 0; width: 100%; }
+      th, td { padding: 10px; }
     }
   </style>
 </head>
 <body>
   <div class="page">
     <main class="document">
-      <p class="eyebrow">SVNServer Studio for Mac</p>
-      <h1>Support</h1>
-      <p>Need help with SVNServer Studio? Contact us by email and include your macOS version, app version, Subversion version if available, and a short description of the issue.</p>
-
-      <div class="contact">
-        <div class="contact-card">
-          <strong>Email</strong>
-          <a href="mailto:kibernet@sina.com">kibernet@sina.com</a>
-        </div>
-        <div class="contact-card">
-          <strong>App</strong>
-          <span>SVNServer Studio for Mac</span>
-        </div>
-        <div class="contact-card">
-          <strong>Category</strong>
-          <span>Developer Tools</span>
-        </div>
-      </div>
-
-      <h2>What to Include</h2>
-      <ul>
-        <li>Your macOS version and Mac model.</li>
-        <li>The SVNServer Studio app version.</li>
-        <li>Whether Subversion command line tools are installed, for example through Homebrew.</li>
-        <li>The operation you were trying to perform, such as creating a repository, starting the service, editing permissions, verifying a repository, or creating a hotcopy backup.</li>
-        <li>Any visible error message, excluding passwords or private repository content.</li>
-      </ul>
-
-      <h2>Frequently Asked Questions</h2>
-
-      <h3>Does SVNServer Studio include Subversion itself?</h3>
-      <p>SVNServer Studio manages a local Subversion server by using command line tools available on your Mac, including <code>svnserve</code>, <code>svnadmin</code>, <code>svnlook</code>, and <code>svn</code>. If these tools are missing, install Subversion through a trusted package manager such as Homebrew.</p>
-
-      <h3>Where are repositories stored?</h3>
-      <p>Repositories are stored under the repository root selected in Settings. The default location is inside your home folder under <code>SVNServer Studio/Repositories</code>.</p>
-
-      <h3>Why can I not connect from another machine?</h3>
-      <p>Check the configured host and port, macOS firewall settings, local network permissions, router rules, and repository authentication. The default host is local to the Mac, which is safer for initial setup.</p>
-
-      <h3>How do user and group permissions work?</h3>
-      <p>SVNServer Studio writes standard Subversion authentication and authorization files into repository configuration folders. Users, groups, and permission rules are converted into <code>passwd</code> and <code>authz</code> files for <code>svnserve</code>.</p>
-
-      <h3>How do I back up a repository?</h3>
-      <p>Select a repository and run the hotcopy action. SVNServer Studio uses <code>svnadmin hotcopy</code> to create a local backup in the configured backup folder.</p>
-
-      <h3>How do I verify repository health?</h3>
-      <p>Select a repository and run verification. SVNServer Studio uses <code>svnadmin verify</code> and records the result in local job history.</p>
-
-      <h3>Does the app upload repositories or credentials?</h3>
-      <p>No. The current version is local-first and does not upload repositories, backups, users, groups, credentials, or permissions to a developer-operated cloud service.</p>
-
-      <h2>Helpful Links</h2>
-      <p>
-        <span class="pill"><a href="https://kibernet.github.io/HomePage/AppPages/SVNServer/Privacy/index.html">Privacy Policy</a></span>
-        <span class="pill"><a href="https://kibernet.github.io/HomePage/AppPages/SVNServer/AgeRating/index.html">Age Rating Information</a></span>
-      </p>
-
-      <div class="divider"></div>
-
-      <h1>支持</h1>
-      <p>如果你在使用 SVNServer Studio 时需要帮助，请通过邮件联系我们，并尽量提供 macOS 版本、应用版本、Subversion 版本，以及遇到问题时正在执行的操作。</p>
-
-      <h2>联系信息</h2>
-      <div class="contact">
-        <div class="contact-card">
-          <strong>邮箱</strong>
-          <a href="mailto:kibernet@sina.com">kibernet@sina.com</a>
-        </div>
-        <div class="contact-card">
-          <strong>应用</strong>
-          <span>SVNServer Studio for Mac</span>
+      <div class="toolbar">
+        <div class="language-control">
+          <label id="language-label" for="language-select">Language</label>
+          <select id="language-select" aria-label="Choose language">
+            <option value="en">English</option>
+            <option value="zh-Hans">简体中文</option>
+            <option value="zh-Hant">繁體中文</option>
+            <option value="ja">日本語</option>
+            <option value="ko">한국어</option>
+            <option value="fr">Français</option>
+            <option value="de">Deutsch</option>
+            <option value="es">Español</option>
+            <option value="it">Italiano</option>
+            <option value="pt-BR">Português (Brasil)</option>
+            <option value="ru">Русский</option>
+            <option value="ar">العربية</option>
+            <option value="hi">हिन्दी</option>
+            <option value="id">Bahasa Indonesia</option>
+            <option value="vi">Tiếng Việt</option>
+            <option value="th">ไทย</option>
+          </select>
         </div>
       </div>
 
-      <h2>常见问题</h2>
+      <section class="localized-content is-active" data-lang="en" lang="en" dir="ltr">
+        <p class="eyebrow">SVNServer Studio for Mac</p>
+        <h1>Support</h1>
+        <p>Need help with SVNServer Studio? Contact us by email and include your macOS version, app version, Subversion version if available, and a short description of the issue.</p>
+        <div class="contact">
+          <div class="contact-card"><strong>Email</strong><a href="mailto:kibernet@sina.com">kibernet@sina.com</a></div>
+          <div class="contact-card"><strong>App</strong><span>SVNServer Studio for Mac</span></div>
+          <div class="contact-card"><strong>Category</strong><span>Developer Tools</span></div>
+        </div>
+        <h2>What to Include</h2>
+        <ul>
+          <li>Your macOS version and Mac model.</li>
+          <li>The SVNServer Studio app version.</li>
+          <li>Whether Subversion command line tools are installed, for example through Homebrew.</li>
+          <li>The operation you were trying to perform, such as creating a repository, starting the service, editing permissions, verifying a repository, or creating a hotcopy backup.</li>
+          <li>Any visible error message, excluding passwords or private repository content.</li>
+        </ul>
+        <h2>Frequently Asked Questions</h2>
+        <h3>Does SVNServer Studio include Subversion itself?</h3>
+        <p>SVNServer Studio manages a local Subversion server by using command line tools available on your Mac, including <code translate="no">svnserve</code>, <code translate="no">svnadmin</code>, <code translate="no">svnlook</code>, and <code translate="no">svn</code>. If these tools are missing, install Subversion through a trusted package manager such as Homebrew.</p>
+        <h3>Where are repositories stored?</h3>
+        <p>Repositories are stored under the repository root selected in Settings. The default location is inside your home folder under <code translate="no">SVNServer Studio/Repositories</code>.</p>
+        <h3>Why can I not connect from another machine?</h3>
+        <p>Check the configured host and port, macOS firewall settings, local network permissions, router rules, and repository authentication. The default host is local to the Mac, which is safer for initial setup.</p>
+        <h3>How do user and group permissions work?</h3>
+        <p>SVNServer Studio writes standard Subversion authentication and authorization files into repository configuration folders. Users, groups, and permission rules are converted into <code translate="no">passwd</code> and <code translate="no">authz</code> files for <code translate="no">svnserve</code>.</p>
+        <h3>How do I back up a repository?</h3>
+        <p>Select a repository and run the hotcopy action. SVNServer Studio uses <code translate="no">svnadmin hotcopy</code> to create a local backup in the configured backup folder.</p>
+        <h3>How do I verify repository health?</h3>
+        <p>Select a repository and run verification. SVNServer Studio uses <code translate="no">svnadmin verify</code> and records the result in local job history.</p>
+        <h3>Does the app upload repositories or credentials?</h3>
+        <p>No. The current version is local-first and does not upload repositories, backups, users, groups, credentials, or permissions to a developer-operated cloud service.</p>
+        <h2>Helpful Links</h2>
+        <p><span class="pill"><a href="https://kibernet.github.io/HomePage/AppPages/SVNServer/Privacy/index.html" data-localized-link>Privacy Policy</a></span><span class="pill"><a href="https://kibernet.github.io/HomePage/AppPages/SVNServer/AgeRating/index.html" data-localized-link>Age Rating Information</a></span></p>
+      </section>
 
-      <h3>应用是否自带 Subversion？</h3>
-      <p>SVNServer Studio 会调用 Mac 上可用的 Subversion 命令行工具，包括 <code>svnserve</code>、<code>svnadmin</code>、<code>svnlook</code> 和 <code>svn</code>。如果缺少这些工具，请通过可信的软件包管理器安装，例如 Homebrew。</p>
+      <section class="localized-content" data-lang="zh-Hans" lang="zh-CN" dir="ltr">
+        <p class="eyebrow">适用于 Mac 的 SVNServer Studio</p><h1>支持</h1><p>需要 SVNServer Studio 方面的帮助？请通过电子邮件联系我们，并提供您的 macOS 版本、应用程序版本、Subversion 版本（如有）以及问题的简要描述。</p><div class="contact"><div class="contact-card"><strong>发送电子邮件</strong><a href="mailto:kibernet@sina.com">至 kibernet@sina.com</a></div><div class="contact-card"><span>适用于 Mac 的 SVNServer Studio</span><strong>应用</strong></div><div class="contact-card"><strong>类别：</strong><span>开发者工具</span></div></div><h2>应包含哪些内容</h2><ul><li>您的macOS版本和Mac型号。</li><li> SVNServer Studio 应用版本。</li><li>是否安装了 Subversion 命令行工具，例如通过 Homebrew 安装。</li><li>您尝试执行的操作，例如创建存储库、启动服务、编辑权限、验证存储库或创建热拷贝备份。</li><li>任何可见的错误信息，但不包括密码或私有存储库内容。</li></ul><h2>常见问题解答</h2><h3>SVNServer Studio 是否包含 Subversion 本身？</h3><p> SVNServer Studio 使用 Mac 上可用的命令行工具（包括<code translate="no">svnserve</code> 、 <code translate="no">svnadmin</code> 、 <code translate="no">svnlook</code>和<code translate="no">svn</code>来管理本地 Subversion 服务器。如果缺少这些工具，请通过可信的软件包管理器（例如 Homebrew）安装 Subversion。</p><h3>存储库存储在哪里？</h3><p>存储库存储在“设置”中选择的存储库根目录下。默认位置在您的主文件夹下的<code translate="no">SVNServer Studio/Repositories</code>中。</p><h3>为什么我无法从另一台机器连接？</h3><p>检查已配置的主机和端口、macOS 防火墙设置、本地网络权限、路由器规则以及存储库身份验证。默认主机位于 Mac 本地，这对于初始设置来说更安全。</p><h3>用户和组权限是如何运作的？</h3><p> SVNServer Studio 将标准的 Subversion 身份验证和授权文件写入存储库配置文件夹。用户、组和权限规则被转换为<code translate="no">svnserve</code>使用的<code translate="no">passwd</code>和<code translate="no">authz</code>文件。</p><h3>如何备份存储库？</h3><p>选择一个存储库并运行热复制操作。SVNServer Studio 使用<code translate="no">svnadmin hotcopy</code>在配置的备份文件夹中创建本地备份。</p><h3>如何验证存储库的健康状况？</h3><p>选择一个代码库并运行验证。SVNServer Studio 使用<code translate="no">svnadmin verify</code> ，并将结果记录在本地作业历史记录中。</p><h3>该应用是否会上传存储库或凭据？</h3><p>不。当前版本优先考虑本地部署，不会将存储库、备份、用户、组、凭据或权限上传到开发者运营的云服务。</p><h2>实用链接</h2><p><span class="pill"><a href="https://kibernet.github.io/HomePage/AppPages/SVNServer/Privacy/index.html" data-localized-link>隐私政策</a></span><span class="pill"><a href="https://kibernet.github.io/HomePage/AppPages/SVNServer/AgeRating/index.html" data-localized-link>年龄分级信息</a></span></p>
+      </section>
 
-      <h3>仓库保存在哪里？</h3>
-      <p>仓库保存在设置中选择的仓库根目录下。默认位置位于你的用户主目录内的 <code>SVNServer Studio/Repositories</code>。</p>
+      <section class="localized-content" data-lang="zh-Hant" lang="zh-TW" dir="ltr">
+        <p class="eyebrow">適用於 Mac 的 SVNServer Studio</p><h1>支援</h1><p>需要 SVNServer Studio 方面的協助？請透過電子郵件聯絡我們，並提供您的 macOS 版本、應用程式版本、Subversion 版本（如有）以及問題的簡要描述。</p><div class="contact"><div class="contact-card"><strong>發送電子郵件</strong><a href="mailto:kibernet@sina.com">至 kibernet@sina.com</a></div><div class="contact-card"><span>適用於 Mac 的 SVNServer Studio</span><strong>應用</strong></div><div class="contact-card"><strong>類別：</strong><span>開發者工具</span></div></div><h2>應包含哪些內容</h2><ul><li>您的macOS版本和Mac型號。</li><li> SVNServer Studio 應用程式版本。</li><li>是否安裝了 Subversion 命令列工具，例如透過 Homebrew 安裝。</li><li>您嘗試執行的操作，例如建立儲存庫、啟動服務、編輯權限、驗證儲存庫或建立熱拷貝備份。</li><li>任何可見的錯誤訊息，但不包括密碼或私有儲存庫內容。</li></ul><h2>常見問題解答</h2><h3>SVNServer Studio 是否包含 Subversion 本身？</h3><p> SVNServer Studio 使用 Mac 上可用的命令列工具（包括<code translate="no">svnserve</code> 、 <code translate="no">svnadmin</code> 、 <code translate="no">svnlook</code>和<code translate="no">svn</code>來管理本機 Subversion 伺服器。如果缺少這些工具，請透過可信任的軟體包管理器（例如 Homebrew）安裝 Subversion。</p><h3>存儲庫存儲在哪裡？</h3><p>儲存庫儲存在「設定」中所選的儲存庫根目錄下。預設位置在您的主資料夾下的<code translate="no">SVNServer Studio/Repositories</code>中。</p><h3>為什麼我無法從另一台機器連接？</h3><p>檢查已設定的主機和連接埠、macOS 防火牆設定、本機網路權限、路由器規則以及儲存庫身份驗證。預設主機位於 Mac 本地，這對於初始設定來說更安全。</p><h3>使用者和群組權限是如何運作的？</h3><p> SVNServer Studio 將標準的 Subversion 驗證和授權檔案寫入儲存庫設定資料夾。使用者、群組和權限規則被轉換為<code translate="no">svnserve</code>所使用的<code translate="no">passwd</code>和<code translate="no">authz</code>檔案。</p><h3>如何備份儲存庫？</h3><p>選擇一個儲存庫並執行熱複製操作。 SVNServer Studio 使用<code translate="no">svnadmin hotcopy</code>在配置的備份資料夾中建立本機備份。</p><h3>如何驗證儲存庫的健康狀況？</h3><p>選擇一個程式碼庫並運行驗證。 SVNServer Studio 使用<code translate="no">svnadmin verify</code> ，並將結果記錄在本機作業歷史記錄中。</p><h3>該應用程式是否會上傳儲存庫或憑證？</h3><p>不。目前版本優先考慮本機部署，不會將儲存庫、備份、使用者、群組、憑證或權限上傳到開發者營運的雲端服務。</p><h2>實用連結</h2><p><span class="pill"><a href="https://kibernet.github.io/HomePage/AppPages/SVNServer/Privacy/index.html" data-localized-link>隱私權政策</a></span><span class="pill"><a href="https://kibernet.github.io/HomePage/AppPages/SVNServer/AgeRating/index.html" data-localized-link>年齡分級訊息</a></span></p>
+      </section>
 
-      <h3>为什么其他机器无法连接？</h3>
-      <p>请检查应用内配置的主机和端口、macOS 防火墙、本地网络权限、路由器规则以及仓库认证信息。默认主机仅面向本机，更适合初始配置。</p>
+      <section class="localized-content" data-lang="ja" lang="ja" dir="ltr">
+        <p class="eyebrow">Mac 用 SVNServer Studio</p><h1>サポート</h1><p>SVNServer Studioに関するサポートが必要ですか？メールでご連絡ください。その際、macOSのバージョン、アプリのバージョン、可能であればSubversionのバージョン、および問題の簡単な説明を添えてください。</p><div class="contact"><div class="contact-card"><strong>メールアドレス</strong><a href="mailto:kibernet@sina.com">：kibernet@sina.com</a></div><div class="contact-card"> <span>Mac版SVNServer Studio</span><strong>アプリ</strong></div><div class="contact-card"><strong>カテゴリ：</strong><span>開発者ツール</span></div></div><h2>含めるべきもの</h2><ul><li>お使いのmacOSのバージョンとMacのモデル。</li><li> SVNServer Studioアプリのバージョン。</li><li>例えばHomebrewなどを介して、Subversionのコマンドラインツールがインストールされているかどうか。</li><li>リポジトリの作成、サービスの起動、権限の編集、リポジトリの検証、ホットコピーバックアップの作成など、実行しようとした操作が失敗しました。</li><li>パスワードやプライベートリポジトリの内容を除く、表示されるエラーメッセージすべて。</li></ul><h2>よくある質問</h2><h3>SVNServer StudioにはSubversion自体が含まれていますか？</h3><p> SVNServer Studioは、 <code translate="no">svnserve</code> 、 <code translate="no">svnadmin</code> 、 <code translate="no">svnlook</code> 、 <code translate="no">svn</code>など、Macに搭載されているコマンドラインツールを使用してローカルのSubversionサーバーを管理します。これらのツールがインストールされていない場合は、Homebrewなどの信頼できるパッケージマネージャーを使用してSubversionをインストールしてください。</p><h3>リポジトリはどこに保存されますか？</h3><p>リポジトリは、設定で選択したリポジトリのルートディレクトリに保存されます。デフォルトの保存場所は、ホームフォルダ内の<code translate="no">SVNServer Studio/Repositories</code>です。</p><h3>なぜ他のマシンから接続できないのですか？</h3><p>設定されているホストとポート、macOSファイアウォールの設定、ローカルネットワークのアクセス許可、ルーターのルール、リポジトリの認証を確認してください。デフォルトのホストはMacのローカルホストであり、初期設定にはより安全です。</p><h3>ユーザー権限とグループ権限はどのように機能するのですか？</h3><p> SVNServer Studio は、標準の Subversion 認証および認可ファイルをリポジトリ構成フォルダに書き込みます。ユーザー、グループ、および権限ルールは、 <code translate="no">svnserve</code>用の<code translate="no">passwd</code>ファイルと<code translate="no">authz</code>ファイルに変換されます。</p><h3>リポジトリをバックアップするにはどうすればよいですか？</h3><p>リポジトリを選択し、ホットコピーアクションを実行します。SVNServer Studioは、 <code translate="no">svnadmin hotcopy</code>使用して、設定されたバックアップフォルダにローカルバックアップを作成します。</p><h3>リポジトリの健全性を確認するにはどうすればよいですか？</h3><p>リポジトリを選択して検証を実行します。SVNServer Studioは<code translate="no">svnadmin verify</code>を使用し、結果をローカルのジョブ履歴に記録します。</p><h3>アプリはリポジトリや認証情報をアップロードしますか？</h3><p>いいえ。現在のバージョンはローカル優先であり、リポジトリ、バックアップ、ユーザー、グループ、認証情報、権限を開発者が運用するクラウドサービスにアップロードしません。</p><h2>役立つリンク集</h2><p><span class="pill"><a href="https://kibernet.github.io/HomePage/AppPages/SVNServer/Privacy/index.html" data-localized-link>プライバシーポリシー</a></span><span class="pill"><a href="https://kibernet.github.io/HomePage/AppPages/SVNServer/AgeRating/index.html" data-localized-link>年齢制限情報</a></span></p>
+      </section>
 
-      <h3>如何备份仓库？</h3>
-      <p>选择仓库后运行热备份操作。SVNServer Studio 会使用 <code>svnadmin hotcopy</code> 在配置的备份目录中创建本地备份。</p>
+      <section class="localized-content" data-lang="ko" lang="ko" dir="ltr">
+        <p class="eyebrow">Mac용 SVNServer Studio</p><h1> 지원하다</h1><p> SVNServer Studio 사용에 도움이 필요하신가요? macOS 버전, 앱 버전, 가능한 경우 Subversion 버전, 그리고 문제에 대한 간단한 설명을 포함하여 이메일로 문의해 주세요.</p><div class="contact"><div class="contact-card"> <strong>이메일 주소는</strong> <a href="mailto:kibernet@sina.com">kibernet@sina.com입니다.</a></div><div class="contact-card"> <span>Mac용 SVNServer Studio</span> <strong>앱</strong></div><div class="contact-card"> <strong>카테고리</strong> <span>개발자 도구</span></div></div><h2> 포함해야 할 사항</h2><ul><li> macOS 버전과 Mac 모델을 알려주세요.</li><li> SVNServer Studio 앱 버전입니다.</li><li> Subversion 명령줄 도구가 Homebrew 등을 통해 설치되어 있는지 여부.</li><li> 저장소 생성, 서비스 시작, 권한 편집, 저장소 확인 또는 핫카피 백업 생성과 같은 작업을 수행하려고 했습니다.</li><li> 비밀번호나 개인 저장소 콘텐츠를 제외한 모든 표시 오류 메시지.</li></ul><h2> 자주 묻는 질문</h2><h3> SVNServer Studio에는 Subversion 자체가 포함되어 있습니까?</h3><p> SVNServer Studio는 Mac에서 사용할 수 있는 명령줄 도구 <code translate="no">svnserve</code> , <code translate="no">svnadmin</code> , <code translate="no">svnlook</code> , <code translate="no">svn</code> 등)를 이용하여 로컬 Subversion 서버를 관리합니다. 이러한 도구가 설치되어 있지 않은 경우 Homebrew와 같은 신뢰할 수 있는 패키지 관리자를 통해 Subversion을 설치하십시오.</p><h3> 저장소는 어디에 저장되나요?</h3><p> 저장소는 설정에서 선택한 저장소 루트 아래에 저장됩니다. 기본 위치는 홈 폴더 내의 <code translate="no">SVNServer Studio/Repositories</code> 입니다.</p><h3> 다른 컴퓨터에서 접속할 수 없는 이유는 무엇인가요?</h3><p> 구성된 호스트 및 포트, macOS 방화벽 설정, 로컬 네트워크 권한, 라우터 규칙 및 저장소 인증을 확인하십시오. 기본 호스트는 Mac의 로컬 호스트이므로 초기 설정 시 더 안전합니다.</p><h3> 사용자 및 그룹 권한은 어떻게 작동하나요?</h3><p> SVNServer Studio는 표준 Subversion 인증 및 권한 부여 파일을 저장소 구성 폴더에 기록합니다. 사용자, 그룹 및 권한 규칙은 <code translate="no">svnserve</code> 용 <code translate="no">passwd</code> 및 <code translate="no">authz</code> 파일로 변환됩니다.</p><h3> 저장소를 백업하는 방법은 무엇인가요?</h3><p> 저장소를 선택하고 핫카피 작업을 실행하세요. SVNServer Studio는 <code translate="no">svnadmin hotcopy</code> 사용하여 구성된 백업 폴더에 로컬 백업을 생성합니다.</p><h3> 저장소의 상태를 어떻게 확인할 수 있나요?</h3><p> 저장소를 선택하고 검증을 실행하세요. SVNServer Studio는 <code translate="no">svnadmin verify</code> 사용하고 결과를 로컬 작업 기록에 저장합니다.</p><h3> 해당 앱은 저장소 또는 자격 증명을 업로드합니까?</h3><p> 아니요. 현재 버전은 로컬 우선 방식이며 개발자가 운영하는 클라우드 서비스에 저장소, 백업, 사용자, 그룹, 자격 증명 또는 권한을 업로드하지 않습니다.</p><h2> 유용한 링크</h2><p> <span class="pill"><a href="https://kibernet.github.io/HomePage/AppPages/SVNServer/Privacy/index.html" data-localized-link>개인정보 보호정책</a></span> <span class="pill"><a href="https://kibernet.github.io/HomePage/AppPages/SVNServer/AgeRating/index.html" data-localized-link>연령 등급 정보</a></span></p>
+      </section>
 
-      <h3>应用会上传仓库或凭据吗？</h3>
-      <p>不会。当前版本是本地优先应用，不会把仓库、备份、用户、用户组、凭据或权限上传到开发者运营的云服务。</p>
+      <section class="localized-content" data-lang="fr" lang="fr" dir="ltr">
+        <p class="eyebrow">SVNServer Studio pour Mac</p><h1> Soutien</h1><p> Besoin d&#39;aide avec SVNServer Studio ? Contactez-nous par e-mail en précisant votre version de macOS, la version de l&#39;application, la version de Subversion (le cas échéant) et une brève description du problème.</p><div class="contact"><div class="contact-card"> <strong>Envoyez un courriel</strong> <a href="mailto:kibernet@sina.com">à kibernet@sina.com</a></div><div class="contact-card"> <strong>Application</strong> <span>SVNServer Studio pour Mac</span></div><div class="contact-card"> <span>Outils de développement</span> <strong>de catégorie</strong></div></div><h2> Éléments à inclure</h2><ul><li> Votre version de macOS et le modèle de votre Mac.</li><li> La version de l&#39;application SVNServer Studio.</li><li> Si les outils en ligne de commande de Subversion sont installés, par exemple via Homebrew.</li><li> L&#39;opération que vous tentiez d&#39;effectuer, comme la création d&#39;un dépôt, le démarrage du service, la modification des autorisations, la vérification d&#39;un dépôt ou la création d&#39;une sauvegarde à chaud.</li><li> Tout message d&#39;erreur visible, à l&#39;exclusion des mots de passe ou du contenu des dépôts privés.</li></ul><h2> Foire aux questions</h2><h3> SVNServer Studio inclut-il Subversion lui-même ?</h3><p> SVNServer Studio gère un serveur Subversion local à l&#39;aide des outils en ligne de commande disponibles sur votre Mac, notamment <code translate="no">svnserve</code> , <code translate="no">svnadmin</code> , <code translate="no">svnlook</code> et <code translate="no">svn</code> . Si ces outils sont absents, installez Subversion via un gestionnaire de paquets fiable tel que Homebrew.</p><h3> Où sont stockés les référentiels ?</h3><p> Les dépôts sont stockés à la racine du dépôt sélectionnée dans les paramètres. L&#39;emplacement par défaut se trouve dans votre dossier personnel, sous <code translate="no">SVNServer Studio/Repositories</code> .</p><h3> Pourquoi ne puis-je pas me connecter depuis un autre ordinateur ?</h3><p> Vérifiez l&#39;hôte et le port configurés, les paramètres du pare-feu macOS, les autorisations du réseau local, les règles du routeur et l&#39;authentification du dépôt. L&#39;hôte par défaut est local au Mac, ce qui est plus sûr pour la configuration initiale.</p><h3> Comment fonctionnent les permissions des utilisateurs et des groupes ?</h3><p> SVNServer Studio écrit les fichiers d&#39;authentification et d&#39;autorisation Subversion standard dans les dossiers de configuration du dépôt. Les utilisateurs, les groupes et les règles d&#39;autorisation sont convertis en fichiers <code translate="no">passwd</code> et <code translate="no">authz</code> pour <code translate="no">svnserve</code> .</p><h3> Comment sauvegarder un dépôt ?</h3><p> Sélectionnez un dépôt et exécutez l&#39;action hotcopy. SVNServer Studio utilise la <code translate="no">svnadmin hotcopy</code> pour créer une sauvegarde locale dans le dossier de sauvegarde configuré.</p><h3> Comment puis-je vérifier l&#39;état du dépôt ?</h3><p> Sélectionnez un dépôt et lancez la vérification. SVNServer Studio utilise la <code translate="no">svnadmin verify</code> et enregistre le résultat dans l&#39;historique des tâches locales.</p><h3> L&#39;application télécharge-t-elle des dépôts ou des identifiants ?</h3><p> Non. La version actuelle est conçue pour une utilisation locale et ne télécharge aucun dépôt, sauvegarde, utilisateur, groupe, identifiant ou autorisation sur un service cloud géré par un développeur.</p><h2> Liens utiles</h2><p> <span class="pill"><a href="https://kibernet.github.io/HomePage/AppPages/SVNServer/Privacy/index.html" data-localized-link>Politique de confidentialité</a></span> <span class="pill"><a href="https://kibernet.github.io/HomePage/AppPages/SVNServer/AgeRating/index.html" data-localized-link>Informations sur la classification par âge</a></span></p>
+      </section>
+
+      <section class="localized-content" data-lang="de" lang="de" dir="ltr">
+        <p class="eyebrow">SVNServer Studio für Mac</p><h1> Unterstützung</h1><p> Benötigen Sie Hilfe mit SVNServer Studio? Kontaktieren Sie uns per E-Mail und geben Sie Ihre macOS-Version, die App-Version, die Subversion-Version (falls verfügbar) und eine kurze Beschreibung des Problems an.</p><div class="contact"><div class="contact-card"> <strong>E-Mail:</strong> <a href="mailto:kibernet@sina.com">kibernet@sina.com</a></div><div class="contact-card"> <strong>App</strong> <span>SVNServer Studio für Mac</span></div><div class="contact-card"> <strong>Kategorie:</strong> <span>Entwicklertools</span></div></div><h2> Was sollte man einbeziehen?</h2><ul><li> Ihre macOS-Version und Ihr Mac-Modell.</li><li> Die SVNServer Studio App-Version.</li><li> Ob die Subversion-Befehlszeilentools installiert sind, beispielsweise über Homebrew.</li><li> Die Operation, die Sie ausführen wollten, wie z. B. das Erstellen eines Repositorys, das Starten des Dienstes, das Bearbeiten von Berechtigungen, das Überprüfen eines Repositorys oder das Erstellen einer Hotcopy-Sicherung.</li><li> Alle sichtbaren Fehlermeldungen, ausgenommen Passwörter oder Inhalte privater Repositories.</li></ul><h2> Häufig gestellte Fragen</h2><h3> Ist Subversion selbst in SVNServer Studio enthalten?</h3><p> SVNServer Studio verwaltet einen lokalen Subversion-Server mithilfe von Befehlszeilentools, die auf Ihrem Mac verfügbar sind, darunter <code translate="no">svnserve</code> , <code translate="no">svnadmin</code> , <code translate="no">svnlook</code> und <code translate="no">svn</code> . Falls diese Tools fehlen, installieren Sie Subversion über einen vertrauenswürdigen Paketmanager wie Homebrew.</p><h3> Wo werden die Repositories gespeichert?</h3><p> Die Repositories werden im Repository-Stammverzeichnis gespeichert, das in den Einstellungen ausgewählt ist. Der Standardspeicherort ist Ihr Home-Verzeichnis unter <code translate="no">SVNServer Studio/Repositories</code> .</p><h3> Warum kann ich mich nicht von einem anderen Rechner aus verbinden?</h3><p> Überprüfen Sie den konfigurierten Host und Port, die macOS-Firewall-Einstellungen, die Berechtigungen im lokalen Netzwerk, die Router-Regeln und die Repository-Authentifizierung. Der Standardhost ist lokal auf dem Mac, was für die Ersteinrichtung sicherer ist.</p><h3> Wie funktionieren Benutzer- und Gruppenberechtigungen?</h3><p> SVNServer Studio schreibt standardmäßige Subversion-Authentifizierungs- und Autorisierungsdateien in die Repository-Konfigurationsordner. Benutzer, Gruppen und Berechtigungsregeln werden in <code translate="no">passwd</code> und <code translate="no">authz</code> Dateien für <code translate="no">svnserve</code> konvertiert.</p><h3> Wie sichere ich ein Repository?</h3><p> Wählen Sie ein Repository aus und führen Sie die Hotcopy-Aktion aus. SVNServer Studio verwendet <code translate="no">svnadmin hotcopy</code> , um eine lokale Sicherung im konfigurierten Sicherungsordner zu erstellen.</p><h3> Wie kann ich den Zustand eines Repositorys überprüfen?</h3><p> Wählen Sie ein Repository aus und führen Sie die Überprüfung durch. SVNServer Studio verwendet dazu <code translate="no">svnadmin verify</code> und speichert das Ergebnis im lokalen Auftragsverlauf.</p><h3> Lädt die App Repositories oder Anmeldeinformationen hoch?</h3><p> Nein. Die aktuelle Version ist lokal ausgerichtet und lädt keine Repositories, Backups, Benutzer, Gruppen, Anmeldeinformationen oder Berechtigungen in einen vom Entwickler betriebenen Cloud-Dienst hoch.</p><h2> Hilfreiche Links</h2><p> <span class="pill"><a href="https://kibernet.github.io/HomePage/AppPages/SVNServer/Privacy/index.html" data-localized-link>Datenschutzbestimmungen</a></span> <span class="pill"><a href="https://kibernet.github.io/HomePage/AppPages/SVNServer/AgeRating/index.html" data-localized-link>Informationen zur Altersfreigabe</a></span></p>
+      </section>
+
+      <section class="localized-content" data-lang="es" lang="es" dir="ltr">
+        <p class="eyebrow">SVNServer Studio para Mac</p><h1> Apoyo</h1><p> ¿Necesitas ayuda con SVNServer Studio? Contáctanos por correo electrónico e incluye tu versión de macOS, la versión de la aplicación, la versión de Subversion (si está disponible) y una breve descripción del problema.</p><div class="contact"><div class="contact-card"> <strong>Correo electrónico:</strong> <a href="mailto:kibernet@sina.com">kibernet@sina.com</a></div><div class="contact-card"> <strong>Aplicación</strong> <span>SVNServer Studio para Mac</span></div><div class="contact-card"> <strong>Categoría:</strong> <span>Herramientas para desarrolladores</span></div></div><h2> Qué incluir</h2><ul><li> Tu versión de macOS y modelo de Mac.</li><li> La versión de la aplicación SVNServer Studio.</li><li> Si las herramientas de línea de comandos de Subversion están instaladas, por ejemplo, a través de Homebrew.</li><li> La operación que intentaba realizar, como crear un repositorio, iniciar el servicio, editar permisos, verificar un repositorio o crear una copia de seguridad en caliente.</li><li> Cualquier mensaje de error visible, excluyendo contraseñas o contenido de repositorios privados.</li></ul><h2> Preguntas frecuentes</h2><h3> ¿SVNServer Studio incluye Subversion?</h3><p> SVNServer Studio gestiona un servidor Subversion local mediante herramientas de línea de comandos disponibles en tu Mac, como <code translate="no">svnserve</code> , <code translate="no">svnadmin</code> , <code translate="no">svnlook</code> y <code translate="no">svn</code> . Si estas herramientas no están disponibles, instala Subversion a través de un gestor de paquetes de confianza como Homebrew.</p><h3> ¿Dónde se almacenan los repositorios?</h3><p> Los repositorios se almacenan en la raíz del repositorio seleccionada en Configuración. La ubicación predeterminada es dentro de su carpeta de inicio en <code translate="no">SVNServer Studio/Repositories</code> .</p><h3> ¿Por qué no puedo conectarme desde otra máquina?</h3><p> Verifique el host y el puerto configurados, la configuración del firewall de macOS, los permisos de red local, las reglas del enrutador y la autenticación del repositorio. El host predeterminado es local al Mac, lo cual es más seguro para la configuración inicial.</p><h3> ¿Cómo funcionan los permisos de usuario y de grupo?</h3><p> SVNServer Studio escribe archivos de autenticación y autorización estándar de Subversion en las carpetas de configuración del repositorio. Los usuarios, grupos y reglas de permisos se convierten en archivos <code translate="no">passwd</code> y <code translate="no">authz</code> para <code translate="no">svnserve</code> .</p><h3> ¿Cómo hago una copia de seguridad de un repositorio?</h3><p> Seleccione un repositorio y ejecute la acción hotcopy. SVNServer Studio utiliza <code translate="no">svnadmin hotcopy</code> para crear una copia de seguridad local en la carpeta de copias de seguridad configurada.</p><h3> ¿Cómo verifico el estado del repositorio?</h3><p> Seleccione un repositorio y ejecute la verificación. SVNServer Studio utiliza <code translate="no">svnadmin verify</code> y registra el resultado en el historial de trabajos local.</p><h3> ¿La aplicación sube repositorios o credenciales?</h3><p> No. La versión actual prioriza el entorno local y no carga repositorios, copias de seguridad, usuarios, grupos, credenciales ni permisos a un servicio en la nube gestionado por el desarrollador.</p><h2> Enlaces útiles</h2><p> <span class="pill"><a href="https://kibernet.github.io/HomePage/AppPages/SVNServer/Privacy/index.html" data-localized-link>Política de privacidad</a></span> <span class="pill"><a href="https://kibernet.github.io/HomePage/AppPages/SVNServer/AgeRating/index.html" data-localized-link>Información sobre la clasificación por edades</a></span></p>
+      </section>
+
+      <section class="localized-content" data-lang="it" lang="it" dir="ltr">
+        <p class="eyebrow">SVNServer Studio per Mac</p><h1> Supporto</h1><p> Hai bisogno di aiuto con SVNServer Studio? Contattaci via email indicando la versione di macOS, la versione dell&#39;applicazione, la versione di Subversion (se disponibile) e una breve descrizione del problema.</p><div class="contact"><div class="contact-card"> <strong>Invia un&#39;e-mail</strong> <a href="mailto:kibernet@sina.com">a kibernet@sina.com</a></div><div class="contact-card"> <strong>Applicazione</strong> <span>SVNServer Studio per Mac</span></div><div class="contact-card"> <span>Strumenti per sviluppatori</span> <strong>di categoria</strong></div></div><h2> Cosa includere</h2><ul><li> La tua versione di macOS e il modello del tuo Mac.</li><li> La versione dell&#39;app SVNServer Studio.</li><li> Verificare se gli strumenti da riga di comando di Subversion sono installati, ad esempio tramite Homebrew.</li><li> L&#39;operazione che stavi tentando di eseguire, come la creazione di un repository, l&#39;avvio del servizio, la modifica delle autorizzazioni, la verifica di un repository o la creazione di un backup hotcopy.</li><li> Qualsiasi messaggio di errore visibile, escluse le password o i contenuti di repository privati.</li></ul><h2> Domande frequenti</h2><h3> SVNServer Studio include Subversion?</h3><p> SVNServer Studio gestisce un server Subversion locale utilizzando gli strumenti da riga di comando disponibili sul Mac, tra cui <code translate="no">svnserve</code> , <code translate="no">svnadmin</code> , <code translate="no">svnlook</code> e <code translate="no">svn</code> . Se questi strumenti non sono presenti, installa Subversion tramite un gestore di pacchetti affidabile come Homebrew.</p><h3> Dove vengono archiviati i repository?</h3><p> I repository vengono archiviati nella directory principale selezionata nelle Impostazioni. La posizione predefinita è nella cartella home dell&#39;utente, in <code translate="no">SVNServer Studio/Repositories</code> .</p><h3> Perché non riesco a connettermi da un altro computer?</h3><p> Verifica l&#39;host e la porta configurati, le impostazioni del firewall di macOS, le autorizzazioni di rete locale, le regole del router e l&#39;autenticazione del repository. L&#39;host predefinito è quello locale al Mac, che è più sicuro per la configurazione iniziale.</p><h3> Come funzionano i permessi utente e di gruppo?</h3><p> SVNServer Studio scrive i file standard di autenticazione e autorizzazione di Subversion nelle cartelle di configurazione del repository. Utenti, gruppi e regole di autorizzazione vengono convertiti in file <code translate="no">passwd</code> e <code translate="no">authz</code> per <code translate="no">svnserve</code> .</p><h3> Come si esegue il backup di un repository?</h3><p> Seleziona un repository ed esegui l&#39;azione hotcopy. SVNServer Studio utilizza <code translate="no">svnadmin hotcopy</code> per creare un backup locale nella cartella di backup configurata.</p><h3> Come faccio a verificare l&#39;integrità del repository?</h3><p> Seleziona un repository ed esegui la verifica. SVNServer Studio utilizza <code translate="no">svnadmin verify</code> e registra il risultato nella cronologia dei processi locali.</p><h3> L&#39;app carica repository o credenziali?</h3><p> No. La versione attuale è incentrata sull&#39;ambiente locale e non carica repository, backup, utenti, gruppi, credenziali o permessi su un servizio cloud gestito dagli sviluppatori.</p><h2> Link utili</h2><p> <span class="pill"><a href="https://kibernet.github.io/HomePage/AppPages/SVNServer/Privacy/index.html" data-localized-link>Informativa sulla privacy</a></span> <span class="pill"><a href="https://kibernet.github.io/HomePage/AppPages/SVNServer/AgeRating/index.html" data-localized-link>Informazioni sulla classificazione per età</a></span></p>
+      </section>
+
+      <section class="localized-content" data-lang="pt-BR" lang="pt-BR" dir="ltr">
+        <p class="eyebrow">SVNServer Studio para Mac</p><h1> Apoiar</h1><p> Precisa de ajuda com o SVNServer Studio? Entre em contato conosco por e-mail e inclua a versão do macOS, a versão do aplicativo, a versão do Subversion (se disponível) e uma breve descrição do problema.</p><div class="contact"><div class="contact-card"> <strong>Envie um e-mail</strong> <a href="mailto:kibernet@sina.com">para kibernet@sina.com</a></div><div class="contact-card"> <strong>Aplicativo</strong> <span>SVNServer Studio para Mac</span></div><div class="contact-card"> <strong>Categoria:</strong> <span>Ferramentas de Desenvolvimento</span></div></div><h2> O que incluir</h2><ul><li> Sua versão do macOS e modelo do Mac.</li><li> A versão do aplicativo SVNServer Studio.</li><li> Se as ferramentas de linha de comando do Subversion estão instaladas, por exemplo, através do Homebrew.</li><li> A operação que você estava tentando realizar, como criar um repositório, iniciar o serviço, editar permissões, verificar um repositório ou criar um backup de cópia ativa.</li><li> Qualquer mensagem de erro visível, exceto senhas ou conteúdo de repositórios privados.</li></ul><h2> Perguntas frequentes</h2><h3> O SVNServer Studio inclui o Subversion?</h3><p> O SVNServer Studio gerencia um servidor Subversion local usando ferramentas de linha de comando disponíveis no seu Mac, incluindo <code translate="no">svnserve</code> , <code translate="no">svnadmin</code> , <code translate="no">svnlook</code> e <code translate="no">svn</code> . Se essas ferramentas não estiverem instaladas, instale o Subversion por meio de um gerenciador de pacotes confiável, como o Homebrew.</p><h3> Onde os repositórios são armazenados?</h3><p> Os repositórios são armazenados na raiz do repositório selecionada em Configurações. O local padrão é dentro da sua pasta pessoal em <code translate="no">SVNServer Studio/Repositories</code> .</p><h3> Por que não consigo me conectar de outra máquina?</h3><p> Verifique o host e a porta configurados, as configurações do firewall do macOS, as permissões de rede local, as regras do roteador e a autenticação do repositório. O host padrão é local ao Mac, o que é mais seguro para a configuração inicial.</p><h3> Como funcionam as permissões de usuário e de grupo?</h3><p> O SVNServer Studio grava arquivos padrão de autenticação e autorização do Subversion nas pastas de configuração do repositório. Usuários, grupos e regras de permissão são convertidos em arquivos <code translate="no">passwd</code> e <code translate="no">authz</code> para <code translate="no">svnserve</code> .</p><h3> Como faço para fazer backup de um repositório?</h3><p> Selecione um repositório e execute a ação de hotcopy. O SVNServer Studio usa <code translate="no">svnadmin hotcopy</code> para criar um backup local na pasta de backup configurada.</p><h3> Como posso verificar a integridade do repositório?</h3><p> Selecione um repositório e execute a verificação. O SVNServer Studio usa o <code translate="no">svnadmin verify</code> e registra o resultado no histórico de tarefas local.</p><h3> O aplicativo carrega repositórios ou credenciais?</h3><p> Não. A versão atual prioriza o ambiente local e não envia repositórios, backups, usuários, grupos, credenciais ou permissões para um serviço de nuvem operado pelo desenvolvedor.</p><h2> Links úteis</h2><p> <span class="pill"><a href="https://kibernet.github.io/HomePage/AppPages/SVNServer/Privacy/index.html" data-localized-link>Política de Privacidade</a></span> <span class="pill"><a href="https://kibernet.github.io/HomePage/AppPages/SVNServer/AgeRating/index.html" data-localized-link>Informações sobre Classificação Etária</a></span></p>
+      </section>
+
+      <section class="localized-content" data-lang="ru" lang="ru" dir="ltr">
+        <p class="eyebrow">SVNServer Studio для Mac</p><h1> Поддерживать</h1><p> Нужна помощь с SVNServer Studio? Свяжитесь с нами по электронной почте, указав версию вашей macOS, версию приложения, версию Subversion (если доступна) и краткое описание проблемы.</p><div class="contact"><div class="contact-card"> <strong>Напишите на электронную почту</strong> <a href="mailto:kibernet@sina.com">kibernet@sina.com</a></div><div class="contact-card"> <strong>Приложение</strong> <span>SVNServer Studio для Mac</span></div><div class="contact-card"> <strong>Категория:</strong> <span>Инструменты разработчика</span></div></div><h2> Что включить</h2><ul><li> Ваша версия macOS и модель Mac.</li><li> Версия приложения SVNServer Studio.</li><li> Установлены ли инструменты командной строки Subversion, например, через Homebrew.</li><li> Операция, которую вы пытались выполнить, например, создание репозитория, запуск службы, редактирование прав доступа, проверка репозитория или создание резервной копии с использованием функции &quot;горячего копирования&quot;.</li><li> Любое видимое сообщение об ошибке, за исключением паролей или содержимого приватного репозитория.</li></ul><h2> Часто задаваемые вопросы</h2><h3> Включает ли SVNServer Studio саму систему Subversion?</h3><p> SVNServer Studio управляет локальным сервером Subversion с помощью доступных на вашем Mac инструментов командной строки, включая <code translate="no">svnserve</code> , <code translate="no">svnadmin</code> , <code translate="no">svnlook</code> и <code translate="no">svn</code> . Если эти инструменты отсутствуют, установите Subversion через надежный менеджер пакетов, например Homebrew.</p><h3> Где хранятся репозитории?</h3><p> Репозитории хранятся в корневом каталоге репозиториев, выбранном в настройках. По умолчанию они находятся в вашей домашней папке в <code translate="no">SVNServer Studio/Repositories</code> .</p><h3> Почему я не могу подключиться с другого компьютера?</h3><p> Проверьте настроенные хост и порт, параметры брандмауэра macOS, разрешения локальной сети, правила маршрутизатора и аутентификацию репозитория. Хост по умолчанию находится локально на Mac, что безопаснее для первоначальной настройки.</p><h3> Как работают права доступа пользователей и групп?</h3><p> SVNServer Studio записывает стандартные файлы аутентификации и авторизации Subversion в папки конфигурации репозитория. Пользователи, группы и правила разрешений преобразуются в файлы <code translate="no">passwd</code> и <code translate="no">authz</code> для <code translate="no">svnserve</code> .</p><h3> Как сделать резервную копию репозитория?</h3><p> Выберите репозиторий и выполните действие горячего копирования. SVNServer Studio использует <code translate="no">svnadmin hotcopy</code> для создания локальной резервной копии в указанной папке резервного копирования.</p><h3> Как проверить работоспособность репозитория?</h3><p> Выберите репозиторий и выполните проверку. SVNServer Studio использует <code translate="no">svnadmin verify</code> и записывает результат в локальную историю заданий.</p><h3> Приложение загружает репозитории или учетные данные?</h3><p> Нет. Текущая версия ориентирована на локальное использование и не загружает репозитории, резервные копии, пользователей, группы, учетные данные или разрешения в облачный сервис, управляемый разработчиком.</p><h2> Полезные ссылки</h2><p> <span class="pill"><a href="https://kibernet.github.io/HomePage/AppPages/SVNServer/Privacy/index.html" data-localized-link>Политика конфиденциальности</a></span> <span class="pill"><a href="https://kibernet.github.io/HomePage/AppPages/SVNServer/AgeRating/index.html" data-localized-link>Информация о возрастных ограничениях</a></span></p>
+      </section>
+
+      <section class="localized-content" data-lang="ar" lang="ar" dir="rtl">
+        <p class="eyebrow" style=";text-align:right;direction:rtl">SVNServer Studio لنظام التشغيل Mac</p><h1 style=";text-align:right;direction:rtl"> يدعم</h1><p style=";text-align:right;direction:rtl"> هل تحتاج إلى مساعدة بخصوص SVNServer Studio؟ تواصل معنا عبر البريد الإلكتروني وقم بتضمين إصدار نظام macOS الخاص بك، وإصدار التطبيق، وإصدار Subversion إن وجد، ووصف موجز للمشكلة.</p><div class="contact" style=";text-align:right;direction:rtl"><div class="contact-card" style=";text-align:right;direction:rtl"> <strong>البريد الإلكتروني:</strong> <a href="mailto:kibernet@sina.com">kibernet@sina.com</a></div><div class="contact-card" style=";text-align:right;direction:rtl"> <strong>تطبيق</strong> <span>SVNServer Studio لنظام التشغيل Mac</span></div><div class="contact-card" style=";text-align:right;direction:rtl"> <span>أدوات المطورين</span> <strong>(الفئة)</strong></div></div><h2 style=";text-align:right;direction:rtl"> ما يجب تضمينه</h2><ul style=";text-align:right;direction:rtl"><li style=";text-align:right;direction:rtl"> إصدار نظام macOS الخاص بك ونوع جهاز Mac الخاص بك.</li><li style=";text-align:right;direction:rtl"> إصدار تطبيق SVNServer Studio.</li><li style=";text-align:right;direction:rtl"> ما إذا كانت أدوات سطر أوامر Subversion مثبتة، على سبيل المثال من خلال Homebrew.</li><li style=";text-align:right;direction:rtl"> العملية التي كنت تحاول تنفيذها، مثل إنشاء مستودع، أو بدء تشغيل الخدمة، أو تعديل الأذونات، أو التحقق من صحة المستودع، أو إنشاء نسخة احتياطية ساخنة.</li><li style=";text-align:right;direction:rtl"> أي رسالة خطأ مرئية، باستثناء كلمات المرور أو محتوى المستودع الخاص.</li></ul><h2 style=";text-align:right;direction:rtl"> الأسئلة الشائعة</h2><h3 style=";text-align:right;direction:rtl"> هل يتضمن برنامج SVNServer Studio نظام Subversion نفسه؟</h3><p style=";text-align:right;direction:rtl"> يدير برنامج SVNServer Studio خادم Subversion محليًا باستخدام أدوات سطر الأوامر المتوفرة على جهاز Mac الخاص بك، بما في ذلك <code translate="no">svnserve</code> و <code translate="no">svnadmin</code> و <code translate="no">svnlook</code> و <code translate="no">svn</code> . إذا كانت هذه الأدوات غير موجودة، فقم بتثبيت Subversion من خلال مدير حزم موثوق مثل Homebrew.</p><h3 style=";text-align:right;direction:rtl"> أين يتم تخزين المستودعات؟</h3><p style=";text-align:right;direction:rtl"> يتم تخزين المستودعات ضمن جذر المستودع المحدد في الإعدادات. الموقع الافتراضي هو داخل مجلدك الرئيسي ضمن <code translate="no">SVNServer Studio/Repositories</code> .</p><h3 style=";text-align:right;direction:rtl"> لماذا لا أستطيع الاتصال من جهاز آخر؟</h3><p style=";text-align:right;direction:rtl"> تحقق من المضيف والمنفذ المُهيئين، وإعدادات جدار الحماية لنظام macOS، وأذونات الشبكة المحلية، وقواعد جهاز التوجيه، ومصادقة المستودع. المضيف الافتراضي هو المضيف المحلي لجهاز Mac، وهو أكثر أمانًا للإعداد الأولي.</p><h3 style=";text-align:right;direction:rtl"> كيف تعمل صلاحيات المستخدم والمجموعة؟</h3><p style=";text-align:right;direction:rtl"> يقوم برنامج SVNServer Studio بكتابة ملفات المصادقة والتفويض القياسية الخاصة بـ Subversion في مجلدات تكوين المستودع. ويتم تحويل المستخدمين والمجموعات وقواعد الأذونات إلى ملفات <code translate="no">passwd</code> و <code translate="no">authz</code> لبرنامج <code translate="no">svnserve</code> .</p><h3 style=";text-align:right;direction:rtl"> كيف أقوم بعمل نسخة احتياطية من مستودع البيانات؟</h3><p style=";text-align:right;direction:rtl"> حدد مستودعًا وقم بتشغيل عملية النسخ السريع. يستخدم SVNServer Studio <code translate="no">svnadmin hotcopy</code> لإنشاء نسخة احتياطية محلية في مجلد النسخ الاحتياطي المُكوّن.</p><h3 style=";text-align:right;direction:rtl"> كيف يمكنني التحقق من سلامة المستودع؟</h3><p style=";text-align:right;direction:rtl"> حدد مستودعًا وقم بتشغيل عملية التحقق. يستخدم SVNServer Studio <code translate="no">svnadmin verify</code> ويسجل النتيجة في سجل المهام المحلي.</p><h3 style=";text-align:right;direction:rtl"> هل يقوم التطبيق بتحميل المستودعات أو بيانات الاعتماد؟</h3><p style=";text-align:right;direction:rtl"> لا. الإصدار الحالي يعتمد على البيانات المحلية أولاً ولا يقوم بتحميل المستودعات أو النسخ الاحتياطية أو المستخدمين أو المجموعات أو بيانات الاعتماد أو الأذونات إلى خدمة سحابية يديرها المطور.</p><h2 style=";text-align:right;direction:rtl"> روابط مفيدة</h2><p style=";text-align:right;direction:rtl"> <span class="pill"><a href="https://kibernet.github.io/HomePage/AppPages/SVNServer/Privacy/index.html" data-localized-link>سياسة الخصوصية |</a></span> <span class="pill"><a href="https://kibernet.github.io/HomePage/AppPages/SVNServer/AgeRating/index.html" data-localized-link>معلومات تصنيف الأعمار</a></span></p>
+      </section>
+
+      <section class="localized-content" data-lang="hi" lang="hi" dir="ltr">
+        <p class="eyebrow">मैक के लिए SVNServer स्टूडियो</p><h1> सहायता</h1><p> SVNServer Studio के साथ मदद चाहिए? हमें ईमेल द्वारा संपर्क करें और अपने macOS संस्करण, ऐप संस्करण, यदि उपलब्ध हो तो Subversion संस्करण और समस्या का संक्षिप्त विवरण शामिल करें।</p><div class="contact"><div class="contact-card"> <strong>ईमेल:</strong> <a href="mailto:kibernet@sina.com">kibernet@sina.com</a></div><div class="contact-card"> <span>Mac के लिए SVNServer Studio</span> <strong>ऐप</strong></div><div class="contact-card"> <strong>श्रेणी:</strong> <span>डेवलपर उपकरण</span></div></div><h2> क्या शामिल करें</h2><ul><li> आपके macOS का संस्करण और Mac का मॉडल।</li><li> SVNServer Studio ऐप का संस्करण।</li><li> उदाहरण के लिए, होमब्रू के माध्यम से सबवर्जन कमांड लाइन टूल स्थापित किए गए हैं या नहीं।</li><li> आप जिस ऑपरेशन को करने की कोशिश कर रहे थे, जैसे कि रिपॉजिटरी बनाना, सेवा शुरू करना, अनुमतियों को संपादित करना, रिपॉजिटरी को सत्यापित करना या हॉटकॉपी बैकअप बनाना।</li><li> पासवर्ड या निजी रिपॉजिटरी सामग्री को छोड़कर, कोई भी दृश्यमान त्रुटि संदेश।</li></ul><h2> अक्सर पूछे जाने वाले प्रश्नों</h2><h3> क्या SVNServer Studio में Subversion स्वयं शामिल है?</h3><p> SVNServer Studio आपके Mac पर उपलब्ध कमांड लाइन टूल्स, जैसे <code translate="no">svnserve</code> , <code translate="no">svnadmin</code> , <code translate="no">svnlook</code> और <code translate="no">svn</code> का उपयोग करके एक स्थानीय Subversion सर्वर का प्रबंधन करता है। यदि ये टूल्स उपलब्ध नहीं हैं, तो Homebrew जैसे किसी विश्वसनीय पैकेज मैनेजर के माध्यम से Subversion इंस्टॉल करें।</p><h3> रिपॉजिटरी कहाँ संग्रहीत की जाती हैं?</h3><p> सेटिंग्स में चयनित रिपॉजिटरी रूट के अंतर्गत रिपॉजिटरी संग्रहीत की जाती हैं। डिफ़ॉल्ट स्थान आपके होम फ़ोल्डर के अंदर <code translate="no">SVNServer Studio/Repositories</code> में होता है।</p><h3> मैं किसी दूसरे कंप्यूटर से कनेक्ट क्यों नहीं कर पा रहा/रही हूँ?</h3><p> कॉन्फ़िगर किए गए होस्ट और पोर्ट, macOS फ़ायरवॉल सेटिंग्स, स्थानीय नेटवर्क अनुमतियाँ, राउटर नियम और रिपॉज़िटरी प्रमाणीकरण की जाँच करें। डिफ़ॉल्ट होस्ट Mac का स्थानीय होस्ट होता है, जो प्रारंभिक सेटअप के लिए अधिक सुरक्षित है।</p><h3> उपयोगकर्ता और समूह अनुमतियाँ कैसे काम करती हैं?</h3><p> SVNServer Studio, रिपॉजिटरी कॉन्फ़िगरेशन फ़ोल्डरों में मानक सबवर्जन प्रमाणीकरण और प्राधिकरण फ़ाइलें लिखता है। उपयोगकर्ता, समूह और अनुमति नियम <code translate="no">svnserve</code> के लिए <code translate="no">passwd</code> और <code translate="no">authz</code> फ़ाइलों में परिवर्तित हो जाते हैं।</p><h3> मैं रिपॉजिटरी का बैकअप कैसे ले सकता हूँ?</h3><p> एक रिपॉजिटरी चुनें और हॉटकॉपी क्रिया चलाएं। SVNServer Studio <code translate="no">svnadmin hotcopy</code> उपयोग करके कॉन्फ़िगर किए गए बैकअप फ़ोल्डर में एक स्थानीय बैकअप बनाता है।</p><h3> मैं रिपॉजिटरी की स्थिति की जांच कैसे करूं?</h3><p> एक रिपॉजिटरी चुनें और सत्यापन चलाएं। SVNServer Studio <code translate="no">svnadmin verify</code> उपयोग करता है और परिणाम को स्थानीय जॉब हिस्ट्री में रिकॉर्ड करता है।</p><h3> क्या यह ऐप रिपॉजिटरी या क्रेडेंशियल अपलोड करता है?</h3><p> नहीं। वर्तमान संस्करण स्थानीय-प्रथम है और डेवलपर द्वारा संचालित क्लाउड सेवा पर रिपॉजिटरी, बैकअप, उपयोगकर्ता, समूह, क्रेडेंशियल या अनुमतियाँ अपलोड नहीं करता है।</p><h2> सहायक लिंक्स</h2><p> <span class="pill"><a href="https://kibernet.github.io/HomePage/AppPages/SVNServer/Privacy/index.html" data-localized-link>गोपनीयता नीति</a></span> <span class="pill"><a href="https://kibernet.github.io/HomePage/AppPages/SVNServer/AgeRating/index.html" data-localized-link>आयु रेटिंग जानकारी</a></span></p>
+      </section>
+
+      <section class="localized-content" data-lang="id" lang="id" dir="ltr">
+        <p class="eyebrow">SVNServer Studio untuk Mac</p><h1> Mendukung</h1><p> Butuh bantuan dengan SVNServer Studio? Hubungi kami melalui email dan sertakan versi macOS Anda, versi aplikasi, versi Subversion (jika tersedia), dan deskripsi singkat masalahnya.</p><div class="contact"><div class="contact-card"> <strong>Email</strong> <a href="mailto:kibernet@sina.com">kibernet@sina.com</a></div><div class="contact-card"> <strong>Aplikasi</strong> <span>SVNServer Studio untuk Mac</span></div><div class="contact-card"> <strong>Kategori:</strong> <span>Alat Pengembang</span></div></div><h2> Apa yang Harus Disertakan</h2><ul><li> Versi macOS dan model Mac Anda.</li><li> Versi aplikasi SVNServer Studio.</li><li> Apakah alat baris perintah Subversion sudah terpasang, misalnya melalui Homebrew.</li><li> Operasi yang Anda coba lakukan, seperti membuat repositori, memulai layanan, mengedit izin, memverifikasi repositori, atau membuat cadangan hotcopy.</li><li> Semua pesan kesalahan yang terlihat, kecuali kata sandi atau konten repositori pribadi.</li></ul><h2> Pertanyaan yang Sering Diajukan</h2><h3> Apakah SVNServer Studio menyertakan Subversion itu sendiri?</h3><p> SVNServer Studio mengelola server Subversion lokal dengan menggunakan alat baris perintah yang tersedia di Mac Anda, termasuk <code translate="no">svnserve</code> , <code translate="no">svnadmin</code> , <code translate="no">svnlook</code> , dan <code translate="no">svn</code> . Jika alat-alat ini tidak ada, instal Subversion melalui pengelola paket tepercaya seperti Homebrew.</p><h3> Di mana repositori disimpan?</h3><p> Repositori disimpan di bawah direktori root repositori yang dipilih di Pengaturan. Lokasi default berada di dalam folder beranda Anda di bawah <code translate="no">SVNServer Studio/Repositories</code> .</p><h3> Mengapa saya tidak bisa terhubung dari mesin lain?</h3><p> Periksa host dan port yang dikonfigurasi, pengaturan firewall macOS, izin jaringan lokal, aturan router, dan otentikasi repositori. Host default adalah lokal di Mac, yang lebih aman untuk pengaturan awal.</p><h3> Bagaimana cara kerja izin pengguna dan grup?</h3><p> SVNServer Studio menulis file otentikasi dan otorisasi Subversion standar ke dalam folder konfigurasi repositori. Pengguna, grup, dan aturan izin dikonversi menjadi file <code translate="no">passwd</code> dan <code translate="no">authz</code> untuk <code translate="no">svnserve</code> .</p><h3> Bagaimana cara mencadangkan repositori?</h3><p> Pilih repositori dan jalankan tindakan hotcopy. SVNServer Studio menggunakan <code translate="no">svnadmin hotcopy</code> untuk membuat cadangan lokal di folder cadangan yang telah dikonfigurasi.</p><h3> Bagaimana cara saya memverifikasi kesehatan repositori?</h3><p> Pilih repositori dan jalankan verifikasi. SVNServer Studio menggunakan <code translate="no">svnadmin verify</code> dan mencatat hasilnya dalam riwayat pekerjaan lokal.</p><h3> Apakah aplikasi mengunggah repositori atau kredensial?</h3><p> Tidak. Versi saat ini mengutamakan lokal dan tidak mengunggah repositori, cadangan, pengguna, grup, kredensial, atau izin ke layanan cloud yang dioperasikan oleh pengembang.</p><h2> Tautan Bermanfaat</h2><p> <span class="pill"><a href="https://kibernet.github.io/HomePage/AppPages/SVNServer/Privacy/index.html" data-localized-link>Kebijakan Privasi</a></span> <span class="pill"><a href="https://kibernet.github.io/HomePage/AppPages/SVNServer/AgeRating/index.html" data-localized-link>Informasi Peringkat Usia</a></span></p>
+      </section>
+
+      <section class="localized-content" data-lang="vi" lang="vi" dir="ltr">
+        <p class="eyebrow">SVNServer Studio dành cho Mac</p><h1> Ủng hộ</h1><p> Cần trợ giúp với SVNServer Studio? Hãy liên hệ với chúng tôi qua email và cung cấp phiên bản macOS, phiên bản ứng dụng, phiên bản Subversion (nếu có) và mô tả ngắn gọn về sự cố.</p><div class="contact"><div class="contact-card"> <strong>Gửi email đến</strong> <a href="mailto:kibernet@sina.com">kibernet@sina.com</a></div><div class="contact-card"> <strong>Ứng dụng</strong> <span>SVNServer Studio dành cho Mac</span></div><div class="contact-card"> <span>Công cụ dành cho nhà phát triển</span> <strong>theo danh mục</strong></div></div><h2> Những điều cần bao gồm</h2><ul><li> Phiên bản macOS và kiểu máy Mac của bạn.</li><li> Phiên bản ứng dụng SVNServer Studio.</li><li> Liệu các công cụ dòng lệnh Subversion đã được cài đặt hay chưa, ví dụ như thông qua Homebrew.</li><li> Thao tác bạn đang cố gắng thực hiện, chẳng hạn như tạo kho lưu trữ, khởi động dịch vụ, chỉnh sửa quyền, xác minh kho lưu trữ hoặc tạo bản sao lưu nóng.</li><li> Bất kỳ thông báo lỗi nào hiển thị, ngoại trừ mật khẩu hoặc nội dung kho lưu trữ riêng tư.</li></ul><h2> Câu hỏi thường gặp</h2><h3> Liệu SVNServer Studio có bao gồm Subversion hay không?</h3><p> SVNServer Studio quản lý máy chủ Subversion cục bộ bằng cách sử dụng các công cụ dòng lệnh có sẵn trên máy Mac của bạn, bao gồm <code translate="no">svnserve</code> , <code translate="no">svnadmin</code> , <code translate="no">svnlook</code> và <code translate="no">svn</code> . Nếu thiếu các công cụ này, hãy cài đặt Subversion thông qua trình quản lý gói đáng tin cậy như Homebrew.</p><h3> Các kho lưu trữ được đặt ở đâu?</h3><p> Các kho lưu trữ được lưu trữ trong thư mục gốc của kho lưu trữ đã chọn trong Cài đặt. Vị trí mặc định là bên trong thư mục chính của bạn, trong <code translate="no">SVNServer Studio/Repositories</code> .</p><h3> Tại sao tôi không thể kết nối từ máy tính khác?</h3><p> Kiểm tra máy chủ và cổng đã cấu hình, cài đặt tường lửa macOS, quyền truy cập mạng cục bộ, quy tắc bộ định tuyến và xác thực kho lưu trữ. Máy chủ mặc định là máy cục bộ trên máy Mac, điều này an toàn hơn cho quá trình thiết lập ban đầu.</p><h3> Quyền hạn của người dùng và nhóm hoạt động như thế nào?</h3><p> SVNServer Studio ghi các tệp xác thực và ủy quyền tiêu chuẩn của Subversion vào các thư mục cấu hình kho lưu trữ. Người dùng, nhóm và quy tắc quyền được chuyển đổi thành các tệp <code translate="no">passwd</code> và <code translate="no">authz</code> cho <code translate="no">svnserve</code> .</p><h3> Tôi sao lưu kho lưu trữ như thế nào?</h3><p> Chọn kho lưu trữ và chạy thao tác sao chép nóng (hotcopy). SVNServer Studio sử dụng <code translate="no">svnadmin hotcopy</code> để tạo bản sao lưu cục bộ trong thư mục sao lưu đã cấu hình.</p><h3> Làm thế nào để kiểm tra tình trạng hoạt động của kho lưu trữ?</h3><p> Chọn kho lưu trữ và chạy xác minh. SVNServer Studio sử dụng <code translate="no">svnadmin verify</code> và ghi lại kết quả vào lịch sử công việc cục bộ.</p><h3> Ứng dụng này có tải lên kho lưu trữ hoặc thông tin đăng nhập không?</h3><p> Không. Phiên bản hiện tại ưu tiên chạy cục bộ và không tải lên kho lưu trữ, bản sao lưu, người dùng, nhóm, thông tin đăng nhập hoặc quyền hạn lên dịch vụ đám mây do nhà phát triển vận hành.</p><h2> Các liên kết hữu ích</h2><p> <span class="pill"><a href="https://kibernet.github.io/HomePage/AppPages/SVNServer/Privacy/index.html" data-localized-link>Chính sách bảo mật Thông tin</a></span> <span class="pill"><a href="https://kibernet.github.io/HomePage/AppPages/SVNServer/AgeRating/index.html" data-localized-link>xếp hạng độ tuổi</a></span></p>
+      </section>
+
+      <section class="localized-content" data-lang="th" lang="th" dir="ltr">
+        <p class="eyebrow">SVNServer Studio สำหรับ Mac</p><h1> สนับสนุน</h1><p> ต้องการความช่วยเหลือเกี่ยวกับ SVNServer Studio ใช่ไหม? ติดต่อเราทางอีเมล โดยระบุเวอร์ชัน macOS เวอร์ชันแอป เวอร์ชัน Subversion (ถ้ามี) และคำอธิบายสั้น ๆ เกี่ยวกับปัญหา</p><div class="contact"><div class="contact-card"> <strong>ส่งอีเมลไป</strong> <a href="mailto:kibernet@sina.com">ที่ kibernet@sina.com</a></div><div class="contact-card"> <strong>แอป</strong> <span>SVNServer Studio สำหรับ Mac</span></div><div class="contact-card"> <strong>หมวดหมู่</strong> <span>เครื่องมือสำหรับนักพัฒนา</span></div></div><h2> สิ่งที่ต้องระบุ</h2><ul><li> เวอร์ชัน macOS และรุ่น Mac ของคุณ</li><li> เวอร์ชันแอป SVNServer Studio</li><li> ตรวจสอบว่าได้ติดตั้งเครื่องมือบรรทัดคำสั่ง Subversion แล้วหรือไม่ เช่น ผ่าน Homebrew</li><li> การดำเนินการที่คุณพยายามทำ เช่น การสร้างที่เก็บข้อมูล การเริ่มต้นบริการ การแก้ไขสิทธิ์ การตรวจสอบที่เก็บข้อมูล หรือการสร้างสำเนาสำรองแบบ Hotcopy</li><li> ข้อความแสดงข้อผิดพลาดใดๆ ที่มองเห็นได้ ยกเว้นรหัสผ่านหรือเนื้อหาในที่เก็บข้อมูลส่วนตัว</li></ul><h2> คำถามที่พบบ่อย</h2><h3> โปรแกรม SVNServer Studio มี Subversion รวมอยู่ด้วยหรือไม่?</h3><p> SVNServer Studio จัดการเซิร์ฟเวอร์ Subversion ในเครื่องโดยใช้เครื่องมือบรรทัดคำสั่งที่มีอยู่บน Mac ของคุณ ได้แก่ <code translate="no">svnserve</code> , <code translate="no">svnadmin</code> , <code translate="no">svnlook</code> และ <code translate="no">svn</code> หากไม่มีเครื่องมือเหล่านี้ ให้ติดตั้ง Subversion ผ่านตัวจัดการแพ็กเกจที่เชื่อถือได้ เช่น Homebrew</p><h3> ที่เก็บข้อมูลถูกจัดเก็บไว้ที่ใด?</h3><p> ที่เก็บข้อมูลจะถูกจัดเก็บไว้ในไดเร็กทอรีรากที่เลือกไว้ในการตั้งค่า โดยตำแหน่งเริ่มต้นจะอยู่ในโฟลเดอร์โฮมของคุณ ภายใต้ <code translate="no">SVNServer Studio/Repositories</code></p><h3> ทำไมฉันถึงเชื่อมต่อจากเครื่องอื่นไม่ได้?</h3><p> ตรวจสอบการตั้งค่าโฮสต์และพอร์ต การตั้งค่าไฟร์วอลล์ของ macOS สิทธิ์การเข้าถึงเครือข่ายภายใน กฎเราเตอร์ และการตรวจสอบสิทธิ์ของที่เก็บข้อมูล โฮสต์เริ่มต้นจะอยู่ภายในเครื่อง Mac ซึ่งปลอดภัยกว่าสำหรับการตั้งค่าครั้งแรก</p><h3> การกำหนดสิทธิ์ผู้ใช้และกลุ่มทำงานอย่างไร?</h3><p> SVNServer Studio จะเขียนไฟล์การตรวจสอบสิทธิ์และการอนุญาตมาตรฐานของ Subversion ลงในโฟลเดอร์การกำหนดค่าของที่เก็บข้อมูล ผู้ใช้ กลุ่ม และกฎการอนุญาตจะถูกแปลงเป็นไฟล์ <code translate="no">passwd</code> และ <code translate="no">authz</code> สำหรับ <code translate="no">svnserve</code></p><h3> ฉันจะสำรองข้อมูลที่เก็บข้อมูลได้อย่างไร?</h3><p> เลือกแหล่งเก็บข้อมูลและเรียกใช้คำสั่ง hotcopy SVNServer Studio ใช้ <code translate="no">svnadmin hotcopy</code> เพื่อสร้างสำเนาสำรองในเครื่องในโฟลเดอร์สำรองข้อมูลที่กำหนดค่าไว้</p><h3> ฉันจะตรวจสอบความสมบูรณ์ของที่เก็บข้อมูลได้อย่างไร?</h3><p> เลือกแหล่งเก็บข้อมูลและเรียกใช้การตรวจสอบ SVNServer Studio ใช้ <code translate="no">svnadmin verify</code> และบันทึกผลลัพธ์ลงในประวัติงานในเครื่อง</p><h3> แอปนี้อัปโหลดที่เก็บข้อมูลหรือข้อมูลรับรองหรือไม่?</h3><p> ไม่ เวอร์ชันปัจจุบันเน้นการใช้งานในเครื่องเป็นหลัก และจะไม่ทำการอัปโหลดที่เก็บข้อมูล ข้อมูลสำรอง ผู้ใช้ กลุ่ม ข้อมูลประจำตัว หรือสิทธิ์การเข้าถึงไปยังบริการคลาวด์ที่ดำเนินการโดยนักพัฒนา</p><h2> ลิงก์ที่เป็นประโยชน์</h2><p> <span class="pill"><a href="https://kibernet.github.io/HomePage/AppPages/SVNServer/Privacy/index.html" data-localized-link>นโยบายความเป็นส่วนตัว</a></span> <span class="pill"><a href="https://kibernet.github.io/HomePage/AppPages/SVNServer/AgeRating/index.html" data-localized-link>ข้อมูลการจัดเรตอายุ</a></span></p>
+      </section>
     </main>
   </div>
+  <script>
+    (function () {
+      const languages = [{"code":"en","htmlLang":"en","label":"English","dir":"ltr"},{"code":"zh-Hans","htmlLang":"zh-CN","label":"简体中文","dir":"ltr"},{"code":"zh-Hant","htmlLang":"zh-TW","label":"繁體中文","dir":"ltr"},{"code":"ja","htmlLang":"ja","label":"日本語","dir":"ltr"},{"code":"ko","htmlLang":"ko","label":"한국어","dir":"ltr"},{"code":"fr","htmlLang":"fr","label":"Français","dir":"ltr"},{"code":"de","htmlLang":"de","label":"Deutsch","dir":"ltr"},{"code":"es","htmlLang":"es","label":"Español","dir":"ltr"},{"code":"it","htmlLang":"it","label":"Italiano","dir":"ltr"},{"code":"pt-BR","htmlLang":"pt-BR","label":"Português (Brasil)","dir":"ltr"},{"code":"ru","htmlLang":"ru","label":"Русский","dir":"ltr"},{"code":"ar","htmlLang":"ar","label":"العربية","dir":"rtl"},{"code":"hi","htmlLang":"hi","label":"हिन्दी","dir":"ltr"},{"code":"id","htmlLang":"id","label":"Bahasa Indonesia","dir":"ltr"},{"code":"vi","htmlLang":"vi","label":"Tiếng Việt","dir":"ltr"},{"code":"th","htmlLang":"th","label":"ไทย","dir":"ltr"}];
+      const pageMeta = {"en":{"title":"SVNServer Studio Support","description":"Support page for SVNServer Studio, a local-first Subversion server manager for Mac."},"zh-Hans":{"title":"SVNServer Studio 支持","description":"SVNServer Studio 支持页面，SVNServer Studio 是一款面向 Mac 的本地优先 Subversion 服务器管理器。"},"zh-Hant":{"title":"SVNServer Studio 支持","description":"SVNServer Studio 支援頁面，SVNServer Studio 是一款面向 Mac 的本機優先 Subversion 伺服器管理員。"},"ja":{"title":"SVNServer Studio サポート","description":"Mac 用のローカル環境優先の Subversion サーバーマネージャーである SVNServer Studio のサポートページ。"},"ko":{"title":"SVNServer Studio 지원","description":"Mac용 로컬 우선 Subversion 서버 관리 프로그램인 SVNServer Studio의 지원 페이지입니다."},"fr":{"title":"Support de SVNServer Studio","description":"Page d\u0026#39;assistance pour SVNServer Studio, un gestionnaire de serveur Subversion local pour Mac."},"de":{"title":"SVNServer Studio-Unterstützung","description":"Supportseite für SVNServer Studio, einen Subversion-Server-Manager für Mac, der auf lokale Server setzt."},"es":{"title":"Soporte de SVNServer Studio","description":"Página de soporte para SVNServer Studio, un gestor de servidores Subversion para Mac que prioriza el funcionamiento local."},"it":{"title":"Supporto per SVNServer Studio","description":"Pagina di supporto per SVNServer Studio, un gestore di server Subversion per Mac con impostazione locale."},"pt-BR":{"title":"Suporte do SVNServer Studio","description":"Página de suporte para o SVNServer Studio, um gerenciador de servidor Subversion para Mac com foco em operações locais."},"ru":{"title":"Поддержка SVNServer Studio","description":"Страница поддержки SVNServer Studio, менеджера серверов Subversion для Mac, работающего в локальном режиме."},"ar":{"title":"دعم SVNServer Studio","description":"صفحة الدعم لبرنامج SVNServer Studio، وهو مدير خادم Subversion محلي أولاً لنظام التشغيل Mac."},"hi":{"title":"SVNServer स्टूडियो समर्थन","description":"SVNServer Studio के लिए सहायता पृष्ठ, जो Mac के लिए एक स्थानीय-केंद्रित सबवर्जन सर्वर प्रबंधक है।"},"id":{"title":"Dukungan SVNServer Studio","description":"Halaman dukungan untuk SVNServer Studio, pengelola server Subversion yang mengutamakan lokal untuk Mac."},"vi":{"title":"Hỗ trợ SVNServer Studio","description":"Trang hỗ trợ cho SVNServer Studio, trình quản lý máy chủ Subversion ưu tiên cục bộ dành cho Mac."},"th":{"title":"การสนับสนุน SVNServer Studio","description":"หน้าสนับสนุนสำหรับ SVNServer Studio ซึ่งเป็นโปรแกรมจัดการเซิร์ฟเวอร์ Subversion สำหรับ Mac ที่เน้นการใช้งานในเครื่องเป็นหลัก"}};
+      const uiLabels = {"en":{"language":"Language","chooseLanguage":"Choose language"},"zh-Hans":{"language":"语言","chooseLanguage":"选择语言"},"zh-Hant":{"language":"語言","chooseLanguage":"選擇語言"},"ja":{"language":"言語","chooseLanguage":"言語を選択してください"},"ko":{"language":"언어","chooseLanguage":"언어를 선택하세요"},"fr":{"language":"Langue","chooseLanguage":"Choisissez la langue"},"de":{"language":"Sprache","chooseLanguage":"Sprache auswählen"},"es":{"language":"Idioma","chooseLanguage":"Seleccionar idioma"},"it":{"language":"Lingua","chooseLanguage":"Scegli la lingua"},"pt-BR":{"language":"Linguagem","chooseLanguage":"Selecione o idioma"},"ru":{"language":"Язык","chooseLanguage":"Выберите язык"},"ar":{"language":"لغة","chooseLanguage":"اختر اللغة"},"hi":{"language":"भाषा","chooseLanguage":"भाषा चुनें"},"id":{"language":"Bahasa","chooseLanguage":"Pilih bahasa"},"vi":{"language":"Ngôn ngữ","chooseLanguage":"Chọn ngôn ngữ"},"th":{"language":"ภาษา","chooseLanguage":"เลือกภาษา"}};
+      const storageKey = 'svnserver-page-language';
+      const selector = document.getElementById('language-select');
+      const label = document.getElementById('language-label');
+      const sections = Array.from(document.querySelectorAll('.localized-content'));
+      const metaDescription = document.querySelector('meta[name="description"]');
+      function normalizeLanguage(value) {
+        if (!value) return '';
+        const lowered = value.toLowerCase();
+        if (lowered === 'zh-cn' || lowered === 'zh-hans' || lowered.startsWith('zh-cn')) return 'zh-Hans';
+        if (lowered === 'zh-tw' || lowered === 'zh-hant' || lowered.startsWith('zh-tw') || lowered.startsWith('zh-hk')) return 'zh-Hant';
+        if (lowered.startsWith('pt')) return 'pt-BR';
+        const exact = languages.find((language) => language.code.toLowerCase() === lowered);
+        if (exact) return exact.code;
+        const prefix = languages.find((language) => lowered.startsWith(language.code.toLowerCase().split('-')[0]));
+        return prefix ? prefix.code : '';
+      }
+      function requestedLanguage() {
+        const hash = normalizeLanguage(window.location.hash.replace(/^#/, ''));
+        if (hash) return hash;
+        try {
+          const stored = normalizeLanguage(localStorage.getItem(storageKey));
+          if (stored) return stored;
+        } catch (error) {}
+        for (const language of navigator.languages || [navigator.language]) {
+          const normalized = normalizeLanguage(language);
+          if (normalized) return normalized;
+        }
+        return 'en';
+      }
+      function updateLinks(languageCode) {
+        document.querySelectorAll('a[data-localized-link]').forEach((link) => {
+          const base = link.getAttribute('href').split('#')[0];
+          link.setAttribute('href', base + '#' + languageCode);
+        });
+      }
+      function activate(languageCode, shouldPersist) {
+        const language = languages.find((item) => item.code === languageCode) || languages[0];
+        document.body.classList.add('has-language');
+        document.documentElement.lang = language.htmlLang;
+        document.documentElement.dir = language.dir;
+        sections.forEach((section) => section.classList.toggle('is-active', section.dataset.lang === language.code));
+        selector.value = language.code;
+        label.textContent = (uiLabels[language.code] || uiLabels.en).language;
+        selector.setAttribute('aria-label', (uiLabels[language.code] || uiLabels.en).chooseLanguage);
+        const meta = pageMeta[language.code] || pageMeta.en;
+        document.title = meta.title;
+        if (metaDescription) metaDescription.setAttribute('content', meta.description);
+        updateLinks(language.code);
+        if (shouldPersist) {
+          try { localStorage.setItem(storageKey, language.code); } catch (error) {}
+          if (window.location.hash !== '#' + language.code) history.replaceState(null, '', '#' + language.code);
+        }
+      }
+      selector.addEventListener('change', () => activate(selector.value, true));
+      window.addEventListener('hashchange', () => activate(requestedLanguage(), false));
+      activate(requestedLanguage(), false);
+    })();
+  </script>
 </body>
 </html>

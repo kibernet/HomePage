@@ -66,6 +66,8 @@
     p, li {
       color: var(--muted);
       font-size: 1rem;
+      overflow-wrap: anywhere;
+      word-break: break-word;
     }
 
     ul {
@@ -74,6 +76,8 @@
 
     a {
       color: var(--accent);
+      overflow-wrap: anywhere;
+      word-break: break-word;
     }
 
     .eyebrow {
@@ -87,51 +91,188 @@
       color: #94a3b8;
       font-size: 0.95rem;
     }
+
+    .language-control {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .language-control select {
+      max-width: 170px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      color: var(--text);
+      background: rgba(15, 23, 42, 0.66);
+      font: inherit;
+      font-size: 0.92rem;
+    }
+
+    .language-control select:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    @media (max-width: 680px) {
+      .language-control {
+        justify-content: flex-start;
+      }
+
+      .language-control select {
+        width: 100%;
+        max-width: none;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="page">
     <div class="document">
+      <div class="language-control">
+        <label for="languageSelect" id="languageLabel">Language</label>
+        <select id="languageSelect" aria-label="Language">
+          <option value="en">English</option>
+          <option value="zh-Hans">简体中文</option>
+        </select>
+      </div>
+
       <p class="eyebrow">PanePilot for Mac</p>
-      <h1>Privacy Policy</h1>
-      <p class="updated">Last updated: May 27, 2026</p>
+      <h1 data-i18n="title">Privacy Policy</h1>
+      <p class="updated" data-i18n="updated">Last updated: May 27, 2026</p>
 
-      <p>PanePilot is a local-first window layout assistant for macOS. It helps you arrange selected windows, restore workspace snapshots, use custom split ratios, and apply professional layout presets without accounts, cloud sync, advertising, or tracking.</p>
+      <p data-i18n="intro">PanePilot is a local-first window layout assistant for macOS. It helps you arrange selected windows, restore workspace snapshots, use custom split ratios, and apply professional layout presets without accounts, cloud sync, advertising, or tracking.</p>
 
-      <h2>Data We Collect</h2>
-      <p>PanePilot does not collect personal data. The app does not require sign-in, does not operate a remote service, does not include advertising SDKs, and does not include third-party tracking or analytics SDKs.</p>
+      <h2 data-i18n="collectTitle">Data We Collect</h2>
+      <p data-i18n="collectBody">PanePilot does not collect personal data. The app does not require sign-in, does not operate a remote service, does not include advertising SDKs, and does not include third-party tracking or analytics SDKs.</p>
 
-      <h2>Data Processed on Your Mac</h2>
-      <p>To perform user-triggered window layout actions, PanePilot may process the following information locally on your Mac:</p>
+      <h2 data-i18n="localTitle">Data Processed on Your Mac</h2>
+      <p data-i18n="localIntro">To perform user-triggered window layout actions, PanePilot may process the following information locally on your Mac:</p>
       <ul>
-        <li>Application names and bundle identifiers.</li>
-        <li>Window titles.</li>
-        <li>Window positions, sizes, display information, and visible screen areas.</li>
-        <li>User-created layout templates, workspace snapshots, selected presets, and app preferences.</li>
+        <li data-i18n="localItem1">Application names and bundle identifiers.</li>
+        <li data-i18n="localItem2">Window titles.</li>
+        <li data-i18n="localItem3">Window positions, sizes, display information, and visible screen areas.</li>
+        <li data-i18n="localItem4">User-created layout templates, workspace snapshots, selected presets, and app preferences.</li>
       </ul>
-      <p>This information is used only to arrange windows, match windows to layout slots, restore saved workspaces, and provide undo behavior.</p>
+      <p data-i18n="localEnd">This information is used only to arrange windows, match windows to layout slots, restore saved workspaces, and provide undo behavior.</p>
 
-      <h2>Data Stored on Your Mac</h2>
-      <p>PanePilot stores layout templates, workspace snapshots, and preferences locally on your Mac, including through macOS app preferences. This data stays on your device unless you choose to move, back up, or delete it through system tools.</p>
+      <h2 data-i18n="permissionTitle">Accessibility Permission</h2>
+      <p data-i18n="permissionBody">PanePilot uses macOS Accessibility permission to read window metadata and adjust window positions. Without this permission, the app can open its control panel but cannot perform window arrangement actions. PanePilot does not read window contents and does not record keyboard input.</p>
 
-      <h2>Accessibility Permission</h2>
-      <p>PanePilot uses macOS Accessibility permission to read window metadata and adjust window positions. Without this permission, the app can open its control panel but cannot perform window arrangement actions. PanePilot does not read window contents and does not record keyboard input.</p>
+      <h2 data-i18n="networkTitle">Network Access</h2>
+      <p data-i18n="networkBody">PanePilot is designed to work locally on your Mac. It does not upload window titles, app lists, templates, snapshots, or other app data to a server.</p>
 
-      <h2>Network Access</h2>
-      <p>PanePilot is designed to work locally on your Mac. It does not upload window titles, app lists, templates, snapshots, or other app data to a server.</p>
+      <h2 data-i18n="deleteTitle">Data Deletion</h2>
+      <p data-i18n="deleteBody">You can remove saved layouts, workspace snapshots, and preferences from within the app where available, or by deleting the app's local preference data from macOS. Uninstalling the app does not create a remote deletion request because PanePilot does not maintain server-side user accounts or cloud data.</p>
 
-      <h2>Data Deletion</h2>
-      <p>You can remove saved layouts, workspace snapshots, and preferences from within the app where available, or by deleting the app's local preference data from macOS. Uninstalling the app does not create a remote deletion request because PanePilot does not maintain server-side user accounts or cloud data.</p>
+      <h2 data-i18n="childTitle">Children's Privacy</h2>
+      <p data-i18n="childBody">PanePilot is a general productivity utility and is not directed to children. The app does not knowingly collect information from children or any other users.</p>
 
-      <h2>Children's Privacy</h2>
-      <p>PanePilot is a general productivity utility and is not directed to children. The app does not knowingly collect information from children or any other users.</p>
+      <h2 data-i18n="changeTitle">Changes to This Policy</h2>
+      <p data-i18n="changeBody">If this policy changes, the updated version will be posted on this page with a revised update date.</p>
 
-      <h2>Changes to This Policy</h2>
-      <p>If this policy changes, the updated version will be posted on this page with a revised update date.</p>
-
-      <h2>Contact</h2>
-      <p>If you have questions about this privacy policy, contact us at <a href="mailto:kibernet@sina.com">kibernet@sina.com</a>.</p>
+      <h2 data-i18n="contactTitle">Contact</h2>
+      <p><span data-i18n="contactPrefix">If you have questions about this privacy policy, contact us at</span> <a href="mailto:kibernet@sina.com">kibernet@sina.com</a>.</p>
     </div>
   </div>
+
+  <script>
+    const translations = {
+      en: {
+        docTitle: "PanePilot Privacy Policy",
+        docDescription: "Privacy policy for PanePilot, a local-first window layout assistant for Mac.",
+        languageLabel: "Language",
+        title: "Privacy Policy",
+        updated: "Last updated: May 27, 2026",
+        intro: "PanePilot is a local-first window layout assistant for macOS. It helps you arrange selected windows, restore workspace snapshots, use custom split ratios, and apply professional layout presets without accounts, cloud sync, advertising, or tracking.",
+        collectTitle: "Data We Collect",
+        collectBody: "PanePilot does not collect personal data. The app does not require sign-in, does not operate a remote service, does not include advertising SDKs, and does not include third-party tracking or analytics SDKs.",
+        localTitle: "Data Processed on Your Mac",
+        localIntro: "To perform user-triggered window layout actions, PanePilot may process the following information locally on your Mac:",
+        localItem1: "Application names and bundle identifiers.",
+        localItem2: "Window titles.",
+        localItem3: "Window positions, sizes, display information, and visible screen areas.",
+        localItem4: "User-created layout templates, workspace snapshots, selected presets, and app preferences.",
+        localEnd: "This information is used only to arrange windows, match windows to layout slots, restore saved workspaces, and provide undo behavior.",
+        permissionTitle: "Accessibility Permission",
+        permissionBody: "PanePilot uses macOS Accessibility permission to read window metadata and adjust window positions. Without this permission, the app can open its control panel but cannot perform window arrangement actions. PanePilot does not read window contents and does not record keyboard input.",
+        networkTitle: "Network Access",
+        networkBody: "PanePilot is designed to work locally on your Mac. It does not upload window titles, app lists, templates, or other app data to a server.",
+        deleteTitle: "Data Deletion",
+        deleteBody: "You can remove saved layouts, workspace snapshots, and preferences from within the app where available, or by deleting the app's local preference data from macOS. Uninstalling the app does not create a remote deletion request because PanePilot does not maintain server-side user accounts or cloud data.",
+        childTitle: "Children's Privacy",
+        childBody: "PanePilot is a general productivity utility and is not directed to children. The app does not knowingly collect information from children or any other users.",
+        changeTitle: "Changes to This Policy",
+        changeBody: "If this policy changes, the updated version will be posted on this page with a revised update date.",
+        contactTitle: "Contact",
+        contactPrefix: "If you have questions about this privacy policy, contact us at"
+      },
+      "zh-Hans": {
+        docTitle: "PanePilot 隐私政策",
+        docDescription: "PanePilot 是面向 Mac 的本地优先窗口布局助手隐私说明。",
+        languageLabel: "语言",
+        title: "隐私政策",
+        updated: "更新日期：2026 年 5 月 27 日",
+        intro: "PanePilot 是 macOS 的本地优先窗口布局助手。它可帮助你整理所选窗口、恢复工作区快照、使用自定义比例并应用专业布局预设，无需账号、云同步、广告和追踪。",
+        collectTitle: "我们收集的数据",
+        collectBody: "PanePilot 不会收集个人数据。应用不需要登录，不提供远程服务，也不包含广告 SDK、第三方追踪 SDK 或分析 SDK。",
+        localTitle: "本机处理的数据",
+        localIntro: "为执行你的窗口布局操作，PanePilot 可能在本机处理以下信息：",
+        localItem1: "应用名称和应用标识符。",
+        localItem2: "窗口标题。",
+        localItem3: "窗口位置、大小、显示器信息与可见区域。",
+        localItem4: "用户创建的布局模板、工作区快照、已选预设和应用偏好。",
+        localEnd: "这些数据仅用于窗口排列、槽位匹配、保存快照恢复与撤销，还原前的状态。",
+        permissionTitle: "系统权限",
+        permissionBody: "PanePilot 使用 macOS 辅助功能权限读取窗口元数据并调整窗口位置。未授权时应用仍可打开控制面板，但无法执行窗口排列。应用不会读取窗口内容，也不会记录键盘输入。",
+        networkTitle: "网络访问",
+        networkBody: "PanePilot 设计为本机运行，不会上传窗口标题、应用列表、布局模板、快照或其他用户数据到服务器。",
+        deleteTitle: "数据删除",
+        deleteBody: "你可以在应用内（如可用）清理保存的布局、快照与偏好，或通过 macOS 系统工具删除应用本地偏好。卸载应用不会触发远程删除请求，因为应用不存在服务端账号或云端数据。",
+        childTitle: "未成年人隐私",
+        childBody: "PanePilot 是通用生产力工具，不面向未成年人使用，也不会有意收集来自儿童或其他用户的信息。",
+        changeTitle: "隐私政策更新",
+        changeBody: "当本隐私政策发生变更时，更新版本将以新日期发布于本页。",
+        contactTitle: "联系方式",
+        contactPrefix: "如果你对隐私政策有疑问，请联系："
+      }
+    };
+
+    const supportedLanguages = Object.keys(translations);
+    const params = new URLSearchParams(window.location.search);
+    const initialLanguage = supportedLanguages.includes(params.get("lang")) ? params.get("lang") : "en";
+
+    function applyLanguage(lang) {
+      const t = translations[lang] || translations.en;
+      document.documentElement.lang = lang;
+      document.title = t.docTitle;
+      const metaDescription = document.querySelector("meta[name='description']");
+      if (metaDescription) {
+        metaDescription.setAttribute("content", t.docDescription);
+      }
+
+      const select = document.getElementById("languageSelect");
+      select.value = lang;
+      document.getElementById("languageLabel").textContent = t.languageLabel;
+      select.setAttribute("aria-label", t.languageLabel);
+
+      document.querySelectorAll("[data-i18n]").forEach((node) => {
+        const key = node.dataset.i18n;
+        if (Object.prototype.hasOwnProperty.call(t, key)) {
+          node.textContent = t[key];
+        }
+      });
+    }
+
+    document.getElementById("languageSelect").addEventListener("change", (event) => {
+      const next = event.target.value;
+      const baseUrl = window.location.pathname;
+      window.location.href = next === "en" ? baseUrl : `${baseUrl}?lang=${next}`;
+    });
+
+    applyLanguage(initialLanguage);
+  </script>
 </body>
 </html>

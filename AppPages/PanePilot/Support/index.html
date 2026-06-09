@@ -73,6 +73,8 @@
     p, li, span {
       color: var(--muted);
       font-size: 1rem;
+      overflow-wrap: anywhere;
+      word-break: break-word;
     }
 
     ul {
@@ -81,6 +83,8 @@
 
     a {
       color: var(--accent);
+      overflow-wrap: anywhere;
+      word-break: break-word;
     }
 
     .eyebrow {
@@ -97,6 +101,7 @@
     }
 
     .contact-card {
+      min-width: 0;
       padding: 16px;
       border: 1px solid var(--line);
       border-radius: 14px;
@@ -107,52 +112,238 @@
       display: block;
       margin-bottom: 6px;
     }
+
+    .language-control {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .language-control select {
+      max-width: 170px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      color: var(--text);
+      background: rgba(15, 23, 42, 0.66);
+      font: inherit;
+      font-size: 0.92rem;
+    }
+
+    .language-control select:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    @media (max-width: 680px) {
+      .language-control {
+        justify-content: flex-start;
+      }
+
+      .language-control select {
+        width: 100%;
+        max-width: none;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="page">
     <div class="document">
+      <div class="language-control">
+        <label for="languageSelect" id="languageLabel">Language</label>
+        <select id="languageSelect" aria-label="Language">
+          <option value="en">English</option>
+          <option value="zh-Hans">简体中文</option>
+        </select>
+      </div>
+
       <p class="eyebrow">PanePilot for Mac</p>
-      <h1>Support</h1>
-      <p>Need help with PanePilot? Use the contact information below and include your macOS version, app version, display setup, and a short description of the issue.</p>
+      <h1 data-i18n="title">Support</h1>
+      <p data-i18n="intro">Need help with PanePilot? Use the contact information below and include your macOS version, app version, display setup, and a short description of the issue.</p>
 
       <div class="contact">
         <div class="contact-card">
-          <strong>Email</strong>
+          <strong data-i18n="emailLabel">Email</strong>
           <a href="mailto:kibernet@sina.com">kibernet@sina.com</a>
         </div>
         <div class="contact-card">
-          <strong>App</strong>
-          <span>PanePilot for Mac</span>
+          <strong data-i18n="appLabel">App</strong>
+          <span data-i18n="appValue">PanePilot for Mac</span>
         </div>
       </div>
 
-      <h2>Frequently Asked Questions</h2>
+      <h2 data-i18n="faqTitle">Frequently Asked Questions</h2>
+      <div id="faq" style="display: grid; gap: 18px;"></div>
 
-      <h3>Why does PanePilot ask for Accessibility permission?</h3>
-      <p>macOS requires Accessibility permission before an app can read window metadata and move or resize windows. PanePilot uses this permission only for window layout actions that you trigger.</p>
-
-      <h3>Why did a window not move?</h3>
-      <p>Some windows cannot be moved by third-party apps, including full-screen windows, minimized windows, protected system dialogs, and windows from apps that restrict automation. PanePilot avoids these windows to reduce disruption.</p>
-
-      <h3>How do I arrange multiple windows at once?</h3>
-      <p>Open the control panel, select the windows you want to arrange, choose a preset or custom split layout, then apply the layout to the target display.</p>
-
-      <h3>How do workspace snapshots work?</h3>
-      <p>A workspace snapshot saves selected window positions and display placement locally on your Mac. You can restore the snapshot later to return to a familiar working setup.</p>
-
-      <h3>Can I undo a layout action?</h3>
-      <p>Yes. PanePilot records the previous window positions before arrangement so you can undo the last layout action from the app or its global shortcut.</p>
-
-      <h3>Does PanePilot upload my window titles or app list?</h3>
-      <p>No. PanePilot processes window titles, app names, and window positions locally on your Mac and does not upload them to a server.</p>
-
-      <h3>What should I include in a support email?</h3>
-      <p>Please include your macOS version, PanePilot version, Mac model, number of displays, the layout or preset used, and screenshots if they help explain the issue.</p>
-
-      <h2>Privacy</h2>
-      <p>Read the PanePilot privacy policy here: <a href="https://kibernet.github.io/HomePage/AppPages/PanePilot/Privacy/index.html">Privacy Policy</a>.</p>
+      <h2 data-i18n="privacyTitle">Privacy</h2>
+      <p data-i18n="privacyText">Read the PanePilot privacy policy here: <a href="https://kibernet.github.io/HomePage/AppPages/PanePilot/Privacy/index.html">Privacy Policy</a>.</p>
     </div>
   </div>
+
+  <script>
+    const translations = {
+      en: {
+        docTitle: "PanePilot Support",
+        docDescription: "Support page for PanePilot, a local-first window layout assistant for Mac.",
+        languageLabel: "Language",
+        title: "Support",
+        intro: "Need help with PanePilot? Use the contact information below and include your macOS version, app version, display setup, and a short description of the issue.",
+        emailLabel: "Email",
+        appLabel: "App",
+        appValue: "PanePilot for Mac",
+        faqTitle: "Frequently Asked Questions",
+        faqs: [
+          [
+            "Why does PanePilot ask for Accessibility permission?",
+            "macOS requires Accessibility permission before an app can read window metadata and move or resize windows. PanePilot uses this permission only for layout actions you trigger."
+          ],
+          [
+            "Why did a window not move?",
+            "Some windows cannot be moved by third-party apps, including full-screen windows, minimized windows, protected system dialogs, and windows from apps that restrict automation. PanePilot avoids these windows to reduce disruption."
+          ],
+          [
+            "How do I arrange multiple windows at once?",
+            "Open the control panel, select the windows you want to arrange, choose a preset or custom split layout, then apply the layout to the target display."
+          ],
+          [
+            "How do workspace snapshots work?",
+            "A workspace snapshot saves selected window positions and display placement locally on your Mac. You can restore the snapshot later to return to a familiar working setup."
+          ],
+          [
+            "Can I undo a layout action?",
+            "Yes. PanePilot records the previous window positions before arrangement so you can undo the last layout action from the app or its global shortcut."
+          ],
+          [
+            "Does PanePilot upload my window titles or app list?",
+            "No. PanePilot processes window titles, app names, and window positions locally on your Mac and does not upload them to a server."
+          ],
+          [
+            "What should I include in a support email?",
+            "Please include your macOS version, PanePilot version, Mac model, number of displays, the layout or preset used, and screenshots if they help explain the issue."
+          ],
+          [
+            "Can I keep multiple displays?",
+            "Yes. PanePilot can target a chosen display and also supports restoring layouts while keeping visible-screen boundaries where Dock and menu bar differences are considered."
+          ],
+          [
+            "How does PanePilot handle third-party windows?",
+            "PanePilot uses standard macOS Accessibility APIs to read metadata for your action. It skips windows that block automation or are not safe to move, including protected system windows."
+          ]
+        ],
+        privacyTitle: "Privacy",
+        privacyText: "Read the PanePilot privacy policy here: <a href=\"https://kibernet.github.io/HomePage/AppPages/PanePilot/Privacy/index.html\">Privacy Policy</a>."
+      },
+      "zh-Hans": {
+        docTitle: "PanePilot 支持",
+        docDescription: "PanePilot，面向 Mac 的本地优先窗口布局助手支持页。",
+        languageLabel: "语言",
+        title: "支持",
+        intro: "需要 PanePilot 帮助？请使用下方联系方式，并提供你的 macOS 版本、应用版本、显示器配置和问题简要说明。",
+        emailLabel: "邮箱",
+        appLabel: "应用",
+        appValue: "PanePilot（窗序）",
+        faqTitle: "常见问题",
+        faqs: [
+          [
+            "为什么 PanePilot 需要 Accessibility（辅助功能）权限？",
+            "macOS 在窗口读取和移动场景下要求应用具备辅助功能权限。PanePilot 仅在你触发窗口排列时使用该权限。"
+          ],
+          [
+            "为什么某个窗口没有移动？",
+            "部分窗口不允许第三方应用控制，包括全屏窗口、已最小化窗口、受系统保护的弹窗，以及声明了自动化限制的窗口。PanePilot 会默认跳过这类窗口以减少干扰。"
+          ],
+          [
+            "如何一次整理多个窗口？",
+            "打开控制面板，勾选要处理的窗口，选择预设或自定义分屏比例，再将布局应用到目标显示器。"
+          ],
+          [
+            "工作区快照是如何工作的？",
+            "工作区快照会保存当前窗口位置与显示器分布，之后可恢复到同样布局，适合反复切换桌面状态。"
+          ],
+          [
+            "布局操作可以撤销吗？",
+            "可以。每次排列前应用会记录上一个位置状态，你可以用界面内按钮或全局快捷键执行撤销。"
+          ],
+          [
+            "PanePilot 会上传窗口标题或应用列表吗？",
+            "不会。窗口标题、应用名和位置信息只在你本机处理，不会上传到服务器。"
+          ],
+          [
+            "支持邮件应包含什么？",
+            "请附上 macOS 版本、PanePilot 版本、Mac 机型、显示器数量、使用的布局或预设，以及便于说明问题的截图。"
+          ],
+          [
+            "支持多显示器吗？",
+            "支持。你可以选择目标显示器，应用也会保留可见区域信息，并避免将窗口放入菜单栏和 Dock 干扰区。"
+          ],
+          [
+            "对系统窗口如何处理？",
+            "系统受保护或不允许外部自动化的窗口会被跳过，避免出现不可预测的行为。"
+          ]
+        ],
+        privacyTitle: "隐私",
+        privacyText: "隐私政策请见：<a href=\"https://kibernet.github.io/HomePage/AppPages/PanePilot/Privacy/index.html\">Privacy Policy</a>."
+      }
+    };
+
+    const supportedLanguages = Object.keys(translations);
+    const params = new URLSearchParams(window.location.search);
+    const initialLanguage = supportedLanguages.includes(params.get("lang")) ? params.get("lang") : "en";
+
+    function buildFaqs(list) {
+      const container = document.getElementById("faq");
+      container.innerHTML = "";
+      for (const [question, answer] of list) {
+        const questionEl = document.createElement("h3");
+        const answerEl = document.createElement("p");
+        questionEl.textContent = question;
+        answerEl.textContent = answer;
+        container.appendChild(questionEl);
+        container.appendChild(answerEl);
+      }
+    }
+
+    function applyLanguage(lang) {
+      const t = translations[lang] || translations.en;
+      document.documentElement.lang = lang;
+      document.title = t.docTitle;
+      const metaDescription = document.querySelector("meta[name='description']");
+      if (metaDescription) {
+        metaDescription.setAttribute("content", t.docDescription);
+      }
+
+      const select = document.getElementById("languageSelect");
+      select.value = lang;
+      document.getElementById("languageLabel").textContent = t.languageLabel;
+      select.setAttribute("aria-label", t.languageLabel);
+
+      document.querySelectorAll("[data-i18n]").forEach((node) => {
+        const key = node.dataset.i18n;
+        if (Object.prototype.hasOwnProperty.call(t, key)) {
+          node.textContent = t[key];
+        }
+      });
+
+      if (typeof t.faqs !== "undefined") {
+        buildFaqs(t.faqs);
+      }
+
+      const privacyText = document.querySelector("[data-i18n='privacyText']");
+      if (privacyText && t.privacyText) {
+        privacyText.innerHTML = t.privacyText;
+      }
+    }
+
+    document.getElementById("languageSelect").addEventListener("change", (event) => {
+      const next = event.target.value;
+      const baseUrl = window.location.pathname;
+      window.location.href = next === "en" ? baseUrl : `${baseUrl}?lang=${next}`;
+    });
+
+    applyLanguage(initialLanguage);
+  </script>
 </body>
 </html>

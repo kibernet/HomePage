@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,293 +10,268 @@
       color-scheme: dark light;
       --bg: #0a0f1a;
       --panel: rgba(13, 20, 32, 0.78);
+      --panel-strong: rgba(17, 27, 42, 0.92);
+      --card: rgba(17, 27, 42, 0.76);
       --table: rgba(17, 27, 42, 0.76);
       --text: #f8fafc;
       --muted: #cbd5e1;
       --quiet: #94a3b8;
       --line: rgba(148, 163, 184, 0.24);
       --accent: #67e8f9;
+      --accent-2: #f8c35b;
       --ok: #8df5c5;
-      --warning: #f8c35b;
       --shadow: rgba(0, 0, 0, 0.34);
     }
-
     @media (prefers-color-scheme: light) {
       :root {
         --bg: #f7fbff;
         --panel: rgba(255, 255, 255, 0.84);
+        --panel-strong: rgba(255, 255, 255, 0.96);
+        --card: rgba(255, 255, 255, 0.9);
         --table: rgba(255, 255, 255, 0.9);
         --text: #0f172a;
         --muted: #334155;
         --quiet: #64748b;
         --line: rgba(15, 23, 42, 0.14);
         --accent: #0891b2;
+        --accent-2: #b7791f;
         --ok: #047857;
-        --warning: #b7791f;
         --shadow: rgba(15, 23, 42, 0.12);
       }
     }
-
-    * {
-      box-sizing: border-box;
-    }
-
+    * { box-sizing: border-box; }
     body {
       margin: 0;
       min-height: 100vh;
       font-family: Inter, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
       line-height: 1.65;
       color: var(--text);
-      background:
-        radial-gradient(circle at 16% 0%, rgba(103, 232, 249, 0.24), transparent 34rem),
-        radial-gradient(circle at 92% 10%, rgba(248, 195, 91, 0.16), transparent 30rem),
-        linear-gradient(135deg, var(--bg), #101827 54%, #07111d);
+      background: radial-gradient(circle at 16% 0%, rgba(103, 232, 249, 0.24), transparent 34rem), radial-gradient(circle at 92% 10%, rgba(248, 195, 91, 0.16), transparent 30rem), linear-gradient(135deg, var(--bg), #101827 54%, #07111d);
     }
-
     @media (prefers-color-scheme: light) {
-      body {
-        background:
-          radial-gradient(circle at 16% 0%, rgba(8, 145, 178, 0.16), transparent 34rem),
-          radial-gradient(circle at 92% 10%, rgba(183, 121, 31, 0.12), transparent 30rem),
-          linear-gradient(135deg, #f7fbff, #edf6fb 54%, #f8fafc);
-      }
+      body { background: radial-gradient(circle at 16% 0%, rgba(8, 145, 178, 0.16), transparent 34rem), radial-gradient(circle at 92% 10%, rgba(183, 121, 31, 0.12), transparent 30rem), linear-gradient(135deg, #f7fbff, #edf6fb 54%, #f8fafc); }
     }
-
-    .page {
-      width: min(960px, calc(100% - 40px));
-      margin: 0 auto;
-      padding: 56px 0;
-    }
-
-    .document {
-      padding: clamp(24px, 5vw, 52px);
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      background: var(--panel);
-      box-shadow: 0 28px 90px var(--shadow);
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
-    }
-
-    h1, h2 {
-      line-height: 1.15;
-      letter-spacing: 0;
-    }
-
-    h1 {
-      margin: 0 0 10px;
-      font-size: clamp(2.15rem, 5vw, 3.7rem);
-      font-weight: 760;
-    }
-
-    h2 {
-      margin: 34px 0 12px;
-      font-size: 1.18rem;
-      font-weight: 720;
-    }
-
-    p, li, td, th {
-      color: var(--muted);
-      font-size: 1rem;
-    }
-
-    a {
-      color: var(--accent);
-    }
-
-    table {
-      width: 100%;
-      border-collapse: separate;
-      border-spacing: 0;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      background: var(--table);
-    }
-
-    th, td {
-      padding: 12px 14px;
-      border-bottom: 1px solid var(--line);
-      text-align: left;
-      vertical-align: top;
-    }
-
-    tr:last-child td {
-      border-bottom: 0;
-    }
-
-    th {
-      color: var(--text);
-      background: rgba(103, 232, 249, 0.08);
-      font-weight: 720;
-    }
-
-    .eyebrow {
-      margin: 0 0 26px;
-      color: var(--accent);
-      font-weight: 700;
-    }
-
-    .rating {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      margin: 20px 0 6px;
-      padding: 10px 16px;
-      border: 1px solid color-mix(in srgb, var(--ok) 40%, transparent);
-      border-radius: 999px;
-      color: var(--ok);
-      background: color-mix(in srgb, var(--ok) 10%, transparent);
-      font-weight: 760;
-    }
-
-    .updated {
-      margin-top: 0;
-      color: var(--quiet);
-      font-size: 0.95rem;
-    }
-
-    .divider {
-      height: 1px;
-      margin: 42px 0 34px;
-      background: var(--line);
+    .page { width: min(960px, calc(100% - 40px)); margin: 0 auto; padding: 56px 0; }
+    .document { padding: clamp(24px, 5vw, 52px); border: 1px solid var(--line); border-radius: 24px; background: var(--panel); box-shadow: 0 28px 90px var(--shadow); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); }
+    .toolbar { display: flex; justify-content: flex-end; margin-bottom: 28px; }
+    .language-control { display: inline-flex; align-items: center; gap: 10px; padding: 8px 10px; border: 1px solid var(--line); border-radius: 999px; background: var(--panel-strong); color: var(--muted); box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12); }
+    .language-control label { color: var(--quiet); font-size: 0.9rem; white-space: nowrap; }
+    .language-control select { min-width: 180px; border: 0; color: var(--text); background: transparent; font: inherit; font-size: 0.95rem; outline: 0; }
+    .language-control option { color: #0f172a; background: #ffffff; }
+    .localized-content { display: none; }
+    .localized-content.is-active { display: block; }
+    .localized-content[data-lang="en"] { display: block; }
+    body.has-language .localized-content[data-lang="en"] { display: none; }
+    body.has-language .localized-content.is-active { display: block; }
+    h1, h2, h3 { line-height: 1.15; letter-spacing: 0; }
+    h1 { margin: 0 0 10px; font-size: clamp(2.15rem, 5vw, 3.7rem); font-weight: 760; }
+    h2 { margin: 34px 0 12px; font-size: 1.18rem; font-weight: 720; }
+    h3 { margin: 22px 0 8px; color: var(--accent-2); font-size: 1rem; font-weight: 700; }
+    p, li, td, th { color: var(--muted); font-size: 1rem; }
+    ul { padding-left: 1.25rem; }
+    [dir="rtl"] ul { padding-right: 1.25rem; padding-left: 0; }
+    a { color: var(--accent); }
+    .eyebrow { margin: 0 0 26px; color: var(--accent); font-weight: 700; }
+    .updated { margin-top: 0; color: var(--quiet); font-size: 0.95rem; }
+    .notice { margin: 24px 0; padding: 16px 18px; border: 1px solid var(--line); border-radius: 16px; background: var(--panel-strong); }
+    .contact { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin: 24px 0; }
+    .contact-card { padding: 17px; border: 1px solid var(--line); border-radius: 16px; background: var(--card); }
+    .contact-card strong { display: block; margin-bottom: 6px; color: var(--text); }
+    .pill { display: inline-flex; margin: 8px 8px 0 0; padding: 7px 10px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); background: var(--card); font-size: 0.92rem; }
+    table { width: 100%; border-collapse: separate; border-spacing: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 16px; background: var(--table); }
+    th, td { padding: 12px 14px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    [dir="rtl"] th, [dir="rtl"] td { text-align: right; }
+    tr:last-child td { border-bottom: 0; }
+    th { color: var(--text); background: rgba(103, 232, 249, 0.08); font-weight: 720; }
+    .rating { display: inline-flex; align-items: center; justify-content: center; margin: 20px 0 6px; padding: 10px 16px; border: 1px solid color-mix(in srgb, var(--ok) 40%, transparent); border-radius: 999px; color: var(--ok); background: color-mix(in srgb, var(--ok) 10%, transparent); font-weight: 760; }
+    @media (max-width: 620px) {
+      .page { width: min(100% - 24px, 960px); padding: 24px 0; }
+      .document { border-radius: 18px; }
+      .toolbar { justify-content: stretch; }
+      .language-control { width: 100%; justify-content: space-between; border-radius: 14px; }
+      .language-control select { min-width: 0; width: 100%; }
+      th, td { padding: 10px; }
     }
   </style>
 </head>
 <body>
   <div class="page">
     <main class="document">
-      <p class="eyebrow">SVNServer Studio for Mac</p>
-      <h1>Age Rating Information</h1>
-      <p class="updated">Last updated: May 27, 2026</p>
+      <div class="toolbar">
+        <div class="language-control">
+          <label id="language-label" for="language-select">Language</label>
+          <select id="language-select" aria-label="Choose language">
+            <option value="en">English</option>
+            <option value="zh-Hans">简体中文</option>
+            <option value="zh-Hant">繁體中文</option>
+            <option value="ja">日本語</option>
+            <option value="ko">한국어</option>
+            <option value="fr">Français</option>
+            <option value="de">Deutsch</option>
+            <option value="es">Español</option>
+            <option value="it">Italiano</option>
+            <option value="pt-BR">Português (Brasil)</option>
+            <option value="ru">Русский</option>
+            <option value="ar">العربية</option>
+            <option value="hi">हिन्दी</option>
+            <option value="id">Bahasa Indonesia</option>
+            <option value="vi">Tiếng Việt</option>
+            <option value="th">ไทย</option>
+          </select>
+        </div>
+      </div>
 
-      <p>SVNServer Studio is a developer tool and local Subversion server manager for Mac. It is intended for general audiences who need to create repositories, manage users and groups, configure permissions, run local verification and backup jobs, and control a local SVN service.</p>
+      <section class="localized-content is-active" data-lang="en" lang="en" dir="ltr">
+        <p class="eyebrow">SVNServer Studio for Mac</p>
+        <h1>Age Rating Information</h1>
+        <p class="updated">Last updated: May 27, 2026</p>
+        <p>SVNServer Studio is a developer tool and local Subversion server manager for Mac. It is intended for general audiences who need to create repositories, manage users and groups, configure permissions, run local verification and backup jobs, and control a local SVN service.</p>
+        <div class="rating">Recommended App Store Age Rating: 4+</div>
+        <h2>Content Summary</h2>
+        <table summary="SVNServer Studio age rating content categories and status">
+          <tr><th>Category</th><th>SVNServer Studio Status</th></tr>
+          <tr><td>Mature or suggestive themes</td><td>None</td></tr>
+          <tr><td>Violence, horror, or fear content</td><td>None</td></tr>
+          <tr><td>Medical, health, or regulated wellness content</td><td>None</td></tr>
+          <tr><td>Gambling, contests, or probability-based activities</td><td>None</td></tr>
+          <tr><td>Alcohol, tobacco, drug, or regulated substance references</td><td>None</td></tr>
+          <tr><td>User-generated public content, chat, or messaging</td><td>Not included. Users may store their own private repository content under their own control.</td></tr>
+          <tr><td>Advertising or third-party ad networks</td><td>Not included</td></tr>
+          <tr><td>Unrestricted web browsing</td><td>Not included</td></tr>
+          <tr><td>Network access</td><td>Local SVN server management only. Users control host, port, firewall, credentials, and repository permissions.</td></tr>
+          <tr><td>In-app purchases or subscriptions</td><td>Not included in the current version</td></tr>
+        </table>
+        <h2>Intended Use</h2>
+        <p>The app is designed for software development and repository administration. Its features are productivity and developer-tool features, not entertainment, social networking, gambling, dating, medical, or financial advisory features.</p>
+        <h2>Privacy and Safety</h2>
+        <p>SVNServer Studio does not require an account, does not include tracking SDKs, and stores app data locally on the user's Mac. Read the privacy policy here: <a href="https://kibernet.github.io/HomePage/AppPages/SVNServer/Privacy/index.html" data-localized-link>Privacy Policy</a>.</p>
+        <h2>Contact</h2>
+        <p>For questions about this age rating information, contact us at <a href="mailto:kibernet@sina.com">kibernet@sina.com</a>.</p>
+      </section>
 
-      <div class="rating">Recommended App Store Age Rating: 4+</div>
+      <section class="localized-content" data-lang="zh-Hans" lang="zh-CN" dir="ltr">
+        <p class="eyebrow">适用于 Mac 的 SVNServer Studio</p><h1>年龄分级信息</h1><p class="updated">最后更新日期：2026年5月27日</p><p>SVNServer Studio 是一款适用于 Mac 的开发者工具和本地 Subversion 服务器管理器。它面向需要创建代码库、管理用户和用户组、配置权限、运行本地验证和备份作业以及控制本地 SVN 服务的普通用户。</p><div class="rating"> App Store 推荐年龄评级：4+</div><h2>内容概要</h2><table summary="SVNServer Studio age rating content categories and status"><tr><th>类别</th><th>SVNServer Studio 状态</th></tr><tr><td>包含成人或暗示性主题</td><td>没有任何</td></tr><tr><td>暴力、恐怖或惊悚内容</td><td>没有任何</td></tr><tr><td>医疗、健康或受监管的健康内容</td><td>没有任何</td></tr><tr><td>赌博、竞赛或基于概率的活动</td><td>没有任何</td></tr><tr><td>酒精、烟草、毒品或管制物质相关内容</td><td>没有任何</td></tr><tr><td>用户生成的公共内容、聊天或消息</td><td>不包含在内。用户可以自行存储和管理自己的私有存储库内容。</td></tr><tr><td>广告或第三方广告网络</td><td>不包含</td></tr><tr><td>不受限制的网络浏览</td><td>不包含</td></tr><tr><td>网络访问</td><td>仅限本地 SVN 服务器管理。用户可控制主机、端口、防火墙、凭据和存储库权限。</td></tr><tr><td>应用内购买或订阅</td><td>当前版本中未包含</td></tr></table><h2>预期用途</h2><p>该应用专为软件开发和代码库管理而设计。其功能侧重于提高工作效率和开发者工具，而非娱乐、社交网络、赌博、约会、医疗或财务咨询等功能。</p><h2>隐私与安全</h2><p>SVNServer Studio 不需要帐户，不包含跟踪 SDK，并将应用程序数据存储在用户的 Mac 本地。请在此处阅读隐私政策： <a href="https://kibernet.github.io/HomePage/AppPages/SVNServer/Privacy/index.html" data-localized-link>隐私政策</a>。</p><h2>接触</h2><p>如果您对年龄评级信息有任何疑问，请联系我们： <a href="mailto:kibernet@sina.com">kibernet@sina.com</a> 。</p>
+      </section>
 
-      <h2>Content Summary</h2>
-      <table summary="SVNServer Studio age rating content categories and status">
-        <tr>
-          <th>Category</th>
-          <th>SVNServer Studio Status</th>
-        </tr>
-        <tr>
-          <td>Mature or suggestive themes</td>
-          <td>None</td>
-        </tr>
-        <tr>
-          <td>Violence, horror, or fear content</td>
-          <td>None</td>
-        </tr>
-        <tr>
-          <td>Medical, health, or regulated wellness content</td>
-          <td>None</td>
-        </tr>
-        <tr>
-          <td>Gambling, contests, or probability-based activities</td>
-          <td>None</td>
-        </tr>
-        <tr>
-          <td>Alcohol, tobacco, drug, or regulated substance references</td>
-          <td>None</td>
-        </tr>
-        <tr>
-          <td>User-generated public content, chat, or messaging</td>
-          <td>Not included. Users may store their own private repository content under their own control.</td>
-        </tr>
-        <tr>
-          <td>Advertising or third-party ad networks</td>
-          <td>Not included</td>
-        </tr>
-        <tr>
-          <td>Unrestricted web browsing</td>
-          <td>Not included</td>
-        </tr>
-        <tr>
-          <td>Network access</td>
-          <td>Local SVN server management only. Users control host, port, firewall, credentials, and repository permissions.</td>
-        </tr>
-        <tr>
-          <td>In-app purchases or subscriptions</td>
-          <td>Not included in the current version</td>
-        </tr>
-      </table>
+      <section class="localized-content" data-lang="zh-Hant" lang="zh-TW" dir="ltr">
+        <p class="eyebrow">適用於 Mac 的 SVNServer Studio</p><h1>年齡分級資訊</h1><p class="updated">最後更新日期：2026年5月27日</p><p>SVNServer Studio 是一款適用於 Mac 的開發者工具和本機 Subversion 伺服器管理器。它面向需要建立程式碼庫、管理使用者和使用者群組、配置權限、執行本機驗證和備份作業以及控製本機 SVN 服務的普通使用者。</p><div class="rating"> App Store 推薦年齡評級：4+</div><h2>內容概要</h2><table summary="SVNServer Studio age rating content categories and status"><tr><th>類別</th><th>SVNServer Studio 狀態</th></tr><tr><td>包含成人或暗示性主題</td><td>沒有任何</td></tr><tr><td>暴力、恐怖或驚悚內容</td><td>沒有任何</td></tr><tr><td>醫療、健康或受監管的健康內容</td><td>沒有任何</td></tr><tr><td>賭博、競賽或基於機率的活動</td><td>沒有任何</td></tr><tr><td>酒精、菸草、毒品或管制物質相關內容</td><td>沒有任何</td></tr><tr><td>用戶產生的公共內容、聊天或訊息</td><td>不包含在內。使用者可以自行儲存和管理自己的私人儲存庫內容。</td></tr><tr><td>廣告或第三方廣告網絡</td><td>不包含</td></tr><tr><td>不受限制的網路瀏覽</td><td>不包含</td></tr><tr><td>網路存取</td><td>僅限本地 SVN 伺服器管理。使用者可控制主機、連接埠、防火牆、憑證和儲存庫權限。</td></tr><tr><td>應用程式內購買或訂閱</td><td>目前版本中未包含</td></tr></table><h2>預期用途</h2><p>該應用程式專為軟體開發和程式碼庫管理而設計。其功能著重於提高工作效率和開發者工具，而非娛樂、社交網絡、賭博、約會、醫療或財務諮詢等功能。</p><h2>隱私與安全</h2><p>SVNServer Studio 不需要帳戶，不包含追蹤 SDK，並將應用程式資料儲存在使用者的 Mac 本機上。請在此閱讀隱私權政策： <a href="https://kibernet.github.io/HomePage/AppPages/SVNServer/Privacy/index.html" data-localized-link>隱私權政策</a>。</p><h2>接觸</h2><p>如果您對年齡評級資訊有任何疑問，請聯絡我們： <a href="mailto:kibernet@sina.com">kibernet@sina.com</a> 。</p>
+      </section>
 
-      <h2>Intended Use</h2>
-      <p>The app is designed for software development and repository administration. Its features are productivity and developer-tool features, not entertainment, social networking, gambling, dating, medical, or financial advisory features.</p>
+      <section class="localized-content" data-lang="ja" lang="ja" dir="ltr">
+        <p class="eyebrow">Mac版SVNServer Studio</p><h1>年齢制限情報</h1><p class="updated">最終更新日：2026年5月27日</p><p>SVNServer Studioは、Mac用の開発者ツールであり、ローカルのSubversionサーバーマネージャーです。リポジトリの作成、ユーザーとグループの管理、権限の設定、ローカルでの検証およびバックアップジョブの実行、ローカルSVNサービスの制御などを行う必要がある一般ユーザーを対象としています。</p><div class="rating">推奨アプリストア年齢レーティング：4歳以上</div><h2>内容概要</h2><table summary="SVNServer Studio age rating content categories and status"><tr><th>カテゴリ</th><th>SVNServer Studio のステータス</th></tr><tr><td>成人向けまたは示唆的なテーマ</td><td>なし</td></tr><tr><td>暴力、ホラー、または恐怖を描写する内容</td><td>なし</td></tr><tr><td>医療、健康、または規制対象のウェルネスコンテンツ</td><td>なし</td></tr><tr><td>ギャンブル、コンテスト、または確率に基づく活動</td><td>なし</td></tr><tr><td>アルコール、タバコ、薬物、または規制物質に関する記述</td><td>なし</td></tr><tr><td>ユーザーが作成した公開コンテンツ、チャット、またはメッセージング</td><td>含まれていません。ユーザーは、独自のプライベートリポジトリのコンテンツを自身の管理下で保存することができます。</td></tr><tr><td>広告または第三者広告ネットワーク</td><td>含まれていません</td></tr><tr><td>制限のないウェブ閲覧</td><td>含まれていません</td></tr><tr><td>ネットワークアクセス</td><td>ローカルSVNサーバーの管理のみが可能です。ユーザーはホスト、ポート、ファイアウォール、認証情報、リポジトリのアクセス許可を制御できます。</td></tr><tr><td>アプリ内課金またはサブスクリプション</td><td>現在のバージョンには含まれていません</td></tr></table><h2>使用目的</h2><p>このアプリは、ソフトウェア開発とリポジトリ管理を目的として設計されています。その機能は生産性向上と開発ツールとしての機能であり、娯楽、ソーシャルネットワーキング、ギャンブル、出会い系、医療、または金融アドバイス機能は含まれていません。</p><h2>プライバシーと安全</h2><p>SVNServer Studioはアカウントを必要とせず、トラッキングSDKも含まれておらず、アプリデータはユーザーのMacにローカルに保存されます。プライバシーポリシーはこちらをご覧ください： <a href="https://kibernet.github.io/HomePage/AppPages/SVNServer/Privacy/index.html" data-localized-link>プライバシーポリシー</a>。</p><h2>接触</h2><p>この年齢制限情報に関するご質問は、 <a href="mailto:kibernet@sina.com">kibernet@sina.com</a>までお問い合わせください。</p>
+      </section>
 
-      <h2>Privacy and Safety</h2>
-      <p>SVNServer Studio does not require an account, does not include tracking SDKs, and stores app data locally on the user's Mac. Read the privacy policy here: <a href="https://kibernet.github.io/HomePage/AppPages/SVNServer/Privacy/index.html">Privacy Policy</a>.</p>
+      <section class="localized-content" data-lang="ko" lang="ko" dir="ltr">
+        <p class="eyebrow">Mac용 SVNServer Studio</p><h1> 연령 등급 정보</h1><p class="updated"> 최종 업데이트: 2026년 5월 27일</p><p> SVNServer Studio는 Mac용 개발자 도구이자 로컬 Subversion 서버 관리자입니다. 저장소 생성, 사용자 및 그룹 관리, 권한 구성, 로컬 검증 및 백업 작업 실행, 로컬 SVN 서비스 제어 등이 필요한 일반 사용자를 대상으로 합니다.</p><div class="rating"> 앱스토어 권장 연령 등급: 4세 이상</div><h2> 내용 요약</h2><table summary="SVNServer Studio age rating content categories and status"><tr><th> 범주</th><th> SVNServer Studio 상태</th></tr><tr><td> 성숙하거나 선정적인 주제</td><td> 없음</td></tr><tr><td> 폭력, 공포 또는 두려움을 유발하는 콘텐츠</td><td> 없음</td></tr><tr><td> 의학, 건강 또는 규제 대상 웰빙 콘텐츠</td><td> 없음</td></tr><tr><td> 도박, 대회 또는 확률 기반 활동</td><td> 없음</td></tr><tr><td> 알코올, 담배, 마약 또는 규제 대상 물질 관련 언급</td><td> 없음</td></tr><tr><td> 사용자가 생성한 공개 콘텐츠, 채팅 또는 메시지</td><td> 포함되지 않습니다. 사용자는 자체적으로 관리하는 개인 저장소에 콘텐츠를 저장할 수 있습니다.</td></tr><tr><td> 광고 또는 제3자 광고 네트워크</td><td> 포함되지 않음</td></tr><tr><td> 제한 없는 웹 브라우징</td><td> 포함되지 않음</td></tr><tr><td> 네트워크 액세스</td><td> 로컬 SVN 서버 관리만 가능합니다. 사용자는 호스트, 포트, 방화벽, 자격 증명 및 저장소 권한을 직접 제어할 수 있습니다.</td></tr><tr><td> 인앱 구매 또는 구독</td><td> 현재 버전에는 포함되어 있지 않습니다.</td></tr></table><h2> 사용 목적</h2><p> 이 앱은 소프트웨어 개발 및 저장소 관리를 위해 설계되었습니다. 앱의 기능은 생산성 및 개발자 도구 기능이며, 엔터테인먼트, 소셜 네트워킹, 도박, 데이트, 의료 또는 금융 자문 기능과는 무관합니다.</p><h2> 개인정보 보호 및 안전</h2><p> SVNServer Studio는 계정이 필요하지 않으며, 추적 SDK를 포함하지 않고, 앱 데이터를 사용자의 Mac에 로컬로 저장합니다. 개인정보 보호정책은 여기에서 확인하세요: <a href="https://kibernet.github.io/HomePage/AppPages/SVNServer/Privacy/index.html" data-localized-link>개인정보 보호정책</a> .</p><h2> 연락하다</h2><p> 이 연령 등급 정보에 대한 문의 사항은 <a href="mailto:kibernet@sina.com">kibernet@sina.com</a> 으로 연락주시기 바랍니다.</p>
+      </section>
 
-      <h2>Contact</h2>
-      <p>For questions about this age rating information, contact us at <a href="mailto:kibernet@sina.com">kibernet@sina.com</a>.</p>
+      <section class="localized-content" data-lang="fr" lang="fr" dir="ltr">
+        <p class="eyebrow">SVNServer Studio pour Mac</p><h1> Informations sur la classification par âge</h1><p class="updated"> Dernière mise à jour : 27 mai 2026</p><p> SVNServer Studio est un outil de développement et un gestionnaire de serveur Subversion local pour Mac. Il s&#39;adresse à un large public souhaitant créer des dépôts, gérer les utilisateurs et les groupes, configurer les permissions, exécuter des tâches de vérification et de sauvegarde locales et contrôler un service SVN local.</p><div class="rating"> Classification d&#39;âge recommandée sur l&#39;App Store : 4 ans et plus</div><h2> Résumé du contenu</h2><table summary="SVNServer Studio age rating content categories and status"><tr><th> Catégorie</th><th> État du studio SVNServer</th></tr><tr><td> Thèmes adultes ou suggestifs</td><td> Aucun</td></tr><tr><td> Contenu violent, horrifique ou effrayant</td><td> Aucun</td></tr><tr><td> Contenu médical, de santé ou de bien-être réglementé</td><td> Aucun</td></tr><tr><td> Jeux de hasard, concours ou activités basées sur les probabilités</td><td> Aucun</td></tr><tr><td> Références à l&#39;alcool, au tabac, aux drogues ou aux substances réglementées</td><td> Aucun</td></tr><tr><td> Contenu public généré par les utilisateurs, chat ou messagerie</td><td> Non inclus. Les utilisateurs peuvent stocker le contenu de leur propre dépôt privé sous leur propre contrôle.</td></tr><tr><td> Publicité ou réseaux publicitaires tiers</td><td> Non inclus</td></tr><tr><td> Navigation web sans restriction</td><td> Non inclus</td></tr><tr><td> accès au réseau</td><td> Gestion du serveur SVN local uniquement. Les utilisateurs contrôlent l&#39;hôte, le port, le pare-feu, les identifiants et les autorisations du dépôt.</td></tr><tr><td> Achats intégrés ou abonnements</td><td> Non inclus dans la version actuelle</td></tr></table><h2> Utilisation prévue</h2><p> Cette application est conçue pour le développement logiciel et l&#39;administration de dépôts. Elle propose des fonctionnalités de productivité et d&#39;outils de développement, et non des services de divertissement, de réseautage social, de jeux d&#39;argent, de rencontres, de santé ou de conseil financier.</p><h2> Confidentialité et sécurité</h2><p> SVNServer Studio ne nécessite pas de compte, n&#39;inclut pas de SDK de suivi et stocke les données de l&#39;application localement sur le Mac de l&#39;utilisateur. Consultez la politique de confidentialité ici : <a href="https://kibernet.github.io/HomePage/AppPages/SVNServer/Privacy/index.html" data-localized-link>Politique de confidentialité</a> .</p><h2> Contact</h2><p> Pour toute question concernant ces informations sur la classification par âge, veuillez nous contacter à l&#39; <a href="mailto:kibernet@sina.com">adresse kibernet@sina.com</a> .</p>
+      </section>
 
-      <div class="divider"></div>
+      <section class="localized-content" data-lang="de" lang="de" dir="ltr">
+        <p class="eyebrow">SVNServer Studio für Mac</p><h1> Informationen zur Altersfreigabe</h1><p class="updated"> Letzte Aktualisierung: 27. Mai 2026</p><p> SVNServer Studio ist ein Entwicklertool und lokaler Subversion-Server-Manager für Mac. Es richtet sich an allgemeine Anwender, die Repositories erstellen, Benutzer und Gruppen verwalten, Berechtigungen konfigurieren, lokale Verifizierungs- und Sicherungsaufträge ausführen und einen lokalen SVN-Dienst steuern müssen.</p><div class="rating"> Empfohlene Altersfreigabe im App Store: 4+</div><h2> Inhaltsübersicht</h2><table summary="SVNServer Studio age rating content categories and status"><tr><th> Kategorie</th><th> SVNServer Studio-Status</th></tr><tr><td> Themen für Erwachsene oder anzügliche Themen</td><td> Keiner</td></tr><tr><td> Gewalt-, Horror- oder Angstinhalte</td><td> Keiner</td></tr><tr><td> Medizinische, gesundheitliche oder regulierte Wellness-Inhalte</td><td> Keiner</td></tr><tr><td> Glücksspiel, Wettbewerbe oder auf Wahrscheinlichkeit basierende Aktivitäten</td><td> Keiner</td></tr><tr><td> Bezug auf Alkohol, Tabak, Drogen oder regulierte Substanzen</td><td> Keiner</td></tr><tr><td> Nutzergenerierte öffentliche Inhalte, Chat oder Nachrichten</td><td> Nicht enthalten. Benutzer können ihre eigenen privaten Repository-Inhalte unter ihrer eigenen Kontrolle speichern.</td></tr><tr><td> Werbung oder Werbenetzwerke von Drittanbietern</td><td> Nicht enthalten</td></tr><tr><td> Uneingeschränktes Surfen im Internet</td><td> Nicht enthalten</td></tr><tr><td> Netzwerkzugriff</td><td> Nur lokale SVN-Serververwaltung. Benutzer haben Kontrolle über Host, Port, Firewall, Anmeldeinformationen und Repository-Berechtigungen.</td></tr><tr><td> In-App-Käufe oder Abonnements</td><td> Nicht in der aktuellen Version enthalten</td></tr></table><h2> Bestimmungsgemäße Verwendung</h2><p> Die App ist für die Softwareentwicklung und die Repository-Verwaltung konzipiert. Ihre Funktionen dienen der Produktivitätssteigerung und als Entwicklerwerkzeug; sie bietet keine Unterhaltungs-, Netzwerk-, Glücksspiel-, Dating-, Medizin- oder Finanzberatungsfunktionen.</p><h2> Datenschutz und Sicherheit</h2><p> SVNServer Studio benötigt kein Benutzerkonto, enthält keine Tracking-SDKs und speichert App-Daten lokal auf dem Mac des Benutzers. Die Datenschutzrichtlinie finden Sie hier: <a href="https://kibernet.github.io/HomePage/AppPages/SVNServer/Privacy/index.html" data-localized-link>Datenschutzrichtlinie</a> .</p><h2> Kontakt</h2><p> Bei Fragen zu diesen Altersfreigabeinformationen kontaktieren Sie uns bitte unter <a href="mailto:kibernet@sina.com">kibernet@sina.com</a> .</p>
+      </section>
 
-      <h1>适龄信息</h1>
-      <p class="updated">最后更新：2026 年 5 月 27 日</p>
+      <section class="localized-content" data-lang="es" lang="es" dir="ltr">
+        <p class="eyebrow">SVNServer Studio para Mac</p><h1> Información sobre la clasificación por edades</h1><p class="updated"> Última actualización: 27 de mayo de 2026</p><p> SVNServer Studio es una herramienta para desarrolladores y un gestor de servidores Subversion locales para Mac. Está dirigido a usuarios generales que necesitan crear repositorios, gestionar usuarios y grupos, configurar permisos, ejecutar verificaciones y copias de seguridad locales, y controlar un servicio SVN local.</p><div class="rating"> Clasificación por edad recomendada en la App Store: 4+</div><h2> Resumen del contenido</h2><table summary="SVNServer Studio age rating content categories and status"><tr><th> Categoría</th><th> Estado del estudio SVNServer</th></tr><tr><td> Temas maduros o sugerentes</td><td> Ninguno</td></tr><tr><td> Contenido violento, de terror o que provoque miedo.</td><td> Ninguno</td></tr><tr><td> Contenido médico, sanitario o de bienestar regulado</td><td> Ninguno</td></tr><tr><td> Juegos de azar, concursos o actividades basadas en la probabilidad</td><td> Ninguno</td></tr><tr><td> Referencias sobre alcohol, tabaco, drogas o sustancias reguladas</td><td> Ninguno</td></tr><tr><td> Contenido público generado por el usuario, chat o mensajería.</td><td> No incluido. Los usuarios pueden almacenar el contenido de su propio repositorio privado bajo su propio control.</td></tr><tr><td> Publicidad o redes publicitarias de terceros</td><td> No incluido</td></tr><tr><td> Navegación web sin restricciones</td><td> No incluido</td></tr><tr><td> Acceso a la red</td><td> Solo se permite la administración del servidor SVN local. Los usuarios controlan el host, el puerto, el cortafuegos, las credenciales y los permisos del repositorio.</td></tr><tr><td> Compras o suscripciones dentro de la aplicación</td><td> No incluido en la versión actual</td></tr></table><h2> Uso previsto</h2><p> La aplicación está diseñada para el desarrollo de software y la administración de repositorios. Sus funciones son de productividad y herramientas para desarrolladores, no de entretenimiento, redes sociales, juegos de azar, citas, servicios médicos ni asesoramiento financiero.</p><h2> Privacidad y seguridad</h2><p> SVNServer Studio no requiere cuenta, no incluye SDK de seguimiento y almacena los datos de la aplicación localmente en el Mac del usuario. Lea la política de privacidad aquí: <a href="https://kibernet.github.io/HomePage/AppPages/SVNServer/Privacy/index.html" data-localized-link>Política de privacidad</a> .</p><h2> Contacto</h2><p> Si tiene alguna pregunta sobre esta información de clasificación por edades, póngase en contacto con nosotros en <a href="mailto:kibernet@sina.com">kibernet@sina.com</a> .</p>
+      </section>
 
-      <p>SVNServer Studio 是一款面向 Mac 的开发者工具和本地 Subversion 服务器管理器。它用于创建仓库、管理用户和用户组、配置权限、执行本地校验和备份任务，并控制本地 SVN 服务。</p>
+      <section class="localized-content" data-lang="it" lang="it" dir="ltr">
+        <p class="eyebrow">SVNServer Studio per Mac</p><h1> Informazioni sulla classificazione per età</h1><p class="updated"> Ultimo aggiornamento: 27 maggio 2026</p><p> SVNServer Studio è uno strumento per sviluppatori e un gestore di server Subversion locale per Mac. È pensato per un pubblico generico che necessita di creare repository, gestire utenti e gruppi, configurare le autorizzazioni, eseguire processi di verifica e backup locali e controllare un servizio SVN locale.</p><div class="rating"> Classificazione di età consigliata sull&#39;App Store: 4+</div><h2> Sommario dei contenuti</h2><table summary="SVNServer Studio age rating content categories and status"><tr><th> Categoria</th><th> Stato di SVNServer Studio</th></tr><tr><td> Temi maturi o allusivi</td><td> Nessuno</td></tr><tr><td> Contenuti violenti, horror o che incutono paura</td><td> Nessuno</td></tr><tr><td> Contenuti medici, sanitari o relativi al benessere regolamentato</td><td> Nessuno</td></tr><tr><td> Giochi d&#39;azzardo, concorsi o attività basate sulla probabilità</td><td> Nessuno</td></tr><tr><td> Riferimenti ad alcol, tabacco, droghe o sostanze regolamentate</td><td> Nessuno</td></tr><tr><td> Contenuti pubblici, chat o messaggi generati dagli utenti</td><td> Non incluso. Gli utenti possono archiviare i propri contenuti privati sotto il proprio controllo.</td></tr><tr><td> Pubblicità o reti pubblicitarie di terze parti</td><td> Non incluso</td></tr><tr><td> Navigazione web senza restrizioni</td><td> Non incluso</td></tr><tr><td> Accesso alla rete</td><td> Gestione locale del server SVN. Gli utenti controllano host, porta, firewall, credenziali e permessi del repository.</td></tr><tr><td> Acquisti in-app o abbonamenti</td><td> Non incluso nella versione attuale</td></tr></table><h2> Uso previsto</h2><p> L&#39;app è progettata per lo sviluppo di software e l&#39;amministrazione di repository. Le sue funzionalità sono incentrate sulla produttività e sugli strumenti di sviluppo, non sull&#39;intrattenimento, i social network, il gioco d&#39;azzardo, gli incontri, la medicina o la consulenza finanziaria.</p><h2> Privacy e sicurezza</h2><p> SVNServer Studio non richiede un account, non include SDK di tracciamento e memorizza i dati dell&#39;app localmente sul Mac dell&#39;utente. Leggi l&#39;informativa sulla privacy qui: <a href="https://kibernet.github.io/HomePage/AppPages/SVNServer/Privacy/index.html" data-localized-link>Informativa sulla privacy</a> .</p><h2> Contatto</h2><p> Per domande relative a questa classificazione per età, contattateci all&#39;indirizzo <a href="mailto:kibernet@sina.com">kibernet@sina.com</a> .</p>
+      </section>
 
-      <div class="rating">建议 App Store 年龄分级：4+</div>
+      <section class="localized-content" data-lang="pt-BR" lang="pt-BR" dir="ltr">
+        <p class="eyebrow">SVNServer Studio para Mac</p><h1> Informações sobre a classificação etária</h1><p class="updated"> Última atualização: 27 de maio de 2026</p><p> O SVNServer Studio é uma ferramenta de desenvolvimento e gerenciador de servidor Subversion local para Mac. É destinado ao público em geral que precisa criar repositórios, gerenciar usuários e grupos, configurar permissões, executar tarefas locais de verificação e backup e controlar um serviço SVN local.</p><div class="rating"> Classificação etária recomendada na App Store: 4+</div><h2> Resumo do conteúdo</h2><table summary="SVNServer Studio age rating content categories and status"><tr><th> Categoria</th><th> Status do SVNServer Studio</th></tr><tr><td> Temas adultos ou sugestivos</td><td> Nenhum</td></tr><tr><td> Conteúdo violento, de terror ou assustador</td><td> Nenhum</td></tr><tr><td> Conteúdo médico, de saúde ou de bem-estar regulamentado</td><td> Nenhum</td></tr><tr><td> Jogos de azar, concursos ou atividades baseadas em probabilidade</td><td> Nenhum</td></tr><tr><td> Referências a álcool, tabaco, drogas ou substâncias controladas</td><td> Nenhum</td></tr><tr><td> Conteúdo público gerado pelo usuário, bate-papo ou mensagens</td><td> Não incluído. Os usuários podem armazenar o conteúdo de seus próprios repositórios privados sob seu próprio controle.</td></tr><tr><td> Publicidade ou redes de publicidade de terceiros</td><td> Não incluído</td></tr><tr><td> Navegação na web sem restrições</td><td> Não incluído</td></tr><tr><td> Acesso à rede</td><td> Gerenciamento apenas do servidor SVN local. Os usuários controlam o host, a porta, o firewall, as credenciais e as permissões do repositório.</td></tr><tr><td> Compras ou assinaturas dentro do aplicativo</td><td> Não incluído na versão atual.</td></tr></table><h2> Uso pretendido</h2><p> O aplicativo foi projetado para desenvolvimento de software e administração de repositórios. Suas funcionalidades são voltadas para produtividade e ferramentas de desenvolvimento, não para entretenimento, redes sociais, jogos de azar, encontros, saúde ou consultoria financeira.</p><h2> Privacidade e segurança</h2><p> O SVNServer Studio não exige conta, não inclui SDKs de rastreamento e armazena os dados do aplicativo localmente no Mac do usuário. Leia a política de privacidade aqui: <a href="https://kibernet.github.io/HomePage/AppPages/SVNServer/Privacy/index.html" data-localized-link>Política de Privacidade</a> .</p><h2> Contato</h2><p> Para dúvidas sobre essas informações de classificação etária, entre em contato conosco pelo endereço <a href="mailto:kibernet@sina.com">kibernet@sina.com</a> .</p>
+      </section>
 
-      <h2>内容摘要</h2>
-      <table summary="SVNServer Studio 适龄内容类别和状态">
-        <tr>
-          <th>类别</th>
-          <th>SVNServer Studio 状态</th>
-        </tr>
-        <tr>
-          <td>成人或暗示性主题</td>
-          <td>无</td>
-        </tr>
-        <tr>
-          <td>暴力、恐怖或惊吓内容</td>
-          <td>无</td>
-        </tr>
-        <tr>
-          <td>医疗、健康或受监管的健康内容</td>
-          <td>无</td>
-        </tr>
-        <tr>
-          <td>赌博、竞赛或概率活动</td>
-          <td>无</td>
-        </tr>
-        <tr>
-          <td>酒精、烟草、药物或受监管物质引用</td>
-          <td>无</td>
-        </tr>
-        <tr>
-          <td>公开用户生成内容、聊天或消息</td>
-          <td>不包含。用户可以在自己控制的私有仓库中保存自己的内容。</td>
-        </tr>
-        <tr>
-          <td>广告或第三方广告网络</td>
-          <td>不包含</td>
-        </tr>
-        <tr>
-          <td>不受限制的网页浏览</td>
-          <td>不包含</td>
-        </tr>
-        <tr>
-          <td>网络访问</td>
-          <td>仅用于本地 SVN 服务器管理。用户自行控制主机、端口、防火墙、凭据和仓库权限。</td>
-        </tr>
-        <tr>
-          <td>应用内购买或订阅</td>
-          <td>当前版本不包含</td>
-        </tr>
-      </table>
+      <section class="localized-content" data-lang="ru" lang="ru" dir="ltr">
+        <p class="eyebrow">SVNServer Studio для Mac</p><h1> Информация о возрастном рейтинге</h1><p class="updated"> Последнее обновление: 27 мая 2026 г.</p><p> SVNServer Studio — это инструмент для разработчиков и локальный менеджер сервера Subversion для Mac. Он предназначен для широкого круга пользователей, которым необходимо создавать репозитории, управлять пользователями и группами, настраивать разрешения, запускать локальные задания проверки и резервного копирования, а также управлять локальной службой SVN.</p><div class="rating"> Рекомендуемый возраст в App Store: 4+</div><h2> Краткое содержание</h2><table summary="SVNServer Studio age rating content categories and status"><tr><th> Категория</th><th> Статус SVNServer Studio</th></tr><tr><td> Темы для взрослых или содержащие намеки на сексуальный подтекст</td><td> Никто</td></tr><tr><td> Содержит сцены насилия, ужаса или страха.</td><td> Никто</td></tr><tr><td> Медицинский, оздоровительный или регулируемый контент о здоровом образе жизни</td><td> Никто</td></tr><tr><td> Азартные игры, конкурсы или деятельность, основанная на теории вероятности.</td><td> Никто</td></tr><tr><td> Упоминания алкоголя, табака, наркотиков или регулируемых веществ</td><td> Никто</td></tr><tr><td> Общедоступный контент, созданный пользователями, сообщения в чате или мессенджере.</td><td> Не включено. Пользователи могут хранить содержимое своих собственных частных репозиториев под своим собственным контролем.</td></tr><tr><td> Реклама или сторонние рекламные сети</td><td> Не включено</td></tr><tr><td> Неограниченный доступ в интернет.</td><td> Не включено</td></tr><tr><td> доступ к сети</td><td> Управление только локальным SVN-сервером. Пользователи контролируют хост, порт, брандмауэр, учетные данные и права доступа к репозиторию.</td></tr><tr><td> Встроенные покупки или подписки</td><td> Не включено в текущую версию</td></tr></table><h2> Назначение</h2><p> Приложение предназначено для разработки программного обеспечения и администрирования репозиториев. Его функции ориентированы на повышение производительности и являются инструментами для разработчиков, а не на развлечения, социальные сети, азартные игры, знакомства, медицинские услуги или финансовое консультирование.</p><h2> Конфиденциальность и безопасность</h2><p> SVNServer Studio не требует учетной записи, не включает SDK для отслеживания и хранит данные приложения локально на Mac пользователя. Ознакомиться с политикой конфиденциальности можно здесь: <a href="https://kibernet.github.io/HomePage/AppPages/SVNServer/Privacy/index.html" data-localized-link>Политика конфиденциальности</a> .</p><h2> Контакт</h2><p> По вопросам, касающимся данной информации о возрастных ограничениях, обращайтесь по адресу <a href="mailto:kibernet@sina.com">kibernet@sina.com</a> .</p>
+      </section>
 
-      <h2>预期用途</h2>
-      <p>本应用面向软件开发和仓库管理场景。它提供的是生产力和开发者工具能力，不属于娱乐、社交、赌博、约会、医疗或金融建议类应用。</p>
+      <section class="localized-content" data-lang="ar" lang="ar" dir="rtl">
+        <p class="eyebrow" style=";text-align:right;direction:rtl">SVNServer Studio لنظام التشغيل Mac</p><h1 style=";text-align:right;direction:rtl"> معلومات تصنيف العمر</h1><p class="updated" style=";text-align:right;direction:rtl"> آخر تحديث: 27 مايو 2026</p><p style=";text-align:right;direction:rtl"> SVNServer Studio هي أداة تطوير ومدير خادم Subversion محلي لنظام Mac. وهي مخصصة للجمهور العام الذي يحتاج إلى إنشاء مستودعات، وإدارة المستخدمين والمجموعات، وتكوين الأذونات، وتشغيل مهام التحقق والنسخ الاحتياطي المحلية، والتحكم في خدمة SVN محلية.</p><div class="rating" style=";text-align:right;direction:rtl"> تصنيف متجر التطبيقات الموصى به: 4+ سنوات</div><h2 style=";text-align:right;direction:rtl"> ملخص المحتوى</h2><table summary="SVNServer Studio age rating content categories and status" style=";text-align:right;direction:rtl"><tr><th> فئة</th><th> حالة SVNServer Studio</th></tr><tr><td> مواضيع للكبار أو موحية</td><td> لا أحد</td></tr><tr><td> محتوى عنيف أو مرعب أو مخيف</td><td> لا أحد</td></tr><tr><td> محتوى طبي أو صحي أو متعلق بالصحة والعافية الخاضعة للتنظيم</td><td> لا أحد</td></tr><tr><td> المقامرة، أو المسابقات، أو الأنشطة القائمة على الاحتمالات</td><td> لا أحد</td></tr><tr><td> إشارات إلى الكحول أو التبغ أو المخدرات أو المواد الخاضعة للرقابة</td><td> لا أحد</td></tr><tr><td> المحتوى العام الذي ينشئه المستخدمون، أو الدردشة، أو الرسائل</td><td> غير مشمول. يمكن للمستخدمين تخزين محتوى مستودعاتهم الخاصة تحت سيطرتهم الخاصة.</td></tr><tr><td> الإعلانات أو شبكات الإعلانات التابعة لجهات خارجية</td><td> غير مشمول</td></tr><tr><td> تصفح الإنترنت بدون قيود</td><td> غير مشمول</td></tr><tr><td> الوصول إلى الشبكة</td><td> إدارة خادم SVN المحلي فقط. يتحكم المستخدمون في المضيف والمنفذ وجدار الحماية وبيانات الاعتماد وأذونات المستودع.</td></tr><tr><td> عمليات الشراء أو الاشتراكات داخل التطبيق</td><td> غير مدرج في الإصدار الحالي</td></tr></table><h2 style=";text-align:right;direction:rtl"> الاستخدام المقصود</h2><p style=";text-align:right;direction:rtl"> تم تصميم التطبيق لتطوير البرمجيات وإدارة المستودعات. وتتمثل ميزاته في أدوات الإنتاجية والتطوير، وليس في الترفيه أو التواصل الاجتماعي أو المقامرة أو المواعدة أو الخدمات الطبية أو الاستشارات المالية.</p><h2 style=";text-align:right;direction:rtl"> الخصوصية والأمان</h2><p style=";text-align:right;direction:rtl"> لا يتطلب برنامج SVNServer Studio حسابًا، ولا يتضمن حزم تطوير برمجية للتتبع، ويخزن بيانات التطبيق محليًا على جهاز Mac الخاص بالمستخدم. اقرأ سياسة الخصوصية هنا: <a href="https://kibernet.github.io/HomePage/AppPages/SVNServer/Privacy/index.html" data-localized-link>سياسة الخصوصية</a> .</p><h2 style=";text-align:right;direction:rtl"> اتصال</h2><p style=";text-align:right;direction:rtl"> للاستفسار عن معلومات تصنيف العمر هذه، يرجى التواصل معنا عبر البريد الإلكتروني <a href="mailto:kibernet@sina.com">kibernet@sina.com</a> .</p>
+      </section>
 
-      <h2>隐私和安全</h2>
-      <p>SVNServer Studio 不需要账号，不包含追踪 SDK，并将应用数据保存在用户的 Mac 本地。隐私政策请见：<a href="https://kibernet.github.io/HomePage/AppPages/SVNServer/Privacy/index.html">Privacy Policy</a>。</p>
+      <section class="localized-content" data-lang="hi" lang="hi" dir="ltr">
+        <p class="eyebrow">मैक के लिए SVNServer स्टूडियो</p><h1> आयु रेटिंग जानकारी</h1><p class="updated"> अंतिम अद्यतन: 27 मई, 2026</p><p> SVNServer Studio मैक के लिए एक डेवलपर टूल और लोकल सबवर्जन सर्वर मैनेजर है। यह उन सामान्य उपयोगकर्ताओं के लिए है जिन्हें रिपॉजिटरी बनाने, उपयोगकर्ताओं और समूहों को प्रबंधित करने, अनुमतियाँ कॉन्फ़िगर करने, स्थानीय सत्यापन और बैकअप कार्य चलाने और स्थानीय SVN सेवा को नियंत्रित करने की आवश्यकता होती है।</p><div class="rating"> ऐप स्टोर द्वारा अनुशंसित आयु रेटिंग: 4+</div><h2> विषय-वस्तु का सारांश</h2><table summary="SVNServer Studio age rating content categories and status"><tr><th> वर्ग</th><th> SVNServer स्टूडियो की स्थिति</th></tr><tr><td> परिपक्व या उत्तेजक विषय</td><td> कोई नहीं</td></tr><tr><td> हिंसा, भयावहता या भय से संबंधित सामग्री</td><td> कोई नहीं</td></tr><tr><td> चिकित्सा, स्वास्थ्य या विनियमित स्वास्थ्य संबंधी सामग्री</td><td> कोई नहीं</td></tr><tr><td> जुआ, प्रतियोगिताएं, या संभाव्यता-आधारित गतिविधियाँ</td><td> कोई नहीं</td></tr><tr><td> शराब, तंबाकू, नशीली दवाओं या विनियमित पदार्थों के संदर्भ</td><td> कोई नहीं</td></tr><tr><td> उपयोगकर्ता द्वारा निर्मित सार्वजनिक सामग्री, चैट या संदेश</td><td> शामिल नहीं है। उपयोगकर्ता अपने निजी रिपॉजिटरी की सामग्री को अपने नियंत्रण में सुरक्षित रख सकते हैं।</td></tr><tr><td> विज्ञापन या तृतीय-पक्ष विज्ञापन नेटवर्क</td><td> शामिल नहीं</td></tr><tr><td> असीमित वेब ब्राउज़िंग</td><td> शामिल नहीं</td></tr><tr><td> नेटवर्क पहुंच</td><td> केवल स्थानीय SVN सर्वर का प्रबंधन। उपयोगकर्ता होस्ट, पोर्ट, फ़ायरवॉल, क्रेडेंशियल और रिपॉज़िटरी अनुमतियों को नियंत्रित करते हैं।</td></tr><tr><td> ऐप के अंदर खरीदारी या सदस्यता</td><td> वर्तमान संस्करण में शामिल नहीं है</td></tr></table><h2> उपयोग का उद्देश्य</h2><p> यह ऐप सॉफ्टवेयर विकास और रिपॉजिटरी प्रबंधन के लिए डिज़ाइन किया गया है। इसकी विशेषताएं उत्पादकता और डेवलपर टूल से संबंधित हैं, न कि मनोरंजन, सोशल नेटवर्किंग, जुआ, डेटिंग, चिकित्सा या वित्तीय सलाह से।</p><h2> गोपनीयता और सुरक्षा</h2><p> SVNServer Studio के लिए किसी खाते की आवश्यकता नहीं होती है, इसमें ट्रैकिंग SDK शामिल नहीं हैं, और यह ऐप डेटा को उपयोगकर्ता के Mac पर स्थानीय रूप से संग्रहीत करता है। गोपनीयता नीति यहाँ पढ़ें: <a href="https://kibernet.github.io/HomePage/AppPages/SVNServer/Privacy/index.html" data-localized-link>गोपनीयता नीति</a> ।</p><h2> संपर्क</h2><p> इस आयु रेटिंग संबंधी जानकारी के बारे में प्रश्नों के लिए, <a href="mailto:kibernet@sina.com">kibernet@sina.com</a> पर हमसे संपर्क करें।</p>
+      </section>
 
-      <h2>联系邮箱</h2>
-      <p>如对适龄信息有疑问，请通过 <a href="mailto:kibernet@sina.com">kibernet@sina.com</a> 联系我们。</p>
+      <section class="localized-content" data-lang="id" lang="id" dir="ltr">
+        <p class="eyebrow">SVNServer Studio untuk Mac</p><h1> Informasi Peringkat Usia</h1><p class="updated"> Terakhir diperbarui: 27 Mei 2026</p><p> SVNServer Studio adalah alat pengembang dan pengelola server Subversion lokal untuk Mac. Alat ini ditujukan untuk pengguna umum yang perlu membuat repositori, mengelola pengguna dan grup, mengkonfigurasi izin, menjalankan verifikasi lokal dan pekerjaan pencadangan, serta mengontrol layanan SVN lokal.</p><div class="rating"> Rekomendasi Peringkat Usia di App Store: 4+</div><h2> Ringkasan Konten</h2><table summary="SVNServer Studio age rating content categories and status"><tr><th> Kategori</th><th> Status SVNServer Studio</th></tr><tr><td> Tema dewasa atau sugestif</td><td> Tidak ada</td></tr><tr><td> Konten kekerasan, horor, atau ketakutan</td><td> Tidak ada</td></tr><tr><td> Konten medis, kesehatan, atau kesejahteraan yang diatur.</td><td> Tidak ada</td></tr><tr><td> Perjudian, kontes, atau aktivitas berbasis probabilitas</td><td> Tidak ada</td></tr><tr><td> Referensi alkohol, tembakau, narkoba, atau zat yang diatur</td><td> Tidak ada</td></tr><tr><td> Konten publik, obrolan, atau pesan yang dibuat oleh pengguna.</td><td> Tidak termasuk. Pengguna dapat menyimpan konten repositori pribadi mereka sendiri di bawah kendali mereka sendiri.</td></tr><tr><td> Periklanan atau jaringan iklan pihak ketiga</td><td> Tidak termasuk</td></tr><tr><td> Penjelajahan web tanpa batasan</td><td> Tidak termasuk</td></tr><tr><td> Akses jaringan</td><td> Hanya manajemen server SVN lokal. Pengguna mengontrol host, port, firewall, kredensial, dan izin repositori.</td></tr><tr><td> Pembelian atau langganan dalam aplikasi</td><td> Tidak termasuk dalam versi saat ini</td></tr></table><h2> Penggunaan yang Dimaksudkan</h2><p> Aplikasi ini dirancang untuk pengembangan perangkat lunak dan administrasi repositori. Fitur-fiturnya adalah fitur produktivitas dan alat bantu pengembang, bukan fitur hiburan, jejaring sosial, perjudian, kencan, medis, atau konsultasi keuangan.</p><h2> Privasi dan Keamanan</h2><p> SVNServer Studio tidak memerlukan akun, tidak menyertakan SDK pelacakan, dan menyimpan data aplikasi secara lokal di Mac pengguna. Baca kebijakan privasi di sini: <a href="https://kibernet.github.io/HomePage/AppPages/SVNServer/Privacy/index.html" data-localized-link>Kebijakan Privasi</a> .</p><h2> Kontak</h2><p> Untuk pertanyaan mengenai informasi peringkat usia ini, hubungi kami di <a href="mailto:kibernet@sina.com">kibernet@sina.com</a> .</p>
+      </section>
+
+      <section class="localized-content" data-lang="vi" lang="vi" dir="ltr">
+        <p class="eyebrow">SVNServer Studio dành cho Mac</p><h1> Thông tin xếp hạng độ tuổi</h1><p class="updated"> Cập nhật lần cuối: ngày 27 tháng 5 năm 2026</p><p> SVNServer Studio là một công cụ dành cho nhà phát triển và trình quản lý máy chủ Subversion cục bộ trên máy Mac. Nó được thiết kế cho người dùng phổ thông cần tạo kho lưu trữ, quản lý người dùng và nhóm, cấu hình quyền, chạy các tác vụ xác minh và sao lưu cục bộ, và điều khiển dịch vụ SVN cục bộ.</p><div class="rating"> Ứng dụng được đề xuất với độ tuổi phù hợp: 4+</div><h2> Tóm tắt nội dung</h2><table summary="SVNServer Studio age rating content categories and status"><tr><th> Loại</th><th> Trạng thái SVNServer Studio</th></tr><tr><td> Chủ đề người lớn hoặc gợi dục</td><td> Không có</td></tr><tr><td> Nội dung bạo lực, kinh dị hoặc gây sợ hãi</td><td> Không có</td></tr><tr><td> Nội dung liên quan đến y tế, sức khỏe hoặc chăm sóc sức khỏe theo quy định.</td><td> Không có</td></tr><tr><td> Đánh bạc, các cuộc thi hoặc các hoạt động dựa trên xác suất.</td><td> Không có</td></tr><tr><td> Các tham chiếu về rượu, thuốc lá, ma túy hoặc chất bị kiểm soát</td><td> Không có</td></tr><tr><td> Nội dung công khai do người dùng tạo, trò chuyện hoặc nhắn tin</td><td> Không bao gồm. Người dùng có thể lưu trữ nội dung trong kho lưu trữ riêng của họ dưới sự kiểm soát của chính họ.</td></tr><tr><td> Quảng cáo hoặc mạng quảng cáo của bên thứ ba</td><td> Không bao gồm</td></tr><tr><td> Duyệt web không giới hạn</td><td> Không bao gồm</td></tr><tr><td> Truy cập mạng</td><td> Chỉ quản lý máy chủ SVN cục bộ. Người dùng kiểm soát máy chủ, cổng, tường lửa, thông tin đăng nhập và quyền truy cập kho lưu trữ.</td></tr><tr><td> Mua hàng trong ứng dụng hoặc đăng ký</td><td> Không được bao gồm trong phiên bản hiện tại.</td></tr></table><h2> Mục đích sử dụng</h2><p> Ứng dụng này được thiết kế dành cho việc phát triển phần mềm và quản trị kho lưu trữ. Các tính năng của nó tập trung vào năng suất và công cụ dành cho nhà phát triển, chứ không phải các tính năng giải trí, mạng xã hội, cờ bạc, hẹn hò, y tế hoặc tư vấn tài chính.</p><h2> Quyền riêng tư và sự an toàn</h2><p> SVNServer Studio không yêu cầu tài khoản, không bao gồm SDK theo dõi và lưu trữ dữ liệu ứng dụng cục bộ trên máy Mac của người dùng. Vui lòng đọc chính sách bảo mật tại đây: <a href="https://kibernet.github.io/HomePage/AppPages/SVNServer/Privacy/index.html" data-localized-link>Chính sách bảo mật</a> .</p><h2> Liên hệ</h2><p> Nếu có thắc mắc về thông tin xếp hạng độ tuổi này, vui lòng liên hệ với chúng tôi qua địa chỉ <a href="mailto:kibernet@sina.com">kibernet@sina.com</a> .</p>
+      </section>
+
+      <section class="localized-content" data-lang="th" lang="th" dir="ltr">
+        <p class="eyebrow">SVNServer Studio สำหรับ Mac</p><h1> ข้อมูลการจัดเรตอายุ</h1><p class="updated"> อัปเดตล่าสุด: 27 พฤษภาคม 2569</p><p> SVNServer Studio เป็นเครื่องมือสำหรับนักพัฒนาและตัวจัดการเซิร์ฟเวอร์ Subversion ในเครื่องสำหรับ Mac มีจุดประสงค์สำหรับผู้ใช้งานทั่วไปที่ต้องการสร้างที่เก็บข้อมูล จัดการผู้ใช้และกลุ่ม กำหนดค่าสิทธิ์ เรียกใช้การตรวจสอบและสำรองข้อมูลในเครื่อง และควบคุมบริการ SVN ในเครื่อง</p><div class="rating"> คำแนะนำด้านอายุผู้ใช้ใน App Store: 4+</div><h2> สรุปเนื้อหา</h2><table summary="SVNServer Studio age rating content categories and status"><tr><th> หมวดหมู่</th><th> สถานะ SVNServer Studio</th></tr><tr><td> เนื้อหาสำหรับผู้ใหญ่หรือเนื้อหาที่ชวนให้คิดไปในทางลามก</td><td> ไม่มี</td></tr><tr><td> เนื้อหาเกี่ยวกับความรุนแรง ความสยองขวัญ หรือความหวาดกลัว</td><td> ไม่มี</td></tr><tr><td> เนื้อหาทางการแพทย์ สุขภาพ หรือการส่งเสริมสุขภาพที่ได้รับการควบคุม</td><td> ไม่มี</td></tr><tr><td> การพนัน การแข่งขัน หรือกิจกรรมที่อิงตามความน่าจะเป็น</td><td> ไม่มี</td></tr><tr><td> การอ้างอิงถึงแอลกอฮอล์ ยาสูบ ยาเสพติด หรือสารควบคุม</td><td> ไม่มี</td></tr><tr><td> เนื้อหาสาธารณะที่สร้างโดยผู้ใช้ การแชท หรือการส่งข้อความ</td><td> ไม่รวมอยู่ในแพ็กเกจ ผู้ใช้สามารถจัดเก็บเนื้อหาในคลังข้อมูลส่วนตัวของตนเองภายใต้การควบคุมของตนเองได้</td></tr><tr><td> การโฆษณาหรือเครือข่ายโฆษณาของบุคคลที่สาม</td><td> ไม่รวมอยู่ด้วย</td></tr><tr><td> การท่องเว็บแบบไม่จำกัด</td><td> ไม่รวมอยู่ด้วย</td></tr><tr><td> การเข้าถึงเครือข่าย</td><td> การจัดการเซิร์ฟเวอร์ SVN ในเครื่องเท่านั้น ผู้ใช้ควบคุมโฮสต์ พอร์ต ไฟร์วอลล์ ข้อมูลประจำตัว และสิทธิ์การเข้าถึงที่เก็บข้อมูล</td></tr><tr><td> การซื้อภายในแอปหรือการสมัครสมาชิก</td><td> ไม่รวมอยู่ในเวอร์ชันปัจจุบัน</td></tr></table><h2> วัตถุประสงค์การใช้งาน</h2><p> แอปนี้ออกแบบมาเพื่อการพัฒนาซอฟต์แวร์และการบริหารจัดการคลังเก็บข้อมูล คุณสมบัติหลักคือฟังก์ชันการทำงานและเครื่องมือสำหรับนักพัฒนา ไม่ใช่เพื่อความบันเทิง เครือข่ายสังคม การพนัน การหาคู่ การให้คำปรึกษาทางการแพทย์ หรือคำแนะนำทางการเงิน</p><h2> ความเป็นส่วนตัวและความปลอดภัย</h2><p> SVNServer Studio ไม่จำเป็นต้องมีบัญชีผู้ใช้ ไม่มี SDK สำหรับติดตามข้อมูล และจัดเก็บข้อมูลแอปพลิเคชันไว้ในเครื่อง Mac ของผู้ใช้ อ่านนโยบายความเป็นส่วนตัวได้ที่นี่: <a href="https://kibernet.github.io/HomePage/AppPages/SVNServer/Privacy/index.html" data-localized-link>นโยบายความเป็นส่วนตัว</a></p><h2> ติดต่อ</h2><p> หากมีข้อสงสัยเกี่ยวกับข้อมูลการจัดเรตอายุนี้ โปรดติดต่อเราที่ <a href="mailto:kibernet@sina.com">kibernet@sina.com</a></p>
+      </section>
     </main>
   </div>
+  <script>
+    (function () {
+      const languages = [{"code":"en","htmlLang":"en","label":"English","dir":"ltr"},{"code":"zh-Hans","htmlLang":"zh-CN","label":"简体中文","dir":"ltr"},{"code":"zh-Hant","htmlLang":"zh-TW","label":"繁體中文","dir":"ltr"},{"code":"ja","htmlLang":"ja","label":"日本語","dir":"ltr"},{"code":"ko","htmlLang":"ko","label":"한국어","dir":"ltr"},{"code":"fr","htmlLang":"fr","label":"Français","dir":"ltr"},{"code":"de","htmlLang":"de","label":"Deutsch","dir":"ltr"},{"code":"es","htmlLang":"es","label":"Español","dir":"ltr"},{"code":"it","htmlLang":"it","label":"Italiano","dir":"ltr"},{"code":"pt-BR","htmlLang":"pt-BR","label":"Português (Brasil)","dir":"ltr"},{"code":"ru","htmlLang":"ru","label":"Русский","dir":"ltr"},{"code":"ar","htmlLang":"ar","label":"العربية","dir":"rtl"},{"code":"hi","htmlLang":"hi","label":"हिन्दी","dir":"ltr"},{"code":"id","htmlLang":"id","label":"Bahasa Indonesia","dir":"ltr"},{"code":"vi","htmlLang":"vi","label":"Tiếng Việt","dir":"ltr"},{"code":"th","htmlLang":"th","label":"ไทย","dir":"ltr"}];
+      const pageMeta = {"en":{"title":"SVNServer Studio Age Rating Information","description":"Age rating information for SVNServer Studio, a local-first Subversion server manager for Mac."},"zh-Hans":{"title":"SVNServer Studio 年龄评级信息","description":"SVNServer Studio（一款面向 Mac 的本地优先 Subversion 服务器管理器）的年龄评级信息。"},"zh-Hant":{"title":"SVNServer Studio 年齡評級資訊","description":"SVNServer Studio（一款針對 Mac 的本機優先 Subversion 伺服器管理員）的年齡評級資訊。"},"ja":{"title":"SVNServer Studio 年齢制限情報","description":"Mac 用のローカルファーストな Subversion サーバーマネージャーである SVNServer Studio の年齢制限情報。"},"ko":{"title":"SVNServer 스튜디오 이용 연령 정보","description":"Mac용 로컬 우선 Subversion 서버 관리 프로그램인 SVNServer Studio의 연령 등급 정보입니다."},"fr":{"title":"Informations sur la classification par âge de SVNServer Studio","description":"Informations relatives à la classification par âge de SVNServer Studio, un gestionnaire de serveur Subversion local pour Mac."},"de":{"title":"Informationen zur Altersfreigabe von SVNServer Studio","description":"Informationen zur Altersfreigabe für SVNServer Studio, einen Subversion-Server-Manager für Mac, der primär auf lokale Server setzt."},"es":{"title":"Información sobre la clasificación por edades de SVNServer Studio","description":"Información sobre la clasificación por edad de SVNServer Studio, un gestor de servidores Subversion para Mac que prioriza el funcionamiento local."},"it":{"title":"Informazioni sulla classificazione per età di SVNServer Studio","description":"Informazioni sulla classificazione per età di SVNServer Studio, un gestore di server Subversion per Mac con priorità locale."},"pt-BR":{"title":"Informações sobre a classificação etária do SVNServer Studio","description":"Informações sobre a classificação etária do SVNServer Studio, um gerenciador de servidor Subversion para Mac com foco em operações locais."},"ru":{"title":"Информация о возрастном рейтинге SVNServer Studio","description":"Информация о возрастном рейтинге для SVNServer Studio, менеджера серверов Subversion для Mac, работающего в локальном режиме."},"ar":{"title":"معلومات تصنيف عمر برنامج SVNServer Studio","description":"معلومات تصنيف العمر لبرنامج SVNServer Studio، وهو مدير خادم Subversion محلي لنظام التشغيل Mac."},"hi":{"title":"SVNServer Studio आयु रेटिंग जानकारी","description":"SVNServer Studio के लिए आयु रेटिंग संबंधी जानकारी, जो Mac के लिए एक स्थानीय-प्रथम सबवर्जन सर्वर प्रबंधक है।"},"id":{"title":"Informasi Peringkat Usia Studio SVNServer","description":"Informasi peringkat usia untuk SVNServer Studio, pengelola server Subversion yang mengutamakan lokal untuk Mac."},"vi":{"title":"Thông tin xếp hạng độ tuổi của SVNServer Studio","description":"Thông tin về xếp hạng độ tuổi cho SVNServer Studio, một trình quản lý máy chủ Subversion ưu tiên cục bộ dành cho Mac."},"th":{"title":"ข้อมูลการจัดเรตอายุของ SVNServer Studio","description":"ข้อมูลการจัดเรตอายุสำหรับ SVNServer Studio ซึ่งเป็นโปรแกรมจัดการเซิร์ฟเวอร์ Subversion แบบโลคอลสำหรับ Mac"}};
+      const uiLabels = {"en":{"language":"Language","chooseLanguage":"Choose language"},"zh-Hans":{"language":"语言","chooseLanguage":"选择语言"},"zh-Hant":{"language":"語言","chooseLanguage":"選擇語言"},"ja":{"language":"言語","chooseLanguage":"言語を選択してください"},"ko":{"language":"언어","chooseLanguage":"언어를 선택하세요"},"fr":{"language":"Langue","chooseLanguage":"Choisissez la langue"},"de":{"language":"Sprache","chooseLanguage":"Sprache auswählen"},"es":{"language":"Idioma","chooseLanguage":"Seleccionar idioma"},"it":{"language":"Lingua","chooseLanguage":"Scegli la lingua"},"pt-BR":{"language":"Linguagem","chooseLanguage":"Selecione o idioma"},"ru":{"language":"Язык","chooseLanguage":"Выберите язык"},"ar":{"language":"لغة","chooseLanguage":"اختر اللغة"},"hi":{"language":"भाषा","chooseLanguage":"भाषा चुनें"},"id":{"language":"Bahasa","chooseLanguage":"Pilih bahasa"},"vi":{"language":"Ngôn ngữ","chooseLanguage":"Chọn ngôn ngữ"},"th":{"language":"ภาษา","chooseLanguage":"เลือกภาษา"}};
+      const storageKey = 'svnserver-page-language';
+      const selector = document.getElementById('language-select');
+      const label = document.getElementById('language-label');
+      const sections = Array.from(document.querySelectorAll('.localized-content'));
+      const metaDescription = document.querySelector('meta[name="description"]');
+      function normalizeLanguage(value) {
+        if (!value) return '';
+        const lowered = value.toLowerCase();
+        if (lowered === 'zh-cn' || lowered === 'zh-hans' || lowered.startsWith('zh-cn')) return 'zh-Hans';
+        if (lowered === 'zh-tw' || lowered === 'zh-hant' || lowered.startsWith('zh-tw') || lowered.startsWith('zh-hk')) return 'zh-Hant';
+        if (lowered.startsWith('pt')) return 'pt-BR';
+        const exact = languages.find((language) => language.code.toLowerCase() === lowered);
+        if (exact) return exact.code;
+        const prefix = languages.find((language) => lowered.startsWith(language.code.toLowerCase().split('-')[0]));
+        return prefix ? prefix.code : '';
+      }
+      function requestedLanguage() {
+        const hash = normalizeLanguage(window.location.hash.replace(/^#/, ''));
+        if (hash) return hash;
+        try {
+          const stored = normalizeLanguage(localStorage.getItem(storageKey));
+          if (stored) return stored;
+        } catch (error) {}
+        for (const language of navigator.languages || [navigator.language]) {
+          const normalized = normalizeLanguage(language);
+          if (normalized) return normalized;
+        }
+        return 'en';
+      }
+      function updateLinks(languageCode) {
+        document.querySelectorAll('a[data-localized-link]').forEach((link) => {
+          const base = link.getAttribute('href').split('#')[0];
+          link.setAttribute('href', base + '#' + languageCode);
+        });
+      }
+      function activate(languageCode, shouldPersist) {
+        const language = languages.find((item) => item.code === languageCode) || languages[0];
+        document.body.classList.add('has-language');
+        document.documentElement.lang = language.htmlLang;
+        document.documentElement.dir = language.dir;
+        sections.forEach((section) => section.classList.toggle('is-active', section.dataset.lang === language.code));
+        selector.value = language.code;
+        label.textContent = (uiLabels[language.code] || uiLabels.en).language;
+        selector.setAttribute('aria-label', (uiLabels[language.code] || uiLabels.en).chooseLanguage);
+        const meta = pageMeta[language.code] || pageMeta.en;
+        document.title = meta.title;
+        if (metaDescription) metaDescription.setAttribute('content', meta.description);
+        updateLinks(language.code);
+        if (shouldPersist) {
+          try { localStorage.setItem(storageKey, language.code); } catch (error) {}
+          if (window.location.hash !== '#' + language.code) history.replaceState(null, '', '#' + language.code);
+        }
+      }
+      selector.addEventListener('change', () => activate(selector.value, true));
+      window.addEventListener('hashchange', () => activate(requestedLanguage(), false));
+      activate(requestedLanguage(), false);
+    })();
+  </script>
 </body>
 </html>
