@@ -1,8 +1,8 @@
 {
   "artifact": {
     "file": "PanePilot-1.0.0.dmg",
-    "sha256": "93c3412c32211b4eb640977a89e048a912af753cea867c28e865c9d41dd0b2a4",
-    "sizeBytes": 3123466
+    "sha256": "2f0585bfc1c463dc55983157637dec31d0c0dd5416da02392fce759a0a3e9612",
+    "sizeBytes": 3119039
   },
   "build": "100",
   "bundleIdentifier": "com.yaoji.ScreenSplitAssist",
