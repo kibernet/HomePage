@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CacheGuard Pro Age Rating</title>
+  <meta name="description" content="Age rating information for CacheGuard Pro, a local-first professional Mac cleaner.">
+  <style>
+    :root {
+      color-scheme: dark light;
+      --bg: #0a0f1a;
+      --panel: rgba(13, 20, 32, 0.78);
+      --panel-strong: rgba(17, 27, 42, 0.92);
+      --table: rgba(17, 27, 42, 0.76);
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --quiet: #94a3b8;
+      --line: rgba(148, 163, 184, 0.24);
+      --accent: #67e8f9;
+      --ok: #8df5c5;
+      --shadow: rgba(0, 0, 0, 0.34);
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f7fbff;
+        --panel: rgba(255, 255, 255, 0.86);
+        --panel-strong: rgba(255, 255, 255, 0.96);
+        --table: rgba(255, 255, 255, 0.92);
+        --text: #0f172a;
+        --muted: #334155;
+        --quiet: #64748b;
+        --line: rgba(15, 23, 42, 0.14);
+        --accent: #0891b2;
+        --ok: #047857;
+        --shadow: rgba(15, 23, 42, 0.12);
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+      line-height: 1.65;
+      color: var(--text);
+      background: radial-gradient(circle at 16% 0%, rgba(103, 232, 249, 0.24), transparent 34rem), radial-gradient(circle at 92% 10%, rgba(248, 195, 91, 0.16), transparent 30rem), linear-gradient(135deg, var(--bg), #101827 54%, #07111d);
+    }
+    @media (prefers-color-scheme: light) {
+      body { background: radial-gradient(circle at 16% 0%, rgba(8, 145, 178, 0.16), transparent 34rem), radial-gradient(circle at 92% 10%, rgba(183, 121, 31, 0.12), transparent 30rem), linear-gradient(135deg, #f7fbff, #edf6fb 54%, #f8fafc); }
+    }
+    .page { width: min(960px, calc(100% - 40px)); margin: 0 auto; padding: 56px 0; }
+    .document { padding: clamp(24px, 5vw, 52px); border: 1px solid var(--line); border-radius: 24px; background: var(--panel); box-shadow: 0 28px 90px var(--shadow); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); }
+    .toolbar { display: flex; justify-content: flex-end; margin-bottom: 28px; }
+    .language-control { display: inline-flex; align-items: center; gap: 10px; padding: 8px 10px; border: 1px solid var(--line); border-radius: 999px; background: var(--panel-strong); color: var(--muted); }
+    .language-control label { color: var(--quiet); font-size: 0.9rem; white-space: nowrap; }
+    .language-control select { min-width: 180px; border: 0; color: var(--text); background: transparent; font: inherit; font-size: 0.95rem; outline: 0; }
+    .language-control option { color: #0f172a; background: #ffffff; }
+    h1, h2 { line-height: 1.15; letter-spacing: 0; }
+    h1 { margin: 0 0 10px; font-size: clamp(2.15rem, 5vw, 3.7rem); font-weight: 760; }
+    h2 { margin: 34px 0 12px; font-size: 1.18rem; font-weight: 720; }
+    p, li, td, th { color: var(--muted); font-size: 1rem; overflow-wrap: anywhere; }
+    ul { padding-left: 1.25rem; }
+    [dir="rtl"] ul { padding-right: 1.25rem; padding-left: 0; }
+    a { color: var(--accent); overflow-wrap: anywhere; }
+    table { width: 100%; border-collapse: separate; border-spacing: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 16px; background: var(--table); }
+    th, td { padding: 12px 14px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    [dir="rtl"] th, [dir="rtl"] td { text-align: right; }
+    tr:last-child td { border-bottom: 0; }
+    th { color: var(--text); background: rgba(103, 232, 249, 0.08); font-weight: 720; }
+    .eyebrow { margin: 0 0 26px; color: var(--accent); font-weight: 700; }
+    .updated { margin-top: 0; color: var(--quiet); font-size: 0.95rem; }
+    .rating { display: inline-flex; align-items: center; justify-content: center; margin: 20px 0 6px; padding: 10px 16px; border: 1px solid color-mix(in srgb, var(--ok) 40%, transparent); border-radius: 999px; color: var(--ok); background: color-mix(in srgb, var(--ok) 10%, transparent); font-weight: 760; }
+    .links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+    .pill { display: inline-flex; padding: 7px 10px; border: 1px solid var(--line); border-radius: 999px; background: var(--table); font-size: 0.92rem; }
+    @media (max-width: 640px) {
+      .page { width: min(100% - 24px, 960px); padding: 24px 0; }
+      .document { border-radius: 18px; }
+      .toolbar { justify-content: stretch; }
+      .language-control { width: 100%; justify-content: space-between; border-radius: 14px; }
+      .language-control select { min-width: 0; width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <main class="document">
+      <div class="toolbar">
+        <div class="language-control">
+          <label id="language-label" for="language-select">Language</label>
+          <select id="language-select" aria-label="Choose language"></select>
+        </div>
+      </div>
+      <p class="eyebrow" id="eyebrow"></p>
+      <h1 id="title"></h1>
+      <p class="updated" id="updated"></p>
+      <p id="intro"></p>
+      <div class="rating" id="rating"></div>
+      <h2 id="summary-title"></h2>
+      <table>
+        <thead><tr><th id="category-header"></th><th id="status-header"></th></tr></thead>
+        <tbody id="rating-table"></tbody>
+      </table>
+      <h2 id="use-title"></h2>
+      <p id="use-body"></p>
+      <h2 id="safety-title"></h2>
+      <ul id="safety-list"></ul>
+      <h2 id="links-title"></h2>
+      <div class="links">
+        <span class="pill"><a id="privacy-link" href="https://kibernet.github.io/HomePage/AppPages/CacheCleanerMaster/Privacy/index.html"></a></span>
+        <span class="pill"><a id="support-link" href="https://kibernet.github.io/HomePage/AppPages/CacheCleanerMaster/Support/index.html"></a></span>
+      </div>
+    </main>
+  </div>
+  <script>
+    const languages = [
+      ["en", "en", "English", "ltr"],
+      ["zh-Hans", "zh-CN", "简体中文", "ltr"],
+      ["zh-Hant", "zh-TW", "繁體中文", "ltr"],
+      ["ja", "ja", "日本語", "ltr"],
+      ["ko", "ko", "한국어", "ltr"],
+      ["fr", "fr", "Français", "ltr"],
+      ["de", "de", "Deutsch", "ltr"],
+      ["es", "es", "Español", "ltr"],
+      ["it", "it", "Italiano", "ltr"],
+      ["pt-BR", "pt-BR", "Português (Brasil)", "ltr"],
+      ["ru", "ru", "Русский", "ltr"],
+      ["ar", "ar", "العربية", "rtl"],
+      ["hi", "hi", "हिन्दी", "ltr"],
+      ["id", "id", "Bahasa Indonesia", "ltr"],
+      ["vi", "vi", "Tiếng Việt", "ltr"],
+      ["th", "th", "ไทย", "ltr"]
+    ].map(([code, htmlLang, label, dir]) => ({ code, htmlLang, label, dir }));
+
+    const baseRows = {
+      en: [["Violence", "None"], ["Mature or suggestive themes", "None"], ["Medical or treatment information", "None"], ["Gambling, contests, or loot boxes", "None"], ["User-generated public content", "None"], ["Unrestricted web access", "No"], ["Purchases", "Paid download only; no in-app purchases or subscriptions"], ["File system access", "Local Mac cleanup only, with review before deletion"]],
+      "zh-Hans": [["暴力内容", "无"], ["成人或暗示性主题", "无"], ["医疗或治疗信息", "无"], ["赌博、竞赛或抽奖箱", "无"], ["用户生成公开内容", "无"], ["不受限制的网页访问", "无"], ["购买方式", "仅付费下载；无 App 内购买或订阅"], ["文件系统访问", "仅本机 Mac 清理，删除前需要复核"]],
+      "zh-Hant": [["暴力內容", "無"], ["成人或暗示性主題", "無"], ["醫療或治療資訊", "無"], ["賭博、競賽或抽獎箱", "無"], ["使用者生成公開內容", "無"], ["不受限制的網頁存取", "無"], ["購買方式", "僅付費下載；無 App 內購買或訂閱"], ["檔案系統存取", "僅本機 Mac 清理，刪除前需要複核"]]
+    };
+
+    const content = {
+      en: {
+        docTitle: "CacheGuard Pro Age Rating",
+        docDescription: "Age rating information for CacheGuard Pro, a local-first professional Mac cleaner.",
+        language: "Language",
+        chooseLanguage: "Choose language",
+        eyebrow: "CacheGuard Pro for Mac",
+        title: "Age Rating",
+        updated: "Last updated: June 20, 2026",
+        intro: "CacheGuard Pro / 净盾清理 is a macOS utility for scanning and reviewing local cache, log, download, developer, duplicate, large-file, app-leftover, and Trash candidates.",
+        rating: "Suggested App Store age rating: 4+",
+        summaryTitle: "Content Summary",
+        categoryHeader: "Category",
+        statusHeader: "Status",
+        useTitle: "Intended Use",
+        useBody: "The app is designed for productivity and Mac maintenance. It does not provide entertainment feeds, social networking, public content sharing, games, gambling, medical advice, or unrestricted web browsing.",
+        safetyTitle: "Safety Controls",
+        safety: ["Users review cleanup candidates before deleting.", "Ordinary files are moved to Trash first.", "Permanent Trash cleanup requires explicit review and typed confirmation.", "System folders, keychains, mail, messages, photos, containers, and other sensitive locations are protected or avoided by default."],
+        linksTitle: "Related Pages",
+        privacyLink: "Privacy Policy",
+        supportLink: "Support",
+        rows: baseRows.en
+      },
+      "zh-Hans": {
+        docTitle: "净盾清理适龄说明",
+        docDescription: "净盾清理适龄说明。净盾清理是一款本机优先的专业 Mac 清理工具。",
+        language: "语言",
+        chooseLanguage: "选择语言",
+        eyebrow: "净盾清理 Mac 版",
+        title: "适龄说明",
+        updated: "最后更新：2026 年 6 月 20 日",
+        intro: "CacheGuard Pro / 净盾清理是一款 macOS 工具，用于扫描和复核本机缓存、日志、下载残留、开发缓存、重复文件、大文件、应用残留和废纸篓候选项。",
+        rating: "建议 App Store 年龄分级：4+",
+        summaryTitle: "内容摘要",
+        categoryHeader: "类别",
+        statusHeader: "状态",
+        useTitle: "预期用途",
+        useBody: "应用用于效率和 Mac 维护，不提供娱乐信息流、社交网络、公开内容分享、游戏、赌博、医疗建议或不受限制的网页浏览。",
+        safetyTitle: "安全控制",
+        safety: ["用户需要在删除前复核清理候选项。", "普通文件优先移入废纸篓。", "永久清理废纸篓需要主动复核并输入确认短语。", "系统目录、钥匙串、邮件、信息、照片、容器目录等敏感位置默认保护或避让。"],
+        linksTitle: "相关页面",
+        privacyLink: "隐私政策",
+        supportLink: "支持",
+        rows: baseRows["zh-Hans"]
+      },
+      "zh-Hant": {
+        docTitle: "淨盾清理適齡說明",
+        docDescription: "淨盾清理適齡說明。淨盾清理是一款本機優先的專業 Mac 清理工具。",
+        language: "語言",
+        chooseLanguage: "選擇語言",
+        eyebrow: "淨盾清理 Mac 版",
+        title: "適齡說明",
+        updated: "最後更新：2026 年 6 月 20 日",
+        intro: "CacheGuard Pro / 淨盾清理是一款 macOS 工具，用於掃描和複核本機快取、日誌、下載殘留、開發快取、重複檔案、大檔案、應用殘留和垃圾桶候選項。",
+        rating: "建議 App Store 年齡分級：4+",
+        summaryTitle: "內容摘要",
+        categoryHeader: "類別",
+        statusHeader: "狀態",
+        useTitle: "預期用途",
+        useBody: "應用程式用於生產力和 Mac 維護，不提供娛樂資訊流、社交網路、公開內容分享、遊戲、賭博、醫療建議或不受限制的網頁瀏覽。",
+        safetyTitle: "安全控制",
+        safety: ["使用者需要在刪除前複核清理候選項。", "一般檔案優先移入垃圾桶。", "永久清理垃圾桶需要主動複核並輸入確認短語。", "系統目錄、鑰匙圈、郵件、訊息、照片、容器目錄等敏感位置預設保護或避讓。"],
+        linksTitle: "相關頁面",
+        privacyLink: "隱私權政策",
+        supportLink: "支援",
+        rows: baseRows["zh-Hant"]
+      }
+    };
+
+    const localized = {
+      ja: ["CacheGuard Pro 年齢レーティング", "年齢レーティング", "最終更新日: 2026年6月20日", "推奨 App Store 年齢レーティング: 4+", "コンテンツ概要", "カテゴリ", "状態", "想定用途", "このアプリは生産性と Mac メンテナンス用で、ソーシャル、ゲーム、ギャンブル、医療助言、無制限の Web 閲覧を提供しません。", "安全機能", ["削除前に候補を確認します。", "通常ファイルはまずゴミ箱へ移動します。", "完全削除には入力確認が必要です。", "機密性の高い場所は既定で保護または回避されます。"], "関連ページ", "プライバシーポリシー", "サポート"],
+      ko: ["CacheGuard Pro 연령 등급", "연령 등급", "마지막 업데이트: 2026년 6월 20일", "권장 App Store 연령 등급: 4+", "콘텐츠 요약", "카테고리", "상태", "사용 목적", "이 앱은 생산성과 Mac 유지 관리를 위한 도구이며 소셜, 게임, 도박, 의료 조언, 무제한 웹 탐색을 제공하지 않습니다.", "안전 제어", ["삭제 전에 후보를 검토합니다.", "일반 파일은 먼저 휴지통으로 이동합니다.", "영구 삭제에는 입력 확인이 필요합니다.", "민감한 위치는 기본적으로 보호되거나 제외됩니다."], "관련 페이지", "개인정보 처리방침", "지원"],
+      fr: ["Classification d'age de CacheGuard Pro", "Classification d'age", "Derniere mise a jour : 20 juin 2026", "Classification App Store suggeree : 4+", "Resume du contenu", "Categorie", "Statut", "Utilisation prevue", "L'app est destinee a la productivite et a la maintenance Mac. Elle ne propose pas de social, jeux, hasard, conseils medicaux ni navigation Web illimitee.", "Controles de securite", ["Les candidats sont verifies avant suppression.", "Les fichiers ordinaires vont d'abord dans la corbeille.", "La suppression definitive exige une confirmation saisie.", "Les emplacements sensibles sont proteges ou evites par defaut."], "Pages liees", "Politique de confidentialite", "Assistance"],
+      de: ["CacheGuard Pro Altersfreigabe", "Altersfreigabe", "Zuletzt aktualisiert: 20. Juni 2026", "Empfohlene App Store Altersfreigabe: 4+", "Inhaltsubersicht", "Kategorie", "Status", "Vorgesehene Nutzung", "Die App dient Produktivitat und Mac-Wartung. Sie bietet keine sozialen Inhalte, Spiele, Glucksspiel, medizinische Beratung oder uneingeschranktes Surfen.", "Sicherheitskontrollen", ["Kandidaten werden vor dem Loschen gepruft.", "Normale Dateien werden zuerst in den Papierkorb verschoben.", "Endgultiges Loschen erfordert eine Texteingabe.", "Sensible Orte sind standardmassig geschutzt oder ausgeschlossen."], "Verwandte Seiten", "Datenschutz", "Support"],
+      es: ["Clasificacion por edad de CacheGuard Pro", "Clasificacion por edad", "Ultima actualizacion: 20 de junio de 2026", "Clasificacion sugerida en App Store: 4+", "Resumen de contenido", "Categoria", "Estado", "Uso previsto", "La app es para productividad y mantenimiento del Mac. No ofrece redes sociales, juegos, apuestas, consejo medico ni navegacion web sin restricciones.", "Controles de seguridad", ["Los candidatos se revisan antes de eliminar.", "Los archivos normales se mueven primero a la Papelera.", "La eliminacion permanente requiere confirmacion escrita.", "Las ubicaciones sensibles se protegen o evitan por defecto."], "Paginas relacionadas", "Privacidad", "Soporte"],
+      it: ["Classificazione eta di CacheGuard Pro", "Classificazione eta", "Ultimo aggiornamento: 20 giugno 2026", "Classificazione App Store suggerita: 4+", "Riepilogo contenuti", "Categoria", "Stato", "Uso previsto", "L'app e pensata per produttivita e manutenzione Mac. Non offre social, giochi, scommesse, consigli medici o navigazione web senza limiti.", "Controlli di sicurezza", ["I candidati vengono rivisti prima della rimozione.", "I file ordinari vanno prima nel Cestino.", "L'eliminazione permanente richiede conferma digitata.", "Le posizioni sensibili sono protette o evitate per impostazione predefinita."], "Pagine correlate", "Privacy", "Supporto"],
+      "pt-BR": ["Classificacao etaria do CacheGuard Pro", "Classificacao etaria", "Ultima atualizacao: 20 de junho de 2026", "Classificacao sugerida na App Store: 4+", "Resumo de conteudo", "Categoria", "Status", "Uso previsto", "O app e voltado a produtividade e manutencao do Mac. Nao oferece rede social, jogos, apostas, conselho medico ou navegacao web irrestrita.", "Controles de seguranca", ["Os candidatos sao revisados antes de excluir.", "Arquivos comuns vao primeiro para o Lixo.", "Exclusao permanente exige confirmacao digitada.", "Locais sensiveis sao protegidos ou evitados por padrao."], "Paginas relacionadas", "Privacidade", "Suporte"],
+      ru: ["Возрастной рейтинг CacheGuard Pro", "Возрастной рейтинг", "Обновлено: 20 июня 2026 г.", "Рекомендуемый рейтинг App Store: 4+", "Сводка контента", "Категория", "Статус", "Назначение", "Приложение предназначено для продуктивности и обслуживания Mac. В нем нет соцсетей, игр, азартных функций, медицинских советов или неограниченного веб-доступа.", "Меры безопасности", ["Кандидаты проверяются перед удалением.", "Обычные файлы сначала перемещаются в Корзину.", "Окончательное удаление требует ввода подтверждения.", "Чувствительные расположения защищены или исключены по умолчанию."], "Связанные страницы", "Политика конфиденциальности", "Поддержка"],
+      ar: ["تصنيف العمر في CacheGuard Pro", "تصنيف العمر", "آخر تحديث: 20 يونيو 2026", "تصنيف App Store المقترح: +4", "ملخص المحتوى", "الفئة", "الحالة", "الاستخدام المقصود", "التطبيق مخصص للإنتاجية وصيانة Mac ولا يقدم شبكات اجتماعية أو ألعابا أو مقامرة أو نصائح طبية أو تصفح ويب غير مقيد.", "عناصر الأمان", ["تتم مراجعة العناصر قبل الحذف.", "تنقل الملفات العادية إلى المهملات أولا.", "يتطلب الحذف الدائم تأكيدا مكتوبا.", "تحمى المواقع الحساسة أو يتم تجنبها افتراضيا."], "صفحات ذات صلة", "سياسة الخصوصية", "الدعم"],
+      hi: ["CacheGuard Pro आयु रेटिंग", "आयु रेटिंग", "अंतिम अपडेट: 20 जून 2026", "सुझाई गई App Store आयु रेटिंग: 4+", "सामग्री सारांश", "श्रेणी", "स्थिति", "उपयोग", "यह ऐप उत्पादकता और Mac रखरखाव के लिए है। इसमें सोशल, गेम, जुआ, चिकित्सा सलाह या अनियंत्रित वेब ब्राउज़िंग नहीं है।", "सुरक्षा नियंत्रण", ["मिटाने से पहले उम्मीदवारों की समीक्षा होती है।", "सामान्य फ़ाइलें पहले Trash में जाती हैं।", "स्थायी हटाने के लिए टाइप की गई पुष्टि चाहिए।", "संवेदनशील स्थान डिफ़ॉल्ट रूप से सुरक्षित या छोड़े जाते हैं।"], "संबंधित पृष्ठ", "गोपनीयता नीति", "सहायता"],
+      id: ["Peringkat Usia CacheGuard Pro", "Peringkat Usia", "Terakhir diperbarui: 20 Juni 2026", "Peringkat usia App Store yang disarankan: 4+", "Ringkasan Konten", "Kategori", "Status", "Penggunaan", "Aplikasi ini untuk produktivitas dan perawatan Mac. Tidak ada sosial, game, perjudian, saran medis, atau akses web tak terbatas.", "Kontrol Keamanan", ["Kandidat ditinjau sebelum dihapus.", "File biasa dipindahkan ke Trash terlebih dahulu.", "Penghapusan permanen memerlukan konfirmasi tertulis.", "Lokasi sensitif dilindungi atau dihindari secara default."], "Halaman Terkait", "Kebijakan Privasi", "Dukungan"],
+      vi: ["Xếp hạng độ tuổi CacheGuard Pro", "Xếp hạng độ tuổi", "Cập nhật lần cuối: 20 tháng 6, 2026", "Xếp hạng App Store đề xuất: 4+", "Tóm tắt nội dung", "Danh mục", "Trạng thái", "Mục đích sử dụng", "Ứng dụng dành cho năng suất và bảo trì Mac. Không có mạng xã hội, trò chơi, cờ bạc, tư vấn y tế hoặc truy cập web không giới hạn.", "Kiểm soát an toàn", ["Người dùng xem lại mục trước khi xóa.", "Tệp thông thường được chuyển vào Thùng rác trước.", "Xóa vĩnh viễn cần xác nhận bằng cách nhập.", "Vị trí nhạy cảm được bảo vệ hoặc bỏ qua theo mặc định."], "Trang liên quan", "Chính sách quyền riêng tư", "Hỗ trợ"],
+      th: ["การจัดระดับอายุ CacheGuard Pro", "การจัดระดับอายุ", "อัปเดตล่าสุด: 20 มิถุนายน 2026", "ระดับอายุ App Store ที่แนะนำ: 4+", "สรุปเนื้อหา", "หมวดหมู่", "สถานะ", "การใช้งาน", "แอปนี้ใช้เพื่อเพิ่มประสิทธิภาพและดูแล Mac ไม่มีโซเชียล เกม การพนัน คำแนะนำทางการแพทย์ หรือการท่องเว็บแบบไม่จำกัด", "การควบคุมความปลอดภัย", ["ตรวจสอบรายการก่อนลบ", "ไฟล์ทั่วไปจะถูกย้ายไปถังขยะก่อน", "การลบถาวรต้องพิมพ์คำยืนยัน", "ตำแหน่งที่อ่อนไหวจะถูกป้องกันหรือหลีกเลี่ยงโดยค่าเริ่มต้น"], "หน้าที่เกี่ยวข้อง", "นโยบายความเป็นส่วนตัว", "สนับสนุน"]
+    };
+
+    for (const [code, values] of Object.entries(localized)) {
+      content[code] = {
+        docTitle: values[0],
+        docDescription: values[0],
+        language: "Language",
+        chooseLanguage: values[1],
+        eyebrow: "CacheGuard Pro for Mac",
+        title: values[1],
+        updated: values[2],
+        intro: content.en.intro,
+        rating: values[3],
+        summaryTitle: values[4],
+        categoryHeader: values[5],
+        statusHeader: values[6],
+        useTitle: values[7],
+        useBody: values[8],
+        safetyTitle: values[9],
+        safety: values[10],
+        linksTitle: values[11],
+        privacyLink: values[12],
+        supportLink: values[13],
+        rows: baseRows.en
+      };
+    }
+
+    function pickLanguage() {
+      const stored = localStorage.getItem("cacheguard-age-language");
+      if (stored && content[stored]) return stored;
+      const browser = navigator.language || "en";
+      if (content[browser]) return browser;
+      const base = browser.split("-")[0];
+      if (base === "zh") return browser.includes("Hant") || browser.includes("TW") || browser.includes("HK") ? "zh-Hant" : "zh-Hans";
+      return content[base] ? base : "en";
+    }
+
+    const select = document.getElementById("language-select");
+    for (const language of languages) {
+      const option = document.createElement("option");
+      option.value = language.code;
+      option.textContent = language.label;
+      select.appendChild(option);
+    }
+
+    function applyLanguage(code) {
+      const language = languages.find(item => item.code === code) || languages[0];
+      const data = content[code] || content.en;
+      document.documentElement.lang = language.htmlLang;
+      document.documentElement.dir = language.dir;
+      document.title = data.docTitle;
+      document.querySelector('meta[name="description"]').setAttribute("content", data.docDescription);
+      document.getElementById("language-label").textContent = data.language;
+      select.setAttribute("aria-label", data.chooseLanguage);
+      document.getElementById("eyebrow").textContent = data.eyebrow;
+      document.getElementById("title").textContent = data.title;
+      document.getElementById("updated").textContent = data.updated;
+      document.getElementById("intro").textContent = data.intro;
+      document.getElementById("rating").textContent = data.rating;
+      document.getElementById("summary-title").textContent = data.summaryTitle;
+      document.getElementById("category-header").textContent = data.categoryHeader;
+      document.getElementById("status-header").textContent = data.statusHeader;
+      document.getElementById("use-title").textContent = data.useTitle;
+      document.getElementById("use-body").textContent = data.useBody;
+      document.getElementById("safety-title").textContent = data.safetyTitle;
+      document.getElementById("links-title").textContent = data.linksTitle;
+      document.getElementById("privacy-link").textContent = data.privacyLink;
+      document.getElementById("support-link").textContent = data.supportLink;
+
+      const table = document.getElementById("rating-table");
+      table.textContent = "";
+      for (const [category, status] of data.rows) {
+        const row = document.createElement("tr");
+        const categoryCell = document.createElement("td");
+        const statusCell = document.createElement("td");
+        categoryCell.textContent = category;
+        statusCell.textContent = status;
+        row.append(categoryCell, statusCell);
+        table.appendChild(row);
+      }
+
+      const safetyList = document.getElementById("safety-list");
+      safetyList.textContent = "";
+      for (const item of data.safety) {
+        const li = document.createElement("li");
+        li.textContent = item;
+        safetyList.appendChild(li);
+      }
+
+      select.value = code;
+      localStorage.setItem("cacheguard-age-language", code);
+    }
+
+    select.addEventListener("change", event => applyLanguage(event.target.value));
+    applyLanguage(pickLanguage());
+  </script>
+</body>
+</html>

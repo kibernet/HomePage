@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CacheGuard Pro Privacy Policy</title>
+  <meta name="description" content="Privacy policy for CacheGuard Pro, a local-first professional Mac cleaner.">
+  <style>
+    :root {
+      color-scheme: dark light;
+      --bg: #0a0f1a;
+      --panel: rgba(13, 20, 32, 0.78);
+      --panel-strong: rgba(17, 27, 42, 0.92);
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --quiet: #94a3b8;
+      --line: rgba(148, 163, 184, 0.24);
+      --accent: #67e8f9;
+      --accent-2: #f8c35b;
+      --shadow: rgba(0, 0, 0, 0.34);
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f7fbff;
+        --panel: rgba(255, 255, 255, 0.86);
+        --panel-strong: rgba(255, 255, 255, 0.96);
+        --text: #0f172a;
+        --muted: #334155;
+        --quiet: #64748b;
+        --line: rgba(15, 23, 42, 0.14);
+        --accent: #0891b2;
+        --accent-2: #b7791f;
+        --shadow: rgba(15, 23, 42, 0.12);
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+      line-height: 1.65;
+      color: var(--text);
+      background: radial-gradient(circle at 16% 0%, rgba(103, 232, 249, 0.24), transparent 34rem), radial-gradient(circle at 92% 10%, rgba(248, 195, 91, 0.16), transparent 30rem), linear-gradient(135deg, var(--bg), #101827 54%, #07111d);
+    }
+    @media (prefers-color-scheme: light) {
+      body { background: radial-gradient(circle at 16% 0%, rgba(8, 145, 178, 0.16), transparent 34rem), radial-gradient(circle at 92% 10%, rgba(183, 121, 31, 0.12), transparent 30rem), linear-gradient(135deg, #f7fbff, #edf6fb 54%, #f8fafc); }
+    }
+    .page { width: min(920px, calc(100% - 40px)); margin: 0 auto; padding: 56px 0; }
+    .document { padding: clamp(24px, 5vw, 52px); border: 1px solid var(--line); border-radius: 24px; background: var(--panel); box-shadow: 0 28px 90px var(--shadow); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); }
+    .toolbar { display: flex; justify-content: flex-end; margin-bottom: 28px; }
+    .language-control { display: inline-flex; align-items: center; gap: 10px; padding: 8px 10px; border: 1px solid var(--line); border-radius: 999px; background: var(--panel-strong); color: var(--muted); }
+    .language-control label { color: var(--quiet); font-size: 0.9rem; white-space: nowrap; }
+    .language-control select { min-width: 180px; border: 0; color: var(--text); background: transparent; font: inherit; font-size: 0.95rem; outline: 0; }
+    .language-control option { color: #0f172a; background: #ffffff; }
+    h1, h2 { line-height: 1.15; letter-spacing: 0; }
+    h1 { margin: 0 0 10px; font-size: clamp(2.15rem, 5vw, 3.7rem); font-weight: 760; }
+    h2 { margin: 34px 0 10px; font-size: 1.18rem; font-weight: 720; }
+    p, li { color: var(--muted); font-size: 1rem; overflow-wrap: anywhere; }
+    ul { padding-left: 1.25rem; }
+    [dir="rtl"] ul { padding-right: 1.25rem; padding-left: 0; }
+    a { color: var(--accent); overflow-wrap: anywhere; }
+    .eyebrow { margin: 0 0 26px; color: var(--accent); font-weight: 700; }
+    .updated { margin-top: 0; color: var(--quiet); font-size: 0.95rem; }
+    .notice { margin: 24px 0; padding: 16px 18px; border: 1px solid var(--line); border-radius: 16px; background: var(--panel-strong); }
+    code { color: var(--accent-2); }
+    @media (max-width: 620px) {
+      .page { width: min(100% - 24px, 920px); padding: 24px 0; }
+      .document { border-radius: 18px; }
+      .toolbar { justify-content: stretch; }
+      .language-control { width: 100%; justify-content: space-between; border-radius: 14px; }
+      .language-control select { min-width: 0; width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <main class="document">
+      <div class="toolbar">
+        <div class="language-control">
+          <label id="language-label" for="language-select">Language</label>
+          <select id="language-select" aria-label="Choose language"></select>
+        </div>
+      </div>
+      <p class="eyebrow" id="eyebrow"></p>
+      <h1 id="title"></h1>
+      <p class="updated" id="updated"></p>
+      <p id="intro"></p>
+      <div class="notice"><p id="summary"></p></div>
+      <div id="sections"></div>
+      <h2 id="contact-title"></h2>
+      <p id="contact-body"></p>
+    </main>
+  </div>
+  <script>
+    const languages = [
+      ["en", "en", "English", "ltr"],
+      ["zh-Hans", "zh-CN", "简体中文", "ltr"],
+      ["zh-Hant", "zh-TW", "繁體中文", "ltr"],
+      ["ja", "ja", "日本語", "ltr"],
+      ["ko", "ko", "한국어", "ltr"],
+      ["fr", "fr", "Français", "ltr"],
+      ["de", "de", "Deutsch", "ltr"],
+      ["es", "es", "Español", "ltr"],
+      ["it", "it", "Italiano", "ltr"],
+      ["pt-BR", "pt-BR", "Português (Brasil)", "ltr"],
+      ["ru", "ru", "Русский", "ltr"],
+      ["ar", "ar", "العربية", "rtl"],
+      ["hi", "hi", "हिन्दी", "ltr"],
+      ["id", "id", "Bahasa Indonesia", "ltr"],
+      ["vi", "vi", "Tiếng Việt", "ltr"],
+      ["th", "th", "ไทย", "ltr"]
+    ].map(([code, htmlLang, label, dir]) => ({ code, htmlLang, label, dir }));
+    const emailLink = '<a href="mailto:support@yaoji.app">support@yaoji.app</a>';
+    const content = {
+      en: {
+        docTitle: "CacheGuard Pro Privacy Policy",
+        docDescription: "Privacy policy for CacheGuard Pro, a local-first professional Mac cleaner.",
+        language: "Language",
+        chooseLanguage: "Choose language",
+        eyebrow: "CacheGuard Pro for Mac",
+        title: "Privacy Policy",
+        updated: "Last updated: June 20, 2026",
+        intro: "CacheGuard Pro / 净盾清理 is a macOS cleaning utility provided by Yaoji. This policy explains how the app handles data while scanning, reviewing, cleaning, licensing, support, and update checking.",
+        summary: "Summary: CacheGuard Pro does not collect personal data in the current release, does not upload file contents, does not include advertising SDKs, and does not track users across apps or websites.",
+        sections: [
+          ["Data We Collect", "The current release does not send scan results, file names, file paths, file contents, cleanup reports, or personal analytics to developer-operated servers."],
+          ["Local Data On Your Mac", "The app may store scan summaries, cleanup snapshots, history, preferences, language settings, and local reports in your Mac user account. Direct license codes are stored in macOS Keychain when used."],
+          ["Scan And Cleanup Scope", "Scanning focuses on user-accessible low-risk locations such as caches, logs, downloads, developer caches, app leftover candidates, duplicate candidates, large-file candidates, and Trash. System folders, keychains, mail, messages, photos, containers, and other sensitive locations are protected or avoided by default."],
+          ["Cleanup Behavior", "Cleanup only happens after user confirmation. Ordinary files are moved to Trash first. Permanent Trash cleanup requires explicit review and typed confirmation. The app rechecks freshness before deleting so stale scan results are blocked."],
+          ["Licensing, Purchases, And Updates", "Mac App Store purchases, refunds, and order records are handled by Apple. Direct builds may contact Yaoji-controlled HTTPS endpoints for signed license verification and signed update manifests, but cleanup file contents are not sent with those requests."],
+          ["Support Requests", "If you contact support, we receive only the information you choose to send, such as your email address, app version, screenshots, logs, or issue description. Do not send passwords, private keys, confidential files, or private file contents."]
+        ],
+        contactTitle: "Contact",
+        contactBody: "For privacy questions, contact " + emailLink + "."
+      },
+      "zh-Hans": {
+        docTitle: "净盾清理隐私政策",
+        docDescription: "净盾清理隐私政策。净盾清理是一款本机优先的专业 Mac 清理工具。",
+        language: "语言",
+        chooseLanguage: "选择语言",
+        eyebrow: "净盾清理 Mac 版",
+        title: "隐私政策",
+        updated: "最后更新：2026 年 6 月 20 日",
+        intro: "CacheGuard Pro / 净盾清理由 Yaoji 提供，是一款 macOS 清理工具。本政策说明应用在扫描、复核、清理、授权、支持和更新检查过程中如何处理数据。",
+        summary: "摘要：当前版本不收集个人数据，不上传文件内容，不包含广告 SDK，也不会跨 App 或跨网站追踪用户。",
+        sections: [
+          ["我们收集的数据", "当前版本不会向开发者运营的服务器发送扫描结果、文件名、文件路径、文件内容、清理报告或个人分析数据。"],
+          ["保存在 Mac 本地的数据", "应用可能在你的 Mac 用户账户中保存扫描摘要、清理快照、历史记录、偏好、语言设置和本地报告。Direct 授权码在使用时保存在 macOS Keychain。"],
+          ["扫描与清理范围", "扫描聚焦用户可访问的低风险位置，例如缓存、日志、下载残留、开发缓存、应用残留候选、重复文件候选、大文件候选和废纸篓。系统目录、钥匙串、邮件、信息、照片、容器目录等敏感位置默认保护或避让。"],
+          ["清理行为", "清理只会在用户确认后执行。普通文件优先移入废纸篓；永久清理废纸篓需要主动复核并输入确认短语。应用会在删除前重新校验扫描新鲜度，阻断过期扫描结果。"],
+          ["授权、购买与更新", "Mac App Store 的购买、退款和订单记录由 Apple 处理。Direct 版本可能连接 Yaoji 控制的 HTTPS 端点验证签名授权和签名更新 manifest，但不会随这些请求发送清理文件内容。"],
+          ["支持请求", "如果你联系支持，我们只会收到你选择发送的信息，例如邮箱地址、应用版本、截图、日志或问题描述。请不要发送密码、私钥、机密文件或私有文件内容。"]
+        ],
+        contactTitle: "联系我们",
+        contactBody: "如对隐私政策有疑问，请联系 " + emailLink + "。"
+      },
+      "zh-Hant": {
+        docTitle: "淨盾清理隱私權政策",
+        docDescription: "淨盾清理隱私權政策。淨盾清理是一款本機優先的專業 Mac 清理工具。",
+        language: "語言",
+        chooseLanguage: "選擇語言",
+        eyebrow: "淨盾清理 Mac 版",
+        title: "隱私權政策",
+        updated: "最後更新：2026 年 6 月 20 日",
+        intro: "CacheGuard Pro / 淨盾清理由 Yaoji 提供，是一款 macOS 清理工具。本政策說明應用程式在掃描、複核、清理、授權、支援和更新檢查過程中如何處理資料。",
+        summary: "摘要：目前版本不收集個人資料，不上傳檔案內容，不包含廣告 SDK，也不會跨 App 或跨網站追蹤使用者。",
+        sections: [
+          ["我們收集的資料", "目前版本不會向開發者營運的伺服器傳送掃描結果、檔案名稱、檔案路徑、檔案內容、清理報告或個人分析資料。"],
+          ["保存在 Mac 本機的資料", "應用程式可能在你的 Mac 使用者帳戶中保存掃描摘要、清理快照、歷史記錄、偏好、語言設定和本機報告。Direct 授權碼在使用時保存在 macOS Keychain。"],
+          ["掃描與清理範圍", "掃描聚焦使用者可存取的低風險位置，例如快取、日誌、下載殘留、開發快取、應用殘留候選、重複檔案候選、大檔案候選和垃圾桶。系統目錄、鑰匙圈、郵件、訊息、照片、容器目錄等敏感位置預設保護或避讓。"],
+          ["清理行為", "清理只會在使用者確認後執行。一般檔案優先移入垃圾桶；永久清理垃圾桶需要主動複核並輸入確認短語。應用程式會在刪除前重新校驗掃描新鮮度，阻斷過期掃描結果。"],
+          ["授權、購買與更新", "Mac App Store 的購買、退款和訂單記錄由 Apple 處理。Direct 版本可能連接 Yaoji 控制的 HTTPS 端點驗證簽名授權和簽名更新 manifest，但不會隨這些請求傳送清理檔案內容。"],
+          ["支援請求", "如果你聯絡支援，我們只會收到你選擇傳送的資訊，例如電子郵件地址、應用程式版本、截圖、日誌或問題描述。請不要傳送密碼、私鑰、機密檔案或私有檔案內容。"]
+        ],
+        contactTitle: "聯絡我們",
+        contactBody: "如對隱私權政策有疑問，請聯絡 " + emailLink + "。"
+      },
+      ja: {
+        docTitle: "CacheGuard Pro プライバシーポリシー",
+        docDescription: "Mac 用ローカル優先クリーナー CacheGuard Pro のプライバシーポリシー。",
+        language: "言語",
+        chooseLanguage: "言語を選択",
+        eyebrow: "Mac 用 CacheGuard Pro",
+        title: "プライバシーポリシー",
+        updated: "最終更新日: 2026年6月20日",
+        intro: "CacheGuard Pro は Yaoji が提供する macOS クリーニングユーティリティです。本ポリシーは、スキャン、確認、クリーンアップ、ライセンス、サポート、更新確認時のデータ処理を説明します。",
+        summary: "概要: 現在のリリースでは個人データを収集せず、ファイル内容をアップロードせず、広告 SDK やクロスアプリ追跡を含みません。",
+        sections: [["収集するデータ", "現在のリリースは、スキャン結果、ファイル名、パス、内容、レポート、個人分析を開発者サーバーへ送信しません。"], ["Mac に保存されるデータ", "スキャン概要、スナップショット、履歴、設定、言語設定、ローカルレポートを Mac のユーザーアカウントに保存する場合があります。Direct ライセンスコードは macOS Keychain に保存されます。"], ["スキャン範囲", "対象はキャッシュ、ログ、ダウンロード残留、開発キャッシュ、アプリ残留候補、重複候補、大容量候補、ゴミ箱など低リスクの場所です。システム、キーチェーン、メール、メッセージ、写真、コンテナなどは既定で保護または回避されます。"], ["クリーンアップ", "削除はユーザー確認後にのみ行われます。通常ファイルはまずゴミ箱へ移動します。完全削除には明示的な確認入力が必要で、削除前にスキャンの鮮度を再確認します。"], ["ライセンスと更新", "Mac App Store の購入や返金は Apple が処理します。Direct 版は署名付きライセンスや更新 manifest の確認で Yaoji の HTTPS エンドポイントへ接続する場合がありますが、ファイル内容は送信しません。"], ["サポート", "サポートへ連絡した場合、受け取るのはあなたが送信した情報のみです。パスワード、秘密鍵、機密ファイル、私的なファイル内容は送らないでください。"]],
+        contactTitle: "お問い合わせ",
+        contactBody: "プライバシーに関する質問は " + emailLink + " までご連絡ください。"
+      },
+      ko: {
+        docTitle: "CacheGuard Pro 개인정보 처리방침",
+        docDescription: "Mac용 로컬 우선 전문 정리 도구 CacheGuard Pro 개인정보 처리방침입니다.",
+        language: "언어",
+        chooseLanguage: "언어 선택",
+        eyebrow: "Mac용 CacheGuard Pro",
+        title: "개인정보 처리방침",
+        updated: "마지막 업데이트: 2026년 6월 20일",
+        intro: "CacheGuard Pro는 Yaoji가 제공하는 macOS 정리 유틸리티입니다. 이 정책은 스캔, 검토, 정리, 라이선스, 지원, 업데이트 확인 중 데이터 처리 방식을 설명합니다.",
+        summary: "요약: 현재 버전은 개인 데이터를 수집하지 않고 파일 내용을 업로드하지 않으며 광고 SDK나 앱/웹사이트 간 추적을 포함하지 않습니다.",
+        sections: [["수집하는 데이터", "현재 버전은 스캔 결과, 파일 이름, 경로, 내용, 정리 보고서 또는 개인 분석 데이터를 개발자 서버로 보내지 않습니다."], ["Mac에 저장되는 데이터", "스캔 요약, 정리 스냅샷, 기록, 설정, 언어 설정, 로컬 보고서가 Mac 사용자 계정에 저장될 수 있습니다. Direct 라이선스 코드는 macOS Keychain에 저장됩니다."], ["스캔 범위", "캐시, 로그, 다운로드 잔여물, 개발 캐시, 앱 잔여 후보, 중복 후보, 대용량 파일 후보, 휴지통 등 낮은 위험 위치에 집중합니다. 시스템 폴더, 키체인, 메일, 메시지, 사진, 컨테이너 등은 기본적으로 보호되거나 제외됩니다."], ["정리 동작", "정리는 사용자 확인 후에만 실행됩니다. 일반 파일은 먼저 휴지통으로 이동합니다. 영구 삭제는 명시적 검토와 입력 확인이 필요하며 삭제 전에 스캔 최신성을 다시 확인합니다."], ["라이선스, 구매 및 업데이트", "Mac App Store 구매, 환불, 주문 기록은 Apple이 처리합니다. Direct 빌드는 서명된 라이선스와 업데이트 manifest 확인을 위해 Yaoji HTTPS 엔드포인트에 연결할 수 있지만 파일 내용은 보내지 않습니다."], ["지원 요청", "지원에 문의하면 사용자가 선택해 보낸 정보만 받습니다. 비밀번호, 개인 키, 기밀 파일 또는 개인 파일 내용을 보내지 마세요."]],
+        contactTitle: "문의",
+        contactBody: "개인정보 관련 질문은 " + emailLink + " 로 연락해 주세요."
+      },
+      fr: {
+        docTitle: "Politique de confidentialité de CacheGuard Pro",
+        docDescription: "Politique de confidentialité de CacheGuard Pro, nettoyeur Mac professionnel local.",
+        language: "Langue",
+        chooseLanguage: "Choisir la langue",
+        eyebrow: "CacheGuard Pro pour Mac",
+        title: "Politique de confidentialité",
+        updated: "Dernière mise à jour : 20 juin 2026",
+        intro: "CacheGuard Pro est un utilitaire de nettoyage macOS fourni par Yaoji. Cette politique explique le traitement des données lors des analyses, révisions, nettoyages, licences, demandes d'assistance et recherches de mises à jour.",
+        summary: "Résumé : la version actuelle ne collecte pas de données personnelles, ne téléverse pas le contenu des fichiers, n'inclut pas de SDK publicitaire et ne suit pas les utilisateurs entre apps ou sites.",
+        sections: [["Données collectées", "La version actuelle n'envoie pas de résultats d'analyse, noms, chemins, contenus de fichiers, rapports de nettoyage ni analyses personnelles à des serveurs exploités par le développeur."], ["Données locales", "L'app peut stocker sur votre Mac des résumés d'analyse, instantanés, historiques, préférences, paramètres de langue et rapports locaux. Les codes de licence Direct sont stockés dans le trousseau macOS."], ["Portée de l'analyse", "L'analyse cible les emplacements à faible risque accessibles à l'utilisateur : caches, journaux, téléchargements, caches développeur, restes d'apps, doublons, gros fichiers et corbeille. Les dossiers système, trousseaux, e-mails, messages, photos et conteneurs sont protégés ou évités par défaut."], ["Comportement de nettoyage", "Le nettoyage se fait uniquement après confirmation. Les fichiers ordinaires vont d'abord dans la corbeille. La suppression définitive exige une confirmation saisie, et l'app vérifie la fraîcheur avant suppression."], ["Licences, achats et mises à jour", "Les achats Mac App Store sont traités par Apple. Les builds Direct peuvent contacter des points HTTPS contrôlés par Yaoji pour vérifier des licences et manifestes signés, sans envoyer le contenu des fichiers."], ["Assistance", "Si vous contactez l'assistance, nous recevons seulement les informations que vous choisissez d'envoyer. N'envoyez pas de mots de passe, clés privées, fichiers confidentiels ou contenus privés."]],
+        contactTitle: "Contact",
+        contactBody: "Pour toute question de confidentialité, contactez " + emailLink + "."
+      },
+      de: {
+        docTitle: "CacheGuard Pro Datenschutzrichtlinie",
+        docDescription: "Datenschutzrichtlinie für CacheGuard Pro, einen lokalen professionellen Mac-Cleaner.",
+        language: "Sprache",
+        chooseLanguage: "Sprache auswählen",
+        eyebrow: "CacheGuard Pro für Mac",
+        title: "Datenschutzrichtlinie",
+        updated: "Zuletzt aktualisiert: 20. Juni 2026",
+        intro: "CacheGuard Pro ist ein macOS-Cleaner von Yaoji. Diese Richtlinie erklärt die Datenverarbeitung beim Scannen, Prüfen, Bereinigen, Lizenzieren, Support und bei Updateprüfungen.",
+        summary: "Zusammenfassung: Die aktuelle Version sammelt keine personenbezogenen Daten, lädt keine Dateiinhalte hoch, enthält keine Werbe-SDKs und verfolgt Nutzer nicht app- oder webseitenübergreifend.",
+        sections: [["Erhobene Daten", "Die aktuelle Version sendet keine Scanergebnisse, Dateinamen, Pfade, Inhalte, Bereinigungsberichte oder persönlichen Analysen an Entwicklerserver."], ["Lokale Daten", "Die App kann Scan-Zusammenfassungen, Snapshots, Verlauf, Einstellungen, Spracheinstellungen und lokale Berichte in Ihrem Mac-Benutzerkonto speichern. Direct-Lizenzcodes werden im macOS-Schlüsselbund gespeichert."], ["Scanumfang", "Der Scan konzentriert sich auf zugängliche risikoarme Orte wie Caches, Logs, Downloads, Entwickler-Caches, App-Reste, Duplikate, große Dateien und Papierkorb. Systemordner, Schlüsselbund, Mail, Nachrichten, Fotos und Container werden standardmäßig geschützt oder vermieden."], ["Bereinigungsverhalten", "Bereinigung erfolgt nur nach Bestätigung. Normale Dateien werden zuerst in den Papierkorb verschoben. Endgültiges Löschen erfordert eine Texteingabe; vor dem Löschen wird die Aktualität geprüft."], ["Lizenzen, Käufe und Updates", "Mac App Store-Käufe verarbeitet Apple. Direct-Builds können Yaoji-HTTPS-Endpunkte zur Prüfung signierter Lizenzen und Update-Manifeste kontaktieren, ohne Dateiinhalte zu senden."], ["Support", "Beim Support erhalten wir nur Informationen, die Sie senden. Senden Sie keine Passwörter, privaten Schlüssel, vertraulichen Dateien oder privaten Dateiinhalte."]],
+        contactTitle: "Kontakt",
+        contactBody: "Bei Datenschutzfragen kontaktieren Sie " + emailLink + "."
+      },
+      es: {
+        docTitle: "Política de privacidad de CacheGuard Pro",
+        docDescription: "Política de privacidad de CacheGuard Pro, limpiador profesional local para Mac.",
+        language: "Idioma",
+        chooseLanguage: "Elegir idioma",
+        eyebrow: "CacheGuard Pro para Mac",
+        title: "Política de privacidad",
+        updated: "Última actualización: 20 de junio de 2026",
+        intro: "CacheGuard Pro es una utilidad de limpieza para macOS proporcionada por Yaoji. Esta política explica cómo trata los datos al escanear, revisar, limpiar, licenciar, dar soporte y buscar actualizaciones.",
+        summary: "Resumen: la versión actual no recopila datos personales, no sube contenido de archivos, no incluye SDK de publicidad y no rastrea usuarios entre apps o sitios web.",
+        sections: [["Datos que recopilamos", "La versión actual no envía resultados de escaneo, nombres, rutas, contenidos de archivos, informes de limpieza ni analíticas personales a servidores del desarrollador."], ["Datos locales", "La app puede guardar resúmenes, snapshots, historial, preferencias, idioma e informes locales en tu cuenta de Mac. Los códigos Direct se guardan en macOS Keychain."], ["Alcance del escaneo", "Se centra en ubicaciones de bajo riesgo accesibles al usuario: cachés, logs, descargas, cachés de desarrollo, restos de apps, duplicados, archivos grandes y Papelera. Carpetas del sistema, llaveros, mail, mensajes, fotos y contenedores se protegen o evitan por defecto."], ["Comportamiento de limpieza", "La limpieza solo ocurre tras confirmación. Los archivos normales van primero a la Papelera. El borrado permanente requiere confirmación escrita y se vuelve a comprobar la frescura antes de borrar."], ["Licencias, compras y actualizaciones", "Las compras de Mac App Store las gestiona Apple. Los builds Direct pueden contactar endpoints HTTPS de Yaoji para verificar licencias y manifestes firmados, sin enviar contenido de archivos."], ["Soporte", "Si contactas soporte, recibimos solo lo que decidas enviar. No envíes contraseñas, claves privadas, archivos confidenciales ni contenido privado."]],
+        contactTitle: "Contacto",
+        contactBody: "Para preguntas de privacidad, contacta con " + emailLink + "."
+      },
+      it: {
+        docTitle: "Informativa sulla privacy di CacheGuard Pro",
+        docDescription: "Informativa sulla privacy di CacheGuard Pro, pulitore Mac professionale locale.",
+        language: "Lingua",
+        chooseLanguage: "Scegli lingua",
+        eyebrow: "CacheGuard Pro per Mac",
+        title: "Informativa sulla privacy",
+        updated: "Ultimo aggiornamento: 20 giugno 2026",
+        intro: "CacheGuard Pro è un'utilità di pulizia macOS fornita da Yaoji. Questa informativa spiega come tratta i dati durante scansione, revisione, pulizia, licenze, supporto e controllo aggiornamenti.",
+        summary: "Riepilogo: la versione attuale non raccoglie dati personali, non carica contenuti di file, non include SDK pubblicitari e non traccia gli utenti tra app o siti.",
+        sections: [["Dati raccolti", "La versione attuale non invia risultati di scansione, nomi, percorsi, contenuti, report o analisi personali a server gestiti dallo sviluppatore."], ["Dati locali", "L'app può salvare riepiloghi, snapshot, cronologia, preferenze, lingua e report locali nell'account Mac. I codici Direct vengono salvati nel portachiavi macOS."], ["Ambito di scansione", "La scansione riguarda posizioni a basso rischio accessibili all'utente: cache, log, download, cache sviluppatore, resti app, duplicati, file grandi e Cestino. Cartelle di sistema, portachiavi, mail, messaggi, foto e container sono protetti o evitati per impostazione predefinita."], ["Pulizia", "La pulizia avviene solo dopo conferma. I file ordinari vanno prima nel Cestino. L'eliminazione definitiva richiede conferma digitata e l'app ricontrolla la freschezza prima di eliminare."], ["Licenze, acquisti e aggiornamenti", "Gli acquisti Mac App Store sono gestiti da Apple. Le build Direct possono contattare endpoint HTTPS Yaoji per verificare licenze e manifest firmati senza inviare contenuti di file."], ["Supporto", "Se contatti il supporto, riceviamo solo le informazioni che scegli di inviare. Non inviare password, chiavi private, file riservati o contenuti privati."]],
+        contactTitle: "Contatto",
+        contactBody: "Per domande sulla privacy contatta " + emailLink + "."
+      },
+      "pt-BR": {
+        docTitle: "Política de Privacidade do CacheGuard Pro",
+        docDescription: "Política de privacidade do CacheGuard Pro, limpador profissional de Mac com processamento local.",
+        language: "Idioma",
+        chooseLanguage: "Escolher idioma",
+        eyebrow: "CacheGuard Pro para Mac",
+        title: "Política de Privacidade",
+        updated: "Última atualização: 20 de junho de 2026",
+        intro: "CacheGuard Pro é um utilitário de limpeza macOS fornecido pela Yaoji. Esta política explica como os dados são tratados durante varredura, revisão, limpeza, licenciamento, suporte e verificação de atualizações.",
+        summary: "Resumo: a versão atual não coleta dados pessoais, não envia conteúdo de arquivos, não inclui SDKs de publicidade e não rastreia usuários entre apps ou sites.",
+        sections: [["Dados coletados", "A versão atual não envia resultados de varredura, nomes, caminhos, conteúdo de arquivos, relatórios ou análises pessoais para servidores do desenvolvedor."], ["Dados locais", "O app pode salvar resumos, snapshots, histórico, preferências, idioma e relatórios locais na conta do Mac. Códigos Direct são salvos no macOS Keychain."], ["Escopo da varredura", "A varredura foca locais de baixo risco acessíveis ao usuário: caches, logs, downloads, caches de desenvolvimento, sobras de apps, duplicados, arquivos grandes e Lixo. Pastas do sistema, chaves, Mail, Mensagens, Fotos e containers são protegidos ou evitados por padrão."], ["Comportamento de limpeza", "A limpeza só ocorre após confirmação. Arquivos comuns vão primeiro para o Lixo. Exclusão permanente exige confirmação digitada e o app verifica a atualidade antes de excluir."], ["Licenças, compras e atualizações", "Compras na Mac App Store são tratadas pela Apple. Builds Direct podem contatar endpoints HTTPS da Yaoji para verificar licenças e manifests assinados, sem enviar conteúdo de arquivos."], ["Suporte", "Ao contatar suporte, recebemos apenas o que você escolhe enviar. Não envie senhas, chaves privadas, arquivos confidenciais ou conteúdo privado."]],
+        contactTitle: "Contato",
+        contactBody: "Para dúvidas de privacidade, contate " + emailLink + "."
+      },
+      ru: {
+        docTitle: "Политика конфиденциальности CacheGuard Pro",
+        docDescription: "Политика конфиденциальности CacheGuard Pro, профессионального локального очистителя Mac.",
+        language: "Язык",
+        chooseLanguage: "Выбрать язык",
+        eyebrow: "CacheGuard Pro для Mac",
+        title: "Политика конфиденциальности",
+        updated: "Последнее обновление: 20 июня 2026 г.",
+        intro: "CacheGuard Pro — утилита очистки macOS от Yaoji. Эта политика объясняет обработку данных при сканировании, проверке, очистке, лицензировании, поддержке и проверке обновлений.",
+        summary: "Кратко: текущая версия не собирает персональные данные, не загружает содержимое файлов, не содержит рекламных SDK и не отслеживает пользователей между приложениями или сайтами.",
+        sections: [["Собираемые данные", "Текущая версия не отправляет результаты сканирования, имена, пути, содержимое файлов, отчеты очистки или личную аналитику на серверы разработчика."], ["Локальные данные", "Приложение может хранить сводки, снимки, историю, настройки, язык и локальные отчеты в учетной записи Mac. Direct-коды лицензии сохраняются в macOS Keychain."], ["Область сканирования", "Сканирование сосредоточено на низкорисковых местах: кэши, журналы, загрузки, кэши разработчика, остатки приложений, дубликаты, большие файлы и Корзина. Системные папки, ключи, почта, сообщения, фото и контейнеры защищены или исключены по умолчанию."], ["Очистка", "Очистка выполняется только после подтверждения. Обычные файлы сначала перемещаются в Корзину. Окончательное удаление требует ввода подтверждения, а перед удалением проверяется актуальность сканирования."], ["Лицензии, покупки и обновления", "Покупки Mac App Store обрабатывает Apple. Direct-сборки могут обращаться к HTTPS-точкам Yaoji для проверки подписанных лицензий и manifest обновлений, не отправляя содержимое файлов."], ["Поддержка", "При обращении в поддержку мы получаем только то, что вы отправили. Не отправляйте пароли, приватные ключи, конфиденциальные файлы или личное содержимое."]],
+        contactTitle: "Контакт",
+        contactBody: "По вопросам конфиденциальности пишите на " + emailLink + "."
+      },
+      ar: {
+        docTitle: "سياسة خصوصية CacheGuard Pro",
+        docDescription: "سياسة خصوصية CacheGuard Pro، أداة تنظيف Mac احترافية تعمل محليًا.",
+        language: "اللغة",
+        chooseLanguage: "اختر اللغة",
+        eyebrow: "CacheGuard Pro لنظام Mac",
+        title: "سياسة الخصوصية",
+        updated: "آخر تحديث: 20 يونيو 2026",
+        intro: "CacheGuard Pro أداة تنظيف macOS مقدمة من Yaoji. توضح هذه السياسة كيفية التعامل مع البيانات أثناء الفحص والمراجعة والتنظيف والترخيص والدعم والتحقق من التحديثات.",
+        summary: "الملخص: الإصدار الحالي لا يجمع بيانات شخصية، ولا يرفع محتوى الملفات، ولا يحتوي على SDK إعلانات، ولا يتتبع المستخدمين عبر التطبيقات أو المواقع.",
+        sections: [["البيانات التي نجمعها", "لا يرسل الإصدار الحالي نتائج الفحص أو أسماء الملفات أو المسارات أو محتوى الملفات أو تقارير التنظيف أو التحليلات الشخصية إلى خوادم يديرها المطور."], ["البيانات المحلية", "قد يخزن التطبيق ملخصات الفحص واللقطات والسجل والتفضيلات واللغة والتقارير المحلية في حساب مستخدم Mac. تحفظ رموز Direct في macOS Keychain."], ["نطاق الفحص", "يركز الفحص على مواقع منخفضة المخاطر يمكن للمستخدم الوصول إليها مثل الذاكرة المؤقتة والسجلات والتنزيلات وذاكرات المطور وبقايا التطبيقات والتكرارات والملفات الكبيرة وسلة المهملات. تتم حماية أو تجنب مجلدات النظام والمفاتيح والبريد والرسائل والصور والحاويات افتراضيًا."], ["سلوك التنظيف", "يحدث التنظيف فقط بعد تأكيد المستخدم. الملفات العادية تنتقل أولاً إلى سلة المهملات. الحذف الدائم يتطلب تأكيدًا مكتوبًا ويعاد فحص حداثة النتائج قبل الحذف."], ["الترخيص والشراء والتحديثات", "تعالج Apple مشتريات Mac App Store. قد تتصل إصدارات Direct بنقاط HTTPS تابعة لـ Yaoji للتحقق من التراخيص وملفات التحديث الموقعة دون إرسال محتوى الملفات."], ["طلبات الدعم", "إذا تواصلت مع الدعم، نتلقى فقط المعلومات التي تختار إرسالها. لا ترسل كلمات مرور أو مفاتيح خاصة أو ملفات سرية أو محتوى ملفات خاص."]],
+        contactTitle: "اتصل بنا",
+        contactBody: "لأسئلة الخصوصية تواصل عبر " + emailLink + "."
+      },
+      hi: {
+        docTitle: "CacheGuard Pro गोपनीयता नीति",
+        docDescription: "CacheGuard Pro की गोपनीयता नीति, Mac के लिए स्थानीय-प्रथम पेशेवर क्लीनर।",
+        language: "भाषा",
+        chooseLanguage: "भाषा चुनें",
+        eyebrow: "Mac के लिए CacheGuard Pro",
+        title: "गोपनीयता नीति",
+        updated: "अंतिम अपडेट: 20 जून 2026",
+        intro: "CacheGuard Pro Yaoji द्वारा प्रदान की गई macOS cleaning utility है। यह नीति scan, review, cleanup, licensing, support और update checking के दौरान data handling समझाती है।",
+        summary: "सारांश: वर्तमान release personal data collect नहीं करता, file contents upload नहीं करता, advertising SDK शामिल नहीं करता और apps या websites के पार tracking नहीं करता।",
+        sections: [["हम कौन सा डेटा collect करते हैं", "वर्तमान release scan results, file names, file paths, file contents, cleanup reports या personal analytics developer servers को नहीं भेजता।"], ["Mac पर local data", "ऐप scan summaries, cleanup snapshots, history, preferences, language settings और local reports आपके Mac user account में रख सकता है। Direct license codes macOS Keychain में रखे जाते हैं।"], ["Scan scope", "Scan low-risk locations पर केंद्रित है: caches, logs, downloads, developer caches, app leftover candidates, duplicate candidates, large files और Trash. System folders, keychains, Mail, Messages, Photos और containers default रूप से protected या avoided हैं।"], ["Cleanup behavior", "Cleanup user confirmation के बाद ही होता है। सामान्य files पहले Trash में जाती हैं। permanent delete के लिए typed confirmation चाहिए और delete से पहले freshness recheck होता है।"], ["Licensing, purchases और updates", "Mac App Store purchases Apple द्वारा handle होते हैं। Direct builds signed licenses और update manifests verify करने के लिए Yaoji HTTPS endpoints से जुड़ सकते हैं, लेकिन file contents नहीं भेजते।"], ["Support requests", "Support से संपर्क करने पर हमें केवल वही information मिलती है जो आप भेजते हैं। passwords, private keys, confidential files या private contents न भेजें।"]],
+        contactTitle: "संपर्क",
+        contactBody: "गोपनीयता प्रश्नों के लिए " + emailLink + " पर संपर्क करें।"
+      },
+      id: {
+        docTitle: "Kebijakan Privasi CacheGuard Pro",
+        docDescription: "Kebijakan privasi CacheGuard Pro, pembersih Mac profesional yang mengutamakan pemrosesan lokal.",
+        language: "Bahasa",
+        chooseLanguage: "Pilih bahasa",
+        eyebrow: "CacheGuard Pro untuk Mac",
+        title: "Kebijakan Privasi",
+        updated: "Terakhir diperbarui: 20 Juni 2026",
+        intro: "CacheGuard Pro adalah utilitas pembersih macOS dari Yaoji. Kebijakan ini menjelaskan penanganan data saat memindai, meninjau, membersihkan, lisensi, dukungan, dan cek pembaruan.",
+        summary: "Ringkasan: versi saat ini tidak mengumpulkan data pribadi, tidak mengunggah isi file, tidak menyertakan SDK iklan, dan tidak melacak pengguna lintas app atau situs.",
+        sections: [["Data yang dikumpulkan", "Versi saat ini tidak mengirim hasil scan, nama file, path, isi file, laporan pembersihan, atau analitik pribadi ke server pengembang."], ["Data lokal", "App dapat menyimpan ringkasan scan, snapshot, riwayat, preferensi, bahasa, dan laporan lokal di akun Mac. Kode lisensi Direct disimpan di macOS Keychain."], ["Cakupan scan", "Scan berfokus pada lokasi rendah risiko: cache, log, unduhan, cache developer, sisa app, duplikat, file besar, dan Trash. Folder sistem, keychain, Mail, Messages, Photos, dan container dilindungi atau dihindari secara default."], ["Perilaku pembersihan", "Pembersihan hanya terjadi setelah konfirmasi. File biasa dipindah ke Trash lebih dulu. Hapus permanen perlu konfirmasi tertulis dan freshness dicek ulang sebelum menghapus."], ["Lisensi, pembelian, dan update", "Pembelian Mac App Store ditangani Apple. Build Direct dapat menghubungi endpoint HTTPS Yaoji untuk memverifikasi lisensi dan manifest bertanda tangan tanpa mengirim isi file."], ["Permintaan dukungan", "Jika menghubungi dukungan, kami hanya menerima informasi yang Anda pilih untuk dikirim. Jangan kirim kata sandi, private key, file rahasia, atau isi file pribadi."]],
+        contactTitle: "Kontak",
+        contactBody: "Untuk pertanyaan privasi, hubungi " + emailLink + "."
+      },
+      vi: {
+        docTitle: "Chính sách bảo mật CacheGuard Pro",
+        docDescription: "Chính sách bảo mật của CacheGuard Pro, công cụ dọn dẹp Mac chuyên nghiệp xử lý cục bộ.",
+        language: "Ngôn ngữ",
+        chooseLanguage: "Chọn ngôn ngữ",
+        eyebrow: "CacheGuard Pro cho Mac",
+        title: "Chính sách bảo mật",
+        updated: "Cập nhật lần cuối: 20 tháng 6 năm 2026",
+        intro: "CacheGuard Pro là tiện ích dọn dẹp macOS do Yaoji cung cấp. Chính sách này giải thích cách xử lý dữ liệu khi quét, xem lại, dọn dẹp, cấp phép, hỗ trợ và kiểm tra cập nhật.",
+        summary: "Tóm tắt: phiên bản hiện tại không thu thập dữ liệu cá nhân, không tải nội dung tệp lên, không có SDK quảng cáo và không theo dõi người dùng giữa ứng dụng hoặc trang web.",
+        sections: [["Dữ liệu thu thập", "Phiên bản hiện tại không gửi kết quả quét, tên tệp, đường dẫn, nội dung tệp, báo cáo dọn dẹp hoặc phân tích cá nhân tới máy chủ của nhà phát triển."], ["Dữ liệu cục bộ", "Ứng dụng có thể lưu tóm tắt quét, snapshot, lịch sử, tùy chọn, ngôn ngữ và báo cáo cục bộ trong tài khoản Mac. Mã Direct được lưu trong macOS Keychain."], ["Phạm vi quét", "Quét tập trung vào vị trí rủi ro thấp: cache, log, tải xuống, cache nhà phát triển, phần còn lại của app, tệp trùng, tệp lớn và Trash. Thư mục hệ thống, keychain, Mail, Messages, Photos và container được bảo vệ hoặc tránh mặc định."], ["Hành vi dọn dẹp", "Dọn dẹp chỉ chạy sau khi người dùng xác nhận. Tệp thường được chuyển vào Trash trước. Xóa vĩnh viễn cần xác nhận bằng cách nhập và ứng dụng kiểm tra lại freshness trước khi xóa."], ["Giấy phép, mua và cập nhật", "Mua trên Mac App Store do Apple xử lý. Bản Direct có thể kết nối endpoint HTTPS của Yaoji để xác minh giấy phép và manifest đã ký, nhưng không gửi nội dung tệp."], ["Yêu cầu hỗ trợ", "Nếu liên hệ hỗ trợ, chúng tôi chỉ nhận thông tin bạn chọn gửi. Không gửi mật khẩu, khóa riêng, tệp mật hoặc nội dung tệp riêng tư."]],
+        contactTitle: "Liên hệ",
+        contactBody: "Nếu có câu hỏi về quyền riêng tư, liên hệ " + emailLink + "."
+      },
+      th: {
+        docTitle: "นโยบายความเป็นส่วนตัว CacheGuard Pro",
+        docDescription: "นโยบายความเป็นส่วนตัวของ CacheGuard Pro เครื่องมือทำความสะอาด Mac แบบมืออาชีพที่ประมวลผลในเครื่อง",
+        language: "ภาษา",
+        chooseLanguage: "เลือกภาษา",
+        eyebrow: "CacheGuard Pro สำหรับ Mac",
+        title: "นโยบายความเป็นส่วนตัว",
+        updated: "อัปเดตล่าสุด: 20 มิถุนายน 2026",
+        intro: "CacheGuard Pro เป็นเครื่องมือทำความสะอาด macOS จาก Yaoji นโยบายนี้อธิบายการจัดการข้อมูลระหว่างสแกน ตรวจสอบ ทำความสะอาด ไลเซนส์ การสนับสนุน และตรวจอัปเดต",
+        summary: "สรุป: เวอร์ชันปัจจุบันไม่เก็บข้อมูลส่วนบุคคล ไม่อัปโหลดเนื้อหาไฟล์ ไม่มี advertising SDK และไม่ติดตามผู้ใช้ข้ามแอปหรือเว็บไซต์",
+        sections: [["ข้อมูลที่เก็บ", "เวอร์ชันปัจจุบันไม่ส่งผลสแกน ชื่อไฟล์ path เนื้อหาไฟล์ รายงานทำความสะอาด หรือ analytics ส่วนบุคคลไปยังเซิร์ฟเวอร์ของผู้พัฒนา"], ["ข้อมูลในเครื่อง", "แอปอาจเก็บสรุปการสแกน snapshot ประวัติ การตั้งค่า ภาษา และรายงานในบัญชีผู้ใช้ Mac รหัส Direct license เก็บใน macOS Keychain"], ["ขอบเขตการสแกน", "สแกนตำแหน่งความเสี่ยงต่ำ เช่น cache, log, downloads, developer cache, app leftovers, duplicates, large files และ Trash โฟลเดอร์ระบบ keychain Mail Messages Photos และ containers จะถูกป้องกันหรือหลีกเลี่ยงโดยค่าเริ่มต้น"], ["พฤติกรรมการทำความสะอาด", "ทำความสะอาดหลังผู้ใช้ยืนยันเท่านั้น ไฟล์ทั่วไปย้ายไป Trash ก่อน การลบถาวรต้องพิมพ์ยืนยัน และแอปตรวจ freshness อีกครั้งก่อนลบ"], ["ไลเซนส์ การซื้อ และอัปเดต", "การซื้อใน Mac App Store จัดการโดย Apple Direct build อาจเชื่อมต่อ Yaoji HTTPS endpoints เพื่อตรวจ license และ update manifest ที่ลงนาม โดยไม่ส่งเนื้อหาไฟล์"], ["การขอรับการสนับสนุน", "เมื่อคุณติดต่อฝ่ายสนับสนุน เราได้รับเฉพาะข้อมูลที่คุณเลือกส่ง อย่าส่งรหัสผ่าน private key ไฟล์ลับ หรือเนื้อหาไฟล์ส่วนตัว"]],
+        contactTitle: "ติดต่อ",
+        contactBody: "สำหรับคำถามด้านความเป็นส่วนตัว ติดต่อ " + emailLink + "."
+      }
+    };
+    const storageKey = "cacheguard-page-language";
+    const selector = document.getElementById("language-select");
+    languages.forEach((language) => {
+      const option = document.createElement("option");
+      option.value = language.code;
+      option.textContent = language.label;
+      selector.appendChild(option);
+    });
+    function normalizeLanguage(value) {
+      if (!value) return "";
+      const lowered = value.toLowerCase();
+      if (lowered === "zh-cn" || lowered === "zh-hans" || lowered.startsWith("zh-cn")) return "zh-Hans";
+      if (lowered === "zh-tw" || lowered === "zh-hant" || lowered.startsWith("zh-tw") || lowered.startsWith("zh-hk")) return "zh-Hant";
+      if (lowered.startsWith("pt")) return "pt-BR";
+      const exact = languages.find((language) => language.code.toLowerCase() === lowered);
+      if (exact) return exact.code;
+      const prefix = languages.find((language) => lowered.startsWith(language.code.toLowerCase().split("-")[0]));
+      return prefix ? prefix.code : "";
+    }
+    function requestedLanguage() {
+      const hash = normalizeLanguage(window.location.hash.replace(/^#/, ""));
+      if (hash) return hash;
+      try {
+        const stored = normalizeLanguage(localStorage.getItem(storageKey));
+        if (stored) return stored;
+      } catch (error) {}
+      for (const language of navigator.languages || [navigator.language]) {
+        const normalized = normalizeLanguage(language);
+        if (normalized) return normalized;
+      }
+      return "en";
+    }
+    function setText(id, value) {
+      document.getElementById(id).textContent = value;
+    }
+    function render(languageCode) {
+      const language = languages.find((candidate) => candidate.code === languageCode) || languages[0];
+      const data = content[language.code] || content.en;
+      document.documentElement.lang = language.htmlLang;
+      document.documentElement.dir = language.dir;
+      document.title = data.docTitle;
+      document.querySelector('meta[name="description"]').setAttribute("content", data.docDescription);
+      document.getElementById("language-label").textContent = data.language;
+      selector.setAttribute("aria-label", data.chooseLanguage);
+      selector.value = language.code;
+      setText("eyebrow", data.eyebrow);
+      setText("title", data.title);
+      setText("updated", data.updated);
+      setText("intro", data.intro);
+      setText("summary", data.summary);
+      const sections = document.getElementById("sections");
+      sections.replaceChildren(...data.sections.flatMap(([headingText, bodyText]) => {
+        const heading = document.createElement("h2");
+        heading.textContent = headingText;
+        const paragraph = document.createElement("p");
+        paragraph.textContent = bodyText;
+        return [heading, paragraph];
+      }));
+      setText("contact-title", data.contactTitle);
+      document.getElementById("contact-body").innerHTML = data.contactBody;
+      try { localStorage.setItem(storageKey, language.code); } catch (error) {}
+    }
+    selector.addEventListener("change", () => {
+      const next = selector.value;
+      history.replaceState(null, "", "#" + next);
+      render(next);
+    });
+    window.addEventListener("hashchange", () => render(requestedLanguage()));
+    render(requestedLanguage());
+  </script>
+</body>
+</html>
