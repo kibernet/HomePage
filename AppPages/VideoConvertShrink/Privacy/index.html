@@ -4,355 +4,110 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>VideoConvertShrink Privacy Policy</title>
-  <meta name="description" content="Privacy policy for VideoConvertShrink, available in 16 mainstream languages.">
-  <meta name="apple-mobile-web-app-title" content="VideoConvertShrink">
+  <meta name="description" content="Privacy policy for VideoConvertShrink for macOS.">
   <style>
-:root {
-  color-scheme: dark light;
-  --bg0: #07090d;
-  --bg1: #0f172a;
-  --panel: rgba(15, 23, 42, 0.78);
-  --panel-strong: rgba(15, 23, 42, 0.9);
-  --card: rgba(15, 23, 42, 0.58);
-  --text: #f8fafc;
-  --muted: #cbd5e1;
-  --subtle: #94a3b8;
-  --line: rgba(148, 163, 184, 0.24);
-  --accent: #34d399;
-  --accent2: #38bdf8;
-  --radius-lg: 28px;
-  --radius-md: 18px;
-  --shadow: 0 24px 80px rgba(0, 0, 0, 0.3);
-}
-@media (prefers-color-scheme: light) {
-  :root {
-    --bg0: #f8fafc;
-    --bg1: #e2e8f0;
-    --panel: rgba(255, 255, 255, 0.84);
-    --panel-strong: rgba(255, 255, 255, 0.94);
-    --card: rgba(248, 250, 252, 0.82);
-    --text: #0f172a;
-    --muted: #475569;
-    --subtle: #64748b;
-    --line: rgba(51, 65, 85, 0.18);
-    --shadow: 0 24px 80px rgba(15, 23, 42, 0.14);
-  }
-}
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  margin: 0;
-  min-height: 100vh;
-  font-family: Inter, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
-  line-height: 1.66;
-  color: var(--text);
-  background:
-    radial-gradient(circle at 13% 0%, color-mix(in srgb, var(--accent) 30%, transparent), transparent 34rem),
-    radial-gradient(circle at 92% 10%, color-mix(in srgb, var(--accent2) 20%, transparent), transparent 30rem),
-    linear-gradient(135deg, var(--bg0), var(--bg1));
-}
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background-image:
-    linear-gradient(rgba(148, 163, 184, 0.055) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(148, 163, 184, 0.045) 1px, transparent 1px);
-  background-size: 44px 44px;
-  mask-image: linear-gradient(to bottom, rgba(0,0,0,0.62), transparent 76%);
-}
-.page {
-  position: relative;
-  width: min(1120px, calc(100% - 40px));
-  margin: 0 auto;
-  padding: 44px 0 60px;
-}
-.topbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 18px;
-  margin-bottom: 20px;
-}
-.brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  color: var(--text);
-  text-decoration: none;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-}
-.brand-mark {
-  width: 40px;
-  height: 40px;
-  border-radius: 12px;
-  background:
-    radial-gradient(circle at 30% 22%, rgba(255,255,255,0.65), transparent 22%),
-    linear-gradient(135deg, var(--accent), var(--accent2));
-  box-shadow: 0 16px 42px color-mix(in srgb, var(--accent) 34%, transparent);
-}
-.nav {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-.nav a,
-.language-select {
-  color: var(--text);
-  text-decoration: none;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: color-mix(in srgb, var(--panel) 82%, transparent);
-  padding: 10px 14px;
-  font-size: 14px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-}
-.language-select {
-  appearance: auto;
-  min-width: 172px;
-}
-.document {
-  overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: var(--radius-lg);
-  background: var(--panel);
-  box-shadow: var(--shadow);
-  backdrop-filter: blur(24px);
-}
-.hero {
-  position: relative;
-  display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(260px, 0.75fr);
-  gap: 34px;
-  padding: clamp(30px, 6vw, 58px);
-  border-bottom: 1px solid var(--line);
-}
-.hero::after {
-  content: "";
-  position: absolute;
-  right: -120px;
-  top: -160px;
-  width: 420px;
-  height: 420px;
-  border-radius: 999px;
-  background: radial-gradient(circle, color-mix(in srgb, var(--accent) 26%, transparent), transparent 66%);
-  pointer-events: none;
-}
-.eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin: 0 0 26px;
-  color: var(--accent);
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  font-size: 13px;
-}
-.eyebrow::before {
-  content: "";
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--accent);
-  box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 18%, transparent);
-}
-h1,
-h2,
-h3 {
-  line-height: 1.12;
-  letter-spacing: -0.045em;
-}
-h1 {
-  margin: 0 0 18px;
-  max-width: 780px;
-  font-size: clamp(2.45rem, 6vw, 5.5rem);
-  font-weight: 850;
-}
-.subtitle {
-  max-width: 760px;
-  margin: 0;
-  color: var(--muted);
-  font-size: clamp(1.05rem, 2vw, 1.42rem);
-}
-.updated {
-  margin: 22px 0 0;
-  color: var(--subtle);
-  font-size: 0.96rem;
-}
-.hero-aside {
-  align-self: stretch;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 18px;
-  padding: 22px;
-  border: 1px solid var(--line);
-  border-radius: 22px;
-  background: color-mix(in srgb, var(--card) 86%, transparent);
-}
-.aside-title {
-  margin: 0;
-  color: var(--text);
-  font-size: 1.05rem;
-  font-weight: 800;
-}
-.aside-meta {
-  margin: 0;
-  color: var(--muted);
-  font-size: 0.96rem;
-}
-.language-count {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  align-items: end;
-  gap: 12px;
-  margin-top: 18px;
-}
-.language-count strong {
-  font-size: 3rem;
-  line-height: 0.9;
-  letter-spacing: -0.06em;
-}
-.language-count span {
-  color: var(--subtle);
-  font-size: 0.92rem;
-}
-.content-zone {
-  padding: clamp(24px, 5vw, 48px);
-}
-.summary-heading {
-  margin: 0 0 18px;
-  font-size: 1.3rem;
-  font-weight: 800;
-}
-.summary-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
-  margin: 0 0 34px;
-}
-.summary-card,
-.section-card {
-  border: 1px solid var(--line);
-  background: var(--card);
-  border-radius: var(--radius-md);
-}
-.summary-card {
-  min-height: 128px;
-  padding: 18px;
-  display: flex;
-  align-items: flex-end;
-  color: var(--text);
-  font-size: 1.05rem;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-}
-.sections {
-  display: grid;
-  gap: 14px;
-}
-.section-card {
-  display: grid;
-  grid-template-columns: 52px minmax(0, 1fr);
-  gap: 18px;
-  padding: 22px;
-}
-.section-index {
-  width: 44px;
-  height: 44px;
-  display: inline-grid;
-  place-items: center;
-  border-radius: 14px;
-  color: var(--text);
-  font-weight: 850;
-  background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 80%, #111827), color-mix(in srgb, var(--accent2) 65%, #111827));
-  box-shadow: 0 14px 34px color-mix(in srgb, var(--accent) 20%, transparent);
-}
-.section-card h2 {
-  margin: 0 0 10px;
-  font-size: clamp(1.22rem, 2.2vw, 1.7rem);
-  font-weight: 820;
-}
-.section-card p {
-  margin: 0;
-  color: var(--muted);
-  font-size: 1rem;
-}
-.footer {
-  display: flex;
-  justify-content: space-between;
-  gap: 18px;
-  flex-wrap: wrap;
-  color: var(--subtle);
-  padding: 22px clamp(24px, 5vw, 48px) 30px;
-  border-top: 1px solid var(--line);
-  font-size: 0.92rem;
-}
-a { color: var(--accent); }
-[dir="rtl"] body { font-family: "Geeza Pro", "Arial", sans-serif; }
-[dir="rtl"] .topbar,
-[dir="rtl"] .nav,
-[dir="rtl"] .section-card,
-[dir="rtl"] .language-count { direction: rtl; }
-@media (max-width: 860px) {
-  .page { width: min(100% - 28px, 1120px); padding-top: 24px; }
-  .topbar { align-items: flex-start; flex-direction: column; }
-  .nav { justify-content: flex-start; }
-  .language-select { width: 100%; }
-  .hero { grid-template-columns: 1fr; }
-  .summary-grid { grid-template-columns: 1fr; }
-  .section-card { grid-template-columns: 1fr; }
-  .section-index { width: 38px; height: 38px; border-radius: 12px; }
-}
+    :root {
+      color-scheme: dark light;
+      --bg0: #07090d;
+      --bg1: #111827;
+      --panel: rgba(15, 23, 42, 0.78);
+      --card: rgba(15, 23, 42, 0.62);
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --line: rgba(148, 163, 184, 0.24);
+      --accent: #38bdf8;
+      --accent2: #fb7185;
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg0: #f8fafc;
+        --bg1: #e2e8f0;
+        --panel: rgba(255, 255, 255, 0.84);
+        --card: rgba(248, 250, 252, 0.82);
+        --text: #0f172a;
+        --muted: #475569;
+        --line: rgba(51, 65, 85, 0.18);
+        --accent: #0284c7;
+        --accent2: #e11d48;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+      line-height: 1.66;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 12% 0%, color-mix(in srgb, var(--accent) 28%, transparent), transparent 34rem),
+        radial-gradient(circle at 92% 12%, color-mix(in srgb, var(--accent2) 18%, transparent), transparent 30rem),
+        linear-gradient(135deg, var(--bg0), var(--bg1));
+    }
+    .page { width: min(900px, calc(100% - 40px)); margin: 0 auto; padding: 56px 0; }
+    .document {
+      padding: clamp(24px, 5vw, 50px);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--panel);
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+      backdrop-filter: blur(22px);
+    }
+    .document-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 26px;
+    }
+    h1, h2 { line-height: 1.15; letter-spacing: 0; }
+    h1 { margin: 0 0 10px; font-size: clamp(2.1rem, 5vw, 3.6rem); font-weight: 700; }
+    h2 { margin: 34px 0 10px; font-size: 1.18rem; font-weight: 700; }
+    p, li { color: var(--muted); font-size: 1rem; }
+    ul { padding-left: 1.25rem; }
+    a { color: var(--accent); }
+    .eyebrow { margin: 0; color: var(--accent); font-weight: 700; }
+    .updated { margin-top: 0; color: var(--muted); font-size: 0.95rem; }
+    .language-select {
+      max-width: 220px;
+      color: var(--text);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--card);
+      padding: 8px 12px;
+      font: inherit;
+      font-size: 0.92rem;
+    }
+    .summary-list { margin: 0 0 4px; }
+    .section-list { margin-top: 4px; }
+    .footer-note { margin-top: 36px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.92rem; }
+    [dir="rtl"] body { font-family: "Geeza Pro", "Arial", sans-serif; }
+    [dir="rtl"] .document-top { direction: rtl; }
+    @media (max-width: 640px) {
+      .document-top { display: block; }
+      .language-select { width: 100%; max-width: none; margin-top: 16px; }
+    }
 </style>
 </head>
 <body data-page="Privacy">
   <main class="page">
-    <header class="topbar" aria-label="VideoConvertShrink page navigation">
-      <a class="brand" href="../Support/"><span class="brand-mark" aria-hidden="true"></span><span>VideoConvertShrink</span></a>
-      <nav class="nav">
-        <a href="../Privacy/">Privacy</a>
-        <a href="../Support/">Support</a>
-        <a href="../AgeRating/">Age Rating</a>
-        <select id="languageSelector" class="language-select" aria-label="Language"></select>
-      </nav>
-    </header>
-
     <article class="document">
-      <section class="hero">
-        <div>
-          <p class="eyebrow" data-eyebrow>Privacy</p>
-          <h1 data-title>VideoConvertShrink Privacy Policy</h1>
-          <p class="subtitle" data-subtitle>VideoConvertShrink is built for local media conversion. Your videos and audio stay on your Mac unless you choose to share them.</p>
-          <p class="updated" data-updated>Last updated: June 21, 2026</p>
-        </div>
-        <aside class="hero-aside" aria-label="Page summary">
-          <div>
-            <p class="aside-title" data-aside-title>Privacy at a glance</p>
-            <p class="aside-meta" data-aside-meta>VideoConvertShrink is built for local media conversion. Your videos and audio stay on your Mac unless you choose to share them.</p>
-          </div>
-          <div class="language-count" aria-label="Localized language count"><strong>16</strong><span>localized mainstream languages</span></div>
-        </aside>
-      </section>
+      <div class="document-top">
+        <p class="eyebrow" data-eyebrow>VideoConvertShrink for macOS</p>
+        <select id="languageSelector" class="language-select" aria-label="Language"></select>
+      </div>
+      <h1 data-title>VideoConvertShrink Privacy Policy</h1>
+      <p class="updated" data-updated>Last updated: June 21, 2026</p>
+      <p data-subtitle>VideoConvertShrink is built for local media conversion. Your videos and audio stay on your Mac unless you choose to share them.</p>
 
-      <section class="content-zone">
-        <h2 class="summary-heading" data-summary-title>Privacy at a glance</h2>
-        <div class="summary-grid" id="summaryGrid"></div>
-        <div class="sections" id="sectionList" aria-label="Localized content sections"></div>
-      </section>
+      <h2 data-summary-title>Privacy at a glance</h2>
+      <ul id="summaryList" class="summary-list"></ul>
 
-      <footer class="footer">
-        <span>© 2026 VideoConvertShrink</span>
-        <span>Localized pages follow the same 16-language set as the SVNServer reference.</span>
-      </footer>
+      <div id="sectionList" class="section-list"></div>
+
+      <p class="footer-note">© 2026 VideoConvertShrink. This page is available in the same 16-language set used by the reference AppPages style.</p>
     </article>
   </main>
-  <noscript><main class="page"><article class="document"><section class="hero"><div><p class="eyebrow">VideoConvertShrink</p><h1>VideoConvertShrink Privacy Policy</h1><p class="subtitle">VideoConvertShrink is built for local media conversion. Your videos and audio stay on your Mac unless you choose to share them.</p></div></section></article></main></noscript>
+  <noscript><main class="page"><article class="document"><p class="eyebrow">VideoConvertShrink for macOS</p><h1>VideoConvertShrink Privacy Policy</h1><p>VideoConvertShrink is built for local media conversion. Your videos and audio stay on your Mac unless you choose to share them.</p></article></main></noscript>
   <script>
 const languageOrder = ["en", "zh-Hans", "zh-Hant", "ja", "ko", "fr", "de", "es", "it", "pt-BR", "ru", "ar", "hi", "id", "vi", "th"];
 const languageNames = {"en":"English","zh-Hans":"简体中文","zh-Hant":"繁體中文","ja":"日本語","ko":"한국어","fr":"Français","de":"Deutsch","es":"Español","it":"Italiano","pt-BR":"Português (Brasil)","ru":"Русский","ar":"العربية","hi":"हिन्दी","id":"Bahasa Indonesia","vi":"Tiếng Việt","th":"ไทย"};
@@ -378,18 +133,16 @@ function renderLanguage(lang) {
   document.documentElement.lang = lang;
   document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
   document.title = data.title;
-  document.querySelector('[data-eyebrow]').textContent = data.kicker;
+  document.querySelector('[data-eyebrow]').textContent = 'VideoConvertShrink for macOS';
   document.querySelector('[data-title]').textContent = data.title;
   document.querySelector('[data-subtitle]').textContent = data.subtitle;
   document.querySelector('[data-updated]').textContent = data.updated;
   document.querySelector('[data-summary-title]').textContent = data.highlightsTitle;
-  document.querySelector('[data-aside-title]').textContent = data.highlightsTitle;
-  document.querySelector('[data-aside-meta]').textContent = data.subtitle;
-  document.getElementById('summaryGrid').innerHTML = data.highlights
-    .map(item => `<article class="summary-card">${escapeHtml(item)}</article>`)
+  document.getElementById('summaryList').innerHTML = data.highlights
+    .map(item => `<li>${escapeHtml(item)}</li>`)
     .join('');
   document.getElementById('sectionList').innerHTML = data.sections
-    .map((section, index) => `<article class="section-card"><span class="section-index">${String(index + 1).padStart(2, '0')}</span><div><h2>${escapeHtml(section.heading)}</h2><p>${escapeHtml(section.body)}</p></div></article>`)
+    .map(section => `<h2>${escapeHtml(section.heading)}</h2><p>${escapeHtml(section.body)}</p>`)
     .join('');
   selector.value = lang;
   try { localStorage.setItem('videoconvertshrink-page-language', lang); } catch (_) {}
