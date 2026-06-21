@@ -1,314 +1,42 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AppVolumeMaster Age Rating Information</title>
-  <meta name="description" content="Age rating information for AppVolumeMaster, a local-first per-app audio control utility for Mac.">
-  <style type="text/css">
-    :root {
-      color-scheme: dark light;
-      --panel: rgba(17, 24, 39, 0.78);
-      --text: #f8fafc;
-      --muted: #cbd5e1;
-      --line: rgba(148, 163, 184, 0.24);
-      --accent: #60a5fa;
-      --ok: #67e8f9;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      min-height: 100vh;
-      font-family: Inter, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
-      line-height: 1.65;
-      color: var(--text);
-      background:
-        radial-gradient(circle at 18% 0%, rgba(96, 165, 250, 0.22), transparent 34rem),
-        radial-gradient(circle at 88% 10%, rgba(45, 212, 191, 0.14), transparent 30rem),
-        linear-gradient(135deg, #0b1020, #111827 48%, #0f172a);
-    }
-
-    .page {
-      width: min(900px, calc(100% - 40px));
-      margin: 0 auto;
-      padding: 56px 0;
-    }
-
-    .document {
-      padding: clamp(24px, 5vw, 48px);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      background: var(--panel);
-      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.34);
-      backdrop-filter: blur(22px);
-    }
-
-    h1, h2 {
-      line-height: 1.15;
-      letter-spacing: 0;
-    }
-
-    h1 {
-      margin: 0 0 10px;
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      font-weight: 650;
-    }
-
-    h2 {
-      margin: 34px 0 12px;
-      font-size: 1.18rem;
-      font-weight: 650;
-    }
-
-    p, h1, h2, li, td, th {
-      color: var(--muted);
-      font-size: 1rem;
-      overflow-wrap: anywhere;
-      word-break: break-word;
-    }
-
-    a {
-      color: var(--accent);
-      overflow-wrap: anywhere;
-      word-break: break-word;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      table-layout: fixed;
-    }
-
-    th, td {
-      padding: 12px 14px;
-      border-bottom: 1px solid var(--line);
-      text-align: left;
-    }
-
-    tr:last-child td {
-      border-bottom: 0;
-    }
-
-    th {
-      color: var(--text);
-      background: rgba(15, 23, 42, 0.66);
-      font-weight: 650;
-    }
-
-    th:last-child, td:last-child {
-      width: 44%;
-    }
-
-    .eyebrow {
-      margin: 0 0 26px;
-      color: var(--accent);
-      font-weight: 650;
-    }
-
-    .rating {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      margin: 20px 0 6px;
-      padding: 10px 16px;
-      border: 1px solid rgba(103, 232, 249, 0.36);
-      border-radius: 999px;
-      color: var(--ok);
-      background: rgba(103, 232, 249, 0.08);
-      font-weight: 700;
-      overflow-wrap: anywhere;
-      word-break: break-word;
-    }
-
-    .updated {
-      margin-top: 0;
-      color: #94a3b8;
-      font-size: 0.95rem;
-    }
-
-    .language-control {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 12px;
-    }
-
-    .language-control select {
-      max-width: 170px;
-      padding: 7px 10px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      color: var(--text);
-      background: rgba(15, 23, 42, 0.66);
-      font: inherit;
-      font-size: 0.92rem;
-    }
-
-    @media (max-width: 680px) {
-      .language-control {
-        justify-content: flex-start;
-      }
-
-      .language-control select {
-        width: 100%;
-        max-width: none;
-      }
-
-      th:last-child, td:last-child {
-        width: auto;
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="page">
-    <div class="document">
-      <div class="language-control">
-        <label for="languageSelect" id="languageLabel">Language</label>
-        <select id="languageSelect" aria-label="Language">
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>AppVolumeMaster Age Rating</title><meta name="description" content="Age rating information for AppVolumeMaster."><style>
+    :root { color-scheme: dark light; --panel: rgba(17,24,39,.80); --text:#f8fafc; --muted:#cbd5e1; --line:rgba(148,163,184,.24); --accent:#60a5fa; --ok:#67e8f9; }
+    * { box-sizing: border-box; }
+    body { margin:0; min-height:100vh; font-family: Inter,-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",sans-serif; line-height:1.65; color:var(--text); background: radial-gradient(circle at 18% 0%, rgba(96,165,250,.22), transparent 34rem), radial-gradient(circle at 90% 12%, rgba(20,184,166,.15), transparent 30rem), linear-gradient(135deg,#0b1020,#111827 48%,#0f172a); }
+    .page { width:min(900px, calc(100% - 40px)); margin:0 auto; padding:56px 0; }
+    .document { padding:clamp(24px,5vw,48px); border:1px solid var(--line); border-radius:18px; background:var(--panel); box-shadow:0 24px 80px rgba(0,0,0,.34); backdrop-filter:blur(22px); }
+    h1,h2,h3 { line-height:1.15; letter-spacing:0; color:var(--text); }
+    h1 { margin:0 0 10px; font-size:clamp(2rem,5vw,3.5rem); font-weight:650; }
+    h2 { margin:34px 0 10px; font-size:1.15rem; font-weight:650; }
+    h3 { margin:22px 0 8px; font-size:1rem; font-weight:650; }
+    p,li,td,th,label,select { color:var(--muted); font-size:1rem; overflow-wrap:anywhere; word-break:break-word; }
+    ul { padding-left:1.25rem; }
+    a { color:var(--accent); overflow-wrap:anywhere; word-break:break-word; }
+    table { width:100%; border-collapse:collapse; border:1px solid var(--line); border-radius:14px; overflow:hidden; table-layout:fixed; }
+    th,td { padding:12px 14px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; }
+    tr:last-child td { border-bottom:0; }
+    th { color:var(--text); background:rgba(15,23,42,.66); font-weight:650; }
+    .eyebrow { margin:0 0 26px; color:var(--accent); font-weight:650; }
+    .updated { margin-top:0; color:#94a3b8; font-size:.95rem; }
+    .rating { display:inline-flex; margin:20px 0 6px; padding:10px 16px; border:1px solid rgba(103,232,249,.36); border-radius:999px; color:var(--ok); background:rgba(103,232,249,.08); font-weight:700; }
+    .language-control { display:flex; justify-content:flex-end; align-items:center; gap:10px; margin-bottom:12px; }
+    .language-control select { max-width:220px; padding:7px 10px; border-radius:999px; border:1px solid var(--line); color:var(--text); background:rgba(15,23,42,.66); font:inherit; font-size:.92rem; }
+    .contact { display:grid; gap:12px; grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr)); margin:22px 0; }
+    .contact-card { min-width:0; padding:16px; border:1px solid var(--line); border-radius:14px; background:rgba(15,23,42,.66); }
+    .contact-card strong { display:block; margin-bottom:6px; }
+    [dir="rtl"] th, [dir="rtl"] td { text-align:right; }
+    @media (max-width:680px){ .language-control{justify-content:flex-start;align-items:stretch;flex-direction:column;} .language-control select{width:100%;max-width:none;} th:last-child,td:last-child{width:auto;} }
+</style></head><body><div class="page"><div class="document"><div class="language-control"><label for="languageSelect" id="languageLabel">Language</label><select id="languageSelect">
           <option value="en">English</option>
           <option value="zh-Hans">简体中文</option>
-        </select>
-      </div>
-
-      <p class="eyebrow" data-i18n="eyebrow">AppVolumeMaster for Mac</p>
-      <h1 data-i18n="title">Age Rating Information</h1>
-      <p class="updated" data-i18n="updated">Last updated: May 27, 2026</p>
-
-      <p data-i18n="intro">AppVolumeMaster is a local-first menu bar utility for per-app audio control on Mac. It is intended for general audiences and does not include social, entertainment, gambling, browser, advertising, or user-generated content features.</p>
-
-      <div class="rating" data-i18n="rating">Recommended App Store Age Rating: 4+</div>
-
-      <h2 data-i18n="summaryTitle">Content Summary</h2>
-      <table summary="AppVolumeMaster age rating content categories and status">
-        <thead>
-          <tr>
-            <th data-i18n="categoryHeader">Category</th>
-            <th data-i18n="statusHeader">AppVolumeMaster Status</th>
-          </tr>
-        </thead>
-        <tbody id="contentTable"></tbody>
-      </table>
-
-      <h2 data-i18n="useTitle">Intended Use</h2>
-      <p data-i18n="useBody">AppVolumeMaster helps users view audio-active apps, mute one app, mute all, restore all, use solo mode, remember per-app audio preferences, launch at login, and copy diagnostics for troubleshooting. These features are utility-oriented and do not expose users to external content.</p>
-
-      <h2 data-i18n="privacyTitle">Privacy and Safety</h2>
-      <p data-i18n="privacyBody">AppVolumeMaster does not require an account, does not include tracking SDKs, and stores app preferences locally on the user's Mac. Audio is processed locally and is not uploaded. Read the privacy policy here: <a href="https://kibernet.github.io/HomePage/AppPages/AppVolumeMaster/Privacy/index.html">Privacy Policy</a>.</p>
-
-      <h2 data-i18n="contactTitle">Contact</h2>
-      <p> <span data-i18n="contactPrefix">For questions about this age rating information, contact us at</span> <a href="mailto:kibernet@sina.com">kibernet@sina.com</a>.</p>
-    </div>
-  </div>
-
-  <script>
-    const translations = {
-      en: {
-        docTitle: "AppVolumeMaster Age Rating Information",
-        docDescription: "Age rating information for AppVolumeMaster, a local-first per-app audio control utility for Mac.",
-        languageLabel: "Language",
-        eyebrow: "AppVolumeMaster for Mac",
-        title: "Age Rating Information",
-        updated: "Last updated: May 27, 2026",
-        intro: "AppVolumeMaster is a local-first menu bar utility for per-app audio control on Mac. It is intended for general audiences and does not include social, entertainment, gambling, browser, advertising, or user-generated content features.",
-        rating: "Recommended App Store Age Rating: 4+",
-        summaryTitle: "Content Summary",
-        categoryHeader: "Category",
-        statusHeader: "AppVolumeMaster Status",
-        useTitle: "Intended Use",
-        useBody: "AppVolumeMaster helps users view audio-active apps, mute one app, mute all, restore all, use solo mode, remember per-app audio preferences, launch at login, and copy diagnostics for troubleshooting. These features are utility-oriented and do not expose users to external content.",
-        privacyTitle: "Privacy and Safety",
-        privacyBody: "AppVolumeMaster does not require an account, does not include tracking SDKs, and stores app preferences locally on the user's Mac. Audio is processed locally and is not uploaded. Read the privacy policy here: <a href=\"https://kibernet.github.io/HomePage/AppPages/AppVolumeMaster/Privacy/index.html\">Privacy Policy</a>.",
-        contactTitle: "Contact",
-        contactPrefix: "For questions about this age rating information, contact us at",
-        rows: [
-          ["Mature or suggestive themes", "None"],
-          ["Violence, horror, or fear content", "None"],
-          ["Medical or regulated wellness content", "None"],
-          ["Gambling, contests, or probability-based activities", "None"],
-          ["User-generated content, chat, or messaging", "Not included"],
-          ["Advertising or third-party ad networks", "Not included"],
-          ["Unrestricted web access", "Not included"],
-          ["In-app purchases or subscriptions", "Not included"]
-        ]
-      },
-      "zh-Hans": {
-        docTitle: "AppVolumeMaster 适龄说明",
-        docDescription: "AppVolumeMaster（面向 Mac 的本地优先逐应用音频控制工具）适龄说明。",
-        languageLabel: "语言",
-        eyebrow: "AppVolumeMaster for Mac",
-        title: "适龄说明",
-        updated: "更新日期：2026 年 5 月 27 日",
-        intro: "AppVolumeMaster 是面向 Mac 的本地优先菜单栏音频控制工具。适用于大众用户，不包含社交、娱乐、赌博、浏览器、广告或用户生成内容功能。",
-        rating: "建议上架年龄分级：4+",
-        summaryTitle: "内容摘要",
-        categoryHeader: "类别",
-        statusHeader: "AppVolumeMaster 状态",
-        useTitle: "使用场景",
-        useBody: "AppVolumeMaster 帮助用户查看正在发声应用、单应用静音、静音全部、恢复全部、独奏模式、按应用记忆音量偏好、登录启动，并支持复制诊断信息用于排障。它为工具型功能，不向外部展示内容。",
-        privacyTitle: "隐私与安全",
-        privacyBody: "AppVolumeMaster 不需要账号，不包含追踪 SDK，偏好信息本地保存在用户的 Mac 上。音频在本机处理并不上传，隐私细则详见：<a href=\"https://kibernet.github.io/HomePage/AppPages/AppVolumeMaster/Privacy/index.html\">隐私政策</a>。",
-        contactTitle: "联系我们",
-        contactPrefix: "如对适龄说明有疑问，请联系：",
-        rows: [
-          ["成熟或敏感主题", "无"],
-          ["暴力、恐怖或恐惧内容", "无"],
-          ["医疗与监管健康内容", "无"],
-          ["赌博、抽奖或概率类活动", "未包含"],
-          ["用户生成内容、聊天、消息", "未包含"],
-          ["广告或第三方广告网络", "未包含"],
-          ["无限制网页访问", "未包含"],
-          ["应用内购买与订阅", "未包含"]
-        ]
-      }
-    };
-
-    const supportedLanguages = Object.keys(translations);
-    const params = new URLSearchParams(window.location.search);
-    const initialLanguage = supportedLanguages.includes(params.get("lang")) ? params.get("lang") : "en";
-
-    function applyLanguage(lang) {
-      const t = translations[lang] || translations.en;
-      document.documentElement.lang = lang;
-      document.title = t.docTitle;
-      const metaDescription = document.querySelector("meta[name='description']");
-      if (metaDescription) {
-        metaDescription.setAttribute("content", t.docDescription);
-      }
-
-      const select = document.getElementById("languageSelect");
-      select.value = lang;
-      document.getElementById("languageLabel").textContent = t.languageLabel;
-      select.setAttribute("aria-label", t.languageLabel);
-
-      document.querySelectorAll("[data-i18n]").forEach((node) => {
-        const key = node.dataset.i18n;
-        if (Object.prototype.hasOwnProperty.call(t, key) && key !== "contentRows") {
-          node.innerHTML = t[key];
-        }
-      });
-
-      const rows = Array.isArray(t.rows) ? t.rows : [];
-      document.getElementById("contentTable").innerHTML = rows
-        .map(([category, status]) => `<tr><td>${category}</td><td>${status}</td></tr>`)
-        .join("");
-    }
-
-    document.getElementById("languageSelect").addEventListener("change", (event) => {
-      const next = event.target.value;
-      const baseUrl = window.location.pathname;
-      window.location.href = next === "en" ? baseUrl : `${baseUrl}?lang=${next}`;
-    });
-
-    applyLanguage(initialLanguage);
-  </script>
-</body>
-</html>
+          <option value="zh-Hant">繁體中文</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+          <option value="es">Español</option>
+          <option value="fr">Français</option>
+          <option value="de">Deutsch</option>
+          <option value="it">Italiano</option>
+          <option value="pt-BR">Português (Brasil)</option>
+          <option value="ru">Русский</option>
+          <option value="ar">العربية</option>
+          <option value="hi">हिन्दी</option>
+        </select></div><p class="eyebrow">AppVolumeMaster for Mac</p><h1 data-i18n="title"></h1><p class="updated" data-i18n="updated"></p><p data-i18n="intro"></p><div class="rating" data-i18n="rating"></div><h2 data-i18n="summaryTitle"></h2><table><tbody id="contentTable"></tbody></table><h2 data-i18n="useTitle"></h2><p data-i18n="useBody"></p><p><a href="https://kibernet.github.io/HomePage/AppPages/AppVolumeMaster/Privacy/index.html" data-i18n="privacyLink">Privacy Policy</a></p><h2 data-i18n="contactTitle"></h2><p><span data-i18n="contact"></span> <a href="mailto:kibernet@sina.com">kibernet@sina.com</a>.</p></div></div><script>const translations={"en":{"languageLabel":"Language","title":"Age Rating Information","updated":"Last updated: June 21, 2026","intro":"AppVolumeMaster is a general utility app. Recommended App Store age rating: 4+.","rating":"Recommended App Store Age Rating: 4+","summaryTitle":"Content Summary","useTitle":"Intended Use","useBody":"AppVolumeMaster is a local-first Mac menu bar utility for per-app audio control. It works without accounts, cloud sync, advertising, analytics, or tracking.","privacyLink":"Privacy Policy","contactTitle":"Contact","contact":"If you have questions about this age rating information, contact us at","rows":[["Mature or suggestive themes","None"],["Violence, horror, or fear content","None"],["Gambling or contests","Not included"],["User-generated content or chat","Not included"],["Advertising networks","Not included"],["Unrestricted web access","Not included"],["In-app purchases or subscriptions","Not included"]]},"zh-Hans":{"languageLabel":"语言","title":"适龄说明","updated":"更新日期：2026 年 6 月 21 日","intro":"AppVolumeMaster 是通用工具型应用，建议 App Store 年龄分级为 4+。","rating":"建议 App Store 年龄分级：4+","summaryTitle":"内容摘要","useTitle":"使用场景","useBody":"AppVolumeMaster（声控大师）是面向 Mac 的本地优先菜单栏音频控制工具。应用不需要账号、云同步、广告、分析或追踪。","privacyLink":"隐私政策","contactTitle":"联系方式","contact":"如对本适龄说明有疑问，请联系：","rows":[["成人或暗示性主题","无"],["暴力、恐怖或惊吓内容","无"],["赌博或竞赛","不包含"],["用户生成内容或聊天","不包含"],["广告网络","不包含"],["不受限制的网页访问","不包含"],["App 内购买或订阅","不包含"]]},"zh-Hant":{"languageLabel":"語言","title":"年齡分級說明","updated":"更新日期：2026 年 6 月 21 日","intro":"AppVolumeMaster 是通用工具型 App，建議 App Store 年齡分級為 4+。","rating":"建議 App Store 年齡分級：4+","summaryTitle":"內容摘要","useTitle":"使用情境","useBody":"AppVolumeMaster 是面向 Mac 的本機優先選單列音訊控制工具。應用程式不需要帳號、雲端同步、廣告、分析或追蹤。","privacyLink":"隱私權政策","contactTitle":"聯絡方式","contact":"如對本年齡分級說明有疑問，請聯絡：","rows":[["成人或暗示性主題","無"],["暴力、恐怖或驚嚇內容","無"],["賭博或競賽","不包含"],["使用者產生內容或聊天","不包含"],["廣告網路","不包含"],["不受限制的網頁存取","不包含"],["App 內購買或訂閱","不包含"]]},"ja":{"languageLabel":"言語","title":"年齢レーティング情報","updated":"最終更新日：2026年6月21日","intro":"AppVolumeMaster は一般向けユーティリティです。推奨 App Store 年齢レーティングは 4+ です。","rating":"推奨 App Store 年齢レーティング：4+","summaryTitle":"コンテンツ概要","useTitle":"用途","useBody":"AppVolumeMaster は、Mac のアプリ別音声制御のためのローカル優先メニューバーユーティリティです。アカウント、クラウド同期、広告、分析、追跡なしで動作します。","privacyLink":"プライバシーポリシー","contactTitle":"お問い合わせ","contact":"この年齢レーティング情報についてのご質問は、以下までご連絡ください：","rows":[["成人向けまたは示唆的なテーマ","なし"],["暴力、ホラー、恐怖を含む内容","なし"],["ギャンブルまたはコンテスト","含まれません"],["ユーザー生成コンテンツまたはチャット","含まれません"],["広告ネットワーク","含まれません"],["制限のないウェブアクセス","含まれません"],["アプリ内購入またはサブスクリプション","含まれません"]]},"ko":{"languageLabel":"언어","title":"연령 등급 정보","updated":"최종 업데이트: 2026년 6월 21일","intro":"AppVolumeMaster는 일반 유틸리티입니다. 권장 App Store 연령 등급은 4+입니다.","rating":"권장 App Store 연령 등급: 4+","summaryTitle":"콘텐츠 요약","useTitle":"사용 목적","useBody":"AppVolumeMaster는 Mac용 로컬 우선 메뉴 막대 오디오 제어 도구입니다. 계정, 클라우드 동기화, 광고, 분석 또는 추적 없이 작동합니다.","privacyLink":"개인정보 처리방침","contactTitle":"문의","contact":"이 연령 등급 정보에 대한 질문은 다음으로 문의하세요:","rows":[["성인용 또는 선정적 주제","없음"],["폭력, 공포 또는 두려움을 유발하는 콘텐츠","없음"],["도박 또는 경품 행사","포함되지 않음"],["사용자 생성 콘텐츠 또는 채팅","포함되지 않음"],["광고 네트워크","포함되지 않음"],["제한 없는 웹 접근","포함되지 않음"],["앱 내 구입 또는 구독","포함되지 않음"]]},"es":{"languageLabel":"Idioma","title":"Información de clasificación por edad","updated":"Última actualización: 21 de junio de 2026","intro":"AppVolumeMaster es una utilidad general. La clasificación por edad recomendada en App Store es 4+.","rating":"Clasificación por edad recomendada en App Store: 4+","summaryTitle":"Resumen de contenido","useTitle":"Uso previsto","useBody":"AppVolumeMaster es una utilidad de barra de menús para Mac, local primero, para controlar audio por aplicación. Funciona sin cuentas, sincronización en la nube, publicidad, analíticas ni seguimiento.","privacyLink":"Política de privacidad","contactTitle":"Contacto","contact":"Si tienes preguntas sobre esta información de clasificación por edad, contáctanos en","rows":[["Temas maduros o sugerentes","Ninguno"],["Violencia, terror o contenido de miedo","Ninguno"],["Apuestas o concursos","No incluido"],["Contenido generado por usuarios o chat","No incluido"],["Redes publicitarias","No incluido"],["Acceso web sin restricciones","No incluido"],["Compras dentro de la app o suscripciones","No incluido"]]},"fr":{"languageLabel":"Langue","title":"Informations de classification par âge","updated":"Dernière mise à jour : 21 juin 2026","intro":"AppVolumeMaster est un utilitaire général. La classification d’âge App Store recommandée est 4+.","rating":"Classification d’âge App Store recommandée : 4+","summaryTitle":"Résumé du contenu","useTitle":"Utilisation prévue","useBody":"AppVolumeMaster est un utilitaire de barre de menus Mac, local d’abord, pour contrôler l’audio par application. Il fonctionne sans compte, synchronisation cloud, publicité, analyse ni suivi.","privacyLink":"Politique de confidentialité","contactTitle":"Contact","contact":"Pour toute question sur ces informations de classification par âge, contactez-nous à","rows":[["Thèmes adultes ou suggestifs","Aucun"],["Violence, horreur ou contenu effrayant","Aucun"],["Jeux d’argent ou concours","Non inclus"],["Contenu généré par les utilisateurs ou chat","Non inclus"],["Réseaux publicitaires","Non inclus"],["Accès web non restreint","Non inclus"],["Achats intégrés ou abonnements","Non inclus"]]},"de":{"languageLabel":"Sprache","title":"Informationen zur Altersfreigabe","updated":"Zuletzt aktualisiert: 21. Juni 2026","intro":"AppVolumeMaster ist ein allgemeines Dienstprogramm. Empfohlene App Store-Altersfreigabe: 4+.","rating":"Empfohlene App Store-Altersfreigabe: 4+","summaryTitle":"Inhaltsübersicht","useTitle":"Verwendungszweck","useBody":"AppVolumeMaster ist ein lokal arbeitendes Mac-Menüleistenprogramm zur Audiosteuerung pro App. Es funktioniert ohne Konto, Cloud-Synchronisierung, Werbung, Analyse oder Tracking.","privacyLink":"Datenschutzrichtlinie","contactTitle":"Kontakt","contact":"Bei Fragen zu diesen Informationen zur Altersfreigabe kontaktieren Sie uns unter","rows":[["Erwachsene oder suggestive Themen","Keine"],["Gewalt, Horror oder angstauslösende Inhalte","Keine"],["Glücksspiel oder Wettbewerbe","Nicht enthalten"],["Nutzergenerierte Inhalte oder Chat","Nicht enthalten"],["Werbenetzwerke","Nicht enthalten"],["Unbeschränkter Webzugriff","Nicht enthalten"],["In-App-Käufe oder Abonnements","Nicht enthalten"]]},"it":{"languageLabel":"Lingua","title":"Informazioni sulla classificazione per età","updated":"Ultimo aggiornamento: 21 giugno 2026","intro":"AppVolumeMaster è un’utilità generale. Classificazione per età consigliata su App Store: 4+.","rating":"Classificazione per età consigliata su App Store: 4+","summaryTitle":"Riepilogo contenuti","useTitle":"Uso previsto","useBody":"AppVolumeMaster è un’utilità locale per la barra dei menu Mac per controllare l’audio per app. Funziona senza account, sincronizzazione cloud, pubblicità, analisi o tracciamento.","privacyLink":"Informativa sulla privacy","contactTitle":"Contatto","contact":"Per domande su queste informazioni sulla classificazione per età, contattaci a","rows":[["Temi maturi o allusivi","Nessuno"],["Violenza, horror o contenuti di paura","Nessuno"],["Gioco d’azzardo o concorsi","Non inclusi"],["Contenuti generati dagli utenti o chat","Non inclusi"],["Reti pubblicitarie","Non incluse"],["Accesso web senza restrizioni","Non incluso"],["Acquisti in-app o abbonamenti","Non inclusi"]]},"pt-BR":{"languageLabel":"Idioma","title":"Informações de classificação etária","updated":"Última atualização: 21 de junho de 2026","intro":"AppVolumeMaster é um utilitário geral. Classificação etária recomendada na App Store: 4+.","rating":"Classificação etária recomendada na App Store: 4+","summaryTitle":"Resumo do conteúdo","useTitle":"Uso previsto","useBody":"AppVolumeMaster é um utilitário de barra de menus para Mac, local primeiro, para controlar áudio por app. Funciona sem conta, sincronização em nuvem, anúncios, análises ou rastreamento.","privacyLink":"Política de privacidade","contactTitle":"Contato","contact":"Se tiver dúvidas sobre estas informações de classificação etária, entre em contato em","rows":[["Temas adultos ou sugestivos","Nenhum"],["Violência, terror ou conteúdo assustador","Nenhum"],["Jogos de azar ou concursos","Não incluído"],["Conteúdo gerado por usuários ou chat","Não incluído"],["Redes de anúncios","Não incluído"],["Acesso irrestrito à web","Não incluído"],["Compras dentro do app ou assinaturas","Não incluído"]]},"ru":{"languageLabel":"Язык","title":"Информация о возрастном рейтинге","updated":"Обновлено: 21 июня 2026 г.","intro":"AppVolumeMaster — универсальная утилита. Рекомендуемый возрастной рейтинг в App Store: 4+.","rating":"Рекомендуемый возрастной рейтинг в App Store: 4+","summaryTitle":"Сводка содержимого","useTitle":"Назначение","useBody":"AppVolumeMaster — локальная утилита строки меню Mac для управления звуком по приложениям. Она работает без аккаунтов, облачной синхронизации, рекламы, аналитики и отслеживания.","privacyLink":"Политика конфиденциальности","contactTitle":"Контакты","contact":"Если у вас есть вопросы об этой информации о возрастном рейтинге, напишите нам:","rows":[["Темы для взрослых или намеки","Нет"],["Насилие, ужасы или пугающий контент","Нет"],["Азартные игры или конкурсы","Не включено"],["Пользовательский контент или чат","Не включено"],["Рекламные сети","Не включено"],["Неограниченный доступ к вебу","Не включено"],["Покупки в приложении или подписки","Не включено"]]},"ar":{"languageLabel":"اللغة","title":"معلومات تصنيف العمر","updated":"آخر تحديث: 21 يونيو 2026","intro":"AppVolumeMaster أداة عامة. تصنيف العمر الموصى به في App Store هو 4+.","rating":"تصنيف العمر الموصى به في App Store: ‏4+","summaryTitle":"ملخص المحتوى","useTitle":"الاستخدام المقصود","useBody":"AppVolumeMaster أداة محلية لشريط قوائم Mac للتحكم في صوت كل تطبيق. تعمل بدون حسابات أو مزامنة سحابية أو إعلانات أو تحليلات أو تتبع.","privacyLink":"سياسة الخصوصية","contactTitle":"التواصل","contact":"إذا كانت لديك أسئلة حول معلومات تصنيف العمر هذه، تواصل معنا عبر","rows":[["موضوعات للبالغين أو إيحائية","لا يوجد"],["عنف أو رعب أو محتوى مخيف","لا يوجد"],["مقامرة أو مسابقات","غير مضمن"],["محتوى من إنشاء المستخدمين أو دردشة","غير مضمن"],["شبكات إعلانية","غير مضمن"],["وصول غير مقيد إلى الويب","غير مضمن"],["مشتريات داخل التطبيق أو اشتراكات","غير مضمن"]]},"hi":{"languageLabel":"भाषा","title":"आयु रेटिंग जानकारी","updated":"अंतिम अपडेट: 21 जून 2026","intro":"AppVolumeMaster एक सामान्य उपयोगिता ऐप है। अनुशंसित App Store आयु रेटिंग 4+ है।","rating":"अनुशंसित App Store आयु रेटिंग: 4+","summaryTitle":"सामग्री सारांश","useTitle":"उपयोग","useBody":"AppVolumeMaster Mac के लिए स्थानीय-प्रथम मेनू बार ऑडियो नियंत्रण टूल है। यह खाते, क्लाउड सिंक, विज्ञापन, एनालिटिक्स या ट्रैकिंग के बिना काम करता है।","privacyLink":"गोपनीयता नीति","contactTitle":"संपर्क","contact":"इस आयु रेटिंग जानकारी के बारे में प्रश्न हों तो हमसे संपर्क करें:","rows":[["परिपक्व या संकेतात्मक विषय","नहीं"],["हिंसा, हॉरर या डराने वाली सामग्री","नहीं"],["जुआ या प्रतियोगिताएं","शामिल नहीं"],["उपयोगकर्ता-निर्मित सामग्री या चैट","शामिल नहीं"],["विज्ञापन नेटवर्क","शामिल नहीं"],["असीमित वेब पहुंच","शामिल नहीं"],["ऐप के अंदर खरीदारी या सदस्यताएं","शामिल नहीं"]]}};const supportedLanguages=Object.keys(translations);const params=new URLSearchParams(location.search);function browserLanguage(){const prefs=[navigator.language,...(navigator.languages||[])].map(v=>String(v||'').toLowerCase());for(const pref of prefs){if(pref.startsWith('zh-hant')||pref.startsWith('zh-tw')||pref.startsWith('zh-hk'))return 'zh-Hant';if(pref.startsWith('zh'))return 'zh-Hans';if(pref.startsWith('pt'))return 'pt-BR';const hit=supportedLanguages.find(code=>pref===code.toLowerCase()||pref.startsWith(code.toLowerCase()+'-'));if(hit)return hit;}return 'en'}const initial=supportedLanguages.includes(params.get('lang'))?params.get('lang'):browserLanguage();function applyLanguage(lang){const t=translations[lang]||translations.en;document.documentElement.lang=lang;document.documentElement.dir=lang==='ar'?'rtl':'ltr';document.title='AppVolumeMaster - '+(t.title||'');const select=document.getElementById('languageSelect');select.value=lang;document.getElementById('languageLabel').textContent=t.languageLabel||'Language';select.setAttribute('aria-label',t.languageLabel||'Language');document.querySelectorAll('[data-i18n]').forEach(node=>{const key=node.dataset.i18n;if(Object.prototype.hasOwnProperty.call(t,key))node.innerHTML=t[key];});}document.getElementById('languageSelect').addEventListener('change',e=>{const next=e.target.value;location.href=next==='en'?location.pathname:location.pathname+'?lang='+encodeURIComponent(next);});applyLanguage(initial);function renderExtra(lang){const t=translations[lang]||translations.en;document.getElementById('contentTable').innerHTML=(t.rows||[]).map(([a,b])=>`<tr><td>${a}</td><td>${b}</td></tr>`).join('');}const oldApply=applyLanguage;applyLanguage=function(lang){oldApply(lang);renderExtra(lang);};applyLanguage(initial);</script></body></html>

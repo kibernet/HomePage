@@ -1,365 +1,42 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AppVolumeMaster Support</title>
-  <meta name="description" content="Support page for AppVolumeMaster, a local-first per-app audio control utility for Mac.">
-  <style type="text/css">
-    :root {
-      color-scheme: dark light;
-      --panel: rgba(17, 24, 39, 0.78);
-      --text: #f8fafc;
-      --muted: #cbd5e1;
-      --line: rgba(148, 163, 184, 0.24);
-      --accent: #60a5fa;
-      --accent-2: #2dd4bf;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      min-height: 100vh;
-      font-family: Inter, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
-      line-height: 1.65;
-      color: var(--text);
-      background:
-        radial-gradient(circle at 20% 0%, rgba(96, 165, 250, 0.22), transparent 34rem),
-        radial-gradient(circle at 88% 10%, rgba(45, 212, 191, 0.14), transparent 30rem),
-        linear-gradient(135deg, #0b1020, #111827 48%, #0f172a);
-    }
-
-    .page {
-      width: min(900px, calc(100% - 40px));
-      margin: 0 auto;
-      padding: 56px 0;
-    }
-
-    .document {
-      padding: clamp(24px, 5vw, 48px);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      background: var(--panel);
-      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.34);
-      backdrop-filter: blur(22px);
-    }
-
-    h1, h2, h3 {
-      line-height: 1.15;
-      letter-spacing: 0;
-    }
-
-    h1 {
-      margin: 0 0 10px;
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      font-weight: 650;
-    }
-
-    h2 {
-      margin: 34px 0 14px;
-      font-size: 1.25rem;
-      font-weight: 650;
-    }
-
-    h3 {
-      margin: 22px 0 8px;
-      font-size: 1rem;
-      font-weight: 650;
-    }
-
-    p, h1, h2, h3, li, td, th {
-      color: var(--muted);
-      font-size: 1rem;
-      overflow-wrap: anywhere;
-      word-break: break-word;
-    }
-
-    ul {
-      padding-left: 1.25rem;
-    }
-
-    a {
-      color: var(--accent);
-      overflow-wrap: anywhere;
-      word-break: break-word;
-    }
-
-    .eyebrow {
-      margin: 0 0 26px;
-      color: var(--accent);
-      font-weight: 650;
-    }
-
-    .contact {
-      display: grid;
-      gap: 12px;
-      grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
-      margin: 22px 0;
-    }
-
-    .contact-card {
-      min-width: 0;
-      padding: 16px;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      background: rgba(15, 23, 42, 0.66);
-    }
-
-    .contact-card strong {
-      display: block;
-      margin-bottom: 6px;
-    }
-
-    .language-control {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 12px;
-    }
-
-    .language-control select {
-      max-width: 170px;
-      padding: 7px 10px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      color: var(--text);
-      background: rgba(15, 23, 42, 0.66);
-      font: inherit;
-      font-size: 0.92rem;
-    }
-
-    @media (max-width: 680px) {
-      .language-control {
-        justify-content: flex-start;
-      }
-
-      .language-control select {
-        width: 100%;
-        max-width: none;
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="page">
-    <div class="document">
-      <div class="language-control">
-        <label for="languageSelect" id="languageLabel">Language</label>
-        <select id="languageSelect" aria-label="Language">
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>AppVolumeMaster Support</title><meta name="description" content="Support for AppVolumeMaster."><style>
+    :root { color-scheme: dark light; --panel: rgba(17,24,39,.80); --text:#f8fafc; --muted:#cbd5e1; --line:rgba(148,163,184,.24); --accent:#60a5fa; --ok:#67e8f9; }
+    * { box-sizing: border-box; }
+    body { margin:0; min-height:100vh; font-family: Inter,-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",sans-serif; line-height:1.65; color:var(--text); background: radial-gradient(circle at 18% 0%, rgba(96,165,250,.22), transparent 34rem), radial-gradient(circle at 90% 12%, rgba(20,184,166,.15), transparent 30rem), linear-gradient(135deg,#0b1020,#111827 48%,#0f172a); }
+    .page { width:min(900px, calc(100% - 40px)); margin:0 auto; padding:56px 0; }
+    .document { padding:clamp(24px,5vw,48px); border:1px solid var(--line); border-radius:18px; background:var(--panel); box-shadow:0 24px 80px rgba(0,0,0,.34); backdrop-filter:blur(22px); }
+    h1,h2,h3 { line-height:1.15; letter-spacing:0; color:var(--text); }
+    h1 { margin:0 0 10px; font-size:clamp(2rem,5vw,3.5rem); font-weight:650; }
+    h2 { margin:34px 0 10px; font-size:1.15rem; font-weight:650; }
+    h3 { margin:22px 0 8px; font-size:1rem; font-weight:650; }
+    p,li,td,th,label,select { color:var(--muted); font-size:1rem; overflow-wrap:anywhere; word-break:break-word; }
+    ul { padding-left:1.25rem; }
+    a { color:var(--accent); overflow-wrap:anywhere; word-break:break-word; }
+    table { width:100%; border-collapse:collapse; border:1px solid var(--line); border-radius:14px; overflow:hidden; table-layout:fixed; }
+    th,td { padding:12px 14px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; }
+    tr:last-child td { border-bottom:0; }
+    th { color:var(--text); background:rgba(15,23,42,.66); font-weight:650; }
+    .eyebrow { margin:0 0 26px; color:var(--accent); font-weight:650; }
+    .updated { margin-top:0; color:#94a3b8; font-size:.95rem; }
+    .rating { display:inline-flex; margin:20px 0 6px; padding:10px 16px; border:1px solid rgba(103,232,249,.36); border-radius:999px; color:var(--ok); background:rgba(103,232,249,.08); font-weight:700; }
+    .language-control { display:flex; justify-content:flex-end; align-items:center; gap:10px; margin-bottom:12px; }
+    .language-control select { max-width:220px; padding:7px 10px; border-radius:999px; border:1px solid var(--line); color:var(--text); background:rgba(15,23,42,.66); font:inherit; font-size:.92rem; }
+    .contact { display:grid; gap:12px; grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr)); margin:22px 0; }
+    .contact-card { min-width:0; padding:16px; border:1px solid var(--line); border-radius:14px; background:rgba(15,23,42,.66); }
+    .contact-card strong { display:block; margin-bottom:6px; }
+    [dir="rtl"] th, [dir="rtl"] td { text-align:right; }
+    @media (max-width:680px){ .language-control{justify-content:flex-start;align-items:stretch;flex-direction:column;} .language-control select{width:100%;max-width:none;} th:last-child,td:last-child{width:auto;} }
+</style></head><body><div class="page"><div class="document"><div class="language-control"><label for="languageSelect" id="languageLabel">Language</label><select id="languageSelect">
           <option value="en">English</option>
           <option value="zh-Hans">简体中文</option>
-        </select>
-      </div>
-
-      <p class="eyebrow" data-i18n="eyebrow">AppVolumeMaster for Mac</p>
-      <h1 data-i18n="title">Support</h1>
-      <p data-i18n="intro">Need help with AppVolumeMaster? Use the contact information below and include your macOS version, app version, and a short description of the issue.</p>
-
-      <div class="contact">
-        <div class="contact-card">
-          <strong data-i18n="emailLabel">Email</strong>
-          <a href="mailto:kibernet@sina.com">kibernet@sina.com</a>
-        </div>
-        <div class="contact-card">
-          <strong data-i18n="appLabel">App</strong>
-          <span data-i18n="appValue">AppVolumeMaster / 声控大师 for Mac</span>
-        </div>
-      </div>
-
-      <h2 data-i18n="faqTitle">Frequently Asked Questions</h2>
-
-      <div id="faq"></div>
-
-      <h2 data-i18n="privacyTitle">Privacy</h2>
-      <p data-i18n="privacyText">Read the AppVolumeMaster privacy policy here: <a href="https://kibernet.github.io/HomePage/AppPages/AppVolumeMaster/Privacy/index.html">Privacy Policy</a>.</p>
-    </div>
-  </div>
-
-  <script>
-    const translations = {
-      en: {
-        docTitle: "AppVolumeMaster Support",
-        docDescription: "Support page for AppVolumeMaster, a local-first per-app audio control utility for Mac.",
-        languageLabel: "Language",
-        eyebrow: "AppVolumeMaster for Mac",
-        title: "Support",
-        intro: "Need help with AppVolumeMaster? Use the contact information below and include your macOS version, app version, and a short description of the issue.",
-        emailLabel: "Email",
-        appLabel: "App",
-        appValue: "AppVolumeMaster / 声控大师 for Mac",
-        faqTitle: "Frequently Asked Questions",
-        faqs: [
-          [
-            "Why does AppVolumeMaster need system audio capture permission?",
-            "AppVolumeMaster uses this permission to identify audio-producing apps and apply local audio control behavior. Audio is processed on your Mac and is not uploaded."
-          ],
-          [
-            "Does AppVolumeMaster record or upload audio?",
-            "No. AppVolumeMaster does not record audio files, upload audio content, or send audio data to a server."
-          ],
-          [
-            "Why does the app not show a Dock icon?",
-            "AppVolumeMaster is a menu bar utility. Click the menu bar icon to open the control panel and settings."
-          ],
-          [
-            "How do I mute one app?",
-            "Open the menu bar panel, find the app in the list, and use the mute control for that app. You can also search or filter the list when many apps are running."
-          ],
-          [
-            "What do Mute All, Restore All, and Solo do?",
-            "Mute All quiets controllable apps. Restore All brings them back to their remembered state. Solo focuses on one selected app while muting other controllable apps."
-          ],
-          [
-            "How do I make the app start automatically?",
-            "Open the settings view from the menu bar panel and enable launch at login."
-          ],
-          [
-            "How do I quit AppVolumeMaster?",
-            "Open the menu bar panel and use the quit action from the settings or app menu."
-          ],
-          [
-            "How do I set up a stable language in app?",
-            "Open the Settings page and set Language to your preferred language: English or Simplified Chinese."
-          ],
-          [
-            "No apps appear in the list",
-            "Start audio in Safari, Music, Chrome, a meeting app, or another app you want to control. Then open AppVolumeMaster menu bar panel and click Refresh App List. Some apps only appear after they expose an active CoreAudio process."
-          ],
-          [
-            "Troubleshooting No Apps or No Audio Processes",
-            "Use a quiet list-reset flow: start target audio, open System Settings if needed for permission, and click Refresh App List. If rows are still missing, include the copied or exported diagnostics in support email."
-          ],
-          [
-            "The permission prompt does not appear",
-            "Open macOS System Settings, review Privacy &amp; Security permissions for AppVolumeMaster, and allow system audio capture permission if macOS shows that option. Quit and reopen AppVolumeMaster after changing permissions."
-          ],
-          [
-            "An app appears as pending or cannot be controlled",
-            "Make the target app play audio again, switch the output device once, or restart the target app. Then refresh the app list. macOS 14.2 or later is required for process-level live mute behavior."
-          ],
-          [
-            "Send diagnostics for support",
-            "Open the settings view from the menu bar panel, click Copy Diagnostics or Export Diagnostics, and include the report when emailing support. The report includes app version, macOS version, language, filter state, permission readiness, audio engine status, and visible application rows."
-          ]
-        ],
-        privacyTitle: "Privacy",
-        privacyText: "Read the AppVolumeMaster privacy policy here: <a href=\"https://kibernet.github.io/HomePage/AppPages/AppVolumeMaster/Privacy/index.html\">Privacy Policy</a>."
-      },
-      "zh-Hans": {
-        docTitle: "AppVolumeMaster 支持",
-        docDescription: "AppVolumeMaster，面向 Mac 的本地优先应用内逐应用音量控制支持页。",
-        languageLabel: "语言",
-        eyebrow: "AppVolumeMaster for Mac",
-        title: "支持",
-        intro: "使用 AppVolumeMaster 需要帮助时，请使用以下联系方式，并附上 macOS 版本、应用版本及问题简要描述。",
-        emailLabel: "邮箱",
-        appLabel: "应用",
-        appValue: "AppVolumeMaster / 声控大师（Mac）",
-        faqTitle: "常见问题",
-        faqs: [
-          [
-            "为什么 AppVolumeMaster 需要系统音频采集权限？",
-            "AppVolumeMaster 需要该权限识别正在输出音频的应用，并在本地执行音量控制策略。你的音频仅在设备本地处理，不会上传。"
-          ],
-          [
-            "AppVolumeMaster 会录音或上传音频吗？",
-            "不会。AppVolumeMaster 不会录制音频文件，不会上传音频内容，也不会将音频内容传输到任何服务器。"
-          ],
-          [
-            "为什么看不到 Dock 图标？",
-            "AppVolumeMaster 是菜单栏工具。请点击菜单栏图标打开面板和设置界面。"
-          ],
-          [
-            "如何静音某个应用？",
-            "在菜单栏面板找到目标应用并使用该应用的静音按钮。应用较多时，可先搜索或筛选列表。"
-          ],
-          [
-            "“静音全部”“恢复全部”“独奏”分别是什么意思？",
-            "静音全部会静音可控应用；恢复全部会把它们恢复到已记住的状态；独奏会保留一个应用可听，其余可控应用自动静音。"
-          ],
-          [
-            "如何设置开机启动？",
-            "打开菜单栏面板中的设置，勾选“登录后自动启动”。"
-          ],
-          [
-            "如何退出 AppVolumeMaster？",
-            "在菜单栏面板里从设置或菜单中选择退出。"
-          ],
-          [
-            "怎么设置应用语言？",
-            "打开设置中的语言选项，可直接切换为 English 或 简体中文。"
-          ],
-          [
-            "为什么列表中没有任何应用？",
-            "先在 Safari、音乐、Chrome、会议软件或你要控制的目标应用中播放音频，再打开 AppVolumeMaster 菜单栏面板点击刷新应用列表。部分应用只有在暴露音频进程后才会出现在列表。"
-          ],
-          [
-            "适配排障：应用列表为空或无音频进程",
-            "按排障流程处理：确认音频已播放，必要时检查系统权限，再点击刷新应用列表。若仍没有可见条目，请复制或导出诊断信息并附带发送。"
-          ],
-          [
-            "没有弹出权限提示",
-            "打开系统设置-隐私与安全，确认 AppVolumeMaster 的系统音频采集权限。修改后请重启 AppVolumeMaster。"
-          ],
-          [
-            "应用显示待检测或无法控制",
-            "让目标应用再次发声，切换一次输出设备，或重启该应用后再刷新列表。进程级实时静音需要 macOS 14.2 或更高版本。"
-          ],
-          [
-            "如何发送诊断信息？",
-            "在菜单栏设置页面点击复制诊断或导出诊断，并将报告连同系统版本、应用版本、语言、筛选状态、权限状态、音频引擎状态与可见应用行一起发邮件给支持。"
-          ]
-        ],
-        privacyTitle: "隐私",
-        privacyText: "隐私政策请见：<a href=\"https://kibernet.github.io/HomePage/AppPages/AppVolumeMaster/Privacy/index.html\">Privacy Policy</a>."
-      }
-    };
-
-    const supportedLanguages = Object.keys(translations);
-    const params = new URLSearchParams(window.location.search);
-    const initialLanguage = supportedLanguages.includes(params.get("lang")) ? params.get("lang") : "en";
-
-    function applyLanguage(lang) {
-      const t = translations[lang] || translations.en;
-      document.documentElement.lang = lang;
-      document.title = t.docTitle;
-      const metaDescription = document.querySelector("meta[name='description']");
-      if (metaDescription) {
-        metaDescription.setAttribute("content", t.docDescription);
-      }
-
-      const select = document.getElementById("languageSelect");
-      select.value = lang;
-      document.getElementById("languageLabel").textContent = t.languageLabel;
-      select.setAttribute("aria-label", t.languageLabel);
-
-      document.querySelectorAll("[data-i18n]").forEach((node) => {
-        const key = node.dataset.i18n;
-        if (key === "faqs") {
-          return;
-        }
-        if (Object.prototype.hasOwnProperty.call(t, key)) {
-          node.innerHTML = t[key];
-        }
-      });
-
-      const faq = Array.isArray(t.faqs) ? t.faqs : [];
-      document.getElementById("faq").innerHTML = faq
-        .map(([question, answer]) => `<h3>${question}</h3><p>${answer}</p>`)
-        .join("");
-    }
-
-    document.getElementById("languageSelect").addEventListener("change", (event) => {
-      const next = event.target.value;
-      const baseUrl = window.location.pathname;
-      window.location.href = next === "en" ? baseUrl : `${baseUrl}?lang=${next}`;
-    });
-
-    applyLanguage(initialLanguage);
-  </script>
-</body>
-</html>
+          <option value="zh-Hant">繁體中文</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+          <option value="es">Español</option>
+          <option value="fr">Français</option>
+          <option value="de">Deutsch</option>
+          <option value="it">Italiano</option>
+          <option value="pt-BR">Português (Brasil)</option>
+          <option value="ru">Русский</option>
+          <option value="ar">العربية</option>
+          <option value="hi">हिन्दी</option>
+        </select></div><p class="eyebrow">AppVolumeMaster for Mac</p><h1 data-i18n="title"></h1><p data-i18n="intro"></p><div class="contact"><div class="contact-card"><strong data-i18n="emailLabel"></strong><a href="mailto:kibernet@sina.com">kibernet@sina.com</a></div><div class="contact-card"><strong data-i18n="appLabel"></strong><span>AppVolumeMaster / 声控大师 for Mac</span></div></div><h2 data-i18n="faqTitle"></h2><div id="faq"></div><h2 data-i18n="privacyTitle"></h2><p><span data-i18n="privacyText"></span> <a href="https://kibernet.github.io/HomePage/AppPages/AppVolumeMaster/Privacy/index.html" data-i18n="privacyLink">Privacy Policy</a></p></div></div><script>const translations={"en":{"languageLabel":"Language","title":"Support","intro":"Need help with AppVolumeMaster? Send your macOS version, app version, a short issue description, and diagnostics.","emailLabel":"Email","appLabel":"App","faqTitle":"Frequently Asked Questions","privacyTitle":"Privacy","privacyText":"Privacy Policy:","privacyLink":"Privacy Policy","faqs":[["Why does AppVolumeMaster need audio permission?","It uses macOS audio APIs to identify audio-producing apps and apply local controls. Audio is processed locally and is not uploaded."],["Why is there no Dock icon?","AppVolumeMaster is a menu bar utility. Use the menu bar icon to open the panel and settings."],["No apps appear in the list","Start audio in the target app, allow permission if macOS asks, then refresh the app list."],["How do I add the widget?","Right-click the macOS desktop, choose Edit Widgets, then add AppVolumeMaster."],["How do I send diagnostics?","Open Settings, choose Copy Diagnostics or Export Diagnostics, and include the report in your support email."],["Troubleshooting No Apps or No Audio Processes","Start audio in Safari, Music, Chrome, a meeting app, or another app you want to control. Then click Refresh App List. If rows are still missing, include copied or exported diagnostics in your support email."],["The permission prompt does not appear","Open macOS System Settings, review Privacy & Security permissions for AppVolumeMaster, and allow system audio capture permission if macOS shows that option. Quit and reopen AppVolumeMaster after changing permissions."],["Send diagnostics for support","Open Settings, choose Copy Diagnostics or Export Diagnostics, and include the report. It includes app version, macOS version, language, filter state, permission readiness, audio engine status, support URL, and visible application rows."]]},"zh-Hans":{"languageLabel":"语言","title":"支持","intro":"需要 AppVolumeMaster 帮助时，请发送 macOS 版本、应用版本、简短的问题说明和诊断信息。","emailLabel":"邮箱","appLabel":"应用","faqTitle":"常见问题","privacyTitle":"隐私","privacyText":"隐私政策：","privacyLink":"隐私政策","faqs":[["为什么 AppVolumeMaster 需要音频权限？","它使用 macOS 音频接口识别正在发声的应用，并在本机应用控制。音频在本机处理，不会上传。"],["为什么没有 Dock 图标？","AppVolumeMaster 是菜单栏工具。请使用菜单栏图标打开面板和设置。"],["列表里没有应用","请先在目标应用中播放声音；如果 macOS 请求权限，请允许，然后刷新应用列表。"],["如何添加小组件？","右键点击 macOS 桌面，选择“编辑小组件”，然后添加 AppVolumeMaster。"],["如何发送诊断信息？","打开“设置”，选择“复制诊断”或“导出诊断”，并把报告附在支持邮件中。"],["排查没有应用或没有音频进程","请在 Safari、音乐、Chrome、会议应用或其他需要控制的应用中播放声音，然后点击“刷新应用列表”。如果仍然没有行，请在支持邮件中附上复制或导出的诊断信息。"],["没有出现权限提示","打开 macOS“系统设置”，检查 AppVolumeMaster 的“隐私与安全性”权限；如果 macOS 显示系统音频捕获权限，请允许。更改权限后退出并重新打开 AppVolumeMaster。"],["发送诊断以获取支持","打开“设置”，选择“复制诊断”或“导出诊断”，并附上报告。报告包含应用版本、macOS 版本、语言、筛选状态、权限就绪状态、音频引擎状态、支持 URL 和可见应用行。"]]},"zh-Hant":{"languageLabel":"語言","title":"支援","intro":"需要 AppVolumeMaster 協助時，請提供 macOS 版本、App 版本、簡短問題描述與診斷資訊。","emailLabel":"電子郵件","appLabel":"App","faqTitle":"常見問題","privacyTitle":"隱私權","privacyText":"隱私權政策：","privacyLink":"隱私權政策","faqs":[["為什麼 AppVolumeMaster 需要音訊權限？","它使用 macOS 音訊介面識別正在發聲的 App，並在本機套用控制。音訊會在本機處理，不會上傳。"],["為什麼沒有 Dock 圖示？","AppVolumeMaster 是選單列工具。請使用選單列圖示開啟面板與設定。"],["列表中沒有 App","請先在目標 App 中播放聲音；如果 macOS 要求權限，請允許，然後重新整理 App 列表。"],["如何新增小工具？","在 macOS 桌面按右鍵，選擇「編輯小工具」，然後加入 AppVolumeMaster。"],["如何傳送診斷資訊？","開啟「設定」，選擇「複製診斷」或「匯出診斷」，並將報告附在支援郵件中。"],["排除沒有 App 或沒有音訊程序的問題","請在 Safari、音樂、Chrome、會議 App 或其他想控制的 App 中播放聲音，然後按一下「重新整理 App 列表」。如果仍然沒有列，請在支援郵件中附上已複製或匯出的診斷資訊。"],["沒有出現權限提示","開啟 macOS「系統設定」，檢查 AppVolumeMaster 的「隱私權與安全性」權限；如果 macOS 顯示系統音訊擷取權限，請允許。變更權限後請結束並重新開啟 AppVolumeMaster。"],["傳送診斷資訊以取得支援","開啟「設定」，選擇「複製診斷」或「匯出診斷」，並附上報告。報告包含 App 版本、macOS 版本、語言、篩選狀態、權限就緒狀態、音訊引擎狀態、支援 URL 和可見 App 列。"]]},"ja":{"languageLabel":"言語","title":"サポート","intro":"AppVolumeMaster のサポートが必要な場合は、macOS バージョン、アプリバージョン、短い問題説明、診断情報をお送りください。","emailLabel":"メール","appLabel":"アプリ","faqTitle":"よくある質問","privacyTitle":"プライバシー","privacyText":"プライバシーポリシー：","privacyLink":"プライバシーポリシー","faqs":[["AppVolumeMaster に音声権限が必要な理由は？","macOS の音声インターフェイスを使って、音声を出しているアプリを識別し、ローカルで制御を適用します。音声はローカルで処理され、アップロードされません。"],["Dock アイコンがないのはなぜですか？","AppVolumeMaster はメニューバーユーティリティです。メニューバーアイコンからパネルと設定を開いてください。"],["一覧にアプリが表示されない","対象のアプリで音声を再生し、macOS が権限を求めた場合は許可してから、アプリ一覧を更新してください。"],["ウィジェットを追加するには？","macOS デスクトップを右クリックし、「ウィジェットを編集」を選択して AppVolumeMaster を追加してください。"],["診断情報を送るには？","「設定」を開き、「診断をコピー」または「診断を書き出し」を選択して、サポートメールにレポートを添付してください。"],["アプリがない、または音声プロセスがない場合の対処","Safari、ミュージック、Chrome、会議アプリ、または制御したい別のアプリで音声を再生してから、「アプリ一覧を更新」をクリックしてください。行がまだ表示されない場合は、コピーまたは書き出した診断情報をサポートメールに添付してください。"],["権限の確認画面が表示されない","macOS の「システム設定」を開き、AppVolumeMaster の「プライバシーとセキュリティ」権限を確認してください。macOS がシステム音声キャプチャ権限を表示する場合は許可します。権限を変更した後は AppVolumeMaster を終了して再度開いてください。"],["サポート用に診断情報を送る","「設定」を開き、「診断をコピー」または「診断を書き出し」を選択してレポートを添付してください。レポートには、アプリバージョン、macOS バージョン、言語、フィルター状態、権限の準備状況、音声エンジン状態、サポート URL、表示中のアプリ行が含まれます。"]]},"ko":{"languageLabel":"언어","title":"지원","intro":"AppVolumeMaster 도움이 필요하면 macOS 버전, 앱 버전, 간단한 문제 설명 및 진단 정보를 보내 주세요.","emailLabel":"이메일","appLabel":"앱","faqTitle":"자주 묻는 질문","privacyTitle":"개인정보","privacyText":"개인정보 처리방침:","privacyLink":"개인정보 처리방침","faqs":[["AppVolumeMaster에 오디오 권한이 필요한 이유는 무엇인가요?","macOS 오디오 인터페이스를 사용해 오디오를 내는 앱을 식별하고 로컬 제어를 적용합니다. 오디오는 로컬에서 처리되며 업로드되지 않습니다."],["Dock 아이콘이 없는 이유는 무엇인가요?","AppVolumeMaster는 메뉴 막대 유틸리티입니다. 메뉴 막대 아이콘을 사용해 패널과 설정을 여세요."],["목록에 앱이 표시되지 않습니다","대상 앱에서 오디오를 재생하고, macOS가 권한을 요청하면 허용한 다음 앱 목록을 새로 고치세요."],["위젯은 어떻게 추가하나요?","macOS 데스크톱을 마우스 오른쪽 버튼으로 클릭하고 “위젯 편집”을 선택한 다음 AppVolumeMaster를 추가하세요."],["진단 정보는 어떻게 보내나요?","설정을 열고 “진단 복사” 또는 “진단 내보내기”를 선택한 뒤 지원 이메일에 보고서를 포함하세요."],["앱 없음 또는 오디오 프로세스 없음 문제 해결","Safari, 음악, Chrome, 회의 앱 또는 제어하려는 다른 앱에서 오디오를 재생하세요. 그런 다음 “앱 목록 새로 고침”을 클릭하세요. 그래도 행이 없으면 복사하거나 내보낸 진단 정보를 지원 이메일에 포함하세요."],["권한 요청이 표시되지 않습니다","macOS 시스템 설정을 열고 AppVolumeMaster의 개인정보 보호 및 보안 권한을 확인하세요. macOS에 시스템 오디오 캡처 권한 옵션이 표시되면 허용하세요. 권한을 변경한 후 AppVolumeMaster를 종료했다가 다시 여세요."],["지원을 위해 진단 정보 보내기","설정을 열고 “진단 복사” 또는 “진단 내보내기”를 선택한 뒤 보고서를 포함하세요. 보고서에는 앱 버전, macOS 버전, 언어, 필터 상태, 권한 준비 상태, 오디오 엔진 상태, 지원 URL, 표시된 앱 행이 포함됩니다."]]},"es":{"languageLabel":"Idioma","title":"Soporte","intro":"Si necesitas ayuda con AppVolumeMaster, envía la versión de macOS, la versión de la app, una breve descripción del problema y diagnósticos.","emailLabel":"Correo","appLabel":"App","faqTitle":"Preguntas frecuentes","privacyTitle":"Privacidad","privacyText":"Política de privacidad:","privacyLink":"Política de privacidad","faqs":[["¿Por qué AppVolumeMaster necesita permiso de audio?","Usa interfaces de audio de macOS para identificar las apps que producen sonido y aplicar controles locales. El audio se procesa localmente y no se sube."],["¿Por qué no hay icono en el Dock?","AppVolumeMaster es una utilidad de barra de menús. Usa el icono de la barra de menús para abrir el panel y los ajustes."],["No aparecen apps en la lista","Inicia audio en la app objetivo, permite el permiso si macOS lo solicita y actualiza la lista de apps."],["¿Cómo agrego el widget?","Haz clic derecho en el escritorio de macOS, elige “Editar widgets” y agrega AppVolumeMaster."],["¿Cómo envío diagnósticos?","Abre Ajustes, elige “Copiar diagnósticos” o “Exportar diagnósticos” e incluye el informe en tu correo de soporte."],["Solución para “sin apps” o “sin procesos de audio”","Inicia audio en Safari, Música, Chrome, una app de reuniones u otra app que quieras controlar. Luego haz clic en “Actualizar lista de apps”. Si aún faltan filas, incluye los diagnósticos copiados o exportados en tu correo de soporte."],["No aparece la solicitud de permiso","Abre Ajustes del Sistema de macOS, revisa los permisos de Privacidad y seguridad para AppVolumeMaster y permite el permiso de captura de audio del sistema si macOS muestra esa opción. Cierra y vuelve a abrir AppVolumeMaster después de cambiar permisos."],["Enviar diagnósticos para soporte","Abre Ajustes, elige “Copiar diagnósticos” o “Exportar diagnósticos” e incluye el informe. Incluye versión de la app, versión de macOS, idioma, estado del filtro, preparación de permisos, estado del motor de audio, URL de soporte y filas visibles de aplicaciones."]]},"fr":{"languageLabel":"Langue","title":"Assistance","intro":"Si vous avez besoin d’aide avec AppVolumeMaster, envoyez la version de macOS, la version de l’app, une brève description du problème et les diagnostics.","emailLabel":"E-mail","appLabel":"App","faqTitle":"Questions fréquentes","privacyTitle":"Confidentialité","privacyText":"Politique de confidentialité :","privacyLink":"Politique de confidentialité","faqs":[["Pourquoi AppVolumeMaster a-t-il besoin d’une autorisation audio ?","Il utilise les interfaces audio de macOS pour identifier les apps qui produisent du son et appliquer des contrôles locaux. L’audio est traité localement et n’est pas téléversé."],["Pourquoi n’y a-t-il pas d’icône dans le Dock ?","AppVolumeMaster est un utilitaire de barre de menus. Utilisez l’icône de la barre de menus pour ouvrir le panneau et les réglages."],["Aucune app n’apparaît dans la liste","Lancez de l’audio dans l’app cible, autorisez la permission si macOS la demande, puis actualisez la liste des apps."],["Comment ajouter le widget ?","Faites un clic droit sur le bureau macOS, choisissez « Modifier les widgets », puis ajoutez AppVolumeMaster."],["Comment envoyer les diagnostics ?","Ouvrez Réglages, choisissez « Copier les diagnostics » ou « Exporter les diagnostics », puis joignez le rapport à votre e-mail de support."],["Dépannage si aucune app ou aucun processus audio n’apparaît","Lancez de l’audio dans Safari, Musique, Chrome, une app de réunion ou une autre app que vous voulez contrôler. Cliquez ensuite sur « Actualiser la liste des apps ». Si des lignes manquent toujours, joignez les diagnostics copiés ou exportés à votre e-mail de support."],["La demande d’autorisation n’apparaît pas","Ouvrez Réglages Système de macOS, vérifiez les autorisations Confidentialité et sécurité pour AppVolumeMaster et autorisez la capture audio du système si macOS affiche cette option. Quittez puis rouvrez AppVolumeMaster après avoir modifié les autorisations."],["Envoyer les diagnostics au support","Ouvrez Réglages, choisissez « Copier les diagnostics » ou « Exporter les diagnostics », puis joignez le rapport. Il contient la version de l’app, la version de macOS, la langue, l’état du filtre, l’état des autorisations, l’état du moteur audio, l’URL de support et les lignes d’applications visibles."]]},"de":{"languageLabel":"Sprache","title":"Support","intro":"Wenn Sie Hilfe zu AppVolumeMaster benötigen, senden Sie Ihre macOS-Version, App-Version, eine kurze Problembeschreibung und Diagnosedaten.","emailLabel":"E-Mail","appLabel":"App","faqTitle":"Häufige Fragen","privacyTitle":"Datenschutz","privacyText":"Datenschutzrichtlinie:","privacyLink":"Datenschutzrichtlinie","faqs":[["Warum benötigt AppVolumeMaster eine Audioberechtigung?","Es verwendet macOS-Audioschnittstellen, um Apps zu erkennen, die Ton ausgeben, und lokale Steuerungen anzuwenden. Audio wird lokal verarbeitet und nicht hochgeladen."],["Warum gibt es kein Dock-Symbol?","AppVolumeMaster ist ein Menüleistenprogramm. Verwenden Sie das Menüleistensymbol, um das Panel und die Einstellungen zu öffnen."],["In der Liste erscheinen keine Apps","Starten Sie Audio in der Ziel-App, erlauben Sie die Berechtigung, falls macOS danach fragt, und aktualisieren Sie anschließend die App-Liste."],["Wie füge ich das Widget hinzu?","Klicken Sie mit der rechten Maustaste auf den macOS-Schreibtisch, wählen Sie „Widgets bearbeiten“ und fügen Sie AppVolumeMaster hinzu."],["Wie sende ich Diagnosedaten?","Öffnen Sie Einstellungen, wählen Sie „Diagnose kopieren“ oder „Diagnose exportieren“ und fügen Sie den Bericht Ihrer Support-E-Mail bei."],["Fehlerbehebung bei keinen Apps oder keinen Audioprozessen","Starten Sie Audio in Safari, Musik, Chrome, einer Meeting-App oder einer anderen App, die Sie steuern möchten. Klicken Sie dann auf „App-Liste aktualisieren“. Wenn weiterhin Zeilen fehlen, fügen Sie kopierte oder exportierte Diagnosedaten Ihrer Support-E-Mail bei."],["Die Berechtigungsabfrage erscheint nicht","Öffnen Sie die macOS-Systemeinstellungen, prüfen Sie die Datenschutz- und Sicherheitsberechtigungen für AppVolumeMaster und erlauben Sie die System-Audioerfassung, falls macOS diese Option anzeigt. Beenden und öffnen Sie AppVolumeMaster nach der Änderung der Berechtigungen erneut."],["Diagnosedaten für den Support senden","Öffnen Sie Einstellungen, wählen Sie „Diagnose kopieren“ oder „Diagnose exportieren“ und fügen Sie den Bericht bei. Er enthält App-Version, macOS-Version, Sprache, Filterstatus, Berechtigungsstatus, Audio-Engine-Status, Support-URL und sichtbare App-Zeilen."]]},"it":{"languageLabel":"Lingua","title":"Supporto","intro":"Se hai bisogno di aiuto con AppVolumeMaster, invia la versione di macOS, la versione dell’app, una breve descrizione del problema e la diagnostica.","emailLabel":"E-mail","appLabel":"App","faqTitle":"Domande frequenti","privacyTitle":"Privacy","privacyText":"Informativa sulla privacy:","privacyLink":"Informativa sulla privacy","faqs":[["Perché AppVolumeMaster richiede il permesso audio?","Usa le interfacce audio di macOS per identificare le app che producono audio e applicare controlli locali. L’audio viene elaborato localmente e non viene caricato."],["Perché non c’è un’icona nel Dock?","AppVolumeMaster è un’utilità della barra dei menu. Usa l’icona nella barra dei menu per aprire il pannello e le impostazioni."],["Nessuna app appare nell’elenco","Avvia l’audio nell’app di destinazione, concedi l’autorizzazione se macOS la richiede, quindi aggiorna l’elenco delle app."],["Come aggiungo il widget?","Fai clic con il tasto destro sul desktop macOS, scegli “Modifica widget”, quindi aggiungi AppVolumeMaster."],["Come invio la diagnostica?","Apri Impostazioni, scegli “Copia diagnostica” o “Esporta diagnostica” e includi il report nell’e-mail di supporto."],["Risoluzione di nessuna app o nessun processo audio","Avvia l’audio in Safari, Musica, Chrome, un’app per riunioni o un’altra app che vuoi controllare. Poi fai clic su “Aggiorna elenco app”. Se mancano ancora righe, includi la diagnostica copiata o esportata nell’e-mail di supporto."],["La richiesta di autorizzazione non appare","Apri Impostazioni di Sistema di macOS, controlla le autorizzazioni Privacy e sicurezza per AppVolumeMaster e consenti il permesso di acquisizione audio di sistema se macOS mostra questa opzione. Chiudi e riapri AppVolumeMaster dopo aver modificato le autorizzazioni."],["Inviare la diagnostica al supporto","Apri Impostazioni, scegli “Copia diagnostica” o “Esporta diagnostica” e includi il report. Include versione dell’app, versione di macOS, lingua, stato del filtro, stato delle autorizzazioni, stato del motore audio, URL di supporto e righe di app visibili."]]},"pt-BR":{"languageLabel":"Idioma","title":"Suporte","intro":"Se precisar de ajuda com AppVolumeMaster, envie a versão do macOS, a versão do app, uma breve descrição do problema e diagnósticos.","emailLabel":"E-mail","appLabel":"App","faqTitle":"Perguntas frequentes","privacyTitle":"Privacidade","privacyText":"Política de privacidade:","privacyLink":"Política de privacidade","faqs":[["Por que AppVolumeMaster precisa de permissão de áudio?","Ele usa interfaces de áudio do macOS para identificar apps que produzem som e aplicar controles locais. O áudio é processado localmente e não é enviado."],["Por que não há ícone no Dock?","AppVolumeMaster é um utilitário da barra de menus. Use o ícone da barra de menus para abrir o painel e os ajustes."],["Nenhum app aparece na lista","Inicie áudio no app desejado, permita a permissão se o macOS solicitar e atualize a lista de apps."],["Como adiciono o widget?","Clique com o botão direito na área de trabalho do macOS, escolha “Editar widgets” e adicione AppVolumeMaster."],["Como envio diagnósticos?","Abra Ajustes, escolha “Copiar diagnósticos” ou “Exportar diagnósticos” e inclua o relatório no e-mail de suporte."],["Solução para nenhum app ou nenhum processo de áudio","Inicie áudio no Safari, Música, Chrome, um app de reunião ou outro app que você queira controlar. Depois clique em “Atualizar lista de apps”. Se ainda faltarem linhas, inclua os diagnósticos copiados ou exportados no e-mail de suporte."],["A solicitação de permissão não aparece","Abra Ajustes do Sistema do macOS, revise as permissões de Privacidade e Segurança para AppVolumeMaster e permita a captura de áudio do sistema se o macOS mostrar essa opção. Encerre e reabra AppVolumeMaster depois de alterar permissões."],["Enviar diagnósticos para suporte","Abra Ajustes, escolha “Copiar diagnósticos” ou “Exportar diagnósticos” e inclua o relatório. Ele inclui versão do app, versão do macOS, idioma, estado do filtro, prontidão das permissões, estado do mecanismo de áudio, URL de suporte e linhas de apps visíveis."]]},"ru":{"languageLabel":"Язык","title":"Поддержка","intro":"Если вам нужна помощь с AppVolumeMaster, отправьте версию macOS, версию приложения, краткое описание проблемы и диагностику.","emailLabel":"Эл. почта","appLabel":"Приложение","faqTitle":"Частые вопросы","privacyTitle":"Конфиденциальность","privacyText":"Политика конфиденциальности:","privacyLink":"Политика конфиденциальности","faqs":[["Зачем AppVolumeMaster нужно разрешение на аудио?","Приложение использует аудиоинтерфейсы macOS, чтобы определять приложения, воспроизводящие звук, и применять локальное управление. Аудио обрабатывается локально и не загружается."],["Почему нет значка в Dock?","AppVolumeMaster — утилита строки меню. Используйте значок в строке меню, чтобы открыть панель и настройки."],["В списке нет приложений","Запустите звук в нужном приложении, разрешите доступ, если macOS попросит, затем обновите список приложений."],["Как добавить виджет?","Щелкните правой кнопкой мыши по рабочему столу macOS, выберите «Редактировать виджеты», затем добавьте AppVolumeMaster."],["Как отправить диагностику?","Откройте «Настройки», выберите «Скопировать диагностику» или «Экспортировать диагностику» и приложите отчет к письму в поддержку."],["Устранение проблемы, когда нет приложений или аудиопроцессов","Запустите звук в Safari, Музыке, Chrome, приложении для встреч или другом приложении, которым хотите управлять. Затем нажмите «Обновить список приложений». Если строки по-прежнему отсутствуют, приложите скопированную или экспортированную диагностику к письму в поддержку."],["Запрос разрешения не появляется","Откройте системные настройки macOS, проверьте разрешения конфиденциальности и безопасности для AppVolumeMaster и разрешите захват системного аудио, если macOS показывает такой вариант. После изменения разрешений закройте и снова откройте AppVolumeMaster."],["Отправить диагностику в поддержку","Откройте «Настройки», выберите «Скопировать диагностику» или «Экспортировать диагностику» и приложите отчет. Он включает версию приложения, версию macOS, язык, состояние фильтра, готовность разрешений, состояние аудиодвижка, URL поддержки и видимые строки приложений."]]},"ar":{"languageLabel":"اللغة","title":"الدعم","intro":"إذا كنت بحاجة إلى مساعدة بشأن AppVolumeMaster، فأرسل إصدار macOS وإصدار التطبيق ووصفا موجزا للمشكلة والتشخيصات.","emailLabel":"البريد الإلكتروني","appLabel":"التطبيق","faqTitle":"الأسئلة الشائعة","privacyTitle":"الخصوصية","privacyText":"سياسة الخصوصية:","privacyLink":"سياسة الخصوصية","faqs":[["لماذا يحتاج AppVolumeMaster إلى إذن الصوت؟","يستخدم واجهات الصوت في macOS للتعرف على التطبيقات التي تصدر صوتا وتطبيق التحكم المحلي. تتم معالجة الصوت محليا ولا يتم رفعه."],["لماذا لا يوجد رمز في Dock؟","AppVolumeMaster أداة لشريط القوائم. استخدم رمز شريط القوائم لفتح اللوحة والإعدادات."],["لا تظهر تطبيقات في القائمة","شغل الصوت في التطبيق المطلوب، واسمح بالإذن إذا طلب macOS ذلك، ثم حدث قائمة التطبيقات."],["كيف أضيف الأداة؟","انقر بزر الماوس الأيمن على سطح مكتب macOS، واختر “تحرير الأدوات”، ثم أضف AppVolumeMaster."],["كيف أرسل التشخيصات؟","افتح الإعدادات، واختر “نسخ التشخيصات” أو “تصدير التشخيصات”، وأرفق التقرير في رسالة الدعم."],["استكشاف عدم ظهور تطبيقات أو عمليات صوتية","شغل الصوت في Safari أو الموسيقى أو Chrome أو تطبيق اجتماع أو أي تطبيق آخر تريد التحكم فيه. ثم انقر على “تحديث قائمة التطبيقات”. إذا ظلت الصفوف مفقودة، فأرفق التشخيصات المنسوخة أو المصدرة في رسالة الدعم."],["لا تظهر مطالبة الإذن","افتح إعدادات نظام macOS، وراجع أذونات الخصوصية والأمان الخاصة بـ AppVolumeMaster، واسمح بإذن التقاط صوت النظام إذا عرض macOS هذا الخيار. أغلق AppVolumeMaster وافتحه من جديد بعد تغيير الأذونات."],["إرسال التشخيصات للدعم","افتح الإعدادات، واختر “نسخ التشخيصات” أو “تصدير التشخيصات”، وأرفق التقرير. يتضمن إصدار التطبيق، وإصدار macOS، واللغة، وحالة الفلتر، وجاهزية الأذونات، وحالة محرك الصوت، ورابط الدعم، وصفوف التطبيقات المرئية."]]},"hi":{"languageLabel":"भाषा","title":"सहायता","intro":"AppVolumeMaster के लिए सहायता चाहिए तो macOS संस्करण, ऐप संस्करण, समस्या का छोटा विवरण और डायग्नोस्टिक्स भेजें।","emailLabel":"ईमेल","appLabel":"ऐप","faqTitle":"अक्सर पूछे जाने वाले प्रश्न","privacyTitle":"गोपनीयता","privacyText":"गोपनीयता नीति:","privacyLink":"गोपनीयता नीति","faqs":[["AppVolumeMaster को ऑडियो अनुमति की जरूरत क्यों है?","यह macOS ऑडियो इंटरफेस का उपयोग करके ऑडियो उत्पन्न करने वाले ऐप्स की पहचान करता है और स्थानीय नियंत्रण लागू करता है। ऑडियो स्थानीय रूप से प्रोसेस होता है और अपलोड नहीं किया जाता।"],["Dock आइकन क्यों नहीं है?","AppVolumeMaster एक मेनू बार उपयोगिता है। पैनल और सेटिंग खोलने के लिए मेनू बार आइकन का उपयोग करें।"],["सूची में कोई ऐप नहीं दिख रहा","लक्षित ऐप में ऑडियो शुरू करें, यदि macOS अनुमति मांगे तो अनुमति दें, फिर ऐप सूची रिफ्रेश करें।"],["विजेट कैसे जोड़ें?","macOS डेस्कटॉप पर राइट-क्लिक करें, “विजेट संपादित करें” चुनें, फिर AppVolumeMaster जोड़ें।"],["डायग्नोस्टिक्स कैसे भेजें?","सेटिंग खोलें, “डायग्नोस्टिक्स कॉपी करें” या “डायग्नोस्टिक्स एक्सपोर्ट करें” चुनें और रिपोर्ट को सपोर्ट ईमेल में शामिल करें।"],["कोई ऐप या ऑडियो प्रोसेस न दिखने पर समस्या समाधान","Safari, Music, Chrome, किसी मीटिंग ऐप या उस ऐप में ऑडियो शुरू करें जिसे आप नियंत्रित करना चाहते हैं। फिर “ऐप सूची रिफ्रेश करें” पर क्लिक करें। यदि पंक्तियां अभी भी नहीं दिखतीं, तो कॉपी या एक्सपोर्ट किए गए डायग्नोस्टिक्स को सपोर्ट ईमेल में शामिल करें।"],["अनुमति संकेत नहीं दिखता","macOS सिस्टम सेटिंग खोलें, AppVolumeMaster के लिए गोपनीयता और सुरक्षा अनुमतियां देखें और यदि macOS सिस्टम ऑडियो कैप्चर अनुमति दिखाए तो अनुमति दें। अनुमति बदलने के बाद AppVolumeMaster बंद करके फिर खोलें।"],["सहायता के लिए डायग्नोस्टिक्स भेजें","सेटिंग खोलें, “डायग्नोस्टिक्स कॉपी करें” या “डायग्नोस्टिक्स एक्सपोर्ट करें” चुनें और रिपोर्ट शामिल करें। इसमें ऐप संस्करण, macOS संस्करण, भाषा, फिल्टर स्थिति, अनुमति तैयारी, ऑडियो इंजन स्थिति, सपोर्ट URL और दिखाई देने वाली ऐप पंक्तियां शामिल हैं।"]]}};const supportedLanguages=Object.keys(translations);const params=new URLSearchParams(location.search);function browserLanguage(){const prefs=[navigator.language,...(navigator.languages||[])].map(v=>String(v||'').toLowerCase());for(const pref of prefs){if(pref.startsWith('zh-hant')||pref.startsWith('zh-tw')||pref.startsWith('zh-hk'))return 'zh-Hant';if(pref.startsWith('zh'))return 'zh-Hans';if(pref.startsWith('pt'))return 'pt-BR';const hit=supportedLanguages.find(code=>pref===code.toLowerCase()||pref.startsWith(code.toLowerCase()+'-'));if(hit)return hit;}return 'en'}const initial=supportedLanguages.includes(params.get('lang'))?params.get('lang'):browserLanguage();function applyLanguage(lang){const t=translations[lang]||translations.en;document.documentElement.lang=lang;document.documentElement.dir=lang==='ar'?'rtl':'ltr';document.title='AppVolumeMaster - '+(t.title||'');const select=document.getElementById('languageSelect');select.value=lang;document.getElementById('languageLabel').textContent=t.languageLabel||'Language';select.setAttribute('aria-label',t.languageLabel||'Language');document.querySelectorAll('[data-i18n]').forEach(node=>{const key=node.dataset.i18n;if(Object.prototype.hasOwnProperty.call(t,key))node.innerHTML=t[key];});}document.getElementById('languageSelect').addEventListener('change',e=>{const next=e.target.value;location.href=next==='en'?location.pathname:location.pathname+'?lang='+encodeURIComponent(next);});applyLanguage(initial);function renderExtra(lang){const t=translations[lang]||translations.en;document.getElementById('faq').innerHTML=(t.faqs||[]).map(([q,a])=>`<h3>${q}</h3><p>${a}</p>`).join('');}const oldApply=applyLanguage;applyLanguage=function(lang){oldApply(lang);renderExtra(lang);};applyLanguage(initial);</script></body></html>

@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VideoConvertShrink Support</title>
+  <meta name="description" content="Support page for VideoConvertShrink, available in 16 mainstream languages.">
+  <meta name="apple-mobile-web-app-title" content="VideoConvertShrink">
+  <style>
+:root {
+  color-scheme: dark light;
+  --bg0: #07090d;
+  --bg1: #0f172a;
+  --panel: rgba(15, 23, 42, 0.78);
+  --panel-strong: rgba(15, 23, 42, 0.9);
+  --card: rgba(15, 23, 42, 0.58);
+  --text: #f8fafc;
+  --muted: #cbd5e1;
+  --subtle: #94a3b8;
+  --line: rgba(148, 163, 184, 0.24);
+  --accent: #38bdf8;
+  --accent2: #fb7185;
+  --radius-lg: 28px;
+  --radius-md: 18px;
+  --shadow: 0 24px 80px rgba(0, 0, 0, 0.3);
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg0: #f8fafc;
+    --bg1: #e2e8f0;
+    --panel: rgba(255, 255, 255, 0.84);
+    --panel-strong: rgba(255, 255, 255, 0.94);
+    --card: rgba(248, 250, 252, 0.82);
+    --text: #0f172a;
+    --muted: #475569;
+    --subtle: #64748b;
+    --line: rgba(51, 65, 85, 0.18);
+    --shadow: 0 24px 80px rgba(15, 23, 42, 0.14);
+  }
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+  line-height: 1.66;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 13% 0%, color-mix(in srgb, var(--accent) 30%, transparent), transparent 34rem),
+    radial-gradient(circle at 92% 10%, color-mix(in srgb, var(--accent2) 20%, transparent), transparent 30rem),
+    linear-gradient(135deg, var(--bg0), var(--bg1));
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.045) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,0.62), transparent 76%);
+}
+.page {
+  position: relative;
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 44px 0 60px;
+}
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 20px;
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+.brand-mark {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background:
+    radial-gradient(circle at 30% 22%, rgba(255,255,255,0.65), transparent 22%),
+    linear-gradient(135deg, var(--accent), var(--accent2));
+  box-shadow: 0 16px 42px color-mix(in srgb, var(--accent) 34%, transparent);
+}
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.nav a,
+.language-select {
+  color: var(--text);
+  text-decoration: none;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--panel) 82%, transparent);
+  padding: 10px 14px;
+  font-size: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+.language-select {
+  appearance: auto;
+  min-width: 172px;
+}
+.document {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--panel);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(24px);
+}
+.hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(260px, 0.75fr);
+  gap: 34px;
+  padding: clamp(30px, 6vw, 58px);
+  border-bottom: 1px solid var(--line);
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  right: -120px;
+  top: -160px;
+  width: 420px;
+  height: 420px;
+  border-radius: 999px;
+  background: radial-gradient(circle, color-mix(in srgb, var(--accent) 26%, transparent), transparent 66%);
+  pointer-events: none;
+}
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 26px;
+  color: var(--accent);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+.eyebrow::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 18%, transparent);
+}
+h1,
+h2,
+h3 {
+  line-height: 1.12;
+  letter-spacing: -0.045em;
+}
+h1 {
+  margin: 0 0 18px;
+  max-width: 780px;
+  font-size: clamp(2.45rem, 6vw, 5.5rem);
+  font-weight: 850;
+}
+.subtitle {
+  max-width: 760px;
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(1.05rem, 2vw, 1.42rem);
+}
+.updated {
+  margin: 22px 0 0;
+  color: var(--subtle);
+  font-size: 0.96rem;
+}
+.hero-aside {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: color-mix(in srgb, var(--card) 86%, transparent);
+}
+.aside-title {
+  margin: 0;
+  color: var(--text);
+  font-size: 1.05rem;
+  font-weight: 800;
+}
+.aside-meta {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.96rem;
+}
+.language-count {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: end;
+  gap: 12px;
+  margin-top: 18px;
+}
+.language-count strong {
+  font-size: 3rem;
+  line-height: 0.9;
+  letter-spacing: -0.06em;
+}
+.language-count span {
+  color: var(--subtle);
+  font-size: 0.92rem;
+}
+.content-zone {
+  padding: clamp(24px, 5vw, 48px);
+}
+.summary-heading {
+  margin: 0 0 18px;
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin: 0 0 34px;
+}
+.summary-card,
+.section-card {
+  border: 1px solid var(--line);
+  background: var(--card);
+  border-radius: var(--radius-md);
+}
+.summary-card {
+  min-height: 128px;
+  padding: 18px;
+  display: flex;
+  align-items: flex-end;
+  color: var(--text);
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+.sections {
+  display: grid;
+  gap: 14px;
+}
+.section-card {
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr);
+  gap: 18px;
+  padding: 22px;
+}
+.section-index {
+  width: 44px;
+  height: 44px;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 14px;
+  color: var(--text);
+  font-weight: 850;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 80%, #111827), color-mix(in srgb, var(--accent2) 65%, #111827));
+  box-shadow: 0 14px 34px color-mix(in srgb, var(--accent) 20%, transparent);
+}
+.section-card h2 {
+  margin: 0 0 10px;
+  font-size: clamp(1.22rem, 2.2vw, 1.7rem);
+  font-weight: 820;
+}
+.section-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1rem;
+}
+.footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+  color: var(--subtle);
+  padding: 22px clamp(24px, 5vw, 48px) 30px;
+  border-top: 1px solid var(--line);
+  font-size: 0.92rem;
+}
+a { color: var(--accent); }
+[dir="rtl"] body { font-family: "Geeza Pro", "Arial", sans-serif; }
+[dir="rtl"] .topbar,
+[dir="rtl"] .nav,
+[dir="rtl"] .section-card,
+[dir="rtl"] .language-count { direction: rtl; }
+@media (max-width: 860px) {
+  .page { width: min(100% - 28px, 1120px); padding-top: 24px; }
+  .topbar { align-items: flex-start; flex-direction: column; }
+  .nav { justify-content: flex-start; }
+  .language-select { width: 100%; }
+  .hero { grid-template-columns: 1fr; }
+  .summary-grid { grid-template-columns: 1fr; }
+  .section-card { grid-template-columns: 1fr; }
+  .section-index { width: 38px; height: 38px; border-radius: 12px; }
+}
+</style>
+</head>
+<body data-page="Support">
+  <main class="page">
+    <header class="topbar" aria-label="VideoConvertShrink page navigation">
+      <a class="brand" href="../Support/"><span class="brand-mark" aria-hidden="true"></span><span>VideoConvertShrink</span></a>
+      <nav class="nav">
+        <a href="../Privacy/">Privacy</a>
+        <a href="../Support/">Support</a>
+        <a href="../AgeRating/">Age Rating</a>
+        <select id="languageSelector" class="language-select" aria-label="Language"></select>
+      </nav>
+    </header>
+
+    <article class="document">
+      <section class="hero">
+        <div>
+          <p class="eyebrow" data-eyebrow>Support</p>
+          <h1 data-title>VideoConvertShrink Support</h1>
+          <p class="subtitle" data-subtitle>Get help with batch conversion, platform presets, video export, audio extraction, and WebP/GIF animation export.</p>
+          <p class="updated" data-updated>Support page updated: June 21, 2026</p>
+        </div>
+        <aside class="hero-aside" aria-label="Page summary">
+          <div>
+            <p class="aside-title" data-aside-title>How we can help</p>
+            <p class="aside-meta" data-aside-meta>Get help with batch conversion, platform presets, video export, audio extraction, and WebP/GIF animation export.</p>
+          </div>
+          <div class="language-count" aria-label="Localized language count"><strong>16</strong><span>localized mainstream languages</span></div>
+        </aside>
+      </section>
+
+      <section class="content-zone">
+        <h2 class="summary-heading" data-summary-title>How we can help</h2>
+        <div class="summary-grid" id="summaryGrid"></div>
+        <div class="sections" id="sectionList" aria-label="Localized content sections"></div>
+      </section>
+
+      <footer class="footer">
+        <span>© 2026 VideoConvertShrink</span>
+        <span>Localized pages follow the same 16-language set as the SVNServer reference.</span>
+      </footer>
+    </article>
+  </main>
+  <noscript><main class="page"><article class="document"><section class="hero"><div><p class="eyebrow">VideoConvertShrink</p><h1>VideoConvertShrink Support</h1><p class="subtitle">Get help with batch conversion, platform presets, video export, audio extraction, and WebP/GIF animation export.</p></div></section></article></main></noscript>
+  <script>
+const languageOrder = ["en", "zh-Hans", "zh-Hant", "ja", "ko", "fr", "de", "es", "it", "pt-BR", "ru", "ar", "hi", "id", "vi", "th"];
+const languageNames = {"en":"English","zh-Hans":"简体中文","zh-Hant":"繁體中文","ja":"日本語","ko":"한국어","fr":"Français","de":"Deutsch","es":"Español","it":"Italiano","pt-BR":"Português (Brasil)","ru":"Русский","ar":"العربية","hi":"हिन्दी","id":"Bahasa Indonesia","vi":"Tiếng Việt","th":"ไทย"};
+const content = {"en":{"kicker":"Support","title":"VideoConvertShrink Support","subtitle":"Get help with batch conversion, platform presets, video export, audio extraction, and WebP/GIF animation export.","updated":"Support page updated: June 21, 2026","highlightsTitle":"How we can help","highlights":["Batch import workflow","Video, audio and animation modes","Local FFmpeg-based engine"],"sections":[{"heading":"Quick start","body":"Import videos, audio files, or folders, choose Let App Choose or a platform preset, review the estimated output size, then start the queue."},{"heading":"Core export modes","body":"Video Export creates MP4 and other video outputs. Audio Only extracts or converts sound. Animation Export creates WebP or GIF loops from videos."},{"heading":"Presets and formats","body":"Use platform presets for WeChat, Douyin, RedNote, Bilibili, YouTube and general sharing, or switch to custom size, codec, quality, frame-rate, clip, subtitle, watermark and audio settings."},{"heading":"Troubleshooting","body":"If a file fails, confirm it is readable in Finder, choose a writable output folder, refresh the transcode engine, and export diagnostics from the app before contacting support."},{"heading":"Performance tips","body":"Hardware H.264 or HEVC can speed up exports on supported Macs. For smallest files, lower resolution, frame rate, or quality and use a short test clip first."},{"heading":"Contact support","body":"Use the App Store support link or the developer contact on the store listing. Include macOS version, app version, source format, export mode, and diagnostic logs when available."}]},"zh-Hans":{"kicker":"支持","title":"影序 Pro 支持","subtitle":"获取批量转换、平台预设、视频导出、音频提取以及 WebP/GIF 动图导出的帮助。","updated":"支持页面更新：2026 年 6 月 21 日","highlightsTitle":"我们可以帮助你","highlights":["批量导入流程","视频、音频、动图三种模式","基于本地 FFmpeg 的转码引擎"],"sections":[{"heading":"快速开始","body":"导入视频、音频文件或文件夹，选择“让 App 选择”或平台预设，确认预计输出体积后启动队列。"},{"heading":"核心导出模式","body":"“视频导出”用于生成 MP4 等视频文件；“仅音频”用于提取或转换声音；“动图导出”用于从视频生成 WebP 或 GIF。"},{"heading":"预设与格式","body":"可使用微信、抖音、小红书、B站、YouTube 等平台预设，也可以自定义尺寸、编码、质量、帧率、剪辑、字幕、水印和音频参数。"},{"heading":"故障排查","body":"如果文件失败，请确认 Finder 中可读取源文件，选择可写输出文件夹，刷新转码引擎，并在联系支持前从应用导出诊断。"},{"heading":"性能建议","body":"支持的 Mac 可使用硬件 H.264 或 HEVC 加速导出。若追求更小体积，可降低分辨率、帧率或质量，并先用短片段测试。"},{"heading":"联系支持","body":"请使用 App Store 支持链接或商店页面上的开发者联系方式。建议附上 macOS 版本、App 版本、源格式、导出模式和可用的诊断日志。"}]},"zh-Hant":{"kicker":"支援","title":"影序 Pro 支援","subtitle":"取得批次轉換、平台預設、影片輸出、音訊擷取以及 WebP/GIF 動圖輸出的協助。","updated":"支援頁面更新：2026 年 6 月 21 日","highlightsTitle":"我們可以協助你","highlights":["批次匯入流程","影片、音訊、動圖三種模式","基於本機 FFmpeg 的轉碼引擎"],"sections":[{"heading":"快速開始","body":"匯入影片、音訊檔案或資料夾，選擇「讓 App 選擇」或平台預設，檢查預估輸出大小後啟動佇列。"},{"heading":"核心輸出模式","body":"「影片輸出」用於建立 MP4 等影片檔；「僅音訊」用於擷取或轉換聲音；「動圖輸出」用於從影片建立 WebP 或 GIF。"},{"heading":"預設與格式","body":"可使用微信、抖音、小紅書、B站、YouTube 等平台預設，也可自訂尺寸、編碼、品質、影格率、剪輯、字幕、浮水印與音訊參數。"},{"heading":"疑難排解","body":"如果檔案失敗，請確認 Finder 中可讀取來源檔，選擇可寫入的輸出資料夾，重新整理轉碼引擎，並在聯絡支援前從 App 匯出診斷。"},{"heading":"效能建議","body":"支援的 Mac 可使用硬體 H.264 或 HEVC 加速輸出。若要更小檔案，可降低解析度、影格率或品質，並先用短片段測試。"},{"heading":"聯絡支援","body":"請使用 App Store 支援連結或商店頁面上的開發者聯絡方式。建議附上 macOS 版本、App 版本、來源格式、輸出模式與可用的診斷日誌。"}]},"ja":{"kicker":"サポート","title":"VideoConvertShrink サポート","subtitle":"バッチ変換、プラットフォームプリセット、動画書き出し、音声抽出、WebP/GIF アニメーション書き出しをサポートします。","updated":"サポートページ更新日：2026年6月21日","highlightsTitle":"サポート内容","highlights":["バッチ読み込み","動画・音声・アニメーションモード","ローカル FFmpeg ベースのエンジン"],"sections":[{"heading":"クイックスタート","body":"動画、音声ファイル、またはフォルダを読み込み、「アプリに選ばせる」またはプリセットを選択し、推定出力サイズを確認してキューを開始します。"},{"heading":"主な書き出しモード","body":"Video Export は MP4 などの動画を作成します。Audio Only は音声の抽出や変換に使います。Animation Export は動画から WebP または GIF を作成します。"},{"heading":"プリセットと形式","body":"WeChat、Douyin、RedNote、Bilibili、YouTube などのプリセットを使うか、サイズ、コーデック、品質、フレームレート、クリップ、字幕、ウォーターマーク、音声を手動設定できます。"},{"heading":"トラブルシューティング","body":"失敗した場合は Finder で元ファイルが読めること、出力先に書き込めることを確認し、変換エンジンを更新してから診断を書き出してください。"},{"heading":"パフォーマンスのヒント","body":"対応する Mac ではハードウェア H.264 または HEVC により高速化できます。小さなファイルにするには解像度、フレームレート、品質を下げ、短いクリップで試してください。"},{"heading":"サポートへの連絡","body":"App Store のサポートリンクまたはストア掲載の開発者連絡先を利用してください。macOS 版、アプリ版、元形式、書き出しモード、診断ログを添えると解決が早くなります。"}]},"ko":{"kicker":"지원","title":"VideoConvertShrink 지원","subtitle":"일괄 변환, 플랫폼 프리셋, 비디오 내보내기, 오디오 추출, WebP/GIF 애니메이션 내보내기를 도와드립니다.","updated":"지원 페이지 업데이트: 2026년 6월 21일","highlightsTitle":"지원 항목","highlights":["일괄 가져오기 흐름","비디오, 오디오, 애니메이션 모드","로컬 FFmpeg 기반 엔진"],"sections":[{"heading":"빠른 시작","body":"비디오, 오디오 파일 또는 폴더를 가져온 뒤 Let App Choose 또는 플랫폼 프리셋을 선택하고 예상 출력 크기를 확인한 다음 대기열을 시작합니다."},{"heading":"핵심 내보내기 모드","body":"Video Export는 MP4 등 비디오 파일을 만듭니다. Audio Only는 사운드를 추출하거나 변환합니다. Animation Export는 비디오에서 WebP 또는 GIF 루프를 만듭니다."},{"heading":"프리셋과 형식","body":"WeChat, Douyin, RedNote, Bilibili, YouTube 등 플랫폼 프리셋을 사용하거나 크기, 코덱, 품질, 프레임률, 클립, 자막, 워터마크, 오디오를 직접 설정할 수 있습니다."},{"heading":"문제 해결","body":"파일이 실패하면 Finder에서 읽을 수 있는지, 출력 폴더에 쓸 수 있는지 확인하고 변환 엔진을 새로 고친 뒤 앱에서 진단을 내보내 지원에 문의하세요."},{"heading":"성능 팁","body":"지원되는 Mac에서는 하드웨어 H.264 또는 HEVC가 내보내기를 빠르게 할 수 있습니다. 작은 파일이 필요하면 해상도, 프레임률 또는 품질을 낮추고 짧은 클립으로 먼저 테스트하세요."},{"heading":"지원 문의","body":"App Store 지원 링크 또는 스토어 페이지의 개발자 연락처를 이용하세요. macOS 버전, 앱 버전, 원본 형식, 내보내기 모드, 진단 로그를 포함하면 좋습니다."}]},"fr":{"kicker":"Assistance","title":"Assistance VideoConvertShrink","subtitle":"Aide pour la conversion par lots, les préréglages de plateformes, l’export vidéo, l’extraction audio et l’export WebP/GIF.","updated":"Page d’assistance mise à jour : 21 juin 2026","highlightsTitle":"Nous pouvons aider avec","highlights":["Import par lots","Modes vidéo, audio et animation","Moteur local basé sur FFmpeg"],"sections":[{"heading":"Démarrage rapide","body":"Importez des vidéos, fichiers audio ou dossiers, choisissez Let App Choose ou un préréglage, vérifiez la taille estimée, puis lancez la file."},{"heading":"Modes d’export principaux","body":"Video Export crée des vidéos comme MP4. Audio Only extrait ou convertit le son. Animation Export crée des boucles WebP ou GIF depuis des vidéos."},{"heading":"Préréglages et formats","body":"Utilisez des préréglages pour WeChat, Douyin, RedNote, Bilibili, YouTube et le partage général, ou personnalisez taille, codec, qualité, fréquence, extrait, sous-titres, filigrane et audio."},{"heading":"Dépannage","body":"En cas d’échec, vérifiez que le fichier est lisible dans Finder, choisissez un dossier de sortie accessible en écriture, actualisez le moteur et exportez les diagnostics avant de contacter l’assistance."},{"heading":"Conseils de performance","body":"Sur les Mac compatibles, le H.264 ou HEVC matériel peut accélérer les exports. Pour réduire la taille, baissez résolution, fréquence ou qualité et testez d’abord un court extrait."},{"heading":"Contacter l’assistance","body":"Utilisez le lien d’assistance App Store ou les coordonnées du développeur sur la fiche. Indiquez version macOS, version de l’app, format source, mode d’export et journaux disponibles."}]},"de":{"kicker":"Support","title":"VideoConvertShrink Support","subtitle":"Hilfe zu Stapelkonvertierung, Plattform-Presets, Videoexport, Audioextraktion und WebP/GIF-Animationsexport.","updated":"Supportseite aktualisiert: 21. Juni 2026","highlightsTitle":"Dabei helfen wir","highlights":["Stapelimport","Video-, Audio- und Animationsmodi","Lokale FFmpeg-Engine"],"sections":[{"heading":"Schnellstart","body":"Importieren Sie Videos, Audiodateien oder Ordner, wählen Sie Let App Choose oder ein Preset, prüfen Sie die geschätzte Ausgabegröße und starten Sie die Warteschlange."},{"heading":"Wichtige Exportmodi","body":"Video Export erstellt MP4 und andere Videoausgaben. Audio Only extrahiert oder konvertiert Ton. Animation Export erstellt WebP- oder GIF-Schleifen aus Videos."},{"heading":"Presets und Formate","body":"Nutzen Sie Presets für WeChat, Douyin, RedNote, Bilibili, YouTube und allgemeines Teilen oder passen Sie Größe, Codec, Qualität, Bildrate, Clip, Untertitel, Wasserzeichen und Audio an."},{"heading":"Fehlerbehebung","body":"Wenn eine Datei fehlschlägt, prüfen Sie die Lesbarkeit im Finder, wählen Sie einen beschreibbaren Ausgabeordner, aktualisieren Sie die Engine und exportieren Sie Diagnosen vor der Kontaktaufnahme."},{"heading":"Leistungstipps","body":"Auf unterstützten Macs beschleunigen Hardware-H.264 oder HEVC den Export. Für kleinere Dateien senken Sie Auflösung, Bildrate oder Qualität und testen zuerst einen kurzen Clip."},{"heading":"Support kontaktieren","body":"Nutzen Sie den App-Store-Supportlink oder die Entwicklerkontaktdaten im Store. Geben Sie macOS-Version, App-Version, Quellformat, Exportmodus und verfügbare Diagnoseprotokolle an."}]},"es":{"kicker":"Soporte","title":"Soporte de VideoConvertShrink","subtitle":"Ayuda para conversión por lotes, presets de plataformas, exportación de video, extracción de audio y exportación WebP/GIF.","updated":"Página de soporte actualizada: 21 de junio de 2026","highlightsTitle":"Podemos ayudar con","highlights":["Importación por lotes","Modos de video, audio y animación","Motor local basado en FFmpeg"],"sections":[{"heading":"Inicio rápido","body":"Importa videos, audios o carpetas, elige Let App Choose o un preset de plataforma, revisa el tamaño estimado y luego inicia la cola."},{"heading":"Modos principales","body":"Video Export crea MP4 y otros videos. Audio Only extrae o convierte sonido. Animation Export crea bucles WebP o GIF desde videos."},{"heading":"Presets y formatos","body":"Usa presets para WeChat, Douyin, RedNote, Bilibili, YouTube y uso general, o personaliza tamaño, códec, calidad, fotogramas, recorte, subtítulos, marca de agua y audio."},{"heading":"Solución de problemas","body":"Si un archivo falla, confirma que se pueda leer en Finder, elige una carpeta de salida escribible, actualiza el motor y exporta diagnósticos antes de contactar soporte."},{"heading":"Consejos de rendimiento","body":"En Macs compatibles, H.264 o HEVC por hardware puede acelerar la exportación. Para archivos más pequeños, baja resolución, fotogramas o calidad y prueba primero un clip corto."},{"heading":"Contactar soporte","body":"Usa el enlace de soporte de App Store o el contacto del desarrollador en la ficha. Incluye versión de macOS, versión de la app, formato fuente, modo de exportación y registros disponibles."}]},"it":{"kicker":"Supporto","title":"Supporto VideoConvertShrink","subtitle":"Aiuto per conversione batch, preset di piattaforma, esportazione video, estrazione audio ed esportazione WebP/GIF.","updated":"Pagina di supporto aggiornata: 21 giugno 2026","highlightsTitle":"Possiamo aiutare con","highlights":["Importazione batch","Modalità video, audio e animazione","Motore locale basato su FFmpeg"],"sections":[{"heading":"Primo avvio","body":"Importa video, audio o cartelle, scegli Let App Choose o un preset di piattaforma, controlla la dimensione stimata e avvia la coda."},{"heading":"Modalità principali","body":"Video Export crea MP4 e altri video. Audio Only estrae o converte l’audio. Animation Export crea loop WebP o GIF dai video."},{"heading":"Preset e formati","body":"Usa preset per WeChat, Douyin, RedNote, Bilibili, YouTube e condivisione generale, oppure personalizza dimensione, codec, qualità, frame rate, clip, sottotitoli, watermark e audio."},{"heading":"Risoluzione problemi","body":"Se un file fallisce, verifica che sia leggibile nel Finder, scegli una cartella di uscita scrivibile, aggiorna il motore ed esporta la diagnostica prima di contattare il supporto."},{"heading":"Suggerimenti prestazioni","body":"Su Mac supportati, H.264 o HEVC hardware può accelerare gli export. Per file più piccoli riduci risoluzione, frame rate o qualità e prova prima una clip breve."},{"heading":"Contatta il supporto","body":"Usa il link di supporto App Store o i contatti dello sviluppatore nella scheda. Includi versione macOS, versione app, formato sorgente, modalità di export e log disponibili."}]},"pt-BR":{"kicker":"Suporte","title":"Suporte do VideoConvertShrink","subtitle":"Ajuda para conversão em lote, predefinições de plataformas, exportação de vídeo, extração de áudio e exportação WebP/GIF.","updated":"Página de suporte atualizada: 21 de junho de 2026","highlightsTitle":"Podemos ajudar com","highlights":["Importação em lote","Modos de vídeo, áudio e animação","Motor local baseado em FFmpeg"],"sections":[{"heading":"Início rápido","body":"Importe vídeos, áudios ou pastas, escolha Let App Choose ou uma predefinição, confira o tamanho estimado e inicie a fila."},{"heading":"Modos principais","body":"Video Export cria MP4 e outros vídeos. Audio Only extrai ou converte som. Animation Export cria loops WebP ou GIF a partir de vídeos."},{"heading":"Predefinições e formatos","body":"Use predefinições para WeChat, Douyin, RedNote, Bilibili, YouTube e compartilhamento geral, ou personalize tamanho, codec, qualidade, taxa de quadros, corte, legendas, marca d’água e áudio."},{"heading":"Solução de problemas","body":"Se um arquivo falhar, confirme que ele abre no Finder, escolha uma pasta de saída gravável, atualize o motor e exporte diagnósticos antes de contatar o suporte."},{"heading":"Dicas de desempenho","body":"Em Macs compatíveis, H.264 ou HEVC por hardware pode acelerar exportações. Para arquivos menores, reduza resolução, quadros ou qualidade e teste antes com um clipe curto."},{"heading":"Contato com suporte","body":"Use o link de suporte da App Store ou o contato do desenvolvedor na página da loja. Inclua versão do macOS, versão do app, formato de origem, modo de exportação e logs disponíveis."}]},"ru":{"kicker":"Поддержка","title":"Поддержка VideoConvertShrink","subtitle":"Помощь с пакетной конвертацией, пресетами платформ, экспортом видео, извлечением аудио и экспортом WebP/GIF.","updated":"Страница поддержки обновлена: 21 июня 2026 г.","highlightsTitle":"Мы поможем с","highlights":["Пакетный импорт","Режимы видео, аудио и анимации","Локальный движок на базе FFmpeg"],"sections":[{"heading":"Быстрый старт","body":"Импортируйте видео, аудио или папки, выберите Let App Choose или пресет платформы, проверьте расчетный размер и запустите очередь."},{"heading":"Основные режимы","body":"Video Export создает MP4 и другие видео. Audio Only извлекает или конвертирует звук. Animation Export создает WebP или GIF из видео."},{"heading":"Пресеты и форматы","body":"Используйте пресеты для WeChat, Douyin, RedNote, Bilibili, YouTube и общего обмена либо настройте размер, кодек, качество, частоту кадров, клип, субтитры, водяной знак и аудио."},{"heading":"Устранение неполадок","body":"Если файл не обрабатывается, проверьте чтение в Finder, выберите папку вывода с правом записи, обновите движок и экспортируйте диагностику перед обращением."},{"heading":"Советы по скорости","body":"На поддерживаемых Mac аппаратный H.264 или HEVC может ускорить экспорт. Для меньшего размера снизьте разрешение, частоту кадров или качество и сначала проверьте короткий клип."},{"heading":"Связаться с поддержкой","body":"Используйте ссылку поддержки App Store или контакт разработчика на странице магазина. Укажите версию macOS, версию приложения, исходный формат, режим экспорта и доступные журналы."}]},"ar":{"kicker":"الدعم","title":"دعم VideoConvertShrink","subtitle":"مساعدة في التحويل الدفعي وإعدادات المنصات وتصدير الفيديو واستخراج الصوت وتصدير WebP/GIF.","updated":"تم تحديث صفحة الدعم: 21 يونيو 2026","highlightsTitle":"يمكننا المساعدة في","highlights":["استيراد دفعي","أوضاع الفيديو والصوت والرسوم المتحركة","محرك محلي مبني على FFmpeg"],"sections":[{"heading":"البدء السريع","body":"استورد مقاطع الفيديو أو الصوت أو المجلدات، واختر Let App Choose أو إعداد منصة، وراجع حجم الإخراج المتوقع، ثم ابدأ قائمة الانتظار."},{"heading":"أوضاع التصدير الأساسية","body":"ينشئ Video Export ملفات MP4 وغيرها. يستخرج Audio Only الصوت أو يحوله. ينشئ Animation Export حلقات WebP أو GIF من الفيديو."},{"heading":"الإعدادات والتنسيقات","body":"استخدم إعدادات WeChat وDouyin وRedNote وBilibili وYouTube والمشاركة العامة، أو خصص الحجم والترميز والجودة ومعدل الإطارات والقص والترجمات والعلامة المائية والصوت."},{"heading":"استكشاف الأخطاء","body":"إذا فشل ملف، تأكد من أنه قابل للقراءة في Finder، واختر مجلد إخراج قابلًا للكتابة، وحدّث محرك التحويل، وصدّر التشخيصات قبل التواصل مع الدعم."},{"heading":"نصائح الأداء","body":"على أجهزة Mac المدعومة، يمكن أن يسرع H.264 أو HEVC العتادي التصدير. للحصول على ملفات أصغر، خفّض الدقة أو معدل الإطارات أو الجودة وجرب مقطعًا قصيرًا أولًا."},{"heading":"الاتصال بالدعم","body":"استخدم رابط دعم App Store أو معلومات اتصال المطور في صفحة المتجر. أرسل إصدار macOS وإصدار التطبيق وتنسيق المصدر ووضع التصدير والسجلات المتاحة."}]},"hi":{"kicker":"सहायता","title":"VideoConvertShrink सहायता","subtitle":"बैच रूपांतरण, प्लेटफॉर्म प्रीसेट, वीडियो निर्यात, ऑडियो निकालने और WebP/GIF निर्यात में मदद पाएं।","updated":"सहायता पेज अपडेट: 21 जून 2026","highlightsTitle":"हम मदद कर सकते हैं","highlights":["बैच आयात वर्कफ़्लो","वीडियो, ऑडियो और एनीमेशन मोड","स्थानीय FFmpeg आधारित इंजन"],"sections":[{"heading":"त्वरित शुरुआत","body":"वीडियो, ऑडियो फाइलें या फ़ोल्डर आयात करें, Let App Choose या प्लेटफॉर्म प्रीसेट चुनें, अनुमानित आउटपुट आकार देखें और कतार शुरू करें।"},{"heading":"मुख्य निर्यात मोड","body":"Video Export MP4 और अन्य वीडियो बनाता है। Audio Only ध्वनि निकालता या बदलता है। Animation Export वीडियो से WebP या GIF लूप बनाता है।"},{"heading":"प्रीसेट और फॉर्मेट","body":"WeChat, Douyin, RedNote, Bilibili, YouTube और सामान्य शेयरिंग प्रीसेट प्रयोग करें, या आकार, कोडेक, गुणवत्ता, फ्रेम दर, क्लिप, सबटाइटल, वॉटरमार्क और ऑडियो अनुकूलित करें।"},{"heading":"समस्या समाधान","body":"यदि फाइल विफल हो, Finder में पढ़ने योग्य होने की जांच करें, लिखने योग्य आउटपुट फ़ोल्डर चुनें, इंजन रिफ्रेश करें और सहायता से पहले डायग्नोस्टिक निर्यात करें।"},{"heading":"प्रदर्शन सुझाव","body":"समर्थित Mac पर हार्डवेयर H.264 या HEVC निर्यात तेज कर सकता है। छोटी फाइल के लिए रिज़ॉल्यूशन, फ्रेम दर या गुणवत्ता घटाएं और पहले छोटा क्लिप आज़माएं।"},{"heading":"सहायता से संपर्क","body":"App Store समर्थन लिंक या स्टोर सूची के डेवलपर संपर्क का उपयोग करें। macOS संस्करण, ऐप संस्करण, स्रोत फॉर्मेट, निर्यात मोड और उपलब्ध लॉग शामिल करें।"}]},"id":{"kicker":"Dukungan","title":"Dukungan VideoConvertShrink","subtitle":"Bantuan untuk konversi batch, preset platform, ekspor video, ekstraksi audio, dan ekspor animasi WebP/GIF.","updated":"Halaman dukungan diperbarui: 21 Juni 2026","highlightsTitle":"Kami dapat membantu","highlights":["Alur impor batch","Mode video, audio, dan animasi","Mesin lokal berbasis FFmpeg"],"sections":[{"heading":"Mulai cepat","body":"Impor video, audio, atau folder, pilih Let App Choose atau preset platform, tinjau estimasi ukuran keluaran, lalu mulai antrean."},{"heading":"Mode ekspor inti","body":"Video Export membuat MP4 dan keluaran video lain. Audio Only mengekstrak atau mengonversi suara. Animation Export membuat loop WebP atau GIF dari video."},{"heading":"Preset dan format","body":"Gunakan preset untuk WeChat, Douyin, RedNote, Bilibili, YouTube dan berbagi umum, atau sesuaikan ukuran, codec, kualitas, frame rate, klip, subtitle, watermark, dan audio."},{"heading":"Pemecahan masalah","body":"Jika file gagal, pastikan file dapat dibaca di Finder, pilih folder keluaran yang dapat ditulis, segarkan mesin transkode, dan ekspor diagnostik sebelum menghubungi dukungan."},{"heading":"Tips performa","body":"Pada Mac yang mendukung, H.264 atau HEVC perangkat keras dapat mempercepat ekspor. Untuk file kecil, turunkan resolusi, frame rate, atau kualitas dan uji klip pendek terlebih dahulu."},{"heading":"Hubungi dukungan","body":"Gunakan tautan dukungan App Store atau kontak pengembang di halaman toko. Sertakan versi macOS, versi app, format sumber, mode ekspor, dan log bila tersedia."}]},"vi":{"kicker":"Hỗ trợ","title":"Hỗ trợ VideoConvertShrink","subtitle":"Trợ giúp về chuyển đổi hàng loạt, preset nền tảng, xuất video, trích âm thanh và xuất WebP/GIF.","updated":"Trang hỗ trợ cập nhật: 21 tháng 6, 2026","highlightsTitle":"Chúng tôi có thể hỗ trợ","highlights":["Quy trình nhập hàng loạt","Chế độ video, âm thanh và ảnh động","Bộ máy cục bộ dựa trên FFmpeg"],"sections":[{"heading":"Bắt đầu nhanh","body":"Nhập video, âm thanh hoặc thư mục, chọn Let App Choose hoặc preset nền tảng, xem kích thước ước tính rồi bắt đầu hàng đợi."},{"heading":"Chế độ xuất chính","body":"Video Export tạo MP4 và video khác. Audio Only trích hoặc chuyển đổi âm thanh. Animation Export tạo vòng lặp WebP hoặc GIF từ video."},{"heading":"Preset và định dạng","body":"Dùng preset cho WeChat, Douyin, RedNote, Bilibili, YouTube và chia sẻ chung, hoặc tùy chỉnh kích thước, codec, chất lượng, frame-rate, đoạn cắt, phụ đề, watermark và âm thanh."},{"heading":"Khắc phục sự cố","body":"Nếu tệp lỗi, hãy kiểm tra có đọc được trong Finder không, chọn thư mục xuất có quyền ghi, làm mới bộ máy chuyển mã và xuất chẩn đoán trước khi liên hệ hỗ trợ."},{"heading":"Mẹo hiệu năng","body":"Trên Mac hỗ trợ, H.264 hoặc HEVC phần cứng có thể tăng tốc xuất. Để giảm dung lượng, hạ độ phân giải, frame-rate hoặc chất lượng và thử trước với đoạn ngắn."},{"heading":"Liên hệ hỗ trợ","body":"Dùng liên kết hỗ trợ App Store hoặc thông tin nhà phát triển trên trang cửa hàng. Hãy kèm phiên bản macOS, phiên bản app, định dạng nguồn, chế độ xuất và nhật ký nếu có."}]},"th":{"kicker":"การสนับสนุน","title":"ฝ่ายสนับสนุน VideoConvertShrink","subtitle":"รับความช่วยเหลือเกี่ยวกับการแปลงเป็นชุด พรีเซ็ตแพลตฟอร์ม ส่งออกวิดีโอ ดึงเสียง และส่งออก WebP/GIF","updated":"อัปเดตหน้าสนับสนุน: 21 มิถุนายน 2026","highlightsTitle":"เราช่วยได้เรื่อง","highlights":["เวิร์กโฟลว์นำเข้าเป็นชุด","โหมดวิดีโอ เสียง และแอนิเมชัน","เอนจินภายในเครื่องที่ใช้ FFmpeg"],"sections":[{"heading":"เริ่มต้นอย่างรวดเร็ว","body":"นำเข้าวิดีโอ ไฟล์เสียง หรือโฟลเดอร์ เลือก Let App Choose หรือพรีเซ็ตแพลตฟอร์ม ตรวจสอบขนาดที่คาดไว้ แล้วเริ่มคิว"},{"heading":"โหมดส่งออกหลัก","body":"Video Export สร้าง MP4 และวิดีโออื่น Audio Only ดึงหรือแปลงเสียง Animation Export สร้างลูป WebP หรือ GIF จากวิดีโอ"},{"heading":"พรีเซ็ตและรูปแบบ","body":"ใช้พรีเซ็ตสำหรับ WeChat, Douyin, RedNote, Bilibili, YouTube และการแชร์ทั่วไป หรือปรับขนาด โค้ดեկ คุณภาพ เฟรมเรต คลิป คำบรรยาย ลายน้ำ และเสียงเอง"},{"heading":"แก้ปัญหา","body":"หากไฟล์ล้มเหลว ให้ตรวจสอบว่าอ่านได้ใน Finder เลือกโฟลเดอร์ส่งออกที่เขียนได้ รีเฟรชเอนจิน และส่งออกข้อมูลวินิจฉัยก่อนติดต่อฝ่ายสนับสนุน"},{"heading":"เคล็ดลับประสิทธิภาพ","body":"บน Mac ที่รองรับ H.264 หรือ HEVC แบบฮาร์ดแวร์ช่วยให้ส่งออกเร็วขึ้น หากต้องการไฟล์เล็ก ให้ลดความละเอียด เฟรมเรต หรือคุณภาพ และทดสอบด้วยคลิปสั้นก่อน"},{"heading":"ติดต่อฝ่ายสนับสนุน","body":"ใช้ลิงก์สนับสนุนใน App Store หรือข้อมูลติดต่อผู้พัฒนาบนหน้าร้าน โปรดแนบเวอร์ชัน macOS เวอร์ชันแอป รูปแบบต้นฉบับ โหมดส่งออก และบันทึกที่มี"}]}};
+const selector = document.getElementById('languageSelector');
+
+function browserLanguage() {
+  const raw = (navigator.language || 'en').toLowerCase();
+  if (raw.startsWith('zh-tw') || raw.startsWith('zh-hk') || raw.startsWith('zh-mo')) return 'zh-Hant';
+  if (raw.startsWith('zh')) return 'zh-Hans';
+  if (raw.startsWith('pt')) return 'pt-BR';
+  const two = raw.slice(0, 2);
+  return languageOrder.includes(two) ? two : 'en';
+}
+
+function escapeHtml(value) {
+  return String(value).replace(/[&<>'"]/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[char]));
+}
+
+function renderLanguage(lang) {
+  if (!content[lang]) lang = 'en';
+  const data = content[lang];
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+  document.title = data.title;
+  document.querySelector('[data-eyebrow]').textContent = data.kicker;
+  document.querySelector('[data-title]').textContent = data.title;
+  document.querySelector('[data-subtitle]').textContent = data.subtitle;
+  document.querySelector('[data-updated]').textContent = data.updated;
+  document.querySelector('[data-summary-title]').textContent = data.highlightsTitle;
+  document.querySelector('[data-aside-title]').textContent = data.highlightsTitle;
+  document.querySelector('[data-aside-meta]').textContent = data.subtitle;
+  document.getElementById('summaryGrid').innerHTML = data.highlights
+    .map(item => `<article class="summary-card">${escapeHtml(item)}</article>`)
+    .join('');
+  document.getElementById('sectionList').innerHTML = data.sections
+    .map((section, index) => `<article class="section-card"><span class="section-index">${String(index + 1).padStart(2, '0')}</span><div><h2>${escapeHtml(section.heading)}</h2><p>${escapeHtml(section.body)}</p></div></article>`)
+    .join('');
+  selector.value = lang;
+  try { localStorage.setItem('videoconvertshrink-page-language', lang); } catch (_) {}
+}
+
+selector.innerHTML = languageOrder.map(code => `<option value="${code}">${languageNames[code]}</option>`).join('');
+selector.addEventListener('change', event => renderLanguage(event.target.value));
+let initial = 'en';
+try { initial = localStorage.getItem('videoconvertshrink-page-language') || browserLanguage(); } catch (_) { initial = browserLanguage(); }
+renderLanguage(initial);
+</script>
+</body>
+</html>

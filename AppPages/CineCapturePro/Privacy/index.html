@@ -1,114 +1,434 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-Hans">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CineCapture Pro Privacy Policy</title>
-  <meta name="description" content="Privacy policy for CineCapture Pro, a professional macOS recording studio.">
-  <style>
+  <title>CineCapturePro Privacy Policy 隐私政策</title>
+  <meta name="description" content="CineCapturePro Privacy Policy. CineCapturePro is a local-first macOS recording studio with no advertising SDKs, no tracking, and no developer-operated cloud collection.">
+  <style type="text/css">
     :root {
       color-scheme: dark light;
-      --bg0: #07090d;
-      --bg1: #111827;
-      --panel: rgba(15, 23, 42, 0.78);
+      --bg: #08111c;
+      --panel: rgba(13, 20, 32, 0.80);
+      --panel-strong: rgba(17, 27, 42, 0.94);
       --text: #f8fafc;
       --muted: #cbd5e1;
+      --quiet: #94a3b8;
       --line: rgba(148, 163, 184, 0.24);
       --accent: #38bdf8;
-      --accent2: #fb7185;
+      --accent-2: #8df5c5;
+      --warning: #f8c35b;
+      --shadow: rgba(0, 0, 0, 0.34);
     }
+
     @media (prefers-color-scheme: light) {
       :root {
-        --bg0: #f8fafc;
-        --bg1: #e2e8f0;
-        --panel: rgba(255, 255, 255, 0.82);
+        --bg: #f7fbff;
+        --panel: rgba(255, 255, 255, 0.86);
+        --panel-strong: rgba(255, 255, 255, 0.96);
         --text: #0f172a;
-        --muted: #475569;
-        --line: rgba(51, 65, 85, 0.18);
+        --muted: #334155;
+        --quiet: #64748b;
+        --line: rgba(15, 23, 42, 0.14);
         --accent: #0284c7;
-        --accent2: #e11d48;
+        --accent-2: #047857;
+        --warning: #b7791f;
+        --shadow: rgba(15, 23, 42, 0.12);
       }
     }
+
     * { box-sizing: border-box; }
+
     body {
       margin: 0;
       min-height: 100vh;
       font-family: Inter, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
-      line-height: 1.66;
+      line-height: 1.65;
       color: var(--text);
       background:
-        radial-gradient(circle at 12% 0%, color-mix(in srgb, var(--accent) 28%, transparent), transparent 34rem),
-        radial-gradient(circle at 92% 12%, color-mix(in srgb, var(--accent2) 18%, transparent), transparent 30rem),
-        linear-gradient(135deg, var(--bg0), var(--bg1));
+        radial-gradient(circle at 14% 0%, rgba(56, 189, 248, 0.24), transparent 34rem),
+        radial-gradient(circle at 92% 8%, rgba(141, 245, 197, 0.15), transparent 30rem),
+        linear-gradient(135deg, var(--bg), #101827 54%, #07111d);
     }
-    .page { width: min(900px, calc(100% - 40px)); margin: 0 auto; padding: 56px 0; }
+
+    @media (prefers-color-scheme: light) {
+      body {
+        background:
+          radial-gradient(circle at 14% 0%, rgba(2, 132, 199, 0.16), transparent 34rem),
+          radial-gradient(circle at 92% 8%, rgba(4, 120, 87, 0.10), transparent 30rem),
+          linear-gradient(135deg, #f7fbff, #edf6fb 54%, #f8fafc);
+      }
+    }
+
+    .page {
+      width: min(960px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 56px 0;
+    }
+
     .document {
-      padding: clamp(24px, 5vw, 50px);
+      position: relative;
+      padding: clamp(24px, 5vw, 52px);
       border: 1px solid var(--line);
-      border-radius: 18px;
+      border-radius: 24px;
       background: var(--panel);
-      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
-      backdrop-filter: blur(22px);
+      box-shadow: 0 28px 90px var(--shadow);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
     }
+
+    .language {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+
+    select {
+      max-width: 170px;
+      padding: 7px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--text);
+      background: var(--panel-strong);
+      font: inherit;
+      font-size: 0.92rem;
+    }
+
     h1, h2 { line-height: 1.15; letter-spacing: 0; }
-    h1 { margin: 0 0 10px; font-size: clamp(2.1rem, 5vw, 3.6rem); font-weight: 700; }
-    h2 { margin: 34px 0 10px; font-size: 1.18rem; font-weight: 700; }
+    h1 {
+      margin: 0 0 10px;
+      padding-right: 190px;
+      font-size: clamp(2.1rem, 5vw, 3.6rem);
+      font-weight: 760;
+    }
+    h2 { margin: 34px 0 10px; font-size: 1.18rem; font-weight: 720; }
     p, li { color: var(--muted); font-size: 1rem; }
     ul { padding-left: 1.25rem; }
     a { color: var(--accent); }
-    .eyebrow { margin: 0 0 26px; color: var(--accent); font-weight: 700; }
-    .updated { margin-top: 0; color: var(--muted); font-size: 0.95rem; }
+    code { color: var(--warning); }
+    .eyebrow { margin: 0 0 26px; color: var(--accent); font-weight: 700; padding-right: 190px; }
+    .updated { margin-top: 0; color: var(--quiet); font-size: 0.95rem; }
+    .notice {
+      margin: 24px 0;
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--panel-strong);
+    }
+    .checks {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin: 22px 0;
+    }
+    .check {
+      padding: 13px 14px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.045);
+    }
+    .check strong { display: block; color: var(--accent-2); }
+
+    @media (max-width: 640px) {
+      .language { position: static; margin: 0 0 24px; }
+      h1, .eyebrow { padding-right: 0; }
+      select { width: 100%; max-width: none; }
+    }
   </style>
 </head>
 <body>
-  <main class="page">
-    <article class="document">
-      <p class="eyebrow">CineCapture Pro for macOS</p>
-      <h1>Privacy Policy</h1>
-      <p class="updated">Last updated: May 27, 2026</p>
+  <div class="page">
+    <main class="document">
+      <div class="language">
+        <select id="language-select" aria-label="选择语言">
+          <option value="zh-Hans">简体中文</option>
+          <option value="zh-Hant">繁體中文</option>
+          <option value="en">English</option>
+        </select>
+      </div>
 
-      <p>CineCapture Pro is a professional macOS recording studio for screen, window, app, audio, camera, editing, export, and creator workflow tasks. The app is designed as a local-first Mac application.</p>
+      <p class="eyebrow" data-i18n="eyebrow">CineCapturePro for macOS</p>
+      <h1 data-i18n="title">隐私政策</h1>
+      <p class="updated" data-i18n="updated">最后更新：2026 年 6 月 21 日</p>
 
-      <h2>Data We Collect</h2>
-      <p>CineCapture Pro does not collect personal data through a hosted service. The app does not require account sign-in, does not include advertising SDKs, and does not include third-party tracking SDKs.</p>
+      <p data-i18n="intro">CineCapturePro 是一款面向 macOS 的本地优先录制工作室，用于屏幕录制、窗口和 App 采集、系统声音、麦克风、摄像头画中画、录制素材库、字幕草稿、章节、导出和工作区归档。</p>
 
-      <h2>Data Stored Locally on Your Mac</h2>
-      <p>To provide recording and creator workflow features, CineCapture Pro may store local app data on your Mac, including:</p>
-      <ul>
-        <li>Recording settings, presets, theme settings, output folder preferences, and capture configuration.</li>
-        <li>Recent recording library metadata, thumbnails, tags, sidecar JSON files, subtitles, insight drafts, export records, and diagnostic reports.</li>
-        <li>Local plugin manifests and local workspace archives that you create or install.</li>
+      <div class="notice">
+        <p data-i18n="summary"><strong>摘要：</strong>CineCapturePro 不需要账号，不包含广告 SDK，不包含第三方追踪 SDK，也不会把你的录制内容上传到开发者运营的服务器。录制、导出、缩略图、字幕和素材库数据默认保存在你的 Mac 本地。</p>
+      </div>
+
+      <div class="checks">
+        <div class="check"><strong data-i18n="checkLocalTitle">本地优先</strong><span data-i18n="checkLocalBody">录制和素材库保存在你的 Mac 上。</span></div>
+        <div class="check"><strong data-i18n="checkTrackingTitle">无追踪</strong><span data-i18n="checkTrackingBody">不用于广告追踪或跨 App 追踪。</span></div>
+        <div class="check"><strong data-i18n="checkCloudTitle">无默认云上传</strong><span data-i18n="checkCloudBody">不会自动上传录制内容。</span></div>
+      </div>
+
+      <h2 data-i18n="collectTitle">我们收集的数据</h2>
+      <p data-i18n="collectBody">当前版本的 CineCapturePro 不会通过开发者运营的在线服务收集、上传、出售或共享个人数据。应用不提供开发者账号系统、云同步、广告、第三方分析、崩溃上报 SDK 或第三方追踪 SDK。</p>
+
+      <h2 data-i18n="localTitle">保存在 Mac 本地的数据</h2>
+      <p data-i18n="localIntro">为了提供核心录制和后期工作流，CineCapturePro 可能在你的 Mac 本地保存或处理以下数据：</p>
+      <ul id="local-list">
+        <li>录制设置、预设、语言、主题、输出文件夹、安全作用域书签和窗口状态。</li>
+        <li>录制视频、音频轨道、系统声音、麦克风音频、摄像头画面和画中画合成结果。</li>
+        <li>录制素材库记录、缩略图、标签、文件大小、时长、编码格式、分辨率、帧率、HDR 状态和 sidecar JSON 元数据。</li>
+        <li>用户创建或导出的字幕草稿、章节、回看笔记、导出记录、诊断报告和工作区归档。</li>
+        <li>本地工作流配置文件或插件清单。当前版本只把这些文件作为本地 JSON 元数据读取，不加载可执行插件代码。</li>
+        <li>录制恢复标记，用于在异常退出后提示用户处理未完成的录制。</li>
       </ul>
-      <p>These files remain on your Mac unless you choose to move, export, share, or upload them using another tool.</p>
+      <p data-i18n="localEnd">这些数据用于在你的设备上提供录制、管理、恢复和导出功能。除非你主动通过 Finder、邮件、浏览器、云盘或其他工具分享这些文件，否则它们不会发送给我们。</p>
 
-      <h2>Screen, Camera, Microphone, and Accessibility Permissions</h2>
-      <p>CineCapture Pro uses Apple system permissions only for app features you choose to use:</p>
-      <ul>
-        <li>Screen Recording permission is used to capture displays, windows, and apps.</li>
-        <li>Microphone permission is used for voice recording and audio meters.</li>
-        <li>Camera permission is used for camera preview and picture-in-picture workflows.</li>
-        <li>Accessibility permission may be used for advanced shortcuts and keyboard overlay features.</li>
+      <h2 data-i18n="permissionsTitle">系统权限</h2>
+      <p data-i18n="permissionsIntro">CineCapturePro 只在你使用相关功能时请求 Apple 系统权限：</p>
+      <ul id="permissions-list">
+        <li><strong>Screen Recording</strong>：用于采集显示器、窗口、App、区域录制和系统声音相关工作流。</li>
+        <li><strong>Microphone</strong>：用于录制旁白、麦克风音轨、音频电平和多音轨录制。</li>
+        <li><strong>Camera</strong>：用于摄像头预览、摄像头录制和画中画叠加。</li>
+        <li><strong>Input Monitoring</strong>：用于全局快捷键、键盘操作监听和按键叠加显示。</li>
+        <li><strong>Files and Folders</strong>：用于访问你选择的输出目录、录制文件、导出目标和工作区归档位置。</li>
       </ul>
-      <p>These permissions do not send your recordings or device content to us.</p>
+      <p data-i18n="permissionsEnd">授予这些权限不会把你的屏幕、摄像头、麦克风、键盘输入或文件内容发送给开发者。你可以在 macOS 系统设置中撤销这些权限。</p>
 
-      <h2>Recordings and Exports</h2>
-      <p>Your videos, audio tracks, thumbnails, subtitles, exports, and archive files are saved to folders on your Mac that you select or that macOS provides, such as the Movies folder. CineCapture Pro does not automatically upload recordings.</p>
+      <h2 data-i18n="recordingsTitle">录制内容和导出</h2>
+      <p data-i18n="recordingsBody">录制文件、音频轨道、缩略图、字幕、导出文件和归档文件会保存到你选择的位置，或保存到 macOS 提供的本地文件夹，例如 Movies 文件夹。CineCapturePro 不会自动上传这些内容，也不会通过开发者服务器代理这些内容。</p>
 
-      <h2>AI and Draft Workflow Features</h2>
-      <p>The current app can create local draft transcript, chapter, highlight, and insight files. If a future version adds optional online AI services, that feature will be clearly disclosed before use and this policy will be updated.</p>
+      <h2 data-i18n="diagnosticsTitle">诊断、性能和 Required Reason API</h2>
+      <p data-i18n="diagnosticsBody">应用会在本地读取必要的系统信息来完成录制准备检查和性能显示，例如可用磁盘空间、文件时间戳、应用偏好、录制计时和预览节流。这些用途与应用的 PrivacyInfo.xcprivacy 隐私清单一致，仅用于本地功能，不用于追踪。</p>
 
-      <h2>Data Deletion</h2>
-      <p>You can delete recordings, sidecar files, exports, subtitle files, insight files, plugin manifests, and workspace archives from Finder. You can also remove recent library records from inside the app.</p>
+      <h2 data-i18n="aiTitle">字幕、笔记和未来在线功能</h2>
+      <p data-i18n="aiBody">当前版本的字幕草稿、章节、摘要、回看笔记和工作区归档按本地文件处理。若未来版本增加可选的在线 AI、转写、云同步、团队协作或上传服务，我们会在发布前更新本政策、App Store 隐私声明和应用内说明，并在功能使用前清楚告知用户。</p>
 
-      <h2>Children's Privacy</h2>
-      <p>CineCapture Pro is a professional productivity and creator utility. It is not directed to children and does not knowingly collect information from children.</p>
+      <h2 data-i18n="supportTitle">支持请求</h2>
+      <p data-i18n="supportBody">如果你通过邮件联系我们获取支持，我们会收到你主动提供的信息，例如邮箱地址、问题描述、截图、日志或诊断详情。请不要发送密码、私人密钥、敏感录制内容、机密屏幕截图或不希望我们查看的文件。支持信息仅用于回复你的请求。</p>
 
-      <h2>Changes to This Policy</h2>
-      <p>If this policy changes, the updated version will be posted on this page with a revised update date.</p>
+      <h2 data-i18n="sharingTitle">第三方服务和用户主动分享</h2>
+      <p data-i18n="sharingBody">当前版本不包含广告网络、第三方分析 SDK、社交登录、支付 SDK、云同步或远程工作流服务。若你把录制文件、导出文件或诊断信息保存到第三方云盘、发送给他人、上传到网站或导入其他 App，该处理行为受你选择的第三方服务或工具的政策约束。</p>
 
-      <h2>Contact</h2>
-      <p>If you have questions about this privacy policy, contact <a href="mailto:kibernet@sina.com">kibernet@sina.com</a>.</p>
-    </article>
-  </main>
+      <h2 data-i18n="deleteTitle">数据删除和保留</h2>
+      <p data-i18n="deleteBody">你可以在 CineCapturePro 中移除素材库记录，也可以在 Finder 中删除录制文件、sidecar JSON、缩略图、字幕、导出文件、工作区归档和本地工作流配置。卸载应用会移除应用本体，但用户保存到输出文件夹或其他位置的录制和导出文件会保留，直到你自行删除。</p>
+
+      <h2 data-i18n="childrenTitle">儿童隐私</h2>
+      <p data-i18n="childrenBody">CineCapturePro 是面向创作者、教育、产品演示和专业录制工作流的生产力工具，不面向儿童。应用不会 knowingly 收集儿童或任何其他用户的信息。</p>
+
+      <h2 data-i18n="changesTitle">政策变更</h2>
+      <p data-i18n="changesBody">如果本政策发生变更，更新后的版本会发布在本页面，并更新日期。如果未来功能改变数据处理方式，我们会在提交相应版本前更新本政策和 App Store Connect 隐私信息。</p>
+
+      <h2 data-i18n="contactTitle">联系我们</h2>
+      <p data-i18n="contactBody">如对本隐私政策有疑问，请通过 <a href="mailto:kibernet@sina.com">kibernet@sina.com</a> 联系我们。</p>
+    </main>
+  </div>
+
+  <script>
+    const translations = {
+      "zh-Hans": {
+        "docTitle": "CineCapturePro Privacy Policy 隐私政策",
+        "selectLabel": "选择语言",
+        "eyebrow": "CineCapturePro for macOS",
+        "title": "隐私政策",
+        "updated": "最后更新：2026 年 6 月 21 日",
+        "intro": "CineCapturePro 是一款面向 macOS 的本地优先录制工作室，用于屏幕录制、窗口和 App 采集、系统声音、麦克风、摄像头画中画、录制素材库、字幕草稿、章节、导出和工作区归档。",
+        "summary": "<strong>摘要：</strong>CineCapturePro 不需要账号，不包含广告 SDK，不包含第三方追踪 SDK，也不会把你的录制内容上传到开发者运营的服务器。录制、导出、缩略图、字幕和素材库数据默认保存在你的 Mac 本地。",
+        "checkLocalTitle": "本地优先",
+        "checkLocalBody": "录制和素材库保存在你的 Mac 上。",
+        "checkTrackingTitle": "无追踪",
+        "checkTrackingBody": "不用于广告追踪或跨 App 追踪。",
+        "checkCloudTitle": "无默认云上传",
+        "checkCloudBody": "不会自动上传录制内容。",
+        "collectTitle": "我们收集的数据",
+        "collectBody": "当前版本的 CineCapturePro 不会通过开发者运营的在线服务收集、上传、出售或共享个人数据。应用不提供开发者账号系统、云同步、广告、第三方分析、崩溃上报 SDK 或第三方追踪 SDK。",
+        "localTitle": "保存在 Mac 本地的数据",
+        "localIntro": "为了提供核心录制和后期工作流，CineCapturePro 可能在你的 Mac 本地保存或处理以下数据：",
+        "localList": [
+          "录制设置、预设、语言、主题、输出文件夹、安全作用域书签和窗口状态。",
+          "录制视频、音频轨道、系统声音、麦克风音频、摄像头画面和画中画合成结果。",
+          "录制素材库记录、缩略图、标签、文件大小、时长、编码格式、分辨率、帧率、HDR 状态和 sidecar JSON 元数据。",
+          "用户创建或导出的字幕草稿、章节、回看笔记、导出记录、诊断报告和工作区归档。",
+          "本地工作流配置文件或插件清单。当前版本只把这些文件作为本地 JSON 元数据读取，不加载可执行插件代码。",
+          "录制恢复标记，用于在异常退出后提示用户处理未完成的录制。"
+        ],
+        "localEnd": "这些数据用于在你的设备上提供录制、管理、恢复和导出功能。除非你主动通过 Finder、邮件、浏览器、云盘或其他工具分享这些文件，否则它们不会发送给我们。",
+        "permissionsTitle": "系统权限",
+        "permissionsIntro": "CineCapturePro 只在你使用相关功能时请求 Apple 系统权限：",
+        "permissionsList": [
+          "<strong>Screen Recording</strong>：用于采集显示器、窗口、App、区域录制和系统声音相关工作流。",
+          "<strong>Microphone</strong>：用于录制旁白、麦克风音轨、音频电平和多音轨录制。",
+          "<strong>Camera</strong>：用于摄像头预览、摄像头录制和画中画叠加。",
+          "<strong>Input Monitoring</strong>：用于全局快捷键、键盘操作监听和按键叠加显示。",
+          "<strong>Files and Folders</strong>：用于访问你选择的输出目录、录制文件、导出目标和工作区归档位置。"
+        ],
+        "permissionsEnd": "授予这些权限不会把你的屏幕、摄像头、麦克风、键盘输入或文件内容发送给开发者。你可以在 macOS 系统设置中撤销这些权限。",
+        "recordingsTitle": "录制内容和导出",
+        "recordingsBody": "录制文件、音频轨道、缩略图、字幕、导出文件和归档文件会保存到你选择的位置，或保存到 macOS 提供的本地文件夹，例如 Movies 文件夹。CineCapturePro 不会自动上传这些内容，也不会通过开发者服务器代理这些内容。",
+        "diagnosticsTitle": "诊断、性能和 Required Reason API",
+        "diagnosticsBody": "应用会在本地读取必要的系统信息来完成录制准备检查和性能显示，例如可用磁盘空间、文件时间戳、应用偏好、录制计时和预览节流。这些用途与应用的 PrivacyInfo.xcprivacy 隐私清单一致，仅用于本地功能，不用于追踪。",
+        "aiTitle": "字幕、笔记和未来在线功能",
+        "aiBody": "当前版本的字幕草稿、章节、摘要、回看笔记和工作区归档按本地文件处理。若未来版本增加可选的在线 AI、转写、云同步、团队协作或上传服务，我们会在发布前更新本政策、App Store 隐私声明和应用内说明，并在功能使用前清楚告知用户。",
+        "supportTitle": "支持请求",
+        "supportBody": "如果你通过邮件联系我们获取支持，我们会收到你主动提供的信息，例如邮箱地址、问题描述、截图、日志或诊断详情。请不要发送密码、私人密钥、敏感录制内容、机密屏幕截图或不希望我们查看的文件。支持信息仅用于回复你的请求。",
+        "sharingTitle": "第三方服务和用户主动分享",
+        "sharingBody": "当前版本不包含广告网络、第三方分析 SDK、社交登录、支付 SDK、云同步或远程工作流服务。若你把录制文件、导出文件或诊断信息保存到第三方云盘、发送给他人、上传到网站或导入其他 App，该处理行为受你选择的第三方服务或工具的政策约束。",
+        "deleteTitle": "数据删除和保留",
+        "deleteBody": "你可以在 CineCapturePro 中移除素材库记录，也可以在 Finder 中删除录制文件、sidecar JSON、缩略图、字幕、导出文件、工作区归档和本地工作流配置。卸载应用会移除应用本体，但用户保存到输出文件夹或其他位置的录制和导出文件会保留，直到你自行删除。",
+        "childrenTitle": "儿童隐私",
+        "childrenBody": "CineCapturePro 是面向创作者、教育、产品演示和专业录制工作流的生产力工具，不面向儿童。应用不会 knowingly 收集儿童或任何其他用户的信息。",
+        "changesTitle": "政策变更",
+        "changesBody": "如果本政策发生变更，更新后的版本会发布在本页面，并更新日期。如果未来功能改变数据处理方式，我们会在提交相应版本前更新本政策和 App Store Connect 隐私信息。",
+        "contactTitle": "联系我们",
+        "contactBody": "如对本隐私政策有疑问，请通过 <a href=\"mailto:kibernet@sina.com\">kibernet@sina.com</a> 联系我们。"
+      },
+      "zh-Hant": {
+        "docTitle": "CineCapturePro Privacy Policy 隱私政策",
+        "selectLabel": "選擇語言",
+        "eyebrow": "CineCapturePro for macOS",
+        "title": "隱私政策",
+        "updated": "最後更新：2026 年 6 月 21 日",
+        "intro": "CineCapturePro 是一款面向 macOS 的本機優先錄製工作室，用於螢幕錄製、視窗和 App 擷取、系統聲音、麥克風、相機畫中畫、錄製素材庫、字幕草稿、章節、匯出和工作區封存。",
+        "summary": "<strong>摘要：</strong>CineCapturePro 不需要帳號，不包含廣告 SDK，不包含第三方追蹤 SDK，也不會把你的錄製內容上傳到開發者營運的伺服器。錄製、匯出、縮圖、字幕和素材庫資料預設保存在你的 Mac 本機。",
+        "checkLocalTitle": "本機優先",
+        "checkLocalBody": "錄製和素材庫保存在你的 Mac 上。",
+        "checkTrackingTitle": "無追蹤",
+        "checkTrackingBody": "不用於廣告追蹤或跨 App 追蹤。",
+        "checkCloudTitle": "無預設雲端上傳",
+        "checkCloudBody": "不會自動上傳錄製內容。",
+        "collectTitle": "我們收集的資料",
+        "collectBody": "目前版本的 CineCapturePro 不會透過開發者營運的線上服務收集、上傳、出售或共享個人資料。應用程式不提供開發者帳號系統、雲端同步、廣告、第三方分析、崩潰回報 SDK 或第三方追蹤 SDK。",
+        "localTitle": "保存在 Mac 本機的資料",
+        "localIntro": "為了提供核心錄製和後期工作流程，CineCapturePro 可能在你的 Mac 本機保存或處理以下資料：",
+        "localList": [
+          "錄製設定、預設、語言、主題、輸出資料夾、安全範圍書籤和視窗狀態。",
+          "錄製影片、音訊軌道、系統聲音、麥克風音訊、相機畫面和畫中畫合成結果。",
+          "錄製素材庫記錄、縮圖、標籤、檔案大小、時長、編碼格式、解析度、影格率、HDR 狀態和 sidecar JSON 中繼資料。",
+          "使用者建立或匯出的字幕草稿、章節、回看筆記、匯出記錄、診斷報告和工作區封存。",
+          "本機工作流程設定檔或外掛清單。目前版本只把這些檔案作為本機 JSON 中繼資料讀取，不載入可執行外掛程式碼。",
+          "錄製恢復標記，用於在異常退出後提示使用者處理未完成的錄製。"
+        ],
+        "localEnd": "這些資料用於在你的裝置上提供錄製、管理、恢復和匯出功能。除非你主動透過 Finder、郵件、瀏覽器、雲端硬碟或其他工具分享這些檔案，否則它們不會傳送給我們。",
+        "permissionsTitle": "系統權限",
+        "permissionsIntro": "CineCapturePro 只在你使用相關功能時請求 Apple 系統權限：",
+        "permissionsList": [
+          "<strong>Screen Recording</strong>：用於擷取顯示器、視窗、App、區域錄製和系統聲音相關工作流程。",
+          "<strong>Microphone</strong>：用於錄製旁白、麥克風音軌、音訊電平和多音軌錄製。",
+          "<strong>Camera</strong>：用於相機預覽、相機錄製和畫中畫疊加。",
+          "<strong>Input Monitoring</strong>：用於全域快速鍵、鍵盤操作監聽和按鍵疊加顯示。",
+          "<strong>Files and Folders</strong>：用於存取你選擇的輸出目錄、錄製檔案、匯出目標和工作區封存位置。"
+        ],
+        "permissionsEnd": "授予這些權限不會把你的螢幕、相機、麥克風、鍵盤輸入或檔案內容傳送給開發者。你可以在 macOS 系統設定中撤銷這些權限。",
+        "recordingsTitle": "錄製內容和匯出",
+        "recordingsBody": "錄製檔案、音訊軌道、縮圖、字幕、匯出檔案和封存檔案會保存到你選擇的位置，或保存到 macOS 提供的本機資料夾，例如 Movies 資料夾。CineCapturePro 不會自動上傳這些內容，也不會透過開發者伺服器代理這些內容。",
+        "diagnosticsTitle": "診斷、效能和 Required Reason API",
+        "diagnosticsBody": "應用程式會在本機讀取必要的系統資訊來完成錄製準備檢查和效能顯示，例如可用磁碟空間、檔案時間戳、應用程式偏好、錄製計時和預覽節流。這些用途與應用程式的 PrivacyInfo.xcprivacy 隱私清單一致，僅用於本機功能，不用於追蹤。",
+        "aiTitle": "字幕、筆記和未來線上功能",
+        "aiBody": "目前版本的字幕草稿、章節、摘要、回看筆記和工作區封存按本機檔案處理。若未來版本增加可選的線上 AI、轉寫、雲端同步、團隊協作或上傳服務，我們會在發布前更新本政策、App Store 隱私聲明和應用程式內說明，並在功能使用前清楚告知使用者。",
+        "supportTitle": "支援請求",
+        "supportBody": "如果你透過電子郵件聯絡我們取得支援，我們會收到你主動提供的資訊，例如電子郵件地址、問題描述、螢幕截圖、日誌或診斷詳情。請不要傳送密碼、私人金鑰、敏感錄製內容、機密螢幕截圖或不希望我們查看的檔案。支援資訊僅用於回覆你的請求。",
+        "sharingTitle": "第三方服務和使用者主動分享",
+        "sharingBody": "目前版本不包含廣告網路、第三方分析 SDK、社交登入、支付 SDK、雲端同步或遠端工作流程服務。若你把錄製檔案、匯出檔案或診斷資訊保存到第三方雲端硬碟、傳送給他人、上傳到網站或匯入其他 App，該處理行為受你選擇的第三方服務或工具的政策約束。",
+        "deleteTitle": "資料刪除和保留",
+        "deleteBody": "你可以在 CineCapturePro 中移除素材庫記錄，也可以在 Finder 中刪除錄製檔案、sidecar JSON、縮圖、字幕、匯出檔案、工作區封存和本機工作流程設定。卸載應用程式會移除應用程式本體，但使用者保存到輸出資料夾或其他位置的錄製和匯出檔案會保留，直到你自行刪除。",
+        "childrenTitle": "兒童隱私",
+        "childrenBody": "CineCapturePro 是面向創作者、教育、產品示範和專業錄製工作流程的生產力工具，不面向兒童。應用程式不會 knowingly 收集兒童或任何其他使用者的資訊。",
+        "changesTitle": "政策變更",
+        "changesBody": "如果本政策發生變更，更新後的版本會發布在本頁面，並更新日期。如果未來功能改變資料處理方式，我們會在提交相應版本前更新本政策和 App Store Connect 隱私資訊。",
+        "contactTitle": "聯絡我們",
+        "contactBody": "如對本隱私政策有疑問，請透過 <a href=\"mailto:kibernet@sina.com\">kibernet@sina.com</a> 聯絡我們。"
+      },
+      "en": {
+        "docTitle": "CineCapturePro Privacy Policy",
+        "selectLabel": "Choose language",
+        "eyebrow": "CineCapturePro for macOS",
+        "title": "Privacy Policy",
+        "updated": "Last updated: June 21, 2026",
+        "intro": "CineCapturePro is a local-first macOS recording studio for screen recording, window and app capture, system audio, microphone audio, camera picture-in-picture, recording library management, subtitle drafts, chapters, exports, and workspace archives.",
+        "summary": "<strong>Summary:</strong> CineCapturePro does not require an account, does not include advertising SDKs, does not include third-party tracking SDKs, and does not upload your recordings to developer-operated servers. Recordings, exports, thumbnails, subtitles, and library data are stored locally on your Mac by default.",
+        "checkLocalTitle": "Local-first",
+        "checkLocalBody": "Recordings and library data stay on your Mac.",
+        "checkTrackingTitle": "No tracking",
+        "checkTrackingBody": "No advertising tracking or cross-app tracking.",
+        "checkCloudTitle": "No default cloud upload",
+        "checkCloudBody": "Recordings are not uploaded automatically.",
+        "collectTitle": "Data We Collect",
+        "collectBody": "The current version of CineCapturePro does not collect, upload, sell, or share personal data through developer-operated online services. The app does not provide a developer account system, cloud sync, advertising, third-party analytics, crash-reporting SDKs, or third-party tracking SDKs.",
+        "localTitle": "Data Stored Locally on Your Mac",
+        "localIntro": "To provide recording and post-production workflows, CineCapturePro may store or process the following data locally on your Mac:",
+        "localList": [
+          "Recording settings, presets, language, theme, output folder, security-scoped bookmarks, and window state.",
+          "Recorded video, audio tracks, system audio, microphone audio, camera video, and picture-in-picture compositing output.",
+          "Recording library records, thumbnails, tags, file size, duration, codec, resolution, frame rate, HDR status, and sidecar JSON metadata.",
+          "User-created or exported subtitle drafts, chapters, review notes, export records, diagnostic reports, and workspace archives.",
+          "Local workflow profile files or manifest files. The current version reads these files only as local JSON metadata and does not load executable plugin code.",
+          "Recording recovery markers used to help you handle unfinished recordings after an unexpected quit."
+        ],
+        "localEnd": "This data is used to provide recording, management, recovery, and export features on your device. It is not sent to us unless you deliberately share those files through Finder, email, a browser, cloud storage, or another tool.",
+        "permissionsTitle": "System Permissions",
+        "permissionsIntro": "CineCapturePro requests Apple system permissions only when you use features that require them:",
+        "permissionsList": [
+          "<strong>Screen Recording</strong>: used to capture displays, windows, apps, regions, and workflows involving system audio.",
+          "<strong>Microphone</strong>: used for narration, microphone tracks, audio meters, and multi-track recording.",
+          "<strong>Camera</strong>: used for camera preview, camera recording, and picture-in-picture overlays.",
+          "<strong>Input Monitoring</strong>: used for global shortcuts, keyboard event monitoring, and keystroke overlay display.",
+          "<strong>Files and Folders</strong>: used to access output folders, recordings, export destinations, and workspace archive locations you choose."
+        ],
+        "permissionsEnd": "Granting these permissions does not send your screen, camera, microphone, keyboard input, or file contents to the developer. You can revoke these permissions in macOS System Settings.",
+        "recordingsTitle": "Recordings and Exports",
+        "recordingsBody": "Recordings, audio tracks, thumbnails, subtitles, exported files, and archive files are saved to locations you choose or to local folders provided by macOS, such as the Movies folder. CineCapturePro does not automatically upload these files and does not proxy them through developer-operated servers.",
+        "diagnosticsTitle": "Diagnostics, Performance, and Required Reason APIs",
+        "diagnosticsBody": "The app reads necessary system information locally for recording readiness checks and performance display, such as available disk space, file timestamps, app preferences, recording timers, and preview throttling. These uses align with the app's PrivacyInfo.xcprivacy privacy manifest and are used only for local app functionality, not tracking.",
+        "aiTitle": "Subtitles, Notes, and Future Online Features",
+        "aiBody": "In the current version, subtitle drafts, chapters, summaries, review notes, and workspace archives are handled as local files. If a future version adds optional online AI, transcription, cloud sync, team collaboration, or upload services, we will update this policy, App Store privacy disclosures, and in-app explanations before release, and clearly disclose the behavior before use.",
+        "supportTitle": "Support Requests",
+        "supportBody": "If you contact us by email for support, we receive the information you choose to send, such as your email address, issue description, screenshots, logs, or diagnostic details. Please do not send passwords, private keys, sensitive recordings, confidential screenshots, or files that you do not want us to review. Support information is used only to respond to your request.",
+        "sharingTitle": "Third-Party Services and User-Initiated Sharing",
+        "sharingBody": "The current version does not include advertising networks, third-party analytics SDKs, social login, payment SDKs, cloud sync, or remote workflow services. If you save recordings, exports, or diagnostic information to third-party cloud storage, send them to other people, upload them to websites, or import them into another app, that processing is governed by the third-party service or tool you choose.",
+        "deleteTitle": "Data Deletion and Retention",
+        "deleteBody": "You can remove library records inside CineCapturePro, and you can delete recordings, sidecar JSON, thumbnails, subtitles, exported files, workspace archives, and local workflow profiles in Finder. Uninstalling the app removes the app itself, but recordings and exports saved in output folders or other locations remain until you delete them.",
+        "childrenTitle": "Children's Privacy",
+        "childrenBody": "CineCapturePro is a productivity tool for creators, education, product demos, and professional recording workflows. It is not directed to children and does not knowingly collect information from children or any other users.",
+        "changesTitle": "Changes to This Policy",
+        "changesBody": "If this policy changes, the updated version will be posted on this page with a revised date. If future features change the way data is handled, we will update this policy and App Store Connect privacy information before submitting the corresponding version.",
+        "contactTitle": "Contact",
+        "contactBody": "If you have questions about this privacy policy, contact <a href=\"mailto:kibernet@sina.com\">kibernet@sina.com</a>."
+      }
+    };
+
+    const languageSelect = document.getElementById("language-select");
+
+    function setList(id, values) {
+      const list = document.getElementById(id);
+      list.innerHTML = "";
+      values.forEach((value) => {
+        const item = document.createElement("li");
+        item.innerHTML = value;
+        list.appendChild(item);
+      });
+    }
+
+    function applyLanguage(language) {
+      const table = translations[language] || translations["zh-Hans"];
+      document.documentElement.lang = language;
+      document.title = table.docTitle;
+      languageSelect.setAttribute("aria-label", table.selectLabel);
+      document.querySelectorAll("[data-i18n]").forEach((node) => {
+        const key = node.getAttribute("data-i18n");
+        if (Object.prototype.hasOwnProperty.call(table, key)) {
+          node.innerHTML = table[key];
+        }
+      });
+      setList("local-list", table.localList);
+      setList("permissions-list", table.permissionsList);
+      languageSelect.value = language;
+      localStorage.setItem("cinecapturepro-privacy-language", language);
+    }
+
+    languageSelect.addEventListener("change", (event) => applyLanguage(event.target.value));
+
+    const savedLanguage = localStorage.getItem("cinecapturepro-privacy-language");
+    const browserLanguage = navigator.language || "";
+    const initialLanguage =
+      savedLanguage ||
+      (browserLanguage.toLowerCase().startsWith("zh-hant") || browserLanguage === "zh-TW" || browserLanguage === "zh-HK" ? "zh-Hant" :
+       browserLanguage.toLowerCase().startsWith("zh") ? "zh-Hans" : "en");
+    applyLanguage(initialLanguage);
+  </script>
 </body>
 </html>

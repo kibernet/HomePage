@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VideoConvertShrink Age Rating Information</title>
+  <meta name="description" content="Age rating information for VideoConvertShrink, available in 16 mainstream languages.">
+  <meta name="apple-mobile-web-app-title" content="VideoConvertShrink">
+  <style>
+:root {
+  color-scheme: dark light;
+  --bg0: #07090d;
+  --bg1: #0f172a;
+  --panel: rgba(15, 23, 42, 0.78);
+  --panel-strong: rgba(15, 23, 42, 0.9);
+  --card: rgba(15, 23, 42, 0.58);
+  --text: #f8fafc;
+  --muted: #cbd5e1;
+  --subtle: #94a3b8;
+  --line: rgba(148, 163, 184, 0.24);
+  --accent: #f59e0b;
+  --accent2: #22d3ee;
+  --radius-lg: 28px;
+  --radius-md: 18px;
+  --shadow: 0 24px 80px rgba(0, 0, 0, 0.3);
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg0: #f8fafc;
+    --bg1: #e2e8f0;
+    --panel: rgba(255, 255, 255, 0.84);
+    --panel-strong: rgba(255, 255, 255, 0.94);
+    --card: rgba(248, 250, 252, 0.82);
+    --text: #0f172a;
+    --muted: #475569;
+    --subtle: #64748b;
+    --line: rgba(51, 65, 85, 0.18);
+    --shadow: 0 24px 80px rgba(15, 23, 42, 0.14);
+  }
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+  line-height: 1.66;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 13% 0%, color-mix(in srgb, var(--accent) 30%, transparent), transparent 34rem),
+    radial-gradient(circle at 92% 10%, color-mix(in srgb, var(--accent2) 20%, transparent), transparent 30rem),
+    linear-gradient(135deg, var(--bg0), var(--bg1));
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.045) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,0.62), transparent 76%);
+}
+.page {
+  position: relative;
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 44px 0 60px;
+}
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 20px;
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+.brand-mark {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background:
+    radial-gradient(circle at 30% 22%, rgba(255,255,255,0.65), transparent 22%),
+    linear-gradient(135deg, var(--accent), var(--accent2));
+  box-shadow: 0 16px 42px color-mix(in srgb, var(--accent) 34%, transparent);
+}
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.nav a,
+.language-select {
+  color: var(--text);
+  text-decoration: none;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--panel) 82%, transparent);
+  padding: 10px 14px;
+  font-size: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+.language-select {
+  appearance: auto;
+  min-width: 172px;
+}
+.document {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--panel);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(24px);
+}
+.hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(260px, 0.75fr);
+  gap: 34px;
+  padding: clamp(30px, 6vw, 58px);
+  border-bottom: 1px solid var(--line);
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  right: -120px;
+  top: -160px;
+  width: 420px;
+  height: 420px;
+  border-radius: 999px;
+  background: radial-gradient(circle, color-mix(in srgb, var(--accent) 26%, transparent), transparent 66%);
+  pointer-events: none;
+}
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 26px;
+  color: var(--accent);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+.eyebrow::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 18%, transparent);
+}
+h1,
+h2,
+h3 {
+  line-height: 1.12;
+  letter-spacing: -0.045em;
+}
+h1 {
+  margin: 0 0 18px;
+  max-width: 780px;
+  font-size: clamp(2.45rem, 6vw, 5.5rem);
+  font-weight: 850;
+}
+.subtitle {
+  max-width: 760px;
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(1.05rem, 2vw, 1.42rem);
+}
+.updated {
+  margin: 22px 0 0;
+  color: var(--subtle);
+  font-size: 0.96rem;
+}
+.hero-aside {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: color-mix(in srgb, var(--card) 86%, transparent);
+}
+.aside-title {
+  margin: 0;
+  color: var(--text);
+  font-size: 1.05rem;
+  font-weight: 800;
+}
+.aside-meta {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.96rem;
+}
+.language-count {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: end;
+  gap: 12px;
+  margin-top: 18px;
+}
+.language-count strong {
+  font-size: 3rem;
+  line-height: 0.9;
+  letter-spacing: -0.06em;
+}
+.language-count span {
+  color: var(--subtle);
+  font-size: 0.92rem;
+}
+.content-zone {
+  padding: clamp(24px, 5vw, 48px);
+}
+.summary-heading {
+  margin: 0 0 18px;
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin: 0 0 34px;
+}
+.summary-card,
+.section-card {
+  border: 1px solid var(--line);
+  background: var(--card);
+  border-radius: var(--radius-md);
+}
+.summary-card {
+  min-height: 128px;
+  padding: 18px;
+  display: flex;
+  align-items: flex-end;
+  color: var(--text);
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+.sections {
+  display: grid;
+  gap: 14px;
+}
+.section-card {
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr);
+  gap: 18px;
+  padding: 22px;
+}
+.section-index {
+  width: 44px;
+  height: 44px;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 14px;
+  color: var(--text);
+  font-weight: 850;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 80%, #111827), color-mix(in srgb, var(--accent2) 65%, #111827));
+  box-shadow: 0 14px 34px color-mix(in srgb, var(--accent) 20%, transparent);
+}
+.section-card h2 {
+  margin: 0 0 10px;
+  font-size: clamp(1.22rem, 2.2vw, 1.7rem);
+  font-weight: 820;
+}
+.section-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1rem;
+}
+.footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+  color: var(--subtle);
+  padding: 22px clamp(24px, 5vw, 48px) 30px;
+  border-top: 1px solid var(--line);
+  font-size: 0.92rem;
+}
+a { color: var(--accent); }
+[dir="rtl"] body { font-family: "Geeza Pro", "Arial", sans-serif; }
+[dir="rtl"] .topbar,
+[dir="rtl"] .nav,
+[dir="rtl"] .section-card,
+[dir="rtl"] .language-count { direction: rtl; }
+@media (max-width: 860px) {
+  .page { width: min(100% - 28px, 1120px); padding-top: 24px; }
+  .topbar { align-items: flex-start; flex-direction: column; }
+  .nav { justify-content: flex-start; }
+  .language-select { width: 100%; }
+  .hero { grid-template-columns: 1fr; }
+  .summary-grid { grid-template-columns: 1fr; }
+  .section-card { grid-template-columns: 1fr; }
+  .section-index { width: 38px; height: 38px; border-radius: 12px; }
+}
+</style>
+</head>
+<body data-page="AgeRating">
+  <main class="page">
+    <header class="topbar" aria-label="VideoConvertShrink page navigation">
+      <a class="brand" href="../Support/"><span class="brand-mark" aria-hidden="true"></span><span>VideoConvertShrink</span></a>
+      <nav class="nav">
+        <a href="../Privacy/">Privacy</a>
+        <a href="../Support/">Support</a>
+        <a href="../AgeRating/">Age Rating</a>
+        <select id="languageSelector" class="language-select" aria-label="Language"></select>
+      </nav>
+    </header>
+
+    <article class="document">
+      <section class="hero">
+        <div>
+          <p class="eyebrow" data-eyebrow>Age Rating</p>
+          <h1 data-title>VideoConvertShrink Age Rating Information</h1>
+          <p class="subtitle" data-subtitle>VideoConvertShrink is a utility for local media conversion. The app’s built-in content is suitable for general audiences.</p>
+          <p class="updated" data-updated>Last reviewed: June 21, 2026</p>
+        </div>
+        <aside class="hero-aside" aria-label="Page summary">
+          <div>
+            <p class="aside-title" data-aside-title>Recommended rating</p>
+            <p class="aside-meta" data-aside-meta>VideoConvertShrink is a utility for local media conversion. The app’s built-in content is suitable for general audiences.</p>
+          </div>
+          <div class="language-count" aria-label="Localized language count"><strong>16</strong><span>localized mainstream languages</span></div>
+        </aside>
+      </section>
+
+      <section class="content-zone">
+        <h2 class="summary-heading" data-summary-title>Recommended rating</h2>
+        <div class="summary-grid" id="summaryGrid"></div>
+        <div class="sections" id="sectionList" aria-label="Localized content sections"></div>
+      </section>
+
+      <footer class="footer">
+        <span>© 2026 VideoConvertShrink</span>
+        <span>Localized pages follow the same 16-language set as the SVNServer reference.</span>
+      </footer>
+    </article>
+  </main>
+  <noscript><main class="page"><article class="document"><section class="hero"><div><p class="eyebrow">VideoConvertShrink</p><h1>VideoConvertShrink Age Rating Information</h1><p class="subtitle">VideoConvertShrink is a utility for local media conversion. The app’s built-in content is suitable for general audiences.</p></div></section></article></main></noscript>
+  <script>
+const languageOrder = ["en", "zh-Hans", "zh-Hant", "ja", "ko", "fr", "de", "es", "it", "pt-BR", "ru", "ar", "hi", "id", "vi", "th"];
+const languageNames = {"en":"English","zh-Hans":"简体中文","zh-Hant":"繁體中文","ja":"日本語","ko":"한국어","fr":"Français","de":"Deutsch","es":"Español","it":"Italiano","pt-BR":"Português (Brasil)","ru":"Русский","ar":"العربية","hi":"हिन्दी","id":"Bahasa Indonesia","vi":"Tiếng Việt","th":"ไทย"};
+const content = {"en":{"kicker":"Age Rating","title":"VideoConvertShrink Age Rating Information","subtitle":"VideoConvertShrink is a utility for local media conversion. The app’s built-in content is suitable for general audiences.","updated":"Last reviewed: June 21, 2026","highlightsTitle":"Recommended rating","highlights":["4+ utility app","No social feed or user accounts","User media remains user-controlled"],"sections":[{"heading":"Why this rating","body":"The app provides media conversion, compression, trimming, audio extraction, and animation export tools. It does not include games, social networking, dating, gambling, or mature built-in content."},{"heading":"Built-in content categories","body":"VideoConvertShrink does not include violence, sexual content, nudity, drugs, tobacco, alcohol promotion, medical treatment claims, horror themes, unrestricted web browsing, or gambling mechanics."},{"heading":"User-provided media","body":"Users may import their own videos, audio, subtitles, or watermarks. The age rating describes the app itself, not the content that a user chooses to process."},{"heading":"Internet and sharing","body":"The app does not host a community, public uploads, messaging, or user-generated feeds. Sharing happens only through files and destinations chosen by the user or macOS."},{"heading":"Parents, schools, and workplaces","body":"For managed devices, administrators can restrict file access, sharing destinations, or App Store installation according to their organization’s policies."},{"heading":"Report a concern","body":"If you believe the age rating information is inaccurate, contact us through the App Store support link or the developer contact shown on the store listing."}]},"zh-Hans":{"kicker":"适龄","title":"影序 Pro 年龄分级说明","subtitle":"影序 Pro 是本地媒体转换工具，App 自带内容适合普通用户使用。","updated":"最后审核：2026 年 6 月 21 日","highlightsTitle":"建议分级","highlights":["4+ 工具类 App","无社交信息流或用户账号","用户媒体由用户自行控制"],"sections":[{"heading":"为什么是这个分级","body":"应用提供媒体转换、压缩、剪辑、音频提取和动图导出工具，不包含游戏、社交网络、约会、赌博或成人内置内容。"},{"heading":"内置内容类别","body":"影序 Pro 不包含暴力、性内容、裸露、毒品、烟草、酒类推广、医疗治疗宣称、恐怖主题、不受限网页浏览或赌博机制。"},{"heading":"用户提供的媒体","body":"用户可以导入自己的视频、音频、字幕或水印。年龄分级描述的是 App 本身，不代表用户选择处理的内容。"},{"heading":"联网与分享","body":"应用不托管社区、公开上传、消息系统或用户生成内容信息流。分享仅通过用户或 macOS 选择的文件和目标位置进行。"},{"heading":"家长、学校和工作场所","body":"对于受管理设备，管理员可以根据组织政策限制文件访问、分享目标或 App Store 安装。"},{"heading":"报告问题","body":"如果你认为年龄分级说明不准确，请通过 App Store 支持链接或商店页面列出的开发者联系方式联系我们。"}]},"zh-Hant":{"kicker":"適齡","title":"影序 Pro 年齡分級說明","subtitle":"影序 Pro 是本機媒體轉換工具，App 內建內容適合一般使用者。","updated":"最後審核：2026 年 6 月 21 日","highlightsTitle":"建議分級","highlights":["4+ 工具類 App","無社交動態或使用者帳號","使用者媒體由使用者自行控制"],"sections":[{"heading":"為什麼是這個分級","body":"App 提供媒體轉換、壓縮、剪輯、音訊擷取與動圖輸出工具，不包含遊戲、社交網路、交友、賭博或成人內建內容。"},{"heading":"內建內容類別","body":"影序 Pro 不包含暴力、性內容、裸露、毒品、菸草、酒類推廣、醫療治療宣稱、恐怖主題、不受限制網頁瀏覽或賭博機制。"},{"heading":"使用者提供的媒體","body":"使用者可以匯入自己的影片、音訊、字幕或浮水印。年齡分級描述的是 App 本身，不代表使用者選擇處理的內容。"},{"heading":"網路與分享","body":"App 不託管社群、公開上傳、訊息系統或使用者產生內容動態。分享僅透過使用者或 macOS 選擇的檔案與目標位置進行。"},{"heading":"家長、學校和工作場所","body":"對於受管理裝置，管理員可依組織政策限制檔案存取、分享目標或 App Store 安裝。"},{"heading":"回報問題","body":"如果你認為年齡分級說明不準確，請透過 App Store 支援連結或商店頁面列出的開發者聯絡方式與我們聯絡。"}]},"ja":{"kicker":"年齢レーティング","title":"VideoConvertShrink 年齢レーティング情報","subtitle":"VideoConvertShrink はローカルメディア変換用のユーティリティです。アプリ内蔵コンテンツは一般向けです。","updated":"最終確認日：2026年6月21日","highlightsTitle":"推奨レーティング","highlights":["4+ ユーティリティ","ソーシャルフィードやアカウントなし","ユーザーメディアはユーザー管理"],"sections":[{"heading":"このレーティングの理由","body":"アプリは変換、圧縮、トリミング、音声抽出、アニメーション書き出しを提供します。ゲーム、SNS、出会い、ギャンブル、成人向け内蔵コンテンツは含みません。"},{"heading":"内蔵コンテンツ","body":"暴力、性的表現、裸、薬物、たばこ、アルコール宣伝、医療効果の主張、ホラー、無制限の Web 閲覧、ギャンブル機能は含みません。"},{"heading":"ユーザー提供メディア","body":"ユーザーは自身の動画、音声、字幕、ウォーターマークを読み込めます。年齢レーティングはアプリ自体を示し、ユーザーが処理する内容を示すものではありません。"},{"heading":"インターネットと共有","body":"コミュニティ、公開アップロード、メッセージ、ユーザー投稿フィードはありません。共有はユーザーまたは macOS が選んだファイルと保存先を通じてのみ行われます。"},{"heading":"保護者、学校、職場","body":"管理対象デバイスでは、管理者が組織の方針に従ってファイルアクセス、共有先、App Store インストールを制限できます。"},{"heading":"懸念の報告","body":"レーティング情報が不正確だと思われる場合は、App Store のサポートリンクまたはストア掲載の開発者連絡先からご連絡ください。"}]},"ko":{"kicker":"연령 등급","title":"VideoConvertShrink 연령 등급 정보","subtitle":"VideoConvertShrink는 로컬 미디어 변환 유틸리티입니다. 앱에 내장된 콘텐츠는 일반 사용자에게 적합합니다.","updated":"마지막 검토: 2026년 6월 21일","highlightsTitle":"권장 등급","highlights":["4+ 유틸리티 앱","소셜 피드나 계정 없음","사용자 미디어는 사용자 제어"],"sections":[{"heading":"이 등급의 이유","body":"앱은 미디어 변환, 압축, 자르기, 오디오 추출, 애니메이션 내보내기 도구를 제공합니다. 게임, 소셜 네트워크, 데이트, 도박 또는 성인용 내장 콘텐츠가 없습니다."},{"heading":"내장 콘텐츠 범주","body":"폭력, 성적 콘텐츠, 노출, 약물, 담배, 주류 홍보, 의료 치료 주장, 공포 테마, 제한 없는 웹 탐색 또는 도박 기능을 포함하지 않습니다."},{"heading":"사용자 제공 미디어","body":"사용자는 자신의 비디오, 오디오, 자막 또는 워터마크를 가져올 수 있습니다. 연령 등급은 앱 자체에 대한 것이며 사용자가 처리하는 콘텐츠를 의미하지 않습니다."},{"heading":"인터넷 및 공유","body":"커뮤니티, 공개 업로드, 메시지 또는 사용자 생성 피드를 제공하지 않습니다. 공유는 사용자가 선택한 파일과 대상 또는 macOS 기능을 통해서만 이루어집니다."},{"heading":"부모, 학교 및 직장","body":"관리되는 기기에서는 관리자가 조직 정책에 따라 파일 접근, 공유 대상 또는 App Store 설치를 제한할 수 있습니다."},{"heading":"문제 신고","body":"연령 등급 정보가 부정확하다고 생각되면 App Store 지원 링크 또는 스토어 페이지의 개발자 연락처로 문의하십시오."}]},"fr":{"kicker":"Classification par âge","title":"Informations de classification par âge de VideoConvertShrink","subtitle":"VideoConvertShrink est un utilitaire de conversion locale. Le contenu intégré de l’app convient à un public général.","updated":"Dernière révision : 21 juin 2026","highlightsTitle":"Classification recommandée","highlights":["Utilitaire 4+","Pas de fil social ni de compte","Médias utilisateur contrôlés par l’utilisateur"],"sections":[{"heading":"Pourquoi cette classification","body":"L’app fournit des outils de conversion, compression, découpe, extraction audio et export d’animation. Elle n’inclut pas de jeux, réseau social, rencontres, jeux d’argent ou contenu adulte intégré."},{"heading":"Catégories intégrées","body":"VideoConvertShrink n’inclut pas de violence, contenu sexuel, nudité, drogues, tabac, promotion d’alcool, promesses médicales, horreur, navigation web illimitée ou mécanismes de jeu d’argent."},{"heading":"Médias fournis par l’utilisateur","body":"Les utilisateurs peuvent importer leurs propres vidéos, audios, sous-titres ou filigranes. La classification décrit l’app elle-même, pas le contenu choisi par l’utilisateur."},{"heading":"Internet et partage","body":"L’app n’héberge pas de communauté, téléversements publics, messagerie ou fils générés par les utilisateurs. Le partage se fait seulement via les fichiers et destinations choisis par l’utilisateur ou macOS."},{"heading":"Parents, écoles et entreprises","body":"Sur les appareils gérés, les administrateurs peuvent limiter l’accès aux fichiers, les destinations de partage ou l’installation App Store selon leurs règles."},{"heading":"Signaler un problème","body":"Si vous pensez que ces informations sont inexactes, contactez-nous via le lien d’assistance App Store ou les coordonnées du développeur sur la fiche."}]},"de":{"kicker":"Altersfreigabe","title":"Informationen zur Altersfreigabe von VideoConvertShrink","subtitle":"VideoConvertShrink ist ein Dienstprogramm für lokale Medienkonvertierung. Die integrierten Inhalte sind für allgemeine Zielgruppen geeignet.","updated":"Zuletzt geprüft: 21. Juni 2026","highlightsTitle":"Empfohlene Einstufung","highlights":["4+ Dienstprogramm","Kein Social Feed, keine Nutzerkonten","Nutzermedien bleiben nutzergesteuert"],"sections":[{"heading":"Warum diese Einstufung","body":"Die App bietet Medienkonvertierung, Komprimierung, Trimmen, Audioextraktion und Animationsexport. Sie enthält keine Spiele, sozialen Netzwerke, Dating-, Glücksspiel- oder erwachsenen Inhalte."},{"heading":"Integrierte Inhalte","body":"VideoConvertShrink enthält keine Gewalt, sexuellen Inhalte, Nacktheit, Drogen, Tabak, Alkoholwerbung, medizinischen Heilversprechen, Horrorthemen, uneingeschränktes Browsing oder Glücksspielmechaniken."},{"heading":"Vom Nutzer bereitgestellte Medien","body":"Nutzer können eigene Videos, Audiodateien, Untertitel oder Wasserzeichen importieren. Die Altersfreigabe beschreibt die App selbst, nicht die Inhalte, die Nutzer verarbeiten."},{"heading":"Internet und Teilen","body":"Die App hostet keine Community, öffentlichen Uploads, Nachrichten oder nutzergenerierten Feeds. Teilen erfolgt nur über Dateien und Ziele, die der Nutzer oder macOS auswählt."},{"heading":"Eltern, Schulen und Unternehmen","body":"Auf verwalteten Geräten können Administratoren Dateizugriff, Freigabeziele oder App-Store-Installation gemäß ihren Richtlinien einschränken."},{"heading":"Bedenken melden","body":"Wenn Sie diese Angaben für ungenau halten, kontaktieren Sie uns über den App-Store-Supportlink oder die Entwicklerkontaktdaten im Store."}]},"es":{"kicker":"Clasificación por edad","title":"Información de clasificación por edad de VideoConvertShrink","subtitle":"VideoConvertShrink es una utilidad para conversión local de medios. El contenido integrado de la app es apto para público general.","updated":"Última revisión: 21 de junio de 2026","highlightsTitle":"Clasificación recomendada","highlights":["Utilidad 4+","Sin feed social ni cuentas","Medios del usuario bajo su control"],"sections":[{"heading":"Por qué esta clasificación","body":"La app ofrece herramientas de conversión, compresión, recorte, extracción de audio y exportación de animaciones. No incluye juegos, redes sociales, citas, apuestas ni contenido adulto integrado."},{"heading":"Categorías integradas","body":"VideoConvertShrink no incluye violencia, contenido sexual, desnudez, drogas, tabaco, promoción de alcohol, afirmaciones médicas, terror, navegación web sin restricciones ni mecánicas de apuestas."},{"heading":"Medios del usuario","body":"Los usuarios pueden importar sus propios videos, audios, subtítulos o marcas de agua. La clasificación describe la app, no el contenido que el usuario decide procesar."},{"heading":"Internet y compartir","body":"La app no aloja comunidades, subidas públicas, mensajes ni feeds generados por usuarios. Compartir ocurre solo mediante archivos y destinos elegidos por el usuario o macOS."},{"heading":"Padres, escuelas y empresas","body":"En dispositivos administrados, los administradores pueden limitar acceso a archivos, destinos de uso compartido o instalación desde App Store según sus políticas."},{"heading":"Reportar una inquietud","body":"Si crees que la información no es precisa, contáctanos mediante el enlace de soporte de App Store o el contacto del desarrollador en la ficha."}]},"it":{"kicker":"Classificazione età","title":"Informazioni sulla classificazione età di VideoConvertShrink","subtitle":"VideoConvertShrink è un’utilità per la conversione locale dei media. I contenuti integrati sono adatti a un pubblico generale.","updated":"Ultima revisione: 21 giugno 2026","highlightsTitle":"Classificazione consigliata","highlights":["Utility 4+","Nessun feed social o account","Media utente sotto controllo dell’utente"],"sections":[{"heading":"Perché questa classificazione","body":"L’app offre conversione, compressione, ritaglio, estrazione audio ed esportazione di animazioni. Non include giochi, social network, dating, gioco d’azzardo o contenuti adulti integrati."},{"heading":"Categorie integrate","body":"VideoConvertShrink non include violenza, contenuti sessuali, nudità, droghe, tabacco, promozione di alcol, affermazioni mediche, horror, navigazione web illimitata o meccaniche di gioco d’azzardo."},{"heading":"Media forniti dall’utente","body":"Gli utenti possono importare video, audio, sottotitoli o watermark propri. La classificazione descrive l’app stessa, non i contenuti scelti dall’utente."},{"heading":"Internet e condivisione","body":"L’app non ospita community, upload pubblici, messaggi o feed generati dagli utenti. La condivisione avviene solo tramite file e destinazioni scelte dall’utente o da macOS."},{"heading":"Genitori, scuole e aziende","body":"Sui dispositivi gestiti, gli amministratori possono limitare accesso ai file, destinazioni di condivisione o installazione App Store secondo le proprie policy."},{"heading":"Segnala un problema","body":"Se ritieni che le informazioni siano imprecise, contattaci tramite il link di supporto App Store o i contatti dello sviluppatore nella scheda."}]},"pt-BR":{"kicker":"Classificação etária","title":"Informações de classificação etária do VideoConvertShrink","subtitle":"O VideoConvertShrink é um utilitário para conversão local de mídia. O conteúdo integrado é adequado para o público geral.","updated":"Última revisão: 21 de junho de 2026","highlightsTitle":"Classificação recomendada","highlights":["Utilitário 4+","Sem feed social ou contas","Mídia do usuário sob controle do usuário"],"sections":[{"heading":"Por que esta classificação","body":"O app oferece conversão, compressão, corte, extração de áudio e exportação de animações. Não inclui jogos, redes sociais, encontros, apostas ou conteúdo adulto integrado."},{"heading":"Categorias integradas","body":"O VideoConvertShrink não inclui violência, conteúdo sexual, nudez, drogas, tabaco, promoção de álcool, alegações médicas, terror, navegação web irrestrita ou mecânicas de apostas."},{"heading":"Mídia fornecida pelo usuário","body":"Usuários podem importar seus próprios vídeos, áudios, legendas ou marcas d’água. A classificação descreve o app em si, não o conteúdo que o usuário decide processar."},{"heading":"Internet e compartilhamento","body":"O app não hospeda comunidade, uploads públicos, mensagens ou feeds de usuários. Compartilhamento ocorre apenas por arquivos e destinos escolhidos pelo usuário ou pelo macOS."},{"heading":"Pais, escolas e empresas","body":"Em dispositivos gerenciados, administradores podem restringir acesso a arquivos, destinos de compartilhamento ou instalação pela App Store conforme suas políticas."},{"heading":"Relatar uma preocupação","body":"Se você acredita que as informações estão incorretas, contate-nos pelo link de suporte da App Store ou pelo contato do desenvolvedor na página da loja."}]},"ru":{"kicker":"Возрастной рейтинг","title":"Информация о возрастном рейтинге VideoConvertShrink","subtitle":"VideoConvertShrink — утилита для локального преобразования медиа. Встроенный контент приложения подходит для широкой аудитории.","updated":"Последняя проверка: 21 июня 2026 г.","highlightsTitle":"Рекомендуемый рейтинг","highlights":["Утилита 4+","Нет соцленты и аккаунтов","Пользователь управляет своими медиа"],"sections":[{"heading":"Почему такой рейтинг","body":"Приложение предоставляет преобразование, сжатие, обрезку, извлечение аудио и экспорт анимаций. В нем нет игр, соцсетей, знакомств, азартных игр или встроенного взрослого контента."},{"heading":"Встроенные категории","body":"VideoConvertShrink не содержит насилия, сексуального контента, наготы, наркотиков, табака, рекламы алкоголя, медицинских обещаний, ужасов, неограниченного браузинга или азартных механик."},{"heading":"Медиа пользователя","body":"Пользователь может импортировать свои видео, аудио, субтитры или водяные знаки. Рейтинг описывает само приложение, а не контент, который пользователь решает обработать."},{"heading":"Интернет и обмен","body":"Приложение не размещает сообщества, публичные загрузки, сообщения или пользовательские ленты. Обмен происходит только через файлы и назначения, выбранные пользователем или macOS."},{"heading":"Родители, школы и организации","body":"На управляемых устройствах администраторы могут ограничить доступ к файлам, назначения обмена или установку из App Store согласно политикам организации."},{"heading":"Сообщить о проблеме","body":"Если вы считаете сведения неточными, свяжитесь с нами через ссылку поддержки App Store или контакт разработчика на странице магазина."}]},"ar":{"kicker":"التصنيف العمري","title":"معلومات التصنيف العمري لـ VideoConvertShrink","subtitle":"VideoConvertShrink أداة لتحويل الوسائط محليًا. المحتوى المدمج في التطبيق مناسب للجمهور العام.","updated":"آخر مراجعة: 21 يونيو 2026","highlightsTitle":"التصنيف المقترح","highlights":["تطبيق أدوات 4+","لا موجز اجتماعي ولا حسابات","وسائط المستخدم تحت تحكمه"],"sections":[{"heading":"سبب هذا التصنيف","body":"يوفر التطبيق أدوات تحويل وضغط وقص واستخراج صوت وتصدير رسوم متحركة. لا يتضمن ألعابًا أو شبكات اجتماعية أو مواعدة أو مقامرة أو محتوى بالغًا مدمجًا."},{"heading":"فئات المحتوى المدمج","body":"لا يتضمن VideoConvertShrink عنفًا أو محتوى جنسيًا أو عريًا أو مخدرات أو تبغًا أو ترويجًا للكحول أو ادعاءات علاجية أو رعبًا أو تصفح ويب غير مقيد أو آليات مقامرة."},{"heading":"وسائط يقدّمها المستخدم","body":"يمكن للمستخدمين استيراد مقاطع الفيديو والصوت والترجمات والعلامات المائية الخاصة بهم. يصف التصنيف التطبيق نفسه، وليس المحتوى الذي يختار المستخدم معالجته."},{"heading":"الإنترنت والمشاركة","body":"لا يستضيف التطبيق مجتمعًا أو رفعًا عامًا أو رسائل أو موجزات من المستخدمين. تتم المشاركة فقط عبر الملفات والوجهات التي يختارها المستخدم أو macOS."},{"heading":"الوالدان والمدارس وأماكن العمل","body":"على الأجهزة المُدارة، يمكن للمسؤولين تقييد الوصول إلى الملفات أو وجهات المشاركة أو تثبيت App Store وفق سياسات المؤسسة."},{"heading":"الإبلاغ عن مشكلة","body":"إذا كنت ترى أن معلومات التصنيف غير دقيقة، تواصل معنا عبر رابط دعم App Store أو معلومات اتصال المطور في صفحة المتجر."}]},"hi":{"kicker":"आयु रेटिंग","title":"VideoConvertShrink आयु रेटिंग जानकारी","subtitle":"VideoConvertShrink स्थानीय मीडिया रूपांतरण की उपयोगिता है। ऐप की अंतर्निहित सामग्री सामान्य दर्शकों के लिए उपयुक्त है।","updated":"अंतिम समीक्षा: 21 जून 2026","highlightsTitle":"अनुशंसित रेटिंग","highlights":["4+ उपयोगिता ऐप","कोई सोशल फीड या खाता नहीं","उपयोगकर्ता मीडिया उपयोगकर्ता नियंत्रित"],"sections":[{"heading":"यह रेटिंग क्यों","body":"ऐप मीडिया रूपांतरण, संपीड़न, ट्रिमिंग, ऑडियो निकालने और एनीमेशन निर्यात के उपकरण देता है। इसमें गेम, सोशल नेटवर्क, डेटिंग, जुआ या वयस्क अंतर्निहित सामग्री नहीं है।"},{"heading":"अंतर्निहित सामग्री श्रेणियां","body":"VideoConvertShrink में हिंसा, यौन सामग्री, नग्नता, ड्रग्स, तंबाकू, शराब प्रचार, चिकित्सा उपचार दावे, हॉरर, अनियंत्रित वेब ब्राउज़िंग या जुआ तंत्र नहीं हैं।"},{"heading":"उपयोगकर्ता द्वारा दी गई मीडिया","body":"उपयोगकर्ता अपने वीडियो, ऑडियो, सबटाइटल या वॉटरमार्क आयात कर सकते हैं। आयु रेटिंग ऐप को बताती है, उस सामग्री को नहीं जिसे उपयोगकर्ता प्रोसेस करता है।"},{"heading":"इंटरनेट और शेयरिंग","body":"ऐप समुदाय, सार्वजनिक अपलोड, संदेश या उपयोगकर्ता जनित फीड होस्ट नहीं करता। शेयरिंग केवल उपयोगकर्ता या macOS द्वारा चुनी गई फाइलों और स्थानों से होती है।"},{"heading":"माता-पिता, स्कूल और कार्यस्थल","body":"प्रबंधित डिवाइसों पर व्यवस्थापक संगठन नीति के अनुसार फाइल पहुंच, शेयरिंग स्थान या App Store इंस्टॉल को सीमित कर सकते हैं।"},{"heading":"चिंता रिपोर्ट करें","body":"यदि आपको लगता है कि आयु रेटिंग जानकारी गलत है, App Store समर्थन लिंक या स्टोर सूची में दिए डेवलपर संपर्क से हमें बताएं।"}]},"id":{"kicker":"Rating Usia","title":"Informasi Rating Usia VideoConvertShrink","subtitle":"VideoConvertShrink adalah utilitas konversi media lokal. Konten bawaan aplikasi sesuai untuk audiens umum.","updated":"Terakhir ditinjau: 21 Juni 2026","highlightsTitle":"Rating yang disarankan","highlights":["Aplikasi utilitas 4+","Tanpa feed sosial atau akun","Media pengguna dikendalikan pengguna"],"sections":[{"heading":"Alasan rating ini","body":"Aplikasi menyediakan konversi, kompresi, pemotongan, ekstraksi audio, dan ekspor animasi. Tidak ada game, jejaring sosial, kencan, perjudian, atau konten dewasa bawaan."},{"heading":"Kategori konten bawaan","body":"VideoConvertShrink tidak berisi kekerasan, konten seksual, ketelanjangan, narkoba, tembakau, promosi alkohol, klaim perawatan medis, horor, penjelajahan web bebas, atau mekanisme perjudian."},{"heading":"Media dari pengguna","body":"Pengguna dapat mengimpor video, audio, subtitle, atau watermark mereka sendiri. Rating usia menjelaskan aplikasi itu sendiri, bukan konten yang dipilih pengguna untuk diproses."},{"heading":"Internet dan berbagi","body":"Aplikasi tidak menghosting komunitas, unggahan publik, pesan, atau feed buatan pengguna. Berbagi hanya melalui file dan tujuan yang dipilih pengguna atau macOS."},{"heading":"Orang tua, sekolah, dan tempat kerja","body":"Pada perangkat terkelola, administrator dapat membatasi akses file, tujuan berbagi, atau pemasangan App Store sesuai kebijakan organisasi."},{"heading":"Laporkan kekhawatiran","body":"Jika Anda yakin informasi rating tidak akurat, hubungi kami melalui tautan dukungan App Store atau kontak pengembang pada halaman toko."}]},"vi":{"kicker":"Độ tuổi","title":"Thông tin độ tuổi của VideoConvertShrink","subtitle":"VideoConvertShrink là tiện ích chuyển đổi phương tiện cục bộ. Nội dung tích hợp của ứng dụng phù hợp với người dùng phổ thông.","updated":"Đánh giá lần cuối: 21 tháng 6, 2026","highlightsTitle":"Độ tuổi khuyến nghị","highlights":["Ứng dụng tiện ích 4+","Không mạng xã hội hoặc tài khoản","Phương tiện do người dùng kiểm soát"],"sections":[{"heading":"Vì sao có đánh giá này","body":"Ứng dụng cung cấp chuyển đổi, nén, cắt, trích âm thanh và xuất ảnh động. Không có trò chơi, mạng xã hội, hẹn hò, cờ bạc hoặc nội dung người lớn tích hợp."},{"heading":"Danh mục nội dung tích hợp","body":"VideoConvertShrink không có bạo lực, nội dung tình dục, khỏa thân, ma túy, thuốc lá, quảng bá rượu, tuyên bố điều trị y tế, kinh dị, duyệt web không hạn chế hoặc cơ chế cờ bạc."},{"heading":"Phương tiện do người dùng cung cấp","body":"Người dùng có thể nhập video, âm thanh, phụ đề hoặc watermark của họ. Độ tuổi mô tả chính ứng dụng, không phải nội dung người dùng chọn xử lý."},{"heading":"Internet và chia sẻ","body":"Ứng dụng không lưu trữ cộng đồng, tải lên công khai, tin nhắn hoặc bảng tin do người dùng tạo. Chia sẻ chỉ qua tệp và đích do người dùng hoặc macOS chọn."},{"heading":"Phụ huynh, trường học và nơi làm việc","body":"Trên thiết bị được quản lý, quản trị viên có thể hạn chế truy cập tệp, điểm chia sẻ hoặc cài đặt App Store theo chính sách tổ chức."},{"heading":"Báo cáo vấn đề","body":"Nếu bạn cho rằng thông tin độ tuổi không chính xác, hãy liên hệ qua liên kết hỗ trợ App Store hoặc thông tin nhà phát triển trên trang cửa hàng."}]},"th":{"kicker":"การจัดอายุ","title":"ข้อมูลการจัดอายุของ VideoConvertShrink","subtitle":"VideoConvertShrink เป็นเครื่องมือแปลงสื่อภายในเครื่อง เนื้อหาในตัวแอปเหมาะสำหรับผู้ใช้ทั่วไป","updated":"ตรวจสอบล่าสุด: 21 มิถุนายน 2026","highlightsTitle":"การจัดอายุที่แนะนำ","highlights":["แอปเครื่องมือ 4+","ไม่มีฟีดสังคมหรือบัญชีผู้ใช้","สื่อของผู้ใช้อยู่ภายใต้การควบคุมของผู้ใช้"],"sections":[{"heading":"เหตุผลของการจัดอายุ","body":"แอปมีเครื่องมือแปลง บีบอัด ตัด ดึงเสียง และส่งออกแอนิเมชัน ไม่มีเกม เครือข่ายสังคม เดต การพนัน หรือเนื้อหาผู้ใหญ่ในตัว"},{"heading":"หมวดหมู่เนื้อหาในตัว","body":"VideoConvertShrink ไม่มีความรุนแรง เนื้อหาทางเพศ ภาพเปลือย ยาเสพติด ยาสูบ การโปรโมตแอลกอฮอล์ คำกล่าวอ้างการรักษา ธีมสยองขวัญ เว็บเบราว์ซิงไม่จำกัด หรือกลไกการพนัน"},{"heading":"สื่อที่ผู้ใช้จัดหา","body":"ผู้ใช้สามารถนำเข้าวิดีโอ เสียง คำบรรยาย หรือลายน้ำของตนเอง การจัดอายุอธิบายตัวแอป ไม่ใช่เนื้อหาที่ผู้ใช้เลือกประมวลผล"},{"heading":"อินเทอร์เน็ตและการแชร์","body":"แอปไม่โฮสต์ชุมชน การอัปโหลดสาธารณะ ข้อความ หรือฟีดจากผู้ใช้ การแชร์เกิดขึ้นผ่านไฟล์และปลายทางที่ผู้ใช้หรือ macOS เลือกเท่านั้น"},{"heading":"ผู้ปกครอง โรงเรียน และที่ทำงาน","body":"บนอุปกรณ์ที่จัดการ ผู้ดูแลระบบสามารถจำกัดการเข้าถึงไฟล์ ปลายทางการแชร์ หรือการติดตั้งจาก App Store ตามนโยบายองค์กร"},{"heading":"รายงานข้อกังวล","body":"หากคุณคิดว่าข้อมูลการจัดอายุไม่ถูกต้อง โปรดติดต่อผ่านลิงก์สนับสนุน App Store หรือข้อมูลผู้พัฒนาบนหน้าร้าน"}]}};
+const selector = document.getElementById('languageSelector');
+
+function browserLanguage() {
+  const raw = (navigator.language || 'en').toLowerCase();
+  if (raw.startsWith('zh-tw') || raw.startsWith('zh-hk') || raw.startsWith('zh-mo')) return 'zh-Hant';
+  if (raw.startsWith('zh')) return 'zh-Hans';
+  if (raw.startsWith('pt')) return 'pt-BR';
+  const two = raw.slice(0, 2);
+  return languageOrder.includes(two) ? two : 'en';
+}
+
+function escapeHtml(value) {
+  return String(value).replace(/[&<>'"]/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[char]));
+}
+
+function renderLanguage(lang) {
+  if (!content[lang]) lang = 'en';
+  const data = content[lang];
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+  document.title = data.title;
+  document.querySelector('[data-eyebrow]').textContent = data.kicker;
+  document.querySelector('[data-title]').textContent = data.title;
+  document.querySelector('[data-subtitle]').textContent = data.subtitle;
+  document.querySelector('[data-updated]').textContent = data.updated;
+  document.querySelector('[data-summary-title]').textContent = data.highlightsTitle;
+  document.querySelector('[data-aside-title]').textContent = data.highlightsTitle;
+  document.querySelector('[data-aside-meta]').textContent = data.subtitle;
+  document.getElementById('summaryGrid').innerHTML = data.highlights
+    .map(item => `<article class="summary-card">${escapeHtml(item)}</article>`)
+    .join('');
+  document.getElementById('sectionList').innerHTML = data.sections
+    .map((section, index) => `<article class="section-card"><span class="section-index">${String(index + 1).padStart(2, '0')}</span><div><h2>${escapeHtml(section.heading)}</h2><p>${escapeHtml(section.body)}</p></div></article>`)
+    .join('');
+  selector.value = lang;
+  try { localStorage.setItem('videoconvertshrink-page-language', lang); } catch (_) {}
+}
+
+selector.innerHTML = languageOrder.map(code => `<option value="${code}">${languageNames[code]}</option>`).join('');
+selector.addEventListener('change', event => renderLanguage(event.target.value));
+let initial = 'en';
+try { initial = localStorage.getItem('videoconvertshrink-page-language') || browserLanguage(); } catch (_) { initial = browserLanguage(); }
+renderLanguage(initial);
+</script>
+</body>
+</html>

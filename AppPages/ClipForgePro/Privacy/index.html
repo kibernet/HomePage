@@ -1,552 +1,160 @@
 <!doctype html>
-<html lang="zh-Hans">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>影序 Pro 隐私政策 | ClipForge Pro Privacy Policy</title>
-  <meta name="description" content="影序 Pro（ClipForge Pro）隐私政策：本地视频压缩、格式转换和音频导出工具，不收集个人数据，不上传媒体文件。">
+  <meta name="description" content="Privacy policy for ClipForge Pro, available in 16 mainstream languages.">
+  <meta name="apple-mobile-web-app-title" content="ClipForge Pro">
+  <title>ClipForge Pro Privacy Policy</title>
   <style>
-    :root {
-      color-scheme: dark light;
-      --bg: #0b111c;
-      --panel: rgba(17, 24, 39, 0.88);
-      --card: rgba(30, 41, 59, 0.72);
-      --text: #f8fafc;
-      --muted: #cbd5e1;
-      --line: rgba(148, 163, 184, 0.26);
-      --accent: #38bdf8;
-      --accent-strong: #67e8f9;
-    }
-
-    @media (prefers-color-scheme: light) {
-      :root {
-        --bg: #f8fafc;
-        --panel: rgba(255, 255, 255, 0.95);
-        --card: #eef6fb;
-        --text: #0f172a;
-        --muted: #334155;
-        --line: rgba(15, 23, 42, 0.16);
-        --accent: #0369a1;
-        --accent-strong: #0f766e;
-      }
-    }
-
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      min-height: 100vh;
-      font-family: Inter, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
-      line-height: 1.68;
-      color: var(--text);
-      background:
-        radial-gradient(circle at 18% 0%, rgba(56, 189, 248, 0.20), transparent 32rem),
-        radial-gradient(circle at 92% 12%, rgba(20, 184, 166, 0.14), transparent 30rem),
-        var(--bg);
-    }
-
-    a { color: var(--accent); }
-
-    .page {
-      width: min(940px, calc(100% - 40px));
-      margin: 0 auto;
-      padding: 44px 0;
-    }
-
-    .document {
-      padding: clamp(22px, 5vw, 48px);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      background: var(--panel);
-      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.24);
-    }
-
-    .topbar {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 18px;
-      margin-bottom: 26px;
-    }
-
-    .eyebrow {
-      margin: 0;
-      color: var(--accent-strong);
-      font-weight: 700;
-    }
-
-    .language-control {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      white-space: nowrap;
-    }
-
-    .language-control label {
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    select {
-      max-width: 210px;
-      padding: 8px 32px 8px 10px;
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      color: var(--text);
-      background: var(--card);
-      font: inherit;
-    }
-
-    h1, h2 {
-      line-height: 1.16;
-      letter-spacing: 0;
-    }
-
-    h1 {
-      margin: 0 0 10px;
-      font-size: clamp(2rem, 5vw, 3.35rem);
-      font-weight: 760;
-    }
-
-    h2 {
-      margin: 34px 0 10px;
-      font-size: 1.18rem;
-      font-weight: 730;
-    }
-
-    p, li {
-      color: var(--muted);
-      font-size: 1rem;
-    }
-
-    ul {
-      padding-left: 1.25rem;
-    }
-
-    .updated {
-      margin-top: 0;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .notice {
-      margin: 22px 0 0;
-      padding: 14px 16px;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      color: var(--muted);
-      background: var(--card);
-    }
-
-    [dir="rtl"] .document {
-      text-align: right;
-    }
-
-    @media (max-width: 640px) {
-      .page { width: min(100% - 24px, 940px); padding: 18px 0; }
-      .topbar { flex-direction: column; }
-      .language-control { width: 100%; justify-content: space-between; }
-      select { width: min(100%, 260px); }
-    }
-  </style>
+:root {
+  color-scheme: light;
+  --ink: #0d1720;
+  --muted: #5c6975;
+  --paper: #fbf8ef;
+  --card: rgba(255, 255, 255, 0.78);
+  --line: rgba(23, 41, 55, 0.12);
+  --teal: #0b6f6a;
+  --deep: #081d25;
+  --gold: #c9862b;
+  --shadow: 0 24px 70px rgba(8, 29, 37, 0.14);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 14% 18%, rgba(201, 134, 43, 0.23), transparent 30rem),
+    radial-gradient(circle at 86% 8%, rgba(11, 111, 106, 0.28), transparent 34rem),
+    linear-gradient(135deg, #fffaf0 0%, #eef7f4 52%, #f8efe3 100%);
+  min-height: 100vh;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: linear-gradient(rgba(8, 29, 37, 0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(8, 29, 37, 0.035) 1px, transparent 1px);
+  background-size: 46px 46px;
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,0.7), transparent 78%);
+}
+a { color: var(--teal); }
+.page-shell { width: min(1120px, calc(100% - 36px)); margin: 0 auto; }
+.topbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 26px 0 10px; }
+.brand { display: inline-flex; align-items: center; gap: 12px; color: var(--deep); text-decoration: none; font-weight: 800; letter-spacing: -0.02em; }
+.brand-mark { width: 38px; height: 38px; border-radius: 12px; background: linear-gradient(135deg, #0d3240, #12b6a5); box-shadow: inset 0 0 0 1px rgba(255,255,255,0.45), 0 14px 30px rgba(11,111,106,0.24); }
+.nav-links { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.nav-links a, .language-select {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255,255,255,0.72);
+  color: var(--deep);
+  padding: 10px 14px;
+  font-size: 14px;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(8,29,37,0.06);
+}
+.language-select { appearance: auto; min-width: 170px; }
+.hero { padding: 76px 0 42px; }
+.kicker { display: inline-flex; border: 1px solid rgba(11,111,106,0.25); color: var(--teal); background: rgba(255,255,255,0.66); border-radius: 999px; padding: 8px 13px; font-weight: 800; font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; }
+h1 { max-width: 860px; margin: 22px 0 18px; font-size: clamp(44px, 8vw, 92px); line-height: 0.96; letter-spacing: -0.065em; }
+.subtitle { max-width: 780px; color: #344651; font-size: clamp(19px, 2.5vw, 27px); line-height: 1.42; margin: 0; }
+.updated { margin-top: 22px; color: var(--muted); font-size: 15px; }
+.summary-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 24px 0 34px; }
+.summary-title { font-size: 18px; font-weight: 850; color: var(--deep); margin: 0 0 12px; }
+.summary-card, .section-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+}
+.summary-card { min-height: 118px; padding: 22px; display: flex; align-items: end; font-size: 20px; font-weight: 850; letter-spacing: -0.02em; }
+.section-list { display: grid; gap: 16px; padding-bottom: 58px; }
+.section-card { padding: clamp(22px, 4vw, 34px); }
+.section-card h2 { margin: 0 0 12px; font-size: clamp(24px, 3vw, 34px); letter-spacing: -0.035em; }
+.section-card p { margin: 0; color: #344651; font-size: 17px; line-height: 1.72; }
+.footer { color: var(--muted); border-top: 1px solid var(--line); padding: 24px 0 40px; font-size: 14px; }
+[dir="rtl"] body { font-family: "Geeza Pro", "Arial", sans-serif; }
+[dir="rtl"] .topbar, [dir="rtl"] .nav-links { direction: rtl; }
+@media (max-width: 760px) {
+  .topbar { align-items: flex-start; flex-direction: column; }
+  .summary-grid { grid-template-columns: 1fr; }
+  .hero { padding-top: 44px; }
+  .nav-links { width: 100%; }
+  .language-select { width: 100%; }
+}
+</style>
 </head>
-<body>
-  <main class="page">
-    <article class="document">
-      <div class="topbar">
-        <p class="eyebrow" id="eyebrow">ClipForge Pro for Mac / 影序 Pro</p>
-        <div class="language-control">
-          <label for="languageSelect" id="languageLabel">语言</label>
-          <select id="languageSelect" aria-label="Language">
-            <option value="zh-Hans">简体中文</option>
-            <option value="en">English</option>
-            <option value="zh-Hant">繁體中文</option>
-            <option value="ja">日本語</option>
-            <option value="ko">한국어</option>
-            <option value="es">Español</option>
-            <option value="fr">Français</option>
-            <option value="de">Deutsch</option>
-            <option value="pt-BR">Português (Brasil)</option>
-            <option value="it">Italiano</option>
-            <option value="ru">Русский</option>
-            <option value="ar">العربية</option>
-            <option value="hi">हिन्दी</option>
-            <option value="id">Bahasa Indonesia</option>
-            <option value="th">ไทย</option>
-            <option value="vi">Tiếng Việt</option>
-          </select>
-        </div>
-      </div>
-
-      <div id="content">
-        <h1>隐私政策</h1>
-        <p class="updated">最后更新：2026 年 6 月 5 日</p>
-        <p>影序 Pro（ClipForge Pro）是一款 Mac 本地视频压缩、格式转换、音频提取和轻量剪辑工具。App 只处理你主动选择的本地媒体文件，不需要账号，不上传云端，不包含广告 SDK，也不包含第三方追踪 SDK。</p>
-        <h2>我们收集的数据</h2>
-        <p>影序 Pro 不收集个人数据。App 不提供账号系统，不运营远程用户服务，不集成广告 SDK，也不集成第三方追踪 SDK。</p>
-        <h2>媒体文件</h2>
-        <p>App 只能访问你通过 macOS 文件选择器、拖拽或已保存权限明确选择的视频、音频、文件夹和输出位置。媒体分析、压缩、转换和导出都在你的 Mac 本机完成，源文件和输出文件不会由 App 上传。</p>
-        <h2>本机保存的数据</h2>
-        <p>为了提供核心功能，App 可能在本机保存默认输出目录、文件夹访问权限、语言、导出设置、目标体积模式、未完成队列恢复状态、本地文件引用、基础媒体元数据，以及用户主动生成或导出的本地诊断报告。这些内容会保留在你的设备上，除非你主动分享。</p>
-        <h2>网络访问</h2>
-        <p>核心功能可离线使用。开源许可链接、支持链接或隐私链接只会在你主动点击时打开外部网站。</p>
-        <h2>开源组件</h2>
-        <p>影序 Pro 随 App 打包 FFmpeg 和 ffprobe，用于本地媒体分析和转码。App 内包含开源声明、许可信息、构建说明和源码包材料，用于合规披露。</p>
-        <h2>儿童隐私</h2>
-        <p>影序 Pro 是通用媒体工具，并非面向儿童设计。App 不会有意收集儿童或其他用户的信息。</p>
-        <h2>政策变更</h2>
-        <p>如果本政策发生变更，更新后的版本会发布在本页面，并标明新的更新日期。</p>
-        <h2>联系方式</h2>
-        <p>如有隐私相关问题，请发送邮件至 <a href="mailto:kibernet@sina.com">kibernet@sina.com</a>。</p>
-        <p class="notice">摘要：影序 Pro 不收集数据，不追踪用户，不上传你的媒体文件。</p>
-      </div>
-    </article>
-  </main>
-
+<body data-page="Privacy">
+  <div class="page-shell">
+    <header class="topbar" aria-label="ClipForge Pro page navigation">
+      <a class="brand" href="../Support/"><span class="brand-mark" aria-hidden="true"></span><span>ClipForge Pro</span></a>
+      <nav class="nav-links">
+        <a href="../Privacy/">Privacy</a><a href="../Support/">Support</a><a href="../AgeRating/">Age Rating</a>
+        <select id="languageSelector" class="language-select" aria-label="Language"></select>
+      </nav>
+    </header>
+    <main>
+      <section class="hero">
+        <span class="kicker" data-kicker>Privacy</span>
+        <h1 data-title>ClipForge Pro Privacy Policy</h1>
+        <p class="subtitle" data-subtitle>ClipForge Pro is built for local media conversion. Your videos and audio stay on your Mac unless you choose to share them.</p>
+        <p class="updated" data-updated>Last updated: June 21, 2026</p>
+      </section>
+      <section aria-labelledby="summaryHeading">
+        <h2 id="summaryHeading" class="summary-title" data-summary-title>Privacy at a glance</h2>
+        <div class="summary-grid" id="summaryGrid"></div>
+      </section>
+      <section class="section-list" id="sectionList" aria-label="Page content"></section>
+    </main>
+    <footer class="footer">© 2026 ClipForge Pro. Content is localized for the same 16-language set used by the reference SVNServer pages.</footer>
+  </div>
+  <noscript><div class="page-shell"><p>ClipForge Pro is built for local media conversion. Your videos and audio stay on your Mac unless you choose to share them.</p></div></noscript>
   <script>
-    const email = '<a href="mailto:kibernet@sina.com">kibernet@sina.com</a>';
-    const pages = {
-      'zh-Hans': {
-        dir: 'ltr',
-        langLabel: '语言',
-        title: '影序 Pro 隐私政策 | ClipForge Pro Privacy Policy',
-        meta: '影序 Pro（ClipForge Pro）隐私政策：本地视频压缩、格式转换和音频导出工具，不收集个人数据，不上传媒体文件。',
-        h1: '隐私政策',
-        updated: '最后更新：2026 年 6 月 5 日',
-        intro: '影序 Pro（ClipForge Pro）是一款 Mac 本地视频压缩、格式转换、音频提取和轻量剪辑工具。App 只处理你主动选择的本地媒体文件，不需要账号，不上传云端，不包含广告 SDK，也不包含第三方追踪 SDK。',
-        sections: [
-          ['我们收集的数据', '影序 Pro 不收集个人数据。App 不提供账号系统，不运营远程用户服务，不集成广告 SDK，也不集成第三方追踪 SDK。'],
-          ['媒体文件', 'App 只能访问你通过 macOS 文件选择器、拖拽或已保存权限明确选择的视频、音频、文件夹和输出位置。媒体分析、压缩、转换和导出都在你的 Mac 本机完成，源文件和输出文件不会由 App 上传。'],
-          ['本机保存的数据', '为了提供核心功能，App 可能在本机保存默认输出目录、文件夹访问权限、语言、导出设置、目标体积模式、未完成队列恢复状态、本地文件引用、基础媒体元数据，以及用户主动生成或导出的本地诊断报告。这些内容会保留在你的设备上，除非你主动分享。'],
-          ['网络访问', '核心功能可离线使用。开源许可链接、支持链接或隐私链接只会在你主动点击时打开外部网站。'],
-          ['开源组件', '影序 Pro 随 App 打包 FFmpeg 和 ffprobe，用于本地媒体分析和转码。App 内包含开源声明、许可信息、构建说明和源码包材料，用于合规披露。'],
-          ['儿童隐私', '影序 Pro 是通用媒体工具，并非面向儿童设计。App 不会有意收集儿童或其他用户的信息。'],
-          ['政策变更', '如果本政策发生变更，更新后的版本会发布在本页面，并标明新的更新日期。'],
-          ['联系方式', `如有隐私相关问题，请发送邮件至 ${email}。`]
-        ],
-        notice: '摘要：影序 Pro 不收集数据，不追踪用户，不上传你的媒体文件。'
-      },
-      en: {
-        dir: 'ltr',
-        langLabel: 'Language',
-        title: 'ClipForge Pro Privacy Policy',
-        meta: 'Privacy policy for ClipForge Pro, a local video compression, conversion, and audio export app for Mac.',
-        h1: 'Privacy Policy',
-        updated: 'Last updated: June 5, 2026',
-        intro: 'ClipForge Pro is a local video compression, conversion, audio extraction, and lightweight editing tool for Mac. The app processes user-selected media files on your device without accounts, cloud upload, advertising, or tracking.',
-        sections: [
-          ['Data We Collect', 'ClipForge Pro does not collect personal data. The app does not require sign-in, does not operate a user account service, does not include advertising SDKs, and does not include third-party tracking SDKs.'],
-          ['Media Files', 'The app can access only the video, audio, folder, and output locations that you select through macOS file pickers, drag and drop, or saved permissions. Media probing, compression, conversion, and export run locally on your Mac. Your source media and exported files are not uploaded by the app.'],
-          ['Data Stored on Your Mac', 'To provide core features, ClipForge Pro may store local preferences such as default output folder, folder permission, app language, export settings, target size mode, unfinished queue recovery state, local file references, basic media metadata, and diagnostic reports that you generate or export. These records remain on your device unless you choose to share them.'],
-          ['Network Access', 'Core functionality works offline. Open-source license links, support links, or privacy links may open external websites only when you choose to click them.'],
-          ['Open Source Components', 'ClipForge Pro bundles FFmpeg and ffprobe for local media probing and transcoding. The app includes open-source notices, license information, build notes, and source package materials for compliance.'],
-          ["Children's Privacy", 'ClipForge Pro is a general media utility and is not directed to children. The app does not knowingly collect information from children or any other users.'],
-          ['Changes to This Policy', 'If this policy changes, the updated version will be posted on this page with a revised update date.'],
-          ['Contact', `If you have questions about this privacy policy, contact us at ${email}.`]
-        ],
-        notice: 'Summary: ClipForge Pro does not collect data, track users, or upload your media files.'
-      },
-      'zh-Hant': {
-        dir: 'ltr',
-        langLabel: '語言',
-        title: '影序 Pro 隱私政策 | ClipForge Pro Privacy Policy',
-        meta: '影序 Pro（ClipForge Pro）隱私政策：本機影片壓縮、格式轉換與音訊匯出工具，不收集個人資料，不上傳媒體檔案。',
-        h1: '隱私政策',
-        updated: '最後更新：2026 年 6 月 5 日',
-        intro: '影序 Pro（ClipForge Pro）是一款 Mac 本機影片壓縮、格式轉換、音訊擷取與輕量剪輯工具。App 只處理你主動選取的本機媒體檔案，不需要帳號，不上傳雲端，不包含廣告 SDK，也不包含第三方追蹤 SDK。',
-        sections: [
-          ['我們收集的資料', '影序 Pro 不收集個人資料。App 不提供帳號系統，不營運遠端使用者服務，不整合廣告 SDK，也不整合第三方追蹤 SDK。'],
-          ['媒體檔案', 'App 只能存取你透過 macOS 檔案選擇器、拖放或已儲存權限明確選取的影片、音訊、資料夾和輸出位置。媒體分析、壓縮、轉換與匯出都在你的 Mac 本機完成，來源檔案與輸出檔案不會由 App 上傳。'],
-          ['本機儲存的資料', '為提供核心功能，App 可能在本機儲存預設輸出資料夾、資料夾存取權限、語言、匯出設定、目標大小模式、未完成佇列恢復狀態、本機檔案參照、基本媒體元資料，以及你主動產生或匯出的本機診斷報告。這些內容會保留在你的裝置上，除非你主動分享。'],
-          ['網路存取', '核心功能可離線使用。開源授權連結、支援連結或隱私連結只會在你主動點擊時開啟外部網站。'],
-          ['開源元件', '影序 Pro 隨 App 打包 FFmpeg 和 ffprobe，用於本機媒體分析和轉碼。App 內包含開源聲明、授權資訊、建置說明和原始碼套件材料。'],
-          ['兒童隱私', '影序 Pro 是通用媒體工具，並非面向兒童設計。App 不會有意收集兒童或其他使用者的資訊。'],
-          ['政策變更', '如果本政策發生變更，更新版本會發布在本頁面並標明新的更新日期。'],
-          ['聯絡方式', `如有隱私相關問題，請寄信至 ${email}。`]
-        ],
-        notice: '摘要：影序 Pro 不收集資料，不追蹤使用者，不上傳你的媒體檔案。'
-      },
-      ja: {
-        dir: 'ltr',
-        langLabel: '言語',
-        title: 'ClipForge Pro プライバシーポリシー',
-        meta: 'ClipForge Pro のプライバシーポリシー。Mac 用のローカル動画圧縮、変換、音声書き出しアプリです。',
-        h1: 'プライバシーポリシー',
-        updated: '最終更新日：2026年6月5日',
-        intro: 'ClipForge Pro は、Mac 上で動作するローカルの動画圧縮、形式変換、音声抽出、軽量編集ツールです。アカウント、クラウドアップロード、広告、トラッキングなしで、ユーザーが選択したメディアファイルを端末上で処理します。',
-        sections: [
-          ['収集するデータ', 'ClipForge Pro は個人データを収集しません。サインイン、ユーザーアカウントサービス、広告 SDK、第三者トラッキング SDK は含まれていません。'],
-          ['メディアファイル', 'アプリがアクセスできるのは、macOS のファイル選択、ドラッグ＆ドロップ、または保存済みの権限でユーザーが選択した動画、音声、フォルダ、出力先のみです。解析、圧縮、変換、書き出しは Mac 上で実行され、ファイルはアップロードされません。'],
-          ['Mac に保存されるデータ', '既定の出力フォルダ、フォルダ権限、言語、書き出し設定、目標サイズ、未完了キューの復元状態、ローカルファイル参照、基本的なメディアメタデータ、ユーザーが生成または書き出した診断レポートなどをローカルに保存する場合があります。共有しない限り、これらは端末上に残ります。'],
-          ['ネットワークアクセス', '主要機能はオフラインで使用できます。オープンソースライセンス、サポート、プライバシーのリンクは、ユーザーがクリックした場合にのみ外部サイトを開きます。'],
-          ['オープンソースコンポーネント', 'ClipForge Pro はローカル解析と変換のために FFmpeg と ffprobe を同梱し、ライセンス情報、ビルド情報、ソースパッケージ資料を含みます。'],
-          ['児童のプライバシー', 'ClipForge Pro は一般向けのメディアユーティリティであり、児童を対象としていません。児童またはその他のユーザーから情報を意図的に収集しません。'],
-          ['ポリシーの変更', 'このポリシーを変更する場合は、更新日を改訂してこのページに掲載します。'],
-          ['お問い合わせ', `このポリシーに関する質問は ${email} までご連絡ください。`]
-        ],
-        notice: '要約：ClipForge Pro はデータを収集せず、ユーザーを追跡せず、メディアファイルをアップロードしません。'
-      },
-      ko: {
-        dir: 'ltr',
-        langLabel: '언어',
-        title: 'ClipForge Pro 개인정보 처리방침',
-        meta: 'Mac용 로컬 비디오 압축, 변환, 오디오 추출 앱 ClipForge Pro의 개인정보 처리방침입니다.',
-        h1: '개인정보 처리방침',
-        updated: '최종 업데이트: 2026년 6월 5일',
-        intro: 'ClipForge Pro는 Mac에서 실행되는 로컬 비디오 압축, 변환, 오디오 추출 및 간단한 편집 도구입니다. 계정, 클라우드 업로드, 광고 또는 추적 없이 사용자가 선택한 미디어 파일을 기기에서 처리합니다.',
-        sections: [
-          ['수집하는 데이터', 'ClipForge Pro는 개인 데이터를 수집하지 않습니다. 로그인, 사용자 계정 서비스, 광고 SDK 또는 타사 추적 SDK가 포함되어 있지 않습니다.'],
-          ['미디어 파일', '앱은 macOS 파일 선택기, 드래그 앤 드롭 또는 저장된 권한을 통해 사용자가 선택한 비디오, 오디오, 폴더 및 출력 위치에만 접근할 수 있습니다. 분석, 압축, 변환 및 내보내기는 Mac에서 로컬로 실행되며 파일은 업로드되지 않습니다.'],
-          ['Mac에 저장되는 데이터', '기본 출력 폴더, 폴더 권한, 언어, 내보내기 설정, 목표 크기 모드, 완료되지 않은 대기열 복구 상태, 로컬 파일 참조, 기본 미디어 메타데이터, 사용자가 생성하거나 내보낸 진단 보고서를 로컬에 저장할 수 있습니다. 직접 공유하지 않는 한 이러한 데이터는 기기에 남습니다.'],
-          ['네트워크 접근', '핵심 기능은 오프라인에서 작동합니다. 오픈 소스 라이선스, 지원 또는 개인정보 링크는 사용자가 클릭할 때만 외부 웹사이트를 엽니다.'],
-          ['오픈 소스 구성 요소', 'ClipForge Pro는 로컬 미디어 분석 및 변환을 위해 FFmpeg와 ffprobe를 포함하며, 오픈 소스 고지, 라이선스 정보, 빌드 노트 및 소스 패키지 자료를 제공합니다.'],
-          ['아동 개인정보', 'ClipForge Pro는 일반 미디어 유틸리티이며 아동을 대상으로 하지 않습니다. 아동 또는 다른 사용자로부터 정보를 고의로 수집하지 않습니다.'],
-          ['정책 변경', '정책이 변경되면 개정된 업데이트 날짜와 함께 이 페이지에 게시됩니다.'],
-          ['문의', `이 개인정보 처리방침에 대한 질문은 ${email} 으로 문의해 주세요.`]
-        ],
-        notice: '요약: ClipForge Pro는 데이터를 수집하거나 사용자를 추적하거나 미디어 파일을 업로드하지 않습니다.'
-      },
-      es: {
-        dir: 'ltr',
-        langLabel: 'Idioma',
-        title: 'Política de privacidad de ClipForge Pro',
-        meta: 'Política de privacidad de ClipForge Pro, una app local para comprimir, convertir y exportar audio en Mac.',
-        h1: 'Política de privacidad',
-        updated: 'Última actualización: 5 de junio de 2026',
-        intro: 'ClipForge Pro es una herramienta local para Mac que comprime, convierte, extrae audio y realiza ediciones ligeras de video. Procesa en tu dispositivo los archivos multimedia que seleccionas, sin cuentas, cargas a la nube, publicidad ni seguimiento.',
-        sections: [
-          ['Datos que recopilamos', 'ClipForge Pro no recopila datos personales. La app no requiere inicio de sesión, no opera un servicio de cuentas, no incluye SDK publicitarios y no incluye SDK de seguimiento de terceros.'],
-          ['Archivos multimedia', 'La app solo puede acceder a los videos, audios, carpetas y ubicaciones de salida que seleccionas mediante el selector de archivos de macOS, arrastrar y soltar o permisos guardados. El análisis, la compresión, la conversión y la exportación se ejecutan localmente en tu Mac; tus archivos no se suben.'],
-          ['Datos almacenados en tu Mac', 'La app puede guardar preferencias locales como carpeta de salida, permisos de carpeta, idioma, ajustes de exportación, modo de tamaño objetivo, estado de recuperación de colas sin terminar, referencias a archivos locales, metadatos multimedia básicos e informes de diagnóstico generados o exportados por ti. Permanecen en tu dispositivo salvo que decidas compartirlos.'],
-          ['Acceso a la red', 'Las funciones principales operan sin conexión. Los enlaces de licencias de código abierto, soporte o privacidad abren sitios externos solo cuando decides hacer clic en ellos.'],
-          ['Componentes de código abierto', 'ClipForge Pro incluye FFmpeg y ffprobe para análisis y transcodificación local, junto con avisos de código abierto, licencias, notas de compilación y materiales de paquete fuente.'],
-          ['Privacidad de menores', 'ClipForge Pro es una utilidad multimedia general y no está dirigida a menores. La app no recopila conscientemente información de menores ni de otros usuarios.'],
-          ['Cambios en esta política', 'Si esta política cambia, la versión actualizada se publicará en esta página con una nueva fecha de actualización.'],
-          ['Contacto', `Si tienes preguntas sobre esta política, escríbenos a ${email}.`]
-        ],
-        notice: 'Resumen: ClipForge Pro no recopila datos, no rastrea usuarios y no sube tus archivos multimedia.'
-      },
-      fr: {
-        dir: 'ltr',
-        langLabel: 'Langue',
-        title: 'Politique de confidentialité de ClipForge Pro',
-        meta: 'Politique de confidentialité de ClipForge Pro, application Mac locale de compression, conversion et export audio.',
-        h1: 'Politique de confidentialité',
-        updated: 'Dernière mise à jour : 5 juin 2026',
-        intro: 'ClipForge Pro est un outil Mac local de compression vidéo, conversion, extraction audio et édition légère. L’app traite sur votre appareil les fichiers multimédias que vous sélectionnez, sans compte, téléversement cloud, publicité ni suivi.',
-        sections: [
-          ['Données collectées', 'ClipForge Pro ne collecte pas de données personnelles. L’app ne nécessite pas de connexion, n’exploite pas de service de compte, n’inclut pas de SDK publicitaire et n’inclut pas de SDK de suivi tiers.'],
-          ['Fichiers multimédias', 'L’app ne peut accéder qu’aux vidéos, audios, dossiers et emplacements de sortie que vous choisissez via macOS, le glisser-déposer ou des autorisations enregistrées. L’analyse, la compression, la conversion et l’export se font localement sur votre Mac; vos fichiers ne sont pas téléversés.'],
-          ['Données stockées sur votre Mac', 'L’app peut stocker localement le dossier de sortie, les autorisations de dossier, la langue, les réglages d’export, le mode de taille cible, l’état de restauration des files inachevées, les références de fichiers locaux, les métadonnées média de base et les rapports de diagnostic que vous générez ou exportez. Ces données restent sur votre appareil sauf si vous les partagez.'],
-          ['Accès réseau', 'Les fonctions principales fonctionnent hors ligne. Les liens de licences open source, d’assistance ou de confidentialité ouvrent des sites externes uniquement si vous cliquez dessus.'],
-          ['Composants open source', 'ClipForge Pro intègre FFmpeg et ffprobe pour l’analyse et le transcodage locaux, avec avis open source, licences, notes de compilation et éléments de paquet source.'],
-          ['Confidentialité des enfants', 'ClipForge Pro est un utilitaire multimédia général et ne s’adresse pas aux enfants. L’app ne collecte pas sciemment d’informations auprès d’enfants ou d’autres utilisateurs.'],
-          ['Modifications', 'Si cette politique change, la version mise à jour sera publiée sur cette page avec une date révisée.'],
-          ['Contact', `Pour toute question sur cette politique, contactez-nous à ${email}.`]
-        ],
-        notice: 'Résumé : ClipForge Pro ne collecte pas de données, ne suit pas les utilisateurs et ne téléverse pas vos fichiers multimédias.'
-      },
-      de: {
-        dir: 'ltr',
-        langLabel: 'Sprache',
-        title: 'Datenschutzerklärung von ClipForge Pro',
-        meta: 'Datenschutzerklärung für ClipForge Pro, eine lokale Mac-App für Videokomprimierung, Konvertierung und Audioexport.',
-        h1: 'Datenschutzerklärung',
-        updated: 'Zuletzt aktualisiert: 5. Juni 2026',
-        intro: 'ClipForge Pro ist ein lokales Mac-Werkzeug für Videokomprimierung, Konvertierung, Audioextraktion und einfache Bearbeitung. Die App verarbeitet von dir ausgewählte Mediendateien auf deinem Gerät, ohne Konten, Cloud-Upload, Werbung oder Tracking.',
-        sections: [
-          ['Erhobene Daten', 'ClipForge Pro erhebt keine personenbezogenen Daten. Die App erfordert keine Anmeldung, betreibt keinen Kontodienst, enthält keine Werbe-SDKs und keine Tracking-SDKs Dritter.'],
-          ['Mediendateien', 'Die App kann nur auf Videos, Audios, Ordner und Ausgabeorte zugreifen, die du über macOS, Drag-and-drop oder gespeicherte Berechtigungen auswählst. Analyse, Komprimierung, Konvertierung und Export laufen lokal auf deinem Mac; Dateien werden nicht hochgeladen.'],
-          ['Auf deinem Mac gespeicherte Daten', 'Die App kann lokale Einstellungen wie Ausgabeordner, Ordnerberechtigungen, Sprache, Exporteinstellungen, Zielgrößenmodus, Wiederherstellungsstatus unfertiger Warteschlangen, lokale Dateiverweise, grundlegende Medienmetadaten und von dir erzeugte oder exportierte Diagnoseberichte speichern. Diese Daten bleiben auf deinem Gerät, sofern du sie nicht teilst.'],
-          ['Netzwerkzugriff', 'Die Kernfunktionen funktionieren offline. Links zu Open-Source-Lizenzen, Support oder Datenschutz öffnen externe Websites nur, wenn du sie anklickst.'],
-          ['Open-Source-Komponenten', 'ClipForge Pro bündelt FFmpeg und ffprobe für lokale Medienanalyse und Transkodierung sowie Hinweise, Lizenzinformationen, Build-Notizen und Quellpaketmaterialien.'],
-          ['Datenschutz von Kindern', 'ClipForge Pro ist ein allgemeines Medienwerkzeug und richtet sich nicht an Kinder. Die App sammelt wissentlich keine Informationen von Kindern oder anderen Nutzern.'],
-          ['Änderungen', 'Bei Änderungen wird die aktualisierte Fassung mit neuem Datum auf dieser Seite veröffentlicht.'],
-          ['Kontakt', `Fragen zu dieser Datenschutzerklärung bitte an ${email} senden.`]
-        ],
-        notice: 'Zusammenfassung: ClipForge Pro sammelt keine Daten, verfolgt keine Nutzer und lädt deine Mediendateien nicht hoch.'
-      },
-      'pt-BR': {
-        dir: 'ltr',
-        langLabel: 'Idioma',
-        title: 'Política de Privacidade do ClipForge Pro',
-        meta: 'Política de privacidade do ClipForge Pro, app local para Mac de compressão, conversão e exportação de áudio.',
-        h1: 'Política de Privacidade',
-        updated: 'Última atualização: 5 de junho de 2026',
-        intro: 'ClipForge Pro é uma ferramenta local para Mac de compressão de vídeo, conversão, extração de áudio e edição leve. O app processa no dispositivo os arquivos de mídia que você seleciona, sem contas, upload para nuvem, anúncios ou rastreamento.',
-        sections: [
-          ['Dados que coletamos', 'ClipForge Pro não coleta dados pessoais. O app não exige login, não opera serviço de contas, não inclui SDKs de anúncios e não inclui SDKs de rastreamento de terceiros.'],
-          ['Arquivos de mídia', 'O app só acessa vídeos, áudios, pastas e locais de saída selecionados por você no macOS, por arrastar e soltar ou por permissões salvas. Análise, compressão, conversão e exportação rodam localmente no Mac; seus arquivos não são enviados.'],
-          ['Dados armazenados no Mac', 'O app pode guardar preferências locais como pasta de saída, permissões de pasta, idioma, configurações de exportação, modo de tamanho alvo, estado de recuperação de filas inacabadas, referências a arquivos locais, metadados básicos de mídia e relatórios de diagnóstico gerados ou exportados por você. Esses dados ficam no dispositivo, salvo se você decidir compartilhá-los.'],
-          ['Acesso à rede', 'As funções principais funcionam offline. Links de licença open source, suporte ou privacidade abrem sites externos somente quando você clica neles.'],
-          ['Componentes open source', 'ClipForge Pro inclui FFmpeg e ffprobe para análise e transcodificação local, com avisos, licenças, notas de build e materiais de pacote de código-fonte.'],
-          ['Privacidade de crianças', 'ClipForge Pro é um utilitário geral de mídia e não é direcionado a crianças. O app não coleta intencionalmente informações de crianças ou outros usuários.'],
-          ['Alterações nesta política', 'Se esta política mudar, a versão atualizada será publicada nesta página com nova data.'],
-          ['Contato', `Dúvidas sobre esta política podem ser enviadas para ${email}.`]
-        ],
-        notice: 'Resumo: ClipForge Pro não coleta dados, não rastreia usuários e não envia seus arquivos de mídia.'
-      },
-      it: {
-        dir: 'ltr',
-        langLabel: 'Lingua',
-        title: 'Informativa sulla privacy di ClipForge Pro',
-        meta: 'Informativa sulla privacy di ClipForge Pro, app Mac locale per compressione, conversione ed esportazione audio.',
-        h1: 'Informativa sulla privacy',
-        updated: 'Ultimo aggiornamento: 5 giugno 2026',
-        intro: 'ClipForge Pro è uno strumento locale per Mac per compressione video, conversione, estrazione audio e modifiche leggere. L’app elabora sul dispositivo i file multimediali selezionati dall’utente, senza account, upload cloud, pubblicità o tracciamento.',
-        sections: [
-          ['Dati raccolti', 'ClipForge Pro non raccoglie dati personali. L’app non richiede accesso, non gestisce un servizio account, non include SDK pubblicitari e non include SDK di tracciamento di terze parti.'],
-          ['File multimediali', 'L’app può accedere solo a video, audio, cartelle e destinazioni di output selezionati tramite macOS, trascinamento o autorizzazioni salvate. Analisi, compressione, conversione ed esportazione avvengono localmente sul Mac; i file non vengono caricati.'],
-          ['Dati salvati sul Mac', 'L’app può salvare preferenze locali come cartella di output, autorizzazioni, lingua, impostazioni di esportazione, modalità di dimensione obiettivo, stato di recupero delle code non completate, riferimenti a file locali, metadati multimediali di base e report diagnostici generati o esportati dall’utente. Restano sul dispositivo salvo condivisione volontaria.'],
-          ['Accesso alla rete', 'Le funzioni principali funzionano offline. I link a licenze open source, supporto o privacy aprono siti esterni solo se cliccati.'],
-          ['Componenti open source', 'ClipForge Pro include FFmpeg e ffprobe per analisi e transcodifica locali, con avvisi, licenze, note di build e materiali del pacchetto sorgente.'],
-          ['Privacy dei minori', 'ClipForge Pro è un’utilità multimediale generale e non è rivolta ai minori. L’app non raccoglie consapevolmente informazioni da minori o altri utenti.'],
-          ['Modifiche', 'Se questa informativa cambia, la versione aggiornata sarà pubblicata su questa pagina con una nuova data.'],
-          ['Contatto', `Per domande su questa informativa, scrivere a ${email}.`]
-        ],
-        notice: 'Sintesi: ClipForge Pro non raccoglie dati, non traccia gli utenti e non carica i file multimediali.'
-      },
-      ru: {
-        dir: 'ltr',
-        langLabel: 'Язык',
-        title: 'Политика конфиденциальности ClipForge Pro',
-        meta: 'Политика конфиденциальности ClipForge Pro, локального приложения для Mac для сжатия, конвертации и экспорта аудио.',
-        h1: 'Политика конфиденциальности',
-        updated: 'Последнее обновление: 5 июня 2026 г.',
-        intro: 'ClipForge Pro — локальный инструмент для Mac для сжатия видео, конвертации, извлечения аудио и простой правки. Приложение обрабатывает выбранные вами медиафайлы на устройстве, без учетных записей, загрузки в облако, рекламы и отслеживания.',
-        sections: [
-          ['Какие данные мы собираем', 'ClipForge Pro не собирает персональные данные. Приложение не требует входа, не использует сервис учетных записей, не содержит рекламных SDK и SDK отслеживания третьих сторон.'],
-          ['Медиафайлы', 'Приложение получает доступ только к видео, аудио, папкам и местам вывода, которые вы выбираете через macOS, перетаскивание или сохраненные разрешения. Анализ, сжатие, конвертация и экспорт выполняются локально на Mac; файлы не загружаются.'],
-          ['Данные на вашем Mac', 'Приложение может локально хранить папку вывода, разрешения папок, язык, настройки экспорта, режим целевого размера, состояние восстановления незавершенной очереди, ссылки на локальные файлы, базовые метаданные медиа и диагностические отчеты, созданные или экспортированные вами. Эти данные остаются на устройстве, если вы не решите поделиться ими.'],
-          ['Доступ к сети', 'Основные функции работают офлайн. Ссылки на лицензии open source, поддержку или конфиденциальность открывают внешние сайты только при вашем нажатии.'],
-          ['Компоненты с открытым исходным кодом', 'ClipForge Pro включает FFmpeg и ffprobe для локального анализа и транскодирования, а также уведомления, лицензии, сведения о сборке и материалы исходного пакета.'],
-          ['Конфиденциальность детей', 'ClipForge Pro — универсальная медиаутилита и не предназначена для детей. Приложение сознательно не собирает информацию от детей или других пользователей.'],
-          ['Изменения политики', 'При изменениях обновленная версия будет опубликована на этой странице с новой датой.'],
-          ['Контакты', `Вопросы по этой политике можно отправить на ${email}.`]
-        ],
-        notice: 'Кратко: ClipForge Pro не собирает данные, не отслеживает пользователей и не загружает ваши медиафайлы.'
-      },
-      ar: {
-        dir: 'rtl',
-        langLabel: 'اللغة',
-        title: 'سياسة خصوصية ClipForge Pro',
-        meta: 'سياسة خصوصية ClipForge Pro، تطبيق محلي على Mac لضغط الفيديو وتحويله وتصدير الصوت.',
-        h1: 'سياسة الخصوصية',
-        updated: 'آخر تحديث: 5 يونيو 2026',
-        intro: 'ClipForge Pro أداة محلية على Mac لضغط الفيديو وتحويله واستخراج الصوت والتحرير الخفيف. يعالج التطبيق ملفات الوسائط التي تختارها على جهازك من دون حسابات أو رفع سحابي أو إعلانات أو تتبع.',
-        sections: [
-          ['البيانات التي نجمعها', 'لا يجمع ClipForge Pro بيانات شخصية. لا يتطلب التطبيق تسجيل دخول، ولا يدير خدمة حسابات، ولا يتضمن حزم SDK للإعلانات أو التتبع من أطراف ثالثة.'],
-          ['ملفات الوسائط', 'لا يستطيع التطبيق الوصول إلا إلى ملفات الفيديو أو الصوت أو المجلدات أو مواقع الإخراج التي تختارها عبر macOS أو السحب والإفلات أو الأذونات المحفوظة. تتم المعاينة والضغط والتحويل والتصدير محلياً على Mac ولا يرفع التطبيق ملفاتك.'],
-          ['البيانات المخزنة على Mac', 'قد يخزن التطبيق تفضيلات محلية مثل مجلد الإخراج، أذونات المجلد، اللغة، إعدادات التصدير، وضع الحجم المستهدف، حالة استعادة قائمة الانتظار غير المكتملة، مراجع الملفات المحلية، بيانات وصفية أساسية للوسائط، وتقارير التشخيص التي تنشئها أو تصدرها. تبقى هذه البيانات على جهازك ما لم تشاركها بنفسك.'],
-          ['الوصول إلى الشبكة', 'تعمل الوظائف الأساسية دون اتصال. قد تفتح روابط تراخيص المصدر المفتوح أو الدعم أو الخصوصية مواقع خارجية فقط عندما تنقر عليها.'],
-          ['مكونات المصدر المفتوح', 'يتضمن ClipForge Pro أداتي FFmpeg و ffprobe للتحليل والتحويل المحليين، مع إشعارات المصدر المفتوح ومعلومات الترخيص وملاحظات البناء ومواد حزمة المصدر.'],
-          ['خصوصية الأطفال', 'ClipForge Pro أداة وسائط عامة وليست موجهة للأطفال. لا يجمع التطبيق عمداً معلومات من الأطفال أو من أي مستخدمين آخرين.'],
-          ['تغييرات السياسة', 'إذا تغيرت هذه السياسة فسيتم نشر النسخة المحدثة على هذه الصفحة مع تاريخ تحديث جديد.'],
-          ['التواصل', `لأي أسئلة حول هذه السياسة راسلنا على ${email}.`]
-        ],
-        notice: 'ملخص: لا يجمع ClipForge Pro البيانات، ولا يتتبع المستخدمين، ولا يرفع ملفات الوسائط الخاصة بك.'
-      },
-      hi: {
-        dir: 'ltr',
-        langLabel: 'भाषा',
-        title: 'ClipForge Pro गोपनीयता नीति',
-        meta: 'ClipForge Pro की गोपनीयता नीति, Mac के लिए स्थानीय वीडियो compression, conversion और audio export ऐप।',
-        h1: 'गोपनीयता नीति',
-        updated: 'अंतिम अपडेट: 5 जून 2026',
-        intro: 'ClipForge Pro Mac के लिए स्थानीय वीडियो compression, conversion, audio extraction और हल्का editing टूल है। ऐप आपके चुने हुए media files को आपके device पर process करता है, बिना account, cloud upload, advertising या tracking के।',
-        sections: [
-          ['हम कौन सा डेटा एकत्र करते हैं', 'ClipForge Pro personal data एकत्र नहीं करता। ऐप sign-in नहीं मांगता, account service नहीं चलाता, advertising SDK शामिल नहीं करता और third-party tracking SDK शामिल नहीं करता।'],
-          ['मीडिया फ़ाइलें', 'ऐप केवल उन video, audio, folder और output locations तक पहुंच सकता है जिन्हें आप macOS file picker, drag and drop या saved permissions से चुनते हैं। probing, compression, conversion और export आपके Mac पर local रूप से चलते हैं; files upload नहीं होतीं।'],
-          ['आपके Mac पर संग्रहीत डेटा', 'ऐप default output folder, folder permission, language, export settings, target size mode, unfinished queue recovery state, local file references, basic media metadata और आपके द्वारा बनाए या export किए गए diagnostic reports जैसी local preferences रख सकता है। ये आपके device पर रहते हैं जब तक आप इन्हें share न करें।'],
-          ['नेटवर्क एक्सेस', 'Core features offline काम करते हैं। Open-source license, support या privacy links केवल आपके click करने पर external websites खोलते हैं।'],
-          ['Open Source Components', 'ClipForge Pro local media probing और transcoding के लिए FFmpeg और ffprobe शामिल करता है, साथ में notices, license information, build notes और source package materials भी देता है।'],
-          ['बच्चों की गोपनीयता', 'ClipForge Pro एक सामान्य media utility है और बच्चों के लिए लक्षित नहीं है। ऐप बच्चों या अन्य users से जानबूझकर जानकारी एकत्र नहीं करता।'],
-          ['इस नीति में बदलाव', 'नीति बदलने पर updated version इस page पर revised update date के साथ प्रकाशित होगा।'],
-          ['संपर्क', `इस नीति के बारे में प्रश्नों के लिए ${email} पर संपर्क करें।`]
-        ],
-        notice: 'सारांश: ClipForge Pro डेटा एकत्र नहीं करता, users को track नहीं करता और आपकी media files upload नहीं करता।'
-      },
-      id: {
-        dir: 'ltr',
-        langLabel: 'Bahasa',
-        title: 'Kebijakan Privasi ClipForge Pro',
-        meta: 'Kebijakan privasi ClipForge Pro, aplikasi Mac lokal untuk kompresi video, konversi, dan ekspor audio.',
-        h1: 'Kebijakan Privasi',
-        updated: 'Terakhir diperbarui: 5 Juni 2026',
-        intro: 'ClipForge Pro adalah alat lokal untuk Mac untuk kompresi video, konversi, ekstraksi audio, dan pengeditan ringan. Aplikasi memproses file media yang Anda pilih di perangkat, tanpa akun, unggahan cloud, iklan, atau pelacakan.',
-        sections: [
-          ['Data yang kami kumpulkan', 'ClipForge Pro tidak mengumpulkan data pribadi. Aplikasi tidak memerlukan masuk akun, tidak menjalankan layanan akun, tidak menyertakan SDK iklan, dan tidak menyertakan SDK pelacakan pihak ketiga.'],
-          ['File media', 'Aplikasi hanya dapat mengakses video, audio, folder, dan lokasi keluaran yang Anda pilih melalui macOS, drag and drop, atau izin tersimpan. Analisis, kompresi, konversi, dan ekspor berjalan lokal di Mac; file Anda tidak diunggah.'],
-          ['Data yang disimpan di Mac', 'Aplikasi dapat menyimpan preferensi lokal seperti folder keluaran, izin folder, bahasa, pengaturan ekspor, mode ukuran target, status pemulihan antrean yang belum selesai, referensi file lokal, metadata media dasar, dan laporan diagnostik yang Anda buat atau ekspor. Data ini tetap di perangkat kecuali Anda membagikannya.'],
-          ['Akses jaringan', 'Fungsi utama bekerja offline. Tautan lisensi open source, dukungan, atau privasi membuka situs eksternal hanya saat Anda memilih untuk mengekliknya.'],
-          ['Komponen open source', 'ClipForge Pro menyertakan FFmpeg dan ffprobe untuk analisis dan transcoding lokal, beserta pemberitahuan, lisensi, catatan build, dan materi paket sumber.'],
-          ['Privasi anak', 'ClipForge Pro adalah utilitas media umum dan tidak ditujukan untuk anak-anak. Aplikasi tidak secara sadar mengumpulkan informasi dari anak-anak atau pengguna lain.'],
-          ['Perubahan kebijakan', 'Jika kebijakan ini berubah, versi terbaru akan dipublikasikan di halaman ini dengan tanggal pembaruan baru.'],
-          ['Kontak', `Jika ada pertanyaan tentang kebijakan ini, hubungi ${email}.`]
-        ],
-        notice: 'Ringkasan: ClipForge Pro tidak mengumpulkan data, tidak melacak pengguna, dan tidak mengunggah file media Anda.'
-      },
-      th: {
-        dir: 'ltr',
-        langLabel: 'ภาษา',
-        title: 'นโยบายความเป็นส่วนตัวของ ClipForge Pro',
-        meta: 'นโยบายความเป็นส่วนตัวของ ClipForge Pro แอป Mac แบบทำงานในเครื่องสำหรับบีบอัด แปลง และส่งออกเสียง',
-        h1: 'นโยบายความเป็นส่วนตัว',
-        updated: 'อัปเดตล่าสุด: 5 มิถุนายน 2026',
-        intro: 'ClipForge Pro เป็นเครื่องมือ Mac แบบทำงานในเครื่องสำหรับบีบอัดวิดีโอ แปลงไฟล์ ดึงเสียง และแก้ไขเล็กน้อย แอปประมวลผลไฟล์สื่อที่คุณเลือกบนอุปกรณ์ของคุณ โดยไม่มีบัญชี การอัปโหลดขึ้นคลาวด์ โฆษณา หรือการติดตาม',
-        sections: [
-          ['ข้อมูลที่เราเก็บ', 'ClipForge Pro ไม่เก็บข้อมูลส่วนบุคคล แอปไม่ต้องลงชื่อเข้าใช้ ไม่ให้บริการบัญชีผู้ใช้ ไม่มี SDK โฆษณา และไม่มี SDK ติดตามจากบุคคลที่สาม'],
-          ['ไฟล์สื่อ', 'แอปเข้าถึงได้เฉพาะวิดีโอ เสียง โฟลเดอร์ และตำแหน่งส่งออกที่คุณเลือกผ่าน macOS การลากวาง หรือสิทธิ์ที่บันทึกไว้ การวิเคราะห์ บีบอัด แปลง และส่งออกทำบน Mac ของคุณ ไฟล์จะไม่ถูกอัปโหลด'],
-          ['ข้อมูลที่เก็บบน Mac', 'แอปอาจเก็บค่าตั้งค่าในเครื่อง เช่น โฟลเดอร์ส่งออก สิทธิ์โฟลเดอร์ ภาษา การตั้งค่าส่งออก โหมดขนาดเป้าหมาย สถานะกู้คืนคิวที่ยังไม่เสร็จ การอ้างอิงไฟล์ในเครื่อง เมตาดาต้าสื่อพื้นฐาน และรายงานวินิจฉัยที่คุณสร้างหรือส่งออก ข้อมูลเหล่านี้อยู่บนอุปกรณ์เว้นแต่คุณจะแชร์เอง'],
-          ['การเข้าถึงเครือข่าย', 'ฟังก์ชันหลักใช้งานแบบออฟไลน์ได้ ลิงก์ใบอนุญาตโอเพนซอร์ส ลิงก์สนับสนุน หรือลิงก์ความเป็นส่วนตัวจะเปิดเว็บไซต์ภายนอกเมื่อคุณคลิกเท่านั้น'],
-          ['ส่วนประกอบโอเพนซอร์ส', 'ClipForge Pro รวม FFmpeg และ ffprobe สำหรับวิเคราะห์และแปลงไฟล์ในเครื่อง พร้อมประกาศโอเพนซอร์ส ข้อมูลใบอนุญาต บันทึกการ build และวัสดุแพ็กเกจซอร์ส'],
-          ['ความเป็นส่วนตัวของเด็ก', 'ClipForge Pro เป็นเครื่องมือสื่อทั่วไปและไม่ได้มุ่งเป้าไปยังเด็ก แอปไม่ตั้งใจเก็บข้อมูลจากเด็กหรือผู้ใช้อื่น'],
-          ['การเปลี่ยนแปลงนโยบาย', 'หากนโยบายนี้เปลี่ยน เวอร์ชันล่าสุดจะเผยแพร่บนหน้านี้พร้อมวันที่อัปเดตใหม่'],
-          ['ติดต่อ', `หากมีคำถามเกี่ยวกับนโยบายนี้ โปรดติดต่อ ${email}`]
-        ],
-        notice: 'สรุป: ClipForge Pro ไม่เก็บข้อมูล ไม่ติดตามผู้ใช้ และไม่อัปโหลดไฟล์สื่อของคุณ'
-      },
-      vi: {
-        dir: 'ltr',
-        langLabel: 'Ngôn ngữ',
-        title: 'Chính sách quyền riêng tư của ClipForge Pro',
-        meta: 'Chính sách quyền riêng tư của ClipForge Pro, ứng dụng Mac xử lý cục bộ để nén, chuyển đổi video và xuất âm thanh.',
-        h1: 'Chính sách quyền riêng tư',
-        updated: 'Cập nhật lần cuối: 5 tháng 6, 2026',
-        intro: 'ClipForge Pro là công cụ cục bộ trên Mac để nén video, chuyển đổi, trích xuất âm thanh và chỉnh sửa nhẹ. Ứng dụng xử lý các tệp media bạn chọn trên thiết bị, không cần tài khoản, không tải lên đám mây, không quảng cáo và không theo dõi.',
-        sections: [
-          ['Dữ liệu chúng tôi thu thập', 'ClipForge Pro không thu thập dữ liệu cá nhân. Ứng dụng không yêu cầu đăng nhập, không vận hành dịch vụ tài khoản, không bao gồm SDK quảng cáo và không có SDK theo dõi của bên thứ ba.'],
-          ['Tệp media', 'Ứng dụng chỉ truy cập video, âm thanh, thư mục và vị trí xuất mà bạn chọn qua macOS, kéo thả hoặc quyền đã lưu. Phân tích, nén, chuyển đổi và xuất chạy cục bộ trên Mac; tệp của bạn không được tải lên.'],
-          ['Dữ liệu lưu trên Mac', 'Ứng dụng có thể lưu tùy chọn cục bộ như thư mục xuất, quyền thư mục, ngôn ngữ, thiết lập xuất, chế độ kích thước mục tiêu, trạng thái khôi phục hàng đợi chưa hoàn thành, tham chiếu tệp cục bộ, metadata media cơ bản và báo cáo chẩn đoán do bạn tạo hoặc xuất. Các dữ liệu này ở lại trên thiết bị trừ khi bạn chia sẻ.'],
-          ['Truy cập mạng', 'Các chức năng chính hoạt động ngoại tuyến. Liên kết giấy phép mã nguồn mở, hỗ trợ hoặc quyền riêng tư chỉ mở trang ngoài khi bạn nhấp vào.'],
-          ['Thành phần mã nguồn mở', 'ClipForge Pro bao gồm FFmpeg và ffprobe để phân tích và chuyển mã cục bộ, cùng thông báo mã nguồn mở, thông tin giấy phép, ghi chú build và tài liệu gói nguồn.'],
-          ['Quyền riêng tư của trẻ em', 'ClipForge Pro là tiện ích media chung và không hướng đến trẻ em. Ứng dụng không cố ý thu thập thông tin từ trẻ em hoặc người dùng khác.'],
-          ['Thay đổi chính sách', 'Nếu chính sách này thay đổi, phiên bản cập nhật sẽ được đăng trên trang này với ngày cập nhật mới.'],
-          ['Liên hệ', `Nếu có câu hỏi về chính sách này, hãy liên hệ ${email}.`]
-        ],
-        notice: 'Tóm tắt: ClipForge Pro không thu thập dữ liệu, không theo dõi người dùng và không tải lên tệp media của bạn.'
-      }
-    };
+const languageOrder = ["en", "zh-Hans", "zh-Hant", "ja", "ko", "fr", "de", "es", "it", "pt-BR", "ru", "ar", "hi", "id", "vi", "th"];
+const languageNames = {"en":"English","zh-Hans":"简体中文","zh-Hant":"繁體中文","ja":"日本語","ko":"한국어","fr":"Français","de":"Deutsch","es":"Español","it":"Italiano","pt-BR":"Português (Brasil)","ru":"Русский","ar":"العربية","hi":"हिन्दी","id":"Bahasa Indonesia","vi":"Tiếng Việt","th":"ไทย"};
+const content = {"en":{"kicker":"Privacy","title":"ClipForge Pro Privacy Policy","subtitle":"ClipForge Pro is built for local media conversion. Your videos and audio stay on your Mac unless you choose to share them.","updated":"Last updated: June 21, 2026","highlightsTitle":"Privacy at a glance","highlights":["No account or tracking","Media stays local","Diagnostics are user-controlled"],"sections":[{"heading":"Data we do not collect","body":"We do not require an account and do not collect names, email addresses, contacts, photos, media libraries, precise location, advertising identifiers, or analytics events."},{"heading":"Local media processing","body":"Imported videos, audio, folders, subtitles, and watermarks are processed on your device by the local transcoding engine. We do not upload source files or outputs to our servers."},{"heading":"Files and permissions","body":"The app can access only files and folders you select, plus output folders you choose. macOS may store security-scoped bookmarks so the app can reopen chosen locations."},{"heading":"Diagnostics and support","body":"If you export diagnostics or contact support, logs may include app version, macOS version, FFmpeg status, settings, error messages, and file paths. Do not send media files unless you intentionally attach them."},{"heading":"Third parties, children, and retention","body":"The app does not include advertising SDKs, third-party analytics, or cross-app tracking. Because we do not collect personal data, we do not knowingly collect data from children or retain personal information on servers."},{"heading":"Contact","body":"For privacy questions, contact us through the App Store support link or the developer contact shown on the store listing."}]},"zh-Hans":{"kicker":"隐私","title":"影序 Pro 隐私政策","subtitle":"影序 Pro 面向本地媒体转换设计。除非你主动分享，视频和音频都会保留在你的 Mac 上。","updated":"最后更新：2026 年 6 月 21 日","highlightsTitle":"隐私摘要","highlights":["无需账号，不做追踪","媒体文件本地处理","诊断信息由用户主动导出"],"sections":[{"heading":"我们不收集的数据","body":"应用不要求账号，也不收集姓名、邮箱、通讯录、照片、媒体库、精确位置、广告标识符或分析事件。"},{"heading":"本地媒体处理","body":"导入的视频、音频、文件夹、字幕和水印由设备上的本地转码引擎处理。我们不会把源文件或导出文件上传到服务器。"},{"heading":"文件与权限","body":"应用只能访问你选择的文件、文件夹以及你指定的输出目录。macOS 可能保存安全范围书签，以便应用再次打开你已授权的位置。"},{"heading":"诊断与支持","body":"如果你主动导出诊断或联系支持，日志可能包含应用版本、macOS 版本、FFmpeg 状态、设置、错误信息和文件路径。除非你主动附加，否则不要发送媒体文件。"},{"heading":"第三方、儿童与保留","body":"应用不包含广告 SDK、第三方分析或跨 App 追踪。由于我们不收集个人数据，也不会有意收集儿童数据或在服务器上保留个人信息。"},{"heading":"联系","body":"如有隐私问题，请通过 App Store 支持链接或商店页面列出的开发者联系方式联系我们。"}]},"zh-Hant":{"kicker":"隱私","title":"影序 Pro 隱私政策","subtitle":"影序 Pro 專為本機媒體轉換而設計。除非你主動分享，影片與音訊都會保留在你的 Mac 上。","updated":"最後更新：2026 年 6 月 21 日","highlightsTitle":"隱私摘要","highlights":["無需帳號，不做追蹤","媒體檔案本機處理","診斷資訊由使用者主動匯出"],"sections":[{"heading":"我們不收集的資料","body":"App 不要求帳號，也不收集姓名、電子郵件、聯絡人、照片、媒體庫、精確位置、廣告識別碼或分析事件。"},{"heading":"本機媒體處理","body":"匯入的影片、音訊、資料夾、字幕與浮水印會由裝置上的本機轉碼引擎處理。我們不會將來源檔或輸出檔上傳到伺服器。"},{"heading":"檔案與權限","body":"App 只能存取你選取的檔案、資料夾以及指定的輸出位置。macOS 可能保存安全範圍書籤，以便 App 再次開啟已授權的位置。"},{"heading":"診斷與支援","body":"如果你主動匯出診斷或聯絡支援，日誌可能包含 App 版本、macOS 版本、FFmpeg 狀態、設定、錯誤訊息與檔案路徑。除非你主動附加，否則請勿傳送媒體檔案。"},{"heading":"第三方、兒童與保留","body":"App 不包含廣告 SDK、第三方分析或跨 App 追蹤。由於我們不收集個人資料，也不會有意收集兒童資料或在伺服器保留個人資訊。"},{"heading":"聯絡","body":"如有隱私問題，請透過 App Store 支援連結或商店頁面列出的開發者聯絡方式與我們聯絡。"}]},"ja":{"kicker":"プライバシー","title":"ClipForge Pro プライバシーポリシー","subtitle":"ClipForge Pro はローカルでのメディア変換を前提に設計されています。共有を選ばない限り、動画と音声は Mac 上に残ります。","updated":"最終更新日：2026年6月21日","highlightsTitle":"プライバシー概要","highlights":["アカウント不要、追跡なし","メディアはローカル処理","診断情報はユーザー操作時のみ"],"sections":[{"heading":"収集しないデータ","body":"アカウントは不要です。氏名、メールアドレス、連絡先、写真、メディアライブラリ、正確な位置情報、広告識別子、分析イベントは収集しません。"},{"heading":"ローカル処理","body":"読み込んだ動画、音声、フォルダ、字幕、ウォーターマークは、端末上のローカル変換エンジンで処理されます。元ファイルや出力ファイルを当社サーバーへアップロードしません。"},{"heading":"ファイルと権限","body":"アプリがアクセスできるのは、ユーザーが選択したファイル、フォルダ、出力先のみです。macOS は選択済みの場所を再度開くためにセキュリティスコープ付きブックマークを保存する場合があります。"},{"heading":"診断とサポート","body":"診断を書き出す、またはサポートへ連絡する場合、ログにはアプリ版、macOS 版、FFmpeg 状態、設定、エラー、ファイルパスが含まれることがあります。意図しない限りメディアファイルを送らないでください。"},{"heading":"第三者、子ども、保存期間","body":"広告 SDK、第三者分析、クロスアプリ追跡は含みません。個人データを収集しないため、子どものデータを意図的に収集したり、サーバーに個人情報を保持したりしません。"},{"heading":"お問い合わせ","body":"プライバシーに関する質問は、App Store のサポートリンクまたはストア掲載の開発者連絡先からお問い合わせください。"}]},"ko":{"kicker":"개인정보","title":"ClipForge Pro 개인정보 처리방침","subtitle":"ClipForge Pro는 로컬 미디어 변환을 위해 설계되었습니다. 사용자가 공유하지 않는 한 비디오와 오디오는 Mac에 남아 있습니다.","updated":"최종 업데이트: 2026년 6월 21일","highlightsTitle":"개인정보 요약","highlights":["계정 없음, 추적 없음","미디어는 로컬 처리","진단은 사용자가 내보낼 때만"],"sections":[{"heading":"수집하지 않는 데이터","body":"계정이 필요하지 않으며 이름, 이메일, 연락처, 사진, 미디어 보관함, 정확한 위치, 광고 식별자 또는 분석 이벤트를 수집하지 않습니다."},{"heading":"로컬 미디어 처리","body":"가져온 비디오, 오디오, 폴더, 자막, 워터마크는 기기의 로컬 변환 엔진에서 처리됩니다. 원본 파일이나 결과물을 서버로 업로드하지 않습니다."},{"heading":"파일 및 권한","body":"앱은 사용자가 선택한 파일과 폴더, 그리고 선택한 출력 폴더에만 접근할 수 있습니다. macOS는 승인한 위치를 다시 열기 위해 보안 범위 책갈피를 저장할 수 있습니다."},{"heading":"진단 및 지원","body":"진단을 내보내거나 지원을 요청하면 로그에 앱 버전, macOS 버전, FFmpeg 상태, 설정, 오류 메시지, 파일 경로가 포함될 수 있습니다. 의도하지 않았다면 미디어 파일을 보내지 마십시오."},{"heading":"제3자, 아동 및 보존","body":"광고 SDK, 제3자 분석 또는 앱 간 추적을 포함하지 않습니다. 개인 데이터를 수집하지 않으므로 아동 데이터를 고의로 수집하거나 서버에 개인 정보를 보존하지 않습니다."},{"heading":"문의","body":"개인정보 관련 문의는 App Store 지원 링크 또는 스토어 페이지의 개발자 연락처를 이용해 주십시오."}]},"fr":{"kicker":"Confidentialité","title":"Politique de confidentialité de ClipForge Pro","subtitle":"ClipForge Pro est conçu pour convertir les médias localement. Vos vidéos et fichiers audio restent sur votre Mac sauf si vous choisissez de les partager.","updated":"Dernière mise à jour : 21 juin 2026","highlightsTitle":"Confidentialité en bref","highlights":["Pas de compte ni de suivi","Médias traités localement","Diagnostics contrôlés par l’utilisateur"],"sections":[{"heading":"Données non collectées","body":"Aucun compte n’est requis. Nous ne collectons pas de noms, d’adresses e-mail, de contacts, de photos, de médiathèques, de position précise, d’identifiants publicitaires ni d’événements analytiques."},{"heading":"Traitement local","body":"Les vidéos, fichiers audio, dossiers, sous-titres et filigranes importés sont traités sur votre appareil par le moteur de transcodage local. Nous ne téléversons pas les sources ni les exports vers nos serveurs."},{"heading":"Fichiers et autorisations","body":"L’app accède uniquement aux fichiers, dossiers et emplacements de sortie que vous choisissez. macOS peut enregistrer des signets à portée sécurisée pour rouvrir les emplacements autorisés."},{"heading":"Diagnostics et assistance","body":"Si vous exportez des diagnostics ou contactez l’assistance, les journaux peuvent contenir la version de l’app, la version de macOS, l’état FFmpeg, les réglages, les erreurs et des chemins de fichiers. N’envoyez pas de médias sauf si vous les joignez volontairement."},{"heading":"Tiers, enfants et conservation","body":"L’app n’inclut pas de SDK publicitaire, d’analyses tierces ni de suivi inter-apps. Comme nous ne collectons pas de données personnelles, nous ne collectons pas sciemment de données d’enfants et ne conservons pas d’informations personnelles sur des serveurs."},{"heading":"Contact","body":"Pour toute question de confidentialité, utilisez le lien d’assistance App Store ou les coordonnées du développeur affichées sur la fiche du Store."}]},"de":{"kicker":"Datenschutz","title":"Datenschutzerklärung für ClipForge Pro","subtitle":"ClipForge Pro ist für lokale Medienkonvertierung entwickelt. Ihre Videos und Audiodateien bleiben auf Ihrem Mac, sofern Sie sie nicht selbst teilen.","updated":"Zuletzt aktualisiert: 21. Juni 2026","highlightsTitle":"Datenschutz auf einen Blick","highlights":["Kein Konto, kein Tracking","Medien bleiben lokal","Diagnosen nur durch Nutzeraktion"],"sections":[{"heading":"Nicht erhobene Daten","body":"Es ist kein Konto erforderlich. Wir erfassen keine Namen, E-Mail-Adressen, Kontakte, Fotos, Mediatheken, genauen Standorte, Werbe-IDs oder Analyseereignisse."},{"heading":"Lokale Verarbeitung","body":"Importierte Videos, Audiodateien, Ordner, Untertitel und Wasserzeichen werden auf Ihrem Gerät durch die lokale Transcoding-Engine verarbeitet. Quelldateien und Exporte werden nicht auf unsere Server hochgeladen."},{"heading":"Dateien und Berechtigungen","body":"Die App kann nur auf Dateien, Ordner und Ausgabeorte zugreifen, die Sie auswählen. macOS kann sicherheitsbezogene Lesezeichen speichern, damit autorisierte Orte erneut geöffnet werden können."},{"heading":"Diagnose und Support","body":"Wenn Sie Diagnosen exportieren oder Support kontaktieren, können Protokolle App-Version, macOS-Version, FFmpeg-Status, Einstellungen, Fehlermeldungen und Dateipfade enthalten. Senden Sie Mediendateien nur, wenn Sie sie bewusst anhängen."},{"heading":"Drittanbieter, Kinder und Aufbewahrung","body":"Die App enthält keine Werbe-SDKs, keine Drittanbieter-Analysen und kein appübergreifendes Tracking. Da wir keine personenbezogenen Daten erheben, sammeln wir wissentlich keine Daten von Kindern und speichern keine persönlichen Informationen auf Servern."},{"heading":"Kontakt","body":"Bei Datenschutzfragen nutzen Sie den App-Store-Supportlink oder die Entwicklerkontaktangaben im Store-Eintrag."}]},"es":{"kicker":"Privacidad","title":"Política de privacidad de ClipForge Pro","subtitle":"ClipForge Pro está diseñado para convertir medios de forma local. Tus videos y audios permanecen en tu Mac salvo que decidas compartirlos.","updated":"Última actualización: 21 de junio de 2026","highlightsTitle":"Privacidad de un vistazo","highlights":["Sin cuenta ni seguimiento","Los medios permanecen locales","Diagnósticos bajo tu control"],"sections":[{"heading":"Datos que no recopilamos","body":"No se requiere cuenta y no recopilamos nombres, correos, contactos, fotos, bibliotecas multimedia, ubicación precisa, identificadores publicitarios ni eventos de analítica."},{"heading":"Procesamiento local","body":"Los videos, audios, carpetas, subtítulos y marcas de agua importados se procesan en tu dispositivo con el motor local de transcodificación. No subimos archivos fuente ni resultados a nuestros servidores."},{"heading":"Archivos y permisos","body":"La app solo puede acceder a los archivos, carpetas y destinos de salida que selecciones. macOS puede guardar marcadores con alcance de seguridad para reabrir ubicaciones autorizadas."},{"heading":"Diagnósticos y soporte","body":"Si exportas diagnósticos o contactas soporte, los registros pueden incluir versión de la app, versión de macOS, estado de FFmpeg, ajustes, errores y rutas de archivos. No envíes medios salvo que los adjuntes intencionalmente."},{"heading":"Terceros, menores y retención","body":"La app no incluye SDK publicitarios, analítica de terceros ni seguimiento entre apps. Como no recopilamos datos personales, no recopilamos conscientemente datos de menores ni conservamos información personal en servidores."},{"heading":"Contacto","body":"Para preguntas de privacidad, usa el enlace de soporte de App Store o el contacto del desarrollador indicado en la ficha de la tienda."}]},"it":{"kicker":"Privacy","title":"Informativa sulla privacy di ClipForge Pro","subtitle":"ClipForge Pro è progettata per la conversione locale dei media. Video e audio restano sul tuo Mac a meno che tu non scelga di condividerli.","updated":"Ultimo aggiornamento: 21 giugno 2026","highlightsTitle":"Privacy in breve","highlights":["Nessun account, nessun tracciamento","Media elaborati localmente","Diagnostica controllata dall’utente"],"sections":[{"heading":"Dati che non raccogliamo","body":"Non è richiesto un account e non raccogliamo nomi, email, contatti, foto, librerie multimediali, posizione precisa, identificatori pubblicitari o eventi di analisi."},{"heading":"Elaborazione locale","body":"Video, audio, cartelle, sottotitoli e watermark importati vengono elaborati sul dispositivo dal motore di transcodifica locale. Non carichiamo sorgenti o file esportati sui nostri server."},{"heading":"File e autorizzazioni","body":"L’app può accedere solo ai file, alle cartelle e alle destinazioni di output che selezioni. macOS può salvare segnalibri con ambito di sicurezza per riaprire posizioni autorizzate."},{"heading":"Diagnostica e supporto","body":"Se esporti diagnostica o contatti il supporto, i log possono includere versione dell’app, versione di macOS, stato di FFmpeg, impostazioni, errori e percorsi file. Non inviare media se non li alleghi intenzionalmente."},{"heading":"Terze parti, minori e conservazione","body":"L’app non include SDK pubblicitari, analisi di terze parti o tracciamento tra app. Poiché non raccogliamo dati personali, non raccogliamo consapevolmente dati di minori né conserviamo informazioni personali su server."},{"heading":"Contatto","body":"Per domande sulla privacy usa il link di supporto dell’App Store o i contatti dello sviluppatore nella scheda dello store."}]},"pt-BR":{"kicker":"Privacidade","title":"Política de Privacidade do ClipForge Pro","subtitle":"O ClipForge Pro foi criado para conversão local de mídia. Seus vídeos e áudios ficam no Mac, a menos que você escolha compartilhá-los.","updated":"Última atualização: 21 de junho de 2026","highlightsTitle":"Resumo de privacidade","highlights":["Sem conta e sem rastreamento","Mídia processada localmente","Diagnósticos controlados pelo usuário"],"sections":[{"heading":"Dados que não coletamos","body":"Não exigimos conta e não coletamos nomes, e-mails, contatos, fotos, bibliotecas de mídia, localização precisa, identificadores de publicidade nem eventos de análise."},{"heading":"Processamento local","body":"Vídeos, áudios, pastas, legendas e marcas d’água importados são processados no dispositivo pelo mecanismo local de transcodificação. Não enviamos arquivos de origem nem saídas para nossos servidores."},{"heading":"Arquivos e permissões","body":"O app acessa apenas arquivos, pastas e destinos de saída que você seleciona. O macOS pode salvar favoritos com escopo de segurança para reabrir locais autorizados."},{"heading":"Diagnósticos e suporte","body":"Ao exportar diagnósticos ou contatar o suporte, os logs podem incluir versão do app, versão do macOS, estado do FFmpeg, ajustes, erros e caminhos de arquivos. Não envie mídia a menos que a anexe intencionalmente."},{"heading":"Terceiros, crianças e retenção","body":"O app não inclui SDKs de anúncios, análise de terceiros nem rastreamento entre apps. Como não coletamos dados pessoais, não coletamos intencionalmente dados de crianças nem mantemos informações pessoais em servidores."},{"heading":"Contato","body":"Para dúvidas de privacidade, use o link de suporte da App Store ou o contato do desenvolvedor exibido na página da loja."}]},"ru":{"kicker":"Конфиденциальность","title":"Политика конфиденциальности ClipForge Pro","subtitle":"ClipForge Pro создан для локального преобразования медиа. Ваши видео и аудио остаются на Mac, если вы сами не решите ими поделиться.","updated":"Последнее обновление: 21 июня 2026 г.","highlightsTitle":"Кратко о конфиденциальности","highlights":["Без аккаунта и отслеживания","Медиа обрабатываются локально","Диагностика отправляется только пользователем"],"sections":[{"heading":"Данные, которые мы не собираем","body":"Аккаунт не требуется. Мы не собираем имена, адреса электронной почты, контакты, фотографии, медиатеки, точное местоположение, рекламные идентификаторы или аналитические события."},{"heading":"Локальная обработка","body":"Импортированные видео, аудио, папки, субтитры и водяные знаки обрабатываются на устройстве локальным движком транскодирования. Исходные и выходные файлы не загружаются на наши серверы."},{"heading":"Файлы и разрешения","body":"Приложение получает доступ только к выбранным вами файлам, папкам и папкам вывода. macOS может сохранять защищенные закладки для повторного открытия разрешенных расположений."},{"heading":"Диагностика и поддержка","body":"При экспорте диагностики или обращении в поддержку журналы могут содержать версию приложения, версию macOS, состояние FFmpeg, настройки, ошибки и пути к файлам. Не отправляйте медиафайлы, если не прикрепляете их намеренно."},{"heading":"Третьи стороны, дети и хранение","body":"В приложении нет рекламных SDK, сторонней аналитики и межприложенческого отслеживания. Поскольку мы не собираем персональные данные, мы не собираем сознательно данные детей и не храним личную информацию на серверах."},{"heading":"Контакт","body":"По вопросам конфиденциальности используйте ссылку поддержки в App Store или контакт разработчика на странице магазина."}]},"ar":{"kicker":"الخصوصية","title":"سياسة خصوصية ClipForge Pro","subtitle":"صُمم ClipForge Pro لتحويل الوسائط محليًا. تبقى مقاطع الفيديو والصوت على جهاز Mac ما لم تختر مشاركتها.","updated":"آخر تحديث: 21 يونيو 2026","highlightsTitle":"لمحة سريعة عن الخصوصية","highlights":["لا حسابات ولا تتبع","تبقى الوسائط محلية","التشخيصات تحت تحكم المستخدم"],"sections":[{"heading":"البيانات التي لا نجمعها","body":"لا نطلب حسابًا ولا نجمع الأسماء أو عناوين البريد أو جهات الاتصال أو الصور أو مكتبات الوسائط أو الموقع الدقيق أو معرفات الإعلانات أو أحداث التحليلات."},{"heading":"المعالجة المحلية","body":"تتم معالجة مقاطع الفيديو والصوت والمجلدات والترجمات والعلامات المائية المستوردة على جهازك بواسطة محرك التحويل المحلي. لا نرفع الملفات الأصلية أو النتائج إلى خوادمنا."},{"heading":"الملفات والأذونات","body":"لا يستطيع التطبيق الوصول إلا إلى الملفات والمجلدات ومجلدات الإخراج التي تختارها. قد يحفظ macOS إشارات مرجعية آمنة لإعادة فتح المواقع المصرح بها."},{"heading":"التشخيصات والدعم","body":"إذا صدّرت التشخيصات أو تواصلت مع الدعم، فقد تتضمن السجلات إصدار التطبيق و macOS وحالة FFmpeg والإعدادات والأخطاء ومسارات الملفات. لا ترسل ملفات وسائط إلا إذا أرفقتها عمدًا."},{"heading":"الأطراف الثالثة والأطفال والاحتفاظ","body":"لا يتضمن التطبيق حزم إعلانات أو تحليلات من طرف ثالث أو تتبعًا بين التطبيقات. وبما أننا لا نجمع بيانات شخصية، فلا نجمع عمدًا بيانات الأطفال ولا نحتفظ بمعلومات شخصية على الخوادم."},{"heading":"التواصل","body":"لأسئلة الخصوصية، استخدم رابط دعم App Store أو معلومات اتصال المطور في صفحة المتجر."}]},"hi":{"kicker":"गोपनीयता","title":"ClipForge Pro गोपनीयता नीति","subtitle":"ClipForge Pro स्थानीय मीडिया रूपांतरण के लिए बनाया गया है। जब तक आप साझा करना न चुनें, आपके वीडियो और ऑडियो आपके Mac पर ही रहते हैं।","updated":"अंतिम अपडेट: 21 जून 2026","highlightsTitle":"गोपनीयता सारांश","highlights":["कोई खाता या ट्रैकिंग नहीं","मीडिया स्थानीय रहता है","डायग्नोस्टिक उपयोगकर्ता नियंत्रित"],"sections":[{"heading":"जो डेटा हम नहीं लेते","body":"हम खाता नहीं मांगते और नाम, ईमेल, संपर्क, फोटो, मीडिया लाइब्रेरी, सटीक स्थान, विज्ञापन पहचानकर्ता या एनालिटिक्स इवेंट नहीं एकत्र करते।"},{"heading":"स्थानीय मीडिया प्रोसेसिंग","body":"आयात किए गए वीडियो, ऑडियो, फ़ोल्डर, सबटाइटल और वॉटरमार्क आपके डिवाइस पर स्थानीय ट्रांसकोडिंग इंजन से प्रोसेस होते हैं। हम स्रोत या आउटपुट फाइलें सर्वर पर अपलोड नहीं करते।"},{"heading":"फाइलें और अनुमति","body":"ऐप केवल उन फाइलों, फ़ोल्डरों और आउटपुट स्थानों तक पहुंचता है जिन्हें आप चुनते हैं। macOS स्वीकृत स्थानों को फिर खोलने के लिए सुरक्षा-स्कोप्ड बुकमार्क सहेज सकता है।"},{"heading":"डायग्नोस्टिक और समर्थन","body":"यदि आप डायग्नोस्टिक निर्यात करते हैं या समर्थन से संपर्क करते हैं, तो लॉग में ऐप संस्करण, macOS संस्करण, FFmpeg स्थिति, सेटिंग, त्रुटियां और फाइल पथ हो सकते हैं। मीडिया फाइलें तभी भेजें जब आप उन्हें जानबूझकर संलग्न करें।"},{"heading":"तीसरे पक्ष, बच्चे और रखरखाव","body":"ऐप में विज्ञापन SDK, तीसरे पक्ष की एनालिटिक्स या क्रॉस-ऐप ट्रैकिंग नहीं है। चूंकि हम व्यक्तिगत डेटा नहीं लेते, हम बच्चों का डेटा जानबूझकर नहीं लेते और सर्वर पर व्यक्तिगत जानकारी नहीं रखते।"},{"heading":"संपर्क","body":"गोपनीयता प्रश्नों के लिए App Store समर्थन लिंक या स्टोर सूची में दिए गए डेवलपर संपर्क का उपयोग करें।"}]},"id":{"kicker":"Privasi","title":"Kebijakan Privasi ClipForge Pro","subtitle":"ClipForge Pro dibuat untuk konversi media lokal. Video dan audio Anda tetap berada di Mac kecuali Anda memilih untuk membagikannya.","updated":"Terakhir diperbarui: 21 Juni 2026","highlightsTitle":"Ringkasan privasi","highlights":["Tanpa akun dan pelacakan","Media tetap lokal","Diagnostik dikendalikan pengguna"],"sections":[{"heading":"Data yang tidak kami kumpulkan","body":"Kami tidak mewajibkan akun dan tidak mengumpulkan nama, email, kontak, foto, pustaka media, lokasi presisi, pengenal iklan, atau peristiwa analitik."},{"heading":"Pemrosesan lokal","body":"Video, audio, folder, subtitle, dan watermark yang diimpor diproses di perangkat oleh mesin transkode lokal. Kami tidak mengunggah file sumber atau hasil ekspor ke server kami."},{"heading":"File dan izin","body":"Aplikasi hanya dapat mengakses file, folder, dan lokasi keluaran yang Anda pilih. macOS dapat menyimpan bookmark aman agar lokasi yang diizinkan dapat dibuka kembali."},{"heading":"Diagnostik dan dukungan","body":"Jika Anda mengekspor diagnostik atau menghubungi dukungan, log dapat berisi versi aplikasi, versi macOS, status FFmpeg, pengaturan, kesalahan, dan jalur file. Jangan kirim file media kecuali Anda sengaja melampirkannya."},{"heading":"Pihak ketiga, anak-anak, dan retensi","body":"Aplikasi tidak menyertakan SDK iklan, analitik pihak ketiga, atau pelacakan lintas aplikasi. Karena kami tidak mengumpulkan data pribadi, kami tidak secara sadar mengumpulkan data anak atau menyimpan informasi pribadi di server."},{"heading":"Kontak","body":"Untuk pertanyaan privasi, gunakan tautan dukungan App Store atau kontak pengembang pada halaman toko."}]},"vi":{"kicker":"Quyền riêng tư","title":"Chính sách quyền riêng tư của ClipForge Pro","subtitle":"ClipForge Pro được thiết kế để chuyển đổi phương tiện cục bộ. Video và âm thanh của bạn ở lại trên Mac trừ khi bạn chọn chia sẻ.","updated":"Cập nhật lần cuối: 21 tháng 6, 2026","highlightsTitle":"Tóm tắt quyền riêng tư","highlights":["Không tài khoản, không theo dõi","Phương tiện xử lý cục bộ","Chẩn đoán do người dùng kiểm soát"],"sections":[{"heading":"Dữ liệu chúng tôi không thu thập","body":"Chúng tôi không yêu cầu tài khoản và không thu thập tên, email, danh bạ, ảnh, thư viện phương tiện, vị trí chính xác, mã quảng cáo hoặc sự kiện phân tích."},{"heading":"Xử lý cục bộ","body":"Video, âm thanh, thư mục, phụ đề và watermark được nhập sẽ được xử lý trên thiết bị bằng bộ chuyển mã cục bộ. Chúng tôi không tải tệp nguồn hoặc tệp xuất lên máy chủ."},{"heading":"Tệp và quyền","body":"Ứng dụng chỉ truy cập các tệp, thư mục và nơi xuất mà bạn chọn. macOS có thể lưu bookmark bảo mật để mở lại các vị trí đã cho phép."},{"heading":"Chẩn đoán và hỗ trợ","body":"Nếu bạn xuất chẩn đoán hoặc liên hệ hỗ trợ, nhật ký có thể gồm phiên bản ứng dụng, phiên bản macOS, trạng thái FFmpeg, cài đặt, lỗi và đường dẫn tệp. Đừng gửi tệp phương tiện trừ khi bạn chủ động đính kèm."},{"heading":"Bên thứ ba, trẻ em và lưu giữ","body":"Ứng dụng không có SDK quảng cáo, phân tích bên thứ ba hoặc theo dõi chéo ứng dụng. Vì không thu thập dữ liệu cá nhân, chúng tôi không cố ý thu thập dữ liệu trẻ em hoặc lưu thông tin cá nhân trên máy chủ."},{"heading":"Liên hệ","body":"Với câu hỏi về quyền riêng tư, hãy dùng liên kết hỗ trợ App Store hoặc thông tin liên hệ nhà phát triển trên trang cửa hàng."}]},"th":{"kicker":"ความเป็นส่วนตัว","title":"นโยบายความเป็นส่วนตัวของ ClipForge Pro","subtitle":"ClipForge Pro ออกแบบมาสำหรับการแปลงสื่อภายในเครื่อง วิดีโอและเสียงจะอยู่บน Mac ของคุณ เว้นแต่คุณเลือกแชร์เอง","updated":"อัปเดตล่าสุด: 21 มิถุนายน 2026","highlightsTitle":"สรุปความเป็นส่วนตัว","highlights":["ไม่มีบัญชี ไม่มีการติดตาม","สื่อประมวลผลในเครื่อง","ผู้ใช้ควบคุมการวินิจฉัย"],"sections":[{"heading":"ข้อมูลที่เราไม่เก็บ","body":"เราไม่บังคับให้มีบัญชี และไม่เก็บชื่อ อีเมล รายชื่อ รูปภาพ ไลบรารีสื่อ ตำแหน่งที่แม่นยำ รหัสโฆษณา หรือเหตุการณ์วิเคราะห์"},{"heading":"การประมวลผลในเครื่อง","body":"วิดีโอ เสียง โฟลเดอร์ คำบรรยาย และลายน้ำที่นำเข้าจะถูกประมวลผลบนอุปกรณ์ด้วยเอนจินแปลงไฟล์ในเครื่อง เราไม่อัปโหลดไฟล์ต้นฉบับหรือไฟล์ส่งออกไปยังเซิร์ฟเวอร์"},{"heading":"ไฟล์และสิทธิ์","body":"แอปเข้าถึงได้เฉพาะไฟล์ โฟลเดอร์ และตำแหน่งส่งออกที่คุณเลือก macOS อาจบันทึกบุ๊กมาร์กแบบปลอดภัยเพื่อเปิดตำแหน่งที่อนุญาตอีกครั้ง"},{"heading":"การวินิจฉัยและการสนับสนุน","body":"หากคุณส่งออกข้อมูลวินิจฉัยหรือติดต่อฝ่ายสนับสนุน บันทึกอาจมีเวอร์ชันแอป เวอร์ชัน macOS สถานะ FFmpeg การตั้งค่า ข้อผิดพลาด และพาธไฟล์ อย่าส่งไฟล์สื่อเว้นแต่คุณตั้งใจแนบเอง"},{"heading":"บุคคลที่สาม เด็ก และการเก็บรักษา","body":"แอปไม่มี SDK โฆษณา การวิเคราะห์จากบุคคลที่สาม หรือการติดตามข้ามแอป เพราะเราไม่เก็บข้อมูลส่วนบุคคล เราจึงไม่ตั้งใจเก็บข้อมูลเด็กหรือเก็บข้อมูลส่วนบุคคลบนเซิร์ฟเวอร์"},{"heading":"ติดต่อ","body":"สำหรับคำถามด้านความเป็นส่วนตัว โปรดใช้ลิงก์สนับสนุนใน App Store หรือข้อมูลติดต่อผู้พัฒนาบนหน้าร้าน"}]}};
+const selector = document.getElementById('languageSelector');
+const pageKey = document.body.dataset.page;
 
-    function render(lang) {
-      const data = pages[lang] || pages['zh-Hans'];
-      document.documentElement.lang = lang;
-      document.documentElement.dir = data.dir;
-      document.title = data.title;
-      document.querySelector('meta[name="description"]').setAttribute('content', data.meta);
-      document.getElementById('languageLabel').textContent = data.langLabel;
-      document.getElementById('content').innerHTML = [
-        `<h1>${data.h1}</h1>`,
-        `<p class="updated">${data.updated}</p>`,
-        `<p>${data.intro}</p>`,
-        ...data.sections.flatMap(([heading, body]) => [`<h2>${heading}</h2>`, `<p>${body}</p>`]),
-        `<p class="notice">${data.notice}</p>`
-      ].join('');
-    }
+function browserLanguage() {
+  const raw = (navigator.language || 'en').toLowerCase();
+  if (raw.startsWith('zh-tw') || raw.startsWith('zh-hk') || raw.startsWith('zh-mo')) return 'zh-Hant';
+  if (raw.startsWith('zh')) return 'zh-Hans';
+  if (raw.startsWith('pt')) return 'pt-BR';
+  const two = raw.slice(0, 2);
+  return languageOrder.includes(two) ? two : 'en';
+}
 
-    document.getElementById('languageSelect').addEventListener('change', (event) => {
-      render(event.target.value);
-    });
-  </script>
+function renderLanguage(lang) {
+  if (!content[lang]) lang = 'en';
+  const data = content[lang];
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+  document.title = data.title;
+  document.querySelector('[data-kicker]').textContent = data.kicker;
+  document.querySelector('[data-title]').textContent = data.title;
+  document.querySelector('[data-subtitle]').textContent = data.subtitle;
+  document.querySelector('[data-updated]').textContent = data.updated;
+  document.querySelector('[data-summary-title]').textContent = data.highlightsTitle;
+  document.getElementById('summaryGrid').innerHTML = data.highlights.map(item => `<article class="summary-card">${escapeHtml(item)}</article>`).join('');
+  document.getElementById('sectionList').innerHTML = data.sections.map(section => `<article class="section-card"><h2>${escapeHtml(section.heading)}</h2><p>${escapeHtml(section.body)}</p></article>`).join('');
+  selector.value = lang;
+  try { localStorage.setItem('clipforge-page-language', lang); } catch (_) {}
+}
+
+function escapeHtml(value) {
+  return String(value).replace(/[&<>'"]/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[char]));
+}
+
+selector.innerHTML = languageOrder.map(code => `<option value="${code}">${languageNames[code]}</option>`).join('');
+selector.addEventListener('change', event => renderLanguage(event.target.value));
+let initial = 'en';
+try { initial = localStorage.getItem('clipforge-page-language') || browserLanguage(); } catch (_) { initial = browserLanguage(); }
+renderLanguage(initial);
+</script>
 </body>
 </html>
