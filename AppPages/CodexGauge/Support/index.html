@@ -1,172 +1,58 @@
 <!doctype html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CodexGauge Support</title>
-  <meta name="description" content="CodexGauge Support">
+  <title>QuotaScope Support</title>
+  <meta name="description" content="QuotaScope Support">
   <style>
-    :root { color-scheme: dark light; --bg:#07131c; --panel:rgba(246,255,252,.86); --text:#12212b; --muted:#526774; --line:rgba(57,98,113,.16); --accent:#24c36b; --accent2:#09a6e8; }
-    @media (prefers-color-scheme: dark) { :root { --panel:rgba(12,24,34,.82); --text:#eef8fa; --muted:#b7c8cf; --line:rgba(210,240,248,.18); } }
-    * { box-sizing:border-box; } body { margin:0; min-height:100vh; font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",sans-serif; color:var(--text); background:radial-gradient(circle at 10% 0%,rgba(9,166,232,.22),transparent 34rem),radial-gradient(circle at 92% 18%,rgba(36,195,107,.18),transparent 30rem),linear-gradient(135deg,#eafaff,#f6fff8); }
-    @media (prefers-color-scheme: dark) { body { background:radial-gradient(circle at 10% 0%,rgba(9,166,232,.22),transparent 34rem),radial-gradient(circle at 92% 18%,rgba(36,195,107,.18),transparent 30rem),linear-gradient(135deg,#07131c,#0d1e2a); } }
-    .page { width:min(960px,calc(100% - 36px)); margin:0 auto; padding:48px 0; } .document { border:1px solid var(--line); border-radius:24px; padding:clamp(24px,5vw,52px); background:var(--panel); box-shadow:0 28px 80px rgba(0,0,0,.16); backdrop-filter:blur(22px); }
-    .toolbar { display:flex; justify-content:flex-end; margin-bottom:26px; } .language-control { display:flex; gap:10px; align-items:center; padding:8px 12px; border:1px solid var(--line); border-radius:999px; } select { border:0; background:transparent; color:var(--text); font:inherit; outline:0; }
-    .localized-content { display:none; } .localized-content.is-active { display:block; } h1 { margin:0 0 10px; font-size:clamp(2.1rem,5vw,3.7rem); line-height:1.08; } h2 { margin:30px 0 8px; font-size:1.12rem; } p { color:var(--muted); line-height:1.7; font-size:1rem; } a { color:var(--accent2); } .eyebrow { color:var(--accent); font-weight:800; } .updated { color:var(--muted); font-size:.94rem; } .rating { display:inline-flex; margin:20px 0 6px; padding:10px 18px; border-radius:999px; color:var(--accent); background:rgba(36,195,107,.12); font-weight:800; }
+    :root { color-scheme: dark light; --panel: rgba(246,255,252,.90); --text: #12212b; --muted: #526774; --line: rgba(57,98,113,.16); --accent: #22be67; --accent2: #15afc3; }
+    @media (prefers-color-scheme: dark) { :root { --panel: rgba(12,24,34,.86); --text: #eef8fa; --muted: #b7c8cf; --line: rgba(210,240,248,.18); } }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif; color: var(--text); background: radial-gradient(circle at 10% 0%, rgba(21,175,195,.20), transparent 34rem), radial-gradient(circle at 92% 18%, rgba(34,190,103,.16), transparent 30rem), linear-gradient(135deg, #eafafa, #f7fff2); }
+    @media (prefers-color-scheme: dark) { body { background: radial-gradient(circle at 10% 0%, rgba(21,175,195,.22), transparent 34rem), radial-gradient(circle at 92% 18%, rgba(34,190,103,.18), transparent 30rem), linear-gradient(135deg, #07131c, #0d1e2a); } }
+    .page { width: min(920px, calc(100% - 36px)); margin: 0 auto; padding: 48px 0; }
+    .document { border: 1px solid var(--line); border-radius: 24px; padding: clamp(24px, 5vw, 52px); background: var(--panel); box-shadow: 0 28px 80px rgba(0,0,0,.16); backdrop-filter: blur(22px); }
+    h1 { margin: 0 0 10px; font-size: clamp(2.1rem, 5vw, 3.7rem); line-height: 1.08; }
+    h2 { margin: 30px 0 8px; font-size: 1.12rem; }
+    p, li { color: var(--muted); line-height: 1.7; font-size: 1rem; }
+    ul { padding-left: 1.2rem; }
+    a { color: var(--accent2); }
+    .eyebrow { color: var(--accent); font-weight: 800; }
+    .updated { color: var(--muted); font-size: .94rem; }
   </style>
 </head>
 <body>
-  <div class="page"><main class="document">
-    <div class="toolbar"><div class="language-control"><label id="language-label" for="language-select">Language</label><select id="language-select" aria-label="Choose language"><option value="en">English</option>
-<option value="zh-Hans">简体中文</option>
-<option value="zh-Hant">繁體中文</option>
-<option value="ja">日本語</option>
-<option value="ko">한국어</option>
-<option value="de">Deutsch</option>
-<option value="fr">Français</option>
-<option value="es">Español</option>
-<option value="pt-BR">Português (Brasil)</option>
-<option value="ru">Русский</option></select></div></div>
-    <section class="localized-content" data-lang="en" lang="en" dir="ltr">
-<p class="eyebrow">CodexGauge for Mac</p>
-<h1>Support</h1>
-<p class="updated">Last updated: June 19, 2026</p>
-<p>CodexGauge is a macOS utility for monitoring Codex/OpenAI account usage, reset countdowns, and quota pressure across multiple accounts.</p>
-<h2>Contact</h2>
-<p>Email support: kibernet@sina.com</p>
-<h2>What to Include</h2>
-<p>Please include your macOS version, app version, whether the issue affects the desktop widget or main app, and any visible error message without sharing tokens.</p>
-<h2>Common Help</h2>
-<p>If widgets do not update, open CodexGauge once, refresh accounts, and re-add the desktop widget. If authentication fails, re-import the current Codex login or update the token.</p>
-<p><a href="https://kibernet.github.io/HomePage/AppPages/CodexGauge/Privacy/index.html" data-localized-link>Privacy Policy</a></p>
-</section>
-<section class="localized-content" data-lang="zh-Hans" lang="zh-CN" dir="ltr">
-<p class="eyebrow">CodexGauge for Mac</p>
-<h1>支持</h1>
-<p class="updated">最后更新：2026年6月19日</p>
-<p>CodexGauge 是一款 macOS 工具，用于监控多个 Codex/OpenAI 账号的额度使用、重置倒计时和额度紧张状态。</p>
-<h2>联系方式</h2>
-<p>支持邮箱：kibernet@sina.com</p>
-<h2>请提供的信息</h2>
-<p>请提供 macOS 版本、应用版本、问题发生在桌面组件还是主应用，以及可见错误信息。请不要发送 Token。</p>
-<h2>常见处理</h2>
-<p>如果桌面组件不更新，请先打开 CodexGauge、刷新账号，然后重新添加桌面组件。认证失败时，请重新导入当前 Codex 登录或更新 Token。</p>
-<p><a href="https://kibernet.github.io/HomePage/AppPages/CodexGauge/Privacy/index.html" data-localized-link>Privacy Policy</a></p>
-</section>
-<section class="localized-content" data-lang="zh-Hant" lang="zh-TW" dir="ltr">
-<p class="eyebrow">CodexGauge for Mac</p>
-<h1>支援</h1>
-<p class="updated">最後更新：2026年6月19日</p>
-<p>CodexGauge 是一款 macOS 工具，用於監控多個 Codex/OpenAI 帳號的額度使用、重置倒數與額度壓力。</p>
-<h2>聯絡方式</h2>
-<p>支援信箱：kibernet@sina.com</p>
-<h2>請提供的資訊</h2>
-<p>請提供 macOS 版本、app 版本、問題發生在桌面小工具或主 app，以及可見錯誤訊息。請勿寄送 Token。</p>
-<h2>常見處理</h2>
-<p>若桌面小工具未更新，請開啟 CodexGauge、刷新帳號並重新加入小工具。認證失敗時請重新匯入目前 Codex 登入。</p>
-<p><a href="https://kibernet.github.io/HomePage/AppPages/CodexGauge/Privacy/index.html" data-localized-link>Privacy Policy</a></p>
-</section>
-<section class="localized-content" data-lang="ja" lang="ja" dir="ltr">
-<p class="eyebrow">CodexGauge for Mac</p>
-<h1>サポート</h1>
-<p class="updated">最終更新日: 2026年6月19日</p>
-<p>CodexGauge は、複数の Codex/OpenAI アカウントの使用量、リセットまでの時間、残り枠を監視する macOS ユーティリティです。</p>
-<h2>連絡先</h2>
-<p>サポートメール: kibernet@sina.com</p>
-<h2>記載してほしい情報</h2>
-<p>macOS バージョン、アプリバージョン、問題がウィジェットか本体アプリか、表示されたエラーを記載してください。トークンは送らないでください。</p>
-<h2>よくある対処</h2>
-<p>ウィジェットが更新されない場合は CodexGauge を開き、アカウントを更新してからウィジェットを追加し直してください。</p>
-<p><a href="https://kibernet.github.io/HomePage/AppPages/CodexGauge/Privacy/index.html" data-localized-link>Privacy Policy</a></p>
-</section>
-<section class="localized-content" data-lang="ko" lang="ko" dir="ltr">
-<p class="eyebrow">CodexGauge for Mac</p>
-<h1>지원</h1>
-<p class="updated">최종 업데이트: 2026년 6월 19일</p>
-<p>CodexGauge는 여러 Codex/OpenAI 계정의 사용량, 재설정 카운트다운, 할당량 상태를 모니터링하는 macOS 유틸리티입니다.</p>
-<h2>문의</h2>
-<p>지원 이메일: kibernet@sina.com</p>
-<h2>포함할 정보</h2>
-<p>macOS 버전, 앱 버전, 문제가 위젯 또는 메인 앱에서 발생했는지, 표시된 오류 메시지를 알려주세요. 토큰은 보내지 마세요.</p>
-<h2>일반 해결</h2>
-<p>위젯이 업데이트되지 않으면 CodexGauge를 열고 계정을 새로 고친 뒤 위젯을 다시 추가하세요.</p>
-<p><a href="https://kibernet.github.io/HomePage/AppPages/CodexGauge/Privacy/index.html" data-localized-link>Privacy Policy</a></p>
-</section>
-<section class="localized-content" data-lang="de" lang="de" dir="ltr">
-<p class="eyebrow">CodexGauge for Mac</p>
-<h1>Support</h1>
-<p class="updated">Zuletzt aktualisiert: 19. Juni 2026</p>
-<p>CodexGauge ist ein macOS-Werkzeug zum Überwachen von Codex/OpenAI-Nutzung, Zurücksetzzeiten und Kontingenten für mehrere Konten.</p>
-<h2>Kontakt</h2>
-<p>Support-E-Mail: kibernet@sina.com</p>
-<h2>Bitte angeben</h2>
-<p>macOS-Version, App-Version, ob das Problem im Widget oder in der Haupt-App auftritt, und sichtbare Fehlermeldungen. Bitte keine Tokens senden.</p>
-<h2>Häufige Hilfe</h2>
-<p>Wenn Widgets nicht aktualisieren, öffnen Sie CodexGauge, aktualisieren Sie die Konten und fügen Sie das Widget erneut hinzu.</p>
-<p><a href="https://kibernet.github.io/HomePage/AppPages/CodexGauge/Privacy/index.html" data-localized-link>Privacy Policy</a></p>
-</section>
-<section class="localized-content" data-lang="fr" lang="fr" dir="ltr">
-<p class="eyebrow">CodexGauge for Mac</p>
-<h1>Assistance</h1>
-<p class="updated">Dernière mise à jour : 19 juin 2026</p>
-<p>CodexGauge est un utilitaire macOS pour surveiller l&#x27;utilisation Codex/OpenAI, les compteurs de réinitialisation et les quotas de plusieurs comptes.</p>
-<h2>Contact</h2>
-<p>E-mail d&#x27;assistance : kibernet@sina.com</p>
-<h2>À fournir</h2>
-<p>Version de macOS, version de l&#x27;app, zone concernée (widget ou app principale) et message d&#x27;erreur visible. N&#x27;envoyez pas de token.</p>
-<h2>Aide courante</h2>
-<p>Si le widget ne se met pas à jour, ouvrez CodexGauge, actualisez les comptes puis ajoutez à nouveau le widget.</p>
-<p><a href="https://kibernet.github.io/HomePage/AppPages/CodexGauge/Privacy/index.html" data-localized-link>Privacy Policy</a></p>
-</section>
-<section class="localized-content" data-lang="es" lang="es" dir="ltr">
-<p class="eyebrow">CodexGauge for Mac</p>
-<h1>Soporte</h1>
-<p class="updated">Última actualización: 19 de junio de 2026</p>
-<p>CodexGauge es una utilidad de macOS para supervisar uso de Codex/OpenAI, reinicios y presión de cuota en varias cuentas.</p>
-<h2>Contacto</h2>
-<p>Correo de soporte: kibernet@sina.com</p>
-<h2>Qué incluir</h2>
-<p>Versión de macOS, versión de la app, si afecta al widget o a la app principal y el mensaje de error visible. No envíe tokens.</p>
-<h2>Ayuda común</h2>
-<p>Si el widget no se actualiza, abra CodexGauge, actualice las cuentas y vuelva a añadir el widget.</p>
-<p><a href="https://kibernet.github.io/HomePage/AppPages/CodexGauge/Privacy/index.html" data-localized-link>Privacy Policy</a></p>
-</section>
-<section class="localized-content" data-lang="pt-BR" lang="pt-BR" dir="ltr">
-<p class="eyebrow">CodexGauge for Mac</p>
-<h1>Suporte</h1>
-<p class="updated">Última atualização: 19 de junho de 2026</p>
-<p>CodexGauge é um utilitário macOS para monitorar uso Codex/OpenAI, contagens de redefinição e pressão de cota em várias contas.</p>
-<h2>Contato</h2>
-<p>E-mail de suporte: kibernet@sina.com</p>
-<h2>O que incluir</h2>
-<p>Versão do macOS, versão do app, se o problema ocorre no widget ou no app principal e qualquer erro visível. Não envie tokens.</p>
-<h2>Ajuda comum</h2>
-<p>Se o widget não atualizar, abra o CodexGauge, atualize as contas e adicione o widget novamente.</p>
-<p><a href="https://kibernet.github.io/HomePage/AppPages/CodexGauge/Privacy/index.html" data-localized-link>Privacy Policy</a></p>
-</section>
-<section class="localized-content" data-lang="ru" lang="ru" dir="ltr">
-<p class="eyebrow">CodexGauge for Mac</p>
-<h1>Поддержка</h1>
-<p class="updated">Обновлено: 19 июня 2026 г.</p>
-<p>CodexGauge — утилита macOS для мониторинга использования Codex/OpenAI, времени сброса и лимитов для нескольких аккаунтов.</p>
-<h2>Контакт</h2>
-<p>Поддержка: kibernet@sina.com</p>
-<h2>Что указать</h2>
-<p>Версию macOS, версию приложения, где возникла проблема (виджет или основное приложение), и видимую ошибку. Не отправляйте токены.</p>
-<h2>Частая помощь</h2>
-<p>Если виджет не обновляется, откройте CodexGauge, обновите аккаунты и добавьте виджет заново.</p>
-<p><a href="https://kibernet.github.io/HomePage/AppPages/CodexGauge/Privacy/index.html" data-localized-link>Privacy Policy</a></p>
-</section>
-  </main></div>
-  <script>
-    const langs = ['en', 'zh-Hans', 'zh-Hant', 'ja', 'ko', 'de', 'fr', 'es', 'pt-BR', 'ru'];
-    const labels = {'en': 'Language', 'zh-Hans': '语言', 'zh-Hant': '語言', 'ja': '言語', 'ko': '언어', 'de': 'Sprache', 'fr': 'Langue', 'es': 'Idioma', 'pt-BR': 'Idioma', 'ru': 'Язык'};
-    const select = document.getElementById('language-select');
-    const label = document.getElementById('language-label');
-    function norm(v) { v=(v||'').toLowerCase(); if(v.startsWith('zh-cn')||v==='zh-hans')return'zh-Hans'; if(v.startsWith('zh-tw')||v.startsWith('zh-hk')||v==='zh-hant')return'zh-Hant'; if(v.startsWith('pt'))return'pt-BR'; return langs.find(l=>v.startsWith(l.toLowerCase()))||'en'; }
-    function activate(code) { code=norm(code); document.querySelectorAll('.localized-content').forEach(s=>s.classList.toggle('is-active',s.dataset.lang===code)); select.value=code; label.textContent=labels[code]||'Language'; document.documentElement.lang=document.querySelector('[data-lang="'+code+'"]').lang; localStorage.setItem('codexgauge-page-language',code); document.querySelectorAll('[data-localized-link]').forEach(a=>a.href=a.href.split('#')[0]+'#'+code); }
-    select.addEventListener('change',()=>activate(select.value));
-    activate(location.hash.slice(1)||localStorage.getItem('codexgauge-page-language')||(navigator.languages&&navigator.languages[0])||navigator.language||'en');
-  </script>
+  <div class="page">
+    <main class="document">
+      <p class="eyebrow">QuotaScope for Mac</p>
+      <h1>Support</h1>
+      <p class="updated">Last updated: June 27, 2026</p>
+
+      <p>Need help with QuotaScope? Send a support email with enough detail to reproduce the issue.</p>
+
+      <h2>Contact</h2>
+      <p>Support email: <a href="mailto:kibernet@sina.com">kibernet@sina.com</a></p>
+
+      <h2>What to Include</h2>
+      <ul>
+        <li>Your macOS version and QuotaScope version.</li>
+        <li>Whether the issue appears in the menu bar app, settings window, or widget.</li>
+        <li>The visible error message or a screenshot with credentials hidden.</li>
+      </ul>
+      <p>Do not send access tokens, refresh tokens, authorization codes, or account passwords.</p>
+
+      <h2>Common Help</h2>
+      <ul>
+        <li>If widgets do not update, open QuotaScope, refresh accounts, and re-add the desktop widget.</li>
+        <li>If an account shows a session-ended message, choose Sign in Again from the account menu.</li>
+        <li>If sign-in cannot return to the app, make sure local security software is not blocking localhost callback connections.</li>
+        <li>Use Demo Mode if you only want to inspect the interface without adding a real account.</li>
+      </ul>
+
+      <h2>Privacy</h2>
+      <p>Read the <a href="https://kibernet.github.io/HomePage/AppPages/CodexGauge/Privacy/index.html">Privacy Policy</a> for details about local storage, Keychain credentials, and network connections.</p>
+    </main>
+  </div>
 </body>
 </html>

@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ScanAce Support</title>
+  <meta name="description" content="Support page for ScanAce, including scanning, OCR, PDF export, permissions, paid App Store download, and contact information.">
+  <link rel="stylesheet" href="../assets/page.css">
+</head>
+<body>
+  <div class="page">
+    <div class="shell">
+      <header class="topbar">
+        <a class="brand" href="../Support/index.html"><span class="mark">SA</span><span>ScanAce</span></a>
+        <nav class="nav" aria-label="ScanAce pages">
+          <a data-nav="privacy" href="../Privacy/index.html">Privacy</a>
+          <a data-nav="support" aria-current="page" href="../Support/index.html">Support</a>
+          <a data-nav="age" href="../AgeRating/index.html">Age Rating</a>
+          <span class="language-control"><label id="language-label" for="language-select">Language</label><select id="language-select"></select></span>
+        </nav>
+      </header>
+      <main id="localized-content" class="content" role="main"></main>
+    </div>
+  </div>
+  <script>
+    window.SCANACE_PAGE = {
+      defaultLanguage: "en",
+      fallbackTitle: "ScanAce Support",
+      fallbackDescription: "Support page for ScanAce, including scanning, OCR, PDF export, permissions, paid App Store download, and contact information.",
+      content: {
+        en: {
+          metaTitle: "ScanAce Support",
+          description: "Get help with ScanAce scanning, OCR, PDF tools, export, permissions, and paid App Store download questions.",
+          eyebrow: "ScanAce for iPhone, iPad, and Mac",
+          title: "Support",
+          updated: "Last updated: June 22, 2026",
+          intro: "Need help with ScanAce? Email us with the details below so we can reproduce the issue and respond with a useful fix or workaround.",
+          notice: "ScanAce is sold as a paid App Store download. The current version does not use subscriptions, in-app purchases, restore-purchase flows, ads, or developer-operated account servers.",
+          cards: [
+            { title: "Email", value: "kibernet@sina.com", href: "mailto:kibernet@sina.com" },
+            { title: "App", value: "ScanAce document scanner, OCR, PDF, and export workflow" },
+            { title: "Platforms", value: "iPhone, iPad, and Mac" },
+            { title: "Purchase Model", value: "Paid App Store download, no subscription" }
+          ],
+          sections: [
+            { heading: "What to Include", bullets: ["Your device model, operating system version, ScanAce app version, and app language.", "The workflow you used: camera scan, photo import, OCR, PDF editing, export, watermark camera, app lock, search, or translation.", "The export format and destination if the issue involves PDF, image, text, Word, Excel, PPT, CSV, ZIP, Files, Finder, AirDrop, Mail, or cloud storage.", "A short reproduction path, the exact error text, and optional screenshots or diagnostics. Do not send passwords, private keys, confidential documents, or files you do not want us to review."] },
+            { heading: "Troubleshooting Checklist", bullets: ["If the camera is unavailable, check Camera permission in System Settings or Settings, then fully quit and reopen ScanAce.", "If imported photos or saved images fail, check Photos permission and confirm the selected item still exists in your library.", "If file import or export fails, choose a writable folder in Files or Finder and confirm that cloud storage has finished syncing.", "If OCR quality is low, rescan with stronger light, flat page edges, higher contrast, and no motion blur. Cropping and perspective correction improve recognition.", "If PDF export is large, try black-and-white cleanup, lower image size, or page compression before exporting.", "If optional translation fails, confirm the Google Translation API key is valid and that network access is available. ScanAce only sends selected OCR text when you choose that optional feature."] },
+            { heading: "Frequently Asked Questions", faq: [
+              { question: "Where are my documents stored?", answer: "Documents, scans, OCR text, thumbnails, annotations, tags, signatures, watermarks, search data, and settings are stored locally in the app sandbox or in locations you choose when importing or exporting files." },
+              { question: "Does ScanAce upload my documents?", answer: "No. ScanAce is local-first and does not upload documents to developer-operated servers. Sharing through Mail, AirDrop, Files, Finder, cloud drives, or other services is controlled by you." },
+              { question: "Why does ScanAce ask for Camera, Photos, Files, Location, or Biometrics?", answer: "These permissions are used only for the features you choose: scanning, importing, exporting, optional watermark location text, and local app lock. ScanAce does not receive biometric data." },
+              { question: "Can I get a refund or restore a purchase?", answer: "ScanAce is a paid App Store download. It does not include in-app purchases or subscriptions, so there is no in-app restore flow. App Store purchase records, refunds, tax, regional pricing, and Family Sharing eligibility are handled by Apple." },
+              { question: "Can feedback, ratings, and support email remain enabled?", answer: "Yes. Feedback, App Store rating prompts, and support email can remain because they are user-initiated support and review flows, not subscriptions or tracking systems." }
+            ] },
+            { heading: "Support Scope", paragraphs: ["We can help with app behavior, scanning quality, OCR, PDF tools, export formats, permissions, and reproducible bugs. We cannot recover documents you deleted outside the app, access files that never leave your device, or change Apple App Store billing decisions."] },
+            { heading: "Privacy Reminder", paragraphs: ["Send only the minimum information needed for support. If a screenshot or sample file contains private information, redact it first or describe the problem without attaching the file."] }
+          ],
+          links: [{ label: "Privacy Policy", href: "../Privacy/index.html" }, { label: "Age Rating Information", href: "../AgeRating/index.html" }]
+        },
+        "zh-Hans": {
+          metaTitle: "ScanAce 支持",
+          description: "ScanAce 支持页面：扫描、OCR、PDF、导出、权限、App Store 付费下载和联系方式。",
+          eyebrow: "适用于 iPhone、iPad 和 Mac 的 ScanAce",
+          title: "支持",
+          updated: "最后更新日期：2026 年 6 月 22 日",
+          intro: "如果你在使用 ScanAce 时遇到问题，请通过邮件联系我们，并尽量附上下面的信息。这样我们可以更快复现问题，给出有效的修复建议或临时解决方案。",
+          notice: "ScanAce 采用 App Store 一次性付费下载模式。当前版本不使用订阅、App 内购买、恢复购买流程、广告或开发者运营的账号服务器。",
+          cards: [
+            { title: "邮箱", value: "kibernet@sina.com", href: "mailto:kibernet@sina.com" },
+            { title: "App", value: "ScanAce 文档扫描、OCR、PDF 和导出工作流" },
+            { title: "平台", value: "iPhone、iPad 和 Mac" },
+            { title: "付费模式", value: "App Store 付费下载，无订阅" }
+          ],
+          sections: [
+            { heading: "请在邮件中包含", bullets: ["你的设备型号、系统版本、ScanAce App 版本和 App 语言。", "你使用的流程：相机扫描、照片导入、OCR、PDF 编辑、导出、水印相机、App 锁、搜索或翻译。", "如果问题和导出有关，请说明导出格式和目标位置，例如 PDF、图片、文本、Word、Excel、PPT、CSV、ZIP、文件 App、Finder、AirDrop、邮件或云盘。", "简短的复现步骤、完整错误提示，以及可选截图或诊断信息。请不要发送密码、私钥、机密文档或你不希望我们查看的文件。"] },
+            { heading: "故障排查清单", bullets: ["如果相机无法使用，请检查系统里的相机权限，然后完全退出并重新打开 ScanAce。", "如果照片导入或图片保存失败，请检查照片权限，并确认所选项目仍在图库中。", "如果文件导入或导出失败，请选择文件 App 或 Finder 中可写入的位置，并确认云盘同步已经完成。", "如果 OCR 识别效果不理想，请在光线更充足、页面更平整、对比度更高、没有运动模糊的情况下重新扫描。裁切和透视校正通常能提升识别效果。", "如果 PDF 文件过大，可以先尝试黑白增强、降低图片尺寸或压缩页面再导出。", "如果可选翻译失败，请确认 Google Translation API Key 有效且网络可用。ScanAce 只会在你主动选择该功能时发送所选 OCR 文本。"] },
+            { heading: "常见问题", faq: [
+              { question: "我的文档保存在哪里？", answer: "文档、扫描页、OCR 文本、缩略图、批注、标签、签名、水印、搜索数据和设置会保存在 App 沙盒，或保存在你导入/导出时主动选择的位置。"},
+              { question: "ScanAce 会上传我的文档吗？", answer: "不会。ScanAce 是本地优先的工具，不会把文档上传到开发者运营的服务器。通过邮件、AirDrop、文件 App、Finder、云盘或其他服务分享文件，由你自行控制。"},
+              { question: "为什么需要相机、照片、文件、定位或生物识别权限？", answer: "这些权限只用于你主动选择的功能：扫描、导入、导出、可选水印定位文字和本地 App 锁。ScanAce 不会接收你的生物识别数据。"},
+              { question: "可以退款或恢复购买吗？", answer: "ScanAce 是 App Store 付费下载，不包含 App 内购买或订阅，所以 App 内没有恢复购买流程。购买记录、退款、税费、区域价格和家庭共享资格由 Apple 处理。"},
+              { question: "反馈、评分和支持邮件可以保留吗？", answer: "可以。反馈、App Store 评分提示和支持邮件属于用户主动发起的支持与评价流程，不是订阅，也不是跟踪系统。"}
+            ] },
+            { heading: "支持范围", paragraphs: ["我们可以协助处理 App 行为、扫描质量、OCR、PDF 工具、导出格式、权限和可复现 Bug。我们无法恢复你在 App 外删除的文件，无法访问没有离开你设备的文件，也无法改变 Apple 的 App Store 账单决定。"] },
+            { heading: "隐私提醒", paragraphs: ["请只发送解决问题所需的最少信息。如果截图或样例文件包含隐私内容，请先打码，或只用文字描述问题。"] }
+          ],
+          links: [{ label: "隐私政策", href: "../Privacy/index.html" }, { label: "适龄信息", href: "../AgeRating/index.html" }]
+        },
+        "zh-Hant": {
+          metaTitle: "ScanAce 支援",
+          description: "ScanAce 支援頁面：掃描、OCR、PDF、匯出、權限、App Store 付費下載和聯絡方式。",
+          eyebrow: "適用於 iPhone、iPad 和 Mac 的 ScanAce",
+          title: "支援",
+          updated: "最後更新日期：2026 年 6 月 22 日",
+          intro: "如果你在使用 ScanAce 時遇到問題，請透過電子郵件聯絡我們，並盡量附上下列資訊，方便我們復現問題並提供有效建議。",
+          notice: "ScanAce 採用 App Store 一次性付費下載模式。目前版本不使用訂閱、App 內購買、恢復購買流程、廣告或開發者營運的帳號伺服器。",
+          cards: [
+            { title: "信箱", value: "kibernet@sina.com", href: "mailto:kibernet@sina.com" },
+            { title: "App", value: "ScanAce 文件掃描、OCR、PDF 和匯出工作流程" },
+            { title: "平台", value: "iPhone、iPad 和 Mac" },
+            { title: "付費模式", value: "App Store 付費下載，無訂閱" }
+          ],
+          sections: [
+            { heading: "請在郵件中包含", bullets: ["你的裝置型號、系統版本、ScanAce App 版本和 App 語言。", "你使用的流程：相機掃描、照片匯入、OCR、PDF 編輯、匯出、浮水印相機、App 鎖、搜尋或翻譯。", "如果問題和匯出有關，請說明匯出格式和目標位置，例如 PDF、圖片、文字、Word、Excel、PPT、CSV、ZIP、檔案 App、Finder、AirDrop、郵件或雲端硬碟。", "簡短的重現步驟、完整錯誤提示，以及可選截圖或診斷資訊。請不要傳送密碼、私鑰、機密文件或你不希望我們查看的檔案。"] },
+            { heading: "故障排查清單", bullets: ["如果相機無法使用，請檢查系統相機權限，然後完全退出並重新開啟 ScanAce。", "如果照片匯入或圖片儲存失敗，請檢查照片權限，並確認所選項目仍在相簿中。", "如果檔案匯入或匯出失敗，請選擇檔案 App 或 Finder 中可寫入的位置，並確認雲端硬碟同步已完成。", "如果 OCR 辨識效果不理想，請在光線更充足、頁面更平整、對比度更高、沒有動態模糊的情況下重新掃描。", "如果 PDF 檔案過大，可以先嘗試黑白增強、降低圖片尺寸或壓縮頁面再匯出。", "如果可選翻譯失敗，請確認 Google Translation API Key 有效且網路可用。ScanAce 只會在你主動選擇該功能時傳送所選 OCR 文字。"] },
+            { heading: "常見問題", faq: [
+              { question: "我的文件儲存在哪裡？", answer: "文件、掃描頁、OCR 文字、縮圖、註解、標籤、簽名、浮水印、搜尋資料和設定會儲存在 App 沙盒，或你匯入/匯出時主動選擇的位置。"},
+              { question: "ScanAce 會上傳我的文件嗎？", answer: "不會。ScanAce 是本地優先工具，不會把文件上傳到開發者營運的伺服器。外部分享由你自行控制。"},
+              { question: "為什麼需要相機、照片、檔案、定位或生物辨識權限？", answer: "這些權限只用於你主動選擇的功能：掃描、匯入、匯出、可選浮水印定位文字和本地 App 鎖。ScanAce 不會接收你的生物辨識資料。"},
+              { question: "可以退款或恢復購買嗎？", answer: "ScanAce 是 App Store 付費下載，不包含 App 內購買或訂閱，因此 App 內沒有恢復購買流程。購買記錄、退款、稅費、區域價格和家庭共享資格由 Apple 處理。"},
+              { question: "回饋、評分和支援郵件可以保留嗎？", answer: "可以。回饋、App Store 評分提示和支援郵件屬於使用者主動發起的支援與評價流程，不是訂閱，也不是追蹤系統。"}
+            ] },
+            { heading: "支援範圍", paragraphs: ["我們可以協助處理 App 行為、掃描品質、OCR、PDF 工具、匯出格式、權限和可重現 Bug。無法恢復你在 App 外刪除的檔案，無法存取沒有離開你裝置的檔案，也無法改變 Apple 的 App Store 帳單決定。"] },
+            { heading: "隱私提醒", paragraphs: ["請只傳送解決問題所需的最少資訊。如果截圖或樣例檔案包含隱私內容，請先遮蔽，或只用文字描述問題。"] }
+          ],
+          links: [{ label: "隱私權政策", href: "../Privacy/index.html" }, { label: "適齡資訊", href: "../AgeRating/index.html" }]
+        },
+        ja: {
+          metaTitle: "ScanAce サポート",
+          description: "ScanAceのスキャン、OCR、PDF、書き出し、権限、有料App Storeダウンロードに関するサポート。",
+          eyebrow: "iPhone、iPad、Mac向けScanAce",
+          title: "サポート",
+          updated: "最終更新日：2026年6月22日",
+          intro: "ScanAceについての問題は、再現に必要な情報を添えてメールでお問い合わせください。",
+          notice: "ScanAceはApp Storeの有料ダウンロードです。現在のバージョンにサブスクリプション、アプリ内課金、購入復元、広告、開発者運営アカウントはありません。",
+          cards: [
+            { title: "メール", value: "kibernet@sina.com", href: "mailto:kibernet@sina.com" },
+            { title: "アプリ", value: "ScanAce 文書スキャン、OCR、PDF、書き出しワークフロー" },
+            { title: "プラットフォーム", value: "iPhone、iPad、Mac" },
+            { title: "購入形態", value: "有料App Storeダウンロード、サブスクリプションなし" }
+          ],
+          sections: [
+            { heading: "メールに含める情報", bullets: ["デバイス、OS、ScanAceのバージョン、アプリ言語。", "使用した機能: カメラスキャン、写真読み込み、OCR、PDF編集、書き出し、ウォーターマークカメラ、Appロック、検索、翻訳。", "書き出しの問題では形式と保存先。", "再現手順、エラー文、必要なスクリーンショット。機密文書やパスワードは送らないでください。"] },
+            { heading: "確認事項", bullets: ["カメラが使えない場合は権限を確認し、ScanAceを再起動してください。", "写真やファイルの問題では、写真権限と保存先の書き込み権限を確認してください。", "OCR品質が低い場合は、明るい場所で平らに置き、ぶれや影を減らして再スキャンしてください。", "任意の翻訳が失敗する場合は、Google Translation APIキーとネットワークを確認してください。"] },
+            { heading: "よくある質問", faq: [
+              { question: "文書はどこに保存されますか？", answer: "文書、OCRテキスト、注釈、タグ、設定はアプリ内またはユーザーが選んだ場所にローカル保存されます。"},
+              { question: "ScanAceは文書をアップロードしますか？", answer: "いいえ。ScanAceはローカル優先で、開発者運営サーバーに文書をアップロードしません。外部共有はユーザーが操作します。"},
+              { question: "返金や購入復元はできますか？", answer: "ScanAceは有料App Storeダウンロードで、アプリ内課金やサブスクリプションはありません。購入、返金、価格、ファミリー共有はAppleが管理します。"}
+            ] },
+            { heading: "サポート範囲", paragraphs: ["アプリの動作、スキャン品質、OCR、PDF、書き出し、権限、再現可能な不具合を支援できます。App Storeの請求判断はAppleが管理します。"] }
+          ],
+          links: [{ label: "プライバシーポリシー", href: "../Privacy/index.html" }, { label: "年齢制限情報", href: "../AgeRating/index.html" }]
+        },
+        ko: {
+          metaTitle: "ScanAce 지원",
+          description: "ScanAce 스캔, OCR, PDF, 내보내기, 권한 및 유료 App Store 다운로드 지원.",
+          eyebrow: "iPhone, iPad 및 Mac용 ScanAce",
+          title: "지원",
+          updated: "최종 업데이트: 2026년 6월 22일",
+          intro: "ScanAce 사용 중 문제가 있으면 재현에 필요한 정보를 포함해 이메일로 문의해 주세요.",
+          notice: "ScanAce는 App Store 유료 다운로드 앱입니다. 현재 버전에는 구독, 앱 내 구매, 구매 복원, 광고 또는 개발자 계정 서버가 없습니다.",
+          cards: [
+            { title: "이메일", value: "kibernet@sina.com", href: "mailto:kibernet@sina.com" },
+            { title: "앱", value: "ScanAce 문서 스캔, OCR, PDF, 내보내기 워크플로" },
+            { title: "플랫폼", value: "iPhone, iPad 및 Mac" },
+            { title: "구매 모델", value: "유료 App Store 다운로드, 구독 없음" }
+          ],
+          sections: [
+            { heading: "포함할 정보", bullets: ["기기 모델, OS 버전, ScanAce 앱 버전, 앱 언어.", "사용한 기능: 카메라 스캔, 사진 가져오기, OCR, PDF 편집, 내보내기, 워터마크 카메라, 앱 잠금, 검색 또는 번역.", "내보내기 문제라면 형식과 저장 위치.", "재현 단계, 오류 문구, 선택적 스크린샷. 비밀번호나 기밀 문서는 보내지 마십시오."] },
+            { heading: "문제 해결", bullets: ["카메라가 작동하지 않으면 권한을 확인하고 ScanAce를 다시 여십시오.", "사진 또는 파일 문제가 있으면 사진 권한과 쓰기 가능한 저장 위치를 확인하십시오.", "OCR 품질이 낮으면 더 밝고 평평한 환경에서 흔들림 없이 다시 스캔하십시오.", "선택적 번역 실패 시 Google Translation API 키와 네트워크를 확인하십시오."] },
+            { heading: "FAQ", faq: [
+              { question: "문서는 어디에 저장되나요?", answer: "문서, OCR 텍스트, 주석, 태그 및 설정은 앱 내부 또는 사용자가 선택한 위치에 로컬 저장됩니다."},
+              { question: "ScanAce가 문서를 업로드하나요?", answer: "아니요. 개발자 운영 서버에 문서를 업로드하지 않습니다. 외부 공유는 사용자가 제어합니다."},
+              { question: "환불 또는 구매 복원이 가능한가요?", answer: "ScanAce는 유료 App Store 다운로드이며 앱 내 구매나 구독이 없습니다. 구매, 환불, 가격 및 가족 공유는 Apple이 처리합니다."}
+            ] },
+            { heading: "지원 범위", paragraphs: ["앱 동작, 스캔 품질, OCR, PDF, 내보내기, 권한 및 재현 가능한 버그를 도울 수 있습니다. App Store 결제 결정은 Apple이 관리합니다."] }
+          ],
+          links: [{ label: "개인정보 처리방침", href: "../Privacy/index.html" }, { label: "연령 등급 정보", href: "../AgeRating/index.html" }]
+        },
+        fr: {
+          metaTitle: "Assistance ScanAce",
+          description: "Assistance ScanAce pour numérisation, OCR, PDF, export, autorisations et téléchargement App Store payant.",
+          eyebrow: "ScanAce pour iPhone, iPad et Mac",
+          title: "Assistance",
+          updated: "Dernière mise à jour : 22 juin 2026",
+          intro: "Pour obtenir de l'aide avec ScanAce, envoyez-nous un e-mail avec les informations nécessaires pour reproduire le problème.",
+          notice: "ScanAce est un téléchargement payant sur l'App Store. La version actuelle ne comporte pas d'abonnement, d'achat intégré, de restauration d'achat, de publicité ni de serveur de compte développeur.",
+          cards: [
+            { title: "Email", value: "kibernet@sina.com", href: "mailto:kibernet@sina.com" },
+            { title: "App", value: "ScanAce numérisation, OCR, PDF et export" },
+            { title: "Plateformes", value: "iPhone, iPad et Mac" },
+            { title: "Achat", value: "Téléchargement App Store payant, sans abonnement" }
+          ],
+          sections: [
+            { heading: "À inclure", bullets: ["Modèle d'appareil, version du système, version de ScanAce et langue de l'app.", "Fonction utilisée : scan caméra, import photo, OCR, PDF, export, filigrane, verrouillage, recherche ou traduction.", "Format et destination si le problème concerne l'export.", "Étapes de reproduction, message d'erreur et captures éventuelles. N'envoyez pas de mots de passe ni de documents confidentiels."] },
+            { heading: "Dépannage", bullets: ["Vérifiez les autorisations Caméra, Photos et Fichiers.", "Choisissez un dossier d'export accessible en écriture.", "Pour un meilleur OCR, rescanner avec plus de lumière, contraste et stabilité.", "Pour la traduction facultative, vérifiez la clé Google Translation API et le réseau."] },
+            { heading: "Questions fréquentes", faq: [
+              { question: "Où sont stockés mes documents ?", answer: "Ils restent localement dans l'app ou dans les emplacements que vous choisissez."},
+              { question: "ScanAce téléverse-t-il mes documents ?", answer: "Non. ScanAce ne téléverse pas les documents vers des serveurs exploités par le développeur."},
+              { question: "Comment fonctionnent les remboursements ?", answer: "ScanAce est un téléchargement App Store payant sans abonnement ni achat intégré. Les achats, remboursements et prix sont gérés par Apple."}
+            ] },
+            { heading: "Portée de l'assistance", paragraphs: ["Nous pouvons aider pour le comportement de l'app, la qualité de scan, l'OCR, les PDF, l'export, les autorisations et les bugs reproductibles."] }
+          ],
+          links: [{ label: "Confidentialité", href: "../Privacy/index.html" }, { label: "Âge", href: "../AgeRating/index.html" }]
+        },
+        de: {
+          metaTitle: "ScanAce Support",
+          description: "ScanAce Support für Scannen, OCR, PDF, Export, Berechtigungen und bezahlten App-Store-Download.",
+          eyebrow: "ScanAce für iPhone, iPad und Mac",
+          title: "Support",
+          updated: "Zuletzt aktualisiert: 22. Juni 2026",
+          intro: "Wenn Sie Hilfe mit ScanAce benötigen, senden Sie uns eine E-Mail mit den Angaben, die zur Reproduktion des Problems nötig sind.",
+          notice: "ScanAce ist ein kostenpflichtiger App-Store-Download. Die aktuelle Version enthält keine Abonnements, In-App-Käufe, Kaufwiederherstellung, Werbung oder entwicklerbetriebene Kontoserver.",
+          cards: [
+            { title: "E-Mail", value: "kibernet@sina.com", href: "mailto:kibernet@sina.com" },
+            { title: "App", value: "ScanAce Scannen, OCR, PDF und Export" },
+            { title: "Plattformen", value: "iPhone, iPad und Mac" },
+            { title: "Kaufmodell", value: "Bezahlter App-Store-Download, kein Abo" }
+          ],
+          sections: [
+            { heading: "Bitte angeben", bullets: ["Gerätemodell, Systemversion, ScanAce-Version und App-Sprache.", "Genutzte Funktion: Kamera, Fotoimport, OCR, PDF, Export, Wasserzeichen, App-Sperre, Suche oder Übersetzung.", "Format und Ziel, falls der Fehler den Export betrifft.", "Reproduktionsschritte, Fehlermeldung und optionale Screenshots. Senden Sie keine Passwörter oder vertraulichen Dokumente."] },
+            { heading: "Fehlersuche", bullets: ["Prüfen Sie Kamera-, Fotos- und Dateiberechtigungen.", "Wählen Sie einen beschreibbaren Exportordner.", "Für bessere OCR erneut mit mehr Licht, Kontrast und Stabilität scannen.", "Für optionale Übersetzung Google Translation API Key und Netzwerk prüfen."] },
+            { heading: "FAQ", faq: [
+              { question: "Wo werden Dokumente gespeichert?", answer: "Lokal in der App oder an den von Ihnen gewählten Speicherorten."},
+              { question: "Lädt ScanAce Dokumente hoch?", answer: "Nein. ScanAce lädt keine Dokumente auf entwicklerbetriebene Server hoch."},
+              { question: "Wie funktionieren Erstattungen?", answer: "ScanAce ist ein bezahlter App-Store-Download ohne Abo oder In-App-Kauf. Käufe, Erstattungen und Preise verwaltet Apple."}
+            ] },
+            { heading: "Supportumfang", paragraphs: ["Wir helfen bei App-Verhalten, Scanqualität, OCR, PDF, Export, Berechtigungen und reproduzierbaren Fehlern."] }
+          ],
+          links: [{ label: "Datenschutz", href: "../Privacy/index.html" }, { label: "Alterseinstufung", href: "../AgeRating/index.html" }]
+        },
+        es: {
+          metaTitle: "Soporte de ScanAce",
+          description: "Soporte de ScanAce para escaneo, OCR, PDF, exportación, permisos y descarga de pago en App Store.",
+          eyebrow: "ScanAce para iPhone, iPad y Mac",
+          title: "Soporte",
+          updated: "Última actualización: 22 de junio de 2026",
+          intro: "Si necesitas ayuda con ScanAce, envíanos un correo con la información necesaria para reproducir el problema.",
+          notice: "ScanAce es una descarga de pago en App Store. La versión actual no incluye suscripciones, compras dentro de la app, restauración de compras, anuncios ni servidores de cuentas del desarrollador.",
+          cards: [
+            { title: "Email", value: "kibernet@sina.com", href: "mailto:kibernet@sina.com" },
+            { title: "App", value: "ScanAce escaneo, OCR, PDF y exportación" },
+            { title: "Plataformas", value: "iPhone, iPad y Mac" },
+            { title: "Compra", value: "Descarga de pago en App Store, sin suscripción" }
+          ],
+          sections: [
+            { heading: "Qué incluir", bullets: ["Modelo del dispositivo, versión del sistema, versión de ScanAce e idioma de la app.", "Función usada: cámara, importación, OCR, PDF, exportación, marca de agua, bloqueo, búsqueda o traducción.", "Formato y destino si el problema es de exportación.", "Pasos para reproducir, error exacto y capturas opcionales. No envíes contraseñas ni documentos confidenciales."] },
+            { heading: "Solución de problemas", bullets: ["Revisa permisos de Cámara, Fotos y Archivos.", "Elige una carpeta de exportación con permiso de escritura.", "Para mejor OCR, vuelve a escanear con más luz, contraste y estabilidad.", "Para traducción opcional, revisa la clave de Google Translation API y la red."] },
+            { heading: "Preguntas frecuentes", faq: [
+              { question: "¿Dónde se guardan mis documentos?", answer: "Localmente en la app o en las ubicaciones que eliges."},
+              { question: "¿ScanAce sube mis documentos?", answer: "No. ScanAce no sube documentos a servidores operados por el desarrollador."},
+              { question: "¿Cómo funcionan los reembolsos?", answer: "ScanAce es una descarga de pago en App Store sin suscripciones ni compras dentro de la app. Apple gestiona compras, reembolsos y precios."}
+            ] },
+            { heading: "Alcance del soporte", paragraphs: ["Podemos ayudar con comportamiento de la app, calidad de escaneo, OCR, PDF, exportación, permisos y errores reproducibles."] }
+          ],
+          links: [{ label: "Privacidad", href: "../Privacy/index.html" }, { label: "Clasificación por edad", href: "../AgeRating/index.html" }]
+        },
+        it: {
+          metaTitle: "Supporto ScanAce",
+          description: "Supporto ScanAce per scansione, OCR, PDF, esportazione, permessi e download App Store a pagamento.",
+          eyebrow: "ScanAce per iPhone, iPad e Mac",
+          title: "Supporto",
+          updated: "Ultimo aggiornamento: 22 giugno 2026",
+          intro: "Per assistenza con ScanAce, inviaci un'email con le informazioni utili a riprodurre il problema.",
+          notice: "ScanAce è un download a pagamento su App Store. La versione attuale non include abbonamenti, acquisti in-app, ripristino acquisti, annunci o server account del sviluppatore.",
+          cards: [
+            { title: "Email", value: "kibernet@sina.com", href: "mailto:kibernet@sina.com" },
+            { title: "App", value: "ScanAce scansione, OCR, PDF ed esportazione" },
+            { title: "Piattaforme", value: "iPhone, iPad e Mac" },
+            { title: "Acquisto", value: "Download App Store a pagamento, senza abbonamento" }
+          ],
+          sections: [
+            { heading: "Cosa includere", bullets: ["Modello dispositivo, versione sistema, versione ScanAce e lingua app.", "Funzione usata: scansione, import foto, OCR, PDF, esportazione, watermark, blocco app, ricerca o traduzione.", "Formato e destinazione se il problema riguarda l'esportazione.", "Passaggi, errore esatto e screenshot facoltativi. Non inviare password o documenti riservati."] },
+            { heading: "Risoluzione problemi", bullets: ["Controlla i permessi di Camera, Foto e File.", "Scegli una cartella di esportazione scrivibile.", "Per OCR migliore, scansiona con più luce, contrasto e stabilità.", "Per la traduzione opzionale, controlla chiave Google Translation API e rete."] },
+            { heading: "Domande frequenti", faq: [
+              { question: "Dove sono salvati i documenti?", answer: "Localmente nell'app o nelle posizioni scelte dall'utente."},
+              { question: "ScanAce carica i documenti?", answer: "No. ScanAce non carica documenti su server gestiti dallo sviluppatore."},
+              { question: "Come funzionano i rimborsi?", answer: "ScanAce è un download App Store a pagamento senza abbonamenti o acquisti in-app. Apple gestisce acquisti, rimborsi e prezzi."}
+            ] },
+            { heading: "Ambito del supporto", paragraphs: ["Possiamo aiutare con comportamento app, qualità scansione, OCR, PDF, esportazione, permessi e bug riproducibili."] }
+          ],
+          links: [{ label: "Privacy", href: "../Privacy/index.html" }, { label: "Classificazione età", href: "../AgeRating/index.html" }]
+        },
+        "pt-BR": {
+          metaTitle: "Suporte do ScanAce",
+          description: "Suporte do ScanAce para digitalização, OCR, PDF, exportação, permissões e download pago na App Store.",
+          eyebrow: "ScanAce para iPhone, iPad e Mac",
+          title: "Suporte",
+          updated: "Última atualização: 22 de junho de 2026",
+          intro: "Se precisar de ajuda com o ScanAce, envie um email com as informações necessárias para reproduzir o problema.",
+          notice: "ScanAce é um download pago na App Store. A versão atual não inclui assinaturas, compras no app, restauração de compras, anúncios ou servidores de conta do desenvolvedor.",
+          cards: [
+            { title: "Email", value: "kibernet@sina.com", href: "mailto:kibernet@sina.com" },
+            { title: "App", value: "ScanAce digitalização, OCR, PDF e exportação" },
+            { title: "Plataformas", value: "iPhone, iPad e Mac" },
+            { title: "Compra", value: "Download pago na App Store, sem assinatura" }
+          ],
+          sections: [
+            { heading: "O que incluir", bullets: ["Modelo do dispositivo, versão do sistema, versão do ScanAce e idioma do app.", "Função usada: câmera, importação, OCR, PDF, exportação, marca d'água, bloqueio, busca ou tradução.", "Formato e destino se o problema for exportação.", "Passos, erro exato e capturas opcionais. Não envie senhas ou documentos confidenciais."] },
+            { heading: "Solução de problemas", bullets: ["Verifique permissões de Câmera, Fotos e Arquivos.", "Escolha uma pasta de exportação gravável.", "Para OCR melhor, digitalize com mais luz, contraste e estabilidade.", "Para tradução opcional, verifique a chave Google Translation API e a rede."] },
+            { heading: "Perguntas frequentes", faq: [
+              { question: "Onde meus documentos ficam salvos?", answer: "Localmente no app ou nos locais escolhidos por você."},
+              { question: "O ScanAce envia meus documentos?", answer: "Não. ScanAce não envia documentos a servidores operados pelo desenvolvedor."},
+              { question: "Como funcionam reembolsos?", answer: "ScanAce é um download pago na App Store sem assinaturas ou compras no app. Apple gerencia compras, reembolsos e preços."}
+            ] },
+            { heading: "Escopo do suporte", paragraphs: ["Podemos ajudar com comportamento do app, qualidade de digitalização, OCR, PDF, exportação, permissões e bugs reproduzíveis."] }
+          ],
+          links: [{ label: "Privacidade", href: "../Privacy/index.html" }, { label: "Classificação etária", href: "../AgeRating/index.html" }]
+        },
+        ru: {
+          metaTitle: "Поддержка ScanAce",
+          description: "Поддержка ScanAce: сканирование, OCR, PDF, экспорт, разрешения и платная загрузка из App Store.",
+          eyebrow: "ScanAce для iPhone, iPad и Mac",
+          title: "Поддержка",
+          updated: "Последнее обновление: 22 июня 2026 г.",
+          intro: "Если нужна помощь с ScanAce, отправьте нам письмо с данными, которые помогут воспроизвести проблему.",
+          notice: "ScanAce распространяется как платная загрузка из App Store. В текущей версии нет подписок, встроенных покупок, восстановления покупок, рекламы или серверов учетных записей разработчика.",
+          cards: [
+            { title: "Email", value: "kibernet@sina.com", href: "mailto:kibernet@sina.com" },
+            { title: "Приложение", value: "ScanAce сканирование, OCR, PDF и экспорт" },
+            { title: "Платформы", value: "iPhone, iPad и Mac" },
+            { title: "Покупка", value: "Платная загрузка App Store, без подписки" }
+          ],
+          sections: [
+            { heading: "Что указать", bullets: ["Модель устройства, версия системы, версия ScanAce и язык приложения.", "Использованная функция: камера, импорт фото, OCR, PDF, экспорт, водяной знак, блокировка, поиск или перевод.", "Формат и место сохранения, если проблема связана с экспортом.", "Шаги воспроизведения, точный текст ошибки и необязательные скриншоты. Не отправляйте пароли и конфиденциальные документы."] },
+            { heading: "Проверка", bullets: ["Проверьте разрешения камеры, фото и файлов.", "Выберите папку экспорта с правом записи.", "Для лучшего OCR сканируйте при хорошем освещении, контрасте и без размытия.", "Для необязательного перевода проверьте ключ Google Translation API и сеть."] },
+            { heading: "FAQ", faq: [
+              { question: "Где хранятся документы?", answer: "Локально в приложении или в выбранных вами местах."},
+              { question: "ScanAce загружает документы?", answer: "Нет. ScanAce не загружает документы на серверы разработчика."},
+              { question: "Как работают возвраты?", answer: "ScanAce является платной загрузкой из App Store без подписок и встроенных покупок. Покупки, возвраты и цены обрабатывает Apple."}
+            ] },
+            { heading: "Объем поддержки", paragraphs: ["Мы помогаем с поведением приложения, качеством сканирования, OCR, PDF, экспортом, разрешениями и воспроизводимыми ошибками."] }
+          ],
+          links: [{ label: "Конфиденциальность", href: "../Privacy/index.html" }, { label: "Возрастной рейтинг", href: "../AgeRating/index.html" }]
+        },
+        ar: {
+          metaTitle: "دعم ScanAce",
+          description: "دعم ScanAce للمسح الضوئي و OCR و PDF والتصدير والأذونات والتنزيل المدفوع من App Store.",
+          eyebrow: "ScanAce لأجهزة iPhone و iPad و Mac",
+          title: "الدعم",
+          updated: "آخر تحديث: 22 يونيو 2026",
+          intro: "إذا احتجت إلى مساعدة في ScanAce، أرسل لنا بريدا إلكترونيا يتضمن المعلومات اللازمة لإعادة إنتاج المشكلة.",
+          notice: "ScanAce تنزيل مدفوع من App Store. لا يحتوي الإصدار الحالي على اشتراكات أو مشتريات داخل التطبيق أو استعادة مشتريات أو إعلانات أو خوادم حساب يديرها المطور.",
+          cards: [
+            { title: "البريد الإلكتروني", value: "kibernet@sina.com", href: "mailto:kibernet@sina.com" },
+            { title: "التطبيق", value: "ScanAce للمسح و OCR و PDF والتصدير" },
+            { title: "المنصات", value: "iPhone و iPad و Mac" },
+            { title: "نموذج الشراء", value: "تنزيل App Store مدفوع، بلا اشتراك" }
+          ],
+          sections: [
+            { heading: "ما يجب إرساله", bullets: ["طراز الجهاز وإصدار النظام وإصدار ScanAce ولغة التطبيق.", "الميزة المستخدمة: الكاميرا أو استيراد الصور أو OCR أو PDF أو التصدير أو العلامة المائية أو قفل التطبيق أو البحث أو الترجمة.", "التنسيق والوجهة إذا كانت المشكلة تتعلق بالتصدير.", "خطوات إعادة الإنتاج ونص الخطأ ولقطات شاشة اختيارية. لا ترسل كلمات مرور أو مستندات سرية."] },
+            { heading: "استكشاف الأخطاء", bullets: ["تحقق من أذونات الكاميرا والصور والملفات.", "اختر مجلدا قابلا للكتابة للتصدير.", "لتحسين OCR أعد المسح بإضاءة وتباين وثبات أفضل.", "للترجمة الاختيارية تحقق من مفتاح Google Translation API والشبكة."] },
+            { heading: "الأسئلة الشائعة", faq: [
+              { question: "أين تحفظ مستنداتي؟", answer: "محليا داخل التطبيق أو في المواقع التي تختارها."},
+              { question: "هل يرفع ScanAce مستنداتي؟", answer: "لا. لا يرفع ScanAce المستندات إلى خوادم يديرها المطور."},
+              { question: "كيف تعمل المبالغ المستردة؟", answer: "ScanAce تنزيل مدفوع من App Store بلا اشتراكات أو مشتريات داخل التطبيق. تدير Apple الشراء والاسترداد والأسعار."}
+            ] },
+            { heading: "نطاق الدعم", paragraphs: ["يمكننا المساعدة في سلوك التطبيق وجودة المسح و OCR و PDF والتصدير والأذونات والأخطاء القابلة للتكرار."] }
+          ],
+          links: [{ label: "الخصوصية", href: "../Privacy/index.html" }, { label: "التصنيف العمري", href: "../AgeRating/index.html" }]
+        },
+        hi: {
+          metaTitle: "ScanAce समर्थन",
+          description: "ScanAce स्कैन, OCR, PDF, निर्यात, अनुमतियां और App Store paid download सहायता।",
+          eyebrow: "iPhone, iPad और Mac के लिए ScanAce",
+          title: "समर्थन",
+          updated: "अंतिम अपडेट: 22 जून 2026",
+          intro: "ScanAce में सहायता चाहिए तो समस्या को दोहराने के लिए जरूरी जानकारी के साथ हमें ईमेल करें।",
+          notice: "ScanAce App Store पर भुगतान करके डाउनलोड किया जाने वाला ऐप है। वर्तमान संस्करण में सदस्यता, इन-ऐप खरीद, खरीद पुनर्स्थापना, विज्ञापन या डेवलपर खाता सर्वर नहीं हैं।",
+          cards: [
+            { title: "ईमेल", value: "kibernet@sina.com", href: "mailto:kibernet@sina.com" },
+            { title: "ऐप", value: "ScanAce स्कैन, OCR, PDF और निर्यात" },
+            { title: "प्लेटफॉर्म", value: "iPhone, iPad और Mac" },
+            { title: "खरीद मॉडल", value: "Paid App Store download, सदस्यता नहीं" }
+          ],
+          sections: [
+            { heading: "क्या भेजें", bullets: ["डिवाइस मॉडल, सिस्टम संस्करण, ScanAce संस्करण और ऐप भाषा।", "उपयोग की गई सुविधा: कैमरा, फोटो आयात, OCR, PDF, निर्यात, वॉटरमार्क, ऐप लॉक, खोज या अनुवाद।", "यदि समस्या निर्यात से जुड़ी है तो प्रारूप और गंतव्य।", "दोहराने के चरण, त्रुटि संदेश और वैकल्पिक स्क्रीनशॉट। पासवर्ड या गोपनीय दस्तावेज़ न भेजें।"] },
+            { heading: "समस्या निवारण", bullets: ["Camera, Photos और Files अनुमतियां जांचें।", "निर्यात के लिए लिखने योग्य फोल्डर चुनें।", "बेहतर OCR के लिए ज्यादा रोशनी, कंट्रास्ट और स्थिरता के साथ फिर स्कैन करें।", "वैकल्पिक अनुवाद के लिए Google Translation API key और नेटवर्क जांचें।"] },
+            { heading: "FAQ", faq: [
+              { question: "मेरे दस्तावेज़ कहां सहेजे जाते हैं?", answer: "ऐप में स्थानीय रूप से या आपके चुने स्थानों पर।"},
+              { question: "क्या ScanAce दस्तावेज़ अपलोड करता है?", answer: "नहीं। ScanAce दस्तावेज़ डेवलपर सर्वर पर अपलोड नहीं करता।"},
+              { question: "रिफंड कैसे होते हैं?", answer: "ScanAce App Store paid download है, इसमें सदस्यता या इन-ऐप खरीद नहीं है। खरीद, रिफंड और कीमत Apple संभालता है।"}
+            ] },
+            { heading: "समर्थन सीमा", paragraphs: ["हम ऐप व्यवहार, स्कैन गुणवत्ता, OCR, PDF, निर्यात, अनुमतियों और दोहराए जा सकने वाले बग में मदद कर सकते हैं।"] }
+          ],
+          links: [{ label: "गोपनीयता", href: "../Privacy/index.html" }, { label: "आयु रेटिंग", href: "../AgeRating/index.html" }]
+        },
+        id: {
+          metaTitle: "Dukungan ScanAce",
+          description: "Dukungan ScanAce untuk pemindaian, OCR, PDF, ekspor, izin, dan unduhan berbayar App Store.",
+          eyebrow: "ScanAce untuk iPhone, iPad, dan Mac",
+          title: "Dukungan",
+          updated: "Terakhir diperbarui: 22 Juni 2026",
+          intro: "Jika memerlukan bantuan dengan ScanAce, kirim email berisi informasi yang membantu kami mereproduksi masalah.",
+          notice: "ScanAce adalah unduhan berbayar App Store. Versi saat ini tidak memiliki langganan, pembelian dalam app, pemulihan pembelian, iklan, atau server akun pengembang.",
+          cards: [
+            { title: "Email", value: "kibernet@sina.com", href: "mailto:kibernet@sina.com" },
+            { title: "App", value: "ScanAce pemindaian, OCR, PDF, dan ekspor" },
+            { title: "Platform", value: "iPhone, iPad, dan Mac" },
+            { title: "Model Pembelian", value: "Unduhan App Store berbayar, tanpa langganan" }
+          ],
+          sections: [
+            { heading: "Yang perlu disertakan", bullets: ["Model perangkat, versi sistem, versi ScanAce, dan bahasa app.", "Fitur yang digunakan: kamera, impor foto, OCR, PDF, ekspor, watermark, kunci app, pencarian, atau terjemahan.", "Format dan tujuan jika masalah terkait ekspor.", "Langkah reproduksi, pesan error, dan screenshot opsional. Jangan kirim kata sandi atau dokumen rahasia."] },
+            { heading: "Pemecahan masalah", bullets: ["Periksa izin Kamera, Foto, dan File.", "Pilih folder ekspor yang dapat ditulis.", "Untuk OCR lebih baik, pindai lagi dengan cahaya, kontras, dan stabilitas lebih baik.", "Untuk terjemahan opsional, periksa kunci Google Translation API dan jaringan."] },
+            { heading: "FAQ", faq: [
+              { question: "Di mana dokumen saya disimpan?", answer: "Secara lokal di app atau lokasi yang Anda pilih."},
+              { question: "Apakah ScanAce mengunggah dokumen?", answer: "Tidak. ScanAce tidak mengunggah dokumen ke server pengembang."},
+              { question: "Bagaimana pengembalian dana?", answer: "ScanAce adalah unduhan berbayar App Store tanpa langganan atau pembelian dalam app. Apple menangani pembelian, pengembalian dana, dan harga."}
+            ] },
+            { heading: "Cakupan dukungan", paragraphs: ["Kami dapat membantu perilaku app, kualitas pemindaian, OCR, PDF, ekspor, izin, dan bug yang dapat direproduksi."] }
+          ],
+          links: [{ label: "Privasi", href: "../Privacy/index.html" }, { label: "Peringkat Usia", href: "../AgeRating/index.html" }]
+        },
+        vi: {
+          metaTitle: "Hỗ trợ ScanAce",
+          description: "Hỗ trợ ScanAce cho quét, OCR, PDF, xuất tệp, quyền và tải trả phí trên App Store.",
+          eyebrow: "ScanAce cho iPhone, iPad và Mac",
+          title: "Hỗ trợ",
+          updated: "Cập nhật lần cuối: 22 tháng 6 năm 2026",
+          intro: "Nếu cần hỗ trợ với ScanAce, hãy gửi email kèm thông tin giúp chúng tôi tái hiện sự cố.",
+          notice: "ScanAce là ứng dụng tải trả phí trên App Store. Phiên bản hiện tại không có đăng ký, mua trong app, khôi phục mua hàng, quảng cáo hoặc máy chủ tài khoản của nhà phát triển.",
+          cards: [
+            { title: "Email", value: "kibernet@sina.com", href: "mailto:kibernet@sina.com" },
+            { title: "Ứng dụng", value: "ScanAce quét, OCR, PDF và xuất tệp" },
+            { title: "Nền tảng", value: "iPhone, iPad và Mac" },
+            { title: "Mua", value: "Tải trả phí trên App Store, không đăng ký" }
+          ],
+          sections: [
+            { heading: "Nên gửi", bullets: ["Mẫu thiết bị, phiên bản hệ thống, phiên bản ScanAce và ngôn ngữ app.", "Tính năng đã dùng: camera, nhập ảnh, OCR, PDF, xuất tệp, watermark, khóa app, tìm kiếm hoặc dịch.", "Định dạng và nơi lưu nếu lỗi liên quan đến xuất tệp.", "Các bước tái hiện, thông báo lỗi và ảnh chụp tùy chọn. Không gửi mật khẩu hoặc tài liệu bí mật."] },
+            { heading: "Khắc phục sự cố", bullets: ["Kiểm tra quyền Camera, Ảnh và Tệp.", "Chọn thư mục xuất có thể ghi.", "Để OCR tốt hơn, quét lại với ánh sáng, tương phản và độ ổn định tốt hơn.", "Với dịch tùy chọn, kiểm tra khóa Google Translation API và mạng."] },
+            { heading: "FAQ", faq: [
+              { question: "Tài liệu lưu ở đâu?", answer: "Cục bộ trong app hoặc tại vị trí bạn chọn."},
+              { question: "ScanAce có tải tài liệu lên không?", answer: "Không. ScanAce không tải tài liệu lên máy chủ của nhà phát triển."},
+              { question: "Hoàn tiền hoạt động thế nào?", answer: "ScanAce là bản tải trả phí trên App Store, không có đăng ký hoặc mua trong app. Apple xử lý mua hàng, hoàn tiền và giá."}
+            ] },
+            { heading: "Phạm vi hỗ trợ", paragraphs: ["Chúng tôi có thể hỗ trợ hành vi app, chất lượng quét, OCR, PDF, xuất tệp, quyền và lỗi có thể tái hiện."] }
+          ],
+          links: [{ label: "Quyền riêng tư", href: "../Privacy/index.html" }, { label: "Xếp hạng độ tuổi", href: "../AgeRating/index.html" }]
+        },
+        th: {
+          metaTitle: "การสนับสนุน ScanAce",
+          description: "การสนับสนุน ScanAce สำหรับการสแกน OCR PDF การส่งออก สิทธิ์ และการดาวน์โหลดแบบชำระเงินบน App Store",
+          eyebrow: "ScanAce สำหรับ iPhone, iPad และ Mac",
+          title: "การสนับสนุน",
+          updated: "อัปเดตล่าสุด: 22 มิถุนายน 2026",
+          intro: "หากต้องการความช่วยเหลือเกี่ยวกับ ScanAce โปรดส่งอีเมลพร้อมข้อมูลที่ช่วยให้เราทำซ้ำปัญหาได้",
+          notice: "ScanAce เป็นแอปดาวน์โหลดแบบชำระเงินบน App Store เวอร์ชันปัจจุบันไม่มีการสมัครสมาชิก การซื้อในแอป การกู้คืนการซื้อ โฆษณา หรือเซิร์ฟเวอร์บัญชีของผู้พัฒนา",
+          cards: [
+            { title: "อีเมล", value: "kibernet@sina.com", href: "mailto:kibernet@sina.com" },
+            { title: "แอป", value: "ScanAce สแกน OCR PDF และส่งออก" },
+            { title: "แพลตฟอร์ม", value: "iPhone, iPad และ Mac" },
+            { title: "การซื้อ", value: "ดาวน์โหลดแบบชำระเงินบน App Store ไม่มีสมัครสมาชิก" }
+          ],
+          sections: [
+            { heading: "ข้อมูลที่ควรส่ง", bullets: ["รุ่นอุปกรณ์ เวอร์ชันระบบ เวอร์ชัน ScanAce และภาษาแอป", "ฟีเจอร์ที่ใช้ เช่น กล้อง นำเข้ารูป OCR PDF ส่งออก ลายน้ำ ล็อกแอป ค้นหา หรือแปล", "รูปแบบและปลายทาง หากปัญหาเกี่ยวกับการส่งออก", "ขั้นตอนทำซ้ำ ข้อความผิดพลาด และภาพหน้าจอถ้าจำเป็น อย่าส่งรหัสผ่านหรือเอกสารลับ"] },
+            { heading: "การแก้ไขปัญหา", bullets: ["ตรวจสอบสิทธิ์ Camera, Photos และ Files", "เลือกโฟลเดอร์ส่งออกที่เขียนได้", "เพื่อ OCR ที่ดีขึ้น ให้สแกนใหม่ด้วยแสง คอนทราสต์ และความนิ่งที่ดีกว่า", "สำหรับการแปลเสริม ให้ตรวจสอบ Google Translation API key และเครือข่าย"] },
+            { heading: "FAQ", faq: [
+              { question: "เอกสารของฉันเก็บไว้ที่ไหน?", answer: "เก็บในเครื่องภายในแอปหรือในตำแหน่งที่คุณเลือก"},
+              { question: "ScanAce อัปโหลดเอกสารหรือไม่?", answer: "ไม่ ScanAce ไม่อัปโหลดเอกสารไปยังเซิร์ฟเวอร์ของผู้พัฒนา"},
+              { question: "การคืนเงินทำอย่างไร?", answer: "ScanAce เป็นแอปดาวน์โหลดแบบชำระเงินบน App Store ไม่มีการสมัครสมาชิกหรือการซื้อในแอป Apple จัดการการซื้อ การคืนเงิน และราคา"}
+            ] },
+            { heading: "ขอบเขตการสนับสนุน", paragraphs: ["เราสามารถช่วยเรื่องพฤติกรรมแอป คุณภาพการสแกน OCR PDF การส่งออก สิทธิ์ และบั๊กที่ทำซ้ำได้"] }
+          ],
+          links: [{ label: "ความเป็นส่วนตัว", href: "../Privacy/index.html" }, { label: "การจัดเรตอายุ", href: "../AgeRating/index.html" }]
+        }
+      }
+    };
+  </script>
+  <script src="../assets/localized-page.js"></script>
+</body>
+</html>
