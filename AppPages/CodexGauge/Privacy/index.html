@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>QuotaScope Privacy Policy</title>
-  <meta name="description" content="QuotaScope Privacy Policy">
+  <title>CodexUsageDashboard Privacy Policy</title>
+  <meta name="description" content="CodexUsageDashboard Privacy Policy">
   <style>
     :root { color-scheme: dark light; --panel: rgba(246,255,252,.90); --text: #12212b; --muted: #526774; --line: rgba(57,98,113,.16); --accent: #22be67; --accent2: #15afc3; }
     @media (prefers-color-scheme: dark) { :root { --panel: rgba(12,24,34,.86); --text: #eef8fa; --muted: #b7c8cf; --line: rgba(210,240,248,.18); } }
@@ -25,26 +25,26 @@
 <body>
   <div class="page">
     <main class="document">
-      <p class="eyebrow">QuotaScope for Mac</p>
+      <p class="eyebrow">CodexUsageDashboard for Mac</p>
       <h1>Privacy Policy</h1>
-      <p class="updated">Last updated: June 27, 2026</p>
+      <p class="updated">Last updated: July 1, 2026</p>
 
-      <p>QuotaScope is a macOS utility for monitoring account quota windows, reset countdowns, and local widgets. The developer does not operate a QuotaScope cloud service and does not receive your account credentials, tokens, usage snapshots, or app settings.</p>
+      <p>CodexUsageDashboard is a macOS utility for monitoring Codex account quota windows, reset countdowns, subscription expiry dates, and local widgets. The developer does not operate a CodexUsageDashboard cloud service and does not receive your account credentials, tokens, usage snapshots, subscription metadata, or app settings.</p>
 
       <h2>Data Stored Locally</h2>
-      <p>QuotaScope stores account labels, account identifiers, cached quota snapshots, refresh settings, the selected primary account, display preferences, and window placement locally on your Mac or in the app group container shared with its widget.</p>
+      <p>CodexUsageDashboard stores account labels, account identifiers, cached quota snapshots, subscription status and expiry metadata, refresh settings, the selected primary account, display language, and window placement locally on your Mac or in the app group container shared with its widget.</p>
 
       <h2>Credentials</h2>
-      <p>When you add an account, QuotaScope opens the authorization flow in your browser and receives the result through a local callback on your Mac. Access tokens and refresh tokens are stored in macOS Keychain when available. QuotaScope does not read or write Codex CLI credentials and does not share credentials between accounts.</p>
+      <p>When you add or reauthorize an account, CodexUsageDashboard opens the authorization flow in your browser and receives the result through a temporary local callback on your Mac. Access tokens and refresh tokens are stored in macOS Keychain when available. CodexUsageDashboard keeps credentials separate per account and does not send credentials to the developer.</p>
 
       <h2>Network Use</h2>
-      <p>QuotaScope connects directly from your Mac to the account provider's authorization and usage endpoints, including auth.openai.com and chatgpt.com, to sign in, refresh tokens, and retrieve quota data for accounts you add. QuotaScope also opens a temporary localhost callback server during sign-in. The developer does not proxy these requests through a developer-controlled server.</p>
+      <p>CodexUsageDashboard connects directly from your Mac to the account provider's authorization, usage, and billing-related endpoints, including auth.openai.com and chatgpt.com, to sign in, refresh tokens, retrieve quota data, and read subscription metadata for accounts you add. The desktop widget reads cached local snapshots only and does not perform background network refreshes. The developer does not proxy these requests through a developer-controlled server.</p>
 
       <h2>Data Collected by the Developer</h2>
       <p>The developer does not collect data from this app, does not include advertising SDKs, and does not include analytics or tracking SDKs. If you contact support by email, the information you choose to send will be used only to respond to your support request. Do not send tokens or credentials in support messages.</p>
 
       <h2>Deletion and Revocation</h2>
-      <p>You can delete accounts inside QuotaScope. This removes local account metadata and attempts to remove the matching local Keychain tokens. You can also delete the app and its local app data from your Mac. To revoke browser authorization or invalidate sessions, use the account provider's own account and security controls.</p>
+      <p>You can delete accounts inside CodexUsageDashboard. This removes local account metadata and attempts to remove the matching local Keychain tokens. You can also delete the app and its local app data from your Mac. To revoke browser authorization or invalidate sessions, use the account provider's own account and security controls.</p>
 
       <h2>Contact</h2>
       <p>Privacy questions: <a href="mailto:kibernet@sina.com">kibernet@sina.com</a></p>

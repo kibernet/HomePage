@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SoulMetronome Age Rating</title>
+  <meta name="description" content="Age rating information for SoulMetronome / 时光节拍器.">
+  <link rel="stylesheet" href="../assets/pages.css">
+</head>
+<body>
+  <div class="page">
+    <main class="document">
+      <div class="toolbar">
+        <div class="language-control">
+          <label id="language-label" for="language-select">Language</label>
+          <select id="language-select" aria-label="Choose language"></select>
+        </div>
+      </div>
+      <p class="eyebrow" id="eyebrow"></p>
+      <h1 id="title"></h1>
+      <p class="updated" id="updated"></p>
+      <p id="intro"></p>
+      <div class="rating" id="rating"></div>
+      <h2 id="summary-title"></h2>
+      <table>
+        <thead><tr><th id="category-header"></th><th id="status-header"></th></tr></thead>
+        <tbody id="rating-table"></tbody>
+      </table>
+      <h2 id="use-title"></h2>
+      <p id="use-body"></p>
+      <h2 id="safety-title"></h2>
+      <ul id="safety-list"></ul>
+      <h2 id="links-title"></h2>
+      <div class="links">
+        <span class="pill"><a id="privacy-link" data-localized-link href="../Privacy/index.html"></a></span>
+        <span class="pill"><a id="support-link" data-localized-link href="../Support/index.html"></a></span>
+      </div>
+    </main>
+  </div>
+  <script>
+    const ageRows = {
+      en: [["Violence", "None"], ["Mature or suggestive themes", "None"], ["Medical, health, or treatment claims", "None"], ["Gambling, contests, or loot boxes", "None"], ["User-generated public content", "None"], ["Unrestricted web access", "No"], ["Location tracking", "No"], ["Microphone and torch permissions", "Optional, user-controlled beat feedback and rhythm timing only"]],
+      "zh-Hans": [["暴力内容", "无"], ["成人或暗示性主题", "无"], ["医疗、健康或治疗主张", "无"], ["赌博、竞赛或抽奖箱", "无"], ["用户生成公开内容", "无"], ["不受限制的网页访问", "无"], ["位置追踪", "无"], ["麦克风与闪光灯权限", "可选，仅用于用户控制的节拍反馈和节奏时值分析"]],
+      "zh-Hant": [["暴力內容", "無"], ["成人或暗示性主題", "無"], ["醫療、健康或治療主張", "無"], ["賭博、競賽或抽獎箱", "無"], ["使用者生成公開內容", "無"], ["不受限制的網頁存取", "無"], ["位置追蹤", "無"], ["麥克風與閃光燈權限", "可選，僅用於使用者控制的節拍回饋和節奏時值分析"]]
+    };
+
+    const ageContent = {
+      en: {
+        docTitle: "SoulMetronome Age Rating",
+        docDescription: "Age rating information for SoulMetronome / 时光节拍器.",
+        language: "Language",
+        chooseLanguage: "Choose language",
+        eyebrow: "SoulMetronome / 时光节拍器",
+        title: "Age Rating",
+        updated: "Last updated: July 1, 2026",
+        intro: "SoulMetronome is a music utility for tempo practice, beat feedback, and rhythm timing.",
+        rating: "Suggested App Store age rating: 4+",
+        summaryTitle: "Content Summary",
+        categoryHeader: "Category",
+        statusHeader: "Status",
+        useTitle: "Intended Use",
+        useBody: "The app is designed for music practice and utility use. It does not provide social feeds, public chat, games, gambling, medical advice, or unrestricted web browsing.",
+        safetyTitle: "Safety Controls",
+        safety: ["The metronome works without an account.", "Microphone listening is optional and user controlled.", "Flash feedback is optional and uses the torch only while the feature is enabled.", "Practice settings and saved tempos stay on the device unless the user chooses to share information in a support request."],
+        linksTitle: "Related Pages",
+        privacyLink: "Privacy Policy",
+        supportLink: "Support",
+        rows: ageRows.en
+      },
+      "zh-Hans": {
+        docTitle: "时光节拍器适龄说明",
+        docDescription: "时光节拍器适龄说明。",
+        language: "语言",
+        chooseLanguage: "选择语言",
+        eyebrow: "SoulMetronome / 时光节拍器",
+        title: "适龄说明",
+        updated: "最后更新：2026 年 7 月 1 日",
+        intro: "时光节拍器是一款用于速度练习、节拍反馈和节奏时值分析的音乐工具。",
+        rating: "建议 App Store 年龄分级：4+",
+        summaryTitle: "内容摘要",
+        categoryHeader: "类别",
+        statusHeader: "状态",
+        useTitle: "预期用途",
+        useBody: "App 面向音乐练习和工具使用，不提供社交信息流、公开聊天、游戏、赌博、医疗建议或不受限制的网页浏览。",
+        safetyTitle: "安全控制",
+        safety: ["节拍器无需账号即可使用。", "麦克风监听是可选功能，由用户主动控制。", "闪光反馈是可选功能，仅在开启期间调用闪光灯。", "练习设置和保存速度默认留在设备本地；只有用户主动联系支持时才会分享所选择的信息。"],
+        linksTitle: "相关页面",
+        privacyLink: "隐私政策",
+        supportLink: "支持",
+        rows: ageRows["zh-Hans"]
+      },
+      "zh-Hant": {
+        docTitle: "時光節拍器適齡說明",
+        docDescription: "時光節拍器適齡說明。",
+        language: "語言",
+        chooseLanguage: "選擇語言",
+        eyebrow: "SoulMetronome / 時光節拍器",
+        title: "適齡說明",
+        updated: "最後更新：2026 年 7 月 1 日",
+        intro: "時光節拍器是一款用於速度練習、節拍回饋和節奏時值分析的音樂工具。",
+        rating: "建議 App Store 年齡分級：4+",
+        summaryTitle: "內容摘要",
+        categoryHeader: "類別",
+        statusHeader: "狀態",
+        useTitle: "預期用途",
+        useBody: "App 面向音樂練習和工具使用，不提供社交資訊流、公開聊天、遊戲、賭博、醫療建議或不受限制的網頁瀏覽。",
+        safetyTitle: "安全控制",
+        safety: ["節拍器無需帳號即可使用。", "麥克風聆聽是可選功能，由使用者主動控制。", "閃光回饋是可選功能，僅在開啟期間呼叫閃光燈。", "練習設定和保存速度預設留在裝置本機；只有使用者主動聯絡支援時才會分享所選擇的資訊。"],
+        linksTitle: "相關頁面",
+        privacyLink: "隱私權政策",
+        supportLink: "支援",
+        rows: ageRows["zh-Hant"]
+      }
+    };
+
+    const ageLocalized = {
+      ja: ["SoulMetronome 年齢レーティング", "言語", "言語を選択", "年齢レーティング", "最終更新日: 2026年7月1日", "SoulMetronome はテンポ練習、拍のフィードバック、リズムタイミング用の音楽ユーティリティです。", "推奨 App Store 年齢レーティング: 4+", "コンテンツ概要", "カテゴリ", "状態", "想定用途", "このアプリは音楽練習とユーティリティ用途向けです。ソーシャル、公開チャット、ゲーム、ギャンブル、医療助言、無制限の Web 閲覧は提供しません。", "安全機能", ["アカウントなしで使えます。", "マイク聴取は任意でユーザーが制御します。", "フラッシュは有効時のみライトを使います。", "設定と保存テンポは端末に保持されます。"], "関連ページ", "プライバシーポリシー", "サポート"],
+      ko: ["SoulMetronome 연령 등급", "언어", "언어 선택", "연령 등급", "마지막 업데이트: 2026년 7월 1일", "SoulMetronome은 템포 연습, 박자 피드백, 리듬 타이밍을 위한 음악 유틸리티입니다.", "권장 App Store 연령 등급: 4+", "콘텐츠 요약", "카테고리", "상태", "사용 목적", "음악 연습과 유틸리티 사용을 위한 앱이며 소셜 피드, 공개 채팅, 게임, 도박, 의료 조언, 무제한 웹 탐색을 제공하지 않습니다.", "안전 제어", ["계정 없이 사용할 수 있습니다.", "마이크 청취는 선택 사항이며 사용자가 제어합니다.", "플래시는 기능이 켜진 동안에만 사용됩니다.", "설정과 저장 템포는 기기에 남습니다."], "관련 페이지", "개인정보 처리방침", "지원"],
+      fr: ["Classification d'âge de SoulMetronome", "Langue", "Choisir la langue", "Classification d'âge", "Dernière mise à jour : 1 juillet 2026", "SoulMetronome est un utilitaire musical pour la pratique du tempo, le retour de battement et le timing rythmique.", "Classification App Store suggérée : 4+", "Résumé du contenu", "Catégorie", "Statut", "Utilisation prévue", "L'app est destinée à la pratique musicale. Elle ne propose pas de flux social, chat public, jeux, hasard, conseil médical ou navigation Web illimitée.", "Contrôles de sécurité", ["Fonctionne sans compte.", "L'écoute micro est optionnelle et contrôlée par l'utilisateur.", "Le flash n'utilise la torche que lorsque la fonction est activée.", "Les réglages et tempos restent sur l'appareil."], "Pages liées", "Confidentialité", "Assistance"],
+      de: ["SoulMetronome Altersfreigabe", "Sprache", "Sprache auswählen", "Altersfreigabe", "Zuletzt aktualisiert: 1. Juli 2026", "SoulMetronome ist ein Musikwerkzeug für Tempotraining, Beat-Feedback und Rhythmus-Timing.", "Empfohlene App Store Altersfreigabe: 4+", "Inhaltsübersicht", "Kategorie", "Status", "Vorgesehene Nutzung", "Die App dient Musikübung und Utility-Nutzung. Sie bietet keine Social-Feeds, öffentlichen Chats, Spiele, Glücksspiel, medizinische Beratung oder uneingeschränktes Web-Browsing.", "Sicherheitskontrollen", ["Ohne Konto nutzbar.", "Mikrofonhören ist optional und nutzergesteuert.", "Flash nutzt die Taschenlampe nur bei aktivierter Funktion.", "Einstellungen und Tempi bleiben auf dem Gerät."], "Verwandte Seiten", "Datenschutz", "Support"],
+      es: ["Clasificación por edad de SoulMetronome", "Idioma", "Elegir idioma", "Clasificación por edad", "Última actualización: 1 de julio de 2026", "SoulMetronome es una utilidad musical para practicar tempo, feedback del pulso y timing rítmico.", "Clasificación sugerida en App Store: 4+", "Resumen de contenido", "Categoría", "Estado", "Uso previsto", "La app es para práctica musical y utilidad. No ofrece redes sociales, chat público, juegos, apuestas, consejo médico ni navegación web sin límites.", "Controles de seguridad", ["Funciona sin cuenta.", "El micrófono es opcional y controlado por el usuario.", "El flash usa la linterna solo cuando la función está activa.", "Los ajustes y tempos quedan en el dispositivo."], "Páginas relacionadas", "Privacidad", "Soporte"],
+      it: ["Classificazione età di SoulMetronome", "Lingua", "Scegli lingua", "Classificazione età", "Ultimo aggiornamento: 1 luglio 2026", "SoulMetronome è un'utilità musicale per pratica del tempo, feedback del beat e timing ritmico.", "Classificazione App Store suggerita: 4+", "Riepilogo contenuti", "Categoria", "Stato", "Uso previsto", "L'app è pensata per pratica musicale e utilità. Non offre social, chat pubbliche, giochi, scommesse, consigli medici o navigazione web libera.", "Controlli di sicurezza", ["Funziona senza account.", "Il microfono è opzionale e controllato dall'utente.", "Il flash usa la torcia solo quando attivo.", "Impostazioni e tempi restano sul dispositivo."], "Pagine correlate", "Privacy", "Supporto"],
+      "pt-BR": ["Classificação etária do SoulMetronome", "Idioma", "Escolher idioma", "Classificação etária", "Última atualização: 1 de julho de 2026", "SoulMetronome é um utilitário musical para prática de tempo, feedback de batida e timing rítmico.", "Classificação sugerida na App Store: 4+", "Resumo de conteúdo", "Categoria", "Status", "Uso previsto", "O app é voltado à prática musical e utilidade. Não oferece rede social, chat público, jogos, apostas, conselho médico ou navegação web irrestrita.", "Controles de segurança", ["Funciona sem conta.", "O microfone é opcional e controlado pelo usuário.", "O flash usa a lanterna apenas quando ativo.", "Configurações e tempos ficam no dispositivo."], "Páginas relacionadas", "Privacidade", "Suporte"],
+      ru: ["Возрастной рейтинг SoulMetronome", "Язык", "Выбрать язык", "Возрастной рейтинг", "Обновлено: 1 июля 2026 г.", "SoulMetronome — музыкальная утилита для практики темпа, обратной связи по биту и ритмического тайминга.", "Рекомендуемый рейтинг App Store: 4+", "Сводка контента", "Категория", "Статус", "Назначение", "Приложение предназначено для музыкальной практики. В нем нет соцлент, публичного чата, игр, азартных функций, медицинских советов или неограниченного веб-доступа.", "Меры безопасности", ["Работает без аккаунта.", "Микрофон опционален и управляется пользователем.", "Фонарик используется только при включенной функции.", "Настройки и темпы остаются на устройстве."], "Связанные страницы", "Конфиденциальность", "Поддержка"],
+      ar: ["تصنيف العمر في SoulMetronome", "اللغة", "اختر اللغة", "تصنيف العمر", "آخر تحديث: 1 يوليو 2026", "SoulMetronome أداة موسيقية للتدرب على السرعة والتغذية الراجعة للإيقاع وتوقيت الإيقاع.", "تصنيف App Store المقترح: +4", "ملخص المحتوى", "الفئة", "الحالة", "الاستخدام المقصود", "التطبيق مخصص للتدريب الموسيقي ولا يقدم شبكات اجتماعية أو دردشة عامة أو ألعابا أو مقامرة أو نصائح طبية أو تصفحا غير مقيد.", "عناصر الأمان", ["يعمل دون حساب.", "الميكروفون اختياري ويتحكم به المستخدم.", "الفلاش يستخدم المصباح فقط عند تفعيل الميزة.", "الإعدادات والإيقاعات تبقى على الجهاز."], "صفحات ذات صلة", "الخصوصية", "الدعم"],
+      hi: ["SoulMetronome आयु रेटिंग", "भाषा", "भाषा चुनें", "आयु रेटिंग", "अंतिम अपडेट: 1 जुलाई 2026", "SoulMetronome tempo practice, beat feedback और rhythm timing के लिए संगीत utility है.", "सुझाई गई App Store आयु रेटिंग: 4+", "सामग्री सारांश", "श्रेणी", "स्थिति", "उपयोग", "ऐप संगीत अभ्यास और utility उपयोग के लिए है. इसमें social feed, public chat, games, gambling, medical advice या unrestricted web browsing नहीं है.", "सुरक्षा नियंत्रण", ["बिना account उपयोग कर सकते हैं.", "माइक्रोफोन वैकल्पिक और user-controlled है.", "flash केवल feature चालू होने पर torch उपयोग करता है.", "settings और tempos device पर रहते हैं."], "संबंधित पृष्ठ", "गोपनीयता नीति", "सहायता"],
+      id: ["Peringkat Usia SoulMetronome", "Bahasa", "Pilih bahasa", "Peringkat Usia", "Terakhir diperbarui: 1 Juli 2026", "SoulMetronome adalah utilitas musik untuk latihan tempo, feedback ketukan, dan timing ritme.", "Peringkat usia App Store yang disarankan: 4+", "Ringkasan Konten", "Kategori", "Status", "Penggunaan", "Aplikasi ini untuk latihan musik dan utilitas. Tidak ada feed sosial, chat publik, game, perjudian, saran medis, atau akses web tak terbatas.", "Kontrol Keamanan", ["Berfungsi tanpa akun.", "Mikrofon opsional dan dikontrol pengguna.", "Flash memakai senter hanya saat fitur aktif.", "Pengaturan dan tempo tetap di perangkat."], "Halaman Terkait", "Privasi", "Dukungan"],
+      vi: ["Xếp hạng độ tuổi SoulMetronome", "Ngôn ngữ", "Chọn ngôn ngữ", "Xếp hạng độ tuổi", "Cập nhật lần cuối: 1 tháng 7, 2026", "SoulMetronome là tiện ích âm nhạc để luyện tempo, phản hồi nhịp và timing tiết tấu.", "Xếp hạng App Store đề xuất: 4+", "Tóm tắt nội dung", "Danh mục", "Trạng thái", "Mục đích sử dụng", "Ứng dụng dành cho luyện nhạc và tiện ích. Không có mạng xã hội, chat công khai, trò chơi, cờ bạc, tư vấn y tế hoặc duyệt web không giới hạn.", "Kiểm soát an toàn", ["Hoạt động không cần tài khoản.", "Micro là tùy chọn và do người dùng kiểm soát.", "Flash chỉ dùng đèn pin khi bật tính năng.", "Cài đặt và tempo ở trên thiết bị."], "Trang liên quan", "Quyền riêng tư", "Hỗ trợ"],
+      th: ["การจัดระดับอายุ SoulMetronome", "ภาษา", "เลือกภาษา", "การจัดระดับอายุ", "อัปเดตล่าสุด: 1 กรกฎาคม 2026", "SoulMetronome เป็นเครื่องมือดนตรีสำหรับฝึก tempo, beat feedback และ timing จังหวะ", "ระดับอายุ App Store ที่แนะนำ: 4+", "สรุปเนื้อหา", "หมวดหมู่", "สถานะ", "การใช้งาน", "แอปนี้ใช้สำหรับฝึกดนตรีและเครื่องมือ ไม่มี social feed, chat สาธารณะ, เกม, การพนัน, คำแนะนำทางการแพทย์ หรือเว็บไม่จำกัด", "การควบคุมความปลอดภัย", ["ใช้ได้โดยไม่ต้องมีบัญชี", "ไมโครโฟนเป็นทางเลือกและผู้ใช้ควบคุม", "flash ใช้ไฟฉายเมื่อเปิดฟีเจอร์เท่านั้น", "settings และ tempos อยู่บนอุปกรณ์"], "หน้าที่เกี่ยวข้อง", "ความเป็นส่วนตัว", "สนับสนุน"]
+    };
+
+    const defaultRows = {
+      ja: [["暴力", "なし"], ["成人または示唆的テーマ", "なし"], ["医療または治療情報", "なし"], ["ギャンブル、コンテスト、ルートボックス", "なし"], ["公開ユーザー生成コンテンツ", "なし"], ["無制限の Web アクセス", "なし"], ["位置追跡", "なし"], ["マイクとライト", "任意、拍のフィードバックとタイミング分析のみ"]],
+      ko: [["폭력", "없음"], ["성인 또는 선정적 주제", "없음"], ["의료 또는 치료 정보", "없음"], ["도박, 경연, loot box", "없음"], ["공개 사용자 생성 콘텐츠", "없음"], ["무제한 웹 접근", "없음"], ["위치 추적", "없음"], ["마이크와 플래시", "선택 사항, 박자 피드백과 타이밍 분석용"]],
+      fr: [["Violence", "Aucune"], ["Thèmes adultes ou suggestifs", "Aucun"], ["Informations médicales", "Aucune"], ["Jeux d'argent ou concours", "Aucun"], ["Contenu public généré par l'utilisateur", "Aucun"], ["Accès Web illimité", "Non"], ["Suivi de position", "Non"], ["Micro et torche", "Optionnels, uniquement pour le beat et le timing"]],
+      de: [["Gewalt", "Keine"], ["Erwachsene oder suggestive Themen", "Keine"], ["Medizinische Angaben", "Keine"], ["Glücksspiel oder Wettbewerbe", "Keine"], ["Öffentliche nutzergenerierte Inhalte", "Keine"], ["Uneingeschränkter Webzugang", "Nein"], ["Standortverfolgung", "Nein"], ["Mikrofon und Blitz", "Optional, nur Beat-Feedback und Timing"]],
+      es: [["Violencia", "Ninguna"], ["Temas adultos o sugerentes", "Ninguno"], ["Información médica", "Ninguna"], ["Apuestas, concursos o loot boxes", "Ninguno"], ["Contenido público generado por usuarios", "Ninguno"], ["Acceso web sin restricciones", "No"], ["Seguimiento de ubicación", "No"], ["Micrófono y flash", "Opcionales, solo para pulso y timing"]],
+      it: [["Violenza", "Nessuna"], ["Temi maturi o suggestivi", "Nessuno"], ["Informazioni mediche", "Nessuna"], ["Gioco d'azzardo o concorsi", "Nessuno"], ["Contenuti pubblici generati dagli utenti", "Nessuno"], ["Accesso web illimitato", "No"], ["Tracciamento posizione", "No"], ["Microfono e flash", "Opzionali, solo beat e timing"]],
+      "pt-BR": [["Violência", "Nenhuma"], ["Temas adultos ou sugestivos", "Nenhum"], ["Informações médicas", "Nenhuma"], ["Apostas, concursos ou loot boxes", "Nenhum"], ["Conteúdo público de usuários", "Nenhum"], ["Acesso web irrestrito", "Não"], ["Rastreamento de localização", "Não"], ["Microfone e flash", "Opcionais, apenas batida e timing"]],
+      ru: [["Насилие", "Нет"], ["Взрослые или suggestive темы", "Нет"], ["Медицинская информация", "Нет"], ["Азартные функции или конкурсы", "Нет"], ["Публичный пользовательский контент", "Нет"], ["Неограниченный веб-доступ", "Нет"], ["Отслеживание местоположения", "Нет"], ["Микрофон и фонарик", "Опционально, только бит и тайминг"]],
+      ar: [["العنف", "لا يوجد"], ["موضوعات للبالغين أو إيحائية", "لا يوجد"], ["معلومات طبية", "لا يوجد"], ["مقامرة أو مسابقات", "لا يوجد"], ["محتوى عام من المستخدمين", "لا يوجد"], ["وصول ويب غير مقيد", "لا"], ["تتبع الموقع", "لا"], ["الميكروفون والفلاش", "اختياريان، للإيقاع والتوقيت فقط"]],
+      hi: [["हिंसा", "नहीं"], ["वयस्क या संकेतात्मक विषय", "नहीं"], ["चिकित्सा जानकारी", "नहीं"], ["जुआ या प्रतियोगिता", "नहीं"], ["सार्वजनिक user content", "नहीं"], ["unrestricted web access", "नहीं"], ["location tracking", "नहीं"], ["microphone और flash", "वैकल्पिक, केवल beat और timing के लिए"]],
+      id: [["Kekerasan", "Tidak ada"], ["Tema dewasa atau sugestif", "Tidak ada"], ["Informasi medis", "Tidak ada"], ["Perjudian atau kontes", "Tidak ada"], ["Konten publik pengguna", "Tidak ada"], ["Akses web tak terbatas", "Tidak"], ["Pelacakan lokasi", "Tidak"], ["Mikrofon dan flash", "Opsional, hanya ketukan dan timing"]],
+      vi: [["Bạo lực", "Không"], ["Chủ đề người lớn hoặc gợi ý", "Không"], ["Thông tin y tế", "Không"], ["Cờ bạc hoặc cuộc thi", "Không"], ["Nội dung công khai do người dùng tạo", "Không"], ["Truy cập web không giới hạn", "Không"], ["Theo dõi vị trí", "Không"], ["Micro và flash", "Tùy chọn, chỉ cho nhịp và timing"]],
+      th: [["ความรุนแรง", "ไม่มี"], ["เนื้อหาผู้ใหญ่หรือชี้นำ", "ไม่มี"], ["ข้อมูลทางการแพทย์", "ไม่มี"], ["การพนันหรือการแข่งขัน", "ไม่มี"], ["เนื้อหาสาธารณะจากผู้ใช้", "ไม่มี"], ["เว็บไม่จำกัด", "ไม่มี"], ["ติดตามตำแหน่ง", "ไม่มี"], ["ไมโครโฟนและแฟลช", "ทางเลือก ใช้กับจังหวะและ timing เท่านั้น"]]
+    };
+
+    for (const [code, values] of Object.entries(ageLocalized)) {
+      ageContent[code] = {
+        docTitle: values[0],
+        docDescription: values[0],
+        language: values[1],
+        chooseLanguage: values[2],
+        eyebrow: "SoulMetronome / 时光节拍器",
+        title: values[3],
+        updated: values[4],
+        intro: values[5],
+        rating: values[6],
+        summaryTitle: values[7],
+        categoryHeader: values[8],
+        statusHeader: values[9],
+        useTitle: values[10],
+        useBody: values[11],
+        safetyTitle: values[12],
+        safety: values[13],
+        linksTitle: values[14],
+        privacyLink: values[15],
+        supportLink: values[16],
+        rows: defaultRows[code]
+      };
+    }
+
+    window.SoulMetronomePage = {
+      storageKey: "soulmetronome-age-language",
+      content: ageContent,
+      render(data, helpers) {
+        helpers.setText("eyebrow", data.eyebrow);
+        helpers.setText("title", data.title);
+        helpers.setText("updated", data.updated);
+        helpers.setText("intro", data.intro);
+        helpers.setText("rating", data.rating);
+        helpers.setText("summary-title", data.summaryTitle);
+        helpers.setText("category-header", data.categoryHeader);
+        helpers.setText("status-header", data.statusHeader);
+        helpers.renderTable("rating-table", data.rows);
+        helpers.setText("use-title", data.useTitle);
+        helpers.setText("use-body", data.useBody);
+        helpers.setText("safety-title", data.safetyTitle);
+        helpers.renderList("safety-list", data.safety);
+        helpers.setText("links-title", data.linksTitle);
+        helpers.setText("privacy-link", data.privacyLink);
+        helpers.setText("support-link", data.supportLink);
+      }
+    };
+  </script>
+  <script src="../assets/page-runtime.js"></script>
+</body>
+</html>

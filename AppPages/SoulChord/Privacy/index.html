@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SoulMetronome Privacy Policy</title>
+  <meta name="description" content="Privacy policy for SoulMetronome / 时光节拍器.">
+  <link rel="stylesheet" href="../assets/pages.css">
+</head>
+<body>
+  <div class="page">
+    <main class="document">
+      <div class="toolbar">
+        <div class="language-control">
+          <label id="language-label" for="language-select">Language</label>
+          <select id="language-select" aria-label="Choose language"></select>
+        </div>
+      </div>
+      <p class="eyebrow" id="eyebrow"></p>
+      <h1 id="title"></h1>
+      <p class="updated" id="updated"></p>
+      <p id="intro"></p>
+      <div class="notice"><p id="summary"></p></div>
+      <div id="sections"></div>
+      <h2 id="contact-title"></h2>
+      <p id="contact-body"></p>
+    </main>
+  </div>
+  <script>
+    const emailLink = '<a href="mailto:support@yaoji.app">support@yaoji.app</a>';
+    const privacyContent = {
+      en: {
+        docTitle: "SoulMetronome Privacy Policy",
+        docDescription: "Privacy policy for SoulMetronome / 时光节拍器.",
+        language: "Language",
+        chooseLanguage: "Choose language",
+        eyebrow: "SoulMetronome / 时光节拍器",
+        title: "Privacy Policy",
+        updated: "Last updated: July 1, 2026",
+        intro: "SoulMetronome is a metronome and rhythm practice app for musicians. This policy explains how the app handles data when you set tempo, use beat feedback, enable microphone listening, save practice preferences, or contact support.",
+        summary: "Summary: the app does not require an account, does not sell personal data, does not include advertising SDKs, and does not track users across apps or websites.",
+        sections: [
+          ["Data We Collect", "The current app does not send saved tempos, metronome settings, practice preferences, BPM changes, beat-surface choices, microphone audio, or rhythm analysis results to developer-operated analytics servers."],
+          ["On-Device Settings", "Tempo presets, language choice, beat settings, sound choices, haptic settings, and other preferences are stored locally on your device so the app can restore your practice setup."],
+          ["Microphone Use", "If you enable rhythm listening or coach features, the app may request microphone permission to detect timing. Audio analysis is performed on device for rhythm feedback; raw audio is not uploaded by the app."],
+          ["Camera Torch And Haptics", "If you enable flash feedback, the app may request camera access only to use the device torch in sync with the beat. Haptic feedback is generated locally by the device."],
+          ["Support Requests", "If you email support, we receive the information you choose to send, such as your email address, app version, device model, screenshots, or issue description. Do not send passwords, private keys, confidential files, or private audio recordings."],
+          ["Children And Tracking", "SoulMetronome is a general music utility. It does not offer public social features, behavioral advertising, or cross-app tracking."]
+        ],
+        contactTitle: "Contact",
+        contactBody: "For privacy questions, contact " + emailLink + "."
+      },
+      "zh-Hans": {
+        docTitle: "时光节拍器隐私政策",
+        docDescription: "时光节拍器隐私政策。",
+        language: "语言",
+        chooseLanguage: "选择语言",
+        eyebrow: "SoulMetronome / 时光节拍器",
+        title: "隐私政策",
+        updated: "最后更新：2026 年 7 月 1 日",
+        intro: "时光节拍器是一款面向音乐人的节拍器与节奏练习 App。本政策说明你设置速度、使用节拍反馈、开启麦克风监听、保存练习偏好或联系支持时，App 如何处理数据。",
+        summary: "摘要：App 不要求账号，不出售个人数据，不包含广告 SDK，也不会跨 App 或跨网站追踪用户。",
+        sections: [
+          ["我们收集的数据", "当前版本不会向开发者运营的分析服务器发送已保存速度、节拍设置、练习偏好、BPM 调整、节拍器样式选择、麦克风音频或节奏分析结果。"],
+          ["本机设置", "速度预设、语言选择、节拍设置、音色选择、触感设置和其他偏好会保存在你的设备本地，用于恢复练习配置。"],
+          ["麦克风使用", "如果你开启节奏监听或教练功能，App 可能会请求麦克风权限来检测时值。节奏反馈的音频分析在设备本地完成；App 不上传原始音频。"],
+          ["闪光灯与触感", "如果你开启闪光反馈，App 可能会请求相机权限，仅用于调用设备闪光灯随节拍闪烁。触感反馈由设备本地生成。"],
+          ["支持请求", "如果你通过邮件联系支持，我们只会收到你选择发送的信息，例如邮箱地址、App 版本、设备型号、截图或问题描述。请不要发送密码、私钥、机密文件或私人音频录音。"],
+          ["儿童与追踪", "时光节拍器是通用音乐工具，不提供公开社交功能、行为广告或跨 App 追踪。"]
+        ],
+        contactTitle: "联系我们",
+        contactBody: "如对隐私政策有疑问，请联系 " + emailLink + "。"
+      },
+      "zh-Hant": {
+        docTitle: "時光節拍器隱私權政策",
+        docDescription: "時光節拍器隱私權政策。",
+        language: "語言",
+        chooseLanguage: "選擇語言",
+        eyebrow: "SoulMetronome / 時光節拍器",
+        title: "隱私權政策",
+        updated: "最後更新：2026 年 7 月 1 日",
+        intro: "時光節拍器是一款面向音樂人的節拍器與節奏練習 App。本政策說明你設定速度、使用節拍回饋、開啟麥克風聆聽、保存練習偏好或聯絡支援時，App 如何處理資料。",
+        summary: "摘要：App 不要求帳號，不出售個人資料，不包含廣告 SDK，也不會跨 App 或跨網站追蹤使用者。",
+        sections: [
+          ["我們收集的資料", "目前版本不會向開發者營運的分析伺服器傳送已保存速度、節拍設定、練習偏好、BPM 調整、節拍器樣式選擇、麥克風音訊或節奏分析結果。"],
+          ["本機設定", "速度預設、語言選擇、節拍設定、音色選擇、觸感設定和其他偏好會保存在你的裝置本機，用於恢復練習配置。"],
+          ["麥克風使用", "如果你開啟節奏聆聽或教練功能，App 可能會請求麥克風權限來偵測時值。節奏回饋的音訊分析在裝置本機完成；App 不上傳原始音訊。"],
+          ["閃光燈與觸感", "如果你開啟閃光回饋，App 可能會請求相機權限，僅用於呼叫裝置閃光燈隨節拍閃爍。觸感回饋由裝置本機生成。"],
+          ["支援請求", "如果你透過電子郵件聯絡支援，我們只會收到你選擇傳送的資訊，例如電子郵件地址、App 版本、裝置型號、截圖或問題描述。請不要傳送密碼、私鑰、機密檔案或私人音訊錄音。"],
+          ["兒童與追蹤", "時光節拍器是通用音樂工具，不提供公開社交功能、行為廣告或跨 App 追蹤。"]
+        ],
+        contactTitle: "聯絡我們",
+        contactBody: "如對隱私權政策有疑問，請聯絡 " + emailLink + "。"
+      }
+    };
+
+    const privacyLocalized = {
+      ja: {
+        docTitle: "SoulMetronome プライバシーポリシー",
+        docDescription: "SoulMetronome / 時光節拍器 のプライバシーポリシー。",
+        language: "言語",
+        chooseLanguage: "言語を選択",
+        eyebrow: "SoulMetronome / 時光節拍器",
+        title: "プライバシーポリシー",
+        updated: "最終更新日: 2026年7月1日",
+        intro: "SoulMetronome は、ミュージシャン向けのメトロノームとリズム練習アプリです。",
+        summary: "概要: アカウントは不要で、個人データの販売、広告 SDK、アプリや Web サイトをまたぐ追跡はありません。",
+        sections: [["収集するデータ", "保存テンポ、設定、BPM 変更、マイク音声、リズム分析結果を開発者の分析サーバーへ送信しません。"], ["端末内の設定", "テンポ、言語、拍子、音色、触覚などの設定は端末内に保存されます。"], ["マイク", "リズム聴取やコーチ機能を有効にした場合のみ、タイミング検出のためにマイク許可を求めることがあります。解析は端末上で行われ、音声はアップロードされません。"], ["フラッシュと触覚", "フラッシュフィードバックは拍に合わせてライトを使うためだけにカメラ許可を使用します。触覚は端末内で生成されます。"], ["サポート", "サポートに連絡した場合、受け取るのはあなたが送信した情報のみです。"], ["追跡", "公開ソーシャル機能、行動広告、クロスアプリ追跡はありません。"]],
+        contactTitle: "お問い合わせ",
+        contactBody: "プライバシーに関する質問は " + emailLink + " までご連絡ください。"
+      },
+      ko: {
+        docTitle: "SoulMetronome 개인정보 처리방침",
+        docDescription: "SoulMetronome / 时光节拍器 개인정보 처리방침입니다.",
+        language: "언어",
+        chooseLanguage: "언어 선택",
+        eyebrow: "SoulMetronome / 时光节拍器",
+        title: "개인정보 처리방침",
+        updated: "마지막 업데이트: 2026년 7월 1일",
+        intro: "SoulMetronome은 음악가를 위한 메트로놈 및 리듬 연습 앱입니다.",
+        summary: "요약: 계정이 필요 없으며 개인 데이터 판매, 광고 SDK, 앱/웹사이트 간 추적이 없습니다.",
+        sections: [["수집하는 데이터", "저장 템포, 설정, BPM 변경, 마이크 오디오, 리듬 분석 결과를 개발자 분석 서버로 보내지 않습니다."], ["기기 내 설정", "템포, 언어, 박자, 사운드, 햅틱 설정은 기기에 로컬로 저장됩니다."], ["마이크", "리듬 청취 또는 코치 기능을 켠 경우에만 타이밍 감지를 위해 마이크 권한을 요청할 수 있습니다. 분석은 기기에서 처리되며 원본 오디오는 업로드되지 않습니다."], ["플래시와 햅틱", "플래시 피드백은 박자에 맞춰 조명을 켜는 용도로만 카메라 권한을 사용합니다."], ["지원", "지원 요청 시 사용자가 보낸 정보만 받습니다."], ["추적", "공개 소셜 기능, 행동 광고, 앱 간 추적이 없습니다."]],
+        contactTitle: "문의",
+        contactBody: "개인정보 관련 질문은 " + emailLink + " 로 연락해 주세요."
+      },
+      fr: {
+        docTitle: "Politique de confidentialité de SoulMetronome",
+        docDescription: "Politique de confidentialité de SoulMetronome / 时光节拍器.",
+        language: "Langue",
+        chooseLanguage: "Choisir la langue",
+        eyebrow: "SoulMetronome / 时光节拍器",
+        title: "Politique de confidentialité",
+        updated: "Dernière mise à jour : 1 juillet 2026",
+        intro: "SoulMetronome est une app de métronome et de pratique rythmique pour musiciens.",
+        summary: "Résumé : aucun compte requis, aucune vente de données personnelles, aucun SDK publicitaire et aucun suivi entre apps ou sites.",
+        sections: [["Données collectées", "L'app n'envoie pas les tempos enregistrés, réglages, changements de BPM, audio micro ou résultats d'analyse rythmique à des serveurs d'analyse du développeur."], ["Réglages locaux", "Les préférences de tempo, langue, mesure, son et retour haptique restent sur votre appareil."], ["Microphone", "Le micro peut être demandé uniquement pour la détection du timing lorsque l'écoute rythmique ou le coach est activé. L'analyse se fait sur l'appareil."], ["Flash et haptique", "Le flash utilise la torche uniquement en synchronisation avec le tempo. Le retour haptique est local."], ["Assistance", "Nous recevons uniquement les informations que vous choisissez d'envoyer."], ["Suivi", "Aucune fonction sociale publique, publicité comportementale ou suivi inter-apps."]],
+        contactTitle: "Contact",
+        contactBody: "Pour toute question de confidentialité, contactez " + emailLink + "."
+      },
+      de: {
+        docTitle: "SoulMetronome Datenschutzrichtlinie",
+        docDescription: "Datenschutzrichtlinie für SoulMetronome / 时光节拍器.",
+        language: "Sprache",
+        chooseLanguage: "Sprache auswählen",
+        eyebrow: "SoulMetronome / 时光节拍器",
+        title: "Datenschutzrichtlinie",
+        updated: "Zuletzt aktualisiert: 1. Juli 2026",
+        intro: "SoulMetronome ist eine Metronom- und Rhythmusübungs-App für Musiker.",
+        summary: "Kurzfassung: kein Konto erforderlich, kein Verkauf personenbezogener Daten, keine Werbe-SDKs und kein app- oder webseitenübergreifendes Tracking.",
+        sections: [["Erhobene Daten", "Die App sendet keine gespeicherten Tempi, Einstellungen, BPM-Änderungen, Mikrofonaufnahmen oder Rhythmusanalysen an Analyseserver des Entwicklers."], ["Lokale Einstellungen", "Tempo, Sprache, Takt, Klang und Haptik werden lokal auf dem Gerät gespeichert."], ["Mikrofon", "Das Mikrofon wird nur für Timing-Erkennung bei aktivierter Rhythmus- oder Coach-Funktion angefragt. Die Analyse erfolgt auf dem Gerät."], ["Blitz und Haptik", "Die Kameraerlaubnis wird nur für die Taschenlampe im Takt verwendet."], ["Support", "Wir erhalten nur Informationen, die Sie selbst senden."], ["Tracking", "Keine öffentlichen sozialen Funktionen, keine Verhaltenswerbung, kein Cross-App-Tracking."]],
+        contactTitle: "Kontakt",
+        contactBody: "Bei Datenschutzfragen kontaktieren Sie " + emailLink + "."
+      },
+      es: {
+        docTitle: "Política de privacidad de SoulMetronome",
+        docDescription: "Política de privacidad de SoulMetronome / 时光节拍器.",
+        language: "Idioma",
+        chooseLanguage: "Elegir idioma",
+        eyebrow: "SoulMetronome / 时光节拍器",
+        title: "Política de privacidad",
+        updated: "Última actualización: 1 de julio de 2026",
+        intro: "SoulMetronome es una app de metrónomo y práctica rítmica para músicos.",
+        summary: "Resumen: no requiere cuenta, no vende datos personales, no incluye SDK publicitarios y no rastrea entre apps o sitios web.",
+        sections: [["Datos recopilados", "La app no envía tempos guardados, ajustes, cambios de BPM, audio del micrófono ni análisis rítmico a servidores de análisis del desarrollador."], ["Ajustes locales", "Tempo, idioma, compás, sonido y háptica se guardan localmente en tu dispositivo."], ["Micrófono", "El micrófono solo se solicita para detectar timing cuando activas escucha rítmica o coach. El análisis se realiza en el dispositivo."], ["Flash y háptica", "El permiso de cámara se usa solo para la linterna sincronizada con el pulso."], ["Soporte", "Recibimos solo la información que decides enviar."], ["Seguimiento", "No hay funciones sociales públicas, publicidad conductual ni seguimiento entre apps."]],
+        contactTitle: "Contacto",
+        contactBody: "Para preguntas de privacidad, contacta con " + emailLink + "."
+      },
+      it: {
+        docTitle: "Informativa privacy di SoulMetronome",
+        docDescription: "Informativa privacy di SoulMetronome / 时光节拍器.",
+        language: "Lingua",
+        chooseLanguage: "Scegli lingua",
+        eyebrow: "SoulMetronome / 时光节拍器",
+        title: "Informativa privacy",
+        updated: "Ultimo aggiornamento: 1 luglio 2026",
+        intro: "SoulMetronome è un'app metronomo e pratica ritmica per musicisti.",
+        summary: "Sintesi: nessun account richiesto, nessuna vendita di dati personali, nessun SDK pubblicitario e nessun tracciamento tra app o siti.",
+        sections: [["Dati raccolti", "L'app non invia tempi salvati, impostazioni, cambi BPM, audio microfono o analisi ritmiche a server di analytics dello sviluppatore."], ["Impostazioni locali", "Tempo, lingua, metro, suono e feedback aptico restano sul dispositivo."], ["Microfono", "Il microfono può essere richiesto solo per rilevare il timing quando abiliti ascolto ritmico o coach. L'analisi avviene sul dispositivo."], ["Flash e aptica", "Il permesso fotocamera serve solo per usare la torcia a tempo."], ["Supporto", "Riceviamo solo le informazioni che scegli di inviare."], ["Tracciamento", "Nessuna funzione social pubblica, pubblicità comportamentale o tracciamento tra app."]],
+        contactTitle: "Contatto",
+        contactBody: "Per domande sulla privacy, contatta " + emailLink + "."
+      },
+      "pt-BR": {
+        docTitle: "Política de Privacidade do SoulMetronome",
+        docDescription: "Política de Privacidade do SoulMetronome / 时光节拍器.",
+        language: "Idioma",
+        chooseLanguage: "Escolher idioma",
+        eyebrow: "SoulMetronome / 时光节拍器",
+        title: "Política de Privacidade",
+        updated: "Última atualização: 1 de julho de 2026",
+        intro: "SoulMetronome é um app de metrônomo e prática rítmica para músicos.",
+        summary: "Resumo: não exige conta, não vende dados pessoais, não inclui SDKs de anúncios e não rastreia entre apps ou sites.",
+        sections: [["Dados coletados", "O app não envia tempos salvos, ajustes, mudanças de BPM, áudio do microfone ou análises rítmicas para servidores de analytics do desenvolvedor."], ["Ajustes locais", "Tempo, idioma, compasso, som e háptica ficam salvos localmente no dispositivo."], ["Microfone", "O microfone só pode ser solicitado para detectar timing quando a escuta rítmica ou o coach estiver ativo. A análise ocorre no dispositivo."], ["Flash e háptica", "A câmera é usada apenas para acionar a lanterna em sincronia com o pulso."], ["Suporte", "Recebemos apenas as informações que você decide enviar."], ["Rastreamento", "Não há recursos sociais públicos, publicidade comportamental nem rastreamento entre apps."]],
+        contactTitle: "Contato",
+        contactBody: "Para dúvidas de privacidade, fale com " + emailLink + "."
+      },
+      ru: {
+        docTitle: "Политика конфиденциальности SoulMetronome",
+        docDescription: "Политика конфиденциальности SoulMetronome / 时光节拍器.",
+        language: "Язык",
+        chooseLanguage: "Выбрать язык",
+        eyebrow: "SoulMetronome / 时光节拍器",
+        title: "Политика конфиденциальности",
+        updated: "Обновлено: 1 июля 2026 г.",
+        intro: "SoulMetronome — приложение метронома и ритмической практики для музыкантов.",
+        summary: "Кратко: аккаунт не требуется, персональные данные не продаются, рекламных SDK и межприложенческого отслеживания нет.",
+        sections: [["Собираемые данные", "Приложение не отправляет сохраненные темпы, настройки, изменения BPM, звук микрофона или результаты ритм-анализа на аналитические серверы разработчика."], ["Локальные настройки", "Темп, язык, размер, звук и тактильные настройки хранятся на устройстве."], ["Микрофон", "Микрофон запрашивается только для определения тайминга при включенном прослушивании ритма или coach. Анализ выполняется на устройстве."], ["Фонарик и тактильная отдача", "Доступ к камере используется только для фонарика в такт."], ["Поддержка", "Мы получаем только информацию, которую вы сами отправляете."], ["Отслеживание", "Нет публичных социальных функций, поведенческой рекламы и кросс-приложенческого отслеживания."]],
+        contactTitle: "Контакт",
+        contactBody: "По вопросам конфиденциальности пишите на " + emailLink + "."
+      },
+      ar: {
+        docTitle: "سياسة خصوصية SoulMetronome",
+        docDescription: "سياسة خصوصية SoulMetronome / 时光节拍器.",
+        language: "اللغة",
+        chooseLanguage: "اختر اللغة",
+        eyebrow: "SoulMetronome / 时光节拍器",
+        title: "سياسة الخصوصية",
+        updated: "آخر تحديث: 1 يوليو 2026",
+        intro: "SoulMetronome تطبيق مترونوم وتدريب إيقاعي للموسيقيين.",
+        summary: "الملخص: لا يتطلب حسابا، ولا يبيع البيانات الشخصية، ولا يحتوي على SDK إعلانات أو تتبع عبر التطبيقات والمواقع.",
+        sections: [["البيانات التي نجمعها", "لا يرسل التطبيق الإيقاعات المحفوظة أو الإعدادات أو تغييرات BPM أو صوت الميكروفون أو نتائج تحليل الإيقاع إلى خوادم تحليلات المطور."], ["الإعدادات المحلية", "يتم حفظ السرعة واللغة والميزان والصوت واللمس محليا على الجهاز."], ["الميكروفون", "قد يطلب الميكروفون فقط لاكتشاف التوقيت عند تشغيل الاستماع الإيقاعي أو المدرب. يتم التحليل على الجهاز."], ["الفلاش واللمس", "إذن الكاميرا يستخدم فقط لتشغيل المصباح مع الإيقاع."], ["الدعم", "نستقبل فقط المعلومات التي تختار إرسالها."], ["التتبع", "لا توجد ميزات اجتماعية عامة أو إعلانات سلوكية أو تتبع بين التطبيقات."]],
+        contactTitle: "التواصل",
+        contactBody: "لأسئلة الخصوصية تواصل عبر " + emailLink + "."
+      },
+      hi: {
+        docTitle: "SoulMetronome गोपनीयता नीति",
+        docDescription: "SoulMetronome / 时光节拍器 की गोपनीयता नीति.",
+        language: "भाषा",
+        chooseLanguage: "भाषा चुनें",
+        eyebrow: "SoulMetronome / 时光节拍器",
+        title: "गोपनीयता नीति",
+        updated: "अंतिम अपडेट: 1 जुलाई 2026",
+        intro: "SoulMetronome संगीतकारों के लिए मेट्रोनोम और रिदम अभ्यास ऐप है.",
+        summary: "सारांश: खाता आवश्यक नहीं है, व्यक्तिगत डेटा बेचा नहीं जाता, विज्ञापन SDK नहीं हैं, और ऐप/वेबसाइटों में ट्रैकिंग नहीं होती.",
+        sections: [["हम जो डेटा लेते हैं", "ऐप सहेजे गए टेम्पो, सेटिंग, BPM बदलाव, माइक्रोफोन ऑडियो या रिदम विश्लेषण परिणाम डेवलपर analytics सर्वर को नहीं भेजता."], ["स्थानीय सेटिंग", "टेम्पो, भाषा, मीटर, ध्वनि और haptic सेटिंग डिवाइस पर रहती हैं."], ["माइक्रोफोन", "रिदम listening या coach चालू होने पर timing detection के लिए ही माइक्रोफोन अनुमति मांगी जा सकती है. विश्लेषण डिवाइस पर होता है."], ["फ्लैश और haptics", "कैमरा अनुमति केवल beat के साथ torch चलाने के लिए उपयोग होती है."], ["सहायता", "हमें वही जानकारी मिलती है जिसे आप भेजते हैं."], ["ट्रैकिंग", "कोई सार्वजनिक social feature, behavioral ads या cross-app tracking नहीं है."]],
+        contactTitle: "संपर्क",
+        contactBody: "गोपनीयता प्रश्नों के लिए " + emailLink + " पर संपर्क करें."
+      },
+      id: {
+        docTitle: "Kebijakan Privasi SoulMetronome",
+        docDescription: "Kebijakan Privasi SoulMetronome / 时光节拍器.",
+        language: "Bahasa",
+        chooseLanguage: "Pilih bahasa",
+        eyebrow: "SoulMetronome / 时光节拍器",
+        title: "Kebijakan Privasi",
+        updated: "Terakhir diperbarui: 1 Juli 2026",
+        intro: "SoulMetronome adalah aplikasi metronom dan latihan ritme untuk musisi.",
+        summary: "Ringkasan: tidak perlu akun, tidak menjual data pribadi, tidak memakai SDK iklan, dan tidak melacak lintas aplikasi atau situs.",
+        sections: [["Data yang dikumpulkan", "Aplikasi tidak mengirim tempo tersimpan, pengaturan, perubahan BPM, audio mikrofon, atau hasil analisis ritme ke server analitik pengembang."], ["Pengaturan lokal", "Tempo, bahasa, birama, suara, dan haptic disimpan lokal di perangkat."], ["Mikrofon", "Mikrofon hanya diminta untuk mendeteksi timing saat fitur listening atau coach aktif. Analisis dilakukan di perangkat."], ["Flash dan haptic", "Izin kamera hanya dipakai untuk menyalakan senter mengikuti ketukan."], ["Dukungan", "Kami hanya menerima informasi yang Anda pilih untuk dikirim."], ["Pelacakan", "Tidak ada fitur sosial publik, iklan perilaku, atau pelacakan lintas aplikasi."]],
+        contactTitle: "Kontak",
+        contactBody: "Untuk pertanyaan privasi, hubungi " + emailLink + "."
+      },
+      vi: {
+        docTitle: "Chính sách quyền riêng tư SoulMetronome",
+        docDescription: "Chính sách quyền riêng tư của SoulMetronome / 时光节拍器.",
+        language: "Ngôn ngữ",
+        chooseLanguage: "Chọn ngôn ngữ",
+        eyebrow: "SoulMetronome / 时光节拍器",
+        title: "Chính sách quyền riêng tư",
+        updated: "Cập nhật lần cuối: 1 tháng 7, 2026",
+        intro: "SoulMetronome là ứng dụng máy đếm nhịp và luyện tiết tấu cho nhạc sĩ.",
+        summary: "Tóm tắt: không yêu cầu tài khoản, không bán dữ liệu cá nhân, không có SDK quảng cáo và không theo dõi qua ứng dụng hoặc trang web.",
+        sections: [["Dữ liệu thu thập", "Ứng dụng không gửi tempo đã lưu, cài đặt, thay đổi BPM, âm thanh micro hoặc kết quả phân tích nhịp đến máy chủ phân tích của nhà phát triển."], ["Cài đặt cục bộ", "Tempo, ngôn ngữ, nhịp, âm thanh và haptic được lưu trên thiết bị."], ["Micro", "Micro chỉ có thể được yêu cầu để phát hiện timing khi bật listening hoặc coach. Phân tích diễn ra trên thiết bị."], ["Đèn flash và haptic", "Quyền camera chỉ dùng để bật đèn pin theo nhịp."], ["Hỗ trợ", "Chúng tôi chỉ nhận thông tin bạn chọn gửi."], ["Theo dõi", "Không có mạng xã hội công khai, quảng cáo hành vi hoặc theo dõi chéo ứng dụng."]],
+        contactTitle: "Liên hệ",
+        contactBody: "Câu hỏi về quyền riêng tư: " + emailLink + "."
+      },
+      th: {
+        docTitle: "นโยบายความเป็นส่วนตัว SoulMetronome",
+        docDescription: "นโยบายความเป็นส่วนตัวของ SoulMetronome / 时光节拍器.",
+        language: "ภาษา",
+        chooseLanguage: "เลือกภาษา",
+        eyebrow: "SoulMetronome / 时光节拍器",
+        title: "นโยบายความเป็นส่วนตัว",
+        updated: "อัปเดตล่าสุด: 1 กรกฎาคม 2026",
+        intro: "SoulMetronome เป็นแอปเมโทรนอมและฝึกจังหวะสำหรับนักดนตรี",
+        summary: "สรุป: ไม่ต้องมีบัญชี ไม่ขายข้อมูลส่วนบุคคล ไม่มี SDK โฆษณา และไม่ติดตามข้ามแอปหรือเว็บไซต์",
+        sections: [["ข้อมูลที่เก็บ", "แอปไม่ส่ง tempo ที่บันทึกไว้ การตั้งค่า การเปลี่ยน BPM เสียงไมโครโฟน หรือผลวิเคราะห์จังหวะไปยังเซิร์ฟเวอร์ analytics ของผู้พัฒนา"], ["การตั้งค่าในเครื่อง", "tempo ภาษา อัตราจังหวะ เสียง และ haptic จะถูกเก็บไว้ในอุปกรณ์"], ["ไมโครโฟน", "แอปอาจขอไมโครโฟนเฉพาะเมื่อเปิด listening หรือ coach เพื่อวิเคราะห์ timing โดยประมวลผลบนอุปกรณ์"], ["แฟลชและ haptic", "สิทธิ์กล้องใช้เฉพาะไฟฉายตามจังหวะ"], ["การสนับสนุน", "เราได้รับเฉพาะข้อมูลที่คุณเลือกส่ง"], ["การติดตาม", "ไม่มีฟีเจอร์สังคมสาธารณะ โฆษณาตามพฤติกรรม หรือการติดตามข้ามแอป"]],
+        contactTitle: "ติดต่อ",
+        contactBody: "หากมีคำถามด้านความเป็นส่วนตัว โปรดติดต่อ " + emailLink + "."
+      }
+    };
+
+    Object.assign(privacyContent, privacyLocalized);
+
+    window.SoulMetronomePage = {
+      storageKey: "soulmetronome-privacy-language",
+      content: privacyContent,
+      render(data, helpers) {
+        helpers.setText("eyebrow", data.eyebrow);
+        helpers.setText("title", data.title);
+        helpers.setText("updated", data.updated);
+        helpers.setText("intro", data.intro);
+        helpers.setText("summary", data.summary);
+        helpers.renderSections("sections", data.sections);
+        helpers.setText("contact-title", data.contactTitle);
+        helpers.setHTML("contact-body", data.contactBody);
+      }
+    };
+  </script>
+  <script src="../assets/page-runtime.js"></script>
+</body>
+</html>

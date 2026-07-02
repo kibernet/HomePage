@@ -179,11 +179,12 @@
       <div id="faq" style="display: grid; gap: 18px;"></div>
 
       <h2 data-i18n="diagnosticsTitle">Support Diagnostics</h2>
-      <p data-i18n="diagnosticsText">In PanePilot, open Support & Policies and choose Copy Diagnostics before emailing support. The report uses stable English labels and includes release-safe state plus last-run counts without window titles, managed app names, document names, template names, or workspace names.</p>
+      <p data-i18n="diagnosticsText">In PanePilot, open Support & Policies and choose Copy Diagnostics before emailing support. The report uses stable English labels and includes release-safe state, install-location and code-signature categories, Accessibility identity risk, plus last-run counts without window titles, managed app names, document names, template names, workspace names, or full local paths.</p>
       <ul>
         <li><code>PanePilot Support Diagnostics</code></li>
         <li><code>Version</code>, <code>Build</code>, <code>Download URL</code>, <code>macOS</code>, and <code>Architecture</code></li>
-        <li><code>Accessibility Trusted</code>, <code>Privacy Scope</code>, <code>Displays</code>, <code>Selected Preset</code>, <code>Selected Category</code>, and <code>Last Run</code></li>
+        <li><code>App Location</code>, <code>Stable Install Location</code>, <code>Code Signature</code>, and <code>Signing Team</code></li>
+        <li><code>Accessibility Identity Risk</code>, <code>Accessibility Trusted</code>, <code>Privacy Scope</code>, <code>Displays</code>, <code>Selected Preset</code>, <code>Selected Category</code>, and <code>Last Run</code></li>
       </ul>
 
       <h2 data-i18n="resourcesTitle">Resources</h2>
@@ -214,6 +215,10 @@
           [
             "Why does PanePilot ask for Accessibility permission?",
             "macOS requires Accessibility permission before an app can read window metadata and move or resize windows. PanePilot uses this permission only for layout actions you trigger."
+          ],
+          [
+            "Why does macOS still ask after Accessibility is already on?",
+            "Quit PanePilot, remove any old PanePilot or 窗序 entries from System Settings > Privacy & Security > Accessibility, then launch the exact app copy you use, enable it again, and reopen PanePilot. macOS ties Accessibility approval to the app copy and code signature, so rebuilt development builds or duplicate copies can appear enabled while the current binary is still treated as untrusted."
           ],
           [
             "Why did a window not move?",
@@ -249,7 +254,7 @@
           ]
         ],
         diagnosticsTitle: "Support Diagnostics",
-        diagnosticsText: "In PanePilot, open Support & Policies and choose Copy Diagnostics before emailing support. The report uses stable English labels and includes release-safe state plus last-run counts without window titles, managed app names, document names, template names, or workspace names.",
+        diagnosticsText: "In PanePilot, open Support & Policies and choose Copy Diagnostics before emailing support. The report uses stable English labels and includes release-safe state, install-location and code-signature categories, Accessibility identity risk, plus last-run counts without window titles, managed app names, document names, template names, workspace names, or full local paths.",
         resourcesTitle: "Resources",
         downloadLink: "Download Page",
         privacyLink: "Privacy Policy",
@@ -271,6 +276,10 @@
           [
             "为什么 PanePilot 需要 Accessibility（辅助功能）权限？",
             "macOS 在窗口读取和移动场景下要求应用具备辅助功能权限。PanePilot 仅在你触发窗口排列时使用该权限。"
+          ],
+          [
+            "为什么已经打开辅助功能，macOS 仍然继续要求授权？",
+            "请先完全退出 PanePilot，然后在“系统设置 > 隐私与安全性 > 辅助功能”删除旧的 PanePilot 或“窗序”条目，再只启动你实际使用的那一个 app 副本，重新开启权限并重启 PanePilot。macOS 会把辅助功能授权绑定到 app 副本和签名；开发版重打包或多个同名副本可能显示已开启，但当前运行的二进制仍被判定为未授权。"
           ],
           [
             "为什么某个窗口没有移动？",
@@ -306,7 +315,7 @@
           ]
         ],
         diagnosticsTitle: "支持诊断",
-        diagnosticsText: "在 PanePilot 中打开“支持与政策”，选择“复制诊断信息”后再发送支持邮件。诊断报告使用稳定英文标签，并只包含适合发布支持的状态信息和最近一次运行计数，不包含窗口标题、被管理应用名称、文档名称、模板名称或工作区名称。",
+        diagnosticsText: "在 PanePilot 中打开“支持与政策”，选择“复制诊断信息”后再发送支持邮件。诊断报告使用稳定英文标签，并只包含适合发布支持的状态信息、安装位置和代码签名分类、辅助功能身份风险、最近一次运行计数，不包含窗口标题、被管理应用名称、文档名称、模板名称、工作区名称或完整本机路径。",
         resourcesTitle: "相关资源",
         downloadLink: "下载页面",
         privacyLink: "隐私政策",

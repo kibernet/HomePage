@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SoulMetronome Support</title>
+  <meta name="description" content="Support page for SoulMetronome / 时光节拍器.">
+  <link rel="stylesheet" href="../assets/pages.css">
+</head>
+<body>
+  <div class="page">
+    <main class="document">
+      <div class="toolbar">
+        <div class="language-control">
+          <label id="language-label" for="language-select">Language</label>
+          <select id="language-select" aria-label="Choose language"></select>
+        </div>
+      </div>
+      <p class="eyebrow" id="eyebrow"></p>
+      <h1 id="title"></h1>
+      <p id="intro"></p>
+      <div class="contact-grid">
+        <div class="contact-card"><strong id="email-label"></strong><a href="mailto:support@yaoji.app">support@yaoji.app</a></div>
+        <div class="contact-card"><strong id="app-label"></strong><span id="app-value"></span></div>
+        <div class="contact-card"><strong id="category-label"></strong><span id="category-value"></span></div>
+      </div>
+      <h2 id="include-title"></h2>
+      <ul id="include-list"></ul>
+      <h2 id="faq-title"></h2>
+      <div id="faq"></div>
+      <h2 id="links-title"></h2>
+      <div class="links">
+        <span class="pill"><a id="privacy-link" data-localized-link href="../Privacy/index.html"></a></span>
+        <span class="pill"><a id="age-link" data-localized-link href="../AgeRating/index.html"></a></span>
+      </div>
+    </main>
+  </div>
+  <script>
+    const supportContent = {
+      en: {
+        docTitle: "SoulMetronome Support",
+        docDescription: "Support page for SoulMetronome / 时光节拍器.",
+        language: "Language",
+        chooseLanguage: "Choose language",
+        eyebrow: "SoulMetronome / 时光节拍器",
+        title: "Support",
+        intro: "Need help with SoulMetronome? Email us with your device, system version, app version, and a short description of the issue.",
+        emailLabel: "Email",
+        appLabel: "App",
+        appValue: "SoulMetronome / 时光节拍器",
+        categoryLabel: "Category",
+        categoryValue: "Music / Utilities",
+        includeTitle: "What to Include",
+        include: ["Your device model and iOS, iPadOS, or macOS version.", "The SoulMetronome app version and App Store region.", "The tempo, time signature, subdivision, sound, and metronome style you were using.", "Whether microphone listening, flash feedback, haptics, or silent mode were enabled.", "A short screen recording or screenshot if it helps. Do not send passwords, private keys, confidential files, or private audio recordings."],
+        faqTitle: "Frequently Asked Questions",
+        faqs: [["I cannot hear the beat.", "Check device volume, silent mode, Focus mode, connected Bluetooth audio, and the app sound setting. Also confirm the play button is active."], ["Why does the app ask for microphone access?", "Microphone permission is used only when you enable rhythm listening or coach-style timing analysis."], ["Why does the app ask for camera access?", "Camera permission is used only to control the torch for flash feedback when you turn that option on."], ["Can I use the app without an account?", "Yes. The metronome works without an account."], ["Are the six metronome styles only decorative?", "No. Each style is designed around beat feedback: dial, pendulum, pulse bars, clock timing, piano-key rhythm, and studio fader control."], ["Does SoulMetronome upload my practice audio?", "No. The app does not upload raw microphone audio. Rhythm analysis is handled on device."]],
+        linksTitle: "Related Pages",
+        privacyLink: "Privacy Policy",
+        ageLink: "Age Rating"
+      },
+      "zh-Hans": {
+        docTitle: "时光节拍器支持",
+        docDescription: "时光节拍器支持页面。",
+        language: "语言",
+        chooseLanguage: "选择语言",
+        eyebrow: "SoulMetronome / 时光节拍器",
+        title: "支持",
+        intro: "如果你在使用时光节拍器时需要帮助，请通过邮件联系我们，并附上设备、系统版本、App 版本和问题简述。",
+        emailLabel: "邮箱",
+        appLabel: "应用",
+        appValue: "SoulMetronome / 时光节拍器",
+        categoryLabel: "类别",
+        categoryValue: "音乐 / 工具",
+        includeTitle: "建议提供的信息",
+        include: ["你的设备型号，以及 iOS、iPadOS 或 macOS 版本。", "时光节拍器 App 版本和 App Store 地区。", "当时使用的速度、拍号、切分、音色和节拍器样式。", "麦克风监听、闪光反馈、触感或静音模式是否开启。", "如有必要，可附一段短录屏或截图。请不要发送密码、私钥、机密文件或私人音频录音。"],
+        faqTitle: "常见问题",
+        faqs: [["听不到节拍声怎么办？", "请检查设备音量、静音模式、专注模式、蓝牙音频连接和 App 内音色设置，并确认播放按钮处于启动状态。"], ["为什么 App 会请求麦克风权限？", "麦克风仅在你开启节奏监听或教练式时值分析时使用。"], ["为什么 App 会请求相机权限？", "相机权限仅用于你开启闪光反馈时控制闪光灯随节拍闪烁。"], ["不登录账号可以使用吗？", "可以。节拍器功能不需要账号。"], ["六种节拍器样式只是装饰吗？", "不是。每种样式都围绕节拍反馈设计：转盘、摆锤、律动柱、钟表、琴键节奏和录音棚推子。"], ["时光节拍器会上传我的练习音频吗？", "不会。App 不上传原始麦克风音频，节奏分析在设备本地完成。"]],
+        linksTitle: "相关页面",
+        privacyLink: "隐私政策",
+        ageLink: "适龄说明"
+      },
+      "zh-Hant": {
+        docTitle: "時光節拍器支援",
+        docDescription: "時光節拍器支援頁面。",
+        language: "語言",
+        chooseLanguage: "選擇語言",
+        eyebrow: "SoulMetronome / 時光節拍器",
+        title: "支援",
+        intro: "如果你在使用時光節拍器時需要協助，請透過電子郵件聯絡我們，並附上裝置、系統版本、App 版本和問題簡述。",
+        emailLabel: "電子郵件",
+        appLabel: "應用程式",
+        appValue: "SoulMetronome / 時光節拍器",
+        categoryLabel: "類別",
+        categoryValue: "音樂 / 工具",
+        includeTitle: "建議提供的資訊",
+        include: ["你的裝置型號，以及 iOS、iPadOS 或 macOS 版本。", "時光節拍器 App 版本和 App Store 地區。", "當時使用的速度、拍號、切分、音色和節拍器樣式。", "麥克風聆聽、閃光回饋、觸感或靜音模式是否開啟。", "如有必要，可附一段短錄影或截圖。請不要傳送密碼、私鑰、機密檔案或私人音訊錄音。"],
+        faqTitle: "常見問題",
+        faqs: [["聽不到節拍聲怎麼辦？", "請檢查裝置音量、靜音模式、專注模式、藍牙音訊連線和 App 內音色設定，並確認播放按鈕處於啟動狀態。"], ["為什麼 App 會請求麥克風權限？", "麥克風僅在你開啟節奏聆聽或教練式時值分析時使用。"], ["為什麼 App 會請求相機權限？", "相機權限僅用於你開啟閃光回饋時控制閃光燈隨節拍閃爍。"], ["不登入帳號可以使用嗎？", "可以。節拍器功能不需要帳號。"], ["六種節拍器樣式只是裝飾嗎？", "不是。每種樣式都圍繞節拍回饋設計：轉盤、擺錘、律動柱、鐘表、琴鍵節奏和錄音棚推子。"], ["時光節拍器會上傳我的練習音訊嗎？", "不會。App 不上傳原始麥克風音訊，節奏分析在裝置本機完成。"]],
+        linksTitle: "相關頁面",
+        privacyLink: "隱私權政策",
+        ageLink: "適齡說明"
+      }
+    };
+
+    const supportLocalized = {
+      ja: ["SoulMetronome サポート", "言語", "言語を選択", "サポート", "お困りの場合は、端末、OS、アプリバージョン、問題の概要をメールでお知らせください。", "メール", "アプリ", "カテゴリ", "音楽 / ユーティリティ", "記載してほしい情報", ["端末モデルと OS バージョン。", "アプリバージョンと App Store 地域。", "使用していたテンポ、拍子、細分、音色、メトロノームスタイル。", "マイク、フラッシュ、触覚、サイレントモードの状態。", "必要なら短い画面録画またはスクリーンショット。"], "よくある質問", [["音が聞こえません。", "音量、サイレントモード、Focus、Bluetooth、アプリ内サウンド設定、再生状態を確認してください。"], ["マイク許可はなぜ必要ですか？", "リズム聴取またはタイミング分析を有効にした時だけ使います。"], ["カメラ許可はなぜ必要ですか？", "フラッシュフィードバックでライトを使うためだけです。"], ["アカウントなしで使えますか？", "はい。メトロノームはアカウント不要です。"], ["6つのスタイルは装飾だけですか？", "いいえ。各スタイルは拍のフィードバックと操作に合わせて設計されています。"], ["音声はアップロードされますか？", "いいえ。生のマイク音声はアップロードされません。"]], "関連ページ", "プライバシーポリシー", "年齢レーティング"],
+      ko: ["SoulMetronome 지원", "언어", "언어 선택", "지원", "도움이 필요하면 기기, OS, 앱 버전, 문제 요약을 이메일로 보내 주세요.", "이메일", "앱", "카테고리", "음악 / 유틸리티", "포함할 정보", ["기기 모델과 OS 버전.", "앱 버전과 App Store 지역.", "사용 중이던 템포, 박자, 세분, 사운드, 스타일.", "마이크, 플래시, 햅틱, 무음 모드 상태.", "필요한 경우 짧은 화면 녹화나 스크린샷."], "자주 묻는 질문", [["소리가 들리지 않습니다.", "볼륨, 무음 모드, Focus, Bluetooth, 앱 사운드 설정, 재생 상태를 확인하세요."], ["마이크 권한은 왜 필요한가요?", "리듬 청취 또는 타이밍 분석을 켤 때만 사용됩니다."], ["카메라 권한은 왜 필요한가요?", "플래시 피드백의 조명을 제어하기 위한 것입니다."], ["계정 없이 사용할 수 있나요?", "예. 메트로놈은 계정이 필요 없습니다."], ["6가지 스타일은 장식인가요?", "아니요. 각 스타일은 박자 피드백과 조작에 맞게 설계되었습니다."], ["연습 오디오가 업로드되나요?", "아니요. 원본 마이크 오디오는 업로드되지 않습니다."]], "관련 페이지", "개인정보 처리방침", "연령 등급"],
+      fr: ["Assistance SoulMetronome", "Langue", "Choisir la langue", "Assistance", "Pour obtenir de l'aide, envoyez-nous votre appareil, version système, version de l'app et une courte description.", "E-mail", "App", "Catégorie", "Musique / Utilitaires", "Informations à fournir", ["Modèle d'appareil et version du système.", "Version de l'app et région App Store.", "Tempo, mesure, subdivision, son et style utilisés.", "État du micro, flash, haptique et mode silencieux.", "Une courte capture vidéo ou image si utile."], "Questions fréquentes", [["Je n'entends pas le beat.", "Vérifiez le volume, le mode silencieux, Focus, Bluetooth, le son de l'app et l'état de lecture."], ["Pourquoi le micro ?", "Il sert seulement à l'écoute rythmique ou à l'analyse du timing."], ["Pourquoi la caméra ?", "Elle contrôle uniquement la torche pour le retour flash."], ["Compte requis ?", "Non. Le métronome fonctionne sans compte."], ["Les styles sont-ils décoratifs ?", "Non. Chaque style est lié au retour rythmique et au contrôle."], ["L'audio est-il téléversé ?", "Non. L'audio brut du micro n'est pas téléversé."]], "Pages liées", "Confidentialité", "Classification d'âge"],
+      de: ["SoulMetronome Support", "Sprache", "Sprache auswählen", "Support", "Senden Sie uns Gerät, Systemversion, App-Version und eine kurze Beschreibung des Problems per E-Mail.", "E-Mail", "App", "Kategorie", "Musik / Dienstprogramme", "Bitte angeben", ["Gerätemodell und Systemversion.", "App-Version und App Store-Region.", "Tempo, Taktart, Unterteilung, Klang und Stil.", "Status von Mikrofon, Blitz, Haptik und Stummmodus.", "Falls hilfreich, kurze Aufnahme oder Screenshot."], "Häufige Fragen", [["Ich höre keinen Beat.", "Prüfen Sie Lautstärke, Stummmodus, Focus, Bluetooth, App-Klang und Wiedergabe."], ["Warum Mikrofon?", "Nur für Rhythmus- oder Timinganalyse, wenn aktiviert."], ["Warum Kamera?", "Nur für die Taschenlampe beim Flash-Feedback."], ["Ohne Konto nutzbar?", "Ja. Das Metronom benötigt kein Konto."], ["Sind die Stile nur Dekoration?", "Nein. Jeder Stil ist für Beat-Feedback und Steuerung ausgelegt."], ["Wird Audio hochgeladen?", "Nein. Rohes Mikrofon-Audio wird nicht hochgeladen."]], "Verwandte Seiten", "Datenschutz", "Altersfreigabe"],
+      es: ["Soporte de SoulMetronome", "Idioma", "Elegir idioma", "Soporte", "Escríbenos con tu dispositivo, versión del sistema, versión de la app y una breve descripción.", "Email", "App", "Categoría", "Música / Utilidades", "Qué incluir", ["Modelo de dispositivo y versión del sistema.", "Versión de la app y región de App Store.", "Tempo, compás, subdivisión, sonido y estilo usados.", "Estado de micrófono, flash, háptica y modo silencio.", "Una grabación corta o captura si ayuda."], "Preguntas frecuentes", [["No oigo el pulso.", "Revisa volumen, modo silencio, Focus, Bluetooth, sonido de la app y reproducción."], ["¿Por qué micrófono?", "Solo para escucha rítmica o análisis de timing cuando lo activas."], ["¿Por qué cámara?", "Solo para controlar la linterna del feedback flash."], ["¿Necesito cuenta?", "No. El metrónomo funciona sin cuenta."], ["¿Los estilos son decorativos?", "No. Cada estilo está diseñado para feedback y control del pulso."], ["¿Se sube mi audio?", "No. El audio bruto del micrófono no se sube."]], "Páginas relacionadas", "Privacidad", "Edad"],
+      it: ["Supporto SoulMetronome", "Lingua", "Scegli lingua", "Supporto", "Scrivici con dispositivo, versione sistema, versione app e una breve descrizione.", "Email", "App", "Categoria", "Musica / Utility", "Cosa includere", ["Modello dispositivo e versione sistema.", "Versione app e regione App Store.", "Tempo, metro, suddivisione, suono e stile usati.", "Stato di microfono, flash, aptica e silenzioso.", "Una breve registrazione o screenshot se utile."], "Domande frequenti", [["Non sento il beat.", "Controlla volume, silenzioso, Focus, Bluetooth, suono app e riproduzione."], ["Perché il microfono?", "Solo per ascolto ritmico o analisi timing quando attivati."], ["Perché la fotocamera?", "Solo per la torcia nel feedback flash."], ["Serve un account?", "No. Il metronomo funziona senza account."], ["Gli stili sono decorativi?", "No. Ogni stile supporta feedback e controllo del beat."], ["L'audio viene caricato?", "No. L'audio grezzo del microfono non viene caricato."]], "Pagine correlate", "Privacy", "Età"],
+      "pt-BR": ["Suporte do SoulMetronome", "Idioma", "Escolher idioma", "Suporte", "Envie dispositivo, versão do sistema, versão do app e uma breve descrição do problema.", "Email", "App", "Categoria", "Música / Utilitários", "O que incluir", ["Modelo do dispositivo e versão do sistema.", "Versão do app e região da App Store.", "Tempo, compasso, subdivisão, som e estilo usados.", "Estado de microfone, flash, háptica e modo silencioso.", "Uma gravação curta ou captura se ajudar."], "Perguntas frequentes", [["Não ouço a batida.", "Confira volume, modo silencioso, Focus, Bluetooth, som do app e reprodução."], ["Por que microfone?", "Somente para escuta rítmica ou análise de timing quando ativada."], ["Por que câmera?", "Somente para controlar a lanterna no feedback flash."], ["Precisa de conta?", "Não. O metrônomo funciona sem conta."], ["Os estilos são decorativos?", "Não. Cada estilo foi feito para feedback e controle do pulso."], ["Meu áudio é enviado?", "Não. O áudio bruto do microfone não é enviado."]], "Páginas relacionadas", "Privacidade", "Classificação etária"],
+      ru: ["Поддержка SoulMetronome", "Язык", "Выбрать язык", "Поддержка", "Напишите нам устройство, версию системы, версию приложения и краткое описание проблемы.", "Email", "Приложение", "Категория", "Музыка / Утилиты", "Что указать", ["Модель устройства и версия системы.", "Версия приложения и регион App Store.", "Темп, размер, деление, звук и стиль.", "Состояние микрофона, вспышки, тактильной отдачи и беззвучного режима.", "Короткая запись экрана или скриншот, если полезно."], "Частые вопросы", [["Не слышно бит.", "Проверьте громкость, беззвучный режим, Focus, Bluetooth, звук в приложении и воспроизведение."], ["Зачем микрофон?", "Только для ритм-прослушивания или анализа тайминга при включении."], ["Зачем камера?", "Только для фонарика в режиме flash feedback."], ["Нужен аккаунт?", "Нет. Метроном работает без аккаунта."], ["Стили только декоративные?", "Нет. Каждый стиль связан с обратной связью и управлением ритмом."], ["Аудио загружается?", "Нет. Сырой звук микрофона не загружается."]], "Связанные страницы", "Конфиденциальность", "Возрастной рейтинг"],
+      ar: ["دعم SoulMetronome", "اللغة", "اختر اللغة", "الدعم", "أرسل الجهاز وإصدار النظام وإصدار التطبيق ووصفا قصيرا للمشكلة.", "البريد", "التطبيق", "الفئة", "موسيقى / أدوات", "ماذا ترسل", ["طراز الجهاز وإصدار النظام.", "إصدار التطبيق ومنطقة App Store.", "السرعة والميزان والتقسيم والصوت والأسلوب المستخدم.", "حالة الميكروفون والفلاش واللمس والوضع الصامت.", "تسجيل قصير أو لقطة شاشة عند الحاجة."], "أسئلة شائعة", [["لا أسمع الإيقاع.", "تحقق من الصوت والوضع الصامت وFocus وBluetooth وصوت التطبيق والتشغيل."], ["لماذا الميكروفون؟", "يستخدم فقط للاستماع الإيقاعي أو تحليل التوقيت عند تفعيله."], ["لماذا الكاميرا؟", "فقط للتحكم في المصباح عند feedback بالفلاش."], ["هل يلزم حساب؟", "لا. يعمل المترونوم دون حساب."], ["هل الأنماط للزينة فقط؟", "لا. كل نمط مصمم للتغذية الراجعة والتحكم بالإيقاع."], ["هل يتم رفع الصوت؟", "لا يتم رفع صوت الميكروفون الخام."]], "صفحات ذات صلة", "الخصوصية", "تصنيف العمر"],
+      hi: ["SoulMetronome सहायता", "भाषा", "भाषा चुनें", "सहायता", "डिवाइस, सिस्टम संस्करण, ऐप संस्करण और समस्या का छोटा विवरण ईमेल करें.", "ईमेल", "ऐप", "श्रेणी", "संगीत / उपयोगिता", "क्या शामिल करें", ["डिवाइस मॉडल और सिस्टम संस्करण.", "ऐप संस्करण और App Store क्षेत्र.", "टेम्पो, मीटर, subdivision, sound और style.", "माइक्रोफोन, flash, haptic और silent mode की स्थिति.", "यदि उपयोगी हो तो छोटी recording या screenshot."], "अक्सर पूछे जाने वाले प्रश्न", [["beat सुनाई नहीं देता.", "volume, silent mode, Focus, Bluetooth, app sound और playback जांचें."], ["माइक्रोफोन क्यों?", "केवल rhythm listening या timing analysis चालू होने पर."], ["कैमरा क्यों?", "केवल flash feedback की torch के लिए."], ["क्या account चाहिए?", "नहीं. metronome बिना account चलता है."], ["क्या styles सिर्फ सजावट हैं?", "नहीं. हर style beat feedback और control के लिए है."], ["क्या audio upload होता है?", "नहीं. raw microphone audio upload नहीं होता."]], "संबंधित पृष्ठ", "गोपनीयता", "आयु रेटिंग"],
+      id: ["Dukungan SoulMetronome", "Bahasa", "Pilih bahasa", "Dukungan", "Kirim perangkat, versi sistem, versi aplikasi, dan ringkasan masalah lewat email.", "Email", "Aplikasi", "Kategori", "Musik / Utilitas", "Yang perlu disertakan", ["Model perangkat dan versi sistem.", "Versi aplikasi dan wilayah App Store.", "Tempo, birama, subdivisi, suara, dan gaya yang digunakan.", "Status mikrofon, flash, haptic, dan mode senyap.", "Rekaman singkat atau screenshot bila membantu."], "Pertanyaan umum", [["Beat tidak terdengar.", "Periksa volume, mode senyap, Focus, Bluetooth, suara app, dan status play."], ["Mengapa mikrofon?", "Hanya untuk listening ritme atau analisis timing saat diaktifkan."], ["Mengapa kamera?", "Hanya untuk senter pada feedback flash."], ["Perlu akun?", "Tidak. Metronom berjalan tanpa akun."], ["Apakah gaya hanya dekorasi?", "Tidak. Setiap gaya mendukung feedback dan kontrol ketukan."], ["Apakah audio diunggah?", "Tidak. Audio mikrofon mentah tidak diunggah."]], "Halaman terkait", "Privasi", "Peringkat usia"],
+      vi: ["Hỗ trợ SoulMetronome", "Ngôn ngữ", "Chọn ngôn ngữ", "Hỗ trợ", "Gửi thiết bị, phiên bản hệ thống, phiên bản ứng dụng và mô tả ngắn qua email.", "Email", "Ứng dụng", "Danh mục", "Âm nhạc / Tiện ích", "Nên bao gồm", ["Mẫu thiết bị và phiên bản hệ thống.", "Phiên bản ứng dụng và vùng App Store.", "Tempo, nhịp, subdivision, âm thanh và kiểu đang dùng.", "Trạng thái micro, flash, haptic và chế độ im lặng.", "Video ngắn hoặc ảnh chụp nếu hữu ích."], "Câu hỏi thường gặp", [["Không nghe thấy nhịp.", "Kiểm tra âm lượng, chế độ im lặng, Focus, Bluetooth, âm thanh app và trạng thái phát."], ["Tại sao cần micro?", "Chỉ dùng cho listening nhịp hoặc phân tích timing khi bật."], ["Tại sao cần camera?", "Chỉ dùng đèn pin cho flash feedback."], ["Có cần tài khoản?", "Không. Metronome hoạt động không cần tài khoản."], ["Sáu kiểu chỉ để trang trí?", "Không. Mỗi kiểu hỗ trợ feedback và điều khiển nhịp."], ["Âm thanh có được tải lên?", "Không. Âm thanh micro thô không được tải lên."]], "Trang liên quan", "Quyền riêng tư", "Xếp hạng tuổi"],
+      th: ["สนับสนุน SoulMetronome", "ภาษา", "เลือกภาษา", "สนับสนุน", "ส่งรุ่นอุปกรณ์ เวอร์ชันระบบ เวอร์ชันแอป และคำอธิบายปัญหาทางอีเมล", "อีเมล", "แอป", "หมวดหมู่", "เพลง / ยูทิลิตี้", "ควรระบุ", ["รุ่นอุปกรณ์และเวอร์ชันระบบ", "เวอร์ชันแอปและภูมิภาค App Store", "tempo อัตราจังหวะ subdivision เสียง และสไตล์ที่ใช้", "สถานะไมโครโฟน แฟลช haptic และโหมดเงียบ", "วิดีโอสั้นหรือภาพหน้าจอถ้ามีประโยชน์"], "คำถามที่พบบ่อย", [["ไม่ได้ยินจังหวะ", "ตรวจสอบ volume, silent mode, Focus, Bluetooth, เสียงในแอป และสถานะเล่น"], ["ทำไมต้องไมโครโฟน?", "ใช้เฉพาะ listening จังหวะหรือวิเคราะห์ timing เมื่อเปิด"], ["ทำไมต้องกล้อง?", "ใช้เฉพาะไฟฉายสำหรับ flash feedback"], ["ต้องมีบัญชีไหม?", "ไม่ต้อง เมโทรนอมใช้ได้โดยไม่มีบัญชี"], ["สไตล์เป็นแค่ตกแต่งไหม?", "ไม่ แต่ละสไตล์รองรับ feedback และการควบคุมจังหวะ"], ["อัปโหลดเสียงไหม?", "ไม่ อัปโหลดเสียงไมโครโฟนดิบ"]], "หน้าที่เกี่ยวข้อง", "ความเป็นส่วนตัว", "การจัดระดับอายุ"]
+    };
+
+    for (const [code, values] of Object.entries(supportLocalized)) {
+      supportContent[code] = {
+        docTitle: values[0],
+        docDescription: values[0],
+        language: values[1],
+        chooseLanguage: values[2],
+        eyebrow: "SoulMetronome / 时光节拍器",
+        title: values[3],
+        intro: values[4],
+        emailLabel: values[5],
+        appLabel: values[6],
+        appValue: "SoulMetronome / 时光节拍器",
+        categoryLabel: values[7],
+        categoryValue: values[8],
+        includeTitle: values[9],
+        include: values[10],
+        faqTitle: values[11],
+        faqs: values[12],
+        linksTitle: values[13],
+        privacyLink: values[14],
+        ageLink: values[15]
+      };
+    }
+
+    window.SoulMetronomePage = {
+      storageKey: "soulmetronome-support-language",
+      content: supportContent,
+      render(data, helpers) {
+        helpers.setText("eyebrow", data.eyebrow);
+        helpers.setText("title", data.title);
+        helpers.setText("intro", data.intro);
+        helpers.setText("email-label", data.emailLabel);
+        helpers.setText("app-label", data.appLabel);
+        helpers.setText("app-value", data.appValue);
+        helpers.setText("category-label", data.categoryLabel);
+        helpers.setText("category-value", data.categoryValue);
+        helpers.setText("include-title", data.includeTitle);
+        helpers.renderList("include-list", data.include);
+        helpers.setText("faq-title", data.faqTitle);
+        helpers.renderFaqs("faq", data.faqs);
+        helpers.setText("links-title", data.linksTitle);
+        helpers.setText("privacy-link", data.privacyLink);
+        helpers.setText("age-link", data.ageLink);
+      }
+    };
+  </script>
+  <script src="../assets/page-runtime.js"></script>
+</body>
+</html>
