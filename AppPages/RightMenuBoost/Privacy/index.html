@@ -1,0 +1,1212 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RightMenuBoost Privacy Policy</title>
+  <meta name="description" content="Privacy policy for RightMenuBoost / 右键增强Pro, a local-first Finder right-click productivity tool for Mac.">
+  <style>
+    :root {
+      color-scheme: dark light;
+      --bg: #0e1118;
+      --panel: rgba(18, 24, 34, 0.92);
+      --panel-soft: rgba(24, 32, 44, 0.78);
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --quiet: #94a3b8;
+      --line: rgba(148, 163, 184, 0.24);
+      --accent: #5eead4;
+      --accent-2: #f7c66a;
+      --ok: #86efac;
+      --shadow: rgba(0, 0, 0, 0.34);
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f7fafc;
+        --panel: rgba(255, 255, 255, 0.96);
+        --panel-soft: rgba(248, 250, 252, 0.92);
+        --text: #111827;
+        --muted: #334155;
+        --quiet: #64748b;
+        --line: rgba(15, 23, 42, 0.14);
+        --accent: #0f766e;
+        --accent-2: #9a6700;
+        --ok: #047857;
+        --shadow: rgba(15, 23, 42, 0.12);
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+      line-height: 1.65;
+      letter-spacing: 0;
+      color: var(--text);
+      background: linear-gradient(135deg, var(--bg) 0%, #121826 55%, #0a1018 100%);
+    }
+    @media (prefers-color-scheme: light) {
+      body { background: linear-gradient(135deg, #f8fafc 0%, #eef5f6 58%, #f7fafc 100%); }
+    }
+    .page { width: min(1040px, calc(100% - 40px)); margin: 0 auto; padding: 40px 0; }
+    .shell { border: 1px solid var(--line); border-radius: 16px; background: var(--panel); box-shadow: 0 28px 88px var(--shadow); overflow: hidden; }
+    .topbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 22px; border-bottom: 1px solid var(--line); background: var(--panel-soft); }
+    .brand { display: inline-flex; align-items: center; gap: 10px; min-width: max-content; color: var(--text); text-decoration: none; font-weight: 760; }
+    .mark { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border: 1px solid color-mix(in srgb, var(--accent) 44%, transparent); border-radius: 8px; color: var(--accent); background: color-mix(in srgb, var(--accent) 12%, transparent); font-size: 0.86rem; font-weight: 820; }
+    .nav { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 8px; }
+    .nav a, .language-control { border: 1px solid var(--line); border-radius: 8px; background: rgba(255,255,255,0.04); color: var(--muted); text-decoration: none; font-size: 0.94rem; }
+    .nav a { padding: 7px 10px; }
+    .nav a[aria-current="page"] { color: var(--text); border-color: color-mix(in srgb, var(--accent) 45%, var(--line)); background: color-mix(in srgb, var(--accent) 11%, transparent); }
+    .language-control { display: inline-flex; align-items: center; gap: 8px; padding: 6px 8px; }
+    .language-control label { color: var(--quiet); font-size: 0.88rem; white-space: nowrap; }
+    .language-control select { min-width: 176px; border: 0; outline: 0; background: transparent; color: var(--text); font: inherit; font-size: 0.94rem; }
+    .language-control option { color: #111827; background: #ffffff; }
+    .content { padding: 44px; }
+    h1, h2, h3 { line-height: 1.15; letter-spacing: 0; }
+    h1 { margin: 0 0 12px; font-size: 2.7rem; font-weight: 780; }
+    h2 { margin: 34px 0 12px; font-size: 1.23rem; font-weight: 740; }
+    h3 { margin: 22px 0 8px; color: var(--accent-2); font-size: 1rem; font-weight: 720; }
+    p, li, td, th { color: var(--muted); font-size: 1rem; overflow-wrap: anywhere; }
+    p { margin: 0 0 14px; }
+    ul { margin: 10px 0 0; padding-left: 1.25rem; }
+    [dir="rtl"] ul { padding-left: 0; padding-right: 1.25rem; }
+    a { color: var(--accent); overflow-wrap: anywhere; }
+    .eyebrow { margin: 0 0 24px; color: var(--accent); font-weight: 760; }
+    .updated { color: var(--quiet); font-size: 0.95rem; }
+    .intro { font-size: 1.05rem; }
+    .notice { margin: 24px 0; padding: 16px 18px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel-soft); }
+    .notice p { margin: 0; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin: 24px 0 8px; }
+    .card { min-height: 104px; padding: 16px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel-soft); }
+    .card strong { display: block; margin-bottom: 6px; color: var(--text); }
+    table { width: 100%; margin-top: 12px; border-collapse: separate; border-spacing: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 8px; background: var(--panel-soft); }
+    th, td { padding: 12px 14px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    [dir="rtl"] th, [dir="rtl"] td { text-align: right; }
+    tr:last-child td { border-bottom: 0; }
+    th { color: var(--text); background: color-mix(in srgb, var(--accent) 10%, transparent); font-weight: 740; }
+    .rating { display: inline-flex; align-items: center; justify-content: center; margin: 20px 0 8px; padding: 10px 14px; border: 1px solid color-mix(in srgb, var(--ok) 42%, transparent); border-radius: 8px; color: var(--ok); background: color-mix(in srgb, var(--ok) 10%, transparent); font-weight: 780; }
+    .link-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+    .pill { display: inline-flex; align-items: center; padding: 8px 11px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel-soft); color: var(--text); text-decoration: none; }
+    code { color: var(--accent-2); }
+    @media (max-width: 760px) {
+      .page { width: min(100% - 24px, 1040px); padding: 18px 0; }
+      .topbar { align-items: stretch; flex-direction: column; }
+      .nav { justify-content: flex-start; }
+      .language-control { width: 100%; justify-content: space-between; }
+      .language-control select { min-width: 0; width: 100%; }
+      .content { padding: 26px 20px; }
+      h1 { font-size: 2.1rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="shell">
+      <header class="topbar">
+        <a class="brand" href="../Support/index.html"><span class="mark">RB</span><span>RightMenuBoost</span></a>
+        <nav class="nav" aria-label="RightMenuBoost pages">
+          <a data-nav="privacy" aria-current="page" href="../Privacy/index.html">Privacy</a>
+          <a data-nav="support" href="../Support/index.html">Support</a>
+          <a data-nav="age" href="../AgeRating/index.html">Age Rating</a>
+          <span class="language-control"><label id="language-label" for="language-select">Language</label><select id="language-select"></select></span>
+        </nav>
+      </header>
+      <main id="localized-content" class="content" role="main"></main>
+    </div>
+  </div>
+  <script type="application/json" id="page-data">
+  {
+    "defaultLanguage": "en",
+    "languages": [
+      {
+        "code": "zh-Hans",
+        "htmlLang": "zh-CN",
+        "label": "简体中文",
+        "dir": "ltr"
+      },
+      {
+        "code": "zh-Hant",
+        "htmlLang": "zh-TW",
+        "label": "繁體中文",
+        "dir": "ltr"
+      },
+      {
+        "code": "en",
+        "htmlLang": "en",
+        "label": "English",
+        "dir": "ltr"
+      },
+      {
+        "code": "ja",
+        "htmlLang": "ja",
+        "label": "日本語",
+        "dir": "ltr"
+      },
+      {
+        "code": "ko",
+        "htmlLang": "ko",
+        "label": "한국어",
+        "dir": "ltr"
+      },
+      {
+        "code": "es",
+        "htmlLang": "es",
+        "label": "Español",
+        "dir": "ltr"
+      },
+      {
+        "code": "fr",
+        "htmlLang": "fr",
+        "label": "Français",
+        "dir": "ltr"
+      },
+      {
+        "code": "de",
+        "htmlLang": "de",
+        "label": "Deutsch",
+        "dir": "ltr"
+      }
+    ],
+    "ui": {
+      "zh-Hans": {
+        "language": "语言",
+        "chooseLanguage": "选择语言",
+        "privacy": "隐私",
+        "support": "支持",
+        "age": "适龄"
+      },
+      "zh-Hant": {
+        "language": "語言",
+        "chooseLanguage": "選擇語言",
+        "privacy": "隱私",
+        "support": "支援",
+        "age": "適齡"
+      },
+      "en": {
+        "language": "Language",
+        "chooseLanguage": "Choose language",
+        "privacy": "Privacy",
+        "support": "Support",
+        "age": "Age Rating"
+      },
+      "ja": {
+        "language": "言語",
+        "chooseLanguage": "言語を選択",
+        "privacy": "プライバシー",
+        "support": "サポート",
+        "age": "年齢制限"
+      },
+      "ko": {
+        "language": "언어",
+        "chooseLanguage": "언어 선택",
+        "privacy": "개인정보",
+        "support": "지원",
+        "age": "연령 등급"
+      },
+      "es": {
+        "language": "Idioma",
+        "chooseLanguage": "Elegir idioma",
+        "privacy": "Privacidad",
+        "support": "Soporte",
+        "age": "Edad"
+      },
+      "fr": {
+        "language": "Langue",
+        "chooseLanguage": "Choisir la langue",
+        "privacy": "Confidentialité",
+        "support": "Assistance",
+        "age": "Âge"
+      },
+      "de": {
+        "language": "Sprache",
+        "chooseLanguage": "Sprache auswählen",
+        "privacy": "Datenschutz",
+        "support": "Support",
+        "age": "Alter"
+      }
+    },
+    "content": {
+      "zh-Hans": {
+        "metaTitle": "右键增强Pro 隐私政策",
+        "description": "右键增强Pro（RightMenuBoost）的隐私政策：本地优先的 Mac Finder 右键效率工具。",
+        "eyebrow": "右键增强Pro / RightMenuBoost for Mac",
+        "title": "隐私政策",
+        "updated": "最后更新日期：2026 年 7 月 4 日",
+        "intro": "右键增强Pro（RightMenuBoost）是一款本地优先的 macOS Finder 右键效率工具。它为 Finder 右键菜单加入可配置动作，包括常用目录、文件夹图标、文件可见性、新建文件、路径复制、复制和移动、批量重命名、校验值、加密 DMG、AirDrop、Terminal，以及用应用打开选中项目。",
+        "notice": "摘要：右键增强Pro 不收集个人数据，不上传选中文件，不需要账号，不包含广告 SDK、分析 SDK 或跟踪 SDK，核心功能也不依赖开发者运营的云服务。",
+        "sections": [
+          {
+            "heading": "我们收集的数据",
+            "paragraphs": [
+              "1.0.0 版本不会通过开发者运营的在线服务收集、出售或共享个人数据。右键增强Pro 不会向开发者服务器发送文件名、文件路径、文件内容、校验值、菜单历史、使用分析、崩溃分析、标识符、购买数据、联系方式或诊断数据。"
+            ]
+          },
+          {
+            "heading": "本地存储的数据",
+            "paragraphs": [
+              "右键增强Pro 会在本机保存偏好设置，让主 App 和 Finder 扩展保持一致。这些设置会留在你的 Mac 上，除非你主动删除。"
+            ],
+            "bullets": [
+              "已启用或禁用的右键动作。",
+              "Finder 菜单覆盖范围，例如主目录、常用文件夹或所有磁盘。",
+              "终端偏好、默认重命名前缀、完成提醒偏好、界面语言和引导状态。",
+              "通过 UserDefaults 和 App Group group.com.kibernet.RightMenuBoost 共享的本地 Finder 扩展设置。"
+            ]
+          },
+          {
+            "heading": "Finder 扩展和文件访问",
+            "paragraphs": [
+              "右键增强Pro 需要你启动 App，并在 macOS 要求时启用 Finder 扩展。扩展只会处理你在 Finder 中选中的文件或文件夹，或者你在当前 Finder 文件夹中主动调用右键命令时的上下文。",
+              "文件操作在你的 Mac 本机执行。右键增强Pro 不会在后台扫描磁盘，也不会把选中文件上传到服务器。"
+            ]
+          },
+          {
+            "heading": "剪贴板和文件工作流",
+            "paragraphs": [
+              "路径复制和校验值命令只会在你主动选择对应动作后，把请求的文本放到系统剪贴板。新建文件、复制、移动、整理到新文件夹、批量重命名、文件夹图标和文件可见性动作，都只能由用户在 Finder 右键菜单中主动触发。批量重命名会在应用更改前显示预览。"
+            ]
+          },
+          {
+            "heading": "校验值和加密 DMG",
+            "paragraphs": [
+              "SHA-256 和 MD5 校验值会在本机为选中文件计算。MD5 仅作为兼容性校验值提供，不作为安全机制使用。",
+              "加密 DMG 创建由用户主动发起，使用 Apple 的 macOS /usr/bin/hdiutil 系统工具和 AES-256 加密。选中项目会被暂存到本地临时文件夹，方便 hdiutil 读取；如果输出位置位于所选源文件夹内部会被拒绝；临时暂存会在完成或失败后移除。密码通过 hdiutil 标准输入传递，不通过命令行参数传递。"
+            ]
+          },
+          {
+            "heading": "网络访问",
+            "paragraphs": [
+              "核心功能不需要网络访问。右键增强Pro 没有账号系统、云同步、开发者运营的文件存储、广告、第三方分析，也没有跟踪域名。"
+            ]
+          },
+          {
+            "heading": "付费下载",
+            "paragraphs": [
+              "右键增强Pro 采用 App Store 付费下载模式。1.0.0 版本不包含 App 内购买、订阅、恢复购买流程、广告或开发者运营的支付处理。购买记录、退款、税费、区域价格和家庭共享资格由 Apple 和 App Store 处理。"
+            ]
+          },
+          {
+            "heading": "支持请求",
+            "paragraphs": [
+              "如果你通过 kibernet@sina.com 联系支持，我们只会收到你主动发送的信息，例如邮箱地址、App 版本、macOS 版本、截图、日志或问题描述。",
+              "请不要发送密码、私钥、机密文件或私有文件内容。如果截图包含隐私信息，请先打码再发送。"
+            ]
+          },
+          {
+            "heading": "删除和保留",
+            "paragraphs": [
+              "你可以通过删除 App 及其相关本地设置来移除本地偏好。由右键增强Pro 创建、重命名、复制、移动、导出或打包的文件，会保留在你选择保存的位置，并可在 Finder 中管理。"
+            ]
+          },
+          {
+            "heading": "儿童隐私",
+            "paragraphs": [
+              "右键增强Pro 是通用效率工具，不面向儿童，也不会故意收集儿童或其他用户的信息。"
+            ]
+          },
+          {
+            "heading": "变更和联系",
+            "paragraphs": [
+              "如果本政策发生变化，更新后的版本会发布在本页面并更新日期。隐私问题可发送至 kibernet@sina.com。"
+            ]
+          }
+        ],
+        "links": [
+          {
+            "label": "支持",
+            "href": "../Support/index.html"
+          },
+          {
+            "label": "适龄信息",
+            "href": "../AgeRating/index.html"
+          }
+        ]
+      },
+      "zh-Hant": {
+        "metaTitle": "右键增强Pro 隱私權政策",
+        "description": "右键增强Pro（RightMenuBoost）的隱私權政策：本地優先的 Mac Finder 右鍵效率工具。",
+        "eyebrow": "右键增强Pro / RightMenuBoost for Mac",
+        "title": "隱私權政策",
+        "updated": "最後更新日期：2026 年 7 月 4 日",
+        "intro": "右键增强Pro（RightMenuBoost）是一款本地優先的 macOS Finder 右鍵效率工具。它為 Finder 右鍵選單加入可設定動作，包括常用目錄、資料夾圖示、檔案可見性、新檔案、路徑複製、複製和移動、批次重新命名、校驗值、加密 DMG、AirDrop、Terminal，以及以應用程式開啟選取項目。",
+        "notice": "摘要：右键增强Pro 不收集個人數據，不上傳選取文件，不需要帳號，不包含廣告 SDK、分析 SDK 或追蹤 SDK，核心功能也不依賴開發者營運的雲端服務。",
+        "sections": [
+          {
+            "heading": "我們收集的數據",
+            "paragraphs": [
+              "1.0.0 版本不會透過開發者營運的線上服務收集、出售或分享個人資料。 右键增强Pro 不會向開發者伺服器傳送檔案名稱、檔案路徑、檔案內容、校驗值、選單歷史、使用分析、崩潰分析、識別碼、購買資料、聯絡資訊或診斷資料。"
+            ]
+          },
+          {
+            "heading": "本地儲存的數據",
+            "paragraphs": [
+              "右键增强Pro 會在本機儲存偏好設置，讓主 App 和 Finder 擴充功能保持一致。這些設定會留在你的 Mac 上，除非你主動刪除。"
+            ],
+            "bullets": [
+              "已啟用或停用的右鍵動作。",
+              "Finder 選單涵蓋範圍，例如主目錄、常用資料夾或所有磁碟。",
+              "終端偏好、預設重命名前綴、完成提醒偏好、介面語言和引導狀態。",
+              "透過 UserDefaults 和 App Group group.com.kibernet.RightMenuBoost 共享的本地 Finder 擴充設定。"
+            ]
+          },
+          {
+            "heading": "Finder 擴充和檔案訪問",
+            "paragraphs": [
+              "右键增强Pro 需要你啟動 App，並在 macOS 要求時啟用 Finder 擴充。擴充只會處理你在 Finder 中選取的檔案或資料夾，或是您在目前 Finder 資料夾中主動呼叫右鍵指令時的上下文。",
+              "檔案操作在你的 Mac 本機執行。 右键增强Pro 不會在後台掃描磁碟，也不會把選取檔案上傳到伺服器。"
+            ]
+          },
+          {
+            "heading": "剪貼簿和文件工作流程",
+            "paragraphs": [
+              "路徑複製和校驗值指令只會在你主動選擇對應動作後，把請求的文字放到系統剪貼簿。新檔案、複製、移動、整理到新資料夾、批次重新命名、資料夾圖示和檔案可見性動作，都只能由使用者在 Finder 右鍵選單中主動觸發。批次重命名會在套用變更前顯示預覽。"
+            ]
+          },
+          {
+            "heading": "校驗值與加密 DMG",
+            "paragraphs": [
+              "SHA-256 和 MD5 校驗值會在本機為選取檔案計算。 MD5 僅以相容性校驗值提供，不作為安全機制使用。",
+              "加密 DMG 建立由使用者主動發起，使用 Apple 的 macOS /usr/bin/hdiutil 系統工具和 AES-256 加密。選取項目會暫存到本機暫存到本機暫存資料夾，方便 hdiutil 讀取；若輸出位置位於所選來源資料夾內部會被拒絕；暫存會在完成或失敗後移除。密碼透過 hdiutil 標準輸入傳遞，不透過命令列參數傳遞。"
+            ]
+          },
+          {
+            "heading": "網路存取",
+            "paragraphs": [
+              "核心功能不需要網路存取。 右键增强Pro 沒有帳號系統、雲端同步、開發者營運的文件儲存、廣告、第三方分析，也沒有追蹤網域。"
+            ]
+          },
+          {
+            "heading": "付費下載",
+            "paragraphs": [
+              "右键增强Pro 採用 App Store 付費下載模式。 1.0.0 版本不包含 App 內購買、訂閱、恢復購買流程、廣告或開發者營運的付款處理。購買記錄、退款、稅費、區域價格和家庭共享資格由 Apple 和 App Store 處理。"
+            ]
+          },
+          {
+            "heading": "支援請求",
+            "paragraphs": [
+              "如果你透過 kibernet@sina.com 聯繫支持，我們只會收到你主動發送的訊息，例如郵箱地址、App 版本、macOS 版本、截圖、日誌或問題描述。",
+              "請不要發送密碼、私鑰、機密文件或私人文件內容。如果截圖包含隱私訊息，請先打碼再發送。"
+            ]
+          },
+          {
+            "heading": "刪除和保留",
+            "paragraphs": [
+              "你可以透過刪除 App 及其相關本地設定來移除本地偏好。由右键增强Pro 建立、重新命名、複製、移動、匯出或包裝的文件，會保留在你選擇已儲存的位置，並可在 Finder 中管理。"
+            ]
+          },
+          {
+            "heading": "兒童隱私",
+            "paragraphs": [
+              "右键增强Pro 是通用效率工具，不面向兒童，也不會故意收集兒童或其他使用者的資訊。"
+            ]
+          },
+          {
+            "heading": "變更和聯繫",
+            "paragraphs": [
+              "若本政策發生變化，更新後的版本會發佈在本頁並更新日期。隱私問題可寄至 kibernet@sina.com。"
+            ]
+          }
+        ],
+        "links": [
+          {
+            "label": "支援",
+            "href": "../Support/index.html"
+          },
+          {
+            "label": "適齡資訊",
+            "href": "../AgeRating/index.html"
+          }
+        ]
+      },
+      "en": {
+        "metaTitle": "RightMenuBoost Privacy Policy",
+        "description": "Privacy policy for RightMenuBoost / 右键增强Pro, a local-first Finder right-click productivity tool for Mac.",
+        "eyebrow": "RightMenuBoost / 右键增强Pro for Mac",
+        "title": "Privacy Policy",
+        "updated": "Last updated: July 4, 2026",
+        "intro": "RightMenuBoost / 右键增强Pro is a local-first macOS Finder right-click productivity tool. It adds configurable actions to Finder context menus for common folders, folder icons, file visibility, new files, path copying, copy and move workflows, batch rename, checksums, encrypted DMG packages, AirDrop, Terminal, and opening selected items with apps.",
+        "notice": "Summary: RightMenuBoost does not collect personal data, does not upload selected files, does not require an account, does not include advertising SDKs, analytics SDKs, or tracking SDKs, and does not depend on a developer-operated cloud service for core features.",
+        "sections": [
+          {
+            "heading": "Data We Collect",
+            "paragraphs": [
+              "Version 1.0.0 does not collect, sell, or share personal data through developer-operated online services. RightMenuBoost does not send file names, file paths, file contents, checksums, menu history, usage analytics, crash analytics, identifiers, purchase data, contact information, or diagnostics to developer-operated servers."
+            ]
+          },
+          {
+            "heading": "Data Stored Locally",
+            "paragraphs": [
+              "RightMenuBoost stores preferences locally so the main app and Finder extension can behave consistently. These settings stay on your Mac unless you choose to remove them."
+            ],
+            "bullets": [
+              "Enabled or disabled right-click actions.",
+              "Finder menu scope, such as Home, common folders, or all disks.",
+              "Terminal preference, default rename prefix, completion alert preference, selected interface language, and onboarding state.",
+              "Local Finder extension settings shared through UserDefaults and the App Group group.com.kibernet.RightMenuBoost."
+            ]
+          },
+          {
+            "heading": "Finder Extension and File Access",
+            "paragraphs": [
+              "RightMenuBoost works only after you launch the app and enable its Finder extension in macOS if the system asks for approval. The extension acts on files or folders you select in Finder, or on the current Finder folder when you invoke a contextual menu command.",
+              "File operations are performed locally on your Mac. RightMenuBoost does not scan the disk in the background and does not upload selected files to a server."
+            ]
+          },
+          {
+            "heading": "Clipboard and File Workflows",
+            "paragraphs": [
+              "Path-copy and checksum commands place the requested text on the system clipboard only after you choose those actions. New-file, copy, move, organize, batch-rename, folder-icon, and file-visibility actions run only from user-invoked Finder commands. Batch rename provides a preview before changes are applied."
+            ]
+          },
+          {
+            "heading": "Checksums and Encrypted DMG Files",
+            "paragraphs": [
+              "SHA-256 and MD5 checksums are computed locally for selected files. MD5 is provided only as a compatibility checksum and is not used as a security mechanism.",
+              "Encrypted DMG creation is user-initiated and uses Apple’s macOS /usr/bin/hdiutil tool with AES-256 encryption. Selected items are staged in a temporary local folder so hdiutil can read them, the archive output is rejected if it is inside the selected source folders, and the staging folder is removed after completion or failure. Passwords are passed to hdiutil through standard input instead of command-line arguments."
+            ]
+          },
+          {
+            "heading": "Network Access",
+            "paragraphs": [
+              "Core features do not require network access. RightMenuBoost has no account system, no cloud sync, no developer-operated file storage, no ads, no third-party analytics, and no tracking domains."
+            ]
+          },
+          {
+            "heading": "Payments",
+            "paragraphs": [
+              "RightMenuBoost is sold as a paid App Store download. Version 1.0.0 does not include in-app purchases, subscriptions, restore-purchase flows, ads, or developer-operated payment processing. Purchase records, refunds, tax, regional pricing, and Family Sharing eligibility are handled by Apple and the App Store."
+            ]
+          },
+          {
+            "heading": "Support Requests",
+            "paragraphs": [
+              "If you contact support at kibernet@sina.com, we receive only the information you choose to send, such as your email address, app version, macOS version, screenshots, logs, or issue description.",
+              "Do not send passwords, private keys, confidential files, or private file contents. If a screenshot contains private information, redact it before sending."
+            ]
+          },
+          {
+            "heading": "Deletion and Retention",
+            "paragraphs": [
+              "You can remove local preferences by deleting the app and its related local settings from your Mac. Files created, renamed, copied, moved, exported, or packaged by RightMenuBoost remain wherever you chose to save them and can be managed in Finder."
+            ]
+          },
+          {
+            "heading": "Children's Privacy",
+            "paragraphs": [
+              "RightMenuBoost is a general productivity utility. It is not directed to children and does not knowingly collect information from children or any other users."
+            ]
+          },
+          {
+            "heading": "Changes and Contact",
+            "paragraphs": [
+              "If this policy changes, the updated version will be posted on this page with a revised update date. Privacy questions can be sent to kibernet@sina.com."
+            ]
+          }
+        ],
+        "links": [
+          {
+            "label": "Support",
+            "href": "../Support/index.html"
+          },
+          {
+            "label": "Age Rating Information",
+            "href": "../AgeRating/index.html"
+          }
+        ]
+      },
+      "ja": {
+        "metaTitle": "RightMenuBoost プライバシーポリシー",
+        "description": "RightMenuBoost / 右键增强Pro のプライバシーポリシー。これは、Mac 用のローカルファーストの Finder 右クリック生産性ツールです。",
+        "eyebrow": "RightMenuBoost / 右键增强Pro for Mac",
+        "title": "プライバシーポリシー",
+        "updated": "最終更新日：2026年7月4日",
+        "intro": "RightMenuBoost / 右键增强Pro は、ローカル優先の macOS Finder 右クリック生産性ツールです。一般的なフォルダー、フォルダーアイコン、ファイルの表示、新規ファイル、パスのコピー、コピーと移動のワークフロー、一括名前変更、チェックサム、暗号化された DMG パッケージ、AirDrop、Terminal、および選択したアイテムをアプリで開くための設定可能なアクションをコンテキスト メニューに追加します。",
+        "notice": "概要: RightMenuBoost は個人データを収集せず、選択したファイルをアップロードせず、アカウントを必要とせず、広告 SDK、分析 SDK、または追跡 SDK を含まず、コア機能のために開発者が運営するクラウド サービスに依存しません。",
+        "sections": [
+          {
+            "heading": "収集するデータ",
+            "paragraphs": [
+              "バージョン 1.0.0 は、開発者が運営するオンラインサービスを通じて個人データを収集、販売、または共有しません。RightMenuBoost は、ファイル名、ファイルパス、ファイルの内容、チェックサム、メニュー履歴、使用状況分析、クラッシュ分析、識別子、購入データ、連絡先情報、または診断情報を開発者が運営するサーバーに送信しません。"
+            ]
+          },
+          {
+            "heading": "データはローカルに保存されます",
+            "paragraphs": [
+              "RightMenuBoostは設定をローカルに保存するため、メインアプリとFinder拡張機能が一貫した動作をします。これらの設定は、ユーザーが削除しない限りMacに保持されます。"
+            ],
+            "bullets": [
+              "右クリック操作を有効または無効にします。",
+              "Finder メニュー範囲、例えばホーム、共通フォルダ、またはすべてのディスク。",
+              "Terminal 設定、デフォルトの名前変更プレフィックス、完了アラート設定、選択されたインターフェース言語、およびオンボーディング状態。",
+              "ローカルのFinder拡張機能設定は、UserDefaultsおよびApp Groupgroup.com.kibernet.RightMenuBoostを介して共有されます。"
+            ]
+          },
+          {
+            "heading": "Finder 拡張機能とファイルアクセス",
+            "paragraphs": [
+              "RightMenuBoostは、アプリを起動し、システムが承認を求めた場合にmacOSでFinder拡張機能を有効にした後にのみ機能します。この拡張機能は、Finderで選択したファイルまたはフォルダ、あるいはコンテキストメニューコマンドを実行した際に現在のFinderフォルダに対して動作します。",
+              "ファイル操作はMac上でローカルに実行されます。RightMenuBoostはバックグラウンドでディスクをスキャンしたり、選択したファイルをサーバーにアップロードしたりしません。"
+            ]
+          },
+          {
+            "heading": "クリップボードとファイルのワークフロー",
+            "paragraphs": [
+              "パスコピーとチェックサムコマンドは、これらのアクションを選択した後にのみ、要求されたテキストをシステムクリップボードにコピーします。新規ファイル、コピー、移動、整理、一括名前変更、フォルダーアイコン、およびファイル可視性アクションは、ユーザーが呼び出したFinderコマンドからのみ実行されます。一括名前変更では、変更が適用される前にプレビューが表示されます。"
+            ]
+          },
+          {
+            "heading": "チェックサムと暗号化されたDMGファイル",
+            "paragraphs": [
+              "SHA-256とMD5のチェックサムは、選択されたファイルに対してローカルで計算されます。MD5は互換性チェックサムとしてのみ提供され、セキュリティメカニズムとしては使用されません。",
+              "暗号化されたDMGの作成はユーザーが開始し、AppleのmacOS /usr/bin/hdiutilツールとAES-256暗号化を使用します。選択された項目は一時的なローカルフォルダにステージングされ、hdiutilが読み取れるようになります。アーカイブ出力が選択されたソースフォルダ内にある場合は拒否され、ステージングフォルダは完了または失敗後に削除されます。パスワードはコマンドライン引数ではなく、標準入力を介してhdiutilに渡されます。"
+            ]
+          },
+          {
+            "heading": "ネットワークアクセス",
+            "paragraphs": [
+              "主要機能はネットワークアクセスを必要としません。RightMenuBoostにはアカウントシステム、クラウド同期、開発者が運営するファイルストレージ、広告、サードパーティの分析ツール、トラッキングドメインはありません。"
+            ]
+          },
+          {
+            "heading": "支払い",
+            "paragraphs": [
+              "RightMenuBoost は有料の App Store ダウンロードとして販売されています。バージョン 1.0.0 には、アプリ内購入、サブスクリプション、購入復元フロー、広告、開発者による決済処理は含まれていません。購入記録、払い戻し、税金、地域別価格設定、ファミリー共有の資格は、Apple と App Store によって処理されます。"
+            ]
+          },
+          {
+            "heading": "サポートリクエスト",
+            "paragraphs": [
+              "kibernet@sina.com でサポートに連絡した場合、メールアドレス、アプリのバージョン、macOS バージョン、スクリーンショット、ログ、問題の説明など、送信することを選択した情報のみが当社に送信されます。",
+              "パスワード、秘密鍵、機密ファイル、またはプライベートなファイルの内容は送信しないでください。スクリーンショットに個人情報が含まれている場合は、送信前に編集してください。"
+            ]
+          },
+          {
+            "heading": "削除と保持",
+            "paragraphs": [
+              "Mac からアプリとその関連するローカル設定を削除することで、ローカル環境設定を削除できます。RightMenuBoost によって作成、名前変更、コピー、移動、エクスポート、またはパッケージ化されたファイルは、保存場所にそのまま残り、Finder で管理できます。"
+            ]
+          },
+          {
+            "heading": "子供のプライバシー",
+            "paragraphs": [
+              "RightMenuBoostは汎用的な生産性向上ツールです。子供向けではなく、子供やその他のユーザーから意図的に情報を収集することはありません。"
+            ]
+          },
+          {
+            "heading": "変更点と連絡先",
+            "paragraphs": [
+              "本ポリシーが変更された場合は、更新日を記載した改訂版がこのページに掲載されます。プライバシーに関するご質問はkibernet@sina.comまでお送りください。"
+            ]
+          }
+        ],
+        "links": [
+          {
+            "label": "サポート",
+            "href": "../Support/index.html"
+          },
+          {
+            "label": "年齢制限情報",
+            "href": "../AgeRating/index.html"
+          }
+        ]
+      },
+      "ko": {
+        "metaTitle": "RightMenuBoost 개인정보 처리방침",
+        "description": "Mac용 로컬 우선 Finder 마우스 오른쪽 클릭 생산성 도구인 RightMenuBoost / 右键增强Pro의 개인정보 보호정책입니다.",
+        "eyebrow": "RightMenuBoost / 右键增强Pro (Mac용)",
+        "title": "개인정보 처리방침",
+        "updated": "최종 업데이트: 2026년 7월 4일",
+        "intro": "RightMenuBoost / 右键增强Pro은 로컬 우선 macOS Finder 마우스 오른쪽 클릭 생산성 도구입니다. 일반 폴더, 폴더 아이콘, 파일 표시 여부, 새 파일, 경로 복사, 복사 및 이동 워크플로, 일괄 이름 변경, 체크섬, 암호화된 DMG 패키지, AirDrop, Terminal 및 선택한 항목을 앱으로 열기 등 Finder 컨텍스트 메뉴에 구성 가능한 작업을 추가합니다.",
+        "notice": "요약: RightMenuBoost은 개인 데이터를 수집하지 않고, 특정 파일을 업로드하지 않으며, 계정이 필요하지 않고, 광고 SDK, 분석 SDK 또는 추적 SDK를 포함하지 않으며, 핵심 기능을 위해 개발자가 운영하는 클라우드 서비스에 의존하지 않습니다.",
+        "sections": [
+          {
+            "heading": "수집하는 데이터",
+            "paragraphs": [
+              "버전 1.0.0은 개발자가 운영하는 온라인 서비스를 통해 개인 데이터를 수집, 판매 또는 공유하지 않습니다. RightMenuBoost은 파일 이름, 파일 경로, 파일 내용, 체크섬, 메뉴 기록, 사용 분석, 충돌 분석, 식별자, 구매 데이터, 연락처 정보 또는 진단 정보를 개발자가 운영하는 서버로 전송하지 않습니다."
+            ]
+          },
+          {
+            "heading": "데이터는 로컬에 저장됩니다.",
+            "paragraphs": [
+              "RightMenuBoost은 기본 앱과 Finder 확장 프로그램이 일관되게 작동하도록 환경 설정을 로컬에 저장합니다. 이러한 설정은 사용자가 삭제하지 않는 한 Mac에 유지됩니다."
+            ],
+            "bullets": [
+              "마우스 오른쪽 클릭 동작 활성화 또는 비활성화.",
+              "Finder 메뉴 범위(예: 홈, 공용 폴더 또는 모든 디스크).",
+              "Terminal 기본 설정, 기본 이름 변경 접두사, 완료 알림 기본 설정, 선택된 인터페이스 언어 및 온보딩 상태.",
+              "로컬 Finder 확장 설정은 UserDefaults 및 App Group group.com.kibernet.RightMenuBoost을 통해 공유됩니다."
+            ]
+          },
+          {
+            "heading": "Finder 확장 및 파일 액세스",
+            "paragraphs": [
+              "RightMenuBoost은 앱을 실행하고 시스템에서 승인을 요청할 경우 macOS에서 Finder 확장 프로그램을 활성화한 후에만 작동합니다. 이 확장 프로그램은 Finder에서 선택한 파일이나 폴더, 또는 상황별 메뉴 명령을 실행할 때 현재 Finder 폴더에 대해 작동합니다.",
+              "파일 작업은 Mac에서 로컬로 수행됩니다. RightMenuBoost은 백그라운드에서 디스크를 검사하지 않으며 선택한 파일을 서버에 업로드하지 않습니다."
+            ]
+          },
+          {
+            "heading": "클립보드 및 파일 워크플로",
+            "paragraphs": [
+              "경로 복사 및 체크섬 명령은 해당 작업을 선택한 후에만 요청된 텍스트를 시스템 클립보드에 복사합니다. 새 파일, 복사, 이동, 정리, 일괄 이름 변경, 폴더 아이콘 및 파일 표시 여부 변경 작업은 사용자가 Finder 명령을 실행해야만 실행됩니다. 일괄 이름 변경은 변경 사항을 적용하기 전에 미리 보기를 제공합니다."
+            ]
+          },
+          {
+            "heading": "체크섬 및 암호화된 DMG 파일",
+            "paragraphs": [
+              "선택된 파일에 대해 SHA-256 및 MD5 체크섬이 로컬에서 계산됩니다. MD5는 호환성 체크섬으로만 제공되며 보안 메커니즘으로 사용되지 않습니다.",
+              "암호화된 DMG 생성은 사용자가 시작하며 Apple의 macOS /usr/bin/hdiutil 도구를 AES-256 암호화와 함께 사용합니다. 선택된 항목은 hdiutil에서 읽을 수 있도록 임시 로컬 폴더에 저장됩니다. 아카이브 출력물이 선택된 소스 폴더 내에 있는 경우 해당 출력물은 거부되며, 저장 폴더는 완료 또는 실패 후 삭제됩니다. 암호는 명령줄 인수가 아닌 표준 입력을 통해 hdiutil로 전달됩니다."
+            ]
+          },
+          {
+            "heading": "네트워크 액세스",
+            "paragraphs": [
+              "핵심 기능은 네트워크 접속을 필요로 하지 않습니다. RightMenuBoost에는 계정 시스템, 클라우드 동기화, 개발자 운영 파일 저장소, 광고, 타사 분석 도구, 추적 도메인이 없습니다."
+            ]
+          },
+          {
+            "heading": "결제",
+            "paragraphs": [
+              "RightMenuBoost은 유료 App Store 다운로드로 판매됩니다. 버전 1.0.0에는 인앱 구매, 구독, 구매 복원 기능, 광고 또는 개발자 운영 결제 처리 기능이 포함되어 있지 않습니다. 구매 기록, 환불, 세금, 지역별 가격 책정 및 가족 공유 자격은 Apple 및 App Store에서 처리합니다."
+            ]
+          },
+          {
+            "heading": "지원 요청",
+            "paragraphs": [
+              "kibernet@sina.com 지원팀에 문의하시면 이메일 주소, 앱 버전, macOS 버전, 스크린샷, 로그 또는 문제 설명과 같이 사용자가 직접 보내기로 선택한 정보만 수집합니다.",
+              "비밀번호, 개인 키, 기밀 파일 또는 개인 파일 내용을 보내지 마십시오. 스크린샷에 개인 정보가 포함된 경우 보내기 전에 해당 정보를 삭제하십시오."
+            ]
+          },
+          {
+            "heading": "삭제 및 보존",
+            "paragraphs": [
+              "Mac에서 앱과 관련 로컬 설정을 삭제하면 로컬 환경설정을 제거할 수 있습니다. RightMenuBoost에서 생성, 이름 변경, 복사, 이동, 내보내기 또는 패키징한 파일은 사용자가 저장한 위치에 그대로 유지되며 Finder에서 관리할 수 있습니다."
+            ]
+          },
+          {
+            "heading": "어린이 개인정보 보호",
+            "paragraphs": [
+              "RightMenuBoost은 일반적인 생산성 도구입니다. 어린이를 대상으로 하지 않으며, 어린이 또는 다른 사용자로부터 정보를 고의로 수집하지 않습니다."
+            ]
+          },
+          {
+            "heading": "변경 및 연락처",
+            "paragraphs": [
+              "이 정책이 변경될 경우, 수정된 업데이트 날짜와 함께 업데이트된 버전이 이 페이지에 게시됩니다. 개인정보 보호 관련 문의는 kibernet@sina.com으로 보내주시기 바랍니다."
+            ]
+          }
+        ],
+        "links": [
+          {
+            "label": "지원하다",
+            "href": "../Support/index.html"
+          },
+          {
+            "label": "연령 등급 정보",
+            "href": "../AgeRating/index.html"
+          }
+        ]
+      },
+      "es": {
+        "metaTitle": "Política de privacidad de RightMenuBoost",
+        "description": "Política de privacidad para RightMenuBoost / 右键增强Pro, una herramienta de productividad local Finder para Mac que funciona haciendo clic derecho.",
+        "eyebrow": "RightMenuBoost / 右键增强Pro para Mac",
+        "title": "Política de privacidad",
+        "updated": "Última actualización: 4 de julio de 2026",
+        "intro": "RightMenuBoost / 右键增强Pro es una herramienta de productividad de clic derecho macOS Finder que prioriza lo local. Agrega acciones configurables a los menús contextuales Finder para carpetas comunes, iconos de carpeta, visibilidad de archivos, archivos nuevos, copia de rutas, flujos de trabajo de copia y movimiento, cambio de nombre por lotes, sumas de comprobación, paquetes DMG cifrados, AirDrop, Terminal y apertura de elementos seleccionados con aplicaciones.",
+        "notice": "Resumen: RightMenuBoost no recopila datos personales, no carga archivos seleccionados, no requiere una cuenta, no incluye SDK de publicidad, SDK de análisis ni SDK de seguimiento, y no depende de un servicio en la nube operado por el desarrollador para sus funciones principales.",
+        "sections": [
+          {
+            "heading": "Datos que recopilamos",
+            "paragraphs": [
+              "La versión 1.0.0 no recopila, vende ni comparte datos personales a través de servicios en línea operados por el desarrollador. RightMenuBoost no envía nombres de archivo, rutas de archivo, contenido de archivo, sumas de verificación, historial de menú, análisis de uso, análisis de fallos, identificadores, datos de compra, información de contacto ni diagnósticos a servidores operados por el desarrollador."
+            ]
+          },
+          {
+            "heading": "Datos almacenados localmente",
+            "paragraphs": [
+              "RightMenuBoost almacena las preferencias localmente para que la aplicación principal y la extensión Finder funcionen de forma coherente. Estos ajustes permanecen en tu Mac a menos que decidas eliminarlos."
+            ],
+            "bullets": [
+              "Acciones del clic derecho habilitadas o deshabilitadas.",
+              "Ámbito del menú Finder, como Inicio, carpetas comunes o todos los discos.",
+              "Preferencia Terminal, prefijo de cambio de nombre predeterminado, preferencia de alerta de finalización, idioma de interfaz seleccionado y estado de incorporación.",
+              "Configuración de extensión local Finder compartida a través de UserDefaults y App Group group.com.kibernet.RightMenuBoost."
+            ]
+          },
+          {
+            "heading": "Finder Acceso a la extensión y a los archivos",
+            "paragraphs": [
+              "RightMenuBoost funciona solo después de iniciar la aplicación y habilitar su extensión Finder en macOS si el sistema solicita aprobación. La extensión actúa sobre los archivos o carpetas que seleccione en Finder, o sobre la carpeta Finder actual al ejecutar un comando del menú contextual.",
+              "Las operaciones con archivos se realizan localmente en tu Mac. RightMenuBoost no escanea el disco en segundo plano ni sube los archivos seleccionados a un servidor."
+            ]
+          },
+          {
+            "heading": "Flujos de trabajo del portapapeles y los archivos",
+            "paragraphs": [
+              "Los comandos de copia de ruta y suma de comprobación colocan el texto solicitado en el portapapeles del sistema solo después de que usted seleccione esas acciones. Las acciones de creación de archivos, copia, movimiento, organización, cambio de nombre por lotes, icono de carpeta y visibilidad de archivos se ejecutan únicamente mediante comandos Finder invocados por el usuario. El cambio de nombre por lotes proporciona una vista previa antes de que se apliquen los cambios."
+            ]
+          },
+          {
+            "heading": "Sumas de verificación y archivos DMG cifrados",
+            "paragraphs": [
+              "Las sumas de verificación SHA-256 y MD5 se calculan localmente para los archivos seleccionados. MD5 se proporciona únicamente como suma de verificación de compatibilidad y no se utiliza como mecanismo de seguridad.",
+              "La creación cifrada de DMG es iniciada por el usuario y utiliza la herramienta macOS /usr/bin/hdiutil de Apple con cifrado AES-256. Los elementos seleccionados se almacenan temporalmente en una carpeta local para que hdiutil pueda leerlos; la salida del archivo se rechaza si se encuentra dentro de las carpetas de origen seleccionadas, y la carpeta de almacenamiento temporal se elimina tras la finalización o el fallo. Las contraseñas se pasan a hdiutil mediante la entrada estándar en lugar de argumentos de línea de comandos."
+            ]
+          },
+          {
+            "heading": "Acceso a la red",
+            "paragraphs": [
+              "Las funciones principales no requieren acceso a la red. RightMenuBoost no tiene sistema de cuentas, ni sincronización en la nube, ni almacenamiento de archivos gestionado por el desarrollador, ni anuncios, ni análisis de terceros, ni dominios de seguimiento."
+            ]
+          },
+          {
+            "heading": "Pagos",
+            "paragraphs": [
+              "RightMenuBoost se vende como una descarga de pago de App Store. La versión 1.0.0 no incluye compras dentro de la aplicación, suscripciones, flujos de restauración de compras, anuncios ni procesamiento de pagos operado por el desarrollador. Los registros de compra, reembolsos, impuestos, precios regionales y la elegibilidad para Compartir en familia se gestionan mediante Apple y App Store."
+            ]
+          },
+          {
+            "heading": "Solicitudes de soporte",
+            "paragraphs": [
+              "Si se comunica con el soporte en kibernet@sina.com, solo recibimos la información que usted elige enviar, como su dirección de correo electrónico, versión de la aplicación, versión de macOS, capturas de pantalla, registros o descripción del problema.",
+              "No envíe contraseñas, claves privadas, archivos confidenciales ni el contenido de archivos privados. Si una captura de pantalla contiene información privada, censúrela antes de enviarla."
+            ]
+          },
+          {
+            "heading": "Eliminación y retención",
+            "paragraphs": [
+              "Puedes eliminar las preferencias locales borrando la aplicación y su configuración local relacionada de tu Mac. Los archivos creados, renombrados, copiados, movidos, exportados o empaquetados por RightMenuBoost permanecen donde hayas elegido guardarlos y se pueden administrar en Finder."
+            ]
+          },
+          {
+            "heading": "Privacidad de los niños",
+            "paragraphs": [
+              "RightMenuBoost es una herramienta de productividad general. No está dirigida a niños y no recopila información de niños ni de ningún otro usuario de forma intencionada."
+            ]
+          },
+          {
+            "heading": "Cambios y contacto",
+            "paragraphs": [
+              "Si esta política cambia, la versión actualizada se publicará en esta página con la fecha de actualización revisada. Las preguntas sobre privacidad pueden enviarse a kibernet@sina.com."
+            ]
+          }
+        ],
+        "links": [
+          {
+            "label": "Apoyo",
+            "href": "../Support/index.html"
+          },
+          {
+            "label": "Información sobre la clasificación por edades",
+            "href": "../AgeRating/index.html"
+          }
+        ]
+      },
+      "fr": {
+        "metaTitle": "Politique de confidentialité de RightMenuBoost",
+        "description": "Politique de confidentialité pour RightMenuBoost / 右键增强Pro, un outil de productivité Finder basé sur le clic droit et privilégiant le local pour Mac.",
+        "eyebrow": "RightMenuBoost / 右键增强Pro pour Mac",
+        "title": "Politique de confidentialité",
+        "updated": "Dernière mise à jour: 4 juillet 2026",
+        "intro": "RightMenuBoost / 右键增强Pro est un outil de productivité local macOS Finder accessible par clic droit. Il ajoute des actions configurables aux menus contextuels Finder pour les dossiers courants, les icônes de dossiers, la visibilité des fichiers, les nouveaux fichiers, la copie de chemins, les flux de travail de copie et de déplacement, le renommage par lots, les sommes de contrôle, les packages DMG chiffrés, AirDrop, Terminal et l'ouverture des éléments sélectionnés avec des applications.",
+        "notice": "Résumé: RightMenuBoost ne collecte pas de données personnelles, ne télécharge pas de fichiers sélectionnés, ne nécessite pas de compte, n'inclut pas de SDK publicitaires, de SDK d'analyse ou de SDK de suivi, et ne dépend pas d'un service cloud exploité par un développeur pour ses fonctionnalités principales.",
+        "sections": [
+          {
+            "heading": "Données que nous collectons",
+            "paragraphs": [
+              "La version 1.0.0 ne collecte, ne vend ni ne partage de données personnelles via les services en ligne gérés par les développeurs. RightMenuBoost n'envoie aucun nom de fichier, chemin d'accès, contenu, somme de contrôle, historique des menus, statistiques d'utilisation, analyses de plantage, identifiants, données d'achat, informations de contact ni diagnostics aux serveurs des développeurs."
+            ]
+          },
+          {
+            "heading": "Données stockées localement",
+            "paragraphs": [
+              "RightMenuBoost enregistre les préférences localement afin que l’application principale et l’extension Finder fonctionnent de manière cohérente. Ces paramètres restent sur votre Mac, sauf si vous choisissez de les supprimer."
+            ],
+            "bullets": [
+              "Actions du clic droit activées ou désactivées.",
+              "Finder Portée du menu, comme Accueil, dossiers communs ou tous les disques.",
+              "Terminal préférence, préfixe de renommage par défaut, préférence d'alerte d'achèvement, langue d'interface sélectionnée et état d'intégration.",
+              "Paramètres d'extension locaux Finder partagés via UserDefaults et App Group group.com.kibernet.RightMenuBoost."
+            ]
+          },
+          {
+            "heading": "Finder Extension et accès aux fichiers",
+            "paragraphs": [
+              "RightMenuBoost ne fonctionne qu'après le lancement de l'application et l'activation de son extension Finder dans macOS si le système le demande. L'extension agit sur les fichiers ou dossiers sélectionnés dans Finder, ou sur le dossier Finder courant lors de l'utilisation d'une commande du menu contextuel.",
+              "Les opérations sur les fichiers sont effectuées localement sur votre Mac. RightMenuBoost n'analyse pas le disque en arrière-plan et ne télécharge pas les fichiers sélectionnés sur un serveur."
+            ]
+          },
+          {
+            "heading": "Flux de travail du presse-papiers et des fichiers",
+            "paragraphs": [
+              "Les commandes de copie de chemin et de somme de contrôle placent le texte demandé dans le presse-papiers système uniquement après que vous ayez sélectionné ces actions. Les actions de création de fichier, de copie, de déplacement, d'organisation, de renommage par lots, d'icône de dossier et de visibilité des fichiers ne s'exécutent que suite à des commandes Finder lancées par l'utilisateur. Le renommage par lots offre un aperçu avant l'application des modifications."
+            ]
+          },
+          {
+            "heading": "Sommes de contrôle et fichiers chiffrés DMG",
+            "paragraphs": [
+              "Les sommes de contrôle SHA-256 et MD5 sont calculées localement pour les fichiers sélectionnés. MD5 est fournie uniquement comme somme de contrôle de compatibilité et n'est pas utilisée comme mécanisme de sécurité.",
+              "La création chiffrée DMG est initiée par l'utilisateur et utilise l'outil macOS /usr/bin/hdiutil de Apple avec le chiffrement AES-256. Les éléments sélectionnés sont stockés dans un dossier local temporaire afin que hdiutil puisse les lire. L'archive est rejetée si elle se trouve dans les dossiers sources sélectionnés, et le dossier temporaire est supprimé une fois l'opération terminée ou en cas d'échec. Les mots de passe sont transmis à hdiutil via l'entrée standard et non via les arguments de la ligne de commande."
+            ]
+          },
+          {
+            "heading": "Accès au réseau",
+            "paragraphs": [
+              "Les fonctionnalités principales ne nécessitent pas d'accès réseau. RightMenuBoost ne comporte aucun système de compte, aucune synchronisation cloud, aucun stockage de fichiers géré par le développeur, aucune publicité, aucun outil d'analyse tiers et aucun domaine de suivi."
+            ]
+          },
+          {
+            "heading": "Paiements",
+            "paragraphs": [
+              "RightMenuBoost est vendu en téléchargement payant App Store. La version 1.0.0 ne comprend pas d'achats intégrés, d'abonnements, de procédure de remboursement, de publicités ni de système de paiement géré par le développeur. L'historique des achats, les remboursements, les taxes, les prix régionaux et l'éligibilité au partage familial sont gérés par Apple et App Store."
+            ]
+          },
+          {
+            "heading": "Demandes d'assistance",
+            "paragraphs": [
+              "Si vous contactez l'assistance à kibernet@sina.com, nous ne recevons que les informations que vous choisissez d'envoyer, telles que votre adresse e-mail, la version de l'application, la version de macOS, les captures d'écran, les journaux ou la description du problème.",
+              "Ne transmettez pas de mots de passe, de clés privées, de fichiers confidentiels ni leur contenu. Si une capture d'écran contient des informations privées, masquez-les avant de l'envoyer."
+            ]
+          },
+          {
+            "heading": "Suppression et conservation",
+            "paragraphs": [
+              "Vous pouvez supprimer les préférences locales en supprimant l'application et ses paramètres locaux associés de votre Mac. Les fichiers créés, renommés, copiés, déplacés, exportés ou empaquetés par RightMenuBoost restent à l'emplacement où vous avez choisi de les enregistrer et peuvent être gérés dans Finder."
+            ]
+          },
+          {
+            "heading": "Protection de la vie privée des enfants",
+            "paragraphs": [
+              "RightMenuBoost est un utilitaire de productivité général. Il n'est pas destiné aux enfants et ne collecte pas sciemment d'informations auprès d'enfants ou d'autres utilisateurs."
+            ]
+          },
+          {
+            "heading": "Changements et contact",
+            "paragraphs": [
+              "En cas de modification de cette politique, la version mise à jour sera publiée sur cette page avec une nouvelle date de mise à jour. Pour toute question relative à la protection de la vie privée, veuillez contacter kibernet@sina.com."
+            ]
+          }
+        ],
+        "links": [
+          {
+            "label": "Soutien",
+            "href": "../Support/index.html"
+          },
+          {
+            "label": "Informations sur la classification par âge",
+            "href": "../AgeRating/index.html"
+          }
+        ]
+      },
+      "de": {
+        "metaTitle": "RightMenuBoost Datenschutzrichtlinie",
+        "description": "Datenschutzerklärung für RightMenuBoost / 右键增强Pro, ein lokales Finder Rechtsklick-Produktivitätstool für Mac.",
+        "eyebrow": "RightMenuBoost / 右键增强Pro für Mac",
+        "title": "Datenschutzrichtlinie",
+        "updated": "Letzte Aktualisierung: 4. Juli 2026",
+        "intro": "RightMenuBoost / 右键增强Pro ist ein lokal ausgerichtetes macOS Finder Produktivitätstool, das per Rechtsklick bedient wird. Es fügt den Kontextmenüs Finder konfigurierbare Aktionen für häufig verwendete Ordner, Ordnersymbole, Dateisichtbarkeit, neue Dateien, Pfadkopieren, Kopier- und Verschiebe-Workflows, Stapelumbenennung, Prüfsummen, verschlüsselte DMG Pakete, AirDrop, Terminal und das Öffnen ausgewählter Elemente mit Apps hinzu.",
+        "notice": "Zusammenfassung: RightMenuBoost sammelt keine personenbezogenen Daten, lädt keine ausgewählten Dateien hoch, benötigt kein Konto, enthält keine Werbe-SDKs, Analyse-SDKs oder Tracking-SDKs und ist für Kernfunktionen nicht auf einen vom Entwickler betriebenen Cloud-Dienst angewiesen.",
+        "sections": [
+          {
+            "heading": "Daten, die wir sammeln",
+            "paragraphs": [
+              "Version 1.0.0 erhebt, verkauft oder teilt keine personenbezogenen Daten über vom Entwickler betriebene Online-Dienste. RightMenuBoost sendet keine Dateinamen, Dateipfade, Dateiinhalte, Prüfsummen, Menüverlauf, Nutzungsanalysen, Absturzanalysen, Kennungen, Kaufdaten, Kontaktinformationen oder Diagnosedaten an vom Entwickler betriebene Server."
+            ]
+          },
+          {
+            "heading": "Daten lokal gespeichert",
+            "paragraphs": [
+              "RightMenuBoost speichert Einstellungen lokal, damit die Haupt-App und die Erweiterung Finder einheitlich funktionieren. Diese Einstellungen bleiben auf Ihrem Mac gespeichert, sofern Sie sie nicht löschen."
+            ],
+            "bullets": [
+              "Aktivierte oder deaktivierte Rechtsklick-Aktionen.",
+              "Finder Menübereich, z. B. Home, allgemeine Ordner oder alle Datenträger.",
+              "Terminal-Präferenz, Standard-Umbenennungspräfix, Präferenz für Abschlussbenachrichtigungen, ausgewählte Schnittstellensprache und Onboarding-Status.",
+              "Lokale Finder-Erweiterungseinstellungen, die über UserDefaults und die App Group group.com.kibernet.RightMenuBoost geteilt werden."
+            ]
+          },
+          {
+            "heading": "Finder Erweiterung und Dateizugriff",
+            "paragraphs": [
+              "RightMenuBoost funktioniert erst, nachdem Sie die App gestartet und die Erweiterung Finder in macOS aktiviert haben, falls das System eine Bestätigung anfordert. Die Erweiterung wirkt sich auf Dateien oder Ordner aus, die Sie in Finder auswählen, oder auf den aktuellen Ordner Finder, wenn Sie einen Kontextmenübefehl aufrufen.",
+              "Dateivorgänge werden lokal auf Ihrem Mac ausgeführt. RightMenuBoost scannt die Festplatte nicht im Hintergrund und lädt ausgewählte Dateien nicht auf einen Server hoch."
+            ]
+          },
+          {
+            "heading": "Zwischenablage- und Datei-Workflows",
+            "paragraphs": [
+              "Befehle zum Kopieren von Pfaden und zur Berechnung von Prüfsummen fügen den angeforderten Text erst dann in die Zwischenablage ein, wenn Sie diese Aktionen auswählen. Aktionen wie „Neue Datei“, „Kopieren“, „Verschieben“, „Organisieren“, „Stapelumbenennen“, „Ordnersymbol“ und „Dateisichtbarkeit“ werden nur durch vom Benutzer aufgerufene Befehle (Finder) ausgeführt. Beim Stapelumbenennen wird eine Vorschau angezeigt, bevor die Änderungen angewendet werden."
+            ]
+          },
+          {
+            "heading": "Prüfsummen und verschlüsselte DMG-Dateien",
+            "paragraphs": [
+              "Die Prüfsummen SHA-256 und MD5 werden lokal für ausgewählte Dateien berechnet. MD5 dient lediglich der Kompatibilitätsprüfung und wird nicht als Sicherheitsmechanismus verwendet.",
+              "Die Erstellung verschlüsselter DMG-Dateien erfolgt benutzerinitiiert und verwendet das macOS /usr/bin/hdiutil-Tool von Apple mit AES-256-Verschlüsselung. Ausgewählte Elemente werden in einem temporären lokalen Ordner zwischengespeichert, damit hdiutil sie lesen kann. Die Archivausgabe wird verworfen, wenn sie sich in den ausgewählten Quellordnern befindet. Der Zwischenordner wird nach Abschluss oder Fehler gelöscht. Passwörter werden hdiutil über die Standardeingabe anstatt über Kommandozeilenargumente übergeben."
+            ]
+          },
+          {
+            "heading": "Netzwerkzugriff",
+            "paragraphs": [
+              "Die Kernfunktionen benötigen keinen Netzwerkzugriff. RightMenuBoost verfügt über kein Kontosystem, keine Cloud-Synchronisierung, keinen vom Entwickler betriebenen Dateispeicher, keine Werbung, keine Drittanbieter-Analysen und keine Tracking-Domains."
+            ]
+          },
+          {
+            "heading": "Zahlungen",
+            "paragraphs": [
+              "RightMenuBoost wird als kostenpflichtiger Download von App Store angeboten. Version 1.0.0 enthält keine In-App-Käufe, Abonnements, Wiederherstellungsfunktionen für Käufe, Werbung oder eine vom Entwickler betriebene Zahlungsabwicklung. Kaufabwicklung, Rückerstattungen, Steuern, regionale Preise und die Berechtigung zur Familienfreigabe werden von Apple und App Store verwaltet."
+            ]
+          },
+          {
+            "heading": "Supportanfragen",
+            "paragraphs": [
+              "Wenn Sie sich an den Support unter kibernet@sina.com wenden, erhalten wir nur die Informationen, die Sie uns freiwillig übermitteln, wie z. B. Ihre E-Mail-Adresse, App-Version, macOS-Version, Screenshots, Protokolle oder eine Problembeschreibung.",
+              "Senden Sie keine Passwörter, privaten Schlüssel, vertraulichen Dateien oder deren Inhalte. Falls ein Screenshot private Informationen enthält, schwärzen Sie diese vor dem Versenden."
+            ]
+          },
+          {
+            "heading": "Löschung und Aufbewahrung",
+            "paragraphs": [
+              "Lokale Einstellungen können Sie entfernen, indem Sie die App und die zugehörigen lokalen Einstellungen von Ihrem Mac löschen. Dateien, die mit RightMenuBoost erstellt, umbenannt, kopiert, verschoben, exportiert oder verpackt wurden, bleiben an dem von Ihnen gewählten Speicherort erhalten und können in Finder verwaltet werden."
+            ]
+          },
+          {
+            "heading": "Datenschutz für Kinder",
+            "paragraphs": [
+              "RightMenuBoost ist ein allgemeines Produktivitätstool. Es richtet sich nicht an Kinder und sammelt wissentlich keine Informationen von Kindern oder anderen Nutzern."
+            ]
+          },
+          {
+            "heading": "Änderungen und Kontakt",
+            "paragraphs": [
+              "Sollte sich diese Richtlinie ändern, wird die aktualisierte Version mit dem geänderten Aktualisierungsdatum auf dieser Seite veröffentlicht. Fragen zum Datenschutz können an kibernet@sina.com gerichtet werden."
+            ]
+          }
+        ],
+        "links": [
+          {
+            "label": "Unterstützung",
+            "href": "../Support/index.html"
+          },
+          {
+            "label": "Informationen zur Altersfreigabe",
+            "href": "../AgeRating/index.html"
+          }
+        ]
+      }
+    }
+  }
+  </script>
+  <script>
+  (function () {
+    const dataElement = document.getElementById("page-data");
+    const content = document.getElementById("localized-content");
+    const selector = document.getElementById("language-select");
+    const languageLabel = document.getElementById("language-label");
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (!dataElement || !content || !selector) return;
+
+    const data = JSON.parse(dataElement.textContent);
+    const storageKey = "rightmenuboost-page-language";
+    const languageCodes = new Set(data.languages.map((language) => language.code));
+
+    function normalizeLanguage(value) {
+      if (!value) return "";
+      const lowered = String(value).trim().toLowerCase();
+      if (!lowered) return "";
+      if (lowered === "zh" || lowered === "zh-cn" || lowered === "zh-hans" || lowered.startsWith("zh-cn") || lowered.startsWith("zh-sg")) return "zh-Hans";
+      if (lowered === "zh-tw" || lowered === "zh-hant" || lowered.startsWith("zh-tw") || lowered.startsWith("zh-hk") || lowered.startsWith("zh-mo")) return "zh-Hant";
+      const exact = data.languages.find((language) => language.code.toLowerCase() === lowered || language.htmlLang.toLowerCase() === lowered);
+      if (exact) return exact.code;
+      const base = lowered.split("-")[0];
+      const byBase = data.languages.find((language) => language.code.toLowerCase().split("-")[0] === base);
+      return byBase ? byBase.code : "";
+    }
+
+    function requestedLanguage() {
+      const fromHash = normalizeLanguage(window.location.hash.replace(/^#/, ""));
+      if (fromHash && languageCodes.has(fromHash)) return fromHash;
+      try {
+        const stored = normalizeLanguage(localStorage.getItem(storageKey));
+        if (stored && languageCodes.has(stored)) return stored;
+      } catch (_) {}
+      const browserLanguages = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || "en"];
+      for (const value of browserLanguages) {
+        const normalized = normalizeLanguage(value);
+        if (normalized && languageCodes.has(normalized)) return normalized;
+      }
+      return data.defaultLanguage;
+    }
+
+    function required(value, path) {
+      if (typeof value === "string" && value.trim()) return value;
+      console.error("Missing localized string", path);
+      return `[missing:${path}]`;
+    }
+
+    function appendText(tagName, className, text, parent) {
+      const element = document.createElement(tagName);
+      if (className) element.className = className;
+      element.textContent = text;
+      parent.appendChild(element);
+      return element;
+    }
+
+    function appendList(items, parent, path) {
+      if (!Array.isArray(items)) return;
+      const list = document.createElement("ul");
+      items.forEach((item, index) => appendText("li", "", required(item, `${path}.${index}`), list));
+      parent.appendChild(list);
+    }
+
+    function appendCards(cards, parent, path) {
+      if (!Array.isArray(cards)) return;
+      const grid = document.createElement("div");
+      grid.className = "cards";
+      cards.forEach((card, index) => {
+        const item = document.createElement("div");
+        item.className = "card";
+        appendText("strong", "", required(card.title, `${path}.${index}.title`), item);
+        if (card.href) {
+          const link = document.createElement("a");
+          link.href = card.href;
+          link.textContent = required(card.value, `${path}.${index}.value`);
+          item.appendChild(link);
+        } else {
+          appendText("span", "", required(card.value, `${path}.${index}.value`), item);
+        }
+        grid.appendChild(item);
+      });
+      parent.appendChild(grid);
+    }
+
+    function appendTable(table, parent, path) {
+      if (!table || !Array.isArray(table.headers) || !Array.isArray(table.rows)) return;
+      const element = document.createElement("table");
+      const headerRow = document.createElement("tr");
+      table.headers.forEach((header, index) => appendText("th", "", required(header, `${path}.headers.${index}`), headerRow));
+      element.appendChild(headerRow);
+      table.rows.forEach((row, rowIndex) => {
+        const tr = document.createElement("tr");
+        row.forEach((cell, cellIndex) => appendText("td", "", required(cell, `${path}.rows.${rowIndex}.${cellIndex}`), tr));
+        element.appendChild(tr);
+      });
+      parent.appendChild(element);
+    }
+
+    function appendLinks(links, parent, languageCode) {
+      if (!Array.isArray(links)) return;
+      const row = document.createElement("div");
+      row.className = "link-row";
+      links.forEach((item, index) => {
+        const link = document.createElement("a");
+        link.className = "pill";
+        link.href = localizedUrl(item.href, languageCode);
+        link.textContent = required(item.label, `links.${index}.label`);
+        row.appendChild(link);
+      });
+      parent.appendChild(row);
+    }
+
+    function localizedUrl(path, languageCode) {
+      if (!path) return "#";
+      return languageCode === data.defaultLanguage ? path : `${path}#${languageCode}`;
+    }
+
+    function shape(value) {
+      if (Array.isArray(value)) return value.map(shape);
+      if (value && typeof value === "object") {
+        return Object.keys(value).sort().reduce((result, key) => {
+          if (key !== "href") result[key] = shape(value[key]);
+          return result;
+        }, {});
+      }
+      return typeof value;
+    }
+
+    function validateData() {
+      const requiredCodes = data.languages.map((language) => language.code);
+      const referenceContentShape = JSON.stringify(shape(data.content[data.defaultLanguage]));
+      const referenceUiShape = JSON.stringify(shape(data.ui[data.defaultLanguage]));
+      const errors = [];
+      requiredCodes.forEach((code) => {
+        if (!data.content[code]) errors.push(`missing content ${code}`);
+        if (!data.ui[code]) errors.push(`missing ui ${code}`);
+        if (data.content[code] && JSON.stringify(shape(data.content[code])) !== referenceContentShape) errors.push(`content shape mismatch ${code}`);
+        if (data.ui[code] && JSON.stringify(shape(data.ui[code])) !== referenceUiShape) errors.push(`ui shape mismatch ${code}`);
+      });
+      if (errors.length) console.error("RightMenuBoost localization validation failed", errors);
+    }
+
+    function render(languageCode) {
+      const language = data.languages.find((item) => item.code === languageCode) || data.languages.find((item) => item.code === data.defaultLanguage);
+      const code = language.code;
+      const ui = data.ui[code];
+      const page = data.content[code];
+      if (!ui || !page) {
+        content.textContent = `[missing-locale:${code}]`;
+        return;
+      }
+
+      document.documentElement.lang = language.htmlLang;
+      document.documentElement.dir = language.dir;
+      document.title = required(page.metaTitle, `${code}.metaTitle`);
+      if (metaDescription) metaDescription.setAttribute("content", required(page.description, `${code}.description`));
+      if (languageLabel) languageLabel.textContent = required(ui.language, `${code}.ui.language`);
+      selector.setAttribute("aria-label", required(ui.chooseLanguage, `${code}.ui.chooseLanguage`));
+      selector.value = code;
+
+      const navPrivacy = document.querySelector('[data-nav="privacy"]');
+      const navSupport = document.querySelector('[data-nav="support"]');
+      const navAge = document.querySelector('[data-nav="age"]');
+      if (navPrivacy) { navPrivacy.textContent = required(ui.privacy, `${code}.ui.privacy`); navPrivacy.href = localizedUrl("../Privacy/index.html", code); }
+      if (navSupport) { navSupport.textContent = required(ui.support, `${code}.ui.support`); navSupport.href = localizedUrl("../Support/index.html", code); }
+      if (navAge) { navAge.textContent = required(ui.age, `${code}.ui.age`); navAge.href = localizedUrl("../AgeRating/index.html", code); }
+
+      content.replaceChildren();
+      appendText("p", "eyebrow", required(page.eyebrow, `${code}.eyebrow`), content);
+      appendText("h1", "", required(page.title, `${code}.title`), content);
+      appendText("p", "updated", required(page.updated, `${code}.updated`), content);
+      appendText("p", "intro", required(page.intro, `${code}.intro`), content);
+      if (page.rating) appendText("div", "rating", required(page.rating, `${code}.rating`), content);
+      if (page.notice) {
+        const notice = document.createElement("div");
+        notice.className = "notice";
+        appendText("p", "", required(page.notice, `${code}.notice`), notice);
+        content.appendChild(notice);
+      }
+      appendCards(page.cards, content, `${code}.cards`);
+      (page.sections || []).forEach((section, sectionIndex) => {
+        const block = document.createElement("section");
+        appendText("h2", "", required(section.heading, `${code}.sections.${sectionIndex}.heading`), block);
+        (section.paragraphs || []).forEach((paragraph, paragraphIndex) => appendText("p", "", required(paragraph, `${code}.sections.${sectionIndex}.paragraphs.${paragraphIndex}`), block));
+        appendList(section.bullets, block, `${code}.sections.${sectionIndex}.bullets`);
+        appendTable(section.table, block, `${code}.sections.${sectionIndex}.table`);
+        (section.faq || []).forEach((item, itemIndex) => {
+          appendText("h3", "", required(item.question, `${code}.sections.${sectionIndex}.faq.${itemIndex}.question`), block);
+          appendText("p", "", required(item.answer, `${code}.sections.${sectionIndex}.faq.${itemIndex}.answer`), block);
+        });
+        content.appendChild(block);
+      });
+      appendLinks(page.links, content, code);
+      try { localStorage.setItem(storageKey, code); } catch (_) {}
+    }
+
+    validateData();
+    data.languages.forEach((language) => {
+      const option = document.createElement("option");
+      option.value = language.code;
+      option.textContent = language.label;
+      selector.appendChild(option);
+    });
+    selector.addEventListener("change", () => {
+      const code = normalizeLanguage(selector.value) || data.defaultLanguage;
+      history.replaceState(null, "", code === data.defaultLanguage ? window.location.pathname : `#${code}`);
+      render(code);
+    });
+    window.addEventListener("hashchange", () => render(requestedLanguage()));
+    render(requestedLanguage());
+  })();
+  </script>
+</body>
+</html>

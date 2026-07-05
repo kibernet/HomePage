@@ -1,754 +1,1104 @@
 <!doctype html>
-<html lang="zh-Hans">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>净像师适龄信息</title>
-  <meta name="description" content="净像师 LuminaSage 适龄分级说明。净像师是本地 AI 图片修复工具，建议 4+。">
+  <title>LuminaSage Age Rating Information</title>
+  <meta name="description" content="Age rating information for LuminaSage, a local AI image repair utility. Suggested rating: 4+.">
   <style>
     :root {
       color-scheme: dark light;
-      --panel: rgba(17, 24, 39, 0.78);
+      --bg: #0d1117;
+      --panel: rgba(17, 24, 39, 0.94);
+      --panel-soft: rgba(31, 41, 55, 0.74);
       --text: #f8fafc;
       --muted: #cbd5e1;
+      --quiet: #94a3b8;
       --line: rgba(148, 163, 184, 0.24);
-      --accent: #2dd4bf;
+      --accent: #5eead4;
+      --accent-2: #f6c96f;
+      --ok: #86efac;
+      --shadow: rgba(0, 0, 0, 0.32);
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f7fafc;
+        --panel: rgba(255, 255, 255, 0.98);
+        --panel-soft: rgba(248, 250, 252, 0.94);
+        --text: #111827;
+        --muted: #334155;
+        --quiet: #64748b;
+        --line: rgba(15, 23, 42, 0.14);
+        --accent: #0f766e;
+        --accent-2: #8a6100;
+        --ok: #047857;
+        --shadow: rgba(15, 23, 42, 0.10);
+      }
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
       min-height: 100vh;
-      font-family: Inter, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
-      line-height: 1.7;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+      line-height: 1.65;
+      letter-spacing: 0;
       color: var(--text);
-      background:
-        radial-gradient(circle at 18% 0%, rgba(45, 212, 191, 0.18), transparent 34rem),
-        radial-gradient(circle at 88% 12%, rgba(96, 165, 250, 0.14), transparent 30rem),
-        linear-gradient(135deg, #071314, #111827 50%, #0f172a);
+      background: linear-gradient(135deg, var(--bg) 0%, #121826 100%);
     }
-    .page { width: min(920px, calc(100% - 40px)); margin: 0 auto; padding: 56px 0; }
-    .document {
-      padding: clamp(24px, 5vw, 48px);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      background: var(--panel);
-      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.34);
-      backdrop-filter: blur(22px);
-    }
-    .toolbar { display: flex; justify-content: flex-end; margin-bottom: 22px; }
-    select {
-      max-width: 100%;
-      color: var(--text);
-      background: rgba(15, 23, 42, 0.82);
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      padding: 8px 12px;
-      font: inherit;
-    }
-    h1, h2, h3 { line-height: 1.18; letter-spacing: 0; }
-    h1 { margin: 0 0 10px; font-size: clamp(2rem, 5vw, 3.35rem); font-weight: 700; }
-    h2 { margin: 34px 0 10px; font-size: 1.12rem; font-weight: 700; }
-    h3 { margin: 22px 0 6px; font-size: 1rem; font-weight: 700; }
-    p, li, td, th { color: var(--muted); font-size: 1rem; }
-    ul { padding-left: 1.25rem; }
+    @media (prefers-color-scheme: light) { body { background: #f7fafc; } }
+    .page { width: min(1040px, calc(100% - 40px)); margin: 0 auto; padding: 40px 0; }
+    .shell { border: 1px solid var(--line); border-radius: 14px; background: var(--panel); box-shadow: 0 24px 72px var(--shadow); overflow: hidden; }
+    .topbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 22px; border-bottom: 1px solid var(--line); background: var(--panel-soft); }
+    .brand { display: inline-flex; align-items: center; gap: 10px; min-width: max-content; color: var(--text); text-decoration: none; font-weight: 760; }
+    .mark { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border: 1px solid color-mix(in srgb, var(--accent) 44%, transparent); border-radius: 8px; color: var(--accent); background: color-mix(in srgb, var(--accent) 12%, transparent); font-size: 0.84rem; font-weight: 820; }
+    .nav { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 8px; }
+    .nav a, .language-control { border: 1px solid var(--line); border-radius: 8px; background: rgba(255,255,255,0.04); color: var(--muted); text-decoration: none; font-size: 0.94rem; }
+    .nav a { padding: 7px 10px; }
+    .nav a[aria-current="page"] { color: var(--text); border-color: color-mix(in srgb, var(--accent) 45%, var(--line)); background: color-mix(in srgb, var(--accent) 11%, transparent); }
+    .language-control { display: inline-flex; align-items: center; gap: 8px; padding: 6px 8px; }
+    .language-control label { color: var(--quiet); font-size: 0.88rem; white-space: nowrap; }
+    .language-control select { min-width: 176px; border: 0; outline: 0; background: transparent; color: var(--text); font: inherit; font-size: 0.94rem; }
+    .language-control option { color: #111827; background: #ffffff; }
+    .content { padding: 44px; }
+    h1, h2, h3 { line-height: 1.15; letter-spacing: 0; }
+    h1 { margin: 0 0 12px; font-size: 2.65rem; font-weight: 780; }
+    h2 { margin: 34px 0 12px; font-size: 1.23rem; font-weight: 740; }
+    h3 { margin: 22px 0 8px; color: var(--accent-2); font-size: 1rem; font-weight: 720; }
+    p, li, td, th { color: var(--muted); font-size: 1rem; overflow-wrap: anywhere; }
+    p { margin: 0 0 14px; }
+    ul { margin: 10px 0 0; padding-left: 1.25rem; }
     a { color: var(--accent); overflow-wrap: anywhere; }
-    .eyebrow { margin: 0 0 24px; color: var(--accent); font-weight: 700; }
-    .updated { margin-top: 0; color: #94a3b8; font-size: 0.95rem; }
-    .contact { display: inline-flex; align-items: center; gap: 10px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 12px; background: rgba(15, 23, 42, 0.44); }
-    .badge { display: inline-flex; margin-top: 12px; padding: 8px 12px; border-radius: 999px; color: #062321; background: var(--accent); font-weight: 800; }
-    table { width: 100%; border-collapse: collapse; margin-top: 16px; overflow: hidden; border-radius: 12px; }
-    th, td { text-align: left; border-bottom: 1px solid var(--line); padding: 12px 10px; vertical-align: top; }
-    th { color: var(--text); background: rgba(15, 23, 42, 0.55); }
-    [dir="rtl"] th, [dir="rtl"] td { text-align: right; }
+    .eyebrow { margin: 0 0 24px; color: var(--accent); font-weight: 760; }
+    .updated { color: var(--quiet); font-size: 0.95rem; }
+    .intro { font-size: 1.05rem; }
+    .notice { margin: 24px 0; padding: 16px 18px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel-soft); }
+    .notice p { margin: 0; }
+    .contact { display: inline-flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 14px 0 12px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel-soft); }
+    .faq-item { margin: 16px 0; padding: 15px 16px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel-soft); }
+    .faq-item h3 { margin-top: 0; }
+    table { width: 100%; margin-top: 20px; border-collapse: separate; border-spacing: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 8px; background: var(--panel-soft); }
+    th, td { padding: 12px 14px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    tr:last-child td { border-bottom: 0; }
+    th { color: var(--text); background: color-mix(in srgb, var(--accent) 10%, transparent); font-weight: 740; }
+    .rating { display: inline-flex; align-items: center; justify-content: center; margin: 20px 0 8px; padding: 10px 14px; border: 1px solid color-mix(in srgb, var(--ok) 42%, transparent); border-radius: 8px; color: var(--ok); background: color-mix(in srgb, var(--ok) 10%, transparent); font-weight: 780; }
+    .link-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+    .pill { display: inline-flex; align-items: center; padding: 8px 11px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel-soft); color: var(--text); text-decoration: none; }
+    @media (max-width: 760px) {
+      .page { width: min(100% - 24px, 1040px); padding: 18px 0; }
+      .topbar { align-items: stretch; flex-direction: column; }
+      .nav { justify-content: flex-start; }
+      .language-control { width: 100%; justify-content: space-between; }
+      .language-control select { min-width: 0; width: 100%; }
+      .content { padding: 26px 20px; }
+      h1 { font-size: 2.05rem; }
+    }
 
   </style>
 </head>
 <body>
-  <main class="page">
-    <article class="document">
-      <div class="toolbar">
-        <label><span id="languageLabel">语言</span>
-          <select id="languageSelect" aria-label="Language">
-            <option value="zh-Hans">简体中文</option>
-            <option value="en">English</option>
-            <option value="ja">日本語</option>
-            <option value="ko">한국어</option>
-            <option value="fr">Français</option>
-            <option value="de">Deutsch</option>
-            <option value="es">Español</option>
-            <option value="pt">Português</option>
-          </select>
-        </label>
-      </div>
-      <p class="eyebrow" data-i18n="eyebrow"></p>
-      <h1 data-i18n="title"></h1>
-      <p data-i18n="intro"></p>
-      <span class="badge" data-i18n="rating"></span>
-      <div id="content"></div>
-    </article>
-  </main>
-  <script>
-    const privacyLink = '<a href="https://kibernet.github.io/HomePage/AppPages/LuminaSage/Privacy/index.html">https://kibernet.github.io/HomePage/AppPages/LuminaSage/Privacy/index.html</a>';
-    const emailLink = '<a href="mailto:kibernet@sina.com">kibernet@sina.com</a>';
-    const translations = {
-  "zh-Hans": {
-    "languageLabel": "语言",
-    "eyebrow": "净像师 LuminaSage，适用于 iPhone、iPad 和 Mac",
-    "title": "适龄分级信息",
-    "intro": "净像师是一款本地 AI 图片修复与图像补全工具。应用不包含社交、赌博、浏览器、广告、用户生成内容社区或在线聊天功能。",
-    "rating": "建议年龄分级：4+",
-    "headers": [
-      "类别",
-      "净像师状态"
-    ],
-    "rows": [
-      [
-        "卡通或幻想暴力",
-        "无"
-      ],
-      [
-        "现实暴力",
-        "无"
-      ],
-      [
-        "成人或性暗示内容",
-        "无"
-      ],
-      [
-        "裸露",
-        "无"
-      ],
-      [
-        "粗俗语言或成人幽默",
-        "无"
-      ],
-      [
-        "酒精、烟草或毒品相关内容",
-        "无"
-      ],
-      [
-        "医疗或治疗信息",
-        "无"
-      ],
-      [
-        "赌博、竞赛或抽奖",
-        "无"
-      ],
-      [
-        "无限制网页访问",
-        "无"
-      ],
-      [
-        "用户生成内容、聊天或社交功能",
-        "无"
-      ],
-      [
-        "广告或第三方追踪",
-        "无"
-      ],
-      [
-        "账号登录或公开个人资料",
-        "无"
-      ]
-    ],
-    "sections": [
-      [
-        "内容说明",
-        "净像师用于处理用户拥有版权、已获授权或有权编辑的图片。用户不应使用本应用移除无权修改的版权水印、平台标识或权利声明。"
-      ],
-      [
-        "隐私与联网",
-        "当前版本不要求账号，不包含追踪 SDK，并在用户设备本机处理所选图片。隐私政策：${privacyLink}"
-      ],
-      [
-        "分级建议",
-        "基于当前功能范围，建议在 App Store Connect 中选择 4+。最终分级以 App Store Connect 问卷和 Apple 审核结果为准。"
-      ],
-      [
-        "联系",
-        "如对适龄分级信息有疑问，请通过 ${emailLink} 联系我们。"
-      ]
-    ]
+  <div class="page">
+    <div class="shell">
+      <header class="topbar">
+        <a class="brand" href="../Support/index.html"><span class="mark">LS</span><span>LuminaSage</span></a>
+        <nav class="nav" aria-label="LuminaSage pages">
+          <a data-nav="privacy" href="../Privacy/index.html">Privacy</a>
+          <a data-nav="support" href="../Support/index.html">Support</a>
+          <a data-nav="age" aria-current="page" href="../AgeRating/index.html">Age Rating</a>
+          <span class="language-control"><label id="language-label" for="language-select">Language</label><select id="language-select"></select></span>
+        </nav>
+      </header>
+      <main id="localized-content" class="content" role="main"></main>
+    </div>
+  </div>
+  <script type="application/json" id="page-data">
+{
+  "defaultLanguage": "en",
+  "pageType": "age",
+  "languages": [
+    {
+      "code": "zh-Hans",
+      "htmlLang": "zh-CN",
+      "label": "简体中文",
+      "dir": "ltr"
+    },
+    {
+      "code": "zh-Hant",
+      "htmlLang": "zh-TW",
+      "label": "繁體中文",
+      "dir": "ltr"
+    },
+    {
+      "code": "en",
+      "htmlLang": "en",
+      "label": "English",
+      "dir": "ltr"
+    },
+    {
+      "code": "ja",
+      "htmlLang": "ja",
+      "label": "日本語",
+      "dir": "ltr"
+    },
+    {
+      "code": "ko",
+      "htmlLang": "ko",
+      "label": "한국어",
+      "dir": "ltr"
+    },
+    {
+      "code": "es",
+      "htmlLang": "es",
+      "label": "Español",
+      "dir": "ltr"
+    },
+    {
+      "code": "fr",
+      "htmlLang": "fr",
+      "label": "Français",
+      "dir": "ltr"
+    },
+    {
+      "code": "de",
+      "htmlLang": "de",
+      "label": "Deutsch",
+      "dir": "ltr"
+    }
+  ],
+  "ui": {
+    "zh-Hans": {
+      "language": "语言",
+      "chooseLanguage": "选择语言",
+      "privacy": "隐私",
+      "support": "支持",
+      "age": "适龄"
+    },
+    "zh-Hant": {
+      "language": "語言",
+      "chooseLanguage": "選擇語言",
+      "privacy": "隱私",
+      "support": "支援",
+      "age": "適齡"
+    },
+    "en": {
+      "language": "Language",
+      "chooseLanguage": "Choose language",
+      "privacy": "Privacy",
+      "support": "Support",
+      "age": "Age Rating"
+    },
+    "ja": {
+      "language": "言語",
+      "chooseLanguage": "言語を選択",
+      "privacy": "プライバシー",
+      "support": "サポート",
+      "age": "年齢制限"
+    },
+    "ko": {
+      "language": "언어",
+      "chooseLanguage": "언어 선택",
+      "privacy": "개인정보",
+      "support": "지원",
+      "age": "연령 등급"
+    },
+    "es": {
+      "language": "Idioma",
+      "chooseLanguage": "Elegir idioma",
+      "privacy": "Privacidad",
+      "support": "Soporte",
+      "age": "Edad"
+    },
+    "fr": {
+      "language": "Langue",
+      "chooseLanguage": "Choisir la langue",
+      "privacy": "Confidentialité",
+      "support": "Assistance",
+      "age": "Âge"
+    },
+    "de": {
+      "language": "Sprache",
+      "chooseLanguage": "Sprache auswählen",
+      "privacy": "Datenschutz",
+      "support": "Support",
+      "age": "Alter"
+    }
   },
-  "en": {
-    "languageLabel": "Language",
-    "eyebrow": "LuminaSage for iPhone, iPad, and Mac",
-    "title": "Age Rating Information",
-    "intro": "LuminaSage is a local AI image repair and inpainting utility. It does not include social networking, gambling, browser access, advertising, user-generated content communities, or online chat features.",
-    "rating": "Suggested Age Rating: 4+",
-    "headers": [
-      "Category",
-      "LuminaSage Status"
-    ],
-    "rows": [
-      [
-        "Cartoon or fantasy violence",
-        "None"
+  "content": {
+    "zh-Hans": {
+      "documentTitle": "净像师适龄分级信息",
+      "metaDescription": "净像师 LuminaSage 适龄分级说明。当前版本为本地 AI 图片修复工具，建议 4+。",
+      "brand": "净像师",
+      "eyebrow": "净像师 LuminaSage，适用于 iPhone、iPad 和 Mac",
+      "title": "适龄分级信息",
+      "intro": "净像师是一款本地 AI 图片修复与图像补全工具，不包含社交、赌博、浏览器、广告、用户生成内容社区或在线聊天功能。",
+      "rating": "建议年龄分级：4+",
+      "headers": [
+        "类别",
+        "净像师状态"
       ],
-      [
-        "Realistic violence",
-        "None"
+      "rows": [
+        [
+          "卡通或幻想暴力",
+          "无"
+        ],
+        [
+          "现实暴力",
+          "无"
+        ],
+        [
+          "成人或裸露内容",
+          "无"
+        ],
+        [
+          "粗俗语言或成人幽默",
+          "无"
+        ],
+        [
+          "酒精、烟草或毒品相关内容",
+          "无"
+        ],
+        [
+          "医疗或治疗信息",
+          "无"
+        ],
+        [
+          "赌博、竞赛或抽奖",
+          "无"
+        ],
+        [
+          "无限制网页访问",
+          "无"
+        ],
+        [
+          "用户生成内容、聊天或社交功能",
+          "无"
+        ],
+        [
+          "广告或第三方追踪",
+          "无"
+        ],
+        [
+          "位置共享",
+          "无"
+        ],
+        [
+          "账号登录或公开个人资料",
+          "无"
+        ]
       ],
-      [
-        "Mature or suggestive themes",
-        "None"
+      "sections": [
+        {
+          "title": "内容说明",
+          "body": [
+            "净像师用于处理用户拥有版权、已获授权或有权编辑的图片。用户不应使用本应用移除无权修改的版权水印、平台标识或权利声明。"
+          ]
+        },
+        {
+          "title": "隐私与联网",
+          "body": [
+            "当前版本不要求账号，不包含追踪 SDK，并在用户设备本机处理所选图片。"
+          ]
+        },
+        {
+          "title": "分级建议",
+          "body": [
+            "基于当前功能范围，建议在 App Store Connect 中选择 4+。最终分级以 App Store Connect 问卷和 Apple 审核结果为准。"
+          ]
+        }
       ],
-      [
-        "Nudity",
-        "None"
-      ],
-      [
-        "Profanity or crude humor",
-        "None"
-      ],
-      [
-        "Alcohol, tobacco, or drug references",
-        "None"
-      ],
-      [
-        "Medical or treatment information",
-        "None"
-      ],
-      [
-        "Gambling, contests, or sweepstakes",
-        "None"
-      ],
-      [
-        "Unrestricted web access",
-        "None"
-      ],
-      [
-        "User-generated content, chat, or social features",
-        "None"
-      ],
-      [
-        "Advertising or third-party tracking",
-        "None"
-      ],
-      [
-        "Account login or public profiles",
-        "None"
+      "linksTitle": "相关页面",
+      "links": [
+        {
+          "label": "隐私政策",
+          "href": "../Privacy/index.html",
+          "text": "查看隐私政策"
+        },
+        {
+          "label": "支持",
+          "href": "../Support/index.html",
+          "text": "查看支持页面"
+        }
       ]
-    ],
-    "sections": [
-      [
-        "Content Guidance",
-        "LuminaSage is intended for images the user owns, has licensed, or otherwise has permission to edit. Users should not use the app to remove copyrighted watermarks, platform marks, or rights notices they do not have permission to modify."
+    },
+    "zh-Hant": {
+      "documentTitle": "淨像師適齡分級資訊",
+      "metaDescription": "淨像師 LuminaSage 適齡分級說明。目前版本為本機 AI 圖片修復工具，建議 4+。",
+      "brand": "淨像師",
+      "eyebrow": "淨像師 LuminaSage，適用於 iPhone、iPad 和 Mac",
+      "title": "適齡分級資訊",
+      "intro": "淨像師是一款本機 AI 圖片修復與圖像補全工具，不包含社交、賭博、瀏覽器、廣告、使用者生成內容社群或線上聊天功能。",
+      "rating": "建議年齡分級：4+",
+      "headers": [
+        "類別",
+        "淨像師狀態"
       ],
-      [
-        "Privacy and Network Access",
-        "The current version does not require an account, does not include tracking SDKs, and processes selected images locally on the user’s device. Privacy policy: ${privacyLink}"
+      "rows": [
+        [
+          "卡通或幻想暴力",
+          "無"
+        ],
+        [
+          "現實暴力",
+          "無"
+        ],
+        [
+          "成人或裸露內容",
+          "無"
+        ],
+        [
+          "粗俗語言或成人幽默",
+          "無"
+        ],
+        [
+          "酒精、菸草或毒品相關內容",
+          "無"
+        ],
+        [
+          "醫療或治療資訊",
+          "無"
+        ],
+        [
+          "賭博、競賽或抽獎",
+          "無"
+        ],
+        [
+          "無限制網頁存取",
+          "無"
+        ],
+        [
+          "使用者生成內容、聊天或社交功能",
+          "無"
+        ],
+        [
+          "廣告或第三方追蹤",
+          "無"
+        ],
+        [
+          "位置分享",
+          "無"
+        ],
+        [
+          "帳號登入或公開個人資料",
+          "無"
+        ]
       ],
-      [
-        "Suggested Rating",
-        "Based on the current feature set, 4+ is the recommended App Store age rating. The final rating depends on the App Store Connect questionnaire and Apple review."
+      "sections": [
+        {
+          "title": "內容說明",
+          "body": [
+            "淨像師用於處理使用者擁有版權、已獲授權或有權編輯的圖片。使用者不應使用本 App 移除無權修改的版權浮水印、平台標識或權利聲明。"
+          ]
+        },
+        {
+          "title": "隱私與網路",
+          "body": [
+            "目前版本不要求帳號，不包含追蹤 SDK，並在使用者裝置本機處理所選圖片。"
+          ]
+        },
+        {
+          "title": "分級建議",
+          "body": [
+            "根據目前功能範圍，建議在 App Store Connect 中選擇 4+。最終分級以 App Store Connect 問卷和 Apple 審核結果為準。"
+          ]
+        }
       ],
-      [
-        "Contact",
-        "If you have questions about this age rating information, contact us at ${emailLink}."
+      "linksTitle": "相關頁面",
+      "links": [
+        {
+          "label": "隱私政策",
+          "href": "../Privacy/index.html",
+          "text": "查看隱私政策"
+        },
+        {
+          "label": "支援",
+          "href": "../Support/index.html",
+          "text": "查看支援頁面"
+        }
       ]
-    ]
-  },
-  "ja": {
-    "languageLabel": "言語",
-    "eyebrow": "肖像画アプリ「LuminaSage」は、iPhone、iPad、Macに対応しています。",
-    "title": "年齢に応じた分類情報",
-    "intro": "Jingxiangshiは、ローカルAI画像復元・画像補完ツールです。本アプリケーションには、ソーシャル機能、ギャンブル機能、ブラウザ機能、広告機能、ユーザー生成コンテンツコミュニティ機能、オンラインチャット機能は含まれていません。",
-    "rating": "推奨年齢：4歳以上",
-    "headers": [
-      "カテゴリ",
-      "景香師の状態"
-    ],
-    "rows": [
-      [
-        "漫画やファンタジーの暴力",
-        "なし"
+    },
+    "en": {
+      "documentTitle": "LuminaSage Age Rating Information",
+      "metaDescription": "Age rating information for LuminaSage, a local AI image repair utility. Suggested rating: 4+.",
+      "brand": "LuminaSage",
+      "eyebrow": "LuminaSage for iPhone, iPad, and Mac",
+      "title": "Age Rating Information",
+      "intro": "LuminaSage is a local AI image repair and inpainting utility. It does not include social networking, gambling, browser access, advertising, user-generated content communities, or online chat features.",
+      "rating": "Suggested Age Rating: 4+",
+      "headers": [
+        "Category",
+        "LuminaSage Status"
       ],
-      [
-        "実際の暴力",
-        "なし"
+      "rows": [
+        [
+          "Cartoon or fantasy violence",
+          "None"
+        ],
+        [
+          "Realistic violence",
+          "None"
+        ],
+        [
+          "Sexual content or nudity",
+          "None"
+        ],
+        [
+          "Profanity or crude humor",
+          "None"
+        ],
+        [
+          "Alcohol, tobacco, or drug references",
+          "None"
+        ],
+        [
+          "Medical or treatment information",
+          "None"
+        ],
+        [
+          "Gambling, contests, or sweepstakes",
+          "None"
+        ],
+        [
+          "Unrestricted web access",
+          "None"
+        ],
+        [
+          "User-generated content, chat, or social features",
+          "None"
+        ],
+        [
+          "Advertising or third-party tracking",
+          "None"
+        ],
+        [
+          "Location sharing",
+          "None"
+        ],
+        [
+          "Account login or public profiles",
+          "None"
+        ]
       ],
-      [
-        "成人向けまたは性的に示唆的な内容",
-        "なし"
+      "sections": [
+        {
+          "title": "Content Guidance",
+          "body": [
+            "LuminaSage is intended for images the user owns, has licensed, or otherwise has permission to edit. Users should not use the app to remove copyrighted watermarks, platform marks, or rights notices they do not have permission to modify."
+          ]
+        },
+        {
+          "title": "Privacy and Network Access",
+          "body": [
+            "The current version does not require an account, does not include tracking SDKs, and processes selected images locally on the user’s device."
+          ]
+        },
+        {
+          "title": "Suggested Rating",
+          "body": [
+            "Based on the current feature set, 4+ is the recommended App Store age rating. The final rating depends on the App Store Connect questionnaire and Apple review."
+          ]
+        }
       ],
-      [
-        "露出",
-        "なし"
-      ],
-      [
-        "下品な言葉遣いや大人向けのユーモア",
-        "なし"
-      ],
-      [
-        "アルコール、タバコ、または薬物に関連するコンテンツ",
-        "なし"
-      ],
-      [
-        "医療または治療に関する情報",
-        "なし"
-      ],
-      [
-        "ギャンブル、競技会、宝くじ",
-        "なし"
-      ],
-      [
-        "無制限のウェブアクセス",
-        "なし"
-      ],
-      [
-        "ユーザー生成コンテンツ、チャット、またはソーシャル機能",
-        "なし"
-      ],
-      [
-        "広告または第三者による追跡",
-        "なし"
-      ],
-      [
-        "アカウントログインまたは公開プロフィール",
-        "なし"
+      "linksTitle": "Related pages",
+      "links": [
+        {
+          "label": "Privacy Policy",
+          "href": "../Privacy/index.html",
+          "text": "View privacy policy"
+        },
+        {
+          "label": "Support",
+          "href": "../Support/index.html",
+          "text": "View support page"
+        }
       ]
-    ],
-    "sections": [
-      [
-        "内容説明",
-        "Image Cleanerアプリは、ユーザーが著作権を所有している画像、使用許可を得ている画像、または編集権を有する画像を処理するために使用されます。ユーザーは、著作権の透かし、プラットフォームのロゴ、または変更する権限のない権利表示を削除するためにこのアプリを使用しないでください。"
+    },
+    "ja": {
+      "documentTitle": "LuminaSage 年齢制限情報",
+      "metaDescription": "LuminaSage の年齢制限情報。ローカル AI 画像修復ユーティリティ。推奨年齢：4+。",
+      "brand": "LuminaSage",
+      "eyebrow": "iPhone、iPad、Mac 対応の LuminaSage",
+      "title": "年齢制限情報",
+      "intro": "LuminaSage はローカル AI 画像修復とインペインティングのユーティリティです。ソーシャルネットワーク、ギャンブル、ブラウザアクセス、広告、ユーザー生成コンテンツのコミュニティ、オンラインチャット機能は含まれていません。",
+      "rating": "推奨年齢：4+",
+      "headers": [
+        "カテゴリ",
+        "LuminaSage の状態"
       ],
-      [
-        "プライバシーとインターネット",
-        "現在のバージョンではアカウントは不要で、トラッキングSDKは含まれておらず、選択された画像はユーザーのデバイス上でローカルに処理されます。プライバシーポリシー：${privacyLink}"
+      "rows": [
+        [
+          "アニメまたはファンタジー暴力",
+          "なし"
+        ],
+        [
+          "現実的な暴力",
+          "なし"
+        ],
+        [
+          "性的コンテンツまたはヌード",
+          "なし"
+        ],
+        [
+          "不適切な言葉または下品なユーモア",
+          "なし"
+        ],
+        [
+          "アルコール、タバコ、薬物への言及",
+          "なし"
+        ],
+        [
+          "医療または治療情報",
+          "なし"
+        ],
+        [
+          "ギャンブル、コンテスト、懸賞",
+          "なし"
+        ],
+        [
+          "無制限のウェブアクセス",
+          "なし"
+        ],
+        [
+          "ユーザー生成コンテンツ、チャット、ソーシャル機能",
+          "なし"
+        ],
+        [
+          "広告または第三者トラッキング",
+          "なし"
+        ],
+        [
+          "位置情報の共有",
+          "なし"
+        ],
+        [
+          "アカウントログインまたは公開プロフィール",
+          "なし"
+        ]
       ],
-      [
-        "分類に関する推奨事項",
-        "現在の機能セットに基づくと、App Store Connectでは4+を選択することをお勧めします。最終的な評価は、App Store ConnectのアンケートとAppleのレビュー結果に基づいて決定されます。"
+      "sections": [
+        {
+          "title": "コンテンツに関する説明",
+          "body": [
+            "LuminaSage は、ユーザーが所有、ライセンス取得、または編集許可を得ている画像に使用することを想定しています。変更する権利のない著作権付き透かし、プラットフォームマーク、権利表示を削除する目的で使用しないでください。"
+          ]
+        },
+        {
+          "title": "プライバシーとネットワーク",
+          "body": [
+            "現行版はアカウントを必要とせず、トラッキング SDK を含まず、選択された画像をユーザーのデバイス上でローカル処理します。"
+          ]
+        },
+        {
+          "title": "推奨レーティング",
+          "body": [
+            "現行機能の範囲では、App Store の推奨年齢は 4+ です。最終的なレーティングは App Store Connect の質問票と Apple の審査結果によって決まります。"
+          ]
+        }
       ],
-      [
-        "接続する",
-        "年齢区分に関する情報についてご質問がある場合は、email_PLACEHOLDER までお問い合わせください。"
+      "linksTitle": "関連ページ",
+      "links": [
+        {
+          "label": "プライバシーポリシー",
+          "href": "../Privacy/index.html",
+          "text": "プライバシーポリシーを見る"
+        },
+        {
+          "label": "サポート",
+          "href": "../Support/index.html",
+          "text": "サポートページを見る"
+        }
       ]
-    ]
-  },
-  "ko": {
-    "languageLabel": "언어",
-    "eyebrow": "인물 사진 작가인 LuminaSage는 iPhone, iPad 및 Mac에서 사용할 수 있습니다.",
-    "title": "연령에 맞는 분류 정보",
-    "intro": "징샹시는 로컬 AI 이미지 복원 및 이미지 완성 도구입니다. 이 애플리케이션에는 소셜, 도박, 브라우저, 광고, 사용자 제작 콘텐츠 커뮤니티 또는 온라인 채팅 기능이 포함되어 있지 않습니다.",
-    "rating": "권장 연령: 4세 이상",
-    "headers": [
-      "범주",
-      "경향사(靈香師)의 상태"
-    ],
-    "rows": [
-      [
-        "만화나 판타지 속 폭력",
-        "없음"
+    },
+    "ko": {
+      "documentTitle": "LuminaSage 연령 등급 정보",
+      "metaDescription": "LuminaSage 연령 등급 정보. 로컬 AI 이미지 복구 유틸리티이며 권장 등급은 4+입니다.",
+      "brand": "LuminaSage",
+      "eyebrow": "iPhone, iPad 및 Mac용 LuminaSage",
+      "title": "연령 등급 정보",
+      "intro": "LuminaSage는 로컬 AI 이미지 복구 및 인페인팅 유틸리티입니다. 소셜 네트워킹, 도박, 브라우저 접근, 광고, 사용자 생성 콘텐츠 커뮤니티 또는 온라인 채팅 기능을 포함하지 않습니다.",
+      "rating": "권장 연령 등급: 4+",
+      "headers": [
+        "카테고리",
+        "LuminaSage 상태"
       ],
-      [
-        "실제 폭력",
-        "없음"
+      "rows": [
+        [
+          "만화 또는 판타지 폭력",
+          "없음"
+        ],
+        [
+          "사실적인 폭력",
+          "없음"
+        ],
+        [
+          "성적 콘텐츠 또는 노출",
+          "없음"
+        ],
+        [
+          "비속어 또는 저속한 유머",
+          "없음"
+        ],
+        [
+          "술, 담배 또는 약물 관련 내용",
+          "없음"
+        ],
+        [
+          "의료 또는 치료 정보",
+          "없음"
+        ],
+        [
+          "도박, 콘테스트 또는 경품",
+          "없음"
+        ],
+        [
+          "제한 없는 웹 접근",
+          "없음"
+        ],
+        [
+          "사용자 생성 콘텐츠, 채팅 또는 소셜 기능",
+          "없음"
+        ],
+        [
+          "광고 또는 타사 추적",
+          "없음"
+        ],
+        [
+          "위치 공유",
+          "없음"
+        ],
+        [
+          "계정 로그인 또는 공개 프로필",
+          "없음"
+        ]
       ],
-      [
-        "성인용 또는 성적으로 자극적인 콘텐츠",
-        "없음"
+      "sections": [
+        {
+          "title": "콘텐츠 안내",
+          "body": [
+            "LuminaSage는 사용자가 소유했거나 라이선스를 받았거나 편집 권한이 있는 이미지에 사용하도록 설계되었습니다. 수정 권한이 없는 저작권 워터마크, 플랫폼 표시 또는 권리 고지를 제거하는 데 사용해서는 안 됩니다."
+          ]
+        },
+        {
+          "title": "개인정보 및 네트워크 접근",
+          "body": [
+            "현재 버전은 계정이 필요하지 않고 추적 SDK를 포함하지 않으며 선택한 이미지를 사용자의 기기에서 로컬로 처리합니다."
+          ]
+        },
+        {
+          "title": "권장 등급",
+          "body": [
+            "현재 기능 범위를 기준으로 App Store 권장 연령 등급은 4+입니다. 최종 등급은 App Store Connect 설문과 Apple 심사 결과에 따라 결정됩니다."
+          ]
+        }
       ],
-      [
-        "노출된",
-        "없음"
-      ],
-      [
-        "저속한 언어 또는 성인 유머",
-        "없음"
-      ],
-      [
-        "알코올, 담배 또는 약물과 관련된 콘텐츠",
-        "없음"
-      ],
-      [
-        "의료 또는 치료 정보",
-        "없음"
-      ],
-      [
-        "도박, 대회 또는 복권",
-        "없음"
-      ],
-      [
-        "무제한 웹 액세스",
-        "없음"
-      ],
-      [
-        "사용자 생성 콘텐츠, 채팅 또는 소셜 기능",
-        "없음"
-      ],
-      [
-        "광고 또는 제3자 추적",
-        "없음"
-      ],
-      [
-        "계정 로그인 또는 공개 프로필",
-        "없음"
+      "linksTitle": "관련 페이지",
+      "links": [
+        {
+          "label": "개인정보 처리방침",
+          "href": "../Privacy/index.html",
+          "text": "개인정보 처리방침 보기"
+        },
+        {
+          "label": "지원",
+          "href": "../Support/index.html",
+          "text": "지원 페이지 보기"
+        }
       ]
-    ],
-    "sections": [
-      [
-        "콘텐츠 설명",
-        "이미지 클리너 앱은 사용자가 저작권을 소유하거나 사용 허가를 받았거나 편집 권한을 가진 이미지를 처리하는 데 사용됩니다. 사용자는 이 앱을 사용하여 수정 권한이 없는 저작권 워터마크, 플랫폼 로고 또는 권리 고지를 제거해서는 안 됩니다."
+    },
+    "es": {
+      "documentTitle": "Información de clasificación por edad de LuminaSage",
+      "metaDescription": "Información de clasificación por edad de LuminaSage, una utilidad local de reparación de imágenes con IA. Clasificación sugerida: 4+.",
+      "brand": "LuminaSage",
+      "eyebrow": "LuminaSage para iPhone, iPad y Mac",
+      "title": "Información de clasificación por edad",
+      "intro": "LuminaSage es una utilidad local de reparación de imágenes e inpainting con IA. No incluye redes sociales, apuestas, acceso de navegador, publicidad, comunidades de contenido generado por usuarios ni chat en línea.",
+      "rating": "Clasificación sugerida: 4+",
+      "headers": [
+        "Categoría",
+        "Estado de LuminaSage"
       ],
-      [
-        "개인정보 보호와 인터넷",
-        "현재 버전은 계정이 필요하지 않으며, 추적 SDK를 포함하지 않고, 선택된 이미지를 사용자의 기기에서 로컬로 처리합니다. 개인정보처리방침: ${privacyLink}"
+      "rows": [
+        [
+          "Violencia animada o fantástica",
+          "Ninguno"
+        ],
+        [
+          "Violencia realista",
+          "Ninguno"
+        ],
+        [
+          "Contenido sexual o desnudez",
+          "Ninguno"
+        ],
+        [
+          "Lenguaje ofensivo o humor vulgar",
+          "Ninguno"
+        ],
+        [
+          "Referencias a alcohol, tabaco o drogas",
+          "Ninguno"
+        ],
+        [
+          "Información médica o de tratamiento",
+          "Ninguno"
+        ],
+        [
+          "Apuestas, concursos o sorteos",
+          "Ninguno"
+        ],
+        [
+          "Acceso web sin restricciones",
+          "Ninguno"
+        ],
+        [
+          "Contenido generado por usuarios, chat o funciones sociales",
+          "Ninguno"
+        ],
+        [
+          "Publicidad o seguimiento de terceros",
+          "Ninguno"
+        ],
+        [
+          "Compartir ubicación",
+          "Ninguno"
+        ],
+        [
+          "Inicio de sesión o perfiles públicos",
+          "Ninguno"
+        ]
       ],
-      [
-        "분류 권장 사항",
-        "현재 기능 세트를 기준으로 App Store Connect에서 4점 이상을 선택하는 것을 권장합니다. 최종 평점은 App Store Connect 설문 조사 및 Apple의 검토 결과를 바탕으로 결정됩니다."
+      "sections": [
+        {
+          "title": "Guía de contenido",
+          "body": [
+            "LuminaSage está pensado para imágenes que el usuario posee, ha licenciado o tiene permiso para editar. No debe usarse para eliminar marcas de agua, marcas de plataforma o avisos de derechos que el usuario no tiene permiso para modificar."
+          ]
+        },
+        {
+          "title": "Privacidad y acceso de red",
+          "body": [
+            "La versión actual no requiere cuenta, no incluye SDK de seguimiento y procesa las imágenes seleccionadas localmente en el dispositivo del usuario."
+          ]
+        },
+        {
+          "title": "Clasificación sugerida",
+          "body": [
+            "Según el conjunto de funciones actual, 4+ es la clasificación recomendada para App Store. La clasificación final depende del cuestionario de App Store Connect y de la revisión de Apple."
+          ]
+        }
       ],
-      [
-        "연결하다",
-        "연령별 분류 정보에 대해 궁금한 점이 있으면 email_PLACEHOLDER로 문의해 주세요."
+      "linksTitle": "Páginas relacionadas",
+      "links": [
+        {
+          "label": "Política de privacidad",
+          "href": "../Privacy/index.html",
+          "text": "Ver política de privacidad"
+        },
+        {
+          "label": "Soporte",
+          "href": "../Support/index.html",
+          "text": "Ver página de soporte"
+        }
       ]
-    ]
-  },
-  "fr": {
-    "languageLabel": "langue",
-    "eyebrow": "LuminaSage, une artiste portraitiste, est disponible pour iPhone, iPad et Mac.",
-    "title": "Informations de classification adaptées à l'âge",
-    "intro": "Jingxiangshi est un outil local de restauration et de complétion d'images par IA. L'application ne contient aucune fonctionnalité sociale, de jeu en ligne, de navigation, de publicité, de communauté de contenu généré par les utilisateurs ou de chat en ligne.",
-    "rating": "Groupe d'âge recommandé : 4 ans et plus",
-    "headers": [
-      "catégorie",
-      "L'état d'un maître Jingxiang"
-    ],
-    "rows": [
-      [
-        "violence dans les dessins animés ou dans la fantasy",
-        "aucun"
+    },
+    "fr": {
+      "documentTitle": "Informations de classification par âge de LuminaSage",
+      "metaDescription": "Informations de classification par âge de LuminaSage, un utilitaire local de réparation d’images par IA. Classification suggérée : 4+.",
+      "brand": "LuminaSage",
+      "eyebrow": "LuminaSage pour iPhone, iPad et Mac",
+      "title": "Informations de classification par âge",
+      "intro": "LuminaSage est un utilitaire local de réparation d’images et d’inpainting par IA. Il n’inclut pas de réseau social, de jeu d’argent, d’accès navigateur, de publicité, de communauté de contenu généré par les utilisateurs ni de chat en ligne.",
+      "rating": "Classification suggérée : 4+",
+      "headers": [
+        "Catégorie",
+        "Statut LuminaSage"
       ],
-      [
-        "Violence réelle",
-        "aucun"
+      "rows": [
+        [
+          "Violence animée ou fantastique",
+          "Aucun"
+        ],
+        [
+          "Violence réaliste",
+          "Aucun"
+        ],
+        [
+          "Contenu sexuel ou nudité",
+          "Aucun"
+        ],
+        [
+          "Langage grossier ou humour vulgaire",
+          "Aucun"
+        ],
+        [
+          "Références à l’alcool, au tabac ou aux drogues",
+          "Aucun"
+        ],
+        [
+          "Informations médicales ou de traitement",
+          "Aucun"
+        ],
+        [
+          "Jeux d’argent, concours ou tirages au sort",
+          "Aucun"
+        ],
+        [
+          "Accès web non restreint",
+          "Aucun"
+        ],
+        [
+          "Contenu généré par les utilisateurs, chat ou fonctions sociales",
+          "Aucun"
+        ],
+        [
+          "Publicité ou suivi tiers",
+          "Aucun"
+        ],
+        [
+          "Partage de localisation",
+          "Aucun"
+        ],
+        [
+          "Connexion à un compte ou profils publics",
+          "Aucun"
+        ]
       ],
-      [
-        "Contenu à caractère adulte ou à connotation sexuelle",
-        "aucun"
+      "sections": [
+        {
+          "title": "Indications de contenu",
+          "body": [
+            "LuminaSage est destiné aux images que l’utilisateur possède, a sous licence ou est autorisé à modifier. Il ne doit pas être utilisé pour supprimer des filigranes, marques de plateforme ou mentions de droits que l’utilisateur n’est pas autorisé à modifier."
+          ]
+        },
+        {
+          "title": "Confidentialité et accès réseau",
+          "body": [
+            "La version actuelle ne nécessite pas de compte, n’inclut pas de SDK de suivi et traite les images sélectionnées localement sur l’appareil de l’utilisateur."
+          ]
+        },
+        {
+          "title": "Classification suggérée",
+          "body": [
+            "Selon les fonctionnalités actuelles, 4+ est la classification App Store recommandée. La classification finale dépend du questionnaire App Store Connect et de l’examen Apple."
+          ]
+        }
       ],
-      [
-        "exposé",
-        "aucun"
-      ],
-      [
-        "Langage vulgaire ou humour adulte",
-        "aucun"
-      ],
-      [
-        "Contenu relatif à l'alcool, au tabac ou aux drogues",
-        "aucun"
-      ],
-      [
-        "Informations médicales ou relatives au traitement",
-        "aucun"
-      ],
-      [
-        "Jeux de hasard, concours ou loteries",
-        "aucun"
-      ],
-      [
-        "Accès web illimité",
-        "aucun"
-      ],
-      [
-        "Contenu généré par les utilisateurs, chat ou fonctionnalités sociales",
-        "aucun"
-      ],
-      [
-        "Publicité ou suivi par des tiers",
-        "aucun"
-      ],
-      [
-        "Connexion au compte ou profil public",
-        "aucun"
+      "linksTitle": "Pages associées",
+      "links": [
+        {
+          "label": "Politique de confidentialité",
+          "href": "../Privacy/index.html",
+          "text": "Voir la politique de confidentialité"
+        },
+        {
+          "label": "Assistance",
+          "href": "../Support/index.html",
+          "text": "Voir la page d’assistance"
+        }
       ]
-    ],
-    "sections": [
-      [
-        "Description du contenu",
-        "L'application Nettoyeur d'images sert à traiter les images dont l'utilisateur possède les droits d'auteur, pour lesquelles il est autorisé à utiliser ou qu'il est autorisé à modifier. Il est interdit d'utiliser cette application pour supprimer les filigranes de droits d'auteur, les logos de plateformes ou les mentions de droits que l'utilisateur n'est pas autorisé à modifier."
+    },
+    "de": {
+      "documentTitle": "LuminaSage Informationen zur Altersfreigabe",
+      "metaDescription": "Informationen zur Altersfreigabe für LuminaSage, ein lokales KI-Werkzeug zur Bildreparatur. Empfohlen: 4+.",
+      "brand": "LuminaSage",
+      "eyebrow": "LuminaSage für iPhone, iPad und Mac",
+      "title": "Informationen zur Altersfreigabe",
+      "intro": "LuminaSage ist ein lokales KI-Werkzeug für Bildreparatur und Inpainting. Es enthält keine sozialen Netzwerke, kein Glücksspiel, keinen Browserzugriff, keine Werbung, keine Community für nutzergenerierte Inhalte und keinen Online-Chat.",
+      "rating": "Empfohlene Altersfreigabe: 4+",
+      "headers": [
+        "Kategorie",
+        "LuminaSage-Status"
       ],
-      [
-        "Vie privée et Internet",
-        "La version actuelle ne nécessite pas de compte, n'inclut pas de kit de développement logiciel (SDK) de suivi et traite les images sélectionnées localement sur l'appareil de l'utilisateur. Politique de confidentialité : ${privacyLink}"
+      "rows": [
+        [
+          "Cartoon- oder Fantasy-Gewalt",
+          "Keine"
+        ],
+        [
+          "Realistische Gewalt",
+          "Keine"
+        ],
+        [
+          "Sexuelle Inhalte oder Nacktheit",
+          "Keine"
+        ],
+        [
+          "Derbe Sprache oder grober Humor",
+          "Keine"
+        ],
+        [
+          "Alkohol-, Tabak- oder Drogenbezüge",
+          "Keine"
+        ],
+        [
+          "Medizinische oder behandlungsbezogene Informationen",
+          "Keine"
+        ],
+        [
+          "Glücksspiel, Wettbewerbe oder Gewinnspiele",
+          "Keine"
+        ],
+        [
+          "Uneingeschränkter Webzugriff",
+          "Keine"
+        ],
+        [
+          "Nutzergenerierte Inhalte, Chat oder soziale Funktionen",
+          "Keine"
+        ],
+        [
+          "Werbung oder Tracking durch Dritte",
+          "Keine"
+        ],
+        [
+          "Standortfreigabe",
+          "Keine"
+        ],
+        [
+          "Kontoanmeldung oder öffentliche Profile",
+          "Keine"
+        ]
       ],
-      [
-        "Recommandations de classification",
-        "Compte tenu des fonctionnalités actuelles, nous recommandons de sélectionner 4+ dans App Store Connect. La note finale dépendra du questionnaire d'App Store Connect et des résultats de l'évaluation d'Apple."
+      "sections": [
+        {
+          "title": "Inhaltliche Hinweise",
+          "body": [
+            "LuminaSage ist für Bilder gedacht, die der Nutzer besitzt, lizenziert hat oder bearbeiten darf. Die App sollte nicht verwendet werden, um urheberrechtlich geschützte Wasserzeichen, Plattformmarken oder Rechtehinweise zu entfernen, die der Nutzer nicht ändern darf."
+          ]
+        },
+        {
+          "title": "Datenschutz und Netzwerkzugriff",
+          "body": [
+            "Die aktuelle Version benötigt kein Konto, enthält keine Tracking-SDKs und verarbeitet ausgewählte Bilder lokal auf dem Gerät des Nutzers."
+          ]
+        },
+        {
+          "title": "Empfohlene Einstufung",
+          "body": [
+            "Auf Grundlage des aktuellen Funktionsumfangs wird 4+ als App Store-Altersfreigabe empfohlen. Die endgültige Einstufung hängt vom App Store Connect-Fragebogen und der Prüfung durch Apple ab."
+          ]
+        }
       ],
-      [
-        "connecter",
-        "Si vous avez des questions concernant les informations de classification par âge, veuillez nous contacter par e-mail_PLACEHOLDER."
+      "linksTitle": "Verwandte Seiten",
+      "links": [
+        {
+          "label": "Datenschutzrichtlinie",
+          "href": "../Privacy/index.html",
+          "text": "Datenschutzrichtlinie ansehen"
+        },
+        {
+          "label": "Support",
+          "href": "../Support/index.html",
+          "text": "Supportseite ansehen"
+        }
       ]
-    ]
-  },
-  "de": {
-    "languageLabel": "Sprache",
-    "eyebrow": "LuminaSage, eine Porträtkünstlerin, ist für iPhone, iPad und Mac erhältlich.",
-    "title": "altersgerechte Klassifizierungsinformationen",
-    "intro": "Jingxiangshi ist ein lokales KI-gestütztes Tool zur Bildwiederherstellung und Bildvervollständigung. Die Anwendung enthält keine Funktionen für soziale Netzwerke, Glücksspiel, Browser, Werbung, nutzergenerierte Inhalte oder Online-Chat.",
-    "rating": "Empfohlenes Alter: 4+",
-    "headers": [
-      "Kategorie",
-      "Der Zustand eines Jingxiang-Meisters"
-    ],
-    "rows": [
-      [
-        "Gewalt in Cartoons oder Fantasy-Geschichten",
-        "keiner"
-      ],
-      [
-        "Reale Gewalt",
-        "keiner"
-      ],
-      [
-        "Inhalte für Erwachsene oder sexuell anzügliche Inhalte",
-        "keiner"
-      ],
-      [
-        "ausgesetzt",
-        "keiner"
-      ],
-      [
-        "Vulgäre Sprache oder Humor für Erwachsene",
-        "keiner"
-      ],
-      [
-        "Inhalte im Zusammenhang mit Alkohol, Tabak oder Drogen",
-        "keiner"
-      ],
-      [
-        "Medizinische oder Behandlungsinformationen",
-        "keiner"
-      ],
-      [
-        "Glücksspiel, Wettbewerbe oder Lotterien",
-        "keiner"
-      ],
-      [
-        "Uneingeschränkter Webzugriff",
-        "keiner"
-      ],
-      [
-        "Nutzergenerierte Inhalte, Chat- oder soziale Funktionen",
-        "keiner"
-      ],
-      [
-        "Werbung oder Tracking durch Dritte",
-        "keiner"
-      ],
-      [
-        "Kontoanmeldung oder öffentliches Profil",
-        "keiner"
-      ]
-    ],
-    "sections": [
-      [
-        "Inhaltsbeschreibung",
-        "Die App „Image Cleaner“ dient der Bearbeitung von Bildern, an denen Nutzer die Urheberrechte besitzen, für deren Nutzung sie berechtigt sind oder die sie bearbeiten dürfen. Nutzer sollten diese App nicht verwenden, um Urheberrechts-Wasserzeichen, Plattformlogos oder Rechtehinweise zu entfernen, zu deren Änderung sie nicht berechtigt sind."
-      ],
-      [
-        "Datenschutz und das Internet",
-        "Die aktuelle Version benötigt kein Konto, enthält kein Tracking-SDK und verarbeitet ausgewählte Bilder lokal auf dem Gerät des Nutzers. Datenschutzerklärung: ${privacyLink}"
-      ],
-      [
-        "Klassifizierungsempfehlungen",
-        "Aufgrund des aktuellen Funktionsumfangs empfehlen wir, in App Store Connect die Bewertung „4+“ auszuwählen. Die endgültige Bewertung basiert auf dem Fragebogen von App Store Connect und den Ergebnissen der Apple-Prüfung."
-      ],
-      [
-        "verbinden",
-        "Sollten Sie Fragen zu den altersgerechten Klassifizierungsinformationen haben, kontaktieren Sie uns bitte per E-Mail unter ${emailLink}."
-      ]
-    ]
-  },
-  "es": {
-    "languageLabel": "idioma",
-    "eyebrow": "LuminaSage, un programa para crear retratos, está disponible para iPhone, iPad y Mac.",
-    "title": "Información de clasificación según la edad",
-    "intro": "Jingxiangshi es una herramienta local de restauración y autocompletado de imágenes mediante inteligencia artificial. La aplicación no incluye funciones sociales, de juegos de azar, de navegador, de publicidad, de comunidad de contenido generado por el usuario ni de chat en línea.",
-    "rating": "Edad recomendada: 4+",
-    "headers": [
-      "categoría",
-      "El estado de un maestro Jingxiang"
-    ],
-    "rows": [
-      [
-        "Violencia en dibujos animados o fantasía",
-        "ninguno"
-      ],
-      [
-        "Violencia real",
-        "ninguno"
-      ],
-      [
-        "Contenido para adultos o con connotaciones sexuales.",
-        "ninguno"
-      ],
-      [
-        "expuesto",
-        "ninguno"
-      ],
-      [
-        "Lenguaje vulgar o humor para adultos",
-        "ninguno"
-      ],
-      [
-        "Contenido relacionado con el alcohol, el tabaco o las drogas.",
-        "ninguno"
-      ],
-      [
-        "Información médica o sobre tratamientos",
-        "ninguno"
-      ],
-      [
-        "Juegos de azar, competiciones o loterías",
-        "ninguno"
-      ],
-      [
-        "Acceso web sin restricciones",
-        "ninguno"
-      ],
-      [
-        "Contenido generado por el usuario, chat o funciones sociales",
-        "ninguno"
-      ],
-      [
-        "Publicidad o seguimiento de terceros",
-        "ninguno"
-      ],
-      [
-        "Inicio de sesión de cuenta o perfil público",
-        "ninguno"
-      ]
-    ],
-    "sections": [
-      [
-        "Descripción del contenido",
-        "La aplicación Limpiador de imágenes se utiliza para procesar imágenes cuyos derechos de autor pertenecen al usuario, que este ha sido autorizado a usar o que tiene derecho a editar. Los usuarios no deben usar esta aplicación para eliminar marcas de agua de derechos de autor, logotipos de plataformas o avisos de derechos que no estén autorizados a modificar."
-      ],
-      [
-        "Privacidad e Internet",
-        "La versión actual no requiere cuenta, no incluye un SDK de seguimiento y procesa las imágenes seleccionadas localmente en el dispositivo del usuario. Política de privacidad: ${privacyLink}"
-      ],
-      [
-        "Recomendaciones de clasificación",
-        "En función de las funciones actuales, recomendamos seleccionar 4 o más en App Store Connect. La calificación final se basará en el cuestionario de App Store Connect y en los resultados de las revisiones de Apple."
-      ],
-      [
-        "conectar",
-        "Si tiene alguna pregunta sobre la información de clasificación apropiada para la edad, póngase en contacto con nosotros por correo electrónico_PLACEHOLDER."
-      ]
-    ]
-  },
-  "pt": {
-    "languageLabel": "linguagem",
-    "eyebrow": "LuminaSage, um aplicativo de retratos, está disponível para iPhone, iPad e Mac.",
-    "title": "Informações de classificação adequadas à idade",
-    "intro": "Jingxiangshi é uma ferramenta local de IA para restauração e preenchimento de imagens. O aplicativo não inclui recursos de redes sociais, jogos de azar, navegador, publicidade, comunidade de conteúdo gerado pelo usuário ou bate-papo online.",
-    "rating": "Faixa etária recomendada: 4+",
-    "headers": [
-      "categoria",
-      "O estado de um Mestre Jingxiang"
-    ],
-    "rows": [
-      [
-        "violência em desenhos animados ou fantasia",
-        "nenhum"
-      ],
-      [
-        "Violência real",
-        "nenhum"
-      ],
-      [
-        "Conteúdo adulto ou sexualmente sugestivo",
-        "nenhum"
-      ],
-      [
-        "expor",
-        "nenhum"
-      ],
-      [
-        "Linguagem vulgar ou humor adulto",
-        "nenhum"
-      ],
-      [
-        "Conteúdo relacionado a álcool, tabaco ou drogas.",
-        "nenhum"
-      ],
-      [
-        "Informações médicas ou de tratamento",
-        "nenhum"
-      ],
-      [
-        "Jogos de azar, competições ou loterias",
-        "nenhum"
-      ],
-      [
-        "Acesso irrestrito à web",
-        "nenhum"
-      ],
-      [
-        "Conteúdo gerado pelo usuário, bate-papo ou recursos sociais",
-        "nenhum"
-      ],
-      [
-        "Publicidade ou rastreamento de terceiros",
-        "nenhum"
-      ],
-      [
-        "Login da conta ou perfil público",
-        "nenhum"
-      ]
-    ],
-    "sections": [
-      [
-        "Descrição do conteúdo",
-        "O aplicativo Image Cleaner é usado para processar imagens das quais os usuários detêm os direitos autorais, para as quais foram autorizados a usar ou que têm o direito de editar. Os usuários não devem usar este aplicativo para remover marcas d'água de direitos autorais, logotipos de plataformas ou avisos de direitos que não estejam autorizados a modificar."
-      ],
-      [
-        "Privacidade e a Internet",
-        "A versão atual não requer uma conta, não inclui um SDK de rastreamento e processa as imagens selecionadas localmente no dispositivo do usuário. Política de Privacidade: ${privacyLink}"
-      ],
-      [
-        "Recomendações de classificação",
-        "Com base nos recursos atuais, recomendamos selecionar 4 ou mais no App Store Connect. A classificação final será baseada no questionário do App Store Connect e nos resultados da avaliação da Apple."
-      ],
-      [
-        "conectar",
-        "Se você tiver alguma dúvida sobre as informações de classificação etária, entre em contato conosco por e-mail_PLACEHOLDER."
-      ]
-    ]
+    }
   }
-};
-    function hydrateLinks(value) {
-      return String(value)
-        .replaceAll('${emailLink}', emailLink)
-        .replaceAll('EMAIL_PLACEHOLDER', emailLink)
-        .replaceAll('email_PLACEHOLDER', emailLink)
-        .replaceAll('PLACEHOLDER', emailLink)
-        .replaceAll('${privacyLink}', privacyLink)
-        .replaceAll('PRIVACY_URL_PLACEHOLDER', privacyLink);
+}
+  </script>
+  <script>
+    const data = JSON.parse(document.getElementById('page-data').textContent);
+    const select = document.getElementById('language-select');
+    const content = document.getElementById('localized-content');
+    const navItems = document.querySelectorAll('[data-nav]');
+    const label = document.getElementById('language-label');
+    const storageKey = 'luminasage-page-language';
+
+    function normalizeLanguage(value) {
+      if (!value) return data.defaultLanguage;
+      const lower = value.toLowerCase();
+      if (lower === 'zh-hans' || lower === 'zh-cn' || lower === 'zh-sg') return 'zh-Hans';
+      if (lower === 'zh-hant' || lower === 'zh-tw' || lower === 'zh-hk' || lower === 'zh-mo') return 'zh-Hant';
+      const base = lower.split('-')[0];
+      return data.languages.some((item) => item.code === base) ? base : data.defaultLanguage;
     }
-    function build(locale) {
-      const t = translations[locale] || translations.en;
-      document.documentElement.lang = locale;
-      document.documentElement.dir = locale === 'ar' ? 'rtl' : 'ltr';
-      document.title = t.title + ' - LuminaSage';
-      document.getElementById('languageLabel').textContent = t.languageLabel;
-      document.querySelector('[data-i18n="eyebrow"]').textContent = t.eyebrow;
-      document.querySelector('[data-i18n="title"]').textContent = t.title;
-      document.querySelector('[data-i18n="intro"]').textContent = t.intro;
-      document.querySelector('[data-i18n="rating"]').textContent = t.rating;
-      const table = `<table><thead><tr><th>${hydrateLinks(t.headers[0])}</th><th>${hydrateLinks(t.headers[1])}</th></tr></thead><tbody>${t.rows.map(([a, b]) => `<tr><td>${hydrateLinks(a)}</td><td>${hydrateLinks(b)}</td></tr>`).join('')}</tbody></table>`;
-      const sections = t.sections.map(([h, p]) => `<section><h2>${hydrateLinks(h)}</h2><p>${hydrateLinks(p)}</p></section>`).join('');
-      document.getElementById('content').innerHTML = table + sections;
+
+    function preferredLanguage() {
+      const saved = localStorage.getItem(storageKey);
+      if (saved && data.languages.some((item) => item.code === saved)) return saved;
+      for (const lang of navigator.languages || [navigator.language]) {
+        const normalized = normalizeLanguage(lang);
+        if (data.languages.some((item) => item.code === normalized)) return normalized;
+      }
+      return data.defaultLanguage;
     }
-    document.getElementById('languageSelect').addEventListener('change', event => build(event.target.value));
-    build('zh-Hans');
+
+    function escapeHtml(value) {
+      return String(value).replace(/[&<>"]/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[char]));
+    }
+
+    function paragraphList(items) {
+      return items.map((item) => `<p>${escapeHtml(item)}</p>`).join('');
+    }
+
+    function renderLinks(page) {
+      if (!page.links || !page.links.length) return '';
+      const links = page.links.map((item) => `<a class="pill" href="${escapeHtml(item.href)}"><strong>${escapeHtml(item.label)}</strong>&nbsp;${escapeHtml(item.text)}</a>`).join('');
+      return `<h2>${escapeHtml(page.linksTitle)}</h2><div class="link-row">${links}</div>`;
+    }
+
+    function renderPrivacy(page) {
+      return `
+        <p class="eyebrow">${escapeHtml(page.eyebrow)}</p>
+        <h1>${escapeHtml(page.title)}</h1>
+        <p class="updated">${escapeHtml(page.updated)}</p>
+        <p class="intro">${escapeHtml(page.intro)}</p>
+        <section class="notice"><h2>${escapeHtml(page.noticeTitle)}</h2><p>${escapeHtml(page.noticeBody)}</p></section>
+        ${page.sections.map((section) => `<section><h2>${escapeHtml(section.title)}</h2>${paragraphList(section.body)}</section>`).join('')}
+        ${renderLinks(page)}
+      `;
+    }
+
+    function renderSupport(page) {
+      return `
+        <p class="eyebrow">${escapeHtml(page.eyebrow)}</p>
+        <h1>${escapeHtml(page.title)}</h1>
+        <p class="intro">${escapeHtml(page.intro)}</p>
+        <p class="contact"><strong>${escapeHtml(page.contactLabel)}</strong> <a href="mailto:${escapeHtml(page.contactEmail)}">${escapeHtml(page.contactEmail)}</a></p>
+        ${page.sections.map((section) => `<section><h2>${escapeHtml(section.title)}</h2>${paragraphList(section.body)}</section>`).join('')}
+        <section><h2>${escapeHtml(page.faqTitle)}</h2>${page.faq.map((item) => `<div class="faq-item"><h3>${escapeHtml(item[0])}</h3><p>${escapeHtml(item[1])}</p></div>`).join('')}</section>
+        ${renderLinks(page)}
+      `;
+    }
+
+    function renderAge(page) {
+      const rows = page.rows.map((row) => `<tr><td>${escapeHtml(row[0])}</td><td>${escapeHtml(row[1])}</td></tr>`).join('');
+      return `
+        <p class="eyebrow">${escapeHtml(page.eyebrow)}</p>
+        <h1>${escapeHtml(page.title)}</h1>
+        <p class="intro">${escapeHtml(page.intro)}</p>
+        <span class="rating">${escapeHtml(page.rating)}</span>
+        <table><thead><tr><th>${escapeHtml(page.headers[0])}</th><th>${escapeHtml(page.headers[1])}</th></tr></thead><tbody>${rows}</tbody></table>
+        ${page.sections.map((section) => `<section><h2>${escapeHtml(section.title)}</h2>${paragraphList(section.body)}</section>`).join('')}
+        ${renderLinks(page)}
+      `;
+    }
+
+    function render(code) {
+      const language = data.languages.find((item) => item.code === code) || data.languages.find((item) => item.code === data.defaultLanguage);
+      const page = data.content[language.code];
+      const ui = data.ui[language.code];
+      document.documentElement.lang = language.htmlLang;
+      document.documentElement.dir = language.dir;
+      document.title = page.documentTitle;
+      const meta = document.querySelector('meta[name="description"]');
+      if (meta) meta.setAttribute('content', page.metaDescription);
+      document.querySelector('.brand span:last-child').textContent = page.brand;
+      label.textContent = ui.language;
+      select.setAttribute('aria-label', ui.chooseLanguage);
+      navItems.forEach((item) => { item.textContent = ui[item.dataset.nav]; });
+      content.innerHTML = data.pageType === 'privacy' ? renderPrivacy(page) : (data.pageType === 'support' ? renderSupport(page) : renderAge(page));
+      select.value = language.code;
+      localStorage.setItem(storageKey, language.code);
+    }
+
+    data.languages.forEach((item) => {
+      const option = document.createElement('option');
+      option.value = item.code;
+      option.textContent = item.label;
+      select.appendChild(option);
+    });
+    select.addEventListener('change', () => render(select.value));
+    render(preferredLanguage());
+
   </script>
 </body>
 </html>

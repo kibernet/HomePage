@@ -1,527 +1,1040 @@
 <!doctype html>
-<html lang="zh-Hans">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>净像师隐私政策</title>
-  <meta name="description" content="净像师 LuminaSage 隐私政策。本应用在设备本机处理图片，不上传用户图片，不收集个人数据。">
+  <title>LuminaSage Privacy Policy</title>
+  <meta name="description" content="Privacy policy for LuminaSage: local AI image repair, no photo uploads, and no personal data collection in the current version.">
   <style>
     :root {
       color-scheme: dark light;
-      --panel: rgba(17, 24, 39, 0.78);
+      --bg: #0d1117;
+      --panel: rgba(17, 24, 39, 0.94);
+      --panel-soft: rgba(31, 41, 55, 0.74);
       --text: #f8fafc;
       --muted: #cbd5e1;
+      --quiet: #94a3b8;
       --line: rgba(148, 163, 184, 0.24);
-      --accent: #2dd4bf;
+      --accent: #5eead4;
+      --accent-2: #f6c96f;
+      --ok: #86efac;
+      --shadow: rgba(0, 0, 0, 0.32);
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f7fafc;
+        --panel: rgba(255, 255, 255, 0.98);
+        --panel-soft: rgba(248, 250, 252, 0.94);
+        --text: #111827;
+        --muted: #334155;
+        --quiet: #64748b;
+        --line: rgba(15, 23, 42, 0.14);
+        --accent: #0f766e;
+        --accent-2: #8a6100;
+        --ok: #047857;
+        --shadow: rgba(15, 23, 42, 0.10);
+      }
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
       min-height: 100vh;
-      font-family: Inter, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
-      line-height: 1.7;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+      line-height: 1.65;
+      letter-spacing: 0;
       color: var(--text);
-      background:
-        radial-gradient(circle at 18% 0%, rgba(45, 212, 191, 0.18), transparent 34rem),
-        radial-gradient(circle at 88% 12%, rgba(96, 165, 250, 0.14), transparent 30rem),
-        linear-gradient(135deg, #071314, #111827 50%, #0f172a);
+      background: linear-gradient(135deg, var(--bg) 0%, #121826 100%);
     }
-    .page { width: min(920px, calc(100% - 40px)); margin: 0 auto; padding: 56px 0; }
-    .document {
-      padding: clamp(24px, 5vw, 48px);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      background: var(--panel);
-      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.34);
-      backdrop-filter: blur(22px);
-    }
-    .toolbar { display: flex; justify-content: flex-end; margin-bottom: 22px; }
-    select {
-      max-width: 100%;
-      color: var(--text);
-      background: rgba(15, 23, 42, 0.82);
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      padding: 8px 12px;
-      font: inherit;
-    }
-    h1, h2, h3 { line-height: 1.18; letter-spacing: 0; }
-    h1 { margin: 0 0 10px; font-size: clamp(2rem, 5vw, 3.35rem); font-weight: 700; }
-    h2 { margin: 34px 0 10px; font-size: 1.12rem; font-weight: 700; }
-    h3 { margin: 22px 0 6px; font-size: 1rem; font-weight: 700; }
-    p, li, td, th { color: var(--muted); font-size: 1rem; }
-    ul { padding-left: 1.25rem; }
+    @media (prefers-color-scheme: light) { body { background: #f7fafc; } }
+    .page { width: min(1040px, calc(100% - 40px)); margin: 0 auto; padding: 40px 0; }
+    .shell { border: 1px solid var(--line); border-radius: 14px; background: var(--panel); box-shadow: 0 24px 72px var(--shadow); overflow: hidden; }
+    .topbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 22px; border-bottom: 1px solid var(--line); background: var(--panel-soft); }
+    .brand { display: inline-flex; align-items: center; gap: 10px; min-width: max-content; color: var(--text); text-decoration: none; font-weight: 760; }
+    .mark { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border: 1px solid color-mix(in srgb, var(--accent) 44%, transparent); border-radius: 8px; color: var(--accent); background: color-mix(in srgb, var(--accent) 12%, transparent); font-size: 0.84rem; font-weight: 820; }
+    .nav { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 8px; }
+    .nav a, .language-control { border: 1px solid var(--line); border-radius: 8px; background: rgba(255,255,255,0.04); color: var(--muted); text-decoration: none; font-size: 0.94rem; }
+    .nav a { padding: 7px 10px; }
+    .nav a[aria-current="page"] { color: var(--text); border-color: color-mix(in srgb, var(--accent) 45%, var(--line)); background: color-mix(in srgb, var(--accent) 11%, transparent); }
+    .language-control { display: inline-flex; align-items: center; gap: 8px; padding: 6px 8px; }
+    .language-control label { color: var(--quiet); font-size: 0.88rem; white-space: nowrap; }
+    .language-control select { min-width: 176px; border: 0; outline: 0; background: transparent; color: var(--text); font: inherit; font-size: 0.94rem; }
+    .language-control option { color: #111827; background: #ffffff; }
+    .content { padding: 44px; }
+    h1, h2, h3 { line-height: 1.15; letter-spacing: 0; }
+    h1 { margin: 0 0 12px; font-size: 2.65rem; font-weight: 780; }
+    h2 { margin: 34px 0 12px; font-size: 1.23rem; font-weight: 740; }
+    h3 { margin: 22px 0 8px; color: var(--accent-2); font-size: 1rem; font-weight: 720; }
+    p, li, td, th { color: var(--muted); font-size: 1rem; overflow-wrap: anywhere; }
+    p { margin: 0 0 14px; }
+    ul { margin: 10px 0 0; padding-left: 1.25rem; }
     a { color: var(--accent); overflow-wrap: anywhere; }
-    .eyebrow { margin: 0 0 24px; color: var(--accent); font-weight: 700; }
-    .updated { margin-top: 0; color: #94a3b8; font-size: 0.95rem; }
-    .contact { display: inline-flex; align-items: center; gap: 10px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 12px; background: rgba(15, 23, 42, 0.44); }
-    .badge { display: inline-flex; margin-top: 12px; padding: 8px 12px; border-radius: 999px; color: #062321; background: var(--accent); font-weight: 800; }
-    table { width: 100%; border-collapse: collapse; margin-top: 16px; overflow: hidden; border-radius: 12px; }
-    th, td { text-align: left; border-bottom: 1px solid var(--line); padding: 12px 10px; vertical-align: top; }
-    th { color: var(--text); background: rgba(15, 23, 42, 0.55); }
-    [dir="rtl"] th, [dir="rtl"] td { text-align: right; }
+    .eyebrow { margin: 0 0 24px; color: var(--accent); font-weight: 760; }
+    .updated { color: var(--quiet); font-size: 0.95rem; }
+    .intro { font-size: 1.05rem; }
+    .notice { margin: 24px 0; padding: 16px 18px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel-soft); }
+    .notice p { margin: 0; }
+    .contact { display: inline-flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 14px 0 12px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel-soft); }
+    .faq-item { margin: 16px 0; padding: 15px 16px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel-soft); }
+    .faq-item h3 { margin-top: 0; }
+    table { width: 100%; margin-top: 20px; border-collapse: separate; border-spacing: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 8px; background: var(--panel-soft); }
+    th, td { padding: 12px 14px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    tr:last-child td { border-bottom: 0; }
+    th { color: var(--text); background: color-mix(in srgb, var(--accent) 10%, transparent); font-weight: 740; }
+    .rating { display: inline-flex; align-items: center; justify-content: center; margin: 20px 0 8px; padding: 10px 14px; border: 1px solid color-mix(in srgb, var(--ok) 42%, transparent); border-radius: 8px; color: var(--ok); background: color-mix(in srgb, var(--ok) 10%, transparent); font-weight: 780; }
+    .link-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+    .pill { display: inline-flex; align-items: center; padding: 8px 11px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel-soft); color: var(--text); text-decoration: none; }
+    @media (max-width: 760px) {
+      .page { width: min(100% - 24px, 1040px); padding: 18px 0; }
+      .topbar { align-items: stretch; flex-direction: column; }
+      .nav { justify-content: flex-start; }
+      .language-control { width: 100%; justify-content: space-between; }
+      .language-control select { min-width: 0; width: 100%; }
+      .content { padding: 26px 20px; }
+      h1 { font-size: 2.05rem; }
+    }
 
   </style>
 </head>
 <body>
-  <main class="page">
-    <article class="document">
-      <div class="toolbar">
-        <label><span id="languageLabel">语言</span>
-          <select id="languageSelect" aria-label="Language">
-            <option value="zh-Hans">简体中文</option>
-            <option value="en">English</option>
-            <option value="ja">日本語</option>
-            <option value="ko">한국어</option>
-            <option value="fr">Français</option>
-            <option value="de">Deutsch</option>
-            <option value="es">Español</option>
-            <option value="pt">Português</option>
-          </select>
-        </label>
-      </div>
-      <p class="eyebrow" data-i18n="eyebrow"></p>
-      <h1 data-i18n="title"></h1>
-      <p class="updated" data-i18n="updated"></p>
-      <div id="content"></div>
-    </article>
-  </main>
-  <script>
-    const emailLink = '<a href="mailto:kibernet@sina.com">kibernet@sina.com</a>';
-    const translations = {
-  "zh-Hans": {
-    "languageLabel": "语言",
-    "eyebrow": "净像师 LuminaSage，适用于 iPhone、iPad 和 Mac",
-    "title": "隐私政策",
-    "updated": "最后更新：2026 年 5 月 29 日",
-    "sections": [
-      [
-        "概述",
-        "净像师是一款本地 AI 图片修复与图像补全工具。用户导入图片后，可以用画笔标记需要修复的区域，并在设备本机完成处理。"
-      ],
-      [
-        "我们收集的数据",
-        "当前版本不收集个人数据。应用不要求登录账号，不提供云账号服务，不包含广告 SDK，也不包含第三方追踪 SDK。"
-      ],
-      [
-        "图片与编辑数据",
-        "用户选择的图片、遮罩、笔刷轨迹和修复结果均在用户设备本机处理。净像师不会把用户选择的图片、遮罩或编辑结果上传到服务器或第三方 AI 服务。"
-      ],
-      [
-        "照片与文件权限",
-        [
-          "在 iPhone 和 iPad 上，照片权限仅用于用户主动选择图片或保存编辑结果。",
-          "在 Mac 上，文件访问仅限用户通过系统文件选择器、拖拽或导出面板明确选择的文件。"
-        ]
-      ],
-      [
-        "本机模型处理",
-        "净像师使用随 App 内置的 Core ML 图像补全模型在设备本机进行图片修复。当前版本不会把图片内容发送到远程 AI 服务。"
-      ],
-      [
-        "分析、诊断与追踪",
-        "当前版本不收集使用分析、崩溃日志、广告标识符、追踪标识符、位置数据、联系人信息、账号信息或使用历史。"
-      ],
-      [
-        "数据删除",
-        "净像师不维护远程账号或服务端用户记录。导入图片和导出文件由用户自行保存在所选位置，用户可以随时在设备上删除这些文件。"
-      ],
-      [
-        "儿童隐私",
-        "净像师是通用照片编辑工具，并非专门面向儿童。应用不会有意收集儿童或其他用户的信息。"
-      ],
-      [
-        "政策变更",
-        "如果本政策发生变化，我们会在本页面发布更新版本并修改更新日期。如果未来版本加入云功能、分析、崩溃报告、账号同步、订阅或服务端处理，我们会在发布前更新本政策和 App Store 隐私声明。"
-      ],
-      [
-        "联系我们",
-        "如对本隐私政策有疑问，请通过 ${emailLink} 联系我们。"
-      ]
-    ]
+  <div class="page">
+    <div class="shell">
+      <header class="topbar">
+        <a class="brand" href="../Support/index.html"><span class="mark">LS</span><span>LuminaSage</span></a>
+        <nav class="nav" aria-label="LuminaSage pages">
+          <a data-nav="privacy" aria-current="page" href="../Privacy/index.html">Privacy</a>
+          <a data-nav="support" href="../Support/index.html">Support</a>
+          <a data-nav="age" href="../AgeRating/index.html">Age Rating</a>
+          <span class="language-control"><label id="language-label" for="language-select">Language</label><select id="language-select"></select></span>
+        </nav>
+      </header>
+      <main id="localized-content" class="content" role="main"></main>
+    </div>
+  </div>
+  <script type="application/json" id="page-data">
+{
+  "defaultLanguage": "en",
+  "pageType": "privacy",
+  "languages": [
+    {
+      "code": "zh-Hans",
+      "htmlLang": "zh-CN",
+      "label": "简体中文",
+      "dir": "ltr"
+    },
+    {
+      "code": "zh-Hant",
+      "htmlLang": "zh-TW",
+      "label": "繁體中文",
+      "dir": "ltr"
+    },
+    {
+      "code": "en",
+      "htmlLang": "en",
+      "label": "English",
+      "dir": "ltr"
+    },
+    {
+      "code": "ja",
+      "htmlLang": "ja",
+      "label": "日本語",
+      "dir": "ltr"
+    },
+    {
+      "code": "ko",
+      "htmlLang": "ko",
+      "label": "한국어",
+      "dir": "ltr"
+    },
+    {
+      "code": "es",
+      "htmlLang": "es",
+      "label": "Español",
+      "dir": "ltr"
+    },
+    {
+      "code": "fr",
+      "htmlLang": "fr",
+      "label": "Français",
+      "dir": "ltr"
+    },
+    {
+      "code": "de",
+      "htmlLang": "de",
+      "label": "Deutsch",
+      "dir": "ltr"
+    }
+  ],
+  "ui": {
+    "zh-Hans": {
+      "language": "语言",
+      "chooseLanguage": "选择语言",
+      "privacy": "隐私",
+      "support": "支持",
+      "age": "适龄"
+    },
+    "zh-Hant": {
+      "language": "語言",
+      "chooseLanguage": "選擇語言",
+      "privacy": "隱私",
+      "support": "支援",
+      "age": "適齡"
+    },
+    "en": {
+      "language": "Language",
+      "chooseLanguage": "Choose language",
+      "privacy": "Privacy",
+      "support": "Support",
+      "age": "Age Rating"
+    },
+    "ja": {
+      "language": "言語",
+      "chooseLanguage": "言語を選択",
+      "privacy": "プライバシー",
+      "support": "サポート",
+      "age": "年齢制限"
+    },
+    "ko": {
+      "language": "언어",
+      "chooseLanguage": "언어 선택",
+      "privacy": "개인정보",
+      "support": "지원",
+      "age": "연령 등급"
+    },
+    "es": {
+      "language": "Idioma",
+      "chooseLanguage": "Elegir idioma",
+      "privacy": "Privacidad",
+      "support": "Soporte",
+      "age": "Edad"
+    },
+    "fr": {
+      "language": "Langue",
+      "chooseLanguage": "Choisir la langue",
+      "privacy": "Confidentialité",
+      "support": "Assistance",
+      "age": "Âge"
+    },
+    "de": {
+      "language": "Sprache",
+      "chooseLanguage": "Sprache auswählen",
+      "privacy": "Datenschutz",
+      "support": "Support",
+      "age": "Alter"
+    }
   },
-  "en": {
-    "languageLabel": "Language",
-    "eyebrow": "LuminaSage for iPhone, iPad, and Mac",
-    "title": "Privacy Policy",
-    "updated": "Last updated: May 29, 2026",
-    "sections": [
-      [
-        "Overview",
-        "LuminaSage is a local AI image repair and inpainting app. Users import an image, brush over the area to repair, and process the result on device."
+  "content": {
+    "zh-Hans": {
+      "documentTitle": "净像师隐私政策",
+      "metaDescription": "净像师 LuminaSage 隐私政策：本地 AI 图片修复，不上传用户图片，不收集个人数据。",
+      "brand": "净像师",
+      "eyebrow": "净像师 LuminaSage，适用于 iPhone、iPad 和 Mac",
+      "title": "隐私政策",
+      "updated": "最后更新：2026 年 7 月 5 日",
+      "intro": "净像师是一款本地 AI 图片修复与图像补全工具。用户导入图片、标记需要修复的区域，并在设备本机生成结果。",
+      "noticeTitle": "当前版本的核心隐私承诺",
+      "noticeBody": "当前版本不要求登录、不上传图片、不收集个人数据、不包含广告或第三方追踪 SDK。",
+      "sections": [
+        {
+          "title": "提供者与联系方式",
+          "body": [
+            "净像师由应用开发者提供。如有隐私问题，可以通过 kibernet@sina.com 联系。"
+          ]
+        },
+        {
+          "title": "我们收集的数据",
+          "body": [
+            "当前版本不收集个人数据。应用不要求账号登录，不维护云端账号，不收集联系人、位置、照片内容、使用分析、崩溃日志、广告标识符或追踪标识符。"
+          ]
+        },
+        {
+          "title": "图片、遮罩与编辑结果",
+          "body": [
+            "用户选择的图片、遮罩、笔刷轨迹和修复结果均在设备本机处理。净像师不会把这些内容上传到服务器或第三方 AI 服务。",
+            "导出的图片由用户保存到相册或用户选择的文件位置，用户可随时在设备上删除。"
+          ]
+        },
+        {
+          "title": "系统权限",
+          "body": [
+            "iPhone 和 iPad 上的照片权限仅用于用户主动选择图片或保存处理结果。",
+            "Mac 上的文件访问仅限用户通过系统文件选择器、拖拽或导出面板明确选择的文件。"
+          ]
+        },
+        {
+          "title": "本地偏好设置",
+          "body": [
+            "App 可能会在设备本机保存语言选择等偏好设置。这些偏好仅用于改善本机使用体验，不会上传到服务器。"
+          ]
+        },
+        {
+          "title": "本地模型与网络",
+          "body": [
+            "当前版本使用随 App 内置的 Core ML 模型在设备本机执行图像补全。核心修复功能不需要网络上传图片。"
+          ]
+        },
+        {
+          "title": "广告、分析、账号、订阅与第三方 SDK",
+          "body": [
+            "当前版本不包含广告、第三方分析、崩溃上报 SDK、账号系统、云同步、订阅、内购或服务端图片处理。若未来增加这些功能，本政策和 App Store 隐私声明会在发布前更新。"
+          ]
+        },
+        {
+          "title": "支持邮件",
+          "body": [
+            "如果用户主动发送支持邮件，我们只会收到用户在邮件中选择提供的信息。请不要在支持邮件中发送密码、私钥、机密文件或不必要的私人图片。"
+          ]
+        },
+        {
+          "title": "儿童隐私",
+          "body": [
+            "净像师是通用照片编辑工具，并非专门面向儿童。当前版本不会有意收集儿童或其他用户的信息。"
+          ]
+        },
+        {
+          "title": "政策变更",
+          "body": [
+            "如果本政策发生变化，我们会在本页面发布更新版本并修改更新日期。"
+          ]
+        }
       ],
-      [
-        "Data We Collect",
-        "The current version does not collect personal data. The app does not require sign-in, does not operate a cloud account service, does not include advertising SDKs, and does not include third-party tracking SDKs."
-      ],
-      [
-        "Images and Editing Data",
-        "Selected images, masks, brush strokes, and repair results are processed locally on the user’s device. LuminaSage does not upload selected images, masks, or edited results to a server or third-party AI service."
-      ],
-      [
-        "Photos and File Access",
-        [
-          "On iPhone and iPad, Photos access is used only when the user chooses an image or saves an edited result.",
-          "On Mac, file access is limited to files the user explicitly selects through the system file picker, drag and drop, or export panel."
-        ]
-      ],
-      [
-        "On-Device Model Processing",
-        "LuminaSage uses a bundled Core ML inpainting model for local image repair. The current version does not send image content to remote AI services."
-      ],
-      [
-        "Analytics, Diagnostics, and Tracking",
-        "The current version does not collect analytics, crash logs, advertising identifiers, tracking identifiers, location data, contact information, account information, or usage history."
-      ],
-      [
-        "Data Deletion",
-        "LuminaSage does not maintain a remote account or server-side user record. Imported images and exported files remain under the user’s control and can be deleted from the device at any time."
-      ],
-      [
-        "Children’s Privacy",
-        "LuminaSage is a general photo editing utility and is not directed to children. The app does not knowingly collect information from children or any other users."
-      ],
-      [
-        "Changes to This Policy",
-        "If this policy changes, the updated version will be posted on this page with a revised update date. If future versions add cloud features, analytics, crash reporting, account sync, subscriptions, or server-side processing, this policy and App Store privacy declarations will be updated before release."
-      ],
-      [
-        "Contact",
-        "If you have questions about this privacy policy, contact us at ${emailLink}."
+      "linksTitle": "相关页面",
+      "links": [
+        {
+          "label": "支持",
+          "href": "../Support/index.html",
+          "text": "查看支持与常见问题"
+        },
+        {
+          "label": "适龄分级",
+          "href": "../AgeRating/index.html",
+          "text": "查看适龄分级信息"
+        }
       ]
-    ]
-  },
-  "ja": {
-    "languageLabel": "言語",
-    "eyebrow": "肖像画アプリ「LuminaSage」は、iPhone、iPad、Macに対応しています。",
-    "title": "プライバシーポリシー",
-    "updated": "最終更新日：2026年5月29日",
-    "sections": [
-      [
-        "概要",
-        "ImagePureは、ローカルAIによる画像修復・補完ツールです。画像をインポートした後、ユーザーはブラシを使って修復が必要な領域を指定することができ、修復処理はデバイス上でローカルに実行されます。"
+    },
+    "zh-Hant": {
+      "documentTitle": "淨像師隱私政策",
+      "metaDescription": "淨像師 LuminaSage 隱私政策：本機 AI 圖片修復，不上傳使用者圖片，不收集個人資料。",
+      "brand": "淨像師",
+      "eyebrow": "淨像師 LuminaSage，適用於 iPhone、iPad 和 Mac",
+      "title": "隱私政策",
+      "updated": "最後更新：2026 年 7 月 5 日",
+      "intro": "淨像師是一款本機 AI 圖片修復與圖像補全工具。使用者匯入圖片、標記需要修復的區域，並在裝置本機產生結果。",
+      "noticeTitle": "目前版本的核心隱私承諾",
+      "noticeBody": "目前版本不要求登入、不上傳圖片、不收集個人資料、不包含廣告或第三方追蹤 SDK。",
+      "sections": [
+        {
+          "title": "提供者與聯絡方式",
+          "body": [
+            "淨像師由應用程式開發者提供。如有隱私問題，可以透過 kibernet@sina.com 聯絡。"
+          ]
+        },
+        {
+          "title": "我們收集的資料",
+          "body": [
+            "目前版本不收集個人資料。App 不要求帳號登入，不維護雲端帳號，不收集聯絡人、位置、照片內容、使用分析、當機記錄、廣告識別碼或追蹤識別碼。"
+          ]
+        },
+        {
+          "title": "圖片、遮罩與編輯結果",
+          "body": [
+            "使用者選擇的圖片、遮罩、筆刷軌跡和修復結果都會在裝置本機處理。淨像師不會將這些內容上傳到伺服器或第三方 AI 服務。",
+            "匯出的圖片由使用者儲存到相簿或使用者選擇的檔案位置，使用者可隨時在裝置上刪除。"
+          ]
+        },
+        {
+          "title": "系統權限",
+          "body": [
+            "iPhone 和 iPad 上的照片權限僅用於使用者主動選擇圖片或儲存處理結果。",
+            "Mac 上的檔案存取僅限使用者透過系統檔案選擇器、拖放或匯出面板明確選擇的檔案。"
+          ]
+        },
+        {
+          "title": "本機偏好設定",
+          "body": [
+            "App 可能會在裝置本機保存語言選擇等偏好設定。這些偏好僅用於改善本機使用體驗，不會上傳到伺服器。"
+          ]
+        },
+        {
+          "title": "本機模型與網路",
+          "body": [
+            "目前版本使用隨 App 內建的 Core ML 模型在裝置本機執行圖像補全。核心修復功能不需要透過網路上傳圖片。"
+          ]
+        },
+        {
+          "title": "廣告、分析、帳號、訂閱與第三方 SDK",
+          "body": [
+            "目前版本不包含廣告、第三方分析、當機回報 SDK、帳號系統、雲端同步、訂閱、App 內購買或伺服器端圖片處理。若未來增加這些功能，本政策和 App Store 隱私聲明會在發布前更新。"
+          ]
+        },
+        {
+          "title": "支援郵件",
+          "body": [
+            "如果使用者主動寄送支援郵件，我們只會收到使用者在郵件中選擇提供的資訊。請不要在支援郵件中傳送密碼、私鑰、機密檔案或不必要的私人圖片。"
+          ]
+        },
+        {
+          "title": "兒童隱私",
+          "body": [
+            "淨像師是通用照片編輯工具，並非專門面向兒童。目前版本不會有意收集兒童或其他使用者的資訊。"
+          ]
+        },
+        {
+          "title": "政策變更",
+          "body": [
+            "如果本政策有變更，我們會在本頁面發布更新版本並修改更新日期。"
+          ]
+        }
       ],
-      [
-        "収集したデータ",
-        "現在のバージョンでは個人データを収集しません。このアプリケーションはログインアカウントを必要とせず、クラウドアカウントサービスを提供せず、広告SDKやサードパーティのトラッキングSDKも含まれていません。"
-      ],
-      [
-        "画像と編集データ",
-        "ユーザーが選択した画像、マスク、ブラシストローク、および修復結果はすべて、ユーザーのデバイス上でローカルに処理されます。Jingxiangshiは、ユーザーが選択した画像、マスク、または編集結果をサーバーやサードパーティのAIサービスにアップロードしません。"
-      ],
-      [
-        "写真とファイルの権限",
-        [
-          "iPhoneとiPadでは、写真のアクセス許可は、ユーザーが画像を選択したり、編集結果を保存したりした場合にのみ使用されます。",
-          "Macでは、ファイルへのアクセスは、ユーザーがシステムファイルピッカー、ドラッグアンドドロップ、またはエクスポートパネルを通じて明示的に選択したファイルに限定されます。"
-        ]
-      ],
-      [
-        "ネイティブモデル処理",
-        "画像復元ツールは、アプリに組み込まれたCore ML画像補完モデルを使用して、デバイス上で画像復元を実行します。現在のバージョンでは、画像コンテンツをリモートのAIサービスに送信することはありません。"
-      ],
-      [
-        "分析、診断、追跡",
-        "現在のバージョンでは、使用状況分析、クラッシュログ、広告識別子、トラッキング識別子、位置情報、連絡先情報、アカウント情報、使用履歴は収集されません。"
-      ],
-      [
-        "データ削除",
-        "Jingxiangshiはリモートアカウントやサーバー側のユーザー記録を保持しません。インポートされた画像やエクスポートされたファイルは、ユーザーが選択した場所に保存され、ユーザーはいつでもデバイス上のこれらのファイルを削除できます。"
-      ],
-      [
-        "子供のプライバシー",
-        "Image Cleanerは汎用的な写真編集ツールであり、特に子供向けに設計されたものではありません。このアプリは、子供や他のユーザーから意図的に情報を収集することはありません。"
-      ],
-      [
-        "ポリシー変更",
-        "本ポリシーに変更が生じた場合は、このページに更新版を掲載し、更新日を修正します。今後のバージョンでクラウド機能、分析機能、クラッシュレポート機能、アカウント同期機能、サブスクリプション機能、またはサーバーサイド処理機能が追加される場合は、リリース前に本ポリシーおよびApp Storeプライバシーステートメントを更新します。"
-      ],
-      [
-        "お問い合わせ",
-        "このプライバシーポリシーについてご質問がある場合は、PLACEHOLDERまでメールでお問い合わせください。"
+      "linksTitle": "相關頁面",
+      "links": [
+        {
+          "label": "支援",
+          "href": "../Support/index.html",
+          "text": "查看支援與常見問題"
+        },
+        {
+          "label": "適齡分級",
+          "href": "../AgeRating/index.html",
+          "text": "查看適齡分級資訊"
+        }
       ]
-    ]
-  },
-  "ko": {
-    "languageLabel": "언어",
-    "eyebrow": "인물 사진 작가인 LuminaSage는 iPhone, iPad 및 Mac에서 사용할 수 있습니다.",
-    "title": "개인정보 보호정책",
-    "updated": "최종 업데이트: 2026년 5월 29일",
-    "sections": [
-      [
-        "개요",
-        "ImagePure는 로컬 AI 기반 이미지 복원 및 완성 도구입니다. 이미지를 불러온 후 브러시를 사용하여 복원이 필요한 영역을 표시할 수 있으며, 복원 작업은 기기 내에서 로컬로 완료됩니다."
+    },
+    "en": {
+      "documentTitle": "LuminaSage Privacy Policy",
+      "metaDescription": "Privacy policy for LuminaSage: local AI image repair, no photo uploads, and no personal data collection in the current version.",
+      "brand": "LuminaSage",
+      "eyebrow": "LuminaSage for iPhone, iPad, and Mac",
+      "title": "Privacy Policy",
+      "updated": "Last updated: July 5, 2026",
+      "intro": "LuminaSage is a local AI image repair and inpainting utility. Users import an image, mark the area to repair, and generate the result on device.",
+      "noticeTitle": "Current privacy commitment",
+      "noticeBody": "The current version does not require sign-in, upload images, collect personal data, include advertising, or include third-party tracking SDKs.",
+      "sections": [
+        {
+          "title": "Provider and Contact",
+          "body": [
+            "LuminaSage is provided by the app developer. For privacy questions, contact kibernet@sina.com."
+          ]
+        },
+        {
+          "title": "Data We Collect",
+          "body": [
+            "The current version does not collect personal data. The app does not require account sign-in, maintain cloud accounts, or collect contacts, location, photo contents, analytics, crash logs, advertising identifiers, or tracking identifiers."
+          ]
+        },
+        {
+          "title": "Images, Masks, and Edited Results",
+          "body": [
+            "Selected images, masks, brush strokes, and repair results are processed locally on the user’s device. LuminaSage does not upload this content to a server or third-party AI service.",
+            "Exported images are saved by the user to Photos or to a user-selected file location and can be deleted from the device at any time."
+          ]
+        },
+        {
+          "title": "System Permissions",
+          "body": [
+            "On iPhone and iPad, Photos access is used only when the user chooses an image or saves a processed result.",
+            "On Mac, file access is limited to files the user explicitly selects through the system file picker, drag and drop, or export panel."
+          ]
+        },
+        {
+          "title": "Local Preferences",
+          "body": [
+            "The app may store preferences such as language selection locally on the device. These preferences are used only to improve the on-device experience and are not uploaded to a server."
+          ]
+        },
+        {
+          "title": "On-Device Model and Network",
+          "body": [
+            "The current version uses a bundled Core ML model to perform image inpainting on the device. The core repair feature does not require uploading images over the network."
+          ]
+        },
+        {
+          "title": "Ads, Analytics, Accounts, Subscriptions, and Third-Party SDKs",
+          "body": [
+            "The current version does not include advertising, third-party analytics, crash reporting SDKs, accounts, cloud sync, subscriptions, in-app purchases, or server-side image processing. If these are added in a future version, this policy and the App Store privacy declarations will be updated before release."
+          ]
+        },
+        {
+          "title": "Support Email",
+          "body": [
+            "If a user chooses to send a support email, we receive only the information the user includes in that email. Do not send passwords, private keys, confidential files, or unnecessary private images in support messages."
+          ]
+        },
+        {
+          "title": "Children’s Privacy",
+          "body": [
+            "LuminaSage is a general photo editing utility and is not directed to children. The current version does not knowingly collect information from children or any other users."
+          ]
+        },
+        {
+          "title": "Policy Changes",
+          "body": [
+            "If this policy changes, the updated version will be posted on this page with a revised update date."
+          ]
+        }
       ],
-      [
-        "우리가 수집한 데이터",
-        "현재 버전은 개인 데이터를 수집하지 않습니다. 이 애플리케이션은 로그인 계정을 요구하지 않으며, 클라우드 계정 서비스를 제공하지 않고, 광고 SDK나 제3자 추적 SDK를 포함하지 않습니다."
-      ],
-      [
-        "이미지 및 편집 데이터",
-        "사용자가 선택한 이미지, 마스크, 브러시 스트로크 및 보정 결과는 모두 사용자의 기기에서 로컬로 처리됩니다. 징샹시는 사용자가 선택한 이미지, 마스크 또는 편집 결과를 서버나 제3자 AI 서비스에 업로드하지 않습니다."
-      ],
-      [
-        "사진 및 파일 권한",
-        [
-          "아이폰과 아이패드에서는 사용자가 직접 이미지를 선택하거나 편집된 결과를 저장할 때만 사진 권한이 사용됩니다.",
-          "맥에서는 사용자가 시스템 파일 선택기, 드래그 앤 드롭 또는 내보내기 패널을 통해 명시적으로 선택한 파일로 파일 접근이 제한됩니다."
-        ]
-      ],
-      [
-        "네이티브 모델 처리",
-        "이미지 복원 도구는 앱에 내장된 Core ML 이미지 완성 모델을 사용하여 기기 자체에서 이미지 복원을 수행합니다. 현재 버전은 이미지 콘텐츠를 원격 AI 서비스로 전송하지 않습니다."
-      ],
-      [
-        "분석, 진단 및 추적",
-        "현재 버전은 사용량 분석, 충돌 로그, 광고 식별자, 추적 식별자, 위치 데이터, 연락처 정보, 계정 정보 또는 사용 기록을 수집하지 않습니다."
-      ],
-      [
-        "데이터 삭제",
-        "징샹시는 원격 계정이나 서버 측 사용자 기록을 유지하지 않습니다. 가져온 이미지와 내보낸 파일은 사용자가 선택한 위치에 저장되며, 사용자는 언제든지 기기에서 해당 파일을 삭제할 수 있습니다."
-      ],
-      [
-        "어린이의 개인정보 보호",
-        "Image Cleaner는 일반적인 사진 편집 도구이며 어린이를 위해 특별히 설계된 앱이 아닙니다. 이 앱은 어린이 또는 다른 사용자의 정보를 의도적으로 수집하지 않습니다."
-      ],
-      [
-        "정책 변경",
-        "이 정책이 변경될 경우, 이 페이지에 업데이트된 버전을 게시하고 업데이트 날짜를 수정할 것입니다. 향후 버전에서 클라우드 기능, 분석 기능, 충돌 보고 기능, 계정 동기화 기능, 구독 기능 또는 서버 측 처리 기능이 추가될 경우, 출시 전에 이 정책과 앱 스토어 개인정보 처리방침을 업데이트할 예정입니다."
-      ],
-      [
-        "문의하기",
-        "본 개인정보 보호정책에 대해 궁금한 점이 있으시면 PLACEHOLDER로 이메일을 보내주시기 바랍니다."
+      "linksTitle": "Related pages",
+      "links": [
+        {
+          "label": "Support",
+          "href": "../Support/index.html",
+          "text": "View support and FAQ"
+        },
+        {
+          "label": "Age Rating",
+          "href": "../AgeRating/index.html",
+          "text": "View age rating information"
+        }
       ]
-    ]
-  },
-  "fr": {
-    "languageLabel": "langue",
-    "eyebrow": "LuminaSage, une artiste portraitiste, est disponible pour iPhone, iPad et Mac.",
-    "title": "politique de confidentialité",
-    "updated": "Dernière mise à jour : 29 mai 2026",
-    "sections": [
-      [
-        "Aperçu",
-        "ImagePure est un outil local de restauration et de complétion d'images par IA. Après avoir importé une image, les utilisateurs peuvent utiliser un pinceau pour marquer les zones à restaurer, et le processus est ensuite effectué localement sur l'appareil."
+    },
+    "ja": {
+      "documentTitle": "LuminaSage プライバシーポリシー",
+      "metaDescription": "LuminaSage のプライバシーポリシー。ローカル AI 画像修復、写真のアップロードなし、現行版では個人データを収集しません。",
+      "brand": "LuminaSage",
+      "eyebrow": "iPhone、iPad、Mac 対応の LuminaSage",
+      "title": "プライバシーポリシー",
+      "updated": "最終更新日：2026年7月5日",
+      "intro": "LuminaSage は、ローカル AI による画像修復とインペインティングのためのユーティリティです。ユーザーは画像を読み込み、修復したい範囲を指定し、結果をデバイス上で生成します。",
+      "noticeTitle": "現行版のプライバシー方針",
+      "noticeBody": "現行版では、サインインを要求せず、画像をアップロードせず、個人データを収集せず、広告や第三者トラッキング SDK を含みません。",
+      "sections": [
+        {
+          "title": "提供者と連絡先",
+          "body": [
+            "LuminaSage はアプリ開発者により提供されています。プライバシーに関するお問い合わせは kibernet@sina.com までご連絡ください。"
+          ]
+        },
+        {
+          "title": "収集するデータ",
+          "body": [
+            "現行版では個人データを収集しません。アカウントでのサインイン、クラウドアカウント、連絡先、位置情報、写真内容、分析データ、クラッシュログ、広告識別子、トラッキング識別子の収集はありません。"
+          ]
+        },
+        {
+          "title": "画像、マスク、編集結果",
+          "body": [
+            "選択された画像、マスク、ブラシ操作、修復結果はユーザーのデバイス上でローカル処理されます。LuminaSage はこれらの内容をサーバーや第三者 AI サービスにアップロードしません。",
+            "書き出した画像は、ユーザーが写真アプリまたは選択したファイル保存先に保存し、いつでもデバイス上で削除できます。"
+          ]
+        },
+        {
+          "title": "システム権限",
+          "body": [
+            "iPhone と iPad では、写真へのアクセスはユーザーが画像を選ぶとき、または処理結果を保存するときにのみ使用されます。",
+            "Mac では、ファイルアクセスはシステムのファイル選択、ドラッグ＆ドロップ、または書き出しパネルでユーザーが明示的に選んだファイルに限定されます。"
+          ]
+        },
+        {
+          "title": "ローカル設定",
+          "body": [
+            "アプリは言語選択などの設定をデバイス上にローカル保存する場合があります。これらの設定はデバイス上の体験を改善するためだけに使用され、サーバーにはアップロードされません。"
+          ]
+        },
+        {
+          "title": "オンデバイスモデルとネットワーク",
+          "body": [
+            "現行版はアプリに同梱された Core ML モデルを使い、デバイス上で画像補完を実行します。主要な修復機能は、画像をネットワーク経由でアップロードする必要がありません。"
+          ]
+        },
+        {
+          "title": "広告、分析、アカウント、サブスクリプション、第三者 SDK",
+          "body": [
+            "現行版には広告、第三者分析、クラッシュレポート SDK、アカウント、クラウド同期、サブスクリプション、アプリ内課金、サーバー側画像処理は含まれていません。将来これらを追加する場合、本ポリシーと App Store のプライバシー申告を公開前に更新します。"
+          ]
+        },
+        {
+          "title": "サポートメール",
+          "body": [
+            "ユーザーがサポートメールを送信した場合、メールに含めた情報のみを受け取ります。パスワード、秘密鍵、機密ファイル、不要な私的画像は送信しないでください。"
+          ]
+        },
+        {
+          "title": "子どものプライバシー",
+          "body": [
+            "LuminaSage は一般向けの写真編集ユーティリティであり、子どもを対象としたものではありません。現行版では子どもまたはその他のユーザーの情報を意図的に収集しません。"
+          ]
+        },
+        {
+          "title": "ポリシーの変更",
+          "body": [
+            "本ポリシーに変更がある場合、このページに更新版を掲載し、更新日を変更します。"
+          ]
+        }
       ],
-      [
-        "Les données que nous avons collectées",
-        "La version actuelle ne collecte aucune donnée personnelle. L'application ne nécessite pas de compte de connexion, ne propose aucun service de compte cloud, n'intègre aucun kit de développement logiciel publicitaire ni aucun kit de développement logiciel de suivi tiers."
-      ],
-      [
-        "Données d'image et de montage",
-        "L'image, le masque, les coups de pinceau et les résultats de la réparation sélectionnés par l'utilisateur sont traités localement sur son appareil. Jingxiangshi ne télécharge ni l'image, ni le masque, ni les résultats de la retouche sur des serveurs ou des services d'IA tiers."
-      ],
-      [
-        "Autorisations relatives aux photos et aux fichiers",
-        [
-          "Sur iPhone et iPad, les autorisations d'accès aux photos ne sont utilisées que lorsque l'utilisateur sélectionne activement une image ou enregistre le résultat modifié.",
-          "Sur un Mac, l'accès aux fichiers est limité aux fichiers que l'utilisateur sélectionne explicitement via le sélecteur de fichiers système, le glisser-déposer ou le panneau d'exportation."
-        ]
-      ],
-      [
-        "Traitement du modèle natif",
-        "L'outil de restauration d'images utilise le modèle de complétion d'images Core ML intégré à l'application pour effectuer la restauration directement sur l'appareil. La version actuelle n'envoie pas le contenu des images à un service d'IA distant."
-      ],
-      [
-        "Analyse, diagnostic et suivi",
-        "La version actuelle ne collecte pas de données analytiques d'utilisation, de journaux d'erreurs, d'identifiants publicitaires, d'identifiants de suivi, de données de localisation, d'informations de contact, d'informations de compte ni d'historique d'utilisation."
-      ],
-      [
-        "Suppression des données",
-        "Jingxiangshi ne conserve aucun compte distant ni aucun historique des utilisateurs côté serveur. Les images importées et les fichiers exportés sont enregistrés par l'utilisateur à l'emplacement de son choix, et celui-ci peut les supprimer de son appareil à tout moment."
-      ],
-      [
-        "Respect de la vie privée des enfants",
-        "ImageFilter est un outil de retouche photo généraliste et n'est pas spécifiquement conçu pour les enfants. L'application ne collecte pas intentionnellement d'informations auprès des enfants ou d'autres utilisateurs."
-      ],
-      [
-        "Changement de politique",
-        "Si cette politique venait à changer, nous publierions une version mise à jour sur cette page et modifierions la date de dernière mise à jour. Si les versions ultérieures intègrent des fonctionnalités cloud, des outils d'analyse, le signalement des plantages, la synchronisation des comptes, les abonnements ou le traitement côté serveur, nous mettrons à jour cette politique et la déclaration de confidentialité de l'App Store avant leur publication."
-      ],
-      [
-        "Contactez-nous",
-        "Si vous avez des questions concernant cette politique de confidentialité, veuillez nous contacter par courriel à l'adresse suivante : ${emailLink}."
+      "linksTitle": "関連ページ",
+      "links": [
+        {
+          "label": "サポート",
+          "href": "../Support/index.html",
+          "text": "サポートと FAQ を見る"
+        },
+        {
+          "label": "年齢制限",
+          "href": "../AgeRating/index.html",
+          "text": "年齢制限情報を見る"
+        }
       ]
-    ]
-  },
-  "de": {
-    "languageLabel": "Sprache",
-    "eyebrow": "LuminaSage, eine Porträtkünstlerin, ist für iPhone, iPad und Mac erhältlich.",
-    "title": "Datenschutzrichtlinie",
-    "updated": "Letzte Aktualisierung: 29. Mai 2026",
-    "sections": [
-      [
-        "Überblick",
-        "ImagePure ist ein KI-gestütztes Tool zur lokalen Bildrestaurierung und -vervollständigung. Nach dem Import eines Bildes können Benutzer mit einem Pinsel die zu restaurierenden Bereiche markieren; die Restaurierung erfolgt lokal auf dem Gerät."
+    },
+    "ko": {
+      "documentTitle": "LuminaSage 개인정보 처리방침",
+      "metaDescription": "LuminaSage 개인정보 처리방침: 로컬 AI 이미지 복구, 사진 업로드 없음, 현재 버전은 개인 데이터를 수집하지 않습니다.",
+      "brand": "LuminaSage",
+      "eyebrow": "iPhone, iPad 및 Mac용 LuminaSage",
+      "title": "개인정보 처리방침",
+      "updated": "최종 업데이트: 2026년 7월 5일",
+      "intro": "LuminaSage는 로컬 AI 이미지 복구 및 인페인팅 유틸리티입니다. 사용자는 이미지를 가져오고 복구할 영역을 표시한 뒤 기기에서 결과를 생성합니다.",
+      "noticeTitle": "현재 버전의 개인정보 원칙",
+      "noticeBody": "현재 버전은 로그인을 요구하지 않고, 이미지를 업로드하지 않으며, 개인 데이터를 수집하지 않고, 광고 또는 타사 추적 SDK를 포함하지 않습니다.",
+      "sections": [
+        {
+          "title": "제공자 및 연락처",
+          "body": [
+            "LuminaSage는 앱 개발자가 제공합니다. 개인정보 관련 문의는 kibernet@sina.com 으로 연락해 주세요."
+          ]
+        },
+        {
+          "title": "수집하는 데이터",
+          "body": [
+            "현재 버전은 개인 데이터를 수집하지 않습니다. 앱은 계정 로그인이나 클라우드 계정을 요구하지 않으며 연락처, 위치, 사진 내용, 분석 데이터, 충돌 로그, 광고 식별자 또는 추적 식별자를 수집하지 않습니다."
+          ]
+        },
+        {
+          "title": "이미지, 마스크 및 편집 결과",
+          "body": [
+            "선택한 이미지, 마스크, 브러시 스트로크, 복구 결과는 사용자의 기기에서 로컬로 처리됩니다. LuminaSage는 이 콘텐츠를 서버나 타사 AI 서비스에 업로드하지 않습니다.",
+            "내보낸 이미지는 사용자가 사진 보관함 또는 선택한 파일 위치에 저장하며 언제든지 기기에서 삭제할 수 있습니다."
+          ]
+        },
+        {
+          "title": "시스템 권한",
+          "body": [
+            "iPhone 및 iPad에서 사진 접근 권한은 사용자가 이미지를 선택하거나 처리 결과를 저장할 때만 사용됩니다.",
+            "Mac에서 파일 접근은 시스템 파일 선택기, 드래그 앤 드롭 또는 내보내기 패널에서 사용자가 명시적으로 선택한 파일로 제한됩니다."
+          ]
+        },
+        {
+          "title": "로컬 환경설정",
+          "body": [
+            "앱은 언어 선택과 같은 환경설정을 기기에 로컬로 저장할 수 있습니다. 이러한 설정은 기기 내 사용 경험을 개선하기 위해서만 사용되며 서버로 업로드되지 않습니다."
+          ]
+        },
+        {
+          "title": "온디바이스 모델 및 네트워크",
+          "body": [
+            "현재 버전은 앱에 포함된 Core ML 모델을 사용하여 기기에서 이미지 인페인팅을 수행합니다. 핵심 복구 기능은 이미지를 네트워크로 업로드할 필요가 없습니다."
+          ]
+        },
+        {
+          "title": "광고, 분석, 계정, 구독 및 타사 SDK",
+          "body": [
+            "현재 버전에는 광고, 타사 분석, 충돌 보고 SDK, 계정, 클라우드 동기화, 구독, 인앱 구매 또는 서버 측 이미지 처리가 포함되어 있지 않습니다. 향후 이러한 기능이 추가되면 출시 전에 본 방침과 App Store 개인정보 신고를 업데이트합니다."
+          ]
+        },
+        {
+          "title": "지원 이메일",
+          "body": [
+            "사용자가 지원 이메일을 보내는 경우, 이메일에 포함하기로 선택한 정보만 수신합니다. 비밀번호, 개인 키, 기밀 파일 또는 불필요한 개인 이미지는 보내지 마세요."
+          ]
+        },
+        {
+          "title": "아동 개인정보",
+          "body": [
+            "LuminaSage는 일반 사진 편집 유틸리티이며 아동을 대상으로 하지 않습니다. 현재 버전은 아동이나 다른 사용자의 정보를 의도적으로 수집하지 않습니다."
+          ]
+        },
+        {
+          "title": "방침 변경",
+          "body": [
+            "본 방침이 변경되면 수정된 날짜와 함께 이 페이지에 업데이트된 버전을 게시합니다."
+          ]
+        }
       ],
-      [
-        "Die von uns gesammelten Daten",
-        "Die aktuelle Version erfasst keine personenbezogenen Daten. Die Anwendung benötigt kein Benutzerkonto, bietet keine Cloud-Speicherdienste, enthält kein Werbe-SDK und kein Tracking-SDK von Drittanbietern."
-      ],
-      [
-        "Bild- und Bearbeitungsdaten",
-        "Das vom Nutzer ausgewählte Bild, die Maske, die Pinselstriche und die Reparaturergebnisse werden lokal auf dem Gerät des Nutzers verarbeitet. Jingxiangshi lädt weder das vom Nutzer ausgewählte Bild, die Maske noch die Bearbeitungsergebnisse auf Server oder KI-Dienste von Drittanbietern hoch."
-      ],
-      [
-        "Foto- und Dateiberechtigungen",
-        [
-          "Auf iPhone und iPad werden Fotoberechtigungen nur dann verwendet, wenn der Benutzer aktiv ein Bild auswählt oder das bearbeitete Ergebnis speichert.",
-          "Auf einem Mac ist der Dateizugriff auf Dateien beschränkt, die der Benutzer explizit über die Systemdateiauswahl, per Drag & Drop oder über das Exportfenster auswählt."
-        ]
-      ],
-      [
-        "Verarbeitung nativer Modelle",
-        "Das Bildwiederherstellungstool nutzt das in die App integrierte Core ML-Bildvervollständigungsmodell, um die Bildwiederherstellung direkt auf dem Gerät durchzuführen. Die aktuelle Version sendet keine Bildinhalte an einen externen KI-Dienst."
-      ],
-      [
-        "Analyse, Diagnose und Nachverfolgung",
-        "Die aktuelle Version erfasst keine Nutzungsanalysen, Absturzprotokolle, Werbe-IDs, Tracking-IDs, Standortdaten, Kontaktinformationen, Kontoinformationen oder Nutzungsverlauf."
-      ],
-      [
-        "Datenlöschung",
-        "Jingxiangshi speichert keine externen Benutzerkonten oder serverseitigen Benutzerdatensätze. Importierte Bilder und exportierte Dateien werden vom Benutzer am gewählten Speicherort gespeichert und können jederzeit von seinem Gerät gelöscht werden."
-      ],
-      [
-        "Datenschutz für Kinder",
-        "ImageFilter ist ein universelles Fotobearbeitungsprogramm und nicht speziell für Kinder entwickelt. Die App sammelt nicht absichtlich Informationen von Kindern oder anderen Nutzern."
-      ],
-      [
-        "Richtlinienänderung",
-        "Sollte sich diese Richtlinie ändern, veröffentlichen wir eine aktualisierte Version auf dieser Seite und passen das Aktualisierungsdatum an. Falls zukünftige Versionen Cloud-Funktionen, Analysen, Fehlerberichte, Kontosynchronisierung, Abonnements oder serverseitige Verarbeitung hinzufügen, aktualisieren wir diese Richtlinie und die Datenschutzerklärung des App Stores vor der Veröffentlichung."
-      ],
-      [
-        "Kontaktieren Sie uns",
-        "Sollten Sie Fragen zu dieser Datenschutzerklärung haben, kontaktieren Sie uns bitte per E-Mail unter PLACEHOLDER."
+      "linksTitle": "관련 페이지",
+      "links": [
+        {
+          "label": "지원",
+          "href": "../Support/index.html",
+          "text": "지원 및 FAQ 보기"
+        },
+        {
+          "label": "연령 등급",
+          "href": "../AgeRating/index.html",
+          "text": "연령 등급 정보 보기"
+        }
       ]
-    ]
-  },
-  "es": {
-    "languageLabel": "idioma",
-    "eyebrow": "LuminaSage, un programa para crear retratos, está disponible para iPhone, iPad y Mac.",
-    "title": "política de privacidad",
-    "updated": "Última actualización: 29 de mayo de 2026",
-    "sections": [
-      [
-        "Descripción general",
-        "ImagePure es una herramienta local de IA para la restauración y el procesamiento de imágenes. Tras importar una imagen, los usuarios pueden usar un pincel para marcar las áreas que necesitan restauración, y el proceso se completa localmente en el dispositivo."
+    },
+    "es": {
+      "documentTitle": "Política de privacidad de LuminaSage",
+      "metaDescription": "Política de privacidad de LuminaSage: reparación local de imágenes con IA, sin subir fotos y sin recopilar datos personales en la versión actual.",
+      "brand": "LuminaSage",
+      "eyebrow": "LuminaSage para iPhone, iPad y Mac",
+      "title": "Política de privacidad",
+      "updated": "Última actualización: 5 de julio de 2026",
+      "intro": "LuminaSage es una utilidad local de reparación de imágenes e inpainting con IA. El usuario importa una imagen, marca el área que desea reparar y genera el resultado en el dispositivo.",
+      "noticeTitle": "Compromiso de privacidad de la versión actual",
+      "noticeBody": "La versión actual no requiere inicio de sesión, no sube imágenes, no recopila datos personales y no incluye publicidad ni SDK de seguimiento de terceros.",
+      "sections": [
+        {
+          "title": "Proveedor y contacto",
+          "body": [
+            "LuminaSage es proporcionada por el desarrollador de la app. Para preguntas de privacidad, escribe a kibernet@sina.com."
+          ]
+        },
+        {
+          "title": "Datos que recopilamos",
+          "body": [
+            "La versión actual no recopila datos personales. La app no requiere inicio de sesión, no mantiene cuentas en la nube y no recopila contactos, ubicación, contenido de fotos, analíticas, registros de fallos, identificadores publicitarios ni identificadores de seguimiento."
+          ]
+        },
+        {
+          "title": "Imágenes, máscaras y resultados editados",
+          "body": [
+            "Las imágenes seleccionadas, máscaras, trazos de pincel y resultados de reparación se procesan localmente en el dispositivo del usuario. LuminaSage no sube este contenido a un servidor ni a un servicio de IA de terceros.",
+            "Las imágenes exportadas las guarda el usuario en Fotos o en una ubicación de archivo elegida por el usuario, y pueden eliminarse del dispositivo en cualquier momento."
+          ]
+        },
+        {
+          "title": "Permisos del sistema",
+          "body": [
+            "En iPhone y iPad, el acceso a Fotos solo se usa cuando el usuario elige una imagen o guarda un resultado procesado.",
+            "En Mac, el acceso a archivos se limita a los archivos que el usuario selecciona explícitamente mediante el selector del sistema, arrastrar y soltar o el panel de exportación."
+          ]
+        },
+        {
+          "title": "Preferencias locales",
+          "body": [
+            "La app puede guardar preferencias como la selección de idioma localmente en el dispositivo. Estas preferencias solo se usan para mejorar la experiencia en el dispositivo y no se suben a un servidor."
+          ]
+        },
+        {
+          "title": "Modelo en el dispositivo y red",
+          "body": [
+            "La versión actual usa un modelo Core ML incluido en la app para realizar inpainting en el dispositivo. La función principal de reparación no requiere subir imágenes por la red."
+          ]
+        },
+        {
+          "title": "Publicidad, analíticas, cuentas, suscripciones y SDK de terceros",
+          "body": [
+            "La versión actual no incluye publicidad, analíticas de terceros, SDK de informes de fallos, cuentas, sincronización en la nube, suscripciones, compras dentro de la app ni procesamiento de imágenes en servidor. Si se añaden en una versión futura, esta política y las declaraciones de privacidad de App Store se actualizarán antes del lanzamiento."
+          ]
+        },
+        {
+          "title": "Correo de soporte",
+          "body": [
+            "Si un usuario decide enviar un correo de soporte, solo recibimos la información que incluya en ese correo. No envíes contraseñas, claves privadas, archivos confidenciales ni imágenes privadas innecesarias."
+          ]
+        },
+        {
+          "title": "Privacidad de menores",
+          "body": [
+            "LuminaSage es una utilidad general de edición de fotos y no está dirigida a menores. La versión actual no recopila deliberadamente información de menores ni de otros usuarios."
+          ]
+        },
+        {
+          "title": "Cambios en esta política",
+          "body": [
+            "Si esta política cambia, la versión actualizada se publicará en esta página con una nueva fecha de actualización."
+          ]
+        }
       ],
-      [
-        "Los datos que recopilamos",
-        "La versión actual no recopila datos personales. La aplicación no requiere una cuenta de inicio de sesión, no proporciona servicios de cuenta en la nube, no incluye un SDK de publicidad ni un SDK de seguimiento de terceros."
-      ],
-      [
-        "Datos de imagen y edición",
-        "La imagen, la máscara, las pinceladas y los resultados de la reparación seleccionados por el usuario se procesan localmente en su dispositivo. Jingxiangshi no sube la imagen, la máscara ni los resultados de edición seleccionados por el usuario a servidores ni a servicios de IA de terceros."
-      ],
-      [
-        "Permisos de fotos y archivos",
-        [
-          "En iPhone y iPad, los permisos de fotografía solo se utilizan cuando el usuario selecciona activamente una imagen o guarda el resultado editado.",
-          "En un Mac, el acceso a los archivos se limita a aquellos que el usuario selecciona explícitamente a través del selector de archivos del sistema, arrastrando y soltando, o mediante el panel de exportación."
-        ]
-      ],
-      [
-        "Procesamiento de modelos nativos",
-        "La herramienta de restauración de imágenes utiliza el modelo de autocompletado de imágenes Core ML integrado en la aplicación para restaurar las imágenes directamente en el dispositivo. La versión actual no envía el contenido de las imágenes a un servicio de IA remoto."
-      ],
-      [
-        "Análisis, diagnóstico y seguimiento",
-        "La versión actual no recopila análisis de uso, registros de fallos, identificadores de publicidad, identificadores de seguimiento, datos de ubicación, información de contacto, información de cuenta ni historial de uso."
-      ],
-      [
-        "Eliminación de datos",
-        "Jingxiangshi no mantiene cuentas remotas ni registros de usuarios en el servidor. Las imágenes importadas y los archivos exportados se guardan en la ubicación que el usuario elija, y los usuarios pueden eliminar estos archivos de su dispositivo en cualquier momento."
-      ],
-      [
-        "Privacidad de los niños",
-        "Image Cleaner es una herramienta de edición de fotos de uso general y no está diseñada específicamente para niños. La aplicación no recopila información de niños ni de otros usuarios de forma intencionada."
-      ],
-      [
-        "Cambio de política",
-        "Si esta política cambia, publicaremos una versión actualizada en esta página y modificaremos la fecha de actualización. Si las futuras versiones incorporan funciones en la nube, análisis, informes de errores, sincronización de cuentas, suscripciones o procesamiento del lado del servidor, actualizaremos esta política y la Declaración de privacidad de la App Store antes de su lanzamiento."
-      ],
-      [
-        "Contáctanos",
-        "Si tiene alguna pregunta sobre esta Política de Privacidad, póngase en contacto con nosotros por correo electrónico a PLACEHOLDER."
+      "linksTitle": "Páginas relacionadas",
+      "links": [
+        {
+          "label": "Soporte",
+          "href": "../Support/index.html",
+          "text": "Ver soporte y preguntas frecuentes"
+        },
+        {
+          "label": "Edad",
+          "href": "../AgeRating/index.html",
+          "text": "Ver información de clasificación por edad"
+        }
       ]
-    ]
-  },
-  "pt": {
-    "languageLabel": "linguagem",
-    "eyebrow": "LuminaSage, um aplicativo de retratos, está disponível para iPhone, iPad e Mac.",
-    "title": "política de Privacidade",
-    "updated": "Última atualização: 29 de maio de 2026",
-    "sections": [
-      [
-        "Visão geral",
-        "O ImagePure é uma ferramenta local de IA para restauração e preenchimento de imagens. Após importar uma imagem, os usuários podem usar um pincel para marcar as áreas que precisam de restauração, e o processo é concluído localmente no dispositivo."
+    },
+    "fr": {
+      "documentTitle": "Politique de confidentialité de LuminaSage",
+      "metaDescription": "Politique de confidentialité de LuminaSage : réparation locale d’images par IA, aucun téléversement de photos et aucune collecte de données personnelles dans la version actuelle.",
+      "brand": "LuminaSage",
+      "eyebrow": "LuminaSage pour iPhone, iPad et Mac",
+      "title": "Politique de confidentialité",
+      "updated": "Dernière mise à jour : 5 juillet 2026",
+      "intro": "LuminaSage est un utilitaire local de réparation d’images et d’inpainting par IA. L’utilisateur importe une image, marque la zone à réparer et génère le résultat sur l’appareil.",
+      "noticeTitle": "Engagement de confidentialité de la version actuelle",
+      "noticeBody": "La version actuelle ne demande pas de connexion, ne téléverse pas les images, ne collecte pas de données personnelles et n’inclut ni publicité ni SDK de suivi tiers.",
+      "sections": [
+        {
+          "title": "Fournisseur et contact",
+          "body": [
+            "LuminaSage est fourni par le développeur de l’app. Pour toute question de confidentialité, contactez kibernet@sina.com."
+          ]
+        },
+        {
+          "title": "Données collectées",
+          "body": [
+            "La version actuelle ne collecte pas de données personnelles. L’app ne demande pas de connexion à un compte, ne maintient pas de compte cloud et ne collecte pas les contacts, la localisation, le contenu des photos, les données analytiques, les journaux de plantage, les identifiants publicitaires ou les identifiants de suivi."
+          ]
+        },
+        {
+          "title": "Images, masques et résultats modifiés",
+          "body": [
+            "Les images sélectionnées, les masques, les traits de pinceau et les résultats de réparation sont traités localement sur l’appareil de l’utilisateur. LuminaSage ne téléverse pas ce contenu vers un serveur ou un service d’IA tiers.",
+            "Les images exportées sont enregistrées par l’utilisateur dans Photos ou à l’emplacement de fichier choisi, et peuvent être supprimées de l’appareil à tout moment."
+          ]
+        },
+        {
+          "title": "Autorisations système",
+          "body": [
+            "Sur iPhone et iPad, l’accès à Photos est utilisé uniquement lorsque l’utilisateur choisit une image ou enregistre un résultat traité.",
+            "Sur Mac, l’accès aux fichiers est limité aux fichiers que l’utilisateur sélectionne explicitement via le sélecteur système, le glisser-déposer ou le panneau d’exportation."
+          ]
+        },
+        {
+          "title": "Préférences locales",
+          "body": [
+            "L’app peut enregistrer localement sur l’appareil des préférences telles que le choix de la langue. Ces préférences servent uniquement à améliorer l’expérience sur l’appareil et ne sont pas téléversées vers un serveur."
+          ]
+        },
+        {
+          "title": "Modèle sur l’appareil et réseau",
+          "body": [
+            "La version actuelle utilise un modèle Core ML intégré à l’app pour effectuer l’inpainting sur l’appareil. La fonction principale de réparation ne nécessite pas de téléverser des images sur le réseau."
+          ]
+        },
+        {
+          "title": "Publicité, analyses, comptes, abonnements et SDK tiers",
+          "body": [
+            "La version actuelle n’inclut pas de publicité, d’analyses tierces, de SDK de rapports de plantage, de comptes, de synchronisation cloud, d’abonnements, d’achats intégrés ni de traitement d’images côté serveur. Si ces fonctions sont ajoutées plus tard, cette politique et les déclarations de confidentialité App Store seront mises à jour avant la sortie."
+          ]
+        },
+        {
+          "title": "E-mail d’assistance",
+          "body": [
+            "Si un utilisateur choisit d’envoyer un e-mail d’assistance, nous recevons uniquement les informations qu’il inclut dans ce message. N’envoyez pas de mots de passe, de clés privées, de fichiers confidentiels ou d’images privées inutiles."
+          ]
+        },
+        {
+          "title": "Confidentialité des enfants",
+          "body": [
+            "LuminaSage est un utilitaire général de retouche photo et ne s’adresse pas spécifiquement aux enfants. La version actuelle ne collecte pas sciemment d’informations auprès d’enfants ou d’autres utilisateurs."
+          ]
+        },
+        {
+          "title": "Modifications de cette politique",
+          "body": [
+            "Si cette politique change, la version mise à jour sera publiée sur cette page avec une date révisée."
+          ]
+        }
       ],
-      [
-        "Os dados que coletamos",
-        "A versão atual não coleta dados pessoais. O aplicativo não exige conta de login, não oferece serviços de nuvem, não inclui SDK de publicidade e não inclui SDK de rastreamento de terceiros."
-      ],
-      [
-        "Dados de imagem e edição",
-        "A imagem selecionada pelo usuário, a máscara, os traços do pincel e os resultados da correção são processados localmente no dispositivo do usuário. O Jingxiangshi não envia a imagem selecionada pelo usuário, a máscara ou os resultados da edição para servidores ou serviços de IA de terceiros."
-      ],
-      [
-        "Permissões para fotos e arquivos",
-        [
-          "No iPhone e no iPad, as permissões de fotos só são usadas quando o usuário seleciona ativamente uma imagem ou salva o resultado editado.",
-          "Em um Mac, o acesso a arquivos é limitado àqueles que o usuário seleciona explicitamente por meio do seletor de arquivos do sistema, arrastando e soltando ou no painel de exportação."
-        ]
-      ],
-      [
-        "Processamento de modelo nativo",
-        "A ferramenta de restauração de imagens utiliza o modelo de preenchimento automático de imagens Core ML integrado ao aplicativo para realizar a restauração de imagens no próprio dispositivo. A versão atual não envia o conteúdo da imagem para um serviço de IA remoto."
-      ],
-      [
-        "Análise, diagnóstico e rastreamento",
-        "A versão atual não coleta análises de uso, registros de falhas, identificadores de publicidade, identificadores de rastreamento, dados de localização, informações de contato, informações da conta ou histórico de uso."
-      ],
-      [
-        "Exclusão de dados",
-        "A Jingxiangshi não mantém contas remotas nem registros de usuários no servidor. As imagens importadas e os arquivos exportados são salvos pelo usuário no local escolhido, e ele pode excluí-los do seu dispositivo a qualquer momento."
-      ],
-      [
-        "Privacidade das crianças",
-        "O ImageFilter é uma ferramenta de edição de fotos de uso geral e não foi projetado especificamente para crianças. O aplicativo não coleta intencionalmente informações de crianças ou outros usuários."
-      ],
-      [
-        "Mudança de política",
-        "Caso esta política seja alterada, publicaremos uma versão atualizada nesta página e modificaremos a data da atualização. Se versões futuras adicionarem recursos de nuvem, análises, relatórios de falhas, sincronização de contas, assinaturas ou processamento no servidor, atualizaremos esta política e a Declaração de Privacidade da App Store antes do lançamento."
-      ],
-      [
-        "Contate-nos",
-        "Caso tenha alguma dúvida sobre esta Política de Privacidade, entre em contato conosco por e-mail no endereço PLACEHOLDER."
+      "linksTitle": "Pages associées",
+      "links": [
+        {
+          "label": "Assistance",
+          "href": "../Support/index.html",
+          "text": "Voir l’assistance et la FAQ"
+        },
+        {
+          "label": "Âge",
+          "href": "../AgeRating/index.html",
+          "text": "Voir les informations de classification par âge"
+        }
       ]
-    ]
+    },
+    "de": {
+      "documentTitle": "LuminaSage Datenschutzrichtlinie",
+      "metaDescription": "Datenschutzrichtlinie für LuminaSage: lokale KI-Bildreparatur, keine Foto-Uploads und keine Erfassung personenbezogener Daten in der aktuellen Version.",
+      "brand": "LuminaSage",
+      "eyebrow": "LuminaSage für iPhone, iPad und Mac",
+      "title": "Datenschutzrichtlinie",
+      "updated": "Zuletzt aktualisiert: 5. Juli 2026",
+      "intro": "LuminaSage ist ein lokales KI-Werkzeug für Bildreparatur und Inpainting. Nutzer importieren ein Bild, markieren den zu reparierenden Bereich und erzeugen das Ergebnis auf dem Gerät.",
+      "noticeTitle": "Datenschutzversprechen der aktuellen Version",
+      "noticeBody": "Die aktuelle Version erfordert keine Anmeldung, lädt keine Bilder hoch, erfasst keine personenbezogenen Daten und enthält keine Werbung oder Tracking-SDKs von Drittanbietern.",
+      "sections": [
+        {
+          "title": "Anbieter und Kontakt",
+          "body": [
+            "LuminaSage wird vom App-Entwickler bereitgestellt. Bei Datenschutzfragen kontaktieren Sie kibernet@sina.com."
+          ]
+        },
+        {
+          "title": "Erfasste Daten",
+          "body": [
+            "Die aktuelle Version erfasst keine personenbezogenen Daten. Die App erfordert keine Kontoanmeldung, verwaltet keine Cloud-Konten und erfasst keine Kontakte, Standortdaten, Fotoinhalte, Analysen, Absturzprotokolle, Werbekennungen oder Tracking-Kennungen."
+          ]
+        },
+        {
+          "title": "Bilder, Masken und bearbeitete Ergebnisse",
+          "body": [
+            "Ausgewählte Bilder, Masken, Pinselstriche und Reparaturergebnisse werden lokal auf dem Gerät des Nutzers verarbeitet. LuminaSage lädt diese Inhalte nicht auf einen Server oder zu einem KI-Dienst eines Drittanbieters hoch.",
+            "Exportierte Bilder werden vom Nutzer in Fotos oder an einem ausgewählten Speicherort gespeichert und können jederzeit vom Gerät gelöscht werden."
+          ]
+        },
+        {
+          "title": "Systemberechtigungen",
+          "body": [
+            "Auf iPhone und iPad wird der Zugriff auf Fotos nur verwendet, wenn der Nutzer ein Bild auswählt oder ein verarbeitetes Ergebnis speichert.",
+            "Auf dem Mac ist der Dateizugriff auf Dateien beschränkt, die der Nutzer ausdrücklich über die Systemdateiauswahl, Drag-and-drop oder das Exportfenster auswählt."
+          ]
+        },
+        {
+          "title": "Lokale Einstellungen",
+          "body": [
+            "Die App kann Einstellungen wie die Sprachauswahl lokal auf dem Gerät speichern. Diese Einstellungen dienen nur dazu, die Nutzung auf dem Gerät zu verbessern, und werden nicht auf einen Server hochgeladen."
+          ]
+        },
+        {
+          "title": "On-Device-Modell und Netzwerk",
+          "body": [
+            "Die aktuelle Version verwendet ein in die App eingebettetes Core ML-Modell, um Inpainting auf dem Gerät auszuführen. Die zentrale Reparaturfunktion erfordert kein Hochladen von Bildern über das Netzwerk."
+          ]
+        },
+        {
+          "title": "Werbung, Analysen, Konten, Abonnements und Drittanbieter-SDKs",
+          "body": [
+            "Die aktuelle Version enthält keine Werbung, Drittanbieter-Analysen, Absturzbericht-SDKs, Konten, Cloud-Synchronisierung, Abonnements, In-App-Käufe oder serverseitige Bildverarbeitung. Wenn solche Funktionen künftig hinzugefügt werden, werden diese Richtlinie und die App Store-Datenschutzerklärungen vor der Veröffentlichung aktualisiert."
+          ]
+        },
+        {
+          "title": "Support-E-Mail",
+          "body": [
+            "Wenn ein Nutzer eine Support-E-Mail sendet, erhalten wir nur die Informationen, die der Nutzer in diese E-Mail aufnimmt. Senden Sie keine Passwörter, privaten Schlüssel, vertraulichen Dateien oder unnötigen privaten Bilder."
+          ]
+        },
+        {
+          "title": "Datenschutz von Kindern",
+          "body": [
+            "LuminaSage ist ein allgemeines Fotobearbeitungswerkzeug und richtet sich nicht an Kinder. Die aktuelle Version erfasst wissentlich keine Informationen von Kindern oder anderen Nutzern."
+          ]
+        },
+        {
+          "title": "Änderungen dieser Richtlinie",
+          "body": [
+            "Wenn sich diese Richtlinie ändert, wird die aktualisierte Version mit geändertem Aktualisierungsdatum auf dieser Seite veröffentlicht."
+          ]
+        }
+      ],
+      "linksTitle": "Verwandte Seiten",
+      "links": [
+        {
+          "label": "Support",
+          "href": "../Support/index.html",
+          "text": "Support und FAQ ansehen"
+        },
+        {
+          "label": "Alter",
+          "href": "../AgeRating/index.html",
+          "text": "Informationen zur Altersfreigabe ansehen"
+        }
+      ]
+    }
   }
-};
-    function hydrateLinks(value) {
-      return String(value)
-        .replaceAll('${emailLink}', emailLink)
-        .replaceAll('EMAIL_PLACEHOLDER', emailLink)
-        .replaceAll('email_PLACEHOLDER', emailLink)
-        .replaceAll('PLACEHOLDER', emailLink);
+}
+  </script>
+  <script>
+    const data = JSON.parse(document.getElementById('page-data').textContent);
+    const select = document.getElementById('language-select');
+    const content = document.getElementById('localized-content');
+    const navItems = document.querySelectorAll('[data-nav]');
+    const label = document.getElementById('language-label');
+    const storageKey = 'luminasage-page-language';
+
+    function normalizeLanguage(value) {
+      if (!value) return data.defaultLanguage;
+      const lower = value.toLowerCase();
+      if (lower === 'zh-hans' || lower === 'zh-cn' || lower === 'zh-sg') return 'zh-Hans';
+      if (lower === 'zh-hant' || lower === 'zh-tw' || lower === 'zh-hk' || lower === 'zh-mo') return 'zh-Hant';
+      const base = lower.split('-')[0];
+      return data.languages.some((item) => item.code === base) ? base : data.defaultLanguage;
     }
-    function sectionBody(body) {
-      if (Array.isArray(body)) { return '<ul>' + body.map(item => `<li>${hydrateLinks(item)}</li>`).join('') + '</ul>'; }
-      return `<p>${hydrateLinks(body)}</p>`;
+
+    function preferredLanguage() {
+      const saved = localStorage.getItem(storageKey);
+      if (saved && data.languages.some((item) => item.code === saved)) return saved;
+      for (const lang of navigator.languages || [navigator.language]) {
+        const normalized = normalizeLanguage(lang);
+        if (data.languages.some((item) => item.code === normalized)) return normalized;
+      }
+      return data.defaultLanguage;
     }
-    function build(locale) {
-      const t = translations[locale] || translations.en;
-      document.documentElement.lang = locale;
-      document.documentElement.dir = locale === 'ar' ? 'rtl' : 'ltr';
-      document.title = t.title + ' - LuminaSage';
-      document.getElementById('languageLabel').textContent = t.languageLabel;
-      document.querySelector('[data-i18n="eyebrow"]').textContent = t.eyebrow;
-      document.querySelector('[data-i18n="title"]').textContent = t.title;
-      document.querySelector('[data-i18n="updated"]').textContent = t.updated;
-      document.getElementById('content').innerHTML = t.sections.map(([h, p]) => `<section><h2>${hydrateLinks(h)}</h2>${sectionBody(p)}</section>`).join('');
+
+    function escapeHtml(value) {
+      return String(value).replace(/[&<>"]/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[char]));
     }
-    document.getElementById('languageSelect').addEventListener('change', event => build(event.target.value));
-    build('zh-Hans');
+
+    function paragraphList(items) {
+      return items.map((item) => `<p>${escapeHtml(item)}</p>`).join('');
+    }
+
+    function renderLinks(page) {
+      if (!page.links || !page.links.length) return '';
+      const links = page.links.map((item) => `<a class="pill" href="${escapeHtml(item.href)}"><strong>${escapeHtml(item.label)}</strong>&nbsp;${escapeHtml(item.text)}</a>`).join('');
+      return `<h2>${escapeHtml(page.linksTitle)}</h2><div class="link-row">${links}</div>`;
+    }
+
+    function renderPrivacy(page) {
+      return `
+        <p class="eyebrow">${escapeHtml(page.eyebrow)}</p>
+        <h1>${escapeHtml(page.title)}</h1>
+        <p class="updated">${escapeHtml(page.updated)}</p>
+        <p class="intro">${escapeHtml(page.intro)}</p>
+        <section class="notice"><h2>${escapeHtml(page.noticeTitle)}</h2><p>${escapeHtml(page.noticeBody)}</p></section>
+        ${page.sections.map((section) => `<section><h2>${escapeHtml(section.title)}</h2>${paragraphList(section.body)}</section>`).join('')}
+        ${renderLinks(page)}
+      `;
+    }
+
+    function renderSupport(page) {
+      return `
+        <p class="eyebrow">${escapeHtml(page.eyebrow)}</p>
+        <h1>${escapeHtml(page.title)}</h1>
+        <p class="intro">${escapeHtml(page.intro)}</p>
+        <p class="contact"><strong>${escapeHtml(page.contactLabel)}</strong> <a href="mailto:${escapeHtml(page.contactEmail)}">${escapeHtml(page.contactEmail)}</a></p>
+        ${page.sections.map((section) => `<section><h2>${escapeHtml(section.title)}</h2>${paragraphList(section.body)}</section>`).join('')}
+        <section><h2>${escapeHtml(page.faqTitle)}</h2>${page.faq.map((item) => `<div class="faq-item"><h3>${escapeHtml(item[0])}</h3><p>${escapeHtml(item[1])}</p></div>`).join('')}</section>
+        ${renderLinks(page)}
+      `;
+    }
+
+    function renderAge(page) {
+      const rows = page.rows.map((row) => `<tr><td>${escapeHtml(row[0])}</td><td>${escapeHtml(row[1])}</td></tr>`).join('');
+      return `
+        <p class="eyebrow">${escapeHtml(page.eyebrow)}</p>
+        <h1>${escapeHtml(page.title)}</h1>
+        <p class="intro">${escapeHtml(page.intro)}</p>
+        <span class="rating">${escapeHtml(page.rating)}</span>
+        <table><thead><tr><th>${escapeHtml(page.headers[0])}</th><th>${escapeHtml(page.headers[1])}</th></tr></thead><tbody>${rows}</tbody></table>
+        ${page.sections.map((section) => `<section><h2>${escapeHtml(section.title)}</h2>${paragraphList(section.body)}</section>`).join('')}
+        ${renderLinks(page)}
+      `;
+    }
+
+    function render(code) {
+      const language = data.languages.find((item) => item.code === code) || data.languages.find((item) => item.code === data.defaultLanguage);
+      const page = data.content[language.code];
+      const ui = data.ui[language.code];
+      document.documentElement.lang = language.htmlLang;
+      document.documentElement.dir = language.dir;
+      document.title = page.documentTitle;
+      const meta = document.querySelector('meta[name="description"]');
+      if (meta) meta.setAttribute('content', page.metaDescription);
+      document.querySelector('.brand span:last-child').textContent = page.brand;
+      label.textContent = ui.language;
+      select.setAttribute('aria-label', ui.chooseLanguage);
+      navItems.forEach((item) => { item.textContent = ui[item.dataset.nav]; });
+      content.innerHTML = data.pageType === 'privacy' ? renderPrivacy(page) : (data.pageType === 'support' ? renderSupport(page) : renderAge(page));
+      select.value = language.code;
+      localStorage.setItem(storageKey, language.code);
+    }
+
+    data.languages.forEach((item) => {
+      const option = document.createElement('option');
+      option.value = item.code;
+      option.textContent = item.label;
+      select.appendChild(option);
+    });
+    select.addEventListener('change', () => render(select.value));
+    render(preferredLanguage());
+
   </script>
 </body>
 </html>

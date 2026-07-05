@@ -1,0 +1,1500 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RightMenuBoost Support</title>
+  <meta name="description" content="Support page for RightMenuBoost / 右键增强Pro, including Finder extension setup, right-click workflows, encrypted DMG creation, checksums, and contact information.">
+  <style>
+    :root {
+      color-scheme: dark light;
+      --bg: #0e1118;
+      --panel: rgba(18, 24, 34, 0.92);
+      --panel-soft: rgba(24, 32, 44, 0.78);
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --quiet: #94a3b8;
+      --line: rgba(148, 163, 184, 0.24);
+      --accent: #5eead4;
+      --accent-2: #f7c66a;
+      --ok: #86efac;
+      --shadow: rgba(0, 0, 0, 0.34);
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f7fafc;
+        --panel: rgba(255, 255, 255, 0.96);
+        --panel-soft: rgba(248, 250, 252, 0.92);
+        --text: #111827;
+        --muted: #334155;
+        --quiet: #64748b;
+        --line: rgba(15, 23, 42, 0.14);
+        --accent: #0f766e;
+        --accent-2: #9a6700;
+        --ok: #047857;
+        --shadow: rgba(15, 23, 42, 0.12);
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+      line-height: 1.65;
+      letter-spacing: 0;
+      color: var(--text);
+      background: linear-gradient(135deg, var(--bg) 0%, #121826 55%, #0a1018 100%);
+    }
+    @media (prefers-color-scheme: light) {
+      body { background: linear-gradient(135deg, #f8fafc 0%, #eef5f6 58%, #f7fafc 100%); }
+    }
+    .page { width: min(1040px, calc(100% - 40px)); margin: 0 auto; padding: 40px 0; }
+    .shell { border: 1px solid var(--line); border-radius: 16px; background: var(--panel); box-shadow: 0 28px 88px var(--shadow); overflow: hidden; }
+    .topbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 22px; border-bottom: 1px solid var(--line); background: var(--panel-soft); }
+    .brand { display: inline-flex; align-items: center; gap: 10px; min-width: max-content; color: var(--text); text-decoration: none; font-weight: 760; }
+    .mark { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border: 1px solid color-mix(in srgb, var(--accent) 44%, transparent); border-radius: 8px; color: var(--accent); background: color-mix(in srgb, var(--accent) 12%, transparent); font-size: 0.86rem; font-weight: 820; }
+    .nav { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 8px; }
+    .nav a, .language-control { border: 1px solid var(--line); border-radius: 8px; background: rgba(255,255,255,0.04); color: var(--muted); text-decoration: none; font-size: 0.94rem; }
+    .nav a { padding: 7px 10px; }
+    .nav a[aria-current="page"] { color: var(--text); border-color: color-mix(in srgb, var(--accent) 45%, var(--line)); background: color-mix(in srgb, var(--accent) 11%, transparent); }
+    .language-control { display: inline-flex; align-items: center; gap: 8px; padding: 6px 8px; }
+    .language-control label { color: var(--quiet); font-size: 0.88rem; white-space: nowrap; }
+    .language-control select { min-width: 176px; border: 0; outline: 0; background: transparent; color: var(--text); font: inherit; font-size: 0.94rem; }
+    .language-control option { color: #111827; background: #ffffff; }
+    .content { padding: 44px; }
+    h1, h2, h3 { line-height: 1.15; letter-spacing: 0; }
+    h1 { margin: 0 0 12px; font-size: 2.7rem; font-weight: 780; }
+    h2 { margin: 34px 0 12px; font-size: 1.23rem; font-weight: 740; }
+    h3 { margin: 22px 0 8px; color: var(--accent-2); font-size: 1rem; font-weight: 720; }
+    p, li, td, th { color: var(--muted); font-size: 1rem; overflow-wrap: anywhere; }
+    p { margin: 0 0 14px; }
+    ul { margin: 10px 0 0; padding-left: 1.25rem; }
+    [dir="rtl"] ul { padding-left: 0; padding-right: 1.25rem; }
+    a { color: var(--accent); overflow-wrap: anywhere; }
+    .eyebrow { margin: 0 0 24px; color: var(--accent); font-weight: 760; }
+    .updated { color: var(--quiet); font-size: 0.95rem; }
+    .intro { font-size: 1.05rem; }
+    .notice { margin: 24px 0; padding: 16px 18px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel-soft); }
+    .notice p { margin: 0; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin: 24px 0 8px; }
+    .card { min-height: 104px; padding: 16px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel-soft); }
+    .card strong { display: block; margin-bottom: 6px; color: var(--text); }
+    table { width: 100%; margin-top: 12px; border-collapse: separate; border-spacing: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 8px; background: var(--panel-soft); }
+    th, td { padding: 12px 14px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    [dir="rtl"] th, [dir="rtl"] td { text-align: right; }
+    tr:last-child td { border-bottom: 0; }
+    th { color: var(--text); background: color-mix(in srgb, var(--accent) 10%, transparent); font-weight: 740; }
+    .rating { display: inline-flex; align-items: center; justify-content: center; margin: 20px 0 8px; padding: 10px 14px; border: 1px solid color-mix(in srgb, var(--ok) 42%, transparent); border-radius: 8px; color: var(--ok); background: color-mix(in srgb, var(--ok) 10%, transparent); font-weight: 780; }
+    .link-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+    .pill { display: inline-flex; align-items: center; padding: 8px 11px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel-soft); color: var(--text); text-decoration: none; }
+    code { color: var(--accent-2); }
+    @media (max-width: 760px) {
+      .page { width: min(100% - 24px, 1040px); padding: 18px 0; }
+      .topbar { align-items: stretch; flex-direction: column; }
+      .nav { justify-content: flex-start; }
+      .language-control { width: 100%; justify-content: space-between; }
+      .language-control select { min-width: 0; width: 100%; }
+      .content { padding: 26px 20px; }
+      h1 { font-size: 2.1rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="shell">
+      <header class="topbar">
+        <a class="brand" href="../Support/index.html"><span class="mark">RB</span><span>RightMenuBoost</span></a>
+        <nav class="nav" aria-label="RightMenuBoost pages">
+          <a data-nav="privacy" href="../Privacy/index.html">Privacy</a>
+          <a data-nav="support" aria-current="page" href="../Support/index.html">Support</a>
+          <a data-nav="age" href="../AgeRating/index.html">Age Rating</a>
+          <span class="language-control"><label id="language-label" for="language-select">Language</label><select id="language-select"></select></span>
+        </nav>
+      </header>
+      <main id="localized-content" class="content" role="main"></main>
+    </div>
+  </div>
+  <script type="application/json" id="page-data">
+  {
+    "defaultLanguage": "en",
+    "languages": [
+      {
+        "code": "zh-Hans",
+        "htmlLang": "zh-CN",
+        "label": "简体中文",
+        "dir": "ltr"
+      },
+      {
+        "code": "zh-Hant",
+        "htmlLang": "zh-TW",
+        "label": "繁體中文",
+        "dir": "ltr"
+      },
+      {
+        "code": "en",
+        "htmlLang": "en",
+        "label": "English",
+        "dir": "ltr"
+      },
+      {
+        "code": "ja",
+        "htmlLang": "ja",
+        "label": "日本語",
+        "dir": "ltr"
+      },
+      {
+        "code": "ko",
+        "htmlLang": "ko",
+        "label": "한국어",
+        "dir": "ltr"
+      },
+      {
+        "code": "es",
+        "htmlLang": "es",
+        "label": "Español",
+        "dir": "ltr"
+      },
+      {
+        "code": "fr",
+        "htmlLang": "fr",
+        "label": "Français",
+        "dir": "ltr"
+      },
+      {
+        "code": "de",
+        "htmlLang": "de",
+        "label": "Deutsch",
+        "dir": "ltr"
+      }
+    ],
+    "ui": {
+      "zh-Hans": {
+        "language": "语言",
+        "chooseLanguage": "选择语言",
+        "privacy": "隐私",
+        "support": "支持",
+        "age": "适龄"
+      },
+      "zh-Hant": {
+        "language": "語言",
+        "chooseLanguage": "選擇語言",
+        "privacy": "隱私",
+        "support": "支援",
+        "age": "適齡"
+      },
+      "en": {
+        "language": "Language",
+        "chooseLanguage": "Choose language",
+        "privacy": "Privacy",
+        "support": "Support",
+        "age": "Age Rating"
+      },
+      "ja": {
+        "language": "言語",
+        "chooseLanguage": "言語を選択",
+        "privacy": "プライバシー",
+        "support": "サポート",
+        "age": "年齢制限"
+      },
+      "ko": {
+        "language": "언어",
+        "chooseLanguage": "언어 선택",
+        "privacy": "개인정보",
+        "support": "지원",
+        "age": "연령 등급"
+      },
+      "es": {
+        "language": "Idioma",
+        "chooseLanguage": "Elegir idioma",
+        "privacy": "Privacidad",
+        "support": "Soporte",
+        "age": "Edad"
+      },
+      "fr": {
+        "language": "Langue",
+        "chooseLanguage": "Choisir la langue",
+        "privacy": "Confidentialité",
+        "support": "Assistance",
+        "age": "Âge"
+      },
+      "de": {
+        "language": "Sprache",
+        "chooseLanguage": "Sprache auswählen",
+        "privacy": "Datenschutz",
+        "support": "Support",
+        "age": "Alter"
+      }
+    },
+    "content": {
+      "zh-Hans": {
+        "metaTitle": "右键增强Pro 支持",
+        "description": "右键增强Pro（RightMenuBoost）支持页面：Finder 扩展设置、右键工作流、加密 DMG、校验值和联系方式。",
+        "eyebrow": "右键增强Pro / RightMenuBoost for Mac",
+        "title": "支持",
+        "updated": "最后更新日期：2026 年 7 月 4 日",
+        "intro": "如果你在使用右键增强Pro 时需要帮助，请通过邮件联系我们，并尽量附上下面的信息。这样我们可以更快复现问题，给出有效的修复建议或临时解决方案。",
+        "notice": "右键增强Pro 没有登录、订阅门槛、广告、跟踪或云账号。1.0.0 版本是 App Store 永久付费下载。",
+        "cards": [
+          {
+            "title": "邮箱",
+            "value": "kibernet@sina.com",
+            "href": "mailto:kibernet@sina.com"
+          },
+          {
+            "title": "App",
+            "value": "右键增强Pro / RightMenuBoost for Mac"
+          },
+          {
+            "title": "类别",
+            "value": "效率 / 工具"
+          },
+          {
+            "title": "付费模式",
+            "value": "App Store 付费下载，无订阅"
+          }
+        ],
+        "sections": [
+          {
+            "heading": "快速设置",
+            "bullets": [
+              "安装后启动右键增强Pro。",
+              "如果 macOS 要求授权，请打开 System Settings，并在 Login Items & Extensions 或 Finder Extensions 中启用 RightMenuBoost Finder 扩展。",
+              "在主 App 中选择需要启用的右键动作。",
+              "选择 Finder 菜单范围：主目录、常用文件夹或所有磁盘。",
+              "如果修改了菜单范围，请使用 App 内的应用并重启 Finder 控制，或手动重启 Finder。"
+            ]
+          },
+          {
+            "heading": "邮件中建议包含",
+            "bullets": [
+              "你的 macOS 版本、Mac 型号、右键增强Pro App 版本和 App 语言。",
+              "Finder 扩展是否已在 System Settings 中启用。",
+              "你当时所在的位置：主目录、桌面、下载、文稿、iCloud Drive、OneDrive、外接磁盘或其他文件夹。",
+              "你选择的命令，例如常用目录、文件夹图标、文件可见性、新建文件、复制路径、复制或移动到、整理到新文件夹、批量重命名、文件摘要、校验值、加密 DMG、AirDrop、当前目录打开终端或用应用打开。",
+              "简短复现步骤、完整错误提示和可选截图。请不要发送密码、私钥、机密文件、授权密钥或私有文件内容。"
+            ]
+          },
+          {
+            "heading": "核心功能",
+            "bullets": [
+              "从 Finder 新建 TXT、Markdown、JSON、Shell 和 CSV 文件。",
+              "一键打开当前目录、桌面、下载、文稿、应用程序、图片、影片、音乐、公共、主目录、iCloud Drive 和 OneDrive。",
+              "套用 App、云盘、图书、邮件、音乐、笔记、Pages 和演示等内置文件夹图标。",
+              "复制 POSIX 路径、Shell 转义路径、file URL、文件名、所在文件夹、JSON 数组、Markdown 链接和 CSV 行。",
+              "将文件复制或移动到桌面、下载、文稿、主目录或自选目录，也可把选中项目整理到新文件夹。",
+              "批量重命名：前缀序号、日期归档、查找替换、正则、大小写整理和空格清理。",
+              "创建 AES-256 加密 DMG，复制 SHA-256 和 MD5 校验值，使用 AirDrop 发送，打开 Terminal，并用专业应用打开文件。"
+            ]
+          },
+          {
+            "heading": "常见问题",
+            "faq": [
+              {
+                "question": "为什么 Finder 右键菜单不出现？",
+                "answer": "请确认 Finder 扩展已在 System Settings 中启用，然后重启 Finder 或重启 Mac。也请检查 Finder 菜单范围是否包含你正在操作的文件夹。"
+              },
+              {
+                "question": "右键增强Pro 会上传我的文件吗？",
+                "answer": "不会。右键增强Pro 只会在你主动调用 Finder 右键命令后在本机执行文件操作，不会上传选中文件、复制路径、校验值、加密 DMG 或菜单历史。"
+              },
+              {
+                "question": "必须开启 Full Disk Access 吗？",
+                "answer": "不需要。右键增强Pro 通过 Finder 扩展和用户选中的 Finder 项目工作。如果 macOS 阻止某个位置的访问，请通过 Finder 或系统权限提示为该工作流授权。"
+              },
+              {
+                "question": "批量重命名如何工作？",
+                "answer": "批量重命名会先生成预览，再应用更改。请仔细检查预览，确认结果正确后再执行。"
+              },
+              {
+                "question": "加密 DMG 是如何创建的？",
+                "answer": "右键增强Pro 使用 Apple 的 /usr/bin/hdiutil 工具创建用户主动发起的 AES-256 加密 DMG。你选择文件、密码和输出位置，临时暂存会在完成或失败后移除。"
+              },
+              {
+                "question": "为什么 iCloud Drive、OneDrive 或外接磁盘里的菜单受限？",
+                "answer": "Finder Sync 扩展使用 App 和 macOS 配置的目录范围。请将菜单范围设为所有磁盘或匹配的文件夹组，应用更改，并在需要时重启 Finder。"
+              },
+              {
+                "question": "可以修改终端 App 或界面语言吗？",
+                "answer": "可以。打开右键增强Pro 偏好设置，即可选择终端行为、菜单选项、Finder 范围、完成提醒、默认重命名前缀和 App 语言。"
+              },
+              {
+                "question": "App Store 付费如何处理？",
+                "answer": "右键增强Pro 是 App Store 付费下载。1.0.0 版本没有订阅或 App 内购买。购买记录、退款、税费、区域价格和家庭共享资格由 Apple 处理。"
+              }
+            ]
+          },
+          {
+            "heading": "故障排查清单",
+            "bullets": [
+              "启用扩展或修改菜单范围后，请重新启动 Finder。",
+              "安装后至少打开一次右键增强Pro，让 macOS 注册 Finder 扩展。",
+              "复制、移动、重命名、校验值或 DMG 工作流前，请确认选中文件仍然存在，并且没有被其他 App 正在编辑。",
+              "创建加密 DMG 时，请选择不在源文件夹内部的输出位置，并使用你能记住的密码。",
+              "如果 AirDrop 没有打开，请先确认 AirDrop 能从 Finder 或 macOS 分享菜单正常工作。",
+              "如果某个“用应用打开”快捷方式无效，请确认目标 App 已安装在 Applications 或标准 App 位置。"
+            ]
+          },
+          {
+            "heading": "支持范围",
+            "paragraphs": [
+              "我们可以协助处理 App 行为、Finder 扩展设置、菜单范围、右键命令、本地文件工作流和可复现 Bug。我们无法恢复你在 App 外删除的文件，无法访问没有离开你设备的文件，也无法改变 Apple 的 App Store 账单决定。"
+            ]
+          },
+          {
+            "heading": "隐私提醒",
+            "paragraphs": [
+              "请只发送解决问题所需的最少信息。如果截图或样例文件包含隐私内容，请先打码，或只用文字描述问题。"
+            ]
+          }
+        ],
+        "links": [
+          {
+            "label": "隐私政策",
+            "href": "../Privacy/index.html"
+          },
+          {
+            "label": "适龄信息",
+            "href": "../AgeRating/index.html"
+          }
+        ]
+      },
+      "zh-Hant": {
+        "metaTitle": "右键增强Pro 支援",
+        "description": "右键增强Pro（RightMenuBoost）支援頁面：Finder 擴充設定、右鍵工作流程、加密 DMG、校驗值和聯絡方式。",
+        "eyebrow": "右键增强Pro / RightMenuBoost for Mac",
+        "title": "支援",
+        "updated": "最後更新日期：2026 年 7 月 4 日",
+        "intro": "如果你在使用右键增强Pro 時需要協助，請透過電子郵件聯絡我們，並盡量附上下面的資訊。這樣我們可以更快重現問題，給予有效的修復建議或臨時解決方案。",
+        "notice": "右键增强Pro 沒有登入、訂閱門檻、廣告、追蹤或雲端帳號。 1.0.0 版本是 App Store 永久付費下載。",
+        "cards": [
+          {
+            "title": "信箱",
+            "value": "kibernet@sina.com",
+            "href": "mailto:kibernet@sina.com"
+          },
+          {
+            "title": "App",
+            "value": "右键增强Pro / RightMenuBoost for Mac"
+          },
+          {
+            "title": "類別",
+            "value": "效率 / 工具"
+          },
+          {
+            "title": "付費模式",
+            "value": "App Store 付費下載，無訂閱"
+          }
+        ],
+        "sections": [
+          {
+            "heading": "快速設定",
+            "bullets": [
+              "安裝後啟動右键增强Pro。",
+              "如果 macOS 要求授權，請開啟 System Settings，並在 Login Items & Extensions 或 Finder Extensions 中啟用 RightMenuBoost Finder 擴充。",
+              "在主 App 中選擇需要啟用的右鍵動作。",
+              "選擇 Finder 選單範圍：主目錄、常用資料夾或所有磁碟。",
+              "如果修改了選單範圍，請使用 App 內的應用程式並重新啟動 Finder 控制，或手動重新啟動 Finder。"
+            ]
+          },
+          {
+            "heading": "郵件中建議包含",
+            "bullets": [
+              "你的 macOS 版本、Mac 型號、右键增强Pro App 版本和 App 語言。",
+              "Finder 擴充是否已在 System Settings 中啟用。",
+              "你當時所在的位置：主目錄、桌面、下載、文稿、iCloud Drive、OneDrive、外接磁碟或其他資料夾。",
+              "你選擇的命令，例如常用目錄、資料夾圖示、檔案可見性、新檔案、複製路徑、複製或移動到、整理到新資料夾、批次重新命名、檔案摘要、校驗值、加密 DMG、AirDrop、目前目錄開啟終端或用應用程式開啟。",
+              "簡短復現步驟、完整錯誤提示和可選截圖。請不要發送密碼、私鑰、機密文件、授權金鑰或私有文件內容。"
+            ]
+          },
+          {
+            "heading": "核心功能",
+            "bullets": [
+              "從 Finder 新建 TXT、Markdown、JSON、Shell 和 CSV 檔案。",
+              "一鍵開啟目前目錄、桌面、下載、文稿、應用程式、圖片、影片、音樂、公共、主目錄、iCloud Drive 和 OneDrive。",
+              "套用 App、雲端硬碟、書籍、郵件、音樂、筆記、Pages 和示範等內建資料夾圖示。",
+              "複製 POSIX 路徑、Shell 轉義路徑、file URL、檔案名稱、所在資料夾、JSON 陣列、Markdown 連結和 CSV 行。",
+              "將檔案複製或移動到桌面、下載、文稿、主目錄或自選目錄，也可把選取項目整理到新資料夾。",
+              "批次重新命名：前綴序號、日期歸檔、尋找替換、正規、大小寫整理和空格清理。",
+              "建立 AES-256 加密 DMG，複製 SHA-256 和 MD5 校驗值，使用 AirDrop 傳送，開啟 Terminal，並以專業應用程式開啟檔案。"
+            ]
+          },
+          {
+            "heading": "常見問題",
+            "faq": [
+              {
+                "question": "為什麼 Finder 右鍵選單不出現？",
+                "answer": "請確認 Finder 擴充功能已在 System Settings 中啟用，然後重新啟動 Finder 或重新啟動 Mac。也請檢查 Finder 選單範圍是否包含你正在操作的資料夾。"
+              },
+              {
+                "question": "右键增强Pro 會上傳我的檔案嗎？",
+                "answer": "不會。 右键增强Pro 只會在你主動呼叫 Finder 右鍵指令後在本機執行檔案操作，不會上傳選取檔案、複製路徑、校驗值、加密 DMG 或選單歷史。"
+              },
+              {
+                "question": "必須開啟 Full Disk Access 嗎？",
+                "answer": "不需要。 右键增强Pro 透過 Finder 擴充和使用者選取的 Finder 專案工作。如果 macOS 阻止某個位置的訪問，請透過 Finder 或系統權限提示為該工作流程授權。"
+              },
+              {
+                "question": "批量重命名如何工作？",
+                "answer": "批次重命名會先生成預覽，再套用變更。請仔細檢查預覽，確認結果正確後再執行。"
+              },
+              {
+                "question": "加密 DMG 是如何建立的？",
+                "answer": "右键增强Pro 使用 Apple 的 /usr/bin/hdiutil 工具建立使用者主動發起的 AES-256 加密 DMG。你選擇檔案、密碼和輸出位置，臨時暫存會在完成或失敗後移除。"
+              },
+              {
+                "question": "為什麼 iCloud Drive、OneDrive 或外接磁碟裡的選單受限？",
+                "answer": "Finder Sync 擴充使用 App 和 macOS 配置的目錄範圍。請將選單範圍設為所有磁碟或符合的資料夾群組，套用更改，並在需要時重新啟動 Finder。"
+              },
+              {
+                "question": "可以修改終端機 App 或介面語言嗎？",
+                "answer": "可以。開啟右键增强Pro 偏好設置，即可選擇終端行為、選單選項、Finder 範圍、完成提醒、預設重新命名前綴和 App 語言。"
+              },
+              {
+                "question": "App Store 付費如何處理？",
+                "answer": "右键增强Pro 是 App Store 付費下載。 1.0.0 版本沒有訂閱或 App 內購買。購買記錄、退款、稅費、區域價格和家庭共享資格由 Apple 處理。"
+              }
+            ]
+          },
+          {
+            "heading": "故障排查清單",
+            "bullets": [
+              "啟用擴充或修改選單範圍後，請重新啟動 Finder。",
+              "安裝後至少打開一次右键增强Pro，請 macOS 註冊 Finder 擴充。",
+              "複製、移動、重新命名、校驗值或 DMG 工作流程前，請確認選取檔案仍然存在，並且沒有被其他 App 正在編輯。",
+              "建立加密 DMG 時，請選擇不在來源資料夾內部的輸出位置，並使用你能記住的密碼。",
+              "如果 AirDrop 沒有打開，請先確認 AirDrop 能從 Finder 或 macOS 分享選單正常運作。",
+              "如果某個「用應用程式開啟」捷徑無效，請確認目標 App 已安裝在 Applications 或標準 App 位置。"
+            ]
+          },
+          {
+            "heading": "支援範圍",
+            "paragraphs": [
+              "我們可以協助處理 App 行為、Finder 擴充設定、選單範圍、右鍵指令、本機檔案工作流程和可重複 Bug。我們無法恢復你在 App 外刪除的文件，無法存取沒有離開你裝置的文件，也無法改變 Apple 的 App Store 帳單決定。"
+            ]
+          },
+          {
+            "heading": "隱私提醒",
+            "paragraphs": [
+              "請只發送解決問題所需的最少資訊。如果截圖或範例檔案包含隱私內容，請先打碼，或只用文字描述問題。"
+            ]
+          }
+        ],
+        "links": [
+          {
+            "label": "隱私權政策",
+            "href": "../Privacy/index.html"
+          },
+          {
+            "label": "適齡資訊",
+            "href": "../AgeRating/index.html"
+          }
+        ]
+      },
+      "en": {
+        "metaTitle": "RightMenuBoost Support",
+        "description": "Support page for RightMenuBoost / 右键增强Pro, including Finder extension setup, right-click workflows, encrypted DMG creation, checksums, and contact information.",
+        "eyebrow": "RightMenuBoost / 右键增强Pro for Mac",
+        "title": "Support",
+        "updated": "Last updated: July 4, 2026",
+        "intro": "Need help with RightMenuBoost? Email us with the details below so we can reproduce the issue and respond with a useful fix or workaround.",
+        "notice": "RightMenuBoost has no login, no subscription gate, no ads, no tracking, and no cloud account. Version 1.0.0 is a permanent paid App Store download.",
+        "cards": [
+          {
+            "title": "Email",
+            "value": "kibernet@sina.com",
+            "href": "mailto:kibernet@sina.com"
+          },
+          {
+            "title": "App",
+            "value": "RightMenuBoost / 右键增强Pro for Mac"
+          },
+          {
+            "title": "Category",
+            "value": "Productivity / Utilities"
+          },
+          {
+            "title": "Purchase Model",
+            "value": "Paid App Store download, no subscription"
+          }
+        ],
+        "sections": [
+          {
+            "heading": "Quick Setup",
+            "bullets": [
+              "Launch RightMenuBoost after installation.",
+              "If macOS asks for approval, open System Settings and enable the RightMenuBoost Finder extension under Login Items & Extensions or Finder Extensions.",
+              "Choose which right-click actions are enabled in the main app.",
+              "Choose the Finder menu scope: Home, common folders, or all disks.",
+              "If you change the menu scope, use the apply-and-restart Finder control in the app, or restart Finder manually."
+            ]
+          },
+          {
+            "heading": "What to Include in Support Email",
+            "bullets": [
+              "Your macOS version, Mac model, RightMenuBoost app version, and app language.",
+              "Whether the Finder extension is enabled in System Settings.",
+              "Where you were working: Home, Desktop, Downloads, Documents, iCloud Drive, OneDrive, an external disk, or another folder.",
+              "The selected command, such as Common Folders, Folder Icons, File Visibility, New File, Copy Path, Copy or Move To, Organize into New Folder, Batch Rename, File Summary, Checksum, Encrypted DMG, AirDrop, Open Terminal Here, or Open With.",
+              "A short reproduction path, exact error text, and optional screenshots. Do not send passwords, private keys, confidential files, license secrets, or private file contents."
+            ]
+          },
+          {
+            "heading": "Core Features",
+            "bullets": [
+              "Create TXT, Markdown, JSON, Shell, and CSV files from Finder.",
+              "Open the current folder, Desktop, Downloads, Documents, Applications, Pictures, Movies, Music, Public, Home, iCloud Drive, and OneDrive.",
+              "Apply built-in folder icon presets for apps, cloud drives, books, mail, music, notes, Pages, and presentations.",
+              "Copy POSIX paths, shell-escaped paths, file URLs, file names, parent folders, JSON arrays, Markdown links, and CSV rows.",
+              "Copy or move files to Desktop, Downloads, Documents, Home, or a custom folder, and organize selections into a new folder.",
+              "Batch rename with numbering, date archive format, find and replace, regular expressions, case cleanup, and whitespace cleanup.",
+              "Create AES-256 encrypted DMG files, copy SHA-256 and MD5 checksums, send with AirDrop, open Terminal, and open files with professional apps."
+            ]
+          },
+          {
+            "heading": "Frequently Asked Questions",
+            "faq": [
+              {
+                "question": "Why does the right-click menu not appear in Finder?",
+                "answer": "Confirm that the Finder extension is enabled in System Settings. Then restart Finder or restart your Mac. Also check that the Finder menu scope includes the folder where you are working."
+              },
+              {
+                "question": "Does RightMenuBoost upload my files?",
+                "answer": "No. RightMenuBoost performs file actions locally after you invoke a Finder right-click command. It does not upload selected files, copied paths, checksums, encrypted DMG files, or menu history."
+              },
+              {
+                "question": "Is Full Disk Access required?",
+                "answer": "No. RightMenuBoost works through the Finder extension and user-selected Finder items. If macOS blocks access to a location, use Finder or the system permission prompt to grant access for that specific workflow."
+              },
+              {
+                "question": "How do batch rename actions work?",
+                "answer": "Batch rename workflows prepare a preview before changes are applied. Review the preview carefully, then confirm only when the result is correct."
+              },
+              {
+                "question": "How are encrypted DMG files created?",
+                "answer": "RightMenuBoost uses Apple’s /usr/bin/hdiutil tool for user-initiated AES-256 encrypted DMG creation. You choose the selected files, password, and output location. Temporary staging is removed after completion or failure."
+              },
+              {
+                "question": "Why is the menu limited in iCloud Drive, OneDrive, or an external disk?",
+                "answer": "Finder Sync extensions use the directory scope configured by the app and macOS. Set the menu scope to all disks or a matching folder group, apply the change, and restart Finder if needed."
+              },
+              {
+                "question": "Can I change the Terminal app or interface language?",
+                "answer": "Yes. Open RightMenuBoost preferences to choose terminal behavior, menu options, Finder scope, completion alerts, default rename prefix, and app language."
+              },
+              {
+                "question": "How are App Store payments handled?",
+                "answer": "RightMenuBoost is a paid App Store download. Version 1.0.0 has no subscriptions or in-app purchases. Purchase records, refunds, tax, regional pricing, and Family Sharing eligibility are handled by Apple."
+              }
+            ]
+          },
+          {
+            "heading": "Troubleshooting Checklist",
+            "bullets": [
+              "Relaunch Finder after enabling the extension or changing menu scope.",
+              "Open RightMenuBoost once after installation so macOS can register the Finder extension.",
+              "Confirm the selected file still exists and is not being edited by another app before copy, move, rename, checksum, or DMG workflows.",
+              "For encrypted DMG creation, choose an output location outside the selected source folders and use a password you can remember.",
+              "If AirDrop does not open, verify that AirDrop works from Finder or the macOS Share menu first.",
+              "If an Open With shortcut does not work, confirm that the target app is installed in Applications or in a standard app location."
+            ]
+          },
+          {
+            "heading": "Support Scope",
+            "paragraphs": [
+              "We can help with app behavior, Finder extension setup, menu scope, right-click commands, local file workflows, and reproducible bugs. We cannot recover files you deleted outside the app, access files that never leave your device, or change Apple App Store billing decisions."
+            ]
+          },
+          {
+            "heading": "Privacy Reminder",
+            "paragraphs": [
+              "Send only the minimum information needed for support. If a screenshot or sample file contains private information, redact it first or describe the problem without attaching the file."
+            ]
+          }
+        ],
+        "links": [
+          {
+            "label": "Privacy Policy",
+            "href": "../Privacy/index.html"
+          },
+          {
+            "label": "Age Rating Information",
+            "href": "../AgeRating/index.html"
+          }
+        ]
+      },
+      "ja": {
+        "metaTitle": "RightMenuBoost サポート",
+        "description": "RightMenuBoost / 右键增强Pro のサポートページ。Finder 拡張機能の設定、右クリックのワークフロー、暗号化された DMG の作成、チェックサム、連絡先情報などが含まれています。",
+        "eyebrow": "RightMenuBoost / 右键增强Pro for Mac",
+        "title": "サポート",
+        "updated": "最終更新日：2026年7月4日",
+        "intro": "RightMenuBoostでお困りですか？以下の詳細をメールでお送りください。問題の再現を行い、適切な修正方法または回避策をご案内いたします。",
+        "notice": "RightMenuBoostにはログイン、サブスクリプションゲート、広告、トラッキング、クラウドアカウントはありません。バージョン1.0.0は永久有料のApp Storeダウンロードです。",
+        "cards": [
+          {
+            "title": "メール",
+            "value": "kibernet@sina.com",
+            "href": "mailto:kibernet@sina.com"
+          },
+          {
+            "title": "アプリ",
+            "value": "RightMenuBoost / 右键增强Pro for Mac"
+          },
+          {
+            "title": "カテゴリ",
+            "value": "生産性／ユーティリティ"
+          },
+          {
+            "title": "購入モデル",
+            "value": "有料ダウンロード App Store、サブスクリプションなし"
+          }
+        ],
+        "sections": [
+          {
+            "heading": "クイックセットアップ",
+            "bullets": [
+              "インストール後、RightMenuBoostを起動してください。",
+              "macOS が承認を求めた場合は、System Settings を開き、Login Items & Extensions または Finder 拡張機能の下にある RightMenuBoost Finder 拡張機能を有効にします。",
+              "メインアプリで有効にする右クリック操作を選択します。",
+              "Finder メニューの範囲を選択してください：ホーム、共通フォルダ、またはすべてのディスク。",
+              "メニュー範囲を変更する場合は、アプリ内の「適用して再起動」コントロールを使用するか、手動で「CF31」を再起動してください。"
+            ]
+          },
+          {
+            "heading": "サポートメールに含めるべき内容",
+            "bullets": [
+              "お使いのmacOSバージョン、Macモデル、RightMenuBoostアプリバージョン、およびアプリの言語。",
+              "System SettingsでFinder拡張機能が有効になっているかどうか。",
+              "作業していた場所：ホーム、デスクトップ、ダウンロード、ドキュメント、iCloud Drive、OneDrive、外付けディスク、または別のフォルダー。",
+              "共通フォルダ、フォルダアイコン、ファイルの表示、新規ファイル、パスのコピー、コピーまたは移動先、新しいフォルダに整理、一括名前変更、ファイル概要、チェックサム、暗号化 DMG、AirDrop、ここで開く Terminal、またはプログラムから開くなどの選択されたコマンド。",
+              "再現手順、正確なエラーメッセージ、および必要に応じてスクリーンショットを添付してください。パスワード、秘密鍵、機密ファイル、ライセンス情報、またはプライベートファイルの内容は送信しないでください。"
+            ]
+          },
+          {
+            "heading": "主な機能",
+            "bullets": [
+              "FinderからTXT、Markdown、JSON、Shell、およびCSVファイルを作成します。",
+              "現在のフォルダー、デスクトップ、ダウンロード、ドキュメント、アプリケーション、ピクチャ、ムービー、ミュージック、パブリック、ホーム、iCloud Drive、およびOneDriveを開きます。",
+              "アプリ、クラウドストレージ、書籍、メール、音楽、メモ、Pages、プレゼンテーション用に、組み込みのフォルダーアイコンプリセットを適用します。",
+              "POSIX パス、シェルエスケープされたパス、ファイル URL、ファイル名、親フォルダ、JSON 配列、Markdown リンク、および CSV 行をコピーします。",
+              "ファイルをデスクトップ、ダウンロード、ドキュメント、ホーム、またはカスタムフォルダにコピーまたは移動し、選択したファイルを新しいフォルダに整理します。",
+              "番号付け、日付アーカイブ形式、検索と置換、正規表現、大文字小文字の区別、空白文字の削除などを含む一括ファイル名変更。",
+              "AES-256暗号化されたDMGファイルを作成し、SHA-256とMD5のチェックサムをコピーし、AirDropで送信し、Terminalを開き、プロフェッショナルアプリでファイルを開きます。"
+            ]
+          },
+          {
+            "heading": "よくある質問",
+            "faq": [
+              {
+                "question": "Finderで右クリックメニューが表示されないのはなぜですか？",
+                "answer": "System SettingsでFinder拡張機能が有効になっていることを確認してください。その後、Finderを再起動するか、Macを再起動してください。また、Finderメニューのスコープに作業中のフォルダが含まれていることを確認してください。"
+              },
+              {
+                "question": "RightMenuBoostは私のファイルをアップロードしますか？",
+                "answer": "いいえ。RightMenuBoostは、Finder右クリックコマンドを実行した後にローカルでファイル操作を実行します。選択したファイル、コピーしたパス、チェックサム、暗号化されたDMGファイル、またはメニュー履歴はアップロードされません。"
+              },
+              {
+                "question": "Full Disk Accessは必要ですか？",
+                "answer": "いいえ。RightMenuBoostはFinder拡張機能とユーザーが選択したFinderアイテムを介して動作します。macOSが場所へのアクセスをブロックしている場合は、Finderまたはシステム権限プロンプトを使用して、その特定のワークフローへのアクセスを許可してください。"
+              },
+              {
+                "question": "一括ファイル名変更アクションはどのように機能しますか？",
+                "answer": "一括名前変更ワークフローでは、変更を適用する前にプレビューが作成されます。プレビューを注意深く確認し、結果が正しい場合にのみ確定してください。"
+              },
+              {
+                "question": "暗号化されたDMGファイルはどのように作成されますか？",
+                "answer": "RightMenuBoostは、Appleの/usr/bin/hdiutilツールを使用して、ユーザーが開始するAES-256暗号化されたDMGを作成します。選択するファイル、パスワード、および出力場所を選択できます。一時的なステージングは、完了または失敗後に削除されます。"
+              },
+              {
+                "question": "iCloud Drive、OneDrive、または外部ディスクでは、メニューが制限されるのはなぜですか？",
+                "answer": "Finder Sync拡張機能は、アプリとmacOSで設定されたディレクトリスコープを使用します。メニュースコープをすべてのディスクまたは一致するフォルダーグループに設定し、変更を適用して、必要に応じてFinderを再起動してください。"
+              },
+              {
+                "question": "Terminalアプリまたはインターフェースの言語を変更できますか？",
+                "answer": "はい。RightMenuBoost 環境設定を開いて、端末の動作、メニューオプション、Finder スコープ、補完アラート、デフォルトの名前変更プレフィックス、およびアプリの言語を選択してください。"
+              },
+              {
+                "question": "App Storeの支払いはどのように処理されますか？",
+                "answer": "RightMenuBoostは有料のApp Storeダウンロードです。バージョン1.0.0にはサブスクリプションやアプリ内課金はありません。購入履歴、払い戻し、税金、地域別価格設定、ファミリー共有の資格はAppleによって処理されます。"
+              }
+            ]
+          },
+          {
+            "heading": "トラブルシューティングチェックリスト",
+            "bullets": [
+              "拡張機能を有効にした後、またはメニュー範囲を変更した後は、Finderを再起動してください。",
+              "インストール後、RightMenuBoostを一度開いて、macOSがFinder拡張機能を登録できるようにします。",
+              "コピー、移動、名前変更、チェックサム、またはDMGワークフローを実行する前に、選択したファイルがまだ存在し、他のアプリによって編集されていないことを確認してください。",
+              "暗号化されたDMGを作成する場合は、選択したソースフォルダ以外の場所に出力場所を選択し、覚えやすいパスワードを使用してください。",
+              "AirDropが開かない場合は、まずFinderまたはmacOSの共有メニューからAirDropが動作することを確認してください。",
+              "「プログラムから開く」ショートカットが機能しない場合は、対象のアプリが「アプリケーション」フォルダまたは標準のアプリの場所にインストールされていることを確認してください。"
+            ]
+          },
+          {
+            "heading": "サポート範囲",
+            "paragraphs": [
+              "アプリの動作、拡張機能の設定、メニューの範囲、右クリックコマンド、ローカルファイルのワークフロー、再現可能なバグについてはサポートできます。ただし、アプリ外で削除したファイルの復元、デバイスから決して離れないファイルへのアクセス、課金に関する決定の変更はできません。"
+            ]
+          },
+          {
+            "heading": "プライバシーに関するお知らせ",
+            "paragraphs": [
+              "サポートに必要な最小限の情報のみを送信してください。スクリーンショットやサンプルファイルに個人情報が含まれている場合は、事前にその部分を削除するか、ファイルを添付せずに問題を説明してください。"
+            ]
+          }
+        ],
+        "links": [
+          {
+            "label": "プライバシーポリシー",
+            "href": "../Privacy/index.html"
+          },
+          {
+            "label": "年齢制限情報",
+            "href": "../AgeRating/index.html"
+          }
+        ]
+      },
+      "ko": {
+        "metaTitle": "RightMenuBoost 지원",
+        "description": "RightMenuBoost / 右键增强Pro 지원 페이지입니다. Finder 확장 프로그램 설정, 마우스 오른쪽 클릭 워크플로, 암호화된 DMG 생성, 체크섬 및 연락처 정보가 포함되어 있습니다.",
+        "eyebrow": "RightMenuBoost / 右键增强Pro (Mac용)",
+        "title": "지원",
+        "updated": "최종 업데이트: 2026년 7월 4일",
+        "intro": "CF11 관련 도움이 필요하신가요? 아래 세부 정보를 이메일로 보내주시면 문제를 재현하여 유용한 해결책이나 임시 방편을 안내해 드리겠습니다.",
+        "notice": "RightMenuBoost은 로그인, 구독, 광고, 추적, 클라우드 계정이 없습니다. 버전 1.0.0은 영구 유료 App Store 다운로드입니다.",
+        "cards": [
+          {
+            "title": "이메일",
+            "value": "kibernet@sina.com",
+            "href": "mailto:kibernet@sina.com"
+          },
+          {
+            "title": "앱",
+            "value": "RightMenuBoost / 右键增强Pro (Mac용)"
+          },
+          {
+            "title": "범주",
+            "value": "생산성/유틸리티"
+          },
+          {
+            "title": "구매 모델",
+            "value": "유료 App Store 다운로드, 구독 없음"
+          }
+        ],
+        "sections": [
+          {
+            "heading": "빠른 설정",
+            "bullets": [
+              "설치 후 RightMenuBoost을 실행하세요.",
+              "macOS에서 승인을 요청하는 경우 System Settings을 열고 Login Items & Extensions 또는 Finder 확장 프로그램에서 RightMenuBoost Finder 확장 프로그램을 활성화하십시오.",
+              "메인 앱에서 마우스 오른쪽 클릭으로 실행할 동작을 선택하세요.",
+              "Finder 메뉴 범위를 선택하세요. 홈, 공용 폴더 또는 모든 디스크 중에서 선택할 수 있습니다.",
+              "메뉴 범위를 변경한 경우 앱에서 적용 및 재시작 Finder 컨트롤을 사용하거나 Finder을 수동으로 재시작하십시오."
+            ]
+          },
+          {
+            "heading": "고객 지원 이메일에 포함해야 할 내용",
+            "bullets": [
+              "사용하시는 macOS 버전, Mac 모델, RightMenuBoost 앱 버전 및 앱 언어를 알려주세요.",
+              "Finder 확장 기능이 System Settings에서 활성화되어 있는지 여부.",
+              "작업 위치: 홈, 바탕 화면, 다운로드, 문서, iCloud Drive, OneDrive, 외장 디스크 또는 다른 폴더.",
+              "선택한 명령은 일반 폴더, 폴더 아이콘, 파일 표시 여부, 새 파일, 경로 복사, 복사 또는 이동, 새 폴더로 구성, 일괄 이름 변경, 파일 요약, 체크섬, 암호화된 파일(DMG, AirDrop), 여기에서 열기(Terminal) 또는 연결 프로그램으로 열기입니다.",
+              "재현 경로, 정확한 오류 메시지, 그리고 선택적으로 스크린샷을 첨부해 주세요. 비밀번호, 개인 키, 기밀 파일, 라이선스 비밀 키 또는 개인 파일 내용은 절대 보내지 마세요."
+            ]
+          },
+          {
+            "heading": "핵심 기능",
+            "bullets": [
+              "Finder 파일에서 TXT, Markdown, JSON, Shell 및 CSV 파일을 생성합니다.",
+              "현재 폴더, 바탕 화면, 다운로드, 문서, 응용 프로그램, 사진, 동영상, 음악, 공용, 홈, iCloud Drive 및 OneDrive을 엽니다.",
+              "앱, 클라우드 드라이브, 책, 메일, 음악, 메모, Pages 및 프레젠테이션에 내장된 폴더 아이콘 사전 설정을 적용하세요.",
+              "POSIX 경로, 셸 이스케이프 처리된 경로, 파일 URL, 파일 이름, 상위 폴더, JSON 배열, Markdown 링크 및 CSV 행을 복사합니다.",
+              "파일을 바탕 화면, 다운로드, 문서, 홈 또는 사용자 지정 폴더로 복사하거나 이동한 다음, 선택한 항목을 새 폴더에 정리합니다.",
+              "일괄 이름 변경(번호 매기기, 날짜별 보관 형식 지정, 찾기 및 바꾸기, 정규 표현식, 대소문자 구분, 공백 제거 포함)",
+              "AES-256로 암호화된 DMG 파일을 생성하고, SHA-256 및 MD5 체크섬을 복사하고, AirDrop로 전송하고, Terminal를 열고, 전문 앱으로 파일을 엽니다."
+            ]
+          },
+          {
+            "heading": "자주 묻는 질문",
+            "faq": [
+              {
+                "question": "Finder에서 마우스 오른쪽 클릭 메뉴가 나타나지 않는 이유는 무엇입니까?",
+                "answer": "System Settings에서 Finder 확장 프로그램이 활성화되어 있는지 확인하십시오. 그런 다음 Finder를 재시작하거나 Mac을 재시작하십시오. 또한 Finder 메뉴 범위에 현재 작업 중인 폴더가 포함되어 있는지 확인하십시오."
+              },
+              {
+                "question": "RightMenuBoost이 내 파일을 업로드하나요?",
+                "answer": "아니요. RightMenuBoost은 Finder 마우스 오른쪽 클릭 명령을 실행한 후 로컬에서 파일 작업을 수행합니다. 선택한 파일, 복사된 경로, 체크섬, 암호화된 DMG 파일 또는 메뉴 기록을 업로드하지 않습니다."
+              },
+              {
+                "question": "CF4가 필수인가요?",
+                "answer": "아니요. RightMenuBoost은 Finder 확장 기능과 사용자가 선택한 Finder 항목을 통해 작동합니다. macOS이 특정 위치에 대한 접근을 차단하는 경우, Finder 또는 시스템 권한 요청 메시지를 사용하여 해당 워크플로에 대한 접근 권한을 부여하십시오."
+              },
+              {
+                "question": "일괄 이름 변경 작업은 어떻게 작동하나요?",
+                "answer": "일괄 이름 변경 워크플로는 변경 사항을 적용하기 전에 미리 보기를 생성합니다. 미리 보기를 꼼꼼히 검토한 후 결과가 올바르면 확정하십시오."
+              },
+              {
+                "question": "암호화된 DMG 파일은 어떻게 생성되나요?",
+                "answer": "RightMenuBoost은 Apple의 /usr/bin/hdiutil 도구를 사용하여 사용자가 직접 AES-256로 암호화된 DMG 파일을 생성합니다. 선택할 파일, 암호 및 출력 위치를 지정할 수 있습니다. 임시 스테이징 영역은 완료 또는 실패 후 삭제됩니다."
+              },
+              {
+                "question": "CF9, CF16 또는 외장 디스크에서 메뉴가 제한되는 이유는 무엇입니까?",
+                "answer": "Finder Sync 확장 프로그램은 앱과 macOS에서 구성한 디렉터리 범위를 사용합니다. 메뉴 범위를 모든 디스크 또는 일치하는 폴더 그룹으로 설정하고 변경 사항을 적용한 다음 필요한 경우 Finder를 다시 시작하십시오."
+              },
+              {
+                "question": "Terminal 앱 또는 인터페이스 언어를 변경할 수 있나요?",
+                "answer": "예. RightMenuBoost 환경설정을 열어 터미널 동작, 메뉴 옵션, Finder 범위, 자동 완성 알림, 기본 이름 변경 접두사 및 앱 언어를 선택하세요."
+              },
+              {
+                "question": "App Store 결제는 어떻게 처리되나요?",
+                "answer": "RightMenuBoost은 유료 다운로드 앱입니다. 버전 1.0.0에는 구독이나 인앱 구매 기능이 없습니다. 구매 내역, 환불, 세금, 지역별 가격 책정 및 가족 공유 자격은 Apple에서 처리합니다."
+              }
+            ]
+          },
+          {
+            "heading": "문제 해결 체크리스트",
+            "bullets": [
+              "확장 기능을 활성화하거나 메뉴 범위를 변경한 후 Finder을 다시 실행하십시오.",
+              "설치 후 RightMenuBoost을 한 번 실행하여 macOS이 Finder 확장 프로그램을 등록할 수 있도록 하십시오.",
+              "복사, 이동, 이름 변경, 체크섬 확인 또는 DMG 워크플로를 실행하기 전에 선택한 파일이 여전히 존재하고 다른 앱에서 편집 중이 아닌지 확인하십시오.",
+              "암호화된 DMG 파일을 생성하려면 선택한 소스 폴더 외부에 출력 위치를 지정하고 기억하기 쉬운 암호를 사용하십시오.",
+              "AirDrop이 열리지 않으면 Finder 또는 macOS의 공유 메뉴에서 AirDrop이 제대로 작동하는지 먼저 확인하십시오.",
+              "'연결 프로그램' 바로가기가 작동하지 않으면 대상 앱이 응용 프로그램 폴더 또는 일반적인 앱 설치 위치에 설치되어 있는지 확인하십시오."
+            ]
+          },
+          {
+            "heading": "지원 범위",
+            "paragraphs": [
+              "앱 동작, Finder 확장 프로그램 설정, 메뉴 범위, 마우스 오른쪽 클릭 명령, 로컬 파일 워크플로 및 재현 가능한 버그에 대해서는 도움을 드릴 수 있습니다. 하지만 앱 외부에서 삭제한 파일을 복구하거나, 기기에서 절대 유출되지 않는 파일에 접근하거나, Apple App Store 결제 설정을 변경할 수는 없습니다."
+            ]
+          },
+          {
+            "heading": "개인정보 보호 안내",
+            "paragraphs": [
+              "지원에 필요한 최소한의 정보만 보내주세요. 스크린샷이나 샘플 파일에 개인 정보가 포함된 경우, 먼저 해당 정보를 삭제하거나 파일을 첨부하지 않고 문제를 설명해 주세요."
+            ]
+          }
+        ],
+        "links": [
+          {
+            "label": "개인정보 보호정책",
+            "href": "../Privacy/index.html"
+          },
+          {
+            "label": "연령 등급 정보",
+            "href": "../AgeRating/index.html"
+          }
+        ]
+      },
+      "es": {
+        "metaTitle": "Soporte de RightMenuBoost",
+        "description": "Página de soporte para RightMenuBoost / 右键增强Pro, que incluye la configuración de la extensión Finder, flujos de trabajo con clic derecho, creación cifrada de DMG, sumas de verificación e información de contacto.",
+        "eyebrow": "RightMenuBoost / 右键增强Pro para Mac",
+        "title": "Soporte",
+        "updated": "Última actualización: 4 de julio de 2026",
+        "intro": "¿Necesitas ayuda con RightMenuBoost? Envíanos un correo electrónico con los detalles que aparecen a continuación para que podamos reproducir el problema y ofrecerte una solución o una alternativa útil.",
+        "notice": "RightMenuBoost no requiere inicio de sesión, suscripción, anuncios, seguimiento ni cuenta en la nube. La versión 1.0.0 es una descarga permanente de pago de App Store.",
+        "cards": [
+          {
+            "title": "Correo electrónico",
+            "value": "kibernet@sina.com",
+            "href": "mailto:kibernet@sina.com"
+          },
+          {
+            "title": "Aplicación",
+            "value": "RightMenuBoost / 右键增强Pro para Mac"
+          },
+          {
+            "title": "Categoría",
+            "value": "Productividad / Servicios públicos"
+          },
+          {
+            "title": "Modelo de compra",
+            "value": "Descarga de pago App Store, sin suscripción."
+          }
+        ],
+        "sections": [
+          {
+            "heading": "Configuración rápida",
+            "bullets": [
+              "Inicie RightMenuBoost después de la instalación.",
+              "Si macOS solicita aprobación, abra System Settings y habilite la extensión RightMenuBoost Finder en Login Items & Extensions o Finder Extensiones.",
+              "Elige qué acciones del botón derecho del ratón se habilitarán en la aplicación principal.",
+              "Seleccione el ámbito del menú Finder: Inicio, carpetas comunes o todos los discos.",
+              "Si cambia el alcance del menú, utilice el control \"Aplicar y reiniciar Finder\" en la aplicación o reinicie Finder manualmente."
+            ]
+          },
+          {
+            "heading": "Qué incluir en un correo electrónico de soporte",
+            "bullets": [
+              "Tu versión de macOS, modelo de Mac, versión de la aplicación RightMenuBoost e idioma de la aplicación.",
+              "Si la extensión Finder está habilitada en System Settings.",
+              "Dónde estabas trabajando: Inicio, Escritorio, Descargas, Documentos, iCloud Drive, OneDrive, un disco externo u otra carpeta.",
+              "El comando seleccionado, como Carpetas comunes, Iconos de carpeta, Visibilidad de archivos, Nuevo archivo, Copiar ruta, Copiar o mover a, Organizar en nueva carpeta, Renombrar por lotes, Resumen de archivos, Suma de comprobación, Cifrado DMG, AirDrop, Abrir Terminal aquí o Abrir con.",
+              "Incluya una breve descripción del error, el texto exacto y capturas de pantalla (opcional). No envíe contraseñas, claves privadas, archivos confidenciales, secretos de licencia ni el contenido de archivos privados."
+            ]
+          },
+          {
+            "heading": "Características principales",
+            "bullets": [
+              "Crea archivos TXT, Markdown, JSON, Shell y CSV a partir de Finder.",
+              "Abra la carpeta actual, Escritorio, Descargas, Documentos, Aplicaciones, Imágenes, Películas, Música, Público, Inicio, iCloud Drive y OneDrive.",
+              "Aplica los iconos de carpeta predefinidos para aplicaciones, unidades en la nube, libros, correo electrónico, música, notas, Pages y presentaciones.",
+              "Copiar rutas POSIX, rutas con caracteres de escape de shell, URL de archivos, nombres de archivos, carpetas principales, matrices JSON, enlaces Markdown y filas CSV.",
+              "Copie o mueva los archivos al Escritorio, Descargas, Documentos, Inicio o a una carpeta personalizada, y organice las selecciones en una nueva carpeta.",
+              "Renombrado por lotes con numeración, formato de archivo de fecha, búsqueda y reemplazo, expresiones regulares, limpieza de mayúsculas y minúsculas, y limpieza de espacios en blanco.",
+              "Crea archivos DMG cifrados con AES-256, copia las sumas de verificación SHA-256 y MD5, envíalos con AirDrop, ábrelos con Terminal y ábrelos con aplicaciones profesionales."
+            ]
+          },
+          {
+            "heading": "Preguntas frecuentes",
+            "faq": [
+              {
+                "question": "¿Por qué no aparece el menú contextual (clic derecho) en Finder?",
+                "answer": "Confirma que la extensión Finder esté habilitada en System Settings. Luego, reinicia Finder o reinicia tu Mac. Comprueba también que el menú Finder incluya la carpeta en la que estás trabajando."
+              },
+              {
+                "question": "¿RightMenuBoost sube mis archivos?",
+                "answer": "No. RightMenuBoost realiza acciones de archivo localmente después de invocar un comando Finder haciendo clic con el botón derecho. No carga los archivos seleccionados, las rutas copiadas, las sumas de comprobación, los archivos DMG cifrados ni el historial del menú."
+              },
+              {
+                "question": "¿Es necesario Full Disk Access?",
+                "answer": "No. RightMenuBoost funciona a través de la extensión Finder y los elementos Finder seleccionados por el usuario. Si macOS bloquea el acceso a una ubicación, utilice Finder o la solicitud de permisos del sistema para otorgar acceso a ese flujo de trabajo específico."
+              },
+              {
+                "question": "¿Cómo funcionan las acciones de cambio de nombre por lotes?",
+                "answer": "Los flujos de trabajo de cambio de nombre por lotes generan una vista previa antes de aplicar los cambios. Revise la vista previa con atención y confirme solo cuando el resultado sea correcto."
+              },
+              {
+                "question": "¿Cómo se crean los archivos cifrados DMG?",
+                "answer": "RightMenuBoost utiliza la herramienta /usr/bin/hdiutil de Apple para la creación de DMG cifrados por el usuario (AES-256). Usted elige los archivos seleccionados, la contraseña y la ubicación de salida. El almacenamiento temporal se elimina tras la finalización o el fallo."
+              },
+              {
+                "question": "¿Por qué el menú está limitado en iCloud Drive, OneDrive o en un disco externo?",
+                "answer": "Las extensiones Finder Sync utilizan el ámbito de directorio configurado por la aplicación y macOS. Configure el ámbito del menú para que abarque todos los discos o un grupo de carpetas coincidente, aplique el cambio y reinicie Finder si es necesario."
+              },
+              {
+                "question": "¿Puedo cambiar el idioma de la aplicación o interfaz Terminal?",
+                "answer": "Sí. Abra las preferencias RightMenuBoost para elegir el comportamiento del terminal, las opciones del menú, el ámbito Finder, las alertas de finalización, el prefijo de cambio de nombre predeterminado y el idioma de la aplicación."
+              },
+              {
+                "question": "¿Cómo se gestionan los pagos App Store?",
+                "answer": "RightMenuBoost es una descarga de pago de App Store. La versión 1.0.0 no tiene suscripciones ni compras dentro de la aplicación. Apple se encarga de los registros de compra, los reembolsos, los impuestos, los precios regionales y la elegibilidad para Compartir en familia."
+              }
+            ]
+          },
+          {
+            "heading": "Lista de verificación para la resolución de problemas",
+            "bullets": [
+              "Vuelva a abrir Finder después de habilitar la extensión o cambiar el alcance del menú.",
+              "Abra RightMenuBoost una vez después de la instalación para que macOS pueda registrar la extensión Finder.",
+              "Confirme que el archivo seleccionado aún existe y no está siendo editado por otra aplicación antes de copiar, mover, renombrar, verificar suma de comprobación o realizar flujos de trabajo DMG.",
+              "Para la creación cifrada de DMG, elija una ubicación de salida fuera de las carpetas de origen seleccionadas y utilice una contraseña que pueda recordar.",
+              "Si AirDrop no se abre, verifique primero que AirDrop funciona desde Finder o el menú Compartir macOS.",
+              "Si el acceso directo \"Abrir con\" no funciona, compruebe que la aplicación de destino esté instalada en la carpeta Aplicaciones o en una ubicación de instalación estándar."
+            ]
+          },
+          {
+            "heading": "Alcance del soporte",
+            "paragraphs": [
+              "Podemos ayudar con el comportamiento de la aplicación, la configuración de la extensión Finder, el alcance del menú, los comandos del clic derecho, los flujos de trabajo de archivos locales y los errores reproducibles. No podemos recuperar archivos que haya eliminado fuera de la aplicación, acceder a archivos que nunca salgan de su dispositivo ni cambiar las decisiones de facturación Apple App Store."
+            ]
+          },
+          {
+            "heading": "Recordatorio de privacidad",
+            "paragraphs": [
+              "Envíe únicamente la información mínima necesaria para brindarle asistencia. Si una captura de pantalla o un archivo de muestra contiene información privada, elimínela primero o describa el problema sin adjuntar el archivo."
+            ]
+          }
+        ],
+        "links": [
+          {
+            "label": "política de privacidad",
+            "href": "../Privacy/index.html"
+          },
+          {
+            "label": "Información sobre la clasificación por edades",
+            "href": "../AgeRating/index.html"
+          }
+        ]
+      },
+      "fr": {
+        "metaTitle": "Assistance RightMenuBoost",
+        "description": "Page de support pour RightMenuBoost / 右键增强Pro, y compris la configuration de l'extension Finder, les flux de travail par clic droit, la création de DMG chiffrés, les sommes de contrôle et les informations de contact.",
+        "eyebrow": "RightMenuBoost / 右键增强Pro pour Mac",
+        "title": "Assistance",
+        "updated": "Dernière mise à jour: 4 juillet 2026",
+        "intro": "Besoin d'aide avec RightMenuBoost ? Envoyez-nous un e-mail avec les détails ci-dessous afin que nous puissions reproduire le problème et vous proposer une solution ou une alternative efficace.",
+        "notice": "RightMenuBoost ne nécessite ni connexion, ni abonnement, ni publicité, ni suivi, ni compte cloud. La version 1.0.0 est disponible en téléchargement payant permanent App Store.",
+        "cards": [
+          {
+            "title": "E-mail",
+            "value": "kibernet@sina.com",
+            "href": "mailto:kibernet@sina.com"
+          },
+          {
+            "title": "Application",
+            "value": "RightMenuBoost / 右键增强Pro pour Mac"
+          },
+          {
+            "title": "Catégorie",
+            "value": "Productivité / Services publics"
+          },
+          {
+            "title": "Modèle d'achat",
+            "value": "Téléchargement payant App Store, sans abonnement"
+          }
+        ],
+        "sections": [
+          {
+            "heading": "Configuration rapide",
+            "bullets": [
+              "Lancez RightMenuBoost après l'installation.",
+              "Si macOS demande une approbation, ouvrez System Settings et activez l'extension RightMenuBoost Finder sous Login Items & Extensions ou Finder Extensions.",
+              "Choisissez les actions accessibles par clic droit qui sont activées dans l'application principale.",
+              "Choisissez la portée du menu Finder : Accueil, dossiers communs ou tous les disques.",
+              "Si vous modifiez la portée du menu, utilisez la commande appliquer-et-redémarrer Finder dans l'application, ou redémarrez Finder manuellement."
+            ]
+          },
+          {
+            "heading": "Que doit contenir un e-mail d'assistance?",
+            "bullets": [
+              "Votre version macOS, modèle Mac, version de l'application RightMenuBoost et langue de l'application.",
+              "Si l'extension Finder est activée dans System Settings.",
+              "Où vous travailliez : Accueil, Bureau, Téléchargements, Documents, iCloud Drive, OneDrive, un disque externe ou un autre dossier.",
+              "La commande sélectionnée, telle que Dossiers communs, Icônes de dossier, Visibilité des fichiers, Nouveau fichier, Copier le chemin, Copier ou déplacer vers, Organiser dans un nouveau dossier, Renommer par lots, Résumé des fichiers, Somme de contrôle, Chiffré DMG, AirDrop, Ouvrir Terminal ici, ou Ouvrir avec.",
+              "Veuillez fournir un bref exemple de reproduction du problème, le texte exact de l'erreur et, si nécessaire, des captures d'écran. Ne transmettez pas les mots de passe, clés privées, fichiers confidentiels, secrets de licence ni le contenu de fichiers privés."
+            ]
+          },
+          {
+            "heading": "Fonctionnalités principales",
+            "bullets": [
+              "Créez des fichiers TXT, Markdown, JSON, Shell et CSV à partir de Finder.",
+              "Ouvrez le dossier actuel, Bureau, Téléchargements, Documents, Applications, Images, Films, Musique, Public, Accueil, iCloud Drive et OneDrive.",
+              "Appliquez les préréglages d'icônes de dossiers intégrés pour les applications, les disques cloud, les livres, les e-mails, la musique, les notes, Pages et les présentations.",
+              "Copier les chemins POSIX, les chemins échappés par shell, les URL de fichiers, les noms de fichiers, les dossiers parents, les tableaux JSON, les liens Markdown et les lignes CSV.",
+              "Copiez ou déplacez des fichiers vers le Bureau, le dossier Téléchargements, le dossier Documents, le dossier Accueil ou un dossier personnalisé, puis organisez les sélections dans un nouveau dossier.",
+              "Renommage par lots avec numérotation, format d'archivage des dates, recherche et remplacement, expressions régulières, correction de la casse et nettoyage des espaces.",
+              "Créer des fichiers cryptés AES-256 DMG, copier les sommes de contrôle SHA-256 et MD5, envoyer avec AirDrop, ouvrir Terminal et ouvrir des fichiers avec des applications professionnelles."
+            ]
+          },
+          {
+            "heading": "Foire aux questions",
+            "faq": [
+              {
+                "question": "Pourquoi le menu contextuel (clic droit) n'apparaît-il pas dans Finder ?",
+                "answer": "Vérifiez que l'extension Finder est activée dans System Settings. Redémarrez ensuite Finder ou votre Mac. Assurez-vous également que le menu Finder inclut bien le dossier dans lequel vous travaillez."
+              },
+              {
+                "question": "Est-ce que RightMenuBoost télécharge mes fichiers?",
+                "answer": "Non. RightMenuBoost effectue des actions sur les fichiers localement après l'exécution d'une commande Finder par clic droit. Il ne télécharge pas les fichiers sélectionnés, les chemins copiés, les sommes de contrôle, les fichiers DMG chiffrés ni l'historique des menus."
+              },
+              {
+                "question": "Full Disk Access est-il requis ?",
+                "answer": "Non. RightMenuBoost fonctionne via l'extension Finder et les éléments Finder sélectionnés par l'utilisateur. Si macOS bloque l'accès à un emplacement, utilisez Finder ou l'invite d'autorisation du système pour autoriser l'accès à ce flux de travail spécifique."
+              },
+              {
+                "question": "Comment fonctionnent les actions de renommage par lots ?",
+                "answer": "Les flux de travail de renommage par lots génèrent un aperçu avant l'application des modifications. Examinez attentivement cet aperçu, puis confirmez uniquement si le résultat est correct."
+              },
+              {
+                "question": "Comment sont créés les fichiers cryptés DMG ?",
+                "answer": "RightMenuBoost utilise l’outil /usr/bin/hdiutil de Apple pour la création de fichiers AES-256 chiffrés DMG initiée par l’utilisateur. Vous choisissez les fichiers à sélectionner, le mot de passe et l’emplacement de sortie. La zone de transit temporaire est supprimée après la fin de l’opération ou en cas d’échec."
+              },
+              {
+                "question": "Pourquoi le menu est-il limité dans iCloud Drive, OneDrive ou sur un disque externe ?",
+                "answer": "Les extensions Finder Sync utilisent la portée du répertoire configurée par l'application et macOS. Définissez la portée du menu sur tous les disques ou un groupe de dossiers correspondant, appliquez la modification et redémarrez Finder si nécessaire."
+              },
+              {
+                "question": "Puis-je changer la langue de l'application ou de l'interface Terminal ?",
+                "answer": "Oui. Ouvrez les préférences RightMenuBoost pour choisir le comportement du terminal, les options de menu, la portée Finder, les alertes de complétion, le préfixe de renommage par défaut et la langue de l'application."
+              },
+              {
+                "question": "Comment les paiements App Store sont-ils gérés ?",
+                "answer": "RightMenuBoost est un téléchargement payant App Store. La version 1.0.0 ne comporte aucun abonnement ni achat intégré. L'historique des achats, les remboursements, les taxes, les prix régionaux et l'éligibilité au partage familial sont gérés par Apple."
+              }
+            ]
+          },
+          {
+            "heading": "Liste de vérification pour le dépannage",
+            "bullets": [
+              "Relancez Finder après avoir activé l'extension ou modifié la portée du menu.",
+              "Ouvrez RightMenuBoost une fois après l'installation afin que macOS puisse enregistrer l'extension Finder.",
+              "Vérifiez que le fichier sélectionné existe toujours et n'est pas en cours de modification par une autre application avant de copier, déplacer, renommer, calculer la somme de contrôle ou effectuer des flux de travail DMG.",
+              "Pour la création de fichiers DMG chiffrés, choisissez un emplacement de sortie en dehors des dossiers sources sélectionnés et utilisez un mot de passe dont vous vous souviendrez.",
+              "Si AirDrop ne s'ouvre pas, vérifiez d'abord que AirDrop fonctionne à partir de Finder ou du menu Partager macOS.",
+              "Si le raccourci « Ouvrir avec » ne fonctionne pas, vérifiez que l'application cible est installée dans le dossier Applications ou dans un emplacement d'application standard."
+            ]
+          },
+          {
+            "heading": "Étendue du soutien",
+            "paragraphs": [
+              "Nous pouvons vous aider concernant le comportement de l'application, la configuration de l'extension Finder, la portée du menu, les commandes du clic droit, les flux de travail des fichiers locaux et les bogues reproductibles. Nous ne pouvons pas récupérer les fichiers que vous avez supprimés en dehors de l'application, accéder aux fichiers qui ne quittent jamais votre appareil ni modifier les décisions de facturation Apple App Store."
+            ]
+          },
+          {
+            "heading": "Rappel concernant la confidentialité",
+            "paragraphs": [
+              "Veuillez ne fournir que les informations minimales nécessaires à l'assistance. Si une capture d'écran ou un fichier d'exemple contient des informations confidentielles, veuillez les masquer au préalable ou décrire le problème sans joindre le fichier."
+            ]
+          }
+        ],
+        "links": [
+          {
+            "label": "politique de confidentialité",
+            "href": "../Privacy/index.html"
+          },
+          {
+            "label": "Informations sur la classification par âge",
+            "href": "../AgeRating/index.html"
+          }
+        ]
+      },
+      "de": {
+        "metaTitle": "RightMenuBoost Support",
+        "description": "Supportseite für RightMenuBoost / 右键增强Pro, einschließlich Finder Erweiterungseinrichtung, Rechtsklick-Workflows, verschlüsselte DMG Erstellung, Prüfsummen und Kontaktinformationen.",
+        "eyebrow": "RightMenuBoost / 右键增强Pro für Mac",
+        "title": "Support",
+        "updated": "Letzte Aktualisierung: 4. Juli 2026",
+        "intro": "Benötigen Sie Hilfe mit RightMenuBoost? Senden Sie uns eine E-Mail mit den unten stehenden Details, damit wir das Problem reproduzieren und Ihnen eine hilfreiche Lösung oder einen Workaround anbieten können.",
+        "notice": "RightMenuBoost benötigt weder Login noch Abonnement, Werbung, Tracking oder ein Cloud-Konto. Version 1.0.0 ist ein dauerhafter, kostenpflichtiger Download von App Store.",
+        "cards": [
+          {
+            "title": "E-Mail",
+            "value": "kibernet@sina.com",
+            "href": "mailto:kibernet@sina.com"
+          },
+          {
+            "title": "App",
+            "value": "RightMenuBoost / 右键增强Pro für Mac"
+          },
+          {
+            "title": "Kategorie",
+            "value": "Produktivität / Nutzen"
+          },
+          {
+            "title": "Kaufmodell",
+            "value": "Kostenpflichtiger Download von App Store, kein Abonnement erforderlich"
+          }
+        ],
+        "sections": [
+          {
+            "heading": "Schnellkonfiguration",
+            "bullets": [
+              "Starten Sie RightMenuBoost nach der Installation.",
+              "Falls macOS um Genehmigung bittet, öffnen Sie System Settings und aktivieren Sie die Erweiterung RightMenuBoost Finder unter Login Items & Extensions oder Finder Erweiterungen.",
+              "Wählen Sie aus, welche Rechtsklick-Aktionen in der Hauptanwendung aktiviert sein sollen.",
+              "Wählen Sie den Menübereich Finder: Home, gemeinsame Ordner oder alle Datenträger.",
+              "Wenn Sie den Menübereich ändern, verwenden Sie die Funktion „Anwenden und neu starten“ Finder in der App oder starten Sie Finder manuell neu."
+            ]
+          },
+          {
+            "heading": "Was in eine Support-E-Mail aufgenommen werden sollte",
+            "bullets": [
+              "Ihre macOS-Version, Ihr Mac-Modell, Ihre RightMenuBoost-App-Version und Ihre App-Sprache.",
+              "Ob die Finder-Erweiterung in System Settings aktiviert ist.",
+              "Wo Sie gearbeitet haben: Startseite, Desktop, Downloads, Dokumente, iCloud Drive, OneDrive, eine externe Festplatte oder ein anderer Ordner.",
+              "Der ausgewählte Befehl, wie z. B. Gemeinsame Ordner, Ordnersymbole, Dateisichtbarkeit, Neue Datei, Pfad kopieren, Kopieren oder Verschieben nach, In neuen Ordner organisieren, Stapelumbenennung, Dateizusammenfassung, Prüfsumme, Verschlüsselt DMG, AirDrop, Hier öffnen Terminal oder Öffnen mit.",
+              "Eine kurze Reproduktionsanleitung, der genaue Fehlertext und optional Screenshots sind erforderlich. Bitte senden Sie keine Passwörter, privaten Schlüssel, vertraulichen Dateien, Lizenzgeheimnisse oder Inhalte privater Dateien."
+            ]
+          },
+          {
+            "heading": "Kernmerkmale",
+            "bullets": [
+              "Erstelle TXT-, Markdown-, JSON-, Shell- und CSV-Dateien aus Finder.",
+              "Öffnen Sie den aktuellen Ordner, Desktop, Downloads, Dokumente, Anwendungen, Bilder, Filme, Musik, Öffentlich, Home, iCloud Drive und OneDrive.",
+              "Verwenden Sie vordefinierte Ordnersymbole für Apps, Cloud-Laufwerke, Bücher, E-Mails, Musik, Notizen, Pages und Präsentationen.",
+              "Kopieren Sie POSIX Pfade, Shell-escaped Pfade, Datei-URLs, Dateinamen, übergeordnete Ordner, JSON Arrays, Markdown Links und CSV Zeilen.",
+              "Dateien können auf den Desktop, in den Download-Ordner, in den Dokumenten-Ordner, in den Benutzerordner oder in einen benutzerdefinierten Ordner kopiert oder verschoben werden. Die ausgewählten Dateien können in einem neuen Ordner organisiert werden.",
+              "Stapelumbenennung mit Nummerierung, Datumsarchivformat, Suchen und Ersetzen, regulären Ausdrücken, Groß-/Kleinschreibungsbereinigung und Leerzeichenbereinigung.",
+              "Erstellen Sie AES-256 verschlüsselte DMG Dateien, kopieren Sie SHA-256 und MD5 Prüfsummen, senden Sie mit AirDrop, öffnen Sie Terminal und öffnen Sie Dateien mit professionellen Anwendungen."
+            ]
+          },
+          {
+            "heading": "Häufig gestellte Fragen",
+            "faq": [
+              {
+                "question": "Warum wird das Kontextmenü in Finder nicht angezeigt?",
+                "answer": "Vergewissern Sie sich, dass die Erweiterung Finder in System Settings aktiviert ist. Starten Sie anschließend Finder oder Ihren Mac neu. Prüfen Sie außerdem, ob der Menübereich von Finder den Ordner enthält, in dem Sie arbeiten."
+              },
+              {
+                "question": "Lädt RightMenuBoost meine Dateien hoch?",
+                "answer": "Nein. RightMenuBoost führt Dateiaktionen lokal aus, nachdem Sie einen Finder-Rechtsklickbefehl aufgerufen haben. Es lädt keine ausgewählten Dateien, kopierten Pfade, Prüfsummen, verschlüsselten DMG-Dateien oder den Menüverlauf hoch."
+              },
+              {
+                "question": "Ist Full Disk Access erforderlich?",
+                "answer": "Nein. RightMenuBoost funktioniert über die Finder-Erweiterung und vom Benutzer ausgewählte Finder-Elemente. Falls macOS den Zugriff auf einen Speicherort blockiert, verwenden Sie Finder oder die Systemberechtigungsabfrage, um den Zugriff für diesen spezifischen Workflow zu gewähren."
+              },
+              {
+                "question": "Wie funktionieren Stapelumbenennungsaktionen?",
+                "answer": "Workflows zur Stapelumbenennung erstellen eine Vorschau, bevor die Änderungen angewendet werden. Überprüfen Sie die Vorschau sorgfältig und bestätigen Sie die Änderung erst, wenn das Ergebnis korrekt ist."
+              },
+              {
+                "question": "Wie werden verschlüsselte DMG-Dateien erstellt?",
+                "answer": "RightMenuBoost verwendet das /usr/bin/hdiutil-Tool von Apple zur benutzerinitiierten Erstellung verschlüsselter AES-256 DMG. Sie wählen die gewünschten Dateien, das Passwort und den Speicherort. Temporäre Zwischenspeicher werden nach Abschluss oder Fehler gelöscht."
+              },
+              {
+                "question": "Warum ist das Menü in iCloud Drive, OneDrive oder auf einer externen Festplatte eingeschränkt?",
+                "answer": "Die Erweiterungen Finder Sync verwenden den von der App und macOS konfigurierten Verzeichnisbereich. Legen Sie den Menübereich auf alle Datenträger oder eine entsprechende Ordnergruppe fest, übernehmen Sie die Änderung und starten Sie Finder gegebenenfalls neu."
+              },
+              {
+                "question": "Kann ich die Sprache der Terminal-App oder der Benutzeroberfläche ändern?",
+                "answer": "Ja. Öffnen Sie die RightMenuBoost-Einstellungen, um das Terminalverhalten, die Menüoptionen, den Finder-Bereich, die Vervollständigungsbenachrichtigungen, das Standard-Umbenennungspräfix und die App-Sprache auszuwählen."
+              },
+              {
+                "question": "Wie werden App Store-Zahlungen abgewickelt?",
+                "answer": "RightMenuBoost ist ein kostenpflichtiger Download von App Store. Version 1.0.0 enthält keine Abonnements oder In-App-Käufe. Kaufabwicklung, Rückerstattungen, Steuern, regionale Preise und die Berechtigung zur Familienfreigabe werden von Apple verwaltet."
+              }
+            ]
+          },
+          {
+            "heading": "Checkliste zur Fehlerbehebung",
+            "bullets": [
+              "Starten Sie Finder neu, nachdem Sie die Erweiterung aktiviert oder den Menübereich geändert haben.",
+              "Öffnen Sie RightMenuBoost einmal nach der Installation, damit macOS die Erweiterung Finder registrieren kann.",
+              "Vergewissern Sie sich, dass die ausgewählte Datei noch existiert und nicht von einer anderen Anwendung bearbeitet wird, bevor Sie die Workflows Kopieren, Verschieben, Umbenennen, Prüfsummenberechnung oder DMG anwenden.",
+              "Für die Erstellung verschlüsselter DMG wählen Sie einen Ausgabespeicherort außerhalb der ausgewählten Quellordner und verwenden Sie ein Passwort, das Sie sich merken können.",
+              "Falls AirDrop sich nicht öffnen lässt, überprüfen Sie bitte zuerst, ob AirDrop über Finder oder das macOS Teilen-Menü funktioniert.",
+              "Falls die Verknüpfung „Öffnen mit“ nicht funktioniert, überprüfen Sie, ob die Ziel-App im Ordner „Programme“ oder an einem Standard-App-Speicherort installiert ist."
+            ]
+          },
+          {
+            "heading": "Unterstützungsumfang",
+            "paragraphs": [
+              "Wir können Ihnen bei Fragen zum App-Verhalten, zur Einrichtung von Erweiterungen (Finder), zum Menüumfang, zu Kontextmenübefehlen, zu lokalen Datei-Workflows und zu reproduzierbaren Fehlern helfen. Wir können jedoch keine Dateien wiederherstellen, die Sie außerhalb der App gelöscht haben, auf Dateien zugreifen, die Ihr Gerät nie verlassen, oder Abrechnungsentscheidungen (Apple App Store) ändern."
+            ]
+          },
+          {
+            "heading": "Datenschutzhinweis",
+            "paragraphs": [
+              "Senden Sie bitte nur die minimal notwendigen Informationen für die Unterstützung. Falls ein Screenshot oder eine Beispieldatei vertrauliche Informationen enthält, schwärzen Sie diese bitte vorher oder beschreiben Sie das Problem, ohne die Datei anzuhängen."
+            ]
+          }
+        ],
+        "links": [
+          {
+            "label": "Datenschutzrichtlinie",
+            "href": "../Privacy/index.html"
+          },
+          {
+            "label": "Informationen zur Altersfreigabe",
+            "href": "../AgeRating/index.html"
+          }
+        ]
+      }
+    }
+  }
+  </script>
+  <script>
+  (function () {
+    const dataElement = document.getElementById("page-data");
+    const content = document.getElementById("localized-content");
+    const selector = document.getElementById("language-select");
+    const languageLabel = document.getElementById("language-label");
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (!dataElement || !content || !selector) return;
+
+    const data = JSON.parse(dataElement.textContent);
+    const storageKey = "rightmenuboost-page-language";
+    const languageCodes = new Set(data.languages.map((language) => language.code));
+
+    function normalizeLanguage(value) {
+      if (!value) return "";
+      const lowered = String(value).trim().toLowerCase();
+      if (!lowered) return "";
+      if (lowered === "zh" || lowered === "zh-cn" || lowered === "zh-hans" || lowered.startsWith("zh-cn") || lowered.startsWith("zh-sg")) return "zh-Hans";
+      if (lowered === "zh-tw" || lowered === "zh-hant" || lowered.startsWith("zh-tw") || lowered.startsWith("zh-hk") || lowered.startsWith("zh-mo")) return "zh-Hant";
+      const exact = data.languages.find((language) => language.code.toLowerCase() === lowered || language.htmlLang.toLowerCase() === lowered);
+      if (exact) return exact.code;
+      const base = lowered.split("-")[0];
+      const byBase = data.languages.find((language) => language.code.toLowerCase().split("-")[0] === base);
+      return byBase ? byBase.code : "";
+    }
+
+    function requestedLanguage() {
+      const fromHash = normalizeLanguage(window.location.hash.replace(/^#/, ""));
+      if (fromHash && languageCodes.has(fromHash)) return fromHash;
+      try {
+        const stored = normalizeLanguage(localStorage.getItem(storageKey));
+        if (stored && languageCodes.has(stored)) return stored;
+      } catch (_) {}
+      const browserLanguages = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || "en"];
+      for (const value of browserLanguages) {
+        const normalized = normalizeLanguage(value);
+        if (normalized && languageCodes.has(normalized)) return normalized;
+      }
+      return data.defaultLanguage;
+    }
+
+    function required(value, path) {
+      if (typeof value === "string" && value.trim()) return value;
+      console.error("Missing localized string", path);
+      return `[missing:${path}]`;
+    }
+
+    function appendText(tagName, className, text, parent) {
+      const element = document.createElement(tagName);
+      if (className) element.className = className;
+      element.textContent = text;
+      parent.appendChild(element);
+      return element;
+    }
+
+    function appendList(items, parent, path) {
+      if (!Array.isArray(items)) return;
+      const list = document.createElement("ul");
+      items.forEach((item, index) => appendText("li", "", required(item, `${path}.${index}`), list));
+      parent.appendChild(list);
+    }
+
+    function appendCards(cards, parent, path) {
+      if (!Array.isArray(cards)) return;
+      const grid = document.createElement("div");
+      grid.className = "cards";
+      cards.forEach((card, index) => {
+        const item = document.createElement("div");
+        item.className = "card";
+        appendText("strong", "", required(card.title, `${path}.${index}.title`), item);
+        if (card.href) {
+          const link = document.createElement("a");
+          link.href = card.href;
+          link.textContent = required(card.value, `${path}.${index}.value`);
+          item.appendChild(link);
+        } else {
+          appendText("span", "", required(card.value, `${path}.${index}.value`), item);
+        }
+        grid.appendChild(item);
+      });
+      parent.appendChild(grid);
+    }
+
+    function appendTable(table, parent, path) {
+      if (!table || !Array.isArray(table.headers) || !Array.isArray(table.rows)) return;
+      const element = document.createElement("table");
+      const headerRow = document.createElement("tr");
+      table.headers.forEach((header, index) => appendText("th", "", required(header, `${path}.headers.${index}`), headerRow));
+      element.appendChild(headerRow);
+      table.rows.forEach((row, rowIndex) => {
+        const tr = document.createElement("tr");
+        row.forEach((cell, cellIndex) => appendText("td", "", required(cell, `${path}.rows.${rowIndex}.${cellIndex}`), tr));
+        element.appendChild(tr);
+      });
+      parent.appendChild(element);
+    }
+
+    function appendLinks(links, parent, languageCode) {
+      if (!Array.isArray(links)) return;
+      const row = document.createElement("div");
+      row.className = "link-row";
+      links.forEach((item, index) => {
+        const link = document.createElement("a");
+        link.className = "pill";
+        link.href = localizedUrl(item.href, languageCode);
+        link.textContent = required(item.label, `links.${index}.label`);
+        row.appendChild(link);
+      });
+      parent.appendChild(row);
+    }
+
+    function localizedUrl(path, languageCode) {
+      if (!path) return "#";
+      return languageCode === data.defaultLanguage ? path : `${path}#${languageCode}`;
+    }
+
+    function shape(value) {
+      if (Array.isArray(value)) return value.map(shape);
+      if (value && typeof value === "object") {
+        return Object.keys(value).sort().reduce((result, key) => {
+          if (key !== "href") result[key] = shape(value[key]);
+          return result;
+        }, {});
+      }
+      return typeof value;
+    }
+
+    function validateData() {
+      const requiredCodes = data.languages.map((language) => language.code);
+      const referenceContentShape = JSON.stringify(shape(data.content[data.defaultLanguage]));
+      const referenceUiShape = JSON.stringify(shape(data.ui[data.defaultLanguage]));
+      const errors = [];
+      requiredCodes.forEach((code) => {
+        if (!data.content[code]) errors.push(`missing content ${code}`);
+        if (!data.ui[code]) errors.push(`missing ui ${code}`);
+        if (data.content[code] && JSON.stringify(shape(data.content[code])) !== referenceContentShape) errors.push(`content shape mismatch ${code}`);
+        if (data.ui[code] && JSON.stringify(shape(data.ui[code])) !== referenceUiShape) errors.push(`ui shape mismatch ${code}`);
+      });
+      if (errors.length) console.error("RightMenuBoost localization validation failed", errors);
+    }
+
+    function render(languageCode) {
+      const language = data.languages.find((item) => item.code === languageCode) || data.languages.find((item) => item.code === data.defaultLanguage);
+      const code = language.code;
+      const ui = data.ui[code];
+      const page = data.content[code];
+      if (!ui || !page) {
+        content.textContent = `[missing-locale:${code}]`;
+        return;
+      }
+
+      document.documentElement.lang = language.htmlLang;
+      document.documentElement.dir = language.dir;
+      document.title = required(page.metaTitle, `${code}.metaTitle`);
+      if (metaDescription) metaDescription.setAttribute("content", required(page.description, `${code}.description`));
+      if (languageLabel) languageLabel.textContent = required(ui.language, `${code}.ui.language`);
+      selector.setAttribute("aria-label", required(ui.chooseLanguage, `${code}.ui.chooseLanguage`));
+      selector.value = code;
+
+      const navPrivacy = document.querySelector('[data-nav="privacy"]');
+      const navSupport = document.querySelector('[data-nav="support"]');
+      const navAge = document.querySelector('[data-nav="age"]');
+      if (navPrivacy) { navPrivacy.textContent = required(ui.privacy, `${code}.ui.privacy`); navPrivacy.href = localizedUrl("../Privacy/index.html", code); }
+      if (navSupport) { navSupport.textContent = required(ui.support, `${code}.ui.support`); navSupport.href = localizedUrl("../Support/index.html", code); }
+      if (navAge) { navAge.textContent = required(ui.age, `${code}.ui.age`); navAge.href = localizedUrl("../AgeRating/index.html", code); }
+
+      content.replaceChildren();
+      appendText("p", "eyebrow", required(page.eyebrow, `${code}.eyebrow`), content);
+      appendText("h1", "", required(page.title, `${code}.title`), content);
+      appendText("p", "updated", required(page.updated, `${code}.updated`), content);
+      appendText("p", "intro", required(page.intro, `${code}.intro`), content);
+      if (page.rating) appendText("div", "rating", required(page.rating, `${code}.rating`), content);
+      if (page.notice) {
+        const notice = document.createElement("div");
+        notice.className = "notice";
+        appendText("p", "", required(page.notice, `${code}.notice`), notice);
+        content.appendChild(notice);
+      }
+      appendCards(page.cards, content, `${code}.cards`);
+      (page.sections || []).forEach((section, sectionIndex) => {
+        const block = document.createElement("section");
+        appendText("h2", "", required(section.heading, `${code}.sections.${sectionIndex}.heading`), block);
+        (section.paragraphs || []).forEach((paragraph, paragraphIndex) => appendText("p", "", required(paragraph, `${code}.sections.${sectionIndex}.paragraphs.${paragraphIndex}`), block));
+        appendList(section.bullets, block, `${code}.sections.${sectionIndex}.bullets`);
+        appendTable(section.table, block, `${code}.sections.${sectionIndex}.table`);
+        (section.faq || []).forEach((item, itemIndex) => {
+          appendText("h3", "", required(item.question, `${code}.sections.${sectionIndex}.faq.${itemIndex}.question`), block);
+          appendText("p", "", required(item.answer, `${code}.sections.${sectionIndex}.faq.${itemIndex}.answer`), block);
+        });
+        content.appendChild(block);
+      });
+      appendLinks(page.links, content, code);
+      try { localStorage.setItem(storageKey, code); } catch (_) {}
+    }
+
+    validateData();
+    data.languages.forEach((language) => {
+      const option = document.createElement("option");
+      option.value = language.code;
+      option.textContent = language.label;
+      selector.appendChild(option);
+    });
+    selector.addEventListener("change", () => {
+      const code = normalizeLanguage(selector.value) || data.defaultLanguage;
+      history.replaceState(null, "", code === data.defaultLanguage ? window.location.pathname : `#${code}`);
+      render(code);
+    });
+    window.addEventListener("hashchange", () => render(requestedLanguage()));
+    render(requestedLanguage());
+  })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,1260 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RightMenuBoost Age Rating Information</title>
+  <meta name="description" content="Age rating information for RightMenuBoost / 右键增强Pro, a local-first Finder right-click productivity tool for Mac.">
+  <style>
+    :root {
+      color-scheme: dark light;
+      --bg: #0e1118;
+      --panel: rgba(18, 24, 34, 0.92);
+      --panel-soft: rgba(24, 32, 44, 0.78);
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --quiet: #94a3b8;
+      --line: rgba(148, 163, 184, 0.24);
+      --accent: #5eead4;
+      --accent-2: #f7c66a;
+      --ok: #86efac;
+      --shadow: rgba(0, 0, 0, 0.34);
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f7fafc;
+        --panel: rgba(255, 255, 255, 0.96);
+        --panel-soft: rgba(248, 250, 252, 0.92);
+        --text: #111827;
+        --muted: #334155;
+        --quiet: #64748b;
+        --line: rgba(15, 23, 42, 0.14);
+        --accent: #0f766e;
+        --accent-2: #9a6700;
+        --ok: #047857;
+        --shadow: rgba(15, 23, 42, 0.12);
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+      line-height: 1.65;
+      letter-spacing: 0;
+      color: var(--text);
+      background: linear-gradient(135deg, var(--bg) 0%, #121826 55%, #0a1018 100%);
+    }
+    @media (prefers-color-scheme: light) {
+      body { background: linear-gradient(135deg, #f8fafc 0%, #eef5f6 58%, #f7fafc 100%); }
+    }
+    .page { width: min(1040px, calc(100% - 40px)); margin: 0 auto; padding: 40px 0; }
+    .shell { border: 1px solid var(--line); border-radius: 16px; background: var(--panel); box-shadow: 0 28px 88px var(--shadow); overflow: hidden; }
+    .topbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 22px; border-bottom: 1px solid var(--line); background: var(--panel-soft); }
+    .brand { display: inline-flex; align-items: center; gap: 10px; min-width: max-content; color: var(--text); text-decoration: none; font-weight: 760; }
+    .mark { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border: 1px solid color-mix(in srgb, var(--accent) 44%, transparent); border-radius: 8px; color: var(--accent); background: color-mix(in srgb, var(--accent) 12%, transparent); font-size: 0.86rem; font-weight: 820; }
+    .nav { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 8px; }
+    .nav a, .language-control { border: 1px solid var(--line); border-radius: 8px; background: rgba(255,255,255,0.04); color: var(--muted); text-decoration: none; font-size: 0.94rem; }
+    .nav a { padding: 7px 10px; }
+    .nav a[aria-current="page"] { color: var(--text); border-color: color-mix(in srgb, var(--accent) 45%, var(--line)); background: color-mix(in srgb, var(--accent) 11%, transparent); }
+    .language-control { display: inline-flex; align-items: center; gap: 8px; padding: 6px 8px; }
+    .language-control label { color: var(--quiet); font-size: 0.88rem; white-space: nowrap; }
+    .language-control select { min-width: 176px; border: 0; outline: 0; background: transparent; color: var(--text); font: inherit; font-size: 0.94rem; }
+    .language-control option { color: #111827; background: #ffffff; }
+    .content { padding: 44px; }
+    h1, h2, h3 { line-height: 1.15; letter-spacing: 0; }
+    h1 { margin: 0 0 12px; font-size: 2.7rem; font-weight: 780; }
+    h2 { margin: 34px 0 12px; font-size: 1.23rem; font-weight: 740; }
+    h3 { margin: 22px 0 8px; color: var(--accent-2); font-size: 1rem; font-weight: 720; }
+    p, li, td, th { color: var(--muted); font-size: 1rem; overflow-wrap: anywhere; }
+    p { margin: 0 0 14px; }
+    ul { margin: 10px 0 0; padding-left: 1.25rem; }
+    [dir="rtl"] ul { padding-left: 0; padding-right: 1.25rem; }
+    a { color: var(--accent); overflow-wrap: anywhere; }
+    .eyebrow { margin: 0 0 24px; color: var(--accent); font-weight: 760; }
+    .updated { color: var(--quiet); font-size: 0.95rem; }
+    .intro { font-size: 1.05rem; }
+    .notice { margin: 24px 0; padding: 16px 18px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel-soft); }
+    .notice p { margin: 0; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin: 24px 0 8px; }
+    .card { min-height: 104px; padding: 16px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel-soft); }
+    .card strong { display: block; margin-bottom: 6px; color: var(--text); }
+    table { width: 100%; margin-top: 12px; border-collapse: separate; border-spacing: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 8px; background: var(--panel-soft); }
+    th, td { padding: 12px 14px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    [dir="rtl"] th, [dir="rtl"] td { text-align: right; }
+    tr:last-child td { border-bottom: 0; }
+    th { color: var(--text); background: color-mix(in srgb, var(--accent) 10%, transparent); font-weight: 740; }
+    .rating { display: inline-flex; align-items: center; justify-content: center; margin: 20px 0 8px; padding: 10px 14px; border: 1px solid color-mix(in srgb, var(--ok) 42%, transparent); border-radius: 8px; color: var(--ok); background: color-mix(in srgb, var(--ok) 10%, transparent); font-weight: 780; }
+    .link-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+    .pill { display: inline-flex; align-items: center; padding: 8px 11px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel-soft); color: var(--text); text-decoration: none; }
+    code { color: var(--accent-2); }
+    @media (max-width: 760px) {
+      .page { width: min(100% - 24px, 1040px); padding: 18px 0; }
+      .topbar { align-items: stretch; flex-direction: column; }
+      .nav { justify-content: flex-start; }
+      .language-control { width: 100%; justify-content: space-between; }
+      .language-control select { min-width: 0; width: 100%; }
+      .content { padding: 26px 20px; }
+      h1 { font-size: 2.1rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="shell">
+      <header class="topbar">
+        <a class="brand" href="../Support/index.html"><span class="mark">RB</span><span>RightMenuBoost</span></a>
+        <nav class="nav" aria-label="RightMenuBoost pages">
+          <a data-nav="privacy" href="../Privacy/index.html">Privacy</a>
+          <a data-nav="support" href="../Support/index.html">Support</a>
+          <a data-nav="age" aria-current="page" href="../AgeRating/index.html">Age Rating</a>
+          <span class="language-control"><label id="language-label" for="language-select">Language</label><select id="language-select"></select></span>
+        </nav>
+      </header>
+      <main id="localized-content" class="content" role="main"></main>
+    </div>
+  </div>
+  <script type="application/json" id="page-data">
+  {
+    "defaultLanguage": "en",
+    "languages": [
+      {
+        "code": "zh-Hans",
+        "htmlLang": "zh-CN",
+        "label": "简体中文",
+        "dir": "ltr"
+      },
+      {
+        "code": "zh-Hant",
+        "htmlLang": "zh-TW",
+        "label": "繁體中文",
+        "dir": "ltr"
+      },
+      {
+        "code": "en",
+        "htmlLang": "en",
+        "label": "English",
+        "dir": "ltr"
+      },
+      {
+        "code": "ja",
+        "htmlLang": "ja",
+        "label": "日本語",
+        "dir": "ltr"
+      },
+      {
+        "code": "ko",
+        "htmlLang": "ko",
+        "label": "한국어",
+        "dir": "ltr"
+      },
+      {
+        "code": "es",
+        "htmlLang": "es",
+        "label": "Español",
+        "dir": "ltr"
+      },
+      {
+        "code": "fr",
+        "htmlLang": "fr",
+        "label": "Français",
+        "dir": "ltr"
+      },
+      {
+        "code": "de",
+        "htmlLang": "de",
+        "label": "Deutsch",
+        "dir": "ltr"
+      }
+    ],
+    "ui": {
+      "zh-Hans": {
+        "language": "语言",
+        "chooseLanguage": "选择语言",
+        "privacy": "隐私",
+        "support": "支持",
+        "age": "适龄"
+      },
+      "zh-Hant": {
+        "language": "語言",
+        "chooseLanguage": "選擇語言",
+        "privacy": "隱私",
+        "support": "支援",
+        "age": "適齡"
+      },
+      "en": {
+        "language": "Language",
+        "chooseLanguage": "Choose language",
+        "privacy": "Privacy",
+        "support": "Support",
+        "age": "Age Rating"
+      },
+      "ja": {
+        "language": "言語",
+        "chooseLanguage": "言語を選択",
+        "privacy": "プライバシー",
+        "support": "サポート",
+        "age": "年齢制限"
+      },
+      "ko": {
+        "language": "언어",
+        "chooseLanguage": "언어 선택",
+        "privacy": "개인정보",
+        "support": "지원",
+        "age": "연령 등급"
+      },
+      "es": {
+        "language": "Idioma",
+        "chooseLanguage": "Elegir idioma",
+        "privacy": "Privacidad",
+        "support": "Soporte",
+        "age": "Edad"
+      },
+      "fr": {
+        "language": "Langue",
+        "chooseLanguage": "Choisir la langue",
+        "privacy": "Confidentialité",
+        "support": "Assistance",
+        "age": "Âge"
+      },
+      "de": {
+        "language": "Sprache",
+        "chooseLanguage": "Sprache auswählen",
+        "privacy": "Datenschutz",
+        "support": "Support",
+        "age": "Alter"
+      }
+    },
+    "content": {
+      "zh-Hans": {
+        "metaTitle": "右键增强Pro 适龄信息",
+        "description": "右键增强Pro（RightMenuBoost）的适龄信息：本地优先的 Mac Finder 右键效率工具。",
+        "eyebrow": "右键增强Pro / RightMenuBoost for Mac",
+        "title": "适龄信息",
+        "updated": "最后更新日期：2026 年 7 月 4 日",
+        "intro": "右键增强Pro（RightMenuBoost）是一款 Mac Finder 右键效率工具，面向普通用户，不包含社交、娱乐、赌博、浏览器、广告或用户生成公开内容功能。",
+        "rating": "建议 App Store 年龄分级：4+",
+        "notice": "右键增强Pro 是本地文件工作流工具，可帮助用户执行主动触发的 Finder 动作，例如新建文件、复制路径、重命名、创建加密 DMG、复制校验值、打开 Terminal，以及用选定应用打开文件。",
+        "sections": [
+          {
+            "heading": "内容摘要",
+            "table": {
+              "headers": [
+                "类别",
+                "状态"
+              ],
+              "rows": [
+                [
+                  "成人或暗示性主题",
+                  "无"
+                ],
+                [
+                  "暴力、恐怖或惊吓内容",
+                  "无"
+                ],
+                [
+                  "医疗或受监管健康内容",
+                  "无"
+                ],
+                [
+                  "赌博、竞赛、抽奖箱或概率奖励",
+                  "无"
+                ],
+                [
+                  "用户生成公开内容、聊天或消息",
+                  "不包含"
+                ],
+                [
+                  "广告或第三方广告网络",
+                  "不包含"
+                ],
+                [
+                  "跨 App 或网站跟踪",
+                  "不包含"
+                ],
+                [
+                  "不受限制的网页访问",
+                  "不包含"
+                ],
+                [
+                  "App 内购买或订阅",
+                  "1.0.0 版本不包含"
+                ],
+                [
+                  "文件系统访问",
+                  "仅本地、用户主动触发的 Finder 工作流"
+                ]
+              ]
+            }
+          },
+          {
+            "heading": "预期用途",
+            "paragraphs": [
+              "右键增强Pro 用于效率和 Mac 维护工作流，不提供娱乐信息流、社交网络、公开内容分享、游戏、赌博、医疗建议、约会、匿名通信或不受限制的网页浏览。"
+            ]
+          },
+          {
+            "heading": "隐私和安全控制",
+            "bullets": [
+              "不需要账号。",
+              "不包含广告 SDK、分析 SDK 或跟踪 SDK。",
+              "右键动作由用户在 Finder 中主动触发。",
+              "批量重命名会在应用更改前显示预览。",
+              "创建加密 DMG 需要用户选择文件、输入密码并选择输出位置。",
+              "核心功能在本机运行，不上传选中文件。"
+            ]
+          },
+          {
+            "heading": "付费和广告",
+            "paragraphs": [
+              "右键增强Pro 是 App Store 付费下载。1.0.0 版本不包含订阅、App 内购买、广告、抽奖箱、付费随机奖励或开发者运营的支付处理。"
+            ]
+          },
+          {
+            "heading": "联系",
+            "paragraphs": [
+              "如对本适龄信息有疑问，请联系 kibernet@sina.com。"
+            ]
+          }
+        ],
+        "links": [
+          {
+            "label": "隐私政策",
+            "href": "../Privacy/index.html"
+          },
+          {
+            "label": "支持",
+            "href": "../Support/index.html"
+          }
+        ]
+      },
+      "zh-Hant": {
+        "metaTitle": "右键增强Pro 適齡資訊",
+        "description": "右键增强Pro（RightMenuBoost）的適齡資訊：本地優先的 Mac Finder 右鍵效率工具。",
+        "eyebrow": "右键增强Pro / RightMenuBoost for Mac",
+        "title": "適齡資訊",
+        "updated": "最後更新日期：2026 年 7 月 4 日",
+        "intro": "右键增强Pro（RightMenuBoost）是一款 Mac Finder 右鍵效率工具，面向一般用戶，不包含社群、娛樂、賭博、瀏覽器、廣告或用戶生成公開內容功能。",
+        "rating": "建議 App Store 年齡分級：4+",
+        "notice": "右键增强Pro 是本機檔案工作流程工具，可協助使用者執行主動觸發的 Finder 動作，例如新檔案、複製路徑、重新命名、建立加密 DMG、複製校驗值、開啟 Terminal，以及以選定應用程式開啟檔案。",
+        "sections": [
+          {
+            "heading": "內容摘要",
+            "table": {
+              "headers": [
+                "類別",
+                "狀態"
+              ],
+              "rows": [
+                [
+                  "成人或暗示性主題",
+                  "無"
+                ],
+                [
+                  "暴力、恐怖或驚嚇內容",
+                  "無"
+                ],
+                [
+                  "醫療或受監管健康內容",
+                  "無"
+                ],
+                [
+                  "賭博、競賽、抽獎箱或機率獎勵",
+                  "無"
+                ],
+                [
+                  "用戶產生公開內容、聊天或訊息",
+                  "不包含"
+                ],
+                [
+                  "廣告或第三方廣告網絡",
+                  "不包含"
+                ],
+                [
+                  "跨 App 或網站跟踪",
+                  "不包含"
+                ],
+                [
+                  "不受限制的網頁訪問",
+                  "不包含"
+                ],
+                [
+                  "App 內購買或訂閱",
+                  "1.0.0 版本不包含"
+                ],
+                [
+                  "檔案系統訪問",
+                  "僅本地、使用者主動觸發的 Finder 工作流程"
+                ]
+              ]
+            }
+          },
+          {
+            "heading": "預期用途",
+            "paragraphs": [
+              "右键增强Pro 用於效率和 Mac 維護工作流程，不提供娛樂資訊流、社交網路、公開內容分享、遊戲、賭博、醫療建議、約會、匿名通訊或不受限制的網頁瀏覽。"
+            ]
+          },
+          {
+            "heading": "隱私和安全控制",
+            "bullets": [
+              "不需要帳號。",
+              "不包含廣告 SDK、分析 SDK 或追蹤 SDK。",
+              "右鍵動作由使用者在 Finder 中主動觸發。",
+              "批次重命名會在套用變更前顯示預覽。",
+              "建立加密 DMG 需要使用者選擇檔案、輸入密碼並選擇輸出位置。",
+              "核心功能在本機運行，不上傳選取檔案。"
+            ]
+          },
+          {
+            "heading": "付費和廣告",
+            "paragraphs": [
+              "右键增强Pro 是 App Store 付費下載。 1.0.0 版本不包含訂閱、App 內購買、廣告、抽獎箱、付費隨機獎勵或開發者營運的付款處理。"
+            ]
+          },
+          {
+            "heading": "聯繫",
+            "paragraphs": [
+              "如對本適齡資訊有疑問，請聯絡 kibernet@sina.com。"
+            ]
+          }
+        ],
+        "links": [
+          {
+            "label": "隱私權政策",
+            "href": "../Privacy/index.html"
+          },
+          {
+            "label": "支援",
+            "href": "../Support/index.html"
+          }
+        ]
+      },
+      "en": {
+        "metaTitle": "RightMenuBoost Age Rating Information",
+        "description": "Age rating information for RightMenuBoost / 右键增强Pro, a local-first Finder right-click productivity tool for Mac.",
+        "eyebrow": "RightMenuBoost / 右键增强Pro for Mac",
+        "title": "Age Rating Information",
+        "updated": "Last updated: July 4, 2026",
+        "intro": "RightMenuBoost / 右键增强Pro is a Finder right-click productivity utility for Mac. It is intended for general audiences and does not include social, entertainment, gambling, browser, advertising, or user-generated public content features.",
+        "rating": "Recommended App Store age rating: 4+",
+        "notice": "RightMenuBoost is a local file workflow utility. It helps users perform user-initiated Finder actions such as creating files, copying paths, renaming items, creating encrypted DMG packages, copying checksums, opening Terminal, and opening files with selected apps.",
+        "sections": [
+          {
+            "heading": "Content Summary",
+            "table": {
+              "headers": [
+                "Category",
+                "Status"
+              ],
+              "rows": [
+                [
+                  "Mature or suggestive themes",
+                  "None"
+                ],
+                [
+                  "Violence, horror, or fear content",
+                  "None"
+                ],
+                [
+                  "Medical or regulated wellness content",
+                  "None"
+                ],
+                [
+                  "Gambling, contests, loot boxes, or probability-based rewards",
+                  "None"
+                ],
+                [
+                  "User-generated public content, chat, or messaging",
+                  "Not included"
+                ],
+                [
+                  "Advertising or third-party ad networks",
+                  "Not included"
+                ],
+                [
+                  "Tracking across apps or websites",
+                  "Not included"
+                ],
+                [
+                  "Unrestricted web access",
+                  "Not included"
+                ],
+                [
+                  "In-app purchases or subscriptions",
+                  "Not included in version 1.0.0"
+                ],
+                [
+                  "File system access",
+                  "Local, user-initiated Finder workflows only"
+                ]
+              ]
+            }
+          },
+          {
+            "heading": "Intended Use",
+            "paragraphs": [
+              "RightMenuBoost is designed for productivity and Mac maintenance workflows. It does not provide entertainment feeds, social networking, public content sharing, games, gambling, medical advice, dating, anonymous communication, or unrestricted web browsing."
+            ]
+          },
+          {
+            "heading": "Privacy and Safety Controls",
+            "bullets": [
+              "No account is required.",
+              "No advertising SDKs, analytics SDKs, or tracking SDKs are included.",
+              "Right-click actions are user-initiated from Finder.",
+              "Batch rename provides a preview before applying changes.",
+              "Encrypted DMG creation requires user-selected files, a user-entered password, and a user-selected output location.",
+              "Core features work locally and do not upload selected files."
+            ]
+          },
+          {
+            "heading": "Payments and Ads",
+            "paragraphs": [
+              "RightMenuBoost is a paid App Store download. Version 1.0.0 does not include subscriptions, in-app purchases, ads, loot boxes, paid random rewards, or developer-operated payment processing."
+            ]
+          },
+          {
+            "heading": "Contact",
+            "paragraphs": [
+              "For questions about this age rating information, contact kibernet@sina.com."
+            ]
+          }
+        ],
+        "links": [
+          {
+            "label": "Privacy Policy",
+            "href": "../Privacy/index.html"
+          },
+          {
+            "label": "Support",
+            "href": "../Support/index.html"
+          }
+        ]
+      },
+      "ja": {
+        "metaTitle": "RightMenuBoost 年齢制限情報",
+        "description": "Mac 用のローカルファーストの右クリック生産性ツールである RightMenuBoost / 右键增强Pro の年齢レーティング情報。",
+        "eyebrow": "RightMenuBoost / 右键增强Pro for Mac",
+        "title": "年齢制限情報",
+        "updated": "最終更新日：2026年7月4日",
+        "intro": "RightMenuBoost / 右键增强Pro は、Mac 用の Finder 右クリック生産性ユーティリティです。一般ユーザー向けに設計されており、ソーシャル、エンターテイメント、ギャンブル、ブラウザ、広告、またはユーザー生成の公開コンテンツ機能は含まれていません。",
+        "rating": "推奨年齢：4歳以上",
+        "notice": "RightMenuBoost はローカルファイルワークフローユーティリティです。ファイルの作成、パスのコピー、アイテムの名前変更、暗号化パッケージの作成、チェックサムのコピー、ファイルを開く、選択したアプリでファイルを開くなど、ユーザーが開始する Finder アクションを実行するのに役立ちます。",
+        "sections": [
+          {
+            "heading": "内容概要",
+            "table": {
+              "headers": [
+                "カテゴリ",
+                "状態"
+              ],
+              "rows": [
+                [
+                  "成人向けまたは示唆的なテーマ",
+                  "なし"
+                ],
+                [
+                  "暴力、ホラー、または恐怖を描写する内容",
+                  "なし"
+                ],
+                [
+                  "医療または規制対象のウェルネスコンテンツ",
+                  "なし"
+                ],
+                [
+                  "ギャンブル、コンテスト、ルートボックス、または確率に基づく報酬",
+                  "なし"
+                ],
+                [
+                  "ユーザーが作成した公開コンテンツ、チャット、またはメッセージング",
+                  "含まれていません"
+                ],
+                [
+                  "広告または第三者広告ネットワーク",
+                  "含まれていません"
+                ],
+                [
+                  "アプリやウェブサイトを横断したトラッキング",
+                  "含まれていません"
+                ],
+                [
+                  "無制限のウェブアクセス",
+                  "含まれていません"
+                ],
+                [
+                  "アプリ内課金またはサブスクリプション",
+                  "バージョン1.0.0には含まれていません"
+                ],
+                [
+                  "ファイルシステムへのアクセス",
+                  "ローカル、ユーザー主導のFinderワークフローのみ"
+                ]
+              ]
+            }
+          },
+          {
+            "heading": "使用目的",
+            "paragraphs": [
+              "RightMenuBoostは、生産性向上とMacのメンテナンス作業のために設計されています。エンターテイメントフィード、ソーシャルネットワーキング、公開コンテンツ共有、ゲーム、ギャンブル、医療アドバイス、出会い系、匿名でのコミュニケーション、無制限のウェブブラウジングは提供していません。"
+            ]
+          },
+          {
+            "heading": "プライバシーとセキュリティ管理",
+            "bullets": [
+              "アカウント登録は不要です。",
+              "広告SDK、分析SDK、トラッキングSDKは含まれていません。",
+              "右クリック操作はFinderからユーザーが開始します。",
+              "一括名前変更機能では、変更を適用する前にプレビューが表示されます。",
+              "暗号化されたDMGを作成するには、ユーザーが選択したファイル、ユーザーが入力したパスワード、およびユーザーが選択した出力場所が必要です。",
+              "主要機能はローカルで動作し、選択したファイルをアップロードしません。"
+            ]
+          },
+          {
+            "heading": "支払いと広告",
+            "paragraphs": [
+              "RightMenuBoostは有料ダウンロードです。バージョン1.0.0には、サブスクリプション、アプリ内購入、広告、ルートボックス、有料ランダム報酬、開発者による決済処理は含まれていません。"
+            ]
+          },
+          {
+            "heading": "接触",
+            "paragraphs": [
+              "この年齢制限情報に関するご質問は、kibernet@sina.comまでお問い合わせください。"
+            ]
+          }
+        ],
+        "links": [
+          {
+            "label": "プライバシーポリシー",
+            "href": "../Privacy/index.html"
+          },
+          {
+            "label": "サポート",
+            "href": "../Support/index.html"
+          }
+        ]
+      },
+      "ko": {
+        "metaTitle": "RightMenuBoost 연령 등급 정보",
+        "description": "Mac용 로컬 우선 Finder 마우스 오른쪽 클릭 생산성 도구인 RightMenuBoost / 右键增强Pro에 대한 연령 등급 정보입니다.",
+        "eyebrow": "RightMenuBoost / 右键增强Pro (Mac용)",
+        "title": "연령 등급 정보",
+        "updated": "최종 업데이트: 2026년 7월 4일",
+        "intro": "RightMenuBoost / 右键增强Pro는 Mac용 마우스 오른쪽 클릭 생산성 유틸리티(Finder)입니다. 일반 사용자를 대상으로 하며 소셜, 엔터테인먼트, 도박, 브라우저, 광고 또는 사용자 제작 공개 콘텐츠 기능은 포함하지 않습니다.",
+        "rating": "권장 연령: 4세 이상 (App Store)",
+        "notice": "RightMenuBoost은 로컬 파일 워크플로 유틸리티입니다. 사용자가 파일 생성, 경로 복사, 항목 이름 변경, 암호화된 DMG 패키지 생성, 체크섬 복사, Terminal 열기, 선택한 앱으로 파일 열기 등과 같은 사용자 시작 Finder 작업을 수행하는 데 도움이 됩니다.",
+        "sections": [
+          {
+            "heading": "내용 요약",
+            "table": {
+              "headers": [
+                "범주",
+                "상태"
+              ],
+              "rows": [
+                [
+                  "성숙하거나 선정적인 주제",
+                  "없음"
+                ],
+                [
+                  "폭력, 공포 또는 두려움을 유발하는 콘텐츠",
+                  "없음"
+                ],
+                [
+                  "의료 또는 규제 대상 웰빙 콘텐츠",
+                  "없음"
+                ],
+                [
+                  "도박, 대회, 확률 상자 또는 확률 기반 보상",
+                  "없음"
+                ],
+                [
+                  "사용자가 생성한 공개 콘텐츠, 채팅 또는 메시지",
+                  "포함되지 않음"
+                ],
+                [
+                  "광고 또는 제3자 광고 네트워크",
+                  "포함되지 않음"
+                ],
+                [
+                  "앱이나 웹사이트 전반에 걸친 추적",
+                  "포함되지 않음"
+                ],
+                [
+                  "무제한 웹 액세스",
+                  "포함되지 않음"
+                ],
+                [
+                  "인앱 구매 또는 구독",
+                  "버전 1.0.0에는 포함되지 않았습니다."
+                ],
+                [
+                  "파일 시스템 접근",
+                  "로컬 사용자 시작 Finder 워크플로만 해당"
+                ]
+              ]
+            }
+          },
+          {
+            "heading": "사용 목적",
+            "paragraphs": [
+              "RightMenuBoost은 생산성 및 Mac 유지 관리 워크플로를 위해 설계되었습니다. 엔터테인먼트 피드, 소셜 네트워킹, 공개 콘텐츠 공유, 게임, 도박, 의료 조언, 데이트, 익명 통신 또는 무제한 웹 브라우징을 제공하지 않습니다."
+            ]
+          },
+          {
+            "heading": "개인정보 보호 및 안전 관리",
+            "bullets": [
+              "계정은 필요하지 않습니다.",
+              "광고 SDK, 분석 SDK 또는 추적 SDK는 포함되어 있지 않습니다.",
+              "마우스 오른쪽 클릭 동작은 Finder에서 사용자가 시작합니다.",
+              "일괄 이름 변경 기능은 변경 사항을 적용하기 전에 미리 보기를 제공합니다.",
+              "암호화된 DMG 파일을 생성하려면 사용자가 파일을 선택하고, 암호를 입력하고, 출력 위치를 지정해야 합니다.",
+              "핵심 기능은 로컬에서 작동하며 선택한 파일을 업로드하지 않습니다."
+            ]
+          },
+          {
+            "heading": "결제 및 광고",
+            "paragraphs": [
+              "RightMenuBoost은 유료 다운로드입니다. App Store 버전 1.0.0에는 구독, 인앱 구매, 광고, 랜덤 박스, 유료 랜덤 보상 또는 개발자 운영 결제 시스템이 포함되어 있지 않습니다."
+            ]
+          },
+          {
+            "heading": "연락하다",
+            "paragraphs": [
+              "이 연령 등급 정보에 대한 문의 사항은 kibernet@sina.com로 연락주세요."
+            ]
+          }
+        ],
+        "links": [
+          {
+            "label": "개인정보 보호정책",
+            "href": "../Privacy/index.html"
+          },
+          {
+            "label": "지원하다",
+            "href": "../Support/index.html"
+          }
+        ]
+      },
+      "es": {
+        "metaTitle": "Información de clasificación por edad de RightMenuBoost",
+        "description": "Información sobre la clasificación por edad de RightMenuBoost / 右键增强Pro, una herramienta de productividad local Finder para Mac que se ejecuta con el botón derecho del ratón.",
+        "eyebrow": "RightMenuBoost / 右键增强Pro para Mac",
+        "title": "Clasificación por edad",
+        "updated": "Última actualización: 4 de julio de 2026",
+        "intro": "RightMenuBoost / 右键增强Pro es una utilidad de productividad para Mac que se ejecuta con el botón derecho del ratón. Está dirigida al público general y no incluye funciones sociales, de entretenimiento, de juegos de azar, de navegador, de publicidad ni de contenido público generado por el usuario.",
+        "rating": "Recomendado App Store Clasificación por edad: 4+",
+        "notice": "RightMenuBoost es una utilidad de flujo de trabajo de archivos locales. Ayuda a los usuarios a realizar acciones iniciadas por el usuario Finder como crear archivos, copiar rutas, renombrar elementos, crear paquetes cifrados DMG, copiar sumas de verificación, abrir Terminal y abrir archivos con aplicaciones seleccionadas.",
+        "sections": [
+          {
+            "heading": "Resumen del contenido",
+            "table": {
+              "headers": [
+                "Categoría",
+                "Estado"
+              ],
+              "rows": [
+                [
+                  "Temas para adultos o sugerentes",
+                  "Ninguno"
+                ],
+                [
+                  "Contenido violento, de terror o que provoque miedo.",
+                  "Ninguno"
+                ],
+                [
+                  "Contenido médico o de bienestar regulado",
+                  "Ninguno"
+                ],
+                [
+                  "Juegos de azar, concursos, cajas de botín o recompensas basadas en la probabilidad.",
+                  "Ninguno"
+                ],
+                [
+                  "Contenido público generado por el usuario, chat o mensajería.",
+                  "No incluido"
+                ],
+                [
+                  "Publicidad o redes publicitarias de terceros",
+                  "No incluido"
+                ],
+                [
+                  "Seguimiento a través de aplicaciones o sitios web",
+                  "No incluido"
+                ],
+                [
+                  "Acceso web sin restricciones",
+                  "No incluido"
+                ],
+                [
+                  "Compras o suscripciones dentro de la aplicación",
+                  "No incluido en la versión 1.0.0"
+                ],
+                [
+                  "Acceso al sistema de archivos",
+                  "Solo flujos de trabajo locales iniciados por el usuario Finder"
+                ]
+              ]
+            }
+          },
+          {
+            "heading": "Uso previsto",
+            "paragraphs": [
+              "RightMenuBoost está diseñado para la productividad y los flujos de trabajo de mantenimiento de Mac. No ofrece contenido de entretenimiento, redes sociales, intercambio público de contenido, juegos, apuestas, asesoramiento médico, citas, comunicación anónima ni navegación web sin restricciones."
+            ]
+          },
+          {
+            "heading": "Controles de privacidad y seguridad",
+            "bullets": [
+              "No se requiere cuenta.",
+              "No se incluyen SDK de publicidad, SDK de análisis ni SDK de seguimiento.",
+              "Las acciones que se realizan haciendo clic con el botón derecho del ratón son iniciadas por el usuario desde Finder.",
+              "La función de renombrado por lotes ofrece una vista previa antes de aplicar los cambios.",
+              "La creación de un archivo DMG cifrado requiere que el usuario seleccione los archivos, introduzca una contraseña y especifique una ubicación de salida.",
+              "Las funciones principales funcionan localmente y no suben los archivos seleccionados."
+            ]
+          },
+          {
+            "heading": "Pagos y anuncios",
+            "paragraphs": [
+              "RightMenuBoost es una descarga de pago de App Store. La versión 1.0.0 no incluye suscripciones, compras dentro de la aplicación, anuncios, cajas de botín, recompensas aleatorias de pago ni procesamiento de pagos operado por el desarrollador."
+            ]
+          },
+          {
+            "heading": "Contacto",
+            "paragraphs": [
+              "Para cualquier pregunta sobre esta información de clasificación por edades, póngase en contacto con kibernet@sina.com."
+            ]
+          }
+        ],
+        "links": [
+          {
+            "label": "política de privacidad",
+            "href": "../Privacy/index.html"
+          },
+          {
+            "label": "Apoyo",
+            "href": "../Support/index.html"
+          }
+        ]
+      },
+      "fr": {
+        "metaTitle": "Informations de classification par âge de RightMenuBoost",
+        "description": "Informations sur la classification par âge pour RightMenuBoost / 右键增强Pro, un outil de productivité Finder à accès direct pour Mac.",
+        "eyebrow": "RightMenuBoost / 右键增强Pro pour Mac",
+        "title": "Informations de classification par âge",
+        "updated": "Dernière mise à jour: 4 juillet 2026",
+        "intro": "RightMenuBoost / 右键增强Pro est un utilitaire de productivité Finder pour Mac, accessible par clic droit. Il est destiné au grand public et ne comprend aucune fonctionnalité sociale, de divertissement, de jeux d'argent, de navigation, de publicité ou de contenu public généré par les utilisateurs.",
+        "rating": "Âge recommandé App Store : 4 ans et plus",
+        "notice": "RightMenuBoost est un utilitaire de flux de travail de fichiers locaux. Il aide les utilisateurs à effectuer des actions Finder initiées par l'utilisateur telles que la création de fichiers, la copie de chemins d'accès, le renommage d'éléments, la création de packages DMG chiffrés, la copie de sommes de contrôle, l'ouverture de fichiers Terminal et l'ouverture de fichiers avec des applications sélectionnées.",
+        "sections": [
+          {
+            "heading": "Résumé du contenu",
+            "table": {
+              "headers": [
+                "Catégorie",
+                "Statut"
+              ],
+              "rows": [
+                [
+                  "Thèmes adultes ou suggestifs",
+                  "Aucun"
+                ],
+                [
+                  "Contenu violent, horrifique ou effrayant",
+                  "Aucun"
+                ],
+                [
+                  "contenu médical ou de bien-être réglementé",
+                  "Aucun"
+                ],
+                [
+                  "Jeux de hasard, concours, loot boxes ou récompenses basées sur les probabilités",
+                  "Aucun"
+                ],
+                [
+                  "Contenu public généré par les utilisateurs, chat ou messagerie",
+                  "Non inclus"
+                ],
+                [
+                  "Publicité ou réseaux publicitaires tiers",
+                  "Non inclus"
+                ],
+                [
+                  "Suivi sur plusieurs applications ou sites web",
+                  "Non inclus"
+                ],
+                [
+                  "Accès web illimité",
+                  "Non inclus"
+                ],
+                [
+                  "Achats intégrés ou abonnements",
+                  "Non inclus dans la version 1.0.0"
+                ],
+                [
+                  "accès au système de fichiers",
+                  "Flux de travail locaux initiés par l'utilisateur Finder uniquement"
+                ]
+              ]
+            }
+          },
+          {
+            "heading": "Utilisation prévue",
+            "paragraphs": [
+              "RightMenuBoost est conçu pour optimiser la productivité et la maintenance des Mac. Il ne propose pas de contenus de divertissement, de réseaux sociaux, de partage de contenu public, de jeux, de jeux d'argent, de conseils médicaux, de rencontres, de communication anonyme ni de navigation web illimitée."
+            ]
+          },
+          {
+            "heading": "Contrôles de confidentialité et de sécurité",
+            "bullets": [
+              "Aucun compte n'est requis.",
+              "Aucun kit de développement logiciel (SDK) publicitaire, analytique ou de suivi n'est inclus.",
+              "Les actions de clic droit sont initiées par l'utilisateur à partir de Finder.",
+              "La fonction de renommage par lots offre un aperçu avant l'application des modifications.",
+              "La création chiffrée DMG nécessite des fichiers sélectionnés par l'utilisateur, un mot de passe saisi par l'utilisateur et un emplacement de sortie sélectionné par l'utilisateur.",
+              "Les fonctionnalités principales fonctionnent en local et ne téléchargent pas les fichiers sélectionnés."
+            ]
+          },
+          {
+            "heading": "Paiements et publicités",
+            "paragraphs": [
+              "RightMenuBoost est un téléchargement payant de App Store. La version 1.0.0 ne comprend ni abonnements, ni achats intégrés, ni publicités, ni loot boxes, ni récompenses aléatoires payantes, ni système de paiement géré par le développeur."
+            ]
+          },
+          {
+            "heading": "Contact",
+            "paragraphs": [
+              "Pour toute question concernant ces informations sur la classification par âge, contactez kibernet@sina.com."
+            ]
+          }
+        ],
+        "links": [
+          {
+            "label": "politique de confidentialité",
+            "href": "../Privacy/index.html"
+          },
+          {
+            "label": "Soutien",
+            "href": "../Support/index.html"
+          }
+        ]
+      },
+      "de": {
+        "metaTitle": "RightMenuBoost Altersfreigabe",
+        "description": "Informationen zur Altersfreigabe für RightMenuBoost / 右键增强Pro, ein lokales Finder Rechtsklick-Produktivitätstool für Mac.",
+        "eyebrow": "RightMenuBoost / 右键增强Pro für Mac",
+        "title": "Altersfreigabe",
+        "updated": "Letzte Aktualisierung: 4. Juli 2026",
+        "intro": "RightMenuBoost / 右键增强Pro ist ein Finder Kontextmenü-Tool für Mac, das Produktivitätsfunktionen bietet. Es richtet sich an ein allgemeines Publikum und beinhaltet keine Funktionen für soziale Netzwerke, Unterhaltung, Glücksspiel, Browser, Werbung oder nutzergenerierte öffentliche Inhalte.",
+        "rating": "Empfohlene Altersfreigabe App Store: 4+",
+        "notice": "RightMenuBoost ist ein lokales Dienstprogramm zur Verwaltung von Datei-Workflows. Es unterstützt Benutzer bei der Durchführung benutzerinitiierter Finder Aktionen wie dem Erstellen von Dateien, dem Kopieren von Pfaden, dem Umbenennen von Elementen, dem Erstellen verschlüsselter DMG Pakete, dem Kopieren von Prüfsummen, dem Öffnen Terminal und dem Öffnen von Dateien mit ausgewählten Anwendungen.",
+        "sections": [
+          {
+            "heading": "Inhaltsübersicht",
+            "table": {
+              "headers": [
+                "Kategorie",
+                "Status"
+              ],
+              "rows": [
+                [
+                  "Themen für Erwachsene oder anzügliche Inhalte",
+                  "Keiner"
+                ],
+                [
+                  "Gewalt-, Horror- oder Angstinhalte",
+                  "Keiner"
+                ],
+                [
+                  "Medizinische oder regulierte Wellness-Inhalte",
+                  "Keiner"
+                ],
+                [
+                  "Glücksspiel, Wettbewerbe, Lootboxen oder auf Wahrscheinlichkeit basierende Belohnungen",
+                  "Keiner"
+                ],
+                [
+                  "Nutzergenerierte öffentliche Inhalte, Chat oder Nachrichten",
+                  "Nicht enthalten"
+                ],
+                [
+                  "Werbung oder Werbenetzwerke von Drittanbietern",
+                  "Nicht enthalten"
+                ],
+                [
+                  "Tracking über Apps oder Websites hinweg",
+                  "Nicht enthalten"
+                ],
+                [
+                  "Uneingeschränkter Webzugriff",
+                  "Nicht enthalten"
+                ],
+                [
+                  "In-App-Käufe oder Abonnements",
+                  "Nicht in Version 1.0.0 enthalten."
+                ],
+                [
+                  "Dateisystemzugriff",
+                  "Nur lokale, benutzerinitiierte Finder-Workflows"
+                ]
+              ]
+            }
+          },
+          {
+            "heading": "Bestimmungsgemäße Verwendung",
+            "paragraphs": [
+              "RightMenuBoost ist für Produktivitäts- und Wartungsabläufe auf dem Mac konzipiert. Es bietet keine Unterhaltungs-Feeds, soziale Netzwerke, öffentliche Inhaltsfreigabe, Spiele, Glücksspiel, medizinische Beratung, Dating, anonyme Kommunikation oder uneingeschränktes Surfen im Internet."
+            ]
+          },
+          {
+            "heading": "Datenschutz- und Sicherheitskontrollen",
+            "bullets": [
+              "Es ist kein Konto erforderlich.",
+              "Es sind keine Werbe-SDKs, Analyse-SDKs oder Tracking-SDKs enthalten.",
+              "Rechtsklick-Aktionen werden vom Benutzer über Finder initiiert.",
+              "Die Stapelumbenennung bietet eine Vorschau vor der Anwendung der Änderungen.",
+              "Für die Erstellung einer verschlüsselten DMG-Datei sind vom Benutzer ausgewählte Dateien, ein vom Benutzer eingegebenes Passwort und ein vom Benutzer ausgewählter Ausgabespeicherort erforderlich.",
+              "Die Kernfunktionen arbeiten lokal und laden keine ausgewählten Dateien hoch."
+            ]
+          },
+          {
+            "heading": "Zahlungen und Anzeigen",
+            "paragraphs": [
+              "RightMenuBoost ist ein kostenpflichtiger Download von App Store. Version 1.0.0 enthält keine Abonnements, In-App-Käufe, Werbung, Lootboxen, kostenpflichtige Zufallsbelohnungen oder eine vom Entwickler betriebene Zahlungsabwicklung."
+            ]
+          },
+          {
+            "heading": "Kontakt",
+            "paragraphs": [
+              "Bei Fragen zu diesen Altersfreigabeinformationen wenden Sie sich bitte an kibernet@sina.com."
+            ]
+          }
+        ],
+        "links": [
+          {
+            "label": "Datenschutzrichtlinie",
+            "href": "../Privacy/index.html"
+          },
+          {
+            "label": "Unterstützung",
+            "href": "../Support/index.html"
+          }
+        ]
+      }
+    }
+  }
+  </script>
+  <script>
+  (function () {
+    const dataElement = document.getElementById("page-data");
+    const content = document.getElementById("localized-content");
+    const selector = document.getElementById("language-select");
+    const languageLabel = document.getElementById("language-label");
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (!dataElement || !content || !selector) return;
+
+    const data = JSON.parse(dataElement.textContent);
+    const storageKey = "rightmenuboost-page-language";
+    const languageCodes = new Set(data.languages.map((language) => language.code));
+
+    function normalizeLanguage(value) {
+      if (!value) return "";
+      const lowered = String(value).trim().toLowerCase();
+      if (!lowered) return "";
+      if (lowered === "zh" || lowered === "zh-cn" || lowered === "zh-hans" || lowered.startsWith("zh-cn") || lowered.startsWith("zh-sg")) return "zh-Hans";
+      if (lowered === "zh-tw" || lowered === "zh-hant" || lowered.startsWith("zh-tw") || lowered.startsWith("zh-hk") || lowered.startsWith("zh-mo")) return "zh-Hant";
+      const exact = data.languages.find((language) => language.code.toLowerCase() === lowered || language.htmlLang.toLowerCase() === lowered);
+      if (exact) return exact.code;
+      const base = lowered.split("-")[0];
+      const byBase = data.languages.find((language) => language.code.toLowerCase().split("-")[0] === base);
+      return byBase ? byBase.code : "";
+    }
+
+    function requestedLanguage() {
+      const fromHash = normalizeLanguage(window.location.hash.replace(/^#/, ""));
+      if (fromHash && languageCodes.has(fromHash)) return fromHash;
+      try {
+        const stored = normalizeLanguage(localStorage.getItem(storageKey));
+        if (stored && languageCodes.has(stored)) return stored;
+      } catch (_) {}
+      const browserLanguages = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || "en"];
+      for (const value of browserLanguages) {
+        const normalized = normalizeLanguage(value);
+        if (normalized && languageCodes.has(normalized)) return normalized;
+      }
+      return data.defaultLanguage;
+    }
+
+    function required(value, path) {
+      if (typeof value === "string" && value.trim()) return value;
+      console.error("Missing localized string", path);
+      return `[missing:${path}]`;
+    }
+
+    function appendText(tagName, className, text, parent) {
+      const element = document.createElement(tagName);
+      if (className) element.className = className;
+      element.textContent = text;
+      parent.appendChild(element);
+      return element;
+    }
+
+    function appendList(items, parent, path) {
+      if (!Array.isArray(items)) return;
+      const list = document.createElement("ul");
+      items.forEach((item, index) => appendText("li", "", required(item, `${path}.${index}`), list));
+      parent.appendChild(list);
+    }
+
+    function appendCards(cards, parent, path) {
+      if (!Array.isArray(cards)) return;
+      const grid = document.createElement("div");
+      grid.className = "cards";
+      cards.forEach((card, index) => {
+        const item = document.createElement("div");
+        item.className = "card";
+        appendText("strong", "", required(card.title, `${path}.${index}.title`), item);
+        if (card.href) {
+          const link = document.createElement("a");
+          link.href = card.href;
+          link.textContent = required(card.value, `${path}.${index}.value`);
+          item.appendChild(link);
+        } else {
+          appendText("span", "", required(card.value, `${path}.${index}.value`), item);
+        }
+        grid.appendChild(item);
+      });
+      parent.appendChild(grid);
+    }
+
+    function appendTable(table, parent, path) {
+      if (!table || !Array.isArray(table.headers) || !Array.isArray(table.rows)) return;
+      const element = document.createElement("table");
+      const headerRow = document.createElement("tr");
+      table.headers.forEach((header, index) => appendText("th", "", required(header, `${path}.headers.${index}`), headerRow));
+      element.appendChild(headerRow);
+      table.rows.forEach((row, rowIndex) => {
+        const tr = document.createElement("tr");
+        row.forEach((cell, cellIndex) => appendText("td", "", required(cell, `${path}.rows.${rowIndex}.${cellIndex}`), tr));
+        element.appendChild(tr);
+      });
+      parent.appendChild(element);
+    }
+
+    function appendLinks(links, parent, languageCode) {
+      if (!Array.isArray(links)) return;
+      const row = document.createElement("div");
+      row.className = "link-row";
+      links.forEach((item, index) => {
+        const link = document.createElement("a");
+        link.className = "pill";
+        link.href = localizedUrl(item.href, languageCode);
+        link.textContent = required(item.label, `links.${index}.label`);
+        row.appendChild(link);
+      });
+      parent.appendChild(row);
+    }
+
+    function localizedUrl(path, languageCode) {
+      if (!path) return "#";
+      return languageCode === data.defaultLanguage ? path : `${path}#${languageCode}`;
+    }
+
+    function shape(value) {
+      if (Array.isArray(value)) return value.map(shape);
+      if (value && typeof value === "object") {
+        return Object.keys(value).sort().reduce((result, key) => {
+          if (key !== "href") result[key] = shape(value[key]);
+          return result;
+        }, {});
+      }
+      return typeof value;
+    }
+
+    function validateData() {
+      const requiredCodes = data.languages.map((language) => language.code);
+      const referenceContentShape = JSON.stringify(shape(data.content[data.defaultLanguage]));
+      const referenceUiShape = JSON.stringify(shape(data.ui[data.defaultLanguage]));
+      const errors = [];
+      requiredCodes.forEach((code) => {
+        if (!data.content[code]) errors.push(`missing content ${code}`);
+        if (!data.ui[code]) errors.push(`missing ui ${code}`);
+        if (data.content[code] && JSON.stringify(shape(data.content[code])) !== referenceContentShape) errors.push(`content shape mismatch ${code}`);
+        if (data.ui[code] && JSON.stringify(shape(data.ui[code])) !== referenceUiShape) errors.push(`ui shape mismatch ${code}`);
+      });
+      if (errors.length) console.error("RightMenuBoost localization validation failed", errors);
+    }
+
+    function render(languageCode) {
+      const language = data.languages.find((item) => item.code === languageCode) || data.languages.find((item) => item.code === data.defaultLanguage);
+      const code = language.code;
+      const ui = data.ui[code];
+      const page = data.content[code];
+      if (!ui || !page) {
+        content.textContent = `[missing-locale:${code}]`;
+        return;
+      }
+
+      document.documentElement.lang = language.htmlLang;
+      document.documentElement.dir = language.dir;
+      document.title = required(page.metaTitle, `${code}.metaTitle`);
+      if (metaDescription) metaDescription.setAttribute("content", required(page.description, `${code}.description`));
+      if (languageLabel) languageLabel.textContent = required(ui.language, `${code}.ui.language`);
+      selector.setAttribute("aria-label", required(ui.chooseLanguage, `${code}.ui.chooseLanguage`));
+      selector.value = code;
+
+      const navPrivacy = document.querySelector('[data-nav="privacy"]');
+      const navSupport = document.querySelector('[data-nav="support"]');
+      const navAge = document.querySelector('[data-nav="age"]');
+      if (navPrivacy) { navPrivacy.textContent = required(ui.privacy, `${code}.ui.privacy`); navPrivacy.href = localizedUrl("../Privacy/index.html", code); }
+      if (navSupport) { navSupport.textContent = required(ui.support, `${code}.ui.support`); navSupport.href = localizedUrl("../Support/index.html", code); }
+      if (navAge) { navAge.textContent = required(ui.age, `${code}.ui.age`); navAge.href = localizedUrl("../AgeRating/index.html", code); }
+
+      content.replaceChildren();
+      appendText("p", "eyebrow", required(page.eyebrow, `${code}.eyebrow`), content);
+      appendText("h1", "", required(page.title, `${code}.title`), content);
+      appendText("p", "updated", required(page.updated, `${code}.updated`), content);
+      appendText("p", "intro", required(page.intro, `${code}.intro`), content);
+      if (page.rating) appendText("div", "rating", required(page.rating, `${code}.rating`), content);
+      if (page.notice) {
+        const notice = document.createElement("div");
+        notice.className = "notice";
+        appendText("p", "", required(page.notice, `${code}.notice`), notice);
+        content.appendChild(notice);
+      }
+      appendCards(page.cards, content, `${code}.cards`);
+      (page.sections || []).forEach((section, sectionIndex) => {
+        const block = document.createElement("section");
+        appendText("h2", "", required(section.heading, `${code}.sections.${sectionIndex}.heading`), block);
+        (section.paragraphs || []).forEach((paragraph, paragraphIndex) => appendText("p", "", required(paragraph, `${code}.sections.${sectionIndex}.paragraphs.${paragraphIndex}`), block));
+        appendList(section.bullets, block, `${code}.sections.${sectionIndex}.bullets`);
+        appendTable(section.table, block, `${code}.sections.${sectionIndex}.table`);
+        (section.faq || []).forEach((item, itemIndex) => {
+          appendText("h3", "", required(item.question, `${code}.sections.${sectionIndex}.faq.${itemIndex}.question`), block);
+          appendText("p", "", required(item.answer, `${code}.sections.${sectionIndex}.faq.${itemIndex}.answer`), block);
+        });
+        content.appendChild(block);
+      });
+      appendLinks(page.links, content, code);
+      try { localStorage.setItem(storageKey, code); } catch (_) {}
+    }
+
+    validateData();
+    data.languages.forEach((language) => {
+      const option = document.createElement("option");
+      option.value = language.code;
+      option.textContent = language.label;
+      selector.appendChild(option);
+    });
+    selector.addEventListener("change", () => {
+      const code = normalizeLanguage(selector.value) || data.defaultLanguage;
+      history.replaceState(null, "", code === data.defaultLanguage ? window.location.pathname : `#${code}`);
+      render(code);
+    });
+    window.addEventListener("hashchange", () => render(requestedLanguage()));
+    render(requestedLanguage());
+  })();
+  </script>
+</body>
+</html>
