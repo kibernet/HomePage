@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ScreenSplitAssist Privacy Policy</title>
-  <meta name="description" content="Privacy policy for ScreenSplitAssist, a local-first Mac window workspace utility.">
+  <meta name="description" content="Privacy policy for ScreenSplitAssist, an automatic Mac window layout app that does not collect personal data.">
   <style>
     :root{color-scheme:dark light;--bg:#0e1118;--panel:rgba(18,24,34,.92);--panel-soft:rgba(24,32,44,.78);--text:#f8fafc;--muted:#cbd5e1;--quiet:#94a3b8;--line:rgba(148,163,184,.24);--accent:#5eead4;--accent-2:#f7c66a;--shadow:rgba(0,0,0,.34)}
     @media (prefers-color-scheme:light){:root{--bg:#f7fafc;--panel:rgba(255,255,255,.96);--panel-soft:rgba(248,250,252,.92);--text:#111827;--muted:#334155;--quiet:#64748b;--line:rgba(15,23,42,.14);--accent:#0f766e;--accent-2:#9a6700;--shadow:rgba(15,23,42,.12)}}
@@ -26,191 +26,665 @@
     <main id="localized-content" class="content" role="main"></main>
   </div></div>
   <script type="application/json" id="page-data">
-  {
-    "defaultLanguage": "en",
-    "languages": [
-      {"code": "zh-Hans", "htmlLang": "zh-CN", "label": "简体中文", "dir": "ltr"},
-      {"code": "zh-Hant", "htmlLang": "zh-TW", "label": "繁體中文", "dir": "ltr"},
-      {"code": "en", "htmlLang": "en", "label": "English", "dir": "ltr"},
-      {"code": "ja", "htmlLang": "ja", "label": "日本語", "dir": "ltr"},
-      {"code": "ko", "htmlLang": "ko", "label": "한국어", "dir": "ltr"},
-      {"code": "es", "htmlLang": "es", "label": "Español", "dir": "ltr"},
-      {"code": "fr", "htmlLang": "fr", "label": "Français", "dir": "ltr"},
-      {"code": "de", "htmlLang": "de", "label": "Deutsch", "dir": "ltr"}
-    ],
-    "ui": {
-      "zh-Hans": {"language": "语言", "chooseLanguage": "选择语言", "privacy": "隐私", "support": "支持", "age": "适龄"},
-      "zh-Hant": {"language": "語言", "chooseLanguage": "選擇語言", "privacy": "隱私", "support": "支援", "age": "適齡"},
-      "en": {"language": "Language", "chooseLanguage": "Choose language", "privacy": "Privacy", "support": "Support", "age": "Age Rating"},
-      "ja": {"language": "言語", "chooseLanguage": "言語を選択", "privacy": "プライバシー", "support": "サポート", "age": "年齢制限"},
-      "ko": {"language": "언어", "chooseLanguage": "언어 선택", "privacy": "개인정보", "support": "지원", "age": "연령 등급"},
-      "es": {"language": "Idioma", "chooseLanguage": "Elegir idioma", "privacy": "Privacidad", "support": "Soporte", "age": "Edad"},
-      "fr": {"language": "Langue", "chooseLanguage": "Choisir la langue", "privacy": "Confidentialité", "support": "Assistance", "age": "Âge"},
-      "de": {"language": "Sprache", "chooseLanguage": "Sprache auswählen", "privacy": "Datenschutz", "support": "Support", "age": "Alter"}
+
+{
+  "defaultLanguage": "en",
+  "languages": [
+    {
+      "code": "zh-Hans",
+      "htmlLang": "zh-CN",
+      "label": "简体中文",
+      "dir": "ltr"
     },
-    "content": {
-      "zh-Hans": {
-        "metaTitle": "ScreenSplitAssist 隐私政策",
-        "description": "ScreenSplitAssist / 窗格大师隐私政策：本地优先的 Mac 窗口工作区工具。",
-        "eyebrow": "ScreenSplitAssist / 窗格大师 for Mac",
-        "title": "隐私政策",
-        "updated": "最后更新日期：2026 年 7 月 5 日",
-        "intro": "ScreenSplitAssist 是一款本地优先的 macOS 窗口布局助手。它可帮助用户排列所选窗口、应用布局预设、创建自定义分屏比例、保存工作区快照，并通过菜单栏和快捷键恢复常用窗口工作区。",
-        "notice": "摘要：ScreenSplitAssist 不需要账号，不包含广告 SDK、分析 SDK 或跟踪 SDK，不上传窗口标题、应用列表、布局模板或工作区快照，核心功能在你的 Mac 本机执行。",
-        "sections": [
-          {"heading": "我们收集的数据", "paragraphs": ["1.0.0 版本不会通过开发者运营的在线服务收集、出售或共享个人数据。ScreenSplitAssist 不会向开发者服务器发送窗口标题、应用名称、应用标识符、窗口位置、显示器信息、模板、快照、使用分析、崩溃分析、标识符、联系方式或诊断数据。"]},
-          {"heading": "本机处理的数据", "paragraphs": ["为执行用户主动触发的窗口布局操作，ScreenSplitAssist 会在本机读取和处理有限的窗口元数据。"], "bullets": ["应用名称和 bundle identifier。", "窗口标题、窗口位置、尺寸、显示器名称和可见屏幕区域。", "用户选择的布局预设、自定义比例、窗口间距、快捷键和界面语言。", "用户创建的布局模板、工作区快照和撤销所需的上一次窗口位置。"]},
-          {"heading": "辅助功能权限", "paragraphs": ["ScreenSplitAssist 需要 macOS 辅助功能权限来读取窗口元数据并移动或调整窗口大小。没有该权限时，应用可打开控制面板，但无法执行窗口排列。应用不会读取窗口内容，不记录键盘输入，也不会在后台扫描用户文档。"]},
-          {"heading": "网络、账号和第三方 SDK", "paragraphs": ["核心功能不需要网络连接。1.0.0 版本没有账号系统、云同步、开发者运营的文件存储、广告、第三方分析、第三方崩溃上报、跟踪域名、订阅或 App 内购买。Mac App Store 购买记录、退款、税费和区域价格由 Apple 处理。"]},
-          {"heading": "本地保存和删除", "paragraphs": ["布局模板、工作区快照、界面语言、窗口间距和其他偏好会保存在你的 Mac 上。你可以在应用内删除保存的模板或快照，也可以通过删除应用相关本地设置来移除偏好。因为应用没有服务端账号或云端数据，卸载应用不会触发远程删除请求。"]},
-          {"heading": "支持请求", "paragraphs": ["如果你通过 kibernet@sina.com 联系支持，我们只会收到你主动发送的信息，例如邮箱地址、App 版本、macOS 版本、显示器配置、截图、日志或问题描述。请不要发送密码、私钥、机密文件或私人文件内容；如截图包含隐私信息，请先打码。"]},
-          {"heading": "儿童隐私", "paragraphs": ["ScreenSplitAssist 是通用生产力工具，不面向儿童，也不会故意收集儿童或其他用户的信息。"]},
-          {"heading": "变更和联系", "paragraphs": ["如果本政策发生变化，更新后的版本会发布在本页面并更新日期。隐私问题可发送至 kibernet@sina.com。"]}
-        ],
-        "links": [{"label": "支持", "href": "../Support/index.html"}, {"label": "适龄信息", "href": "../AgeRating/index.html"}]
-      },
-      "zh-Hant": {
-        "metaTitle": "ScreenSplitAssist 隱私權政策",
-        "description": "ScreenSplitAssist / 窗格大師隱私權政策：本地優先的 Mac 視窗工作區工具。",
-        "eyebrow": "ScreenSplitAssist / 窗格大師 for Mac",
-        "title": "隱私權政策",
-        "updated": "最後更新日期：2026 年 7 月 5 日",
-        "intro": "ScreenSplitAssist 是一款本地優先的 macOS 視窗佈局助手。它可協助使用者排列所選視窗、套用佈局預設、建立自訂分屏比例、儲存工作區快照，並透過選單列和快捷鍵恢復常用視窗工作區。",
-        "notice": "摘要：ScreenSplitAssist 不需要帳號，不包含廣告 SDK、分析 SDK 或追蹤 SDK，不上傳視窗標題、應用程式清單、佈局模板或工作區快照，核心功能在你的 Mac 本機執行。",
-        "sections": [
-          {"heading": "我們收集的資料", "paragraphs": ["1.0.0 版本不會透過開發者營運的線上服務收集、出售或分享個人資料。ScreenSplitAssist 不會向開發者伺服器傳送視窗標題、應用程式名稱、應用程式識別碼、視窗位置、顯示器資訊、模板、快照、使用分析、崩潰分析、識別碼、聯絡資訊或診斷資料。"]},
-          {"heading": "本機處理的資料", "paragraphs": ["為執行使用者主動觸發的視窗佈局操作，ScreenSplitAssist 會在本機讀取和處理有限的視窗元資料。"], "bullets": ["應用程式名稱和 bundle identifier。", "視窗標題、視窗位置、尺寸、顯示器名稱和可見螢幕區域。", "使用者選擇的佈局預設、自訂比例、視窗間距、快捷鍵和介面語言。", "使用者建立的佈局模板、工作區快照和撤銷所需的上一次視窗位置。"]},
-          {"heading": "輔助功能權限", "paragraphs": ["ScreenSplitAssist 需要 macOS 輔助功能權限來讀取視窗元資料並移動或調整視窗大小。沒有該權限時，應用程式可開啟控制面板，但無法執行視窗排列。應用程式不會讀取視窗內容，不記錄鍵盤輸入，也不會在背景掃描使用者文件。"]},
-          {"heading": "網路、帳號和第三方 SDK", "paragraphs": ["核心功能不需要網路連線。1.0.0 版本沒有帳號系統、雲端同步、開發者營運的檔案儲存、廣告、第三方分析、第三方崩潰回報、追蹤網域、訂閱或 App 內購買。Mac App Store 購買記錄、退款、稅費和區域價格由 Apple 處理。"]},
-          {"heading": "本地儲存和刪除", "paragraphs": ["佈局模板、工作區快照、介面語言、視窗間距和其他偏好會儲存在你的 Mac 上。你可以在應用程式內刪除儲存的模板或快照，也可以透過刪除應用程式相關本地設定來移除偏好。因為應用程式沒有服務端帳號或雲端資料，卸載應用程式不會觸發遠端刪除請求。"]},
-          {"heading": "支援請求", "paragraphs": ["如果你透過 kibernet@sina.com 聯絡支援，我們只會收到你主動傳送的資訊，例如電子郵件地址、App 版本、macOS 版本、顯示器配置、截圖、日誌或問題描述。請不要傳送密碼、私鑰、機密文件或私人文件內容；如截圖包含隱私資訊，請先遮蔽。"]},
-          {"heading": "兒童隱私", "paragraphs": ["ScreenSplitAssist 是通用生產力工具，不面向兒童，也不會故意收集兒童或其他使用者的資訊。"]},
-          {"heading": "變更和聯繫", "paragraphs": ["如果本政策發生變化，更新後的版本會發布在本頁面並更新日期。隱私問題可寄至 kibernet@sina.com。"]}
-        ],
-        "links": [{"label": "支援", "href": "../Support/index.html"}, {"label": "適齡資訊", "href": "../AgeRating/index.html"}]
-      },
-      "en": {
-        "metaTitle": "ScreenSplitAssist Privacy Policy",
-        "description": "Privacy policy for ScreenSplitAssist, a local-first Mac window workspace utility.",
-        "eyebrow": "ScreenSplitAssist / 窗格大师 for Mac",
-        "title": "Privacy Policy",
-        "updated": "Last updated: July 5, 2026",
-        "intro": "ScreenSplitAssist is a local-first macOS window layout assistant. It helps users arrange selected windows, apply layout presets, create custom split ratios, save workspace snapshots, and restore common window workspaces from the menu bar or keyboard shortcuts.",
-        "notice": "Summary: ScreenSplitAssist does not require an account, does not include advertising SDKs, analytics SDKs, or tracking SDKs, does not upload window titles, app lists, layout templates, or workspace snapshots, and performs core features locally on your Mac.",
-        "sections": [
-          {"heading": "Data We Collect", "paragraphs": ["Version 1.0.0 does not collect, sell, or share personal data through developer-operated online services. ScreenSplitAssist does not send window titles, app names, bundle identifiers, window positions, display information, templates, snapshots, usage analytics, crash analytics, identifiers, contact information, or diagnostics to developer-operated servers."]},
-          {"heading": "Data Processed Locally", "paragraphs": ["To perform user-initiated window layout actions, ScreenSplitAssist reads and processes limited window metadata locally on your Mac."], "bullets": ["Application names and bundle identifiers.", "Window titles, positions, sizes, display names, and visible screen areas.", "Selected layout presets, custom ratios, window gap, shortcuts, and interface language.", "User-created layout templates, workspace snapshots, and previous window positions needed for undo."]},
-          {"heading": "Accessibility Permission", "paragraphs": ["ScreenSplitAssist requires macOS Accessibility permission to read window metadata and move or resize windows. Without this permission, the app can open its control panel but cannot arrange windows. The app does not read window contents, does not record keyboard input, and does not scan user documents in the background."]},
-          {"heading": "Network, Accounts, and Third-Party SDKs", "paragraphs": ["Core features do not require network access. Version 1.0.0 has no account system, no cloud sync, no developer-operated file storage, no ads, no third-party analytics, no third-party crash reporting, no tracking domains, no subscriptions, and no in-app purchases. Mac App Store purchase records, refunds, tax, and regional pricing are handled by Apple."]},
-          {"heading": "Local Storage and Deletion", "paragraphs": ["Layout templates, workspace snapshots, interface language, window gap, and other preferences are stored on your Mac. You can delete saved templates or snapshots in the app, where available, or remove related local settings from macOS. Because the app has no server-side account or cloud data, uninstalling the app does not create a remote deletion request."]},
-          {"heading": "Support Requests", "paragraphs": ["If you contact support at kibernet@sina.com, we receive only the information you choose to send, such as your email address, app version, macOS version, display setup, screenshots, logs, or issue description. Do not send passwords, private keys, confidential files, or private file contents; redact screenshots if they contain private information."]},
-          {"heading": "Children's Privacy", "paragraphs": ["ScreenSplitAssist is a general productivity utility. It is not directed to children and does not knowingly collect information from children or any other users."]},
-          {"heading": "Changes and Contact", "paragraphs": ["If this policy changes, the updated version will be posted on this page with a revised update date. Privacy questions can be sent to kibernet@sina.com."]}
-        ],
-        "links": [{"label": "Support", "href": "../Support/index.html"}, {"label": "Age Rating Information", "href": "../AgeRating/index.html"}]
-      },
-      "ja": {
-        "metaTitle": "ScreenSplitAssist プライバシーポリシー",
-        "description": "ScreenSplitAssist のプライバシーポリシー。Mac 用のローカル優先ウィンドウワークスペースユーティリティです。",
-        "eyebrow": "ScreenSplitAssist / 窗格大师 for Mac",
-        "title": "プライバシーポリシー",
-        "updated": "最終更新日：2026年7月5日",
-        "intro": "ScreenSplitAssist は、ローカル優先の macOS ウィンドウレイアウトアシスタントです。選択したウィンドウの配置、レイアウトプリセットの適用、カスタム分割比率の作成、ワークスペーススナップショットの保存、メニューバーやキーボードショートカットからの復元を支援します。",
-        "notice": "概要：ScreenSplitAssist はアカウントを必要とせず、広告 SDK、分析 SDK、追跡 SDK を含みません。ウィンドウタイトル、アプリ一覧、レイアウトテンプレート、ワークスペーススナップショットをアップロードせず、主要機能は Mac 上でローカルに実行されます。",
-        "sections": [
-          {"heading": "収集するデータ", "paragraphs": ["バージョン 1.0.0 は、開発者が運営するオンラインサービスを通じて個人データを収集、販売、共有しません。ScreenSplitAssist は、ウィンドウタイトル、アプリ名、バンドル識別子、ウィンドウ位置、ディスプレイ情報、テンプレート、スナップショット、使用状況分析、クラッシュ分析、識別子、連絡先情報、診断情報を開発者サーバーに送信しません。"]},
-          {"heading": "ローカルで処理されるデータ", "paragraphs": ["ユーザーが開始したウィンドウレイアウト操作を実行するため、ScreenSplitAssist は Mac 上で限定的なウィンドウメタデータを読み取り、処理します。"], "bullets": ["アプリ名とバンドル識別子。", "ウィンドウタイトル、位置、サイズ、ディスプレイ名、表示可能な画面領域。", "選択したレイアウトプリセット、カスタム比率、ウィンドウ間隔、ショートカット、インターフェース言語。", "ユーザーが作成したレイアウトテンプレート、ワークスペーススナップショット、取り消しに必要な直前のウィンドウ位置。"]},
-          {"heading": "アクセシビリティ権限", "paragraphs": ["ScreenSplitAssist は、ウィンドウメタデータを読み取り、ウィンドウを移動またはサイズ変更するために macOS のアクセシビリティ権限を必要とします。この権限がない場合、コントロールパネルは開けますがウィンドウ配置は実行できません。アプリはウィンドウ内容を読み取らず、キーボード入力を記録せず、ユーザー文書をバックグラウンドでスキャンしません。"]},
-          {"heading": "ネットワーク、アカウント、第三者 SDK", "paragraphs": ["主要機能にネットワーク接続は不要です。バージョン 1.0.0 には、アカウントシステム、クラウド同期、開発者運営のファイル保存、広告、第三者分析、第三者クラッシュレポート、追跡ドメイン、サブスクリプション、アプリ内購入はありません。Mac App Store の購入記録、返金、税金、地域別価格は Apple が処理します。"]},
-          {"heading": "ローカル保存と削除", "paragraphs": ["レイアウトテンプレート、ワークスペーススナップショット、インターフェース言語、ウィンドウ間隔、その他の設定は Mac に保存されます。保存済みテンプレートやスナップショットはアプリ内で削除でき、関連するローカル設定も macOS から削除できます。サーバー側アカウントやクラウドデータがないため、アンインストールしてもリモート削除要求は発生しません。"]},
-          {"heading": "サポート依頼", "paragraphs": ["kibernet@sina.com に連絡した場合、メールアドレス、アプリバージョン、macOS バージョン、ディスプレイ構成、スクリーンショット、ログ、問題説明など、ユーザーが送信した情報のみを受け取ります。パスワード、秘密鍵、機密ファイル、個人的なファイル内容は送信しないでください。スクリーンショットに個人情報が含まれる場合は編集してください。"]},
-          {"heading": "子どものプライバシー", "paragraphs": ["ScreenSplitAssist は一般的な生産性ユーティリティです。子ども向けではなく、子どもやその他のユーザーから意図的に情報を収集することはありません。"]},
-          {"heading": "変更と連絡先", "paragraphs": ["本ポリシーが変更された場合、更新日を記載した改訂版をこのページに掲載します。プライバシーに関する質問は kibernet@sina.com まで送信できます。"]}
-        ],
-        "links": [{"label": "サポート", "href": "../Support/index.html"}, {"label": "年齢制限情報", "href": "../AgeRating/index.html"}]
-      },
-      "ko": {
-        "metaTitle": "ScreenSplitAssist 개인정보 처리방침",
-        "description": "Mac용 로컬 우선 창 작업 공간 유틸리티 ScreenSplitAssist의 개인정보 처리방침입니다.",
-        "eyebrow": "ScreenSplitAssist / 窗格大师 for Mac",
-        "title": "개인정보 처리방침",
-        "updated": "최종 업데이트: 2026년 7월 5일",
-        "intro": "ScreenSplitAssist는 로컬 우선 macOS 창 레이아웃 도우미입니다. 선택한 창 정렬, 레이아웃 프리셋 적용, 사용자 지정 분할 비율 생성, 작업 공간 스냅샷 저장, 메뉴 막대와 키보드 단축키를 통한 일반 작업 공간 복원을 지원합니다.",
-        "notice": "요약: ScreenSplitAssist는 계정을 요구하지 않고, 광고 SDK, 분석 SDK 또는 추적 SDK를 포함하지 않으며, 창 제목, 앱 목록, 레이아웃 템플릿 또는 작업 공간 스냅샷을 업로드하지 않습니다. 핵심 기능은 Mac에서 로컬로 실행됩니다.",
-        "sections": [
-          {"heading": "수집하는 데이터", "paragraphs": ["버전 1.0.0은 개발자가 운영하는 온라인 서비스를 통해 개인 데이터를 수집, 판매 또는 공유하지 않습니다. ScreenSplitAssist는 창 제목, 앱 이름, 번들 식별자, 창 위치, 디스플레이 정보, 템플릿, 스냅샷, 사용 분석, 충돌 분석, 식별자, 연락처 정보 또는 진단 정보를 개발자 서버로 보내지 않습니다."]},
-          {"heading": "로컬에서 처리되는 데이터", "paragraphs": ["사용자가 시작한 창 레이아웃 작업을 수행하기 위해 ScreenSplitAssist는 Mac에서 제한된 창 메타데이터를 로컬로 읽고 처리합니다."], "bullets": ["앱 이름 및 번들 식별자.", "창 제목, 위치, 크기, 디스플레이 이름 및 보이는 화면 영역.", "선택한 레이아웃 프리셋, 사용자 지정 비율, 창 간격, 단축키 및 인터페이스 언어.", "사용자가 만든 레이아웃 템플릿, 작업 공간 스냅샷, 실행 취소에 필요한 이전 창 위치."]},
-          {"heading": "손쉬운 사용 권한", "paragraphs": ["ScreenSplitAssist는 창 메타데이터를 읽고 창을 이동하거나 크기를 조정하기 위해 macOS 손쉬운 사용 권한이 필요합니다. 이 권한이 없으면 제어판은 열 수 있지만 창 정렬은 수행할 수 없습니다. 앱은 창 내용을 읽지 않고, 키보드 입력을 기록하지 않으며, 사용자 문서를 백그라운드에서 스캔하지 않습니다."]},
-          {"heading": "네트워크, 계정 및 타사 SDK", "paragraphs": ["핵심 기능에는 네트워크 연결이 필요하지 않습니다. 버전 1.0.0에는 계정 시스템, 클라우드 동기화, 개발자 운영 파일 저장소, 광고, 타사 분석, 타사 충돌 보고, 추적 도메인, 구독 또는 앱 내 구입이 없습니다. Mac App Store 구매 기록, 환불, 세금 및 지역 가격은 Apple에서 처리합니다."]},
-          {"heading": "로컬 저장 및 삭제", "paragraphs": ["레이아웃 템플릿, 작업 공간 스냅샷, 인터페이스 언어, 창 간격 및 기타 환경설정은 Mac에 저장됩니다. 앱에서 저장된 템플릿이나 스냅샷을 삭제할 수 있으며, macOS에서 관련 로컬 설정을 제거할 수도 있습니다. 서버 계정이나 클라우드 데이터가 없으므로 앱을 제거해도 원격 삭제 요청은 생성되지 않습니다."]},
-          {"heading": "지원 요청", "paragraphs": ["kibernet@sina.com으로 지원을 요청하면 이메일 주소, 앱 버전, macOS 버전, 디스플레이 구성, 스크린샷, 로그 또는 문제 설명처럼 사용자가 보내기로 선택한 정보만 받습니다. 비밀번호, 개인 키, 기밀 파일 또는 개인 파일 내용을 보내지 마십시오. 스크린샷에 개인정보가 포함된 경우 먼저 가리십시오."]},
-          {"heading": "아동 개인정보", "paragraphs": ["ScreenSplitAssist는 일반 생산성 유틸리티입니다. 아동을 대상으로 하지 않으며 아동이나 다른 사용자로부터 고의로 정보를 수집하지 않습니다."]},
-          {"heading": "변경 및 연락처", "paragraphs": ["이 정책이 변경되면 수정된 날짜와 함께 이 페이지에 게시됩니다. 개인정보 관련 질문은 kibernet@sina.com으로 보낼 수 있습니다."]}
-        ],
-        "links": [{"label": "지원", "href": "../Support/index.html"}, {"label": "연령 등급 정보", "href": "../AgeRating/index.html"}]
-      },
-      "es": {
-        "metaTitle": "Política de privacidad de ScreenSplitAssist",
-        "description": "Política de privacidad de ScreenSplitAssist, una utilidad local de espacios de trabajo de ventanas para Mac.",
-        "eyebrow": "ScreenSplitAssist / 窗格大师 para Mac",
-        "title": "Política de privacidad",
-        "updated": "Última actualización: 5 de julio de 2026",
-        "intro": "ScreenSplitAssist es un asistente local de distribución de ventanas para macOS. Ayuda a organizar ventanas seleccionadas, aplicar diseños predefinidos, crear proporciones personalizadas, guardar instantáneas de espacios de trabajo y restaurar configuraciones frecuentes desde la barra de menús o atajos de teclado.",
-        "notice": "Resumen: ScreenSplitAssist no requiere una cuenta, no incluye SDK de publicidad, análisis ni seguimiento, no sube títulos de ventanas, listas de apps, plantillas de diseño ni instantáneas de espacios de trabajo, y ejecuta sus funciones principales localmente en tu Mac.",
-        "sections": [
-          {"heading": "Datos que recopilamos", "paragraphs": ["La versión 1.0.0 no recopila, vende ni comparte datos personales mediante servicios en línea operados por el desarrollador. ScreenSplitAssist no envía títulos de ventanas, nombres de apps, identificadores de paquete, posiciones de ventanas, información de pantallas, plantillas, instantáneas, analíticas de uso, analíticas de fallos, identificadores, información de contacto ni diagnósticos a servidores del desarrollador."]},
-          {"heading": "Datos procesados localmente", "paragraphs": ["Para realizar acciones de distribución de ventanas iniciadas por el usuario, ScreenSplitAssist lee y procesa metadatos limitados de ventanas localmente en tu Mac."], "bullets": ["Nombres de aplicaciones e identificadores de paquete.", "Títulos, posiciones, tamaños, nombres de pantallas y áreas visibles.", "Diseños seleccionados, proporciones personalizadas, separación entre ventanas, atajos e idioma de la interfaz.", "Plantillas de diseño creadas por el usuario, instantáneas de espacios de trabajo y posiciones anteriores necesarias para deshacer."]},
-          {"heading": "Permiso de Accesibilidad", "paragraphs": ["ScreenSplitAssist requiere el permiso de Accesibilidad de macOS para leer metadatos de ventanas y moverlas o redimensionarlas. Sin este permiso, la app puede abrir su panel de control, pero no puede organizar ventanas. La app no lee el contenido de las ventanas, no registra entradas de teclado y no escanea documentos del usuario en segundo plano."]},
-          {"heading": "Red, cuentas y SDK de terceros", "paragraphs": ["Las funciones principales no requieren acceso a la red. La versión 1.0.0 no tiene sistema de cuentas, sincronización en la nube, almacenamiento de archivos operado por el desarrollador, anuncios, analíticas de terceros, informes de fallos de terceros, dominios de seguimiento, suscripciones ni compras dentro de la app. Apple gestiona los registros de compra, reembolsos, impuestos y precios regionales de Mac App Store."]},
-          {"heading": "Almacenamiento local y eliminación", "paragraphs": ["Las plantillas, instantáneas de espacios de trabajo, idioma de interfaz, separación entre ventanas y otras preferencias se guardan en tu Mac. Puedes eliminar plantillas o instantáneas guardadas dentro de la app cuando esté disponible, o borrar los ajustes locales relacionados desde macOS. Como no hay cuenta de servidor ni datos en la nube, desinstalar la app no crea una solicitud de eliminación remota."]},
-          {"heading": "Solicitudes de soporte", "paragraphs": ["Si contactas con soporte en kibernet@sina.com, solo recibimos la información que decidas enviar, como tu dirección de correo, versión de la app, versión de macOS, configuración de pantallas, capturas, registros o descripción del problema. No envíes contraseñas, claves privadas, archivos confidenciales ni contenido privado; oculta información sensible en las capturas."]},
-          {"heading": "Privacidad infantil", "paragraphs": ["ScreenSplitAssist es una utilidad general de productividad. No está dirigida a niños y no recopila intencionadamente información de niños ni de otros usuarios."]},
-          {"heading": "Cambios y contacto", "paragraphs": ["Si esta política cambia, la versión actualizada se publicará en esta página con una nueva fecha. Las preguntas de privacidad pueden enviarse a kibernet@sina.com."]}
-        ],
-        "links": [{"label": "Soporte", "href": "../Support/index.html"}, {"label": "Información de edad", "href": "../AgeRating/index.html"}]
-      },
-      "fr": {
-        "metaTitle": "Politique de confidentialité de ScreenSplitAssist",
-        "description": "Politique de confidentialité de ScreenSplitAssist, un utilitaire local d’espace de travail de fenêtres pour Mac.",
-        "eyebrow": "ScreenSplitAssist / 窗格大师 pour Mac",
-        "title": "Politique de confidentialité",
-        "updated": "Dernière mise à jour : 5 juillet 2026",
-        "intro": "ScreenSplitAssist est un assistant local de disposition de fenêtres pour macOS. Il aide à organiser les fenêtres sélectionnées, appliquer des préréglages, créer des ratios personnalisés, enregistrer des instantanés d’espace de travail et restaurer des configurations depuis la barre de menus ou des raccourcis clavier.",
-        "notice": "Résumé : ScreenSplitAssist ne nécessite pas de compte, n’inclut aucun SDK publicitaire, analytique ou de suivi, ne téléverse pas les titres de fenêtres, listes d’apps, modèles de disposition ou instantanés d’espace de travail, et exécute ses fonctions principales localement sur votre Mac.",
-        "sections": [
-          {"heading": "Données collectées", "paragraphs": ["La version 1.0.0 ne collecte, ne vend ni ne partage de données personnelles via des services en ligne exploités par le développeur. ScreenSplitAssist n’envoie pas les titres de fenêtres, noms d’apps, identifiants de bundle, positions de fenêtres, informations d’écran, modèles, instantanés, analyses d’utilisation, analyses de plantage, identifiants, coordonnées ou diagnostics aux serveurs du développeur."]},
-          {"heading": "Données traitées localement", "paragraphs": ["Pour exécuter les actions de disposition lancées par l’utilisateur, ScreenSplitAssist lit et traite localement des métadonnées limitées de fenêtres sur votre Mac."], "bullets": ["Noms d’applications et identifiants de bundle.", "Titres, positions, tailles, noms d’écrans et zones visibles.", "Préréglages sélectionnés, ratios personnalisés, espace entre fenêtres, raccourcis et langue de l’interface.", "Modèles créés par l’utilisateur, instantanés d’espace de travail et positions précédentes nécessaires à l’annulation."]},
-          {"heading": "Autorisation Accessibilité", "paragraphs": ["ScreenSplitAssist nécessite l’autorisation Accessibilité de macOS pour lire les métadonnées de fenêtres et les déplacer ou redimensionner. Sans cette autorisation, l’app peut ouvrir son panneau de contrôle, mais ne peut pas organiser les fenêtres. L’app ne lit pas le contenu des fenêtres, n’enregistre pas les saisies clavier et n’analyse pas les documents de l’utilisateur en arrière-plan."]},
-          {"heading": "Réseau, comptes et SDK tiers", "paragraphs": ["Les fonctions principales ne nécessitent pas d’accès réseau. La version 1.0.0 n’a pas de système de compte, synchronisation cloud, stockage de fichiers exploité par le développeur, publicité, analyses tierces, rapports de plantage tiers, domaines de suivi, abonnements ni achats intégrés. Apple gère les achats, remboursements, taxes et prix régionaux du Mac App Store."]},
-          {"heading": "Stockage local et suppression", "paragraphs": ["Les modèles, instantanés d’espace de travail, langue de l’interface, espace entre fenêtres et autres préférences sont stockés sur votre Mac. Vous pouvez supprimer les modèles ou instantanés enregistrés dans l’app lorsque disponible, ou retirer les réglages locaux liés depuis macOS. Comme l’app n’a ni compte serveur ni données cloud, la désinstallation ne crée pas de demande de suppression distante."]},
-          {"heading": "Demandes d’assistance", "paragraphs": ["Si vous contactez l’assistance à kibernet@sina.com, nous recevons uniquement les informations que vous choisissez d’envoyer, comme votre adresse e-mail, la version de l’app, la version de macOS, la configuration des écrans, des captures, journaux ou la description du problème. N’envoyez pas de mots de passe, clés privées, fichiers confidentiels ou contenus privés ; masquez les informations sensibles dans les captures."]},
-          {"heading": "Confidentialité des enfants", "paragraphs": ["ScreenSplitAssist est un utilitaire général de productivité. Il ne s’adresse pas aux enfants et ne collecte pas sciemment d’informations auprès d’enfants ou d’autres utilisateurs."]},
-          {"heading": "Modifications et contact", "paragraphs": ["Si cette politique change, la version mise à jour sera publiée sur cette page avec une date révisée. Les questions de confidentialité peuvent être envoyées à kibernet@sina.com."]}
-        ],
-        "links": [{"label": "Assistance", "href": "../Support/index.html"}, {"label": "Informations d’âge", "href": "../AgeRating/index.html"}]
-      },
-      "de": {
-        "metaTitle": "ScreenSplitAssist Datenschutzrichtlinie",
-        "description": "Datenschutzrichtlinie für ScreenSplitAssist, ein lokal arbeitendes Fenster-Arbeitsbereichswerkzeug für Mac.",
-        "eyebrow": "ScreenSplitAssist / 窗格大师 für Mac",
-        "title": "Datenschutzrichtlinie",
-        "updated": "Zuletzt aktualisiert: 5. Juli 2026",
-        "intro": "ScreenSplitAssist ist ein lokal arbeitender macOS-Assistent für Fensterlayouts. Die App hilft beim Anordnen ausgewählter Fenster, Anwenden von Layout-Vorlagen, Erstellen eigener Teilungsverhältnisse, Speichern von Arbeitsbereich-Schnappschüssen und Wiederherstellen häufiger Fenster-Setups über Menüleiste oder Tastaturkurzbefehle.",
-        "notice": "Kurzfassung: ScreenSplitAssist benötigt kein Konto, enthält keine Werbe-, Analyse- oder Tracking-SDKs, lädt keine Fenstertitel, App-Listen, Layoutvorlagen oder Arbeitsbereich-Schnappschüsse hoch und führt Kernfunktionen lokal auf Ihrem Mac aus.",
-        "sections": [
-          {"heading": "Von uns erhobene Daten", "paragraphs": ["Version 1.0.0 erhebt, verkauft oder teilt keine personenbezogenen Daten über vom Entwickler betriebene Onlinedienste. ScreenSplitAssist sendet keine Fenstertitel, App-Namen, Bundle-IDs, Fensterpositionen, Displayinformationen, Vorlagen, Schnappschüsse, Nutzungsanalysen, Absturzanalysen, Kennungen, Kontaktdaten oder Diagnosen an Entwicklerserver."]},
-          {"heading": "Lokal verarbeitete Daten", "paragraphs": ["Um vom Benutzer ausgelöste Fensterlayout-Aktionen auszuführen, liest und verarbeitet ScreenSplitAssist begrenzte Fenstermetadaten lokal auf Ihrem Mac."], "bullets": ["App-Namen und Bundle-IDs.", "Fenstertitel, Positionen, Größen, Displaynamen und sichtbare Bildschirmbereiche.", "Ausgewählte Layoutvorlagen, eigene Verhältnisse, Fensterabstand, Kurzbefehle und Oberflächensprache.", "Vom Benutzer erstellte Layoutvorlagen, Arbeitsbereich-Schnappschüsse und vorherige Fensterpositionen für Rückgängig."]},
-          {"heading": "Bedienungshilfen-Berechtigung", "paragraphs": ["ScreenSplitAssist benötigt die macOS-Berechtigung für Bedienungshilfen, um Fenstermetadaten zu lesen und Fenster zu verschieben oder zu skalieren. Ohne diese Berechtigung kann die App das Bedienfeld öffnen, aber keine Fenster anordnen. Die App liest keine Fensterinhalte, zeichnet keine Tastatureingaben auf und scannt keine Benutzerdokumente im Hintergrund."]},
-          {"heading": "Netzwerk, Konten und Drittanbieter-SDKs", "paragraphs": ["Kernfunktionen benötigen keinen Netzwerkzugriff. Version 1.0.0 hat kein Kontosystem, keine Cloud-Synchronisierung, keinen vom Entwickler betriebenen Dateispeicher, keine Werbung, keine Drittanbieter-Analysen, keine Drittanbieter-Absturzberichte, keine Tracking-Domains, keine Abonnements und keine In-App-Käufe. Mac App Store Käufe, Erstattungen, Steuern und regionale Preise werden von Apple verwaltet."]},
-          {"heading": "Lokale Speicherung und Löschung", "paragraphs": ["Layoutvorlagen, Arbeitsbereich-Schnappschüsse, Oberflächensprache, Fensterabstand und andere Einstellungen werden auf Ihrem Mac gespeichert. Sie können gespeicherte Vorlagen oder Schnappschüsse in der App löschen, sofern verfügbar, oder zugehörige lokale Einstellungen über macOS entfernen. Da es kein serverseitiges Konto und keine Cloud-Daten gibt, erzeugt das Deinstallieren keine Remote-Löschanfrage."]},
-          {"heading": "Supportanfragen", "paragraphs": ["Wenn Sie den Support unter kibernet@sina.com kontaktieren, erhalten wir nur die Informationen, die Sie senden, etwa E-Mail-Adresse, App-Version, macOS-Version, Displaykonfiguration, Screenshots, Protokolle oder Problembeschreibung. Senden Sie keine Passwörter, privaten Schlüssel, vertraulichen Dateien oder privaten Dateiinhalte; schwärzen Sie Screenshots mit privaten Informationen."]},
-          {"heading": "Datenschutz von Kindern", "paragraphs": ["ScreenSplitAssist ist ein allgemeines Produktivitätswerkzeug. Es richtet sich nicht an Kinder und sammelt wissentlich keine Informationen von Kindern oder anderen Benutzern."]},
-          {"heading": "Änderungen und Kontakt", "paragraphs": ["Wenn sich diese Richtlinie ändert, wird die aktualisierte Version mit neuem Datum auf dieser Seite veröffentlicht. Datenschutzfragen können an kibernet@sina.com gesendet werden."]}
-        ],
-        "links": [{"label": "Support", "href": "../Support/index.html"}, {"label": "Altersfreigabe", "href": "../AgeRating/index.html"}]
-      }
+    {
+      "code": "zh-Hant",
+      "htmlLang": "zh-TW",
+      "label": "繁體中文",
+      "dir": "ltr"
+    },
+    {
+      "code": "en",
+      "htmlLang": "en",
+      "label": "English",
+      "dir": "ltr"
+    },
+    {
+      "code": "ja",
+      "htmlLang": "ja",
+      "label": "日本語",
+      "dir": "ltr"
+    },
+    {
+      "code": "ko",
+      "htmlLang": "ko",
+      "label": "한국어",
+      "dir": "ltr"
+    },
+    {
+      "code": "es",
+      "htmlLang": "es",
+      "label": "Español",
+      "dir": "ltr"
+    },
+    {
+      "code": "fr",
+      "htmlLang": "fr",
+      "label": "Français",
+      "dir": "ltr"
+    },
+    {
+      "code": "de",
+      "htmlLang": "de",
+      "label": "Deutsch",
+      "dir": "ltr"
+    }
+  ],
+  "ui": {
+    "zh-Hans": {
+      "language": "语言",
+      "chooseLanguage": "选择语言",
+      "privacy": "隐私",
+      "support": "支持",
+      "age": "适龄"
+    },
+    "zh-Hant": {
+      "language": "語言",
+      "chooseLanguage": "選擇語言",
+      "privacy": "隱私",
+      "support": "支援",
+      "age": "適齡"
+    },
+    "en": {
+      "language": "Language",
+      "chooseLanguage": "Choose language",
+      "privacy": "Privacy",
+      "support": "Support",
+      "age": "Age Rating"
+    },
+    "ja": {
+      "language": "言語",
+      "chooseLanguage": "言語を選択",
+      "privacy": "プライバシー",
+      "support": "サポート",
+      "age": "年齢制限"
+    },
+    "ko": {
+      "language": "언어",
+      "chooseLanguage": "언어 선택",
+      "privacy": "개인정보",
+      "support": "지원",
+      "age": "연령 등급"
+    },
+    "es": {
+      "language": "Idioma",
+      "chooseLanguage": "Elegir idioma",
+      "privacy": "Privacidad",
+      "support": "Soporte",
+      "age": "Edad"
+    },
+    "fr": {
+      "language": "Langue",
+      "chooseLanguage": "Choisir la langue",
+      "privacy": "Confidentialité",
+      "support": "Assistance",
+      "age": "Âge"
+    },
+    "de": {
+      "language": "Sprache",
+      "chooseLanguage": "Sprache auswählen",
+      "privacy": "Datenschutz",
+      "support": "Support",
+      "age": "Alter"
+    }
+  },
+  "content": {
+    "zh-Hans": {
+      "metaTitle": "ScreenSplitAssist 隐私政策",
+      "description": "ScreenSplitAssist / 窗格大师隐私政策：自动窗口布局工具，不收集个人数据。",
+      "eyebrow": "ScreenSplitAssist / 窗格大师 for Mac",
+      "title": "隐私政策",
+      "updated": "最后更新日期：2026 年 7 月 10 日",
+      "intro": "ScreenSplitAssist 是一款 macOS 自动窗口布局工具。用户安装 App 内置的 Apple 快捷指令后，可以自动移动和缩放最前面的可见窗口。",
+      "notice": "摘要：ScreenSplitAssist 不收集个人数据，不需要账号或网络访问，也不申请辅助功能、屏幕录制或 Apple Events 权限。窗口操作由 Apple 快捷指令在设备本地执行。",
+      "sections": [
+        {
+          "heading": "我们收集的数据",
+          "paragraphs": [
+            "1.0 版本不会通过开发者运营的在线服务收集、出售或共享个人数据。应用不会向开发者服务器发送标识符、联系方式、使用分析、崩溃分析、窗口信息、屏幕内容或诊断数据。"
+          ]
+        },
+        {
+          "heading": "本机保存的数据",
+          "paragraphs": [
+            "以下数据只保存在用户的 Mac 本机，用于计算和复用自动布局。"
+          ],
+          "bullets": [
+            "布局预设选择、自定义分屏比例和窗口间距。",
+            "保存的布局区域、模板名称、显示器选择、全局快捷键状态和界面语言。",
+            "应用状态信息，例如是否完成首次设置或打开过快捷指令安装页。"
+          ]
+        },
+        {
+          "heading": "不会访问的内容",
+          "paragraphs": [
+            "ScreenSplitAssist 本体不接收其他 App 的窗口标题、应用名称、窗口内容、截图或文件。Apple 快捷指令只在设备本地处理可见窗口，并向 App 返回完成状态和数量。"
+          ]
+        },
+        {
+          "heading": "权限和网络",
+          "paragraphs": [
+            "当前 Mac App Store 版本不请求辅助功能、屏幕录制、Apple Events、相机、麦克风、位置或联系人权限。首次使用需要用户在 Apple“快捷指令”中确认添加内置快捷指令；核心功能不需要联网。"
+          ]
+        },
+        {
+          "heading": "支持请求",
+          "paragraphs": [
+            "如果你通过 kibernet@sina.com 联系支持，我们只会收到你主动发送的信息。请不要发送密码、私钥、机密文件或私人内容；截图中如有隐私信息请先打码。"
+          ]
+        },
+        {
+          "heading": "儿童隐私",
+          "paragraphs": [
+            "ScreenSplitAssist 是通用生产力工具，不面向儿童，也不会故意收集儿童或其他用户的信息。"
+          ]
+        },
+        {
+          "heading": "变更和联系",
+          "paragraphs": [
+            "如果本政策发生变化，更新后的版本会发布在本页面并更新日期。隐私问题可发送至 kibernet@sina.com。"
+          ]
+        }
+      ],
+      "links": [
+        {
+          "label": "支持",
+          "href": "../Support/index.html"
+        },
+        {
+          "label": "适龄信息",
+          "href": "../AgeRating/index.html"
+        }
+      ]
+    },
+    "zh-Hant": {
+      "metaTitle": "ScreenSplitAssist 隱私權政策",
+      "description": "ScreenSplitAssist / 窗格大師隱私權政策：自動視窗佈局工具，不收集個人資料。",
+      "eyebrow": "ScreenSplitAssist / 窗格大師 for Mac",
+      "title": "隱私權政策",
+      "updated": "最後更新日期：2026 年 7 月 10 日",
+      "intro": "ScreenSplitAssist 是 macOS 自動視窗佈局工具。使用者安裝 App 內建的 Apple 捷徑後，可自動移動並調整最前方可見視窗的大小。",
+      "notice": "摘要：ScreenSplitAssist 不收集個人資料，不需要帳號或網路存取，也不要求輔助使用、螢幕錄製或 Apple Events 權限。視窗操作由 Apple 捷徑在裝置本機執行。",
+      "sections": [
+        {
+          "heading": "我們收集的資料",
+          "paragraphs": [
+            "1.0 版本不會透過開發者營運的線上服務收集、出售或分享個人資料。應用程式不會向開發者伺服器傳送識別碼、聯絡資訊、使用分析、崩潰分析、視窗資訊、螢幕內容或診斷資料。"
+          ]
+        },
+        {
+          "heading": "本機儲存的資料",
+          "paragraphs": [
+            "以下資料只儲存在使用者的 Mac 本機，用於計算和重複使用自動佈局。"
+          ],
+          "bullets": [
+            "佈局預設選擇、自訂分屏比例和視窗間距。",
+            "儲存的佈局區域、模板名稱、顯示器選擇、全域快捷鍵狀態和介面語言。",
+            "應用程式狀態資訊，例如是否完成首次設定或開啟過捷徑安裝頁面。"
+          ]
+        },
+        {
+          "heading": "不會存取的內容",
+          "paragraphs": [
+            "ScreenSplitAssist 本體不接收其他 App 的視窗標題、App 名稱、視窗內容、截圖或檔案。Apple 捷徑只在裝置本機處理可見視窗，並向 App 傳回完成狀態和數量。"
+          ]
+        },
+        {
+          "heading": "權限和網路",
+          "paragraphs": [
+            "目前 Mac App Store 版本不要求輔助使用、螢幕錄製、Apple Events、相機、麥克風、位置或聯絡人權限。首次使用需要在 Apple「捷徑」中確認加入內建捷徑；核心功能不需要網路連線。"
+          ]
+        },
+        {
+          "heading": "支援請求",
+          "paragraphs": [
+            "如果你透過 kibernet@sina.com 聯絡支援，我們只會收到你主動傳送的資訊。請不要傳送密碼、私鑰、機密檔案或私人內容；截圖中如有隱私資訊請先遮蔽。"
+          ]
+        },
+        {
+          "heading": "兒童隱私",
+          "paragraphs": [
+            "ScreenSplitAssist 是通用生產力工具，不面向兒童，也不會故意收集兒童或其他使用者的資訊。"
+          ]
+        },
+        {
+          "heading": "變更和聯繫",
+          "paragraphs": [
+            "如果本政策發生變化，更新後的版本會發布在本頁面並更新日期。隱私問題可寄至 kibernet@sina.com。"
+          ]
+        }
+      ],
+      "links": [
+        {
+          "label": "支援",
+          "href": "../Support/index.html"
+        },
+        {
+          "label": "適齡資訊",
+          "href": "../AgeRating/index.html"
+        }
+      ]
+    },
+    "en": {
+      "metaTitle": "ScreenSplitAssist Privacy Policy",
+      "description": "Privacy policy for ScreenSplitAssist, an automatic Mac window layout app that does not collect personal data.",
+      "eyebrow": "ScreenSplitAssist / 窗格大师 for Mac",
+      "title": "Privacy Policy",
+      "updated": "Last updated: July 10, 2026",
+      "intro": "ScreenSplitAssist is an automatic macOS window layout utility. After the user installs its bundled Apple Shortcut, it can move and resize the frontmost visible windows.",
+      "notice": "Summary: ScreenSplitAssist collects no personal data, requires no account or network access, and requests no Accessibility, Screen Recording, or Apple Events permission. Apple Shortcuts performs window operations locally on the device.",
+      "sections": [
+        {
+          "heading": "Data We Collect",
+          "paragraphs": [
+            "Version 1.0 does not collect, sell, or share personal data through developer-operated online services. The app does not send identifiers, contact information, usage analytics, crash analytics, window information, screen contents, or diagnostics to developer servers."
+          ]
+        },
+        {
+          "heading": "Data Stored Locally",
+          "paragraphs": [
+            "The following data stays on the user’s Mac and is used only to calculate and reuse automatic layouts."
+          ],
+          "bullets": [
+            "Selected layout preset, custom split ratios, and window gap.",
+            "Saved layout regions, template names, display choice, global shortcut status, and interface language.",
+            "App state such as whether setup was completed or the Shortcut installation page was opened."
+          ]
+        },
+        {
+          "heading": "Content the App Does Not Access",
+          "paragraphs": [
+            "ScreenSplitAssist itself does not receive window titles, app names, window contents, screenshots, or files from other apps. Apple Shortcuts processes visible windows locally and returns only completion status and a count."
+          ]
+        },
+        {
+          "heading": "Permissions and Network",
+          "paragraphs": [
+            "The current Mac App Store version does not request Accessibility, Screen Recording, Apple Events, camera, microphone, location, or contacts access. On first use, the user confirms adding the bundled Shortcut in Apple Shortcuts. Core features do not require network access."
+          ]
+        },
+        {
+          "heading": "Support Requests",
+          "paragraphs": [
+            "If you contact support at kibernet@sina.com, we receive only the information you choose to send. Do not send passwords, private keys, confidential files, or private content; redact screenshots if they contain private information."
+          ]
+        },
+        {
+          "heading": "Children’s Privacy",
+          "paragraphs": [
+            "ScreenSplitAssist is a general productivity utility. It is not directed to children and does not knowingly collect information from children or any other users."
+          ]
+        },
+        {
+          "heading": "Changes and Contact",
+          "paragraphs": [
+            "If this policy changes, the updated version will be posted on this page with a revised update date. Privacy questions can be sent to kibernet@sina.com."
+          ]
+        }
+      ],
+      "links": [
+        {
+          "label": "Support",
+          "href": "../Support/index.html"
+        },
+        {
+          "label": "Age Rating Information",
+          "href": "../AgeRating/index.html"
+        }
+      ]
+    },
+    "ja": {
+      "metaTitle": "ScreenSplitAssist プライバシーポリシー",
+      "description": "個人データを収集しない自動ウインドウレイアウトApp、ScreenSplitAssistのプライバシーポリシーです。",
+      "eyebrow": "ScreenSplitAssist / 窗格大师 for Mac",
+      "title": "プライバシーポリシー",
+      "updated": "最終更新日：2026年7月10日",
+      "intro": "ScreenSplitAssist は macOS 用の自動ウインドウレイアウトユーティリティです。同梱の Apple ショートカットを追加すると、手前の表示中ウインドウを自動で移動・サイズ変更できます。",
+      "notice": "概要：ScreenSplitAssist は個人データを収集せず、アカウントやネットワーク接続も不要です。アクセシビリティ、画面収録、Apple Events の権限は要求せず、ウインドウ操作は Apple ショートカットが端末内で実行します。",
+      "sections": [
+        {
+          "heading": "収集するデータ",
+          "paragraphs": [
+            "バージョン 1.0 は、開発者が運営するオンラインサービスを通じて個人データを収集、販売、共有しません。識別子、連絡先情報、使用状況分析、クラッシュ分析、ウインドウ情報、画面内容、診断情報を開発者サーバーへ送信しません。"
+          ]
+        },
+        {
+          "heading": "ローカルに保存されるデータ",
+          "paragraphs": [
+            "次のデータはユーザーの Mac にのみ保存され、自動レイアウトの計算と再利用に使われます。"
+          ],
+          "bullets": [
+            "選択したレイアウトプリセット、カスタム分割比率、ウィンドウ間隔。",
+            "保存済みレイアウト領域、テンプレート名、ディスプレイ選択、グローバルショートカット状態、表示言語。",
+            "初期設定の完了やショートカット追加画面を開いたかどうかなどのApp状態。"
+          ]
+        },
+        {
+          "heading": "アクセスしない内容",
+          "paragraphs": [
+            "ScreenSplitAssist 本体は、他のAppのウインドウタイトル、App名、ウインドウ内容、スクリーンショット、ファイルを受け取りません。Apple ショートカットが表示中ウインドウを端末内で処理し、完了状態と件数だけを返します。"
+          ]
+        },
+        {
+          "heading": "権限とネットワーク",
+          "paragraphs": [
+            "現在の Mac App Store 版は、アクセシビリティ、画面収録、Apple Events、カメラ、マイク、位置情報、連絡先アクセスを要求しません。初回のみ Apple ショートカットで同梱ショートカットの追加を確認します。主要機能にネットワーク接続は不要です。"
+          ]
+        },
+        {
+          "heading": "サポート依頼",
+          "paragraphs": [
+            "kibernet@sina.com に連絡した場合、受け取るのはユーザーが送信した情報のみです。パスワード、秘密鍵、機密ファイル、個人的な内容は送信しないでください。スクリーンショットに個人情報が含まれる場合は編集してください。"
+          ]
+        },
+        {
+          "heading": "子どものプライバシー",
+          "paragraphs": [
+            "ScreenSplitAssist は一般的な生産性ユーティリティであり、子ども向けではありません。子どもやその他のユーザーから意図的に情報を収集しません。"
+          ]
+        },
+        {
+          "heading": "変更と連絡先",
+          "paragraphs": [
+            "本ポリシーが変更された場合、更新日を記載した改訂版をこのページに掲載します。プライバシーに関する質問は kibernet@sina.com まで送信できます。"
+          ]
+        }
+      ],
+      "links": [
+        {
+          "label": "サポート",
+          "href": "../Support/index.html"
+        },
+        {
+          "label": "年齢制限情報",
+          "href": "../AgeRating/index.html"
+        }
+      ]
+    },
+    "ko": {
+      "metaTitle": "ScreenSplitAssist 개인정보 처리방침",
+      "description": "개인 데이터를 수집하지 않는 Mac 자동 창 레이아웃 앱 ScreenSplitAssist의 개인정보 처리방침입니다.",
+      "eyebrow": "ScreenSplitAssist / 窗格大师 for Mac",
+      "title": "개인정보 처리방침",
+      "updated": "최종 업데이트: 2026년 7월 10일",
+      "intro": "ScreenSplitAssist는 macOS용 자동 창 레이아웃 유틸리티입니다. 번들 Apple 단축어를 추가하면 앞쪽의 보이는 창을 자동으로 이동하고 크기를 조절합니다.",
+      "notice": "요약: ScreenSplitAssist는 개인 데이터를 수집하지 않으며 계정이나 네트워크가 필요하지 않습니다. 손쉬운 사용, 화면 기록 또는 Apple Events 권한을 요청하지 않고, 창 작업은 Apple 단축어가 기기에서 로컬로 실행합니다.",
+      "sections": [
+        {
+          "heading": "수집하는 데이터",
+          "paragraphs": [
+            "버전 1.0은 개발자가 운영하는 온라인 서비스를 통해 개인 데이터를 수집, 판매 또는 공유하지 않습니다. 식별자, 연락처 정보, 사용 분석, 충돌 분석, 창 정보, 화면 내용 또는 진단 정보를 개발자 서버로 보내지 않습니다."
+          ]
+        },
+        {
+          "heading": "로컬에 저장되는 데이터",
+          "paragraphs": [
+            "다음 데이터는 사용자의 Mac에만 저장되며 자동 레이아웃을 계산하고 재사용하는 데 사용됩니다."
+          ],
+          "bullets": [
+            "선택한 레이아웃 프리셋, 사용자 지정 분할 비율 및 창 간격.",
+            "저장된 레이아웃 영역, 템플릿 이름, 디스플레이 선택, 전역 단축키 상태 및 인터페이스 언어.",
+            "초기 설정 완료 여부나 단축어 설치 화면을 열었는지와 같은 앱 상태."
+          ]
+        },
+        {
+          "heading": "앱이 접근하지 않는 내용",
+          "paragraphs": [
+            "ScreenSplitAssist 자체는 다른 앱의 창 제목, 앱 이름, 창 내용, 스크린샷 또는 파일을 받지 않습니다. Apple 단축어가 보이는 창을 기기에서 로컬로 처리하고 완료 상태와 개수만 반환합니다."
+          ]
+        },
+        {
+          "heading": "권한 및 네트워크",
+          "paragraphs": [
+            "현재 Mac App Store 버전은 손쉬운 사용, 화면 기록, Apple Events, 카메라, 마이크, 위치 또는 연락처 접근을 요청하지 않습니다. 처음 사용할 때 Apple 단축어에서 번들 단축어 추가를 확인하며, 핵심 기능에는 네트워크가 필요하지 않습니다."
+          ]
+        },
+        {
+          "heading": "지원 요청",
+          "paragraphs": [
+            "kibernet@sina.com으로 지원을 요청하면 사용자가 보내기로 선택한 정보만 받습니다. 비밀번호, 개인 키, 기밀 파일 또는 개인 콘텐츠를 보내지 마십시오. 스크린샷에 개인정보가 포함되어 있으면 먼저 가리십시오."
+          ]
+        },
+        {
+          "heading": "아동 개인정보",
+          "paragraphs": [
+            "ScreenSplitAssist는 일반 생산성 유틸리티입니다. 아동을 대상으로 하지 않으며 아동이나 다른 사용자로부터 고의로 정보를 수집하지 않습니다."
+          ]
+        },
+        {
+          "heading": "변경 및 연락처",
+          "paragraphs": [
+            "이 정책이 변경되면 수정된 날짜와 함께 이 페이지에 게시됩니다. 개인정보 관련 질문은 kibernet@sina.com으로 보낼 수 있습니다."
+          ]
+        }
+      ],
+      "links": [
+        {
+          "label": "지원",
+          "href": "../Support/index.html"
+        },
+        {
+          "label": "연령 등급 정보",
+          "href": "../AgeRating/index.html"
+        }
+      ]
+    },
+    "es": {
+      "metaTitle": "Política de privacidad de ScreenSplitAssist",
+      "description": "Política de privacidad de ScreenSplitAssist, una app de organización automática de ventanas que no recopila datos personales.",
+      "eyebrow": "ScreenSplitAssist / 窗格大师 para Mac",
+      "title": "Política de privacidad",
+      "updated": "Última actualización: 10 de julio de 2026",
+      "intro": "ScreenSplitAssist es una utilidad de organización automática de ventanas para macOS. Tras añadir el atajo de Apple incluido, mueve y cambia el tamaño de las ventanas visibles situadas al frente.",
+      "notice": "Resumen: ScreenSplitAssist no recopila datos personales ni requiere cuenta o red. No solicita permisos de Accesibilidad, Grabación de pantalla ni Apple Events; Atajos de Apple realiza las operaciones de ventanas localmente en el dispositivo.",
+      "sections": [
+        {
+          "heading": "Datos que recopilamos",
+          "paragraphs": [
+            "La versión 1.0 no recopila, vende ni comparte datos personales mediante servicios en línea operados por el desarrollador. La app no envía identificadores, información de contacto, analíticas de uso, informes de fallos, información de ventanas, contenido de pantalla ni diagnósticos a servidores del desarrollador."
+          ]
+        },
+        {
+          "heading": "Datos almacenados localmente",
+          "paragraphs": [
+            "Los siguientes datos permanecen en el Mac del usuario y solo se usan para calcular y reutilizar diseños automáticos."
+          ],
+          "bullets": [
+            "Diseño seleccionado, proporciones personalizadas y separación entre ventanas.",
+            "Zonas de diseño guardadas, nombres de plantillas, pantalla seleccionada, estado de atajos globales e idioma de la interfaz.",
+            "Estado de la app, como la finalización de la configuración o la apertura de la instalación del atajo."
+          ]
+        },
+        {
+          "heading": "Contenido al que la app no accede",
+          "paragraphs": [
+            "ScreenSplitAssist no recibe títulos de ventanas, nombres de apps, contenido de ventanas, capturas ni archivos de otras apps. Atajos de Apple procesa las ventanas visibles localmente y solo devuelve el estado y la cantidad completada."
+          ]
+        },
+        {
+          "heading": "Permisos y red",
+          "paragraphs": [
+            "La versión actual de Mac App Store no solicita Accesibilidad, Grabación de pantalla, Apple Events, cámara, micrófono, ubicación ni contactos. La primera vez, el usuario confirma añadir el atajo incluido en Atajos de Apple. Las funciones principales no requieren red."
+          ]
+        },
+        {
+          "heading": "Solicitudes de soporte",
+          "paragraphs": [
+            "Si contactas con soporte en kibernet@sina.com, solo recibimos la información que decidas enviar. No envíes contraseñas, claves privadas, archivos confidenciales ni contenido privado; oculta información privada en las capturas."
+          ]
+        },
+        {
+          "heading": "Privacidad infantil",
+          "paragraphs": [
+            "ScreenSplitAssist es una utilidad general de productividad. No está dirigida a niños y no recopila intencionadamente información de niños ni de otros usuarios."
+          ]
+        },
+        {
+          "heading": "Cambios y contacto",
+          "paragraphs": [
+            "Si esta política cambia, la versión actualizada se publicará en esta página con una nueva fecha. Las preguntas de privacidad pueden enviarse a kibernet@sina.com."
+          ]
+        }
+      ],
+      "links": [
+        {
+          "label": "Soporte",
+          "href": "../Support/index.html"
+        },
+        {
+          "label": "Información de edad",
+          "href": "../AgeRating/index.html"
+        }
+      ]
+    },
+    "fr": {
+      "metaTitle": "Politique de confidentialité de ScreenSplitAssist",
+      "description": "Politique de confidentialité de ScreenSplitAssist, une app d’organisation automatique des fenêtres qui ne collecte pas de données personnelles.",
+      "eyebrow": "ScreenSplitAssist / 窗格大师 pour Mac",
+      "title": "Politique de confidentialité",
+      "updated": "Dernière mise à jour : 10 juillet 2026",
+      "intro": "ScreenSplitAssist est un utilitaire d’organisation automatique des fenêtres pour macOS. Après l’ajout du raccourci Apple fourni, il déplace et redimensionne les fenêtres visibles au premier plan.",
+      "notice": "Résumé : ScreenSplitAssist ne collecte aucune donnée personnelle et ne nécessite ni compte ni réseau. Il ne demande pas d’autorisation Accessibilité, Enregistrement de l’écran ou Apple Events ; Raccourcis Apple effectue les opérations localement sur l’appareil.",
+      "sections": [
+        {
+          "heading": "Données collectées",
+          "paragraphs": [
+            "La version 1.0 ne collecte, ne vend ni ne partage de données personnelles via des services en ligne exploités par le développeur. L’app n’envoie pas d’identifiants, coordonnées, analyses d’utilisation, rapports de plantage, informations de fenêtres, contenu d’écran ou diagnostics aux serveurs du développeur."
+          ]
+        },
+        {
+          "heading": "Données stockées localement",
+          "paragraphs": [
+            "Les données suivantes restent sur le Mac de l’utilisateur et servent uniquement à calculer et réutiliser les dispositions automatiques."
+          ],
+          "bullets": [
+            "Préréglage choisi, ratios personnalisés et espace entre fenêtres.",
+            "Zones de disposition enregistrées, noms de modèles, choix d’écran, état des raccourcis globaux et langue de l’interface.",
+            "État de l’app, par exemple la fin de la configuration ou l’ouverture de l’installation du raccourci."
+          ]
+        },
+        {
+          "heading": "Contenu non consulté par l’app",
+          "paragraphs": [
+            "ScreenSplitAssist ne reçoit pas les titres de fenêtres, noms d’apps, contenus de fenêtres, captures d’écran ou fichiers d’autres apps. Raccourcis Apple traite localement les fenêtres visibles et ne renvoie que l’état d’achèvement et un nombre."
+          ]
+        },
+        {
+          "heading": "Autorisations et réseau",
+          "paragraphs": [
+            "La version Mac App Store actuelle ne demande pas Accessibilité, Enregistrement de l’écran, Apple Events, caméra, microphone, position ou contacts. Lors de la première utilisation, l’utilisateur confirme l’ajout du raccourci fourni dans Raccourcis Apple. Le réseau n’est pas requis."
+          ]
+        },
+        {
+          "heading": "Demandes d’assistance",
+          "paragraphs": [
+            "Si vous contactez l’assistance à kibernet@sina.com, nous recevons uniquement les informations que vous choisissez d’envoyer. N’envoyez pas de mots de passe, clés privées, fichiers confidentiels ou contenu privé ; masquez les captures contenant des informations privées."
+          ]
+        },
+        {
+          "heading": "Confidentialité des enfants",
+          "paragraphs": [
+            "ScreenSplitAssist est un utilitaire général de productivité. Il ne s’adresse pas aux enfants et ne collecte pas sciemment d’informations auprès d’enfants ou d’autres utilisateurs."
+          ]
+        },
+        {
+          "heading": "Modifications et contact",
+          "paragraphs": [
+            "Si cette politique change, la version mise à jour sera publiée sur cette page avec une date révisée. Les questions de confidentialité peuvent être envoyées à kibernet@sina.com."
+          ]
+        }
+      ],
+      "links": [
+        {
+          "label": "Assistance",
+          "href": "../Support/index.html"
+        },
+        {
+          "label": "Informations d’âge",
+          "href": "../AgeRating/index.html"
+        }
+      ]
+    },
+    "de": {
+      "metaTitle": "ScreenSplitAssist Datenschutzrichtlinie",
+      "description": "Datenschutzrichtlinie für ScreenSplitAssist, eine automatische Mac-Fensterlayout-App ohne Erhebung personenbezogener Daten.",
+      "eyebrow": "ScreenSplitAssist / 窗格大师 für Mac",
+      "title": "Datenschutzrichtlinie",
+      "updated": "Zuletzt aktualisiert: 10. Juli 2026",
+      "intro": "ScreenSplitAssist ist ein Dienstprogramm für automatische Fensterlayouts unter macOS. Nach dem Hinzufügen des mitgelieferten Apple-Kurzbefehls verschiebt und skaliert es die vordersten sichtbaren Fenster.",
+      "notice": "Kurzfassung: ScreenSplitAssist erhebt keine personenbezogenen Daten und benötigt weder Konto noch Netzwerk. Es fordert keine Bedienungshilfen-, Bildschirmaufnahme- oder Apple-Events-Berechtigung an; Apple Kurzbefehle führt Fensteraktionen lokal auf dem Gerät aus.",
+      "sections": [
+        {
+          "heading": "Von uns erhobene Daten",
+          "paragraphs": [
+            "Version 1.0 erhebt, verkauft oder teilt keine personenbezogenen Daten über vom Entwickler betriebene Onlinedienste. Die App sendet keine Kennungen, Kontaktdaten, Nutzungsanalysen, Absturzanalysen, Fensterinformationen, Bildschirminhalte oder Diagnosen an Entwicklerserver."
+          ]
+        },
+        {
+          "heading": "Lokal gespeicherte Daten",
+          "paragraphs": [
+            "Die folgenden Daten bleiben auf dem Mac des Benutzers und dienen nur zum Berechnen und Wiederverwenden automatischer Layouts."
+          ],
+          "bullets": [
+            "Gewählte Layoutvorlage, eigene Teilungsverhältnisse und Fensterabstand.",
+            "Gespeicherte Layoutbereiche, Vorlagennamen, Displayauswahl, Status globaler Kurzbefehle und Oberflächensprache.",
+            "App-Status, etwa ob die Einrichtung abgeschlossen oder die Installation des Kurzbefehls geöffnet wurde."
+          ]
+        },
+        {
+          "heading": "Inhalte, auf die die App nicht zugreift",
+          "paragraphs": [
+            "ScreenSplitAssist selbst erhält keine Fenstertitel, App-Namen, Fensterinhalte, Bildschirmfotos oder Dateien anderer Apps. Apple Kurzbefehle verarbeitet sichtbare Fenster lokal und gibt nur Abschlussstatus und Anzahl zurück."
+          ]
+        },
+        {
+          "heading": "Berechtigungen und Netzwerk",
+          "paragraphs": [
+            "Die aktuelle Mac App Store Version fordert keine Bedienungshilfen-, Bildschirmaufnahme-, Apple-Events-, Kamera-, Mikrofon-, Standort- oder Kontakteberechtigung an. Beim ersten Start bestätigt der Benutzer den mitgelieferten Kurzbefehl in Apple Kurzbefehle. Netzwerkzugriff ist nicht erforderlich."
+          ]
+        },
+        {
+          "heading": "Supportanfragen",
+          "paragraphs": [
+            "Wenn Sie den Support unter kibernet@sina.com kontaktieren, erhalten wir nur die Informationen, die Sie senden. Senden Sie keine Passwörter, privaten Schlüssel, vertraulichen Dateien oder privaten Inhalte; schwärzen Sie Screenshots mit privaten Informationen."
+          ]
+        },
+        {
+          "heading": "Datenschutz von Kindern",
+          "paragraphs": [
+            "ScreenSplitAssist ist ein allgemeines Produktivitätswerkzeug. Es richtet sich nicht an Kinder und sammelt wissentlich keine Informationen von Kindern oder anderen Benutzern."
+          ]
+        },
+        {
+          "heading": "Änderungen und Kontakt",
+          "paragraphs": [
+            "Wenn sich diese Richtlinie ändert, wird die aktualisierte Version mit neuem Datum auf dieser Seite veröffentlicht. Datenschutzfragen können an kibernet@sina.com gesendet werden."
+          ]
+        }
+      ],
+      "links": [
+        {
+          "label": "Support",
+          "href": "../Support/index.html"
+        },
+        {
+          "label": "Altersfreigabe",
+          "href": "../AgeRating/index.html"
+        }
+      ]
     }
   }
+}
+
   </script>
   <script>
     (() => {

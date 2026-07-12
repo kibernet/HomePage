@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ScreenSplitAssist Age Rating Information</title>
-  <meta name="description" content="Age rating information for ScreenSplitAssist, a local-first Mac window workspace utility.">
+  <meta name="description" content="Age rating information for ScreenSplitAssist, an automatic Mac window layout app expected to be suitable for users 4+.">
   <style>
     :root{color-scheme:dark light;--bg:#0e1118;--panel:rgba(18,24,34,.92);--panel-soft:rgba(24,32,44,.78);--text:#f8fafc;--muted:#cbd5e1;--quiet:#94a3b8;--line:rgba(148,163,184,.24);--accent:#5eead4;--accent-2:#f7c66a;--shadow:rgba(0,0,0,.34)}
     @media (prefers-color-scheme:light){:root{--bg:#f7fafc;--panel:rgba(255,255,255,.96);--panel-soft:rgba(248,250,252,.92);--text:#111827;--muted:#334155;--quiet:#64748b;--line:rgba(15,23,42,.14);--accent:#0f766e;--accent-2:#9a6700;--shadow:rgba(15,23,42,.12)}}
@@ -26,263 +26,657 @@
     <main id="localized-content" class="content" role="main"></main>
   </div></div>
   <script type="application/json" id="page-data">
-  {
-    "defaultLanguage": "en",
-    "languages": [
-      {"code": "zh-Hans", "htmlLang": "zh-CN", "label": "简体中文", "dir": "ltr"},
-      {"code": "zh-Hant", "htmlLang": "zh-TW", "label": "繁體中文", "dir": "ltr"},
-      {"code": "en", "htmlLang": "en", "label": "English", "dir": "ltr"},
-      {"code": "ja", "htmlLang": "ja", "label": "日本語", "dir": "ltr"},
-      {"code": "ko", "htmlLang": "ko", "label": "한국어", "dir": "ltr"},
-      {"code": "es", "htmlLang": "es", "label": "Español", "dir": "ltr"},
-      {"code": "fr", "htmlLang": "fr", "label": "Français", "dir": "ltr"},
-      {"code": "de", "htmlLang": "de", "label": "Deutsch", "dir": "ltr"}
-    ],
-    "ui": {
-      "zh-Hans": {"language": "语言", "chooseLanguage": "选择语言", "privacy": "隐私", "support": "支持", "age": "适龄"},
-      "zh-Hant": {"language": "語言", "chooseLanguage": "選擇語言", "privacy": "隱私", "support": "支援", "age": "適齡"},
-      "en": {"language": "Language", "chooseLanguage": "Choose language", "privacy": "Privacy", "support": "Support", "age": "Age Rating"},
-      "ja": {"language": "言語", "chooseLanguage": "言語を選択", "privacy": "プライバシー", "support": "サポート", "age": "年齢制限"},
-      "ko": {"language": "언어", "chooseLanguage": "언어 선택", "privacy": "개인정보", "support": "지원", "age": "연령 등급"},
-      "es": {"language": "Idioma", "chooseLanguage": "Elegir idioma", "privacy": "Privacidad", "support": "Soporte", "age": "Edad"},
-      "fr": {"language": "Langue", "chooseLanguage": "Choisir la langue", "privacy": "Confidentialité", "support": "Assistance", "age": "Âge"},
-      "de": {"language": "Sprache", "chooseLanguage": "Sprache auswählen", "privacy": "Datenschutz", "support": "Support", "age": "Alter"}
+
+{
+  "defaultLanguage": "en",
+  "languages": [
+    {
+      "code": "zh-Hans",
+      "htmlLang": "zh-CN",
+      "label": "简体中文",
+      "dir": "ltr"
     },
-    "content": {
-      "zh-Hans": {
-        "metaTitle": "ScreenSplitAssist 适龄说明",
-        "description": "ScreenSplitAssist / 窗格大师适龄说明：本地优先的 Mac 窗口工作区工具，预计适合 4+ 用户。",
-        "eyebrow": "ScreenSplitAssist / 窗格大师 for Mac",
-        "title": "适龄说明",
-        "updated": "最后更新日期：2026 年 7 月 5 日",
-        "intro": "ScreenSplitAssist 是用于排列 Mac 窗口、应用布局预设、自定义分屏比例和恢复工作区快照的生产力工具。它面向通用用户场景，不提供社交、娱乐、博彩、浏览器、广告或用户生成内容功能。",
-        "rating": "预计 App Store 年龄分级：4+",
-        "notice": "本页说明基于 ScreenSplitAssist 1.0.0 的功能范围。提交 App Store 时，最终年龄分级以 App Store Connect 问卷和 Apple 审核结果为准。",
-        "sections": [
-          {"heading": "内容类别摘要", "columns": ["类别", "ScreenSplitAssist 状态"], "rows": [
-            {"category": "卡通或幻想暴力", "status": "无。"},
-            {"category": "现实暴力、血腥或恐怖内容", "status": "无。"},
-            {"category": "成人、色情或裸露内容", "status": "无。"},
-            {"category": "粗俗语言或成人主题", "status": "无。"},
-            {"category": "酒精、烟草、药物或医疗信息", "status": "无。"},
-            {"category": "赌博、竞赛或抽奖", "status": "无。"},
-            {"category": "网页浏览或不受限制的外部内容", "status": "无。"},
-            {"category": "用户生成内容、聊天或社交功能", "status": "无。"},
-            {"category": "广告、追踪或第三方分析", "status": "无。"},
-            {"category": "位置、相机、麦克风或联系人访问", "status": "无。"}
-          ]},
-          {"heading": "预期用途", "paragraphs": ["ScreenSplitAssist 帮助用户在开发、会议、写作、运维和多显示器工作中整理窗口布局。功能仅面向效率工作流，不展示外部内容，也不包含互动社区。"]},
-          {"heading": "隐私与安全控制", "bullets": ["不需要账号或登录。", "不包含广告 SDK、追踪 SDK 或分析 SDK。", "不上传窗口标题、应用列表、布局模板或工作区快照。", "核心功能在用户 Mac 本机执行。", "窗口排列需要用户主动授予 macOS 辅助功能权限。", "支持邮件只包含用户主动发送的信息。"]},
-          {"heading": "付款与广告", "paragraphs": ["ScreenSplitAssist 1.0.0 不包含 App 内购买、订阅、广告展示或付费抽奖功能。"]},
-          {"heading": "联系我们", "paragraphs": ["如果你认为年龄分级或内容说明需要修正，请发送邮件至 kibernet@sina.com。"]}
-        ],
-        "links": [{"label": "隐私政策", "href": "../Privacy/index.html"}, {"label": "支持页面", "href": "../Support/index.html"}]
-      },
-      "zh-Hant": {
-        "metaTitle": "ScreenSplitAssist 適齡說明",
-        "description": "ScreenSplitAssist / 窗格大師適齡說明：本地優先的 Mac 視窗工作區工具，預計適合 4+ 使用者。",
-        "eyebrow": "ScreenSplitAssist / 窗格大師 for Mac",
-        "title": "適齡說明",
-        "updated": "最後更新日期：2026 年 7 月 5 日",
-        "intro": "ScreenSplitAssist 是用於排列 Mac 視窗、套用佈局預設、自訂分屏比例和恢復工作區快照的生產力工具。它面向通用使用者場景，不提供社交、娛樂、博彩、瀏覽器、廣告或使用者生成內容功能。",
-        "rating": "預計 App Store 年齡分級：4+",
-        "notice": "本頁說明基於 ScreenSplitAssist 1.0.0 的功能範圍。提交 App Store 時，最終年齡分級以 App Store Connect 問卷和 Apple 審核結果為準。",
-        "sections": [
-          {"heading": "內容類別摘要", "columns": ["類別", "ScreenSplitAssist 狀態"], "rows": [
-            {"category": "卡通或幻想暴力", "status": "無。"},
-            {"category": "現實暴力、血腥或恐怖內容", "status": "無。"},
-            {"category": "成人、色情或裸露內容", "status": "無。"},
-            {"category": "粗俗語言或成人主題", "status": "無。"},
-            {"category": "酒精、菸草、藥物或醫療資訊", "status": "無。"},
-            {"category": "博彩、競賽或抽獎", "status": "無。"},
-            {"category": "網頁瀏覽或不受限制的外部內容", "status": "無。"},
-            {"category": "使用者生成內容、聊天或社交功能", "status": "無。"},
-            {"category": "廣告、追蹤或第三方分析", "status": "無。"},
-            {"category": "位置、相機、麥克風或聯絡人存取", "status": "無。"}
-          ]},
-          {"heading": "預期用途", "paragraphs": ["ScreenSplitAssist 協助使用者在開發、會議、寫作、維運和多顯示器工作中整理視窗佈局。功能僅面向效率工作流程，不展示外部內容，也不包含互動社群。"]},
-          {"heading": "隱私與安全控制", "bullets": ["不需要帳號或登入。", "不包含廣告 SDK、追蹤 SDK 或分析 SDK。", "不會上傳視窗標題、應用程式清單、佈局模板或工作區快照。", "核心功能在使用者 Mac 本機執行。", "視窗排列需要使用者主動授予 macOS 輔助功能權限。", "支援郵件只包含使用者主動傳送的資訊。"]},
-          {"heading": "付款與廣告", "paragraphs": ["ScreenSplitAssist 1.0.0 不包含 App 內購買、訂閱、廣告展示或付費抽獎功能。"]},
-          {"heading": "聯絡我們", "paragraphs": ["如果你認為年齡分級或內容說明需要修正，請傳送電子郵件至 kibernet@sina.com。"]}
-        ],
-        "links": [{"label": "隱私權政策", "href": "../Privacy/index.html"}, {"label": "支援頁面", "href": "../Support/index.html"}]
-      },
-      "en": {
-        "metaTitle": "ScreenSplitAssist Age Rating Information",
-        "description": "Age rating information for ScreenSplitAssist, a local-first Mac window workspace utility expected to be suitable for users 4+.",
-        "eyebrow": "ScreenSplitAssist / 窗格大师 for Mac",
-        "title": "Age Rating Information",
-        "updated": "Last updated: July 5, 2026",
-        "intro": "ScreenSplitAssist is a productivity utility for arranging Mac windows, applying layout presets, creating custom split ratios, and restoring workspace snapshots. It is intended for general productivity use and does not provide social, entertainment, gambling, browser, advertising, or user-generated content features.",
-        "rating": "Expected App Store age rating: 4+",
-        "notice": "This page reflects the ScreenSplitAssist 1.0.0 feature set. The final age rating during submission is determined by the App Store Connect questionnaire and Apple review.",
-        "sections": [
-          {"heading": "Content Category Summary", "columns": ["Category", "ScreenSplitAssist Status"], "rows": [
-            {"category": "Cartoon or fantasy violence", "status": "None."},
-            {"category": "Realistic violence, gore, or horror", "status": "None."},
-            {"category": "Adult, sexual, or nudity content", "status": "None."},
-            {"category": "Profanity or mature themes", "status": "None."},
-            {"category": "Alcohol, tobacco, drug, or medical information", "status": "None."},
-            {"category": "Gambling, contests, or sweepstakes", "status": "None."},
-            {"category": "Web browsing or unrestricted external content", "status": "None."},
-            {"category": "User-generated content, chat, or social features", "status": "None."},
-            {"category": "Advertising, tracking, or third-party analytics", "status": "None."},
-            {"category": "Location, camera, microphone, or contacts access", "status": "None."}
-          ]},
-          {"heading": "Intended Use", "paragraphs": ["ScreenSplitAssist helps users organize windows for development, meetings, writing, operations, and multi-display work. Its features are limited to productivity workflows and do not display external content or provide an interactive community."]},
-          {"heading": "Privacy and Safety Controls", "bullets": ["No account or login is required.", "No advertising SDKs, tracking SDKs, or analytics SDKs are included.", "Window titles, app lists, layout templates, and workspace snapshots are not uploaded.", "Core features run locally on the user's Mac.", "Window arrangement requires user-granted macOS Accessibility permission.", "Support email contains only information the user chooses to send."]},
-          {"heading": "Payments and Ads", "paragraphs": ["ScreenSplitAssist 1.0.0 does not include in-app purchases, subscriptions, advertising, or paid sweepstakes."]},
-          {"heading": "Contact", "paragraphs": ["If you believe the age rating or content description should be corrected, contact kibernet@sina.com."]}
-        ],
-        "links": [{"label": "Privacy Policy", "href": "../Privacy/index.html"}, {"label": "Support Page", "href": "../Support/index.html"}]
-      },
-      "ja": {
-        "metaTitle": "ScreenSplitAssist 年齢制限情報",
-        "description": "ScreenSplitAssist の年齢制限情報。4+ の利用者に適していると想定される、ローカル優先の Mac ウィンドウワークスペースユーティリティです。",
-        "eyebrow": "ScreenSplitAssist / 窗格大师 for Mac",
-        "title": "年齢制限情報",
-        "updated": "最終更新日：2026 年 7 月 5 日",
-        "intro": "ScreenSplitAssist は、Mac ウィンドウの配置、レイアウトプリセットの適用、カスタム分割比率の作成、ワークスペーススナップショットの復元を行う生産性ユーティリティです。一般的な生産性用途を想定しており、ソーシャル、娯楽、ギャンブル、ブラウザ、広告、ユーザー生成コンテンツ機能は提供しません。",
-        "rating": "想定される App Store 年齢制限：4+",
-        "notice": "このページは ScreenSplitAssist 1.0.0 の機能範囲に基づいています。提出時の最終的な年齢制限は、App Store Connect の質問票と Apple の審査によって決定されます。",
-        "sections": [
-          {"heading": "コンテンツカテゴリ概要", "columns": ["カテゴリ", "ScreenSplitAssist の状態"], "rows": [
-            {"category": "アニメまたはファンタジー暴力", "status": "なし。"},
-            {"category": "現実的な暴力、流血、ホラー", "status": "なし。"},
-            {"category": "成人向け、性的、または裸体コンテンツ", "status": "なし。"},
-            {"category": "不適切な言葉または成人向けテーマ", "status": "なし。"},
-            {"category": "アルコール、タバコ、薬物、医療情報", "status": "なし。"},
-            {"category": "ギャンブル、コンテスト、懸賞", "status": "なし。"},
-            {"category": "Web ブラウズまたは制限のない外部コンテンツ", "status": "なし。"},
-            {"category": "ユーザー生成コンテンツ、チャット、ソーシャル機能", "status": "なし。"},
-            {"category": "広告、追跡、第三者分析", "status": "なし。"},
-            {"category": "位置情報、カメラ、マイク、連絡先アクセス", "status": "なし。"}
-          ]},
-          {"heading": "想定用途", "paragraphs": ["ScreenSplitAssist は、開発、会議、執筆、運用、複数ディスプレイ作業でウィンドウ配置を整理するためのツールです。機能は生産性ワークフローに限定され、外部コンテンツを表示せず、交流コミュニティも提供しません。"]},
-          {"heading": "プライバシーと安全管理", "bullets": ["アカウントやログインは不要です。", "広告 SDK、追跡 SDK、分析 SDK は含まれていません。", "ウィンドウタイトル、アプリ一覧、レイアウトテンプレート、ワークスペーススナップショットはアップロードされません。", "主要機能はユーザーの Mac 上でローカルに実行されます。", "ウィンドウ配置にはユーザーが許可した macOS アクセシビリティ権限が必要です。", "サポートメールにはユーザーが送信することを選んだ情報のみが含まれます。"]},
-          {"heading": "支払いと広告", "paragraphs": ["ScreenSplitAssist 1.0.0 には、アプリ内購入、サブスクリプション、広告表示、有料懸賞は含まれていません。"]},
-          {"heading": "お問い合わせ", "paragraphs": ["年齢制限またはコンテンツ説明の修正が必要だと思われる場合は、kibernet@sina.com までご連絡ください。"]}
-        ],
-        "links": [{"label": "プライバシーポリシー", "href": "../Privacy/index.html"}, {"label": "サポートページ", "href": "../Support/index.html"}]
-      },
-      "ko": {
-        "metaTitle": "ScreenSplitAssist 연령 등급 정보",
-        "description": "4세 이상 사용자에게 적합할 것으로 예상되는 로컬 우선 Mac 창 작업 공간 유틸리티 ScreenSplitAssist의 연령 등급 정보입니다.",
-        "eyebrow": "ScreenSplitAssist / 窗格大师 for Mac",
-        "title": "연령 등급 정보",
-        "updated": "마지막 업데이트: 2026년 7월 5일",
-        "intro": "ScreenSplitAssist는 Mac 창 정렬, 레이아웃 프리셋 적용, 사용자 지정 분할 비율 생성, 작업 공간 스냅샷 복원을 위한 생산성 유틸리티입니다. 일반 생산성 사용을 위한 앱이며 소셜, 엔터테인먼트, 도박, 브라우저, 광고 또는 사용자 생성 콘텐츠 기능을 제공하지 않습니다.",
-        "rating": "예상 App Store 연령 등급: 4+",
-        "notice": "이 페이지는 ScreenSplitAssist 1.0.0 기능 범위를 기준으로 합니다. 제출 시 최종 연령 등급은 App Store Connect 설문지와 Apple 심사 결과에 따라 결정됩니다.",
-        "sections": [
-          {"heading": "콘텐츠 범주 요약", "columns": ["범주", "ScreenSplitAssist 상태"], "rows": [
-            {"category": "만화 또는 판타지 폭력", "status": "없음."},
-            {"category": "현실적 폭력, 유혈 또는 공포", "status": "없음."},
-            {"category": "성인, 성적 또는 노출 콘텐츠", "status": "없음."},
-            {"category": "욕설 또는 성숙한 주제", "status": "없음."},
-            {"category": "주류, 담배, 약물 또는 의료 정보", "status": "없음."},
-            {"category": "도박, 콘테스트 또는 경품", "status": "없음."},
-            {"category": "웹 브라우징 또는 제한 없는 외부 콘텐츠", "status": "없음."},
-            {"category": "사용자 생성 콘텐츠, 채팅 또는 소셜 기능", "status": "없음."},
-            {"category": "광고, 추적 또는 제3자 분석", "status": "없음."},
-            {"category": "위치, 카메라, 마이크 또는 연락처 접근", "status": "없음."}
-          ]},
-          {"heading": "예상 사용", "paragraphs": ["ScreenSplitAssist는 개발, 회의, 글쓰기, 운영 및 다중 디스플레이 작업에서 창 레이아웃을 정리하도록 돕습니다. 기능은 생산성 워크플로에 한정되며 외부 콘텐츠를 표시하거나 상호작용 커뮤니티를 제공하지 않습니다."]},
-          {"heading": "개인정보 및 안전 제어", "bullets": ["계정이나 로그인이 필요하지 않습니다.", "광고 SDK, 추적 SDK 또는 분석 SDK가 포함되어 있지 않습니다.", "창 제목, 앱 목록, 레이아웃 템플릿 및 작업 공간 스냅샷은 업로드되지 않습니다.", "핵심 기능은 사용자의 Mac에서 로컬로 실행됩니다.", "창 정렬에는 사용자가 승인한 macOS 손쉬운 사용 권한이 필요합니다.", "지원 이메일에는 사용자가 보내기로 선택한 정보만 포함됩니다."]},
-          {"heading": "결제 및 광고", "paragraphs": ["ScreenSplitAssist 1.0.0에는 앱 내 구매, 구독, 광고 또는 유료 경품 기능이 포함되어 있지 않습니다."]},
-          {"heading": "문의", "paragraphs": ["연령 등급 또는 콘텐츠 설명을 수정해야 한다고 생각하면 kibernet@sina.com으로 연락해 주세요."]}
-        ],
-        "links": [{"label": "개인정보 처리방침", "href": "../Privacy/index.html"}, {"label": "지원 페이지", "href": "../Support/index.html"}]
-      },
-      "es": {
-        "metaTitle": "Información de edad de ScreenSplitAssist",
-        "description": "Información de clasificación por edad de ScreenSplitAssist, una utilidad local de espacios de trabajo de ventanas para Mac prevista para usuarios de 4+.",
-        "eyebrow": "ScreenSplitAssist / 窗格大师 para Mac",
-        "title": "Información de edad",
-        "updated": "Última actualización: 5 de julio de 2026",
-        "intro": "ScreenSplitAssist es una utilidad de productividad para organizar ventanas de Mac, aplicar diseños predefinidos, crear proporciones personalizadas y restaurar instantáneas de espacios de trabajo. Está pensada para uso general de productividad y no ofrece funciones sociales, de entretenimiento, apuestas, navegador, publicidad ni contenido generado por usuarios.",
-        "rating": "Clasificación de edad esperada en App Store: 4+",
-        "notice": "Esta página refleja el conjunto de funciones de ScreenSplitAssist 1.0.0. La clasificación final durante el envío la determinan el cuestionario de App Store Connect y la revisión de Apple.",
-        "sections": [
-          {"heading": "Resumen de categorías de contenido", "columns": ["Categoría", "Estado de ScreenSplitAssist"], "rows": [
-            {"category": "Violencia animada o fantástica", "status": "Ninguna."},
-            {"category": "Violencia realista, sangre u horror", "status": "Ninguna."},
-            {"category": "Contenido adulto, sexual o desnudez", "status": "Ninguno."},
-            {"category": "Lenguaje ofensivo o temas maduros", "status": "Ninguno."},
-            {"category": "Alcohol, tabaco, drogas o información médica", "status": "Ninguno."},
-            {"category": "Apuestas, concursos o sorteos", "status": "Ninguno."},
-            {"category": "Navegación web o contenido externo sin restricciones", "status": "Ninguno."},
-            {"category": "Contenido de usuarios, chat o funciones sociales", "status": "Ninguno."},
-            {"category": "Publicidad, seguimiento o analítica de terceros", "status": "Ninguno."},
-            {"category": "Acceso a ubicación, cámara, micrófono o contactos", "status": "Ninguno."}
-          ]},
-          {"heading": "Uso previsto", "paragraphs": ["ScreenSplitAssist ayuda a organizar ventanas para desarrollo, reuniones, escritura, operaciones y trabajo con varios monitores. Sus funciones se limitan a flujos de productividad y no muestran contenido externo ni ofrecen una comunidad interactiva."]},
-          {"heading": "Controles de privacidad y seguridad", "bullets": ["No requiere cuenta ni inicio de sesión.", "No incluye SDK de publicidad, seguimiento ni analítica.", "No se suben títulos de ventanas, listas de apps, plantillas de diseño ni instantáneas.", "Las funciones principales se ejecutan localmente en el Mac del usuario.", "La organización de ventanas requiere el permiso de Accesibilidad concedido por el usuario en macOS.", "El correo de soporte contiene solo la información que el usuario decide enviar."]},
-          {"heading": "Pagos y anuncios", "paragraphs": ["ScreenSplitAssist 1.0.0 no incluye compras dentro de la app, suscripciones, publicidad ni sorteos pagados."]},
-          {"heading": "Contacto", "paragraphs": ["Si crees que la clasificación de edad o la descripción de contenido debe corregirse, escribe a kibernet@sina.com."]}
-        ],
-        "links": [{"label": "Política de privacidad", "href": "../Privacy/index.html"}, {"label": "Página de soporte", "href": "../Support/index.html"}]
-      },
-      "fr": {
-        "metaTitle": "Informations d’âge de ScreenSplitAssist",
-        "description": "Informations de classification par âge pour ScreenSplitAssist, un utilitaire local d’espace de travail de fenêtres pour Mac prévu pour les utilisateurs 4+.",
-        "eyebrow": "ScreenSplitAssist / 窗格大师 pour Mac",
-        "title": "Informations d’âge",
-        "updated": "Dernière mise à jour : 5 juillet 2026",
-        "intro": "ScreenSplitAssist est un utilitaire de productivité pour organiser les fenêtres Mac, appliquer des dispositions, créer des ratios personnalisés et restaurer des instantanés d’espace de travail. Il est destiné à un usage général de productivité et ne propose pas de fonctions sociales, de divertissement, de jeu d’argent, de navigateur, de publicité ou de contenu généré par les utilisateurs.",
-        "rating": "Classification d’âge App Store attendue : 4+",
-        "notice": "Cette page reflète les fonctions de ScreenSplitAssist 1.0.0. La classification finale lors de la soumission est déterminée par le questionnaire App Store Connect et l’examen Apple.",
-        "sections": [
-          {"heading": "Résumé des catégories de contenu", "columns": ["Catégorie", "État de ScreenSplitAssist"], "rows": [
-            {"category": "Violence cartoon ou fantastique", "status": "Aucune."},
-            {"category": "Violence réaliste, sang ou horreur", "status": "Aucune."},
-            {"category": "Contenu adulte, sexuel ou nudité", "status": "Aucun."},
-            {"category": "Langage grossier ou thèmes matures", "status": "Aucun."},
-            {"category": "Alcool, tabac, drogues ou informations médicales", "status": "Aucun."},
-            {"category": "Jeux d’argent, concours ou tirages au sort", "status": "Aucun."},
-            {"category": "Navigation web ou contenu externe non restreint", "status": "Aucun."},
-            {"category": "Contenu utilisateur, chat ou fonctions sociales", "status": "Aucun."},
-            {"category": "Publicité, suivi ou analyses tierces", "status": "Aucun."},
-            {"category": "Accès à la localisation, caméra, micro ou contacts", "status": "Aucun."}
-          ]},
-          {"heading": "Utilisation prévue", "paragraphs": ["ScreenSplitAssist aide à organiser les fenêtres pour le développement, les réunions, l’écriture, les opérations et le travail multi-écrans. Ses fonctions sont limitées aux flux de productivité, sans afficher de contenu externe ni proposer de communauté interactive."]},
-          {"heading": "Contrôles de confidentialité et de sécurité", "bullets": ["Aucun compte ni connexion n’est requis.", "Aucun SDK publicitaire, de suivi ou d’analyse n’est inclus.", "Les titres de fenêtres, listes d’apps, modèles de disposition et instantanés ne sont pas téléversés.", "Les fonctions principales s’exécutent localement sur le Mac de l’utilisateur.", "L’organisation des fenêtres nécessite l’autorisation Accessibilité accordée par l’utilisateur dans macOS.", "L’e-mail d’assistance contient uniquement les informations que l’utilisateur choisit d’envoyer."]},
-          {"heading": "Paiements et publicité", "paragraphs": ["ScreenSplitAssist 1.0.0 n’inclut pas d’achats intégrés, d’abonnements, de publicité ni de tirages au sort payants."]},
-          {"heading": "Contact", "paragraphs": ["Si vous pensez que la classification d’âge ou la description du contenu doit être corrigée, contactez kibernet@sina.com."]}
-        ],
-        "links": [{"label": "Politique de confidentialité", "href": "../Privacy/index.html"}, {"label": "Page d’assistance", "href": "../Support/index.html"}]
-      },
-      "de": {
-        "metaTitle": "ScreenSplitAssist Altersfreigabe",
-        "description": "Altersfreigabeinformationen für ScreenSplitAssist, ein lokal arbeitendes Mac-Fensterwerkzeug, das voraussichtlich für Nutzer ab 4 Jahren geeignet ist.",
-        "eyebrow": "ScreenSplitAssist / 窗格大师 für Mac",
-        "title": "Altersfreigabe",
-        "updated": "Zuletzt aktualisiert: 5. Juli 2026",
-        "intro": "ScreenSplitAssist ist ein Produktivitätswerkzeug zum Anordnen von Mac-Fenstern, Anwenden von Layoutvorlagen, Erstellen eigener Teilungsverhältnisse und Wiederherstellen von Arbeitsbereich-Schnappschüssen. Es ist für allgemeine Produktivität gedacht und bietet keine sozialen, Unterhaltungs-, Glücksspiel-, Browser-, Werbe- oder nutzergenerierten Inhaltsfunktionen.",
-        "rating": "Erwartete App Store Altersfreigabe: 4+",
-        "notice": "Diese Seite beschreibt den Funktionsumfang von ScreenSplitAssist 1.0.0. Die endgültige Altersfreigabe bei der Einreichung wird durch den App Store Connect Fragebogen und die Apple Prüfung bestimmt.",
-        "sections": [
-          {"heading": "Zusammenfassung der Inhaltskategorien", "columns": ["Kategorie", "ScreenSplitAssist Status"], "rows": [
-            {"category": "Cartoon- oder Fantasy-Gewalt", "status": "Keine."},
-            {"category": "Realistische Gewalt, Blut oder Horror", "status": "Keine."},
-            {"category": "Erwachsene, sexuelle oder Nacktheitsinhalte", "status": "Keine."},
-            {"category": "Vulgäre Sprache oder reife Themen", "status": "Keine."},
-            {"category": "Alkohol, Tabak, Drogen oder medizinische Informationen", "status": "Keine."},
-            {"category": "Glücksspiel, Wettbewerbe oder Gewinnspiele", "status": "Keine."},
-            {"category": "Webbrowsing oder uneingeschränkte externe Inhalte", "status": "Keine."},
-            {"category": "Nutzergenerierte Inhalte, Chat oder soziale Funktionen", "status": "Keine."},
-            {"category": "Werbung, Tracking oder Drittanbieteranalyse", "status": "Keine."},
-            {"category": "Zugriff auf Standort, Kamera, Mikrofon oder Kontakte", "status": "Keine."}
-          ]},
-          {"heading": "Vorgesehene Nutzung", "paragraphs": ["ScreenSplitAssist hilft beim Organisieren von Fenstern für Entwicklung, Besprechungen, Schreiben, Betrieb und Arbeit mit mehreren Displays. Die Funktionen sind auf Produktivitätsabläufe begrenzt und zeigen keine externen Inhalte an und bieten keine interaktive Community."]},
-          {"heading": "Datenschutz und Sicherheit", "bullets": ["Es ist kein Konto und keine Anmeldung erforderlich.", "Es sind keine Werbe-, Tracking- oder Analyse-SDKs enthalten.", "Fenstertitel, App-Listen, Layoutvorlagen und Arbeitsbereich-Schnappschüsse werden nicht hochgeladen.", "Die Kernfunktionen laufen lokal auf dem Mac des Nutzers.", "Fensteranordnung erfordert die vom Nutzer erteilte macOS-Berechtigung für Bedienungshilfen.", "Support-E-Mails enthalten nur Informationen, die der Nutzer freiwillig sendet."]},
-          {"heading": "Zahlungen und Werbung", "paragraphs": ["ScreenSplitAssist 1.0.0 enthält keine In-App-Käufe, Abonnements, Werbung oder kostenpflichtigen Gewinnspiele."]},
-          {"heading": "Kontakt", "paragraphs": ["Wenn Sie der Meinung sind, dass Altersfreigabe oder Inhaltsbeschreibung korrigiert werden sollten, kontaktieren Sie kibernet@sina.com."]}
-        ],
-        "links": [{"label": "Datenschutzerklärung", "href": "../Privacy/index.html"}, {"label": "Supportseite", "href": "../Support/index.html"}]
-      }
+    {
+      "code": "zh-Hant",
+      "htmlLang": "zh-TW",
+      "label": "繁體中文",
+      "dir": "ltr"
+    },
+    {
+      "code": "en",
+      "htmlLang": "en",
+      "label": "English",
+      "dir": "ltr"
+    },
+    {
+      "code": "ja",
+      "htmlLang": "ja",
+      "label": "日本語",
+      "dir": "ltr"
+    },
+    {
+      "code": "ko",
+      "htmlLang": "ko",
+      "label": "한국어",
+      "dir": "ltr"
+    },
+    {
+      "code": "es",
+      "htmlLang": "es",
+      "label": "Español",
+      "dir": "ltr"
+    },
+    {
+      "code": "fr",
+      "htmlLang": "fr",
+      "label": "Français",
+      "dir": "ltr"
+    },
+    {
+      "code": "de",
+      "htmlLang": "de",
+      "label": "Deutsch",
+      "dir": "ltr"
+    }
+  ],
+  "ui": {
+    "zh-Hans": {
+      "language": "语言",
+      "chooseLanguage": "选择语言",
+      "privacy": "隐私",
+      "support": "支持",
+      "age": "适龄"
+    },
+    "zh-Hant": {
+      "language": "語言",
+      "chooseLanguage": "選擇語言",
+      "privacy": "隱私",
+      "support": "支援",
+      "age": "適齡"
+    },
+    "en": {
+      "language": "Language",
+      "chooseLanguage": "Choose language",
+      "privacy": "Privacy",
+      "support": "Support",
+      "age": "Age Rating"
+    },
+    "ja": {
+      "language": "言語",
+      "chooseLanguage": "言語を選択",
+      "privacy": "プライバシー",
+      "support": "サポート",
+      "age": "年齢制限"
+    },
+    "ko": {
+      "language": "언어",
+      "chooseLanguage": "언어 선택",
+      "privacy": "개인정보",
+      "support": "지원",
+      "age": "연령 등급"
+    },
+    "es": {
+      "language": "Idioma",
+      "chooseLanguage": "Elegir idioma",
+      "privacy": "Privacidad",
+      "support": "Soporte",
+      "age": "Edad"
+    },
+    "fr": {
+      "language": "Langue",
+      "chooseLanguage": "Choisir la langue",
+      "privacy": "Confidentialité",
+      "support": "Assistance",
+      "age": "Âge"
+    },
+    "de": {
+      "language": "Sprache",
+      "chooseLanguage": "Sprache auswählen",
+      "privacy": "Datenschutz",
+      "support": "Support",
+      "age": "Alter"
+    }
+  },
+  "content": {
+    "zh-Hans": {
+      "metaTitle": "ScreenSplitAssist 适龄说明",
+      "description": "ScreenSplitAssist / 窗格大师适龄说明：自动窗口布局工具，预计适合 4+ 用户。",
+      "eyebrow": "ScreenSplitAssist / 窗格大师 for Mac",
+      "title": "适龄说明",
+      "updated": "最后更新日期：2026 年 7 月 10 日",
+      "intro": "ScreenSplitAssist 是用于自动排列可见窗口、保存布局模板和复用工作区的生产力工具。它不提供社交、娱乐、博彩、浏览器、广告或用户生成内容功能。",
+      "rating": "预计 App Store 年龄分级：4+",
+      "notice": "本页说明基于 ScreenSplitAssist 1.0 的 Mac App Store 功能范围。最终年龄分级以 App Store Connect 问卷和 Apple 审核结果为准。",
+      "sections": [
+        {
+          "heading": "内容类别摘要",
+          "columns": [
+            "类别",
+            "状态"
+          ],
+          "rows": [
+            {
+              "category": "暴力、血腥、恐怖",
+              "status": "无。"
+            },
+            {
+              "category": "成人、色情或裸露内容",
+              "status": "无。"
+            },
+            {
+              "category": "粗俗语言、药物、医疗或赌博",
+              "status": "无。"
+            },
+            {
+              "category": "网页浏览、社交、聊天或用户生成内容",
+              "status": "无。"
+            },
+            {
+              "category": "广告、追踪或第三方分析",
+              "status": "无。"
+            }
+          ]
+        },
+        {
+          "heading": "隐私与安全控制",
+          "bullets": [
+            "不需要账号或登录。",
+            "不需要特殊系统权限。",
+            "不读取其他 App 数据，不捕获屏幕内容。",
+            "核心功能在用户 Mac 本机执行。",
+            "支持邮件只包含用户主动发送的信息。"
+          ]
+        },
+        {
+          "heading": "付款与广告",
+          "paragraphs": [
+            "ScreenSplitAssist 1.0 不包含 App 内购买、订阅、广告展示或付费抽奖功能。"
+          ]
+        }
+      ],
+      "links": [
+        {
+          "label": "隐私政策",
+          "href": "../Privacy/index.html"
+        },
+        {
+          "label": "支持页面",
+          "href": "../Support/index.html"
+        }
+      ]
+    },
+    "zh-Hant": {
+      "metaTitle": "ScreenSplitAssist 適齡說明",
+      "description": "ScreenSplitAssist / 窗格大師適齡說明：自動視窗佈局工具，預計適合 4+ 使用者。",
+      "eyebrow": "ScreenSplitAssist / 窗格大師 for Mac",
+      "title": "適齡說明",
+      "updated": "最後更新日期：2026 年 7 月 10 日",
+      "intro": "ScreenSplitAssist 是用於自動排列可見視窗、儲存佈局模板和重複使用工作區的生產力工具。它不提供社交、娛樂、博彩、瀏覽器、廣告或使用者生成內容功能。",
+      "rating": "預計 App Store 年齡分級：4+",
+      "notice": "本頁說明基於 ScreenSplitAssist 1.0 的 Mac App Store 功能範圍。最終年齡分級以 App Store Connect 問卷和 Apple 審核結果為準。",
+      "sections": [
+        {
+          "heading": "內容類別摘要",
+          "columns": [
+            "類別",
+            "狀態"
+          ],
+          "rows": [
+            {
+              "category": "暴力、血腥、恐怖",
+              "status": "無。"
+            },
+            {
+              "category": "成人、色情或裸露內容",
+              "status": "無。"
+            },
+            {
+              "category": "粗俗語言、藥物、醫療或博彩",
+              "status": "無。"
+            },
+            {
+              "category": "網頁瀏覽、社交、聊天或使用者生成內容",
+              "status": "無。"
+            },
+            {
+              "category": "廣告、追蹤或第三方分析",
+              "status": "無。"
+            }
+          ]
+        },
+        {
+          "heading": "隱私與安全控制",
+          "bullets": [
+            "不需要帳號或登入。",
+            "不需要特殊系統權限。",
+            "不讀取其他 App 資料，不擷取螢幕內容。",
+            "核心功能在使用者 Mac 本機執行。",
+            "支援郵件只包含使用者主動傳送的資訊。"
+          ]
+        },
+        {
+          "heading": "付款與廣告",
+          "paragraphs": [
+            "ScreenSplitAssist 1.0 不包含 App 內購買、訂閱、廣告展示或付費抽獎功能。"
+          ]
+        }
+      ],
+      "links": [
+        {
+          "label": "隱私權政策",
+          "href": "../Privacy/index.html"
+        },
+        {
+          "label": "支援頁面",
+          "href": "../Support/index.html"
+        }
+      ]
+    },
+    "en": {
+      "metaTitle": "ScreenSplitAssist Age Rating Information",
+      "description": "Age rating information for ScreenSplitAssist, an automatic Mac window layout app expected to be suitable for users 4+.",
+      "eyebrow": "ScreenSplitAssist / 窗格大师 for Mac",
+      "title": "Age Rating Information",
+      "updated": "Last updated: July 10, 2026",
+      "intro": "ScreenSplitAssist is a productivity utility for automatically arranging visible windows, saving layout templates, and reusing workspaces. It does not provide social, entertainment, gambling, browser, advertising, or user-generated content features.",
+      "rating": "Expected App Store age rating: 4+",
+      "notice": "This page reflects the ScreenSplitAssist 1.0 Mac App Store feature set. The final rating is determined by the App Store Connect questionnaire and Apple review.",
+      "sections": [
+        {
+          "heading": "Content Category Summary",
+          "columns": [
+            "Category",
+            "Status"
+          ],
+          "rows": [
+            {
+              "category": "Violence, gore, or horror",
+              "status": "None."
+            },
+            {
+              "category": "Adult, sexual, or nudity content",
+              "status": "None."
+            },
+            {
+              "category": "Profanity, substances, medical content, or gambling",
+              "status": "None."
+            },
+            {
+              "category": "Web browsing, social, chat, or user-generated content",
+              "status": "None."
+            },
+            {
+              "category": "Advertising, tracking, or third-party analytics",
+              "status": "None."
+            }
+          ]
+        },
+        {
+          "heading": "Privacy and Safety Controls",
+          "bullets": [
+            "No account or login is required.",
+            "No special system permissions are required.",
+            "The app does not read other apps’ data or capture screen contents.",
+            "Core features run locally on the user’s Mac.",
+            "Support email contains only information the user chooses to send."
+          ]
+        },
+        {
+          "heading": "Payments and Ads",
+          "paragraphs": [
+            "ScreenSplitAssist 1.0 does not include in-app purchases, subscriptions, advertising, contests, or sweepstakes."
+          ]
+        }
+      ],
+      "links": [
+        {
+          "label": "Privacy Policy",
+          "href": "../Privacy/index.html"
+        },
+        {
+          "label": "Support Page",
+          "href": "../Support/index.html"
+        }
+      ]
+    },
+    "ja": {
+      "metaTitle": "ScreenSplitAssist 年齢制限情報",
+      "description": "ScreenSplitAssist の年齢制限情報。4+ に適した自動ウインドウレイアウトAppです。",
+      "eyebrow": "ScreenSplitAssist / 窗格大师 for Mac",
+      "title": "年齢制限情報",
+      "updated": "最終更新日：2026年7月10日",
+      "intro": "ScreenSplitAssist は表示中ウインドウの自動整列、レイアウトテンプレートの保存、ワークスペースの再利用を行う生産性ツールです。ソーシャル、娯楽、ギャンブル、ブラウザ、広告、ユーザー生成コンテンツ機能はありません。",
+      "rating": "想定される App Store 年齢制限：4+",
+      "notice": "このページは ScreenSplitAssist 1.0 の Mac App Store 機能範囲に基づきます。最終的な年齢制限は App Store Connect の質問票と Apple の審査で決まります。",
+      "sections": [
+        {
+          "heading": "コンテンツカテゴリ概要",
+          "columns": [
+            "カテゴリ",
+            "状態"
+          ],
+          "rows": [
+            {
+              "category": "暴力、流血、ホラー",
+              "status": "なし。"
+            },
+            {
+              "category": "成人向け、性的、裸体コンテンツ",
+              "status": "なし。"
+            },
+            {
+              "category": "不適切な言葉、薬物、医療、ギャンブル",
+              "status": "なし。"
+            },
+            {
+              "category": "Web閲覧、ソーシャル、チャット、ユーザー生成コンテンツ",
+              "status": "なし。"
+            },
+            {
+              "category": "広告、追跡、第三者分析",
+              "status": "なし。"
+            }
+          ]
+        },
+        {
+          "heading": "プライバシーと安全管理",
+          "bullets": [
+            "アカウントやログインは不要です。",
+            "特別なシステム権限は不要です。",
+            "他のアプリのデータや画面内容を読み取りません。",
+            "主要機能はユーザーの Mac 上でローカルに実行されます。",
+            "サポートメールにはユーザーが送信する情報のみが含まれます。"
+          ]
+        },
+        {
+          "heading": "支払いと広告",
+          "paragraphs": [
+            "ScreenSplitAssist 1.0 にはアプリ内購入、サブスクリプション、広告、コンテスト、懸賞は含まれていません。"
+          ]
+        }
+      ],
+      "links": [
+        {
+          "label": "プライバシーポリシー",
+          "href": "../Privacy/index.html"
+        },
+        {
+          "label": "サポートページ",
+          "href": "../Support/index.html"
+        }
+      ]
+    },
+    "ko": {
+      "metaTitle": "ScreenSplitAssist 연령 등급 정보",
+      "description": "4세 이상 사용자에게 적합한 Mac 자동 창 레이아웃 앱 ScreenSplitAssist의 연령 등급 정보입니다.",
+      "eyebrow": "ScreenSplitAssist / 窗格大师 for Mac",
+      "title": "연령 등급 정보",
+      "updated": "최종 업데이트: 2026년 7월 10일",
+      "intro": "ScreenSplitAssist는 보이는 창 자동 정렬, 레이아웃 템플릿 저장 및 작업 공간 재사용을 위한 생산성 도구입니다. 소셜, 엔터테인먼트, 도박, 브라우저, 광고 또는 사용자 생성 콘텐츠 기능을 제공하지 않습니다.",
+      "rating": "예상 App Store 연령 등급: 4+",
+      "notice": "이 페이지는 ScreenSplitAssist 1.0 Mac App Store 기능 범위를 기준으로 합니다. 최종 등급은 App Store Connect 설문지와 Apple 심사 결과에 따라 결정됩니다.",
+      "sections": [
+        {
+          "heading": "콘텐츠 범주 요약",
+          "columns": [
+            "범주",
+            "상태"
+          ],
+          "rows": [
+            {
+              "category": "폭력, 유혈 또는 공포",
+              "status": "없음."
+            },
+            {
+              "category": "성인, 성적 또는 노출 콘텐츠",
+              "status": "없음."
+            },
+            {
+              "category": "욕설, 약물, 의료 콘텐츠 또는 도박",
+              "status": "없음."
+            },
+            {
+              "category": "웹 브라우징, 소셜, 채팅 또는 사용자 생성 콘텐츠",
+              "status": "없음."
+            },
+            {
+              "category": "광고, 추적 또는 제3자 분석",
+              "status": "없음."
+            }
+          ]
+        },
+        {
+          "heading": "개인정보 및 안전 제어",
+          "bullets": [
+            "계정이나 로그인이 필요하지 않습니다.",
+            "특별한 시스템 권한이 필요하지 않습니다.",
+            "다른 앱의 데이터나 화면 내용을 읽지 않습니다.",
+            "핵심 기능은 사용자의 Mac에서 로컬로 실행됩니다.",
+            "지원 이메일에는 사용자가 보내기로 선택한 정보만 포함됩니다."
+          ]
+        },
+        {
+          "heading": "결제 및 광고",
+          "paragraphs": [
+            "ScreenSplitAssist 1.0에는 앱 내 구입, 구독, 광고, 콘테스트 또는 경품이 포함되어 있지 않습니다."
+          ]
+        }
+      ],
+      "links": [
+        {
+          "label": "개인정보 처리방침",
+          "href": "../Privacy/index.html"
+        },
+        {
+          "label": "지원 페이지",
+          "href": "../Support/index.html"
+        }
+      ]
+    },
+    "es": {
+      "metaTitle": "Información de edad de ScreenSplitAssist",
+      "description": "Información de edad de ScreenSplitAssist, una app de organización automática de ventanas para usuarios de 4+.",
+      "eyebrow": "ScreenSplitAssist / 窗格大师 para Mac",
+      "title": "Información de edad",
+      "updated": "Última actualización: 10 de julio de 2026",
+      "intro": "ScreenSplitAssist es una utilidad para organizar automáticamente ventanas visibles, guardar plantillas de diseño y reutilizar espacios de trabajo. No ofrece funciones sociales, de entretenimiento, apuestas, navegador, publicidad ni contenido generado por usuarios.",
+      "rating": "Clasificación de edad esperada en App Store: 4+",
+      "notice": "Esta página refleja las funciones de ScreenSplitAssist 1.0 para Mac App Store. La clasificación final la determinan el cuestionario de App Store Connect y la revisión de Apple.",
+      "sections": [
+        {
+          "heading": "Resumen de categorías de contenido",
+          "columns": [
+            "Categoría",
+            "Estado"
+          ],
+          "rows": [
+            {
+              "category": "Violencia, sangre u horror",
+              "status": "Ninguno."
+            },
+            {
+              "category": "Contenido adulto, sexual o desnudez",
+              "status": "Ninguno."
+            },
+            {
+              "category": "Lenguaje ofensivo, sustancias, contenido médico o apuestas",
+              "status": "Ninguno."
+            },
+            {
+              "category": "Navegación web, social, chat o contenido de usuarios",
+              "status": "Ninguno."
+            },
+            {
+              "category": "Publicidad, seguimiento o analítica de terceros",
+              "status": "Ninguno."
+            }
+          ]
+        },
+        {
+          "heading": "Controles de privacidad y seguridad",
+          "bullets": [
+            "No requiere cuenta ni inicio de sesión.",
+            "No requiere permisos especiales del sistema.",
+            "La app no lee datos de otras apps ni captura la pantalla.",
+            "Las funciones principales se ejecutan localmente en el Mac del usuario.",
+            "El correo de soporte contiene solo la información que el usuario decide enviar."
+          ]
+        },
+        {
+          "heading": "Pagos y anuncios",
+          "paragraphs": [
+            "ScreenSplitAssist 1.0 no incluye compras dentro de la app, suscripciones, publicidad, concursos ni sorteos."
+          ]
+        }
+      ],
+      "links": [
+        {
+          "label": "Política de privacidad",
+          "href": "../Privacy/index.html"
+        },
+        {
+          "label": "Página de soporte",
+          "href": "../Support/index.html"
+        }
+      ]
+    },
+    "fr": {
+      "metaTitle": "Informations d’âge de ScreenSplitAssist",
+      "description": "Informations d’âge de ScreenSplitAssist, une app d’organisation automatique des fenêtres adaptée aux utilisateurs 4+.",
+      "eyebrow": "ScreenSplitAssist / 窗格大师 pour Mac",
+      "title": "Informations d’âge",
+      "updated": "Dernière mise à jour : 10 juillet 2026",
+      "intro": "ScreenSplitAssist est un utilitaire pour organiser automatiquement les fenêtres visibles, enregistrer des modèles et réutiliser des espaces de travail. Il n’offre pas de fonctions sociales, divertissement, jeux d’argent, navigateur, publicité ou contenu généré par les utilisateurs.",
+      "rating": "Classement d’âge App Store attendu : 4+",
+      "notice": "Cette page reflète les fonctions ScreenSplitAssist 1.0 pour le Mac App Store. Le classement final dépend du questionnaire App Store Connect et de l’examen Apple.",
+      "sections": [
+        {
+          "heading": "Résumé des catégories de contenu",
+          "columns": [
+            "Catégorie",
+            "État"
+          ],
+          "rows": [
+            {
+              "category": "Violence, sang ou horreur",
+              "status": "Aucun."
+            },
+            {
+              "category": "Contenu adulte, sexuel ou nudité",
+              "status": "Aucun."
+            },
+            {
+              "category": "Langage offensant, substances, contenu médical ou jeux d’argent",
+              "status": "Aucun."
+            },
+            {
+              "category": "Navigation web, social, chat ou contenu utilisateur",
+              "status": "Aucun."
+            },
+            {
+              "category": "Publicité, suivi ou analyse tierce",
+              "status": "Aucun."
+            }
+          ]
+        },
+        {
+          "heading": "Contrôles de confidentialité et de sécurité",
+          "bullets": [
+            "Aucun compte ni connexion n’est requis.",
+            "Aucune autorisation système spéciale n’est requise.",
+            "L’app ne lit pas les données d’autres apps et ne capture pas l’écran.",
+            "Les fonctions principales s’exécutent localement sur le Mac de l’utilisateur.",
+            "L’e-mail d’assistance contient uniquement les informations choisies par l’utilisateur."
+          ]
+        },
+        {
+          "heading": "Paiements et publicité",
+          "paragraphs": [
+            "ScreenSplitAssist 1.0 ne contient pas d’achats intégrés, d’abonnements, de publicité, de concours ni de tirages au sort."
+          ]
+        }
+      ],
+      "links": [
+        {
+          "label": "Politique de confidentialité",
+          "href": "../Privacy/index.html"
+        },
+        {
+          "label": "Page d’assistance",
+          "href": "../Support/index.html"
+        }
+      ]
+    },
+    "de": {
+      "metaTitle": "ScreenSplitAssist Altersfreigabe",
+      "description": "Altersfreigabe für ScreenSplitAssist, eine automatische Mac-Fensterlayout-App für Benutzer ab 4 Jahren.",
+      "eyebrow": "ScreenSplitAssist / 窗格大师 für Mac",
+      "title": "Altersfreigabe",
+      "updated": "Zuletzt aktualisiert: 10. Juli 2026",
+      "intro": "ScreenSplitAssist ordnet sichtbare Fenster automatisch an, speichert Layoutvorlagen und verwendet Arbeitsbereiche erneut. Es bietet keine sozialen, Unterhaltungs-, Glücksspiel-, Browser-, Werbe- oder nutzergenerierten Inhalte.",
+      "rating": "Erwartete App Store Altersfreigabe: 4+",
+      "notice": "Diese Seite beschreibt den Funktionsumfang von ScreenSplitAssist 1.0 für den Mac App Store. Die endgültige Einstufung ergibt sich aus dem App Store Connect Fragebogen und der Apple-Prüfung.",
+      "sections": [
+        {
+          "heading": "Zusammenfassung der Inhaltskategorien",
+          "columns": [
+            "Kategorie",
+            "Status"
+          ],
+          "rows": [
+            {
+              "category": "Gewalt, Blut oder Horror",
+              "status": "Keine."
+            },
+            {
+              "category": "Erwachsene, sexuelle oder Nacktinhalte",
+              "status": "Keine."
+            },
+            {
+              "category": "Vulgäre Sprache, Substanzen, medizinische Inhalte oder Glücksspiel",
+              "status": "Keine."
+            },
+            {
+              "category": "Webbrowser, soziale Funktionen, Chat oder nutzergenerierte Inhalte",
+              "status": "Keine."
+            },
+            {
+              "category": "Werbung, Tracking oder Drittanbieter-Analyse",
+              "status": "Keine."
+            }
+          ]
+        },
+        {
+          "heading": "Datenschutz- und Sicherheitskontrollen",
+          "bullets": [
+            "Kein Konto und keine Anmeldung erforderlich.",
+            "Keine besonderen Systemberechtigungen erforderlich.",
+            "Die App liest keine Daten anderer Apps und erfasst keine Bildschirminhalte.",
+            "Kernfunktionen laufen lokal auf dem Mac des Benutzers.",
+            "Support-E-Mails enthalten nur vom Benutzer gesendete Informationen."
+          ]
+        },
+        {
+          "heading": "Zahlungen und Werbung",
+          "paragraphs": [
+            "ScreenSplitAssist 1.0 enthält keine In-App-Käufe, Abonnements, Werbung, Wettbewerbe oder Gewinnspiele."
+          ]
+        }
+      ],
+      "links": [
+        {
+          "label": "Datenschutzrichtlinie",
+          "href": "../Privacy/index.html"
+        },
+        {
+          "label": "Support-Seite",
+          "href": "../Support/index.html"
+        }
+      ]
     }
   }
+}
+
   </script>
   <script>
     (() => {

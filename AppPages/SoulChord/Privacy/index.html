@@ -1,301 +1,97 @@
 <!doctype html>
 <html lang="en" dir="ltr">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SoulMetronome Privacy Policy</title>
-  <meta name="description" content="Privacy policy for SoulMetronome / 时光节拍器.">
-  <link rel="stylesheet" href="../assets/pages.css">
+  <title>SoulChord Privacy Policy</title>
+  <meta name="description" content="Privacy policy for SoulChord, a local-first metronome, tuner, and rhythm practice app.">
+  <style>
+    :root { color-scheme: light; --bg:#f5f1e9; --paper:#fffdf8; --text:#24282c; --muted:#5f6565; --quiet:#858782; --line:#ddd6ca; --accent:#248d83; --accent2:#a77c39; --soft:#f2eee6; }
+    * { box-sizing:border-box; }
+    body { margin:0; min-height:100vh; color:var(--text); background:linear-gradient(135deg,#fffdf8 0%,var(--bg) 55%,#ece5da 100%); font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",sans-serif; line-height:1.65; }
+    .page { width:min(980px,calc(100% - 32px)); margin:0 auto; padding:32px 0 52px; }
+    .shell { overflow:hidden; border:1px solid var(--line); border-radius:18px; background:rgba(255,253,248,.96); box-shadow:0 24px 70px rgba(70,55,35,.12); }
+    .topbar { display:flex; align-items:center; justify-content:space-between; gap:16px; padding:17px 20px; border-bottom:1px solid var(--line); background:rgba(242,238,230,.8); }
+    .brand { display:flex; align-items:center; gap:10px; color:var(--text); text-decoration:none; font-weight:760; }
+    .mark { display:grid; place-items:center; width:34px; height:34px; border:1px solid #a9d7d1; border-radius:10px; color:var(--accent); background:#edf9f7; font-weight:820; }
+    nav { display:flex; flex-wrap:wrap; align-items:center; justify-content:flex-end; gap:8px; }
+    nav a,.language { border:1px solid var(--line); border-radius:9px; background:#fffdf8; color:var(--muted); font-size:.93rem; }
+    nav a { padding:7px 10px; text-decoration:none; }
+    nav a[aria-current="page"] { border-color:#9bcfc9; color:var(--accent); background:#edf9f7; }
+    .language { display:flex; align-items:center; gap:7px; padding:6px 8px; }
+    .language label { color:var(--quiet); font-size:.86rem; white-space:nowrap; }
+    select { min-width:148px; border:0; outline:0; color:var(--text); background:transparent; font:inherit; }
+    main { padding:clamp(26px,5vw,52px); }
+    h1 { margin:0 0 10px; font-size:clamp(2.1rem,6vw,3.4rem); line-height:1.08; }
+    h2 { margin:32px 0 9px; font-size:1.18rem; }
+    p,li { color:var(--muted); overflow-wrap:anywhere; }
+    .eyebrow { margin:0 0 18px; color:var(--accent); font-weight:760; }
+    .updated { color:var(--quiet); font-size:.94rem; }
+    .intro { font-size:1.05rem; }
+    .notice { margin:23px 0; padding:16px 18px; border:1px solid #bddbd7; border-radius:10px; background:#f0faf8; }
+    .notice p { margin:0; }
+    a { color:var(--accent); }
+    .links { display:flex; flex-wrap:wrap; gap:10px; margin-top:28px; }
+    .pill { padding:8px 11px; border:1px solid var(--line); border-radius:9px; background:var(--soft); color:var(--text); text-decoration:none; }
+    @media(max-width:720px){ .page{width:min(100% - 20px,980px);padding:12px 0 28px}.topbar{align-items:stretch;flex-direction:column}nav{justify-content:flex-start}.language{width:100%}.language select{width:100%;min-width:0}main{padding:25px 20px} }
+  </style>
 </head>
 <body>
-  <div class="page">
-    <main class="document">
-      <div class="toolbar">
-        <div class="language-control">
-          <label id="language-label" for="language-select">Language</label>
-          <select id="language-select" aria-label="Choose language"></select>
-        </div>
-      </div>
-      <p class="eyebrow" id="eyebrow"></p>
-      <h1 id="title"></h1>
-      <p class="updated" id="updated"></p>
-      <p id="intro"></p>
-      <div class="notice"><p id="summary"></p></div>
-      <div id="sections"></div>
-      <h2 id="contact-title"></h2>
-      <p id="contact-body"></p>
-    </main>
-  </div>
-  <script>
-    const emailLink = '<a href="mailto:support@yaoji.app">support@yaoji.app</a>';
-    const privacyContent = {
-      en: {
-        docTitle: "SoulMetronome Privacy Policy",
-        docDescription: "Privacy policy for SoulMetronome / 时光节拍器.",
-        language: "Language",
-        chooseLanguage: "Choose language",
-        eyebrow: "SoulMetronome / 时光节拍器",
-        title: "Privacy Policy",
-        updated: "Last updated: July 1, 2026",
-        intro: "SoulMetronome is a metronome and rhythm practice app for musicians. This policy explains how the app handles data when you set tempo, use beat feedback, enable microphone listening, save practice preferences, or contact support.",
-        summary: "Summary: the app does not require an account, does not sell personal data, does not include advertising SDKs, and does not track users across apps or websites.",
-        sections: [
-          ["Data We Collect", "The current app does not send saved tempos, metronome settings, practice preferences, BPM changes, beat-surface choices, microphone audio, or rhythm analysis results to developer-operated analytics servers."],
-          ["On-Device Settings", "Tempo presets, language choice, beat settings, sound choices, haptic settings, and other preferences are stored locally on your device so the app can restore your practice setup."],
-          ["Microphone Use", "If you enable rhythm listening or coach features, the app may request microphone permission to detect timing. Audio analysis is performed on device for rhythm feedback; raw audio is not uploaded by the app."],
-          ["Camera Torch And Haptics", "If you enable flash feedback, the app may request camera access only to use the device torch in sync with the beat. Haptic feedback is generated locally by the device."],
-          ["Support Requests", "If you email support, we receive the information you choose to send, such as your email address, app version, device model, screenshots, or issue description. Do not send passwords, private keys, confidential files, or private audio recordings."],
-          ["Children And Tracking", "SoulMetronome is a general music utility. It does not offer public social features, behavioral advertising, or cross-app tracking."]
-        ],
-        contactTitle: "Contact",
-        contactBody: "For privacy questions, contact " + emailLink + "."
-      },
-      "zh-Hans": {
-        docTitle: "时光节拍器隐私政策",
-        docDescription: "时光节拍器隐私政策。",
-        language: "语言",
-        chooseLanguage: "选择语言",
-        eyebrow: "SoulMetronome / 时光节拍器",
-        title: "隐私政策",
-        updated: "最后更新：2026 年 7 月 1 日",
-        intro: "时光节拍器是一款面向音乐人的节拍器与节奏练习 App。本政策说明你设置速度、使用节拍反馈、开启麦克风监听、保存练习偏好或联系支持时，App 如何处理数据。",
-        summary: "摘要：App 不要求账号，不出售个人数据，不包含广告 SDK，也不会跨 App 或跨网站追踪用户。",
-        sections: [
-          ["我们收集的数据", "当前版本不会向开发者运营的分析服务器发送已保存速度、节拍设置、练习偏好、BPM 调整、节拍器样式选择、麦克风音频或节奏分析结果。"],
-          ["本机设置", "速度预设、语言选择、节拍设置、音色选择、触感设置和其他偏好会保存在你的设备本地，用于恢复练习配置。"],
-          ["麦克风使用", "如果你开启节奏监听或教练功能，App 可能会请求麦克风权限来检测时值。节奏反馈的音频分析在设备本地完成；App 不上传原始音频。"],
-          ["闪光灯与触感", "如果你开启闪光反馈，App 可能会请求相机权限，仅用于调用设备闪光灯随节拍闪烁。触感反馈由设备本地生成。"],
-          ["支持请求", "如果你通过邮件联系支持，我们只会收到你选择发送的信息，例如邮箱地址、App 版本、设备型号、截图或问题描述。请不要发送密码、私钥、机密文件或私人音频录音。"],
-          ["儿童与追踪", "时光节拍器是通用音乐工具，不提供公开社交功能、行为广告或跨 App 追踪。"]
-        ],
-        contactTitle: "联系我们",
-        contactBody: "如对隐私政策有疑问，请联系 " + emailLink + "。"
-      },
-      "zh-Hant": {
-        docTitle: "時光節拍器隱私權政策",
-        docDescription: "時光節拍器隱私權政策。",
-        language: "語言",
-        chooseLanguage: "選擇語言",
-        eyebrow: "SoulMetronome / 時光節拍器",
-        title: "隱私權政策",
-        updated: "最後更新：2026 年 7 月 1 日",
-        intro: "時光節拍器是一款面向音樂人的節拍器與節奏練習 App。本政策說明你設定速度、使用節拍回饋、開啟麥克風聆聽、保存練習偏好或聯絡支援時，App 如何處理資料。",
-        summary: "摘要：App 不要求帳號，不出售個人資料，不包含廣告 SDK，也不會跨 App 或跨網站追蹤使用者。",
-        sections: [
-          ["我們收集的資料", "目前版本不會向開發者營運的分析伺服器傳送已保存速度、節拍設定、練習偏好、BPM 調整、節拍器樣式選擇、麥克風音訊或節奏分析結果。"],
-          ["本機設定", "速度預設、語言選擇、節拍設定、音色選擇、觸感設定和其他偏好會保存在你的裝置本機，用於恢復練習配置。"],
-          ["麥克風使用", "如果你開啟節奏聆聽或教練功能，App 可能會請求麥克風權限來偵測時值。節奏回饋的音訊分析在裝置本機完成；App 不上傳原始音訊。"],
-          ["閃光燈與觸感", "如果你開啟閃光回饋，App 可能會請求相機權限，僅用於呼叫裝置閃光燈隨節拍閃爍。觸感回饋由裝置本機生成。"],
-          ["支援請求", "如果你透過電子郵件聯絡支援，我們只會收到你選擇傳送的資訊，例如電子郵件地址、App 版本、裝置型號、截圖或問題描述。請不要傳送密碼、私鑰、機密檔案或私人音訊錄音。"],
-          ["兒童與追蹤", "時光節拍器是通用音樂工具，不提供公開社交功能、行為廣告或跨 App 追蹤。"]
-        ],
-        contactTitle: "聯絡我們",
-        contactBody: "如對隱私權政策有疑問，請聯絡 " + emailLink + "。"
-      }
-    };
-
-    const privacyLocalized = {
-      ja: {
-        docTitle: "SoulMetronome プライバシーポリシー",
-        docDescription: "SoulMetronome / 時光節拍器 のプライバシーポリシー。",
-        language: "言語",
-        chooseLanguage: "言語を選択",
-        eyebrow: "SoulMetronome / 時光節拍器",
-        title: "プライバシーポリシー",
-        updated: "最終更新日: 2026年7月1日",
-        intro: "SoulMetronome は、ミュージシャン向けのメトロノームとリズム練習アプリです。",
-        summary: "概要: アカウントは不要で、個人データの販売、広告 SDK、アプリや Web サイトをまたぐ追跡はありません。",
-        sections: [["収集するデータ", "保存テンポ、設定、BPM 変更、マイク音声、リズム分析結果を開発者の分析サーバーへ送信しません。"], ["端末内の設定", "テンポ、言語、拍子、音色、触覚などの設定は端末内に保存されます。"], ["マイク", "リズム聴取やコーチ機能を有効にした場合のみ、タイミング検出のためにマイク許可を求めることがあります。解析は端末上で行われ、音声はアップロードされません。"], ["フラッシュと触覚", "フラッシュフィードバックは拍に合わせてライトを使うためだけにカメラ許可を使用します。触覚は端末内で生成されます。"], ["サポート", "サポートに連絡した場合、受け取るのはあなたが送信した情報のみです。"], ["追跡", "公開ソーシャル機能、行動広告、クロスアプリ追跡はありません。"]],
-        contactTitle: "お問い合わせ",
-        contactBody: "プライバシーに関する質問は " + emailLink + " までご連絡ください。"
-      },
-      ko: {
-        docTitle: "SoulMetronome 개인정보 처리방침",
-        docDescription: "SoulMetronome / 时光节拍器 개인정보 처리방침입니다.",
-        language: "언어",
-        chooseLanguage: "언어 선택",
-        eyebrow: "SoulMetronome / 时光节拍器",
-        title: "개인정보 처리방침",
-        updated: "마지막 업데이트: 2026년 7월 1일",
-        intro: "SoulMetronome은 음악가를 위한 메트로놈 및 리듬 연습 앱입니다.",
-        summary: "요약: 계정이 필요 없으며 개인 데이터 판매, 광고 SDK, 앱/웹사이트 간 추적이 없습니다.",
-        sections: [["수집하는 데이터", "저장 템포, 설정, BPM 변경, 마이크 오디오, 리듬 분석 결과를 개발자 분석 서버로 보내지 않습니다."], ["기기 내 설정", "템포, 언어, 박자, 사운드, 햅틱 설정은 기기에 로컬로 저장됩니다."], ["마이크", "리듬 청취 또는 코치 기능을 켠 경우에만 타이밍 감지를 위해 마이크 권한을 요청할 수 있습니다. 분석은 기기에서 처리되며 원본 오디오는 업로드되지 않습니다."], ["플래시와 햅틱", "플래시 피드백은 박자에 맞춰 조명을 켜는 용도로만 카메라 권한을 사용합니다."], ["지원", "지원 요청 시 사용자가 보낸 정보만 받습니다."], ["추적", "공개 소셜 기능, 행동 광고, 앱 간 추적이 없습니다."]],
-        contactTitle: "문의",
-        contactBody: "개인정보 관련 질문은 " + emailLink + " 로 연락해 주세요."
-      },
-      fr: {
-        docTitle: "Politique de confidentialité de SoulMetronome",
-        docDescription: "Politique de confidentialité de SoulMetronome / 时光节拍器.",
-        language: "Langue",
-        chooseLanguage: "Choisir la langue",
-        eyebrow: "SoulMetronome / 时光节拍器",
-        title: "Politique de confidentialité",
-        updated: "Dernière mise à jour : 1 juillet 2026",
-        intro: "SoulMetronome est une app de métronome et de pratique rythmique pour musiciens.",
-        summary: "Résumé : aucun compte requis, aucune vente de données personnelles, aucun SDK publicitaire et aucun suivi entre apps ou sites.",
-        sections: [["Données collectées", "L'app n'envoie pas les tempos enregistrés, réglages, changements de BPM, audio micro ou résultats d'analyse rythmique à des serveurs d'analyse du développeur."], ["Réglages locaux", "Les préférences de tempo, langue, mesure, son et retour haptique restent sur votre appareil."], ["Microphone", "Le micro peut être demandé uniquement pour la détection du timing lorsque l'écoute rythmique ou le coach est activé. L'analyse se fait sur l'appareil."], ["Flash et haptique", "Le flash utilise la torche uniquement en synchronisation avec le tempo. Le retour haptique est local."], ["Assistance", "Nous recevons uniquement les informations que vous choisissez d'envoyer."], ["Suivi", "Aucune fonction sociale publique, publicité comportementale ou suivi inter-apps."]],
-        contactTitle: "Contact",
-        contactBody: "Pour toute question de confidentialité, contactez " + emailLink + "."
-      },
-      de: {
-        docTitle: "SoulMetronome Datenschutzrichtlinie",
-        docDescription: "Datenschutzrichtlinie für SoulMetronome / 时光节拍器.",
-        language: "Sprache",
-        chooseLanguage: "Sprache auswählen",
-        eyebrow: "SoulMetronome / 时光节拍器",
-        title: "Datenschutzrichtlinie",
-        updated: "Zuletzt aktualisiert: 1. Juli 2026",
-        intro: "SoulMetronome ist eine Metronom- und Rhythmusübungs-App für Musiker.",
-        summary: "Kurzfassung: kein Konto erforderlich, kein Verkauf personenbezogener Daten, keine Werbe-SDKs und kein app- oder webseitenübergreifendes Tracking.",
-        sections: [["Erhobene Daten", "Die App sendet keine gespeicherten Tempi, Einstellungen, BPM-Änderungen, Mikrofonaufnahmen oder Rhythmusanalysen an Analyseserver des Entwicklers."], ["Lokale Einstellungen", "Tempo, Sprache, Takt, Klang und Haptik werden lokal auf dem Gerät gespeichert."], ["Mikrofon", "Das Mikrofon wird nur für Timing-Erkennung bei aktivierter Rhythmus- oder Coach-Funktion angefragt. Die Analyse erfolgt auf dem Gerät."], ["Blitz und Haptik", "Die Kameraerlaubnis wird nur für die Taschenlampe im Takt verwendet."], ["Support", "Wir erhalten nur Informationen, die Sie selbst senden."], ["Tracking", "Keine öffentlichen sozialen Funktionen, keine Verhaltenswerbung, kein Cross-App-Tracking."]],
-        contactTitle: "Kontakt",
-        contactBody: "Bei Datenschutzfragen kontaktieren Sie " + emailLink + "."
-      },
-      es: {
-        docTitle: "Política de privacidad de SoulMetronome",
-        docDescription: "Política de privacidad de SoulMetronome / 时光节拍器.",
-        language: "Idioma",
-        chooseLanguage: "Elegir idioma",
-        eyebrow: "SoulMetronome / 时光节拍器",
-        title: "Política de privacidad",
-        updated: "Última actualización: 1 de julio de 2026",
-        intro: "SoulMetronome es una app de metrónomo y práctica rítmica para músicos.",
-        summary: "Resumen: no requiere cuenta, no vende datos personales, no incluye SDK publicitarios y no rastrea entre apps o sitios web.",
-        sections: [["Datos recopilados", "La app no envía tempos guardados, ajustes, cambios de BPM, audio del micrófono ni análisis rítmico a servidores de análisis del desarrollador."], ["Ajustes locales", "Tempo, idioma, compás, sonido y háptica se guardan localmente en tu dispositivo."], ["Micrófono", "El micrófono solo se solicita para detectar timing cuando activas escucha rítmica o coach. El análisis se realiza en el dispositivo."], ["Flash y háptica", "El permiso de cámara se usa solo para la linterna sincronizada con el pulso."], ["Soporte", "Recibimos solo la información que decides enviar."], ["Seguimiento", "No hay funciones sociales públicas, publicidad conductual ni seguimiento entre apps."]],
-        contactTitle: "Contacto",
-        contactBody: "Para preguntas de privacidad, contacta con " + emailLink + "."
-      },
-      it: {
-        docTitle: "Informativa privacy di SoulMetronome",
-        docDescription: "Informativa privacy di SoulMetronome / 时光节拍器.",
-        language: "Lingua",
-        chooseLanguage: "Scegli lingua",
-        eyebrow: "SoulMetronome / 时光节拍器",
-        title: "Informativa privacy",
-        updated: "Ultimo aggiornamento: 1 luglio 2026",
-        intro: "SoulMetronome è un'app metronomo e pratica ritmica per musicisti.",
-        summary: "Sintesi: nessun account richiesto, nessuna vendita di dati personali, nessun SDK pubblicitario e nessun tracciamento tra app o siti.",
-        sections: [["Dati raccolti", "L'app non invia tempi salvati, impostazioni, cambi BPM, audio microfono o analisi ritmiche a server di analytics dello sviluppatore."], ["Impostazioni locali", "Tempo, lingua, metro, suono e feedback aptico restano sul dispositivo."], ["Microfono", "Il microfono può essere richiesto solo per rilevare il timing quando abiliti ascolto ritmico o coach. L'analisi avviene sul dispositivo."], ["Flash e aptica", "Il permesso fotocamera serve solo per usare la torcia a tempo."], ["Supporto", "Riceviamo solo le informazioni che scegli di inviare."], ["Tracciamento", "Nessuna funzione social pubblica, pubblicità comportamentale o tracciamento tra app."]],
-        contactTitle: "Contatto",
-        contactBody: "Per domande sulla privacy, contatta " + emailLink + "."
-      },
-      "pt-BR": {
-        docTitle: "Política de Privacidade do SoulMetronome",
-        docDescription: "Política de Privacidade do SoulMetronome / 时光节拍器.",
-        language: "Idioma",
-        chooseLanguage: "Escolher idioma",
-        eyebrow: "SoulMetronome / 时光节拍器",
-        title: "Política de Privacidade",
-        updated: "Última atualização: 1 de julho de 2026",
-        intro: "SoulMetronome é um app de metrônomo e prática rítmica para músicos.",
-        summary: "Resumo: não exige conta, não vende dados pessoais, não inclui SDKs de anúncios e não rastreia entre apps ou sites.",
-        sections: [["Dados coletados", "O app não envia tempos salvos, ajustes, mudanças de BPM, áudio do microfone ou análises rítmicas para servidores de analytics do desenvolvedor."], ["Ajustes locais", "Tempo, idioma, compasso, som e háptica ficam salvos localmente no dispositivo."], ["Microfone", "O microfone só pode ser solicitado para detectar timing quando a escuta rítmica ou o coach estiver ativo. A análise ocorre no dispositivo."], ["Flash e háptica", "A câmera é usada apenas para acionar a lanterna em sincronia com o pulso."], ["Suporte", "Recebemos apenas as informações que você decide enviar."], ["Rastreamento", "Não há recursos sociais públicos, publicidade comportamental nem rastreamento entre apps."]],
-        contactTitle: "Contato",
-        contactBody: "Para dúvidas de privacidade, fale com " + emailLink + "."
-      },
-      ru: {
-        docTitle: "Политика конфиденциальности SoulMetronome",
-        docDescription: "Политика конфиденциальности SoulMetronome / 时光节拍器.",
-        language: "Язык",
-        chooseLanguage: "Выбрать язык",
-        eyebrow: "SoulMetronome / 时光节拍器",
-        title: "Политика конфиденциальности",
-        updated: "Обновлено: 1 июля 2026 г.",
-        intro: "SoulMetronome — приложение метронома и ритмической практики для музыкантов.",
-        summary: "Кратко: аккаунт не требуется, персональные данные не продаются, рекламных SDK и межприложенческого отслеживания нет.",
-        sections: [["Собираемые данные", "Приложение не отправляет сохраненные темпы, настройки, изменения BPM, звук микрофона или результаты ритм-анализа на аналитические серверы разработчика."], ["Локальные настройки", "Темп, язык, размер, звук и тактильные настройки хранятся на устройстве."], ["Микрофон", "Микрофон запрашивается только для определения тайминга при включенном прослушивании ритма или coach. Анализ выполняется на устройстве."], ["Фонарик и тактильная отдача", "Доступ к камере используется только для фонарика в такт."], ["Поддержка", "Мы получаем только информацию, которую вы сами отправляете."], ["Отслеживание", "Нет публичных социальных функций, поведенческой рекламы и кросс-приложенческого отслеживания."]],
-        contactTitle: "Контакт",
-        contactBody: "По вопросам конфиденциальности пишите на " + emailLink + "."
-      },
-      ar: {
-        docTitle: "سياسة خصوصية SoulMetronome",
-        docDescription: "سياسة خصوصية SoulMetronome / 时光节拍器.",
-        language: "اللغة",
-        chooseLanguage: "اختر اللغة",
-        eyebrow: "SoulMetronome / 时光节拍器",
-        title: "سياسة الخصوصية",
-        updated: "آخر تحديث: 1 يوليو 2026",
-        intro: "SoulMetronome تطبيق مترونوم وتدريب إيقاعي للموسيقيين.",
-        summary: "الملخص: لا يتطلب حسابا، ولا يبيع البيانات الشخصية، ولا يحتوي على SDK إعلانات أو تتبع عبر التطبيقات والمواقع.",
-        sections: [["البيانات التي نجمعها", "لا يرسل التطبيق الإيقاعات المحفوظة أو الإعدادات أو تغييرات BPM أو صوت الميكروفون أو نتائج تحليل الإيقاع إلى خوادم تحليلات المطور."], ["الإعدادات المحلية", "يتم حفظ السرعة واللغة والميزان والصوت واللمس محليا على الجهاز."], ["الميكروفون", "قد يطلب الميكروفون فقط لاكتشاف التوقيت عند تشغيل الاستماع الإيقاعي أو المدرب. يتم التحليل على الجهاز."], ["الفلاش واللمس", "إذن الكاميرا يستخدم فقط لتشغيل المصباح مع الإيقاع."], ["الدعم", "نستقبل فقط المعلومات التي تختار إرسالها."], ["التتبع", "لا توجد ميزات اجتماعية عامة أو إعلانات سلوكية أو تتبع بين التطبيقات."]],
-        contactTitle: "التواصل",
-        contactBody: "لأسئلة الخصوصية تواصل عبر " + emailLink + "."
-      },
-      hi: {
-        docTitle: "SoulMetronome गोपनीयता नीति",
-        docDescription: "SoulMetronome / 时光节拍器 की गोपनीयता नीति.",
-        language: "भाषा",
-        chooseLanguage: "भाषा चुनें",
-        eyebrow: "SoulMetronome / 时光节拍器",
-        title: "गोपनीयता नीति",
-        updated: "अंतिम अपडेट: 1 जुलाई 2026",
-        intro: "SoulMetronome संगीतकारों के लिए मेट्रोनोम और रिदम अभ्यास ऐप है.",
-        summary: "सारांश: खाता आवश्यक नहीं है, व्यक्तिगत डेटा बेचा नहीं जाता, विज्ञापन SDK नहीं हैं, और ऐप/वेबसाइटों में ट्रैकिंग नहीं होती.",
-        sections: [["हम जो डेटा लेते हैं", "ऐप सहेजे गए टेम्पो, सेटिंग, BPM बदलाव, माइक्रोफोन ऑडियो या रिदम विश्लेषण परिणाम डेवलपर analytics सर्वर को नहीं भेजता."], ["स्थानीय सेटिंग", "टेम्पो, भाषा, मीटर, ध्वनि और haptic सेटिंग डिवाइस पर रहती हैं."], ["माइक्रोफोन", "रिदम listening या coach चालू होने पर timing detection के लिए ही माइक्रोफोन अनुमति मांगी जा सकती है. विश्लेषण डिवाइस पर होता है."], ["फ्लैश और haptics", "कैमरा अनुमति केवल beat के साथ torch चलाने के लिए उपयोग होती है."], ["सहायता", "हमें वही जानकारी मिलती है जिसे आप भेजते हैं."], ["ट्रैकिंग", "कोई सार्वजनिक social feature, behavioral ads या cross-app tracking नहीं है."]],
-        contactTitle: "संपर्क",
-        contactBody: "गोपनीयता प्रश्नों के लिए " + emailLink + " पर संपर्क करें."
-      },
-      id: {
-        docTitle: "Kebijakan Privasi SoulMetronome",
-        docDescription: "Kebijakan Privasi SoulMetronome / 时光节拍器.",
-        language: "Bahasa",
-        chooseLanguage: "Pilih bahasa",
-        eyebrow: "SoulMetronome / 时光节拍器",
-        title: "Kebijakan Privasi",
-        updated: "Terakhir diperbarui: 1 Juli 2026",
-        intro: "SoulMetronome adalah aplikasi metronom dan latihan ritme untuk musisi.",
-        summary: "Ringkasan: tidak perlu akun, tidak menjual data pribadi, tidak memakai SDK iklan, dan tidak melacak lintas aplikasi atau situs.",
-        sections: [["Data yang dikumpulkan", "Aplikasi tidak mengirim tempo tersimpan, pengaturan, perubahan BPM, audio mikrofon, atau hasil analisis ritme ke server analitik pengembang."], ["Pengaturan lokal", "Tempo, bahasa, birama, suara, dan haptic disimpan lokal di perangkat."], ["Mikrofon", "Mikrofon hanya diminta untuk mendeteksi timing saat fitur listening atau coach aktif. Analisis dilakukan di perangkat."], ["Flash dan haptic", "Izin kamera hanya dipakai untuk menyalakan senter mengikuti ketukan."], ["Dukungan", "Kami hanya menerima informasi yang Anda pilih untuk dikirim."], ["Pelacakan", "Tidak ada fitur sosial publik, iklan perilaku, atau pelacakan lintas aplikasi."]],
-        contactTitle: "Kontak",
-        contactBody: "Untuk pertanyaan privasi, hubungi " + emailLink + "."
-      },
-      vi: {
-        docTitle: "Chính sách quyền riêng tư SoulMetronome",
-        docDescription: "Chính sách quyền riêng tư của SoulMetronome / 时光节拍器.",
-        language: "Ngôn ngữ",
-        chooseLanguage: "Chọn ngôn ngữ",
-        eyebrow: "SoulMetronome / 时光节拍器",
-        title: "Chính sách quyền riêng tư",
-        updated: "Cập nhật lần cuối: 1 tháng 7, 2026",
-        intro: "SoulMetronome là ứng dụng máy đếm nhịp và luyện tiết tấu cho nhạc sĩ.",
-        summary: "Tóm tắt: không yêu cầu tài khoản, không bán dữ liệu cá nhân, không có SDK quảng cáo và không theo dõi qua ứng dụng hoặc trang web.",
-        sections: [["Dữ liệu thu thập", "Ứng dụng không gửi tempo đã lưu, cài đặt, thay đổi BPM, âm thanh micro hoặc kết quả phân tích nhịp đến máy chủ phân tích của nhà phát triển."], ["Cài đặt cục bộ", "Tempo, ngôn ngữ, nhịp, âm thanh và haptic được lưu trên thiết bị."], ["Micro", "Micro chỉ có thể được yêu cầu để phát hiện timing khi bật listening hoặc coach. Phân tích diễn ra trên thiết bị."], ["Đèn flash và haptic", "Quyền camera chỉ dùng để bật đèn pin theo nhịp."], ["Hỗ trợ", "Chúng tôi chỉ nhận thông tin bạn chọn gửi."], ["Theo dõi", "Không có mạng xã hội công khai, quảng cáo hành vi hoặc theo dõi chéo ứng dụng."]],
-        contactTitle: "Liên hệ",
-        contactBody: "Câu hỏi về quyền riêng tư: " + emailLink + "."
-      },
-      th: {
-        docTitle: "นโยบายความเป็นส่วนตัว SoulMetronome",
-        docDescription: "นโยบายความเป็นส่วนตัวของ SoulMetronome / 时光节拍器.",
-        language: "ภาษา",
-        chooseLanguage: "เลือกภาษา",
-        eyebrow: "SoulMetronome / 时光节拍器",
-        title: "นโยบายความเป็นส่วนตัว",
-        updated: "อัปเดตล่าสุด: 1 กรกฎาคม 2026",
-        intro: "SoulMetronome เป็นแอปเมโทรนอมและฝึกจังหวะสำหรับนักดนตรี",
-        summary: "สรุป: ไม่ต้องมีบัญชี ไม่ขายข้อมูลส่วนบุคคล ไม่มี SDK โฆษณา และไม่ติดตามข้ามแอปหรือเว็บไซต์",
-        sections: [["ข้อมูลที่เก็บ", "แอปไม่ส่ง tempo ที่บันทึกไว้ การตั้งค่า การเปลี่ยน BPM เสียงไมโครโฟน หรือผลวิเคราะห์จังหวะไปยังเซิร์ฟเวอร์ analytics ของผู้พัฒนา"], ["การตั้งค่าในเครื่อง", "tempo ภาษา อัตราจังหวะ เสียง และ haptic จะถูกเก็บไว้ในอุปกรณ์"], ["ไมโครโฟน", "แอปอาจขอไมโครโฟนเฉพาะเมื่อเปิด listening หรือ coach เพื่อวิเคราะห์ timing โดยประมวลผลบนอุปกรณ์"], ["แฟลชและ haptic", "สิทธิ์กล้องใช้เฉพาะไฟฉายตามจังหวะ"], ["การสนับสนุน", "เราได้รับเฉพาะข้อมูลที่คุณเลือกส่ง"], ["การติดตาม", "ไม่มีฟีเจอร์สังคมสาธารณะ โฆษณาตามพฤติกรรม หรือการติดตามข้ามแอป"]],
-        contactTitle: "ติดต่อ",
-        contactBody: "หากมีคำถามด้านความเป็นส่วนตัว โปรดติดต่อ " + emailLink + "."
-      }
-    };
-
-    Object.assign(privacyContent, privacyLocalized);
-
-    window.SoulMetronomePage = {
-      storageKey: "soulmetronome-privacy-language",
-      content: privacyContent,
-      render(data, helpers) {
-        helpers.setText("eyebrow", data.eyebrow);
-        helpers.setText("title", data.title);
-        helpers.setText("updated", data.updated);
-        helpers.setText("intro", data.intro);
-        helpers.setText("summary", data.summary);
-        helpers.renderSections("sections", data.sections);
-        helpers.setText("contact-title", data.contactTitle);
-        helpers.setHTML("contact-body", data.contactBody);
-      }
-    };
+  <div class="page"><div class="shell">
+    <header class="topbar">
+      <a class="brand" href="../Support/index.html"><span class="mark">SC</span><span>SoulChord</span></a>
+      <nav aria-label="SoulChord policy pages">
+        <a id="nav-privacy" aria-current="page" href="../Privacy/index.html">Privacy</a>
+        <a id="nav-support" href="../Support/index.html">Support</a>
+        <a id="nav-age" href="../AgeRating/index.html">Age Rating</a>
+        <span class="language"><label id="language-label" for="language-select">Language</label><select id="language-select"></select></span>
+      </nav>
+    </header>
+    <main id="content"></main>
+  </div></div>
+  <script type="application/json" id="page-data">
+  {
+    "defaultLanguage":"en",
+    "languages":[
+      {"code":"zh-Hans","htmlLang":"zh-CN","label":"简体中文","dir":"ltr"},
+      {"code":"zh-Hant","htmlLang":"zh-TW","label":"繁體中文","dir":"ltr"},
+      {"code":"en","htmlLang":"en","label":"English","dir":"ltr"},
+      {"code":"ja","htmlLang":"ja","label":"日本語","dir":"ltr"},
+      {"code":"ko","htmlLang":"ko","label":"한국어","dir":"ltr"},
+      {"code":"es","htmlLang":"es","label":"Español","dir":"ltr"},
+      {"code":"fr","htmlLang":"fr","label":"Français","dir":"ltr"},
+      {"code":"de","htmlLang":"de","label":"Deutsch","dir":"ltr"}
+    ],
+    "ui":{
+      "zh-Hans":{"language":"语言","chooseLanguage":"选择语言","privacy":"隐私","support":"支持","age":"适龄"},
+      "zh-Hant":{"language":"語言","chooseLanguage":"選擇語言","privacy":"隱私","support":"支援","age":"年齡分級"},
+      "en":{"language":"Language","chooseLanguage":"Choose language","privacy":"Privacy","support":"Support","age":"Age Rating"},
+      "ja":{"language":"言語","chooseLanguage":"言語を選択","privacy":"プライバシー","support":"サポート","age":"年齢区分"},
+      "ko":{"language":"언어","chooseLanguage":"언어 선택","privacy":"개인정보","support":"지원","age":"연령 등급"},
+      "es":{"language":"Idioma","chooseLanguage":"Elegir idioma","privacy":"Privacidad","support":"Soporte","age":"Clasificación"},
+      "fr":{"language":"Langue","chooseLanguage":"Choisir la langue","privacy":"Confidentialité","support":"Assistance","age":"Classification"},
+      "de":{"language":"Sprache","chooseLanguage":"Sprache auswählen","privacy":"Datenschutz","support":"Support","age":"Altersfreigabe"}
+    },
+    "content":{
+      "zh-Hans":{"metaTitle":"SoulChord 隐私政策","metaDescription":"SoulChord（时光节拍器）隐私政策。","eyebrow":"SoulChord / 时光节拍器","title":"隐私政策","updated":"最后更新：2026 年 7 月 12 日","intro":"SoulChord 是一款适用于 iPhone、iPad 和 Mac 的节拍器、调音器与节奏练习工具。本政策说明 App 如何处理你的数据。","summary":"摘要：无需账号；不投放广告；不使用分析或崩溃上报 SDK；不追踪用户；音频分析在设备本地完成。","sections":[["数据收集与网络","当前版本没有账号、云同步、订阅、App 内购买、广告、第三方分析或网络必需功能。App 不会把个人数据、练习记录、设备标识符或音频发送到开发者服务器。"],["本机保存","语言、引导完成状态、节拍器设置、收藏速度、所选外观、练习会话摘要和时间偏移结果使用系统本机存储保存在设备上。你可通过删除 App 或清除相关内容来移除这些数据。"],["麦克风","只有在你启动调音或节奏监听时，App 才请求麦克风权限。音高和落点分析在设备上实时完成；App 不上传或保存原始录音。"],["相机闪光灯","iPhone 上的闪光同步功能会在你主动开启时请求相机权限，仅用于控制后置闪光灯随节拍闪烁。App 不拍摄、保存或上传照片与视频。"],["后台音频与触感","后台音频只用于在练习期间继续播放节拍；触感反馈由设备本地生成。"],["支持邮件","如果你联系支持，我们只会收到你主动发送的信息，例如邮箱地址、问题描述、截图和设备信息。请勿发送密码、私钥、机密文件或私人录音。"]],"contactTitle":"联系与选择","contactBody":"隐私问题请发送邮件至 kibernet@sina.com。你可以在系统设置中随时撤销麦克风或相机权限。"},
+      "zh-Hant":{"metaTitle":"SoulChord 隱私權政策","metaDescription":"SoulChord（時光節拍器）隱私權政策。","eyebrow":"SoulChord / 時光節拍器","title":"隱私權政策","updated":"最後更新：2026 年 7 月 12 日","intro":"SoulChord 是適用於 iPhone、iPad 與 Mac 的節拍器、調音器和節奏練習工具。本政策說明 App 如何處理你的資料。","summary":"摘要：無需帳號；沒有廣告；不使用分析或當機回報 SDK；不追蹤使用者；音訊分析在裝置本機完成。","sections":[["資料收集與網路","目前版本沒有帳號、雲端同步、訂閱、App 內購買、廣告、第三方分析或必要的網路功能。App 不會將個人資料、練習記錄、裝置識別碼或音訊傳送到開發者伺服器。"],["本機儲存","語言、導覽完成狀態、節拍器設定、收藏速度、所選外觀、練習摘要及時間偏移結果會使用系統本機儲存保留在裝置上。"],["麥克風","只有在你啟動調音或節奏聆聽時才會要求麥克風權限。音高與落點分析即時在裝置上完成；App 不上傳或保存原始錄音。"],["相機閃光燈","iPhone 的閃光同步功能只在你主動開啟時要求相機權限，且僅用於控制後置閃光燈隨節拍閃爍。App 不拍攝、保存或上傳相片與影片。"],["背景音訊與觸覺","背景音訊僅用於練習期間繼續播放節拍；觸覺回饋在裝置本機產生。"],["支援郵件","如果你聯絡支援，我們只會收到你主動傳送的資訊，例如電子郵件地址、問題描述、截圖及裝置資訊。請勿傳送密碼、私鑰、機密檔案或私人錄音。"]],"contactTitle":"聯絡與選擇","contactBody":"隱私問題請寄信至 kibernet@sina.com。你可隨時在系統設定中撤銷麥克風或相機權限。"},
+      "en":{"metaTitle":"SoulChord Privacy Policy","metaDescription":"Privacy policy for SoulChord, a local-first metronome, tuner, and rhythm practice app.","eyebrow":"SoulChord","title":"Privacy Policy","updated":"Last updated: July 12, 2026","intro":"SoulChord is a metronome, tuner, and rhythm-practice utility for iPhone, iPad, and Mac. This policy explains how the app handles data.","summary":"Summary: no account, no ads, no analytics or crash-reporting SDKs, no tracking, and on-device audio analysis.","sections":[["Data collection and networking","The current version has no account, cloud sync, subscription, in-app purchase, advertising, third-party analytics, or network-required core feature. The app does not send personal data, practice history, device identifiers, or audio to developer-operated servers."],["On-device storage","Language, onboarding state, metronome settings, saved tempos, selected appearance, practice-session summaries, and timing-offset results are stored locally with system storage. You can remove this data by clearing relevant content or deleting the app."],["Microphone","The app requests microphone permission only when you start tuning or rhythm listening. Pitch and onset analysis runs in real time on the device. The app does not upload or save raw recordings."],["Camera torch","On iPhone, flash sync requests camera permission only after you enable the feature and uses it solely to pulse the rear torch with the beat. The app does not capture, save, or upload photos or video."],["Background audio and haptics","Background audio is used only to continue metronome playback during practice. Haptic feedback is generated locally by the device."],["Support email","If you contact support, we receive only information you choose to send, such as your email address, issue description, screenshots, and device details. Do not send passwords, private keys, confidential files, or private recordings."]],"contactTitle":"Contact and choices","contactBody":"For privacy questions, email kibernet@sina.com. You can revoke microphone or camera permission at any time in system settings."},
+      "ja":{"metaTitle":"SoulChord プライバシーポリシー","metaDescription":"SoulChord のプライバシーポリシー。","eyebrow":"SoulChord","title":"プライバシーポリシー","updated":"最終更新日：2026年7月12日","intro":"SoulChord は iPhone、iPad、Mac 向けのメトロノーム、チューナー、リズム練習ツールです。本ポリシーはデータの取り扱いを説明します。","summary":"概要：アカウント、広告、分析・クラッシュ報告 SDK、追跡はなく、音声解析は端末上で行われます。","sections":[["データ収集と通信","現行版にはアカウント、クラウド同期、サブスクリプション、アプリ内課金、広告、第三者分析、必須のネットワーク機能はありません。個人データ、練習履歴、端末 ID、音声を開発者サーバーへ送信しません。"],["端末内保存","言語、オンボーディング状態、メトロノーム設定、保存テンポ、外観、練習概要、タイミング結果は端末内に保存されます。"],["マイク","チューニングまたはリズム聴取を開始した場合のみ許可を求めます。音高とタイミングの解析は端末上で行い、元の録音を保存・送信しません。"],["カメラのライト","iPhone でフラッシュ同期を有効にした場合だけカメラ許可を求め、背面ライトを拍に合わせる目的にのみ使用します。写真や動画は撮影・保存・送信しません。"],["バックグラウンド音声と触覚","バックグラウンド音声は練習中のメトロノーム再生にのみ使用し、触覚は端末内で生成されます。"],["サポートメール","サポート時は、あなたが送信したメールアドレス、説明、スクリーンショット、端末情報のみを受け取ります。機密情報は送らないでください。"]],"contactTitle":"連絡先と選択","contactBody":"プライバシーに関するお問い合わせは kibernet@sina.com まで。権限はシステム設定からいつでも取り消せます。"},
+      "ko":{"metaTitle":"SoulChord 개인정보 처리방침","metaDescription":"SoulChord 개인정보 처리방침입니다.","eyebrow":"SoulChord","title":"개인정보 처리방침","updated":"최종 업데이트: 2026년 7월 12일","intro":"SoulChord는 iPhone, iPad 및 Mac용 메트로놈, 튜너, 리듬 연습 도구입니다. 이 방침은 앱의 데이터 처리 방식을 설명합니다.","summary":"요약: 계정, 광고, 분석/충돌 보고 SDK, 추적이 없으며 오디오 분석은 기기에서 처리됩니다.","sections":[["데이터 수집 및 네트워크","현재 버전에는 계정, 클라우드 동기화, 구독, 인앱 결제, 광고, 타사 분석 또는 필수 네트워크 기능이 없습니다. 개인 데이터, 연습 기록, 기기 식별자나 오디오를 개발자 서버로 보내지 않습니다."],["기기 내 저장","언어, 온보딩 상태, 메트로놈 설정, 저장 템포, 선택한 외관, 연습 요약 및 타이밍 결과는 기기에 로컬로 저장됩니다."],["마이크","튜닝 또는 리듬 듣기를 시작할 때만 마이크 권한을 요청합니다. 음높이와 타이밍 분석은 기기에서 실시간으로 처리되며 원본 녹음을 저장하거나 업로드하지 않습니다."],["카메라 플래시","iPhone에서 플래시 동기화를 켠 경우에만 카메라 권한을 요청하며 후면 플래시를 박자에 맞추는 용도로만 사용합니다. 사진이나 동영상을 촬영, 저장 또는 업로드하지 않습니다."],["백그라운드 오디오와 햅틱","백그라운드 오디오는 연습 중 메트로놈 재생에만 사용되며 햅틱은 기기에서 생성됩니다."],["지원 이메일","지원 문의 시 사용자가 보낸 이메일, 설명, 스크린샷 및 기기 정보만 받습니다. 비밀번호나 기밀 자료를 보내지 마세요."]],"contactTitle":"문의 및 선택","contactBody":"개인정보 문의: kibernet@sina.com. 시스템 설정에서 언제든 권한을 철회할 수 있습니다."},
+      "es":{"metaTitle":"Política de privacidad de SoulChord","metaDescription":"Política de privacidad de SoulChord.","eyebrow":"SoulChord","title":"Política de privacidad","updated":"Última actualización: 12 de julio de 2026","intro":"SoulChord es un metrónomo, afinador y herramienta de práctica rítmica para iPhone, iPad y Mac. Esta política explica cómo trata los datos.","summary":"Resumen: sin cuenta, anuncios, SDK de analítica o fallos, ni seguimiento; el audio se analiza en el dispositivo.","sections":[["Datos y red","La versión actual no incluye cuentas, sincronización en la nube, suscripciones, compras dentro de la app, publicidad, analítica de terceros ni funciones esenciales que requieran red. No envía datos personales, historial de práctica, identificadores ni audio a servidores del desarrollador."],["Almacenamiento local","El idioma, estado de introducción, ajustes, tempos guardados, apariencia, resúmenes de práctica y resultados de tiempo se guardan localmente en el dispositivo."],["Micrófono","Solo se solicita al iniciar la afinación o escucha rítmica. El análisis de tono y tiempo ocurre en el dispositivo; no se guardan ni suben grabaciones originales."],["Linterna de la cámara","En iPhone, la sincronización de flash pide permiso solo al activarla y usa la linterna trasera únicamente con el pulso. No captura, guarda ni sube fotos o vídeo."],["Audio en segundo plano y háptica","El audio en segundo plano solo mantiene el metrónomo durante la práctica; la háptica se genera localmente."],["Correo de soporte","Solo recibimos la información que decides enviar, como correo, descripción, capturas y datos del dispositivo. No envíes contraseñas ni material confidencial."]],"contactTitle":"Contacto y opciones","contactBody":"Para privacidad, escribe a kibernet@sina.com. Puedes revocar permisos en los ajustes del sistema."},
+      "fr":{"metaTitle":"Politique de confidentialité de SoulChord","metaDescription":"Politique de confidentialité de SoulChord.","eyebrow":"SoulChord","title":"Politique de confidentialité","updated":"Dernière mise à jour : 12 juillet 2026","intro":"SoulChord est un métronome, accordeur et outil de pratique rythmique pour iPhone, iPad et Mac. Cette politique explique le traitement des données.","summary":"Résumé : aucun compte, aucune publicité, aucun SDK d'analyse ou de rapport de plantage, aucun suivi ; l'audio est analysé sur l'appareil.","sections":[["Données et réseau","La version actuelle ne comporte ni compte, ni synchronisation cloud, ni abonnement, ni achat intégré, ni publicité, ni analyse tierce, ni fonction principale nécessitant le réseau. Elle n'envoie pas de données personnelles, d'historique, d'identifiant ou d'audio aux serveurs du développeur."],["Stockage local","La langue, l'état d'accueil, les réglages, tempos enregistrés, apparence, résumés de pratique et résultats de timing restent sur l'appareil."],["Microphone","L'autorisation est demandée uniquement au démarrage de l'accordage ou de l'écoute rythmique. L'analyse est locale ; aucun enregistrement brut n'est sauvegardé ou envoyé."],["Torche de la caméra","Sur iPhone, la synchronisation du flash demande l'autorisation uniquement après activation et utilise seulement la torche arrière avec le tempo. Aucune photo ou vidéo n'est capturée, conservée ou envoyée."],["Audio en arrière-plan et haptique","L'audio en arrière-plan sert uniquement au métronome pendant la pratique ; l'haptique est générée localement."],["E-mail d'assistance","Nous recevons uniquement les informations que vous envoyez : e-mail, description, captures et appareil. N'envoyez pas de mots de passe ni de fichiers confidentiels."]],"contactTitle":"Contact et choix","contactBody":"Questions de confidentialité : kibernet@sina.com. Les autorisations peuvent être retirées dans les réglages système."},
+      "de":{"metaTitle":"SoulChord Datenschutzrichtlinie","metaDescription":"Datenschutzrichtlinie für SoulChord.","eyebrow":"SoulChord","title":"Datenschutzrichtlinie","updated":"Zuletzt aktualisiert: 12. Juli 2026","intro":"SoulChord ist ein Metronom, Stimmgerät und Rhythmus-Übungswerkzeug für iPhone, iPad und Mac. Diese Richtlinie erklärt die Datenverarbeitung.","summary":"Kurzfassung: kein Konto, keine Werbung, keine Analyse- oder Absturz-SDKs, kein Tracking; Audioanalyse erfolgt auf dem Gerät.","sections":[["Daten und Netzwerk","Die aktuelle Version enthält keine Konten, Cloud-Synchronisierung, Abonnements, In-App-Käufe, Werbung, Drittanbieter-Analysen oder netzwerkabhängige Kernfunktionen. Personenbezogene Daten, Übungsverlauf, Gerätekennungen oder Audio werden nicht an Entwicklerserver gesendet."],["Lokale Speicherung","Sprache, Einführung, Metronom-Einstellungen, gespeicherte Tempi, Darstellung, Übungszusammenfassungen und Timing-Ergebnisse werden lokal gespeichert."],["Mikrofon","Die Berechtigung wird nur beim Start von Stimmgerät oder Rhythmus-Hören angefordert. Tonhöhe und Timing werden auf dem Gerät analysiert; Rohaufnahmen werden weder gespeichert noch hochgeladen."],["Kamera-Taschenlampe","Auf dem iPhone fragt Flash-Sync nur nach Aktivierung nach der Kameraberechtigung und nutzt ausschließlich die rückseitige Lampe im Takt. Fotos oder Videos werden nicht aufgenommen, gespeichert oder übertragen."],["Hintergrundaudio und Haptik","Hintergrundaudio dient nur der Metronomwiedergabe beim Üben; Haptik wird lokal erzeugt."],["Support-E-Mail","Wir erhalten nur freiwillig gesendete Angaben wie E-Mail, Beschreibung, Screenshots und Gerätedaten. Senden Sie keine Passwörter oder vertraulichen Dateien."]],"contactTitle":"Kontakt und Optionen","contactBody":"Datenschutzfragen: kibernet@sina.com. Berechtigungen können jederzeit in den Systemeinstellungen widerrufen werden."}
+    }
+  }
   </script>
-  <script src="../assets/page-runtime.js"></script>
+  <script>
+    (()=>{const d=JSON.parse(document.getElementById('page-data').textContent),s=document.getElementById('language-select'),c=document.getElementById('content'),key='soulchord-page-language';
+      const norm=v=>{if(!v)return'';v=v.toLowerCase();if(v==='zh'||v.startsWith('zh-cn')||v.startsWith('zh-sg')||v.includes('hans'))return'zh-Hans';if(v.startsWith('zh-tw')||v.startsWith('zh-hk')||v.startsWith('zh-mo')||v.includes('hant'))return'zh-Hant';const b=v.split(/[-_]/)[0];return d.languages.find(x=>x.code.toLowerCase()===v||x.htmlLang.toLowerCase()===v||x.code.toLowerCase().split('-')[0]===b)?.code||''};
+      const pick=()=>{const h=norm(location.hash.slice(1));if(h)return h;try{const x=norm(localStorage.getItem(key));if(x)return x}catch{}for(const x of navigator.languages||[navigator.language]){const n=norm(x);if(n)return n}return d.defaultLanguage};
+      const links=code=>document.querySelectorAll('nav a,.brand').forEach(a=>{const base=a.getAttribute('href').split('#')[0];a.href=code===d.defaultLanguage?base:`${base}#${code}`});
+      const render=code=>{const lang=d.languages.find(x=>x.code===code)||d.languages.find(x=>x.code===d.defaultLanguage),u=d.ui[lang.code],x=d.content[lang.code];document.documentElement.lang=lang.htmlLang;document.documentElement.dir=lang.dir;document.title=x.metaTitle;document.querySelector('meta[name=description]').content=x.metaDescription;document.getElementById('language-label').textContent=u.language;s.setAttribute('aria-label',u.chooseLanguage);document.getElementById('nav-privacy').textContent=u.privacy;document.getElementById('nav-support').textContent=u.support;document.getElementById('nav-age').textContent=u.age;s.value=lang.code;links(lang.code);c.replaceChildren();const add=(tag,text,cls)=>{const e=document.createElement(tag);e.textContent=text;if(cls)e.className=cls;c.append(e);return e};add('p',x.eyebrow,'eyebrow');add('h1',x.title);add('p',x.updated,'updated');add('p',x.intro,'intro');const n=document.createElement('div');n.className='notice';const np=document.createElement('p');np.textContent=x.summary;n.append(np);c.append(n);x.sections.forEach(([t,b])=>{add('h2',t);add('p',b)});add('h2',x.contactTitle);add('p',x.contactBody);const row=document.createElement('div');row.className='links';[[u.support,'../Support/index.html'],[u.age,'../AgeRating/index.html']].forEach(([t,h])=>{const a=document.createElement('a');a.className='pill';a.textContent=t;a.href=lang.code===d.defaultLanguage?h:`${h}#${lang.code}`;row.append(a)});c.append(row);try{localStorage.setItem(key,lang.code)}catch{}};
+      d.languages.forEach(x=>{const o=document.createElement('option');o.value=x.code;o.textContent=x.label;s.append(o)});s.addEventListener('change',()=>{history.replaceState(null,'',s.value===d.defaultLanguage?location.pathname:`#${s.value}`);render(s.value)});render(pick());
+    })();
+  </script>
 </body>
 </html>

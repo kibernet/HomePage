@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ScreenSplitAssist Support</title>
-  <meta name="description" content="Support page for ScreenSplitAssist, a local-first Mac window workspace utility.">
+  <meta name="description" content="Support for ScreenSplitAssist automatic window layouts, Apple Shortcuts setup, templates, displays, and contact information.">
   <style>
     :root{color-scheme:dark light;--bg:#0e1118;--panel:rgba(18,24,34,.92);--panel-soft:rgba(24,32,44,.78);--text:#f8fafc;--muted:#cbd5e1;--quiet:#94a3b8;--line:rgba(148,163,184,.24);--accent:#5eead4;--accent-2:#f7c66a;--shadow:rgba(0,0,0,.34)}
     @media (prefers-color-scheme:light){:root{--bg:#f7fafc;--panel:rgba(255,255,255,.96);--panel-soft:rgba(248,250,252,.92);--text:#111827;--muted:#334155;--quiet:#64748b;--line:rgba(15,23,42,.14);--accent:#0f766e;--accent-2:#9a6700;--shadow:rgba(15,23,42,.12)}}
@@ -26,287 +26,1009 @@
     <main id="localized-content" class="content" role="main"></main>
   </div></div>
   <script type="application/json" id="page-data">
-  {
-    "defaultLanguage": "en",
-    "languages": [
-      {"code": "zh-Hans", "htmlLang": "zh-CN", "label": "简体中文", "dir": "ltr"},
-      {"code": "zh-Hant", "htmlLang": "zh-TW", "label": "繁體中文", "dir": "ltr"},
-      {"code": "en", "htmlLang": "en", "label": "English", "dir": "ltr"},
-      {"code": "ja", "htmlLang": "ja", "label": "日本語", "dir": "ltr"},
-      {"code": "ko", "htmlLang": "ko", "label": "한국어", "dir": "ltr"},
-      {"code": "es", "htmlLang": "es", "label": "Español", "dir": "ltr"},
-      {"code": "fr", "htmlLang": "fr", "label": "Français", "dir": "ltr"},
-      {"code": "de", "htmlLang": "de", "label": "Deutsch", "dir": "ltr"}
-    ],
-    "ui": {
-      "zh-Hans": {"language": "语言", "chooseLanguage": "选择语言", "privacy": "隐私", "support": "支持", "age": "适龄"},
-      "zh-Hant": {"language": "語言", "chooseLanguage": "選擇語言", "privacy": "隱私", "support": "支援", "age": "適齡"},
-      "en": {"language": "Language", "chooseLanguage": "Choose language", "privacy": "Privacy", "support": "Support", "age": "Age Rating"},
-      "ja": {"language": "言語", "chooseLanguage": "言語を選択", "privacy": "プライバシー", "support": "サポート", "age": "年齢制限"},
-      "ko": {"language": "언어", "chooseLanguage": "언어 선택", "privacy": "개인정보", "support": "지원", "age": "연령 등급"},
-      "es": {"language": "Idioma", "chooseLanguage": "Elegir idioma", "privacy": "Privacidad", "support": "Soporte", "age": "Edad"},
-      "fr": {"language": "Langue", "chooseLanguage": "Choisir la langue", "privacy": "Confidentialité", "support": "Assistance", "age": "Âge"},
-      "de": {"language": "Sprache", "chooseLanguage": "Sprache auswählen", "privacy": "Datenschutz", "support": "Support", "age": "Alter"}
+
+{
+  "defaultLanguage": "en",
+  "languages": [
+    {
+      "code": "zh-Hans",
+      "htmlLang": "zh-CN",
+      "label": "简体中文",
+      "dir": "ltr"
     },
-    "content": {
-      "zh-Hans": {
-        "metaTitle": "ScreenSplitAssist 支持",
-        "description": "ScreenSplitAssist / 窗格大师支持页面：辅助功能权限、窗口布局、工作区快照和联系方式。",
-        "eyebrow": "ScreenSplitAssist / 窗格大师 for Mac",
-        "title": "支持",
-        "updated": "最后更新日期：2026 年 7 月 5 日",
-        "intro": "如果你在使用 ScreenSplitAssist 时需要帮助，请通过邮件联系我们，并尽量提供下面的信息。这样我们可以更快复现问题并给出有效建议。",
-        "notice": "ScreenSplitAssist 是本地优先的窗口工作区工具。它没有账号、云同步、广告、追踪、订阅或 App 内购买；窗口排列需要用户在 macOS 中授予辅助功能权限。",
-        "cards": [
-          {"title": "邮箱", "value": "kibernet@sina.com", "href": "mailto:kibernet@sina.com"},
-          {"title": "App", "value": "ScreenSplitAssist / 窗格大师 for Mac"},
-          {"title": "平台", "value": "macOS 14 或更高版本"},
-          {"title": "支持范围", "value": "窗口布局、权限、快照、快捷键和可复现 Bug"}
-        ],
-        "sections": [
-          {"heading": "快速设置", "bullets": ["安装后启动 ScreenSplitAssist。", "按应用引导打开系统设置，并在隐私与安全性 -> 辅助功能中允许 ScreenSplitAssist。", "回到应用，点击刷新，让窗口队列重新读取当前可管理窗口。", "选择目标显示器、布局场景、预设或自定义分屏比例。", "点击应用布局；如使用快捷键，请先确认菜单栏图标正在运行。"]},
-          {"heading": "邮件中建议包含", "bullets": ["你的 macOS 版本、Mac 型号、ScreenSplitAssist 版本和界面语言。", "是否已从 /Applications/ScreenSplitAssist.app 启动，并且辅助功能里是否只有这一份应用授权。", "显示器数量、分辨率、Dock 位置和是否启用了“使用显示器可见区域”。", "使用的布局名称、窗口数量、受影响 App 名称，以及问题发生前的操作步骤。", "错误提示、截图或支持诊断。请不要发送密码、私钥、机密文件或私人窗口内容。"]},
-          {"heading": "核心工作流", "bullets": ["按预设批量排列窗口，例如平衡双栏、主窗口加侧栏、三栏开发布局、会议工作台和四宫格。", "通过自定义分屏编辑器调整主窗口宽度和右侧上下比例。", "保存工作区快照，并在之后恢复窗口位置。", "启用智能槽位匹配，让 IDE、浏览器、终端、会议、笔记和聊天窗口进入合适区域。", "避让全屏、最小化和受保护系统窗口，减少误操作。", "使用菜单栏入口和全局快捷键快速应用布局或撤销上一次排列。"]},
-          {"heading": "常见问题", "faq": [
-            {"question": "为什么需要辅助功能权限？", "answer": "macOS 要求第三方应用获得辅助功能权限后，才能读取窗口元数据并移动或调整其他 App 的窗口。ScreenSplitAssist 只在你触发布局动作时使用该权限。"},
-            {"question": "为什么已经授权后还会弹出权限提示？", "answer": "请退出应用，删除系统设置辅助功能里旧的 ScreenSplitAssist 或窗格大师条目，只从 /Applications/ScreenSplitAssist.app 启动并重新授权。macOS 会把授权绑定到具体 App 副本和签名，DerivedData 或重复副本可能造成混淆。"},
-            {"question": "为什么某个窗口没有移动？", "answer": "全屏窗口、最小化窗口、系统受保护对话框，以及部分限制自动化的 App 窗口可能无法移动。ScreenSplitAssist 会尽量避让这些窗口。"},
-            {"question": "右侧窗口为什么有时不能缩到预期宽度？", "answer": "部分 App 有最小窗口尺寸。ScreenSplitAssist 会读取实际尺寸并把窗口重新收回可见屏幕内，但不能突破目标 App 自身的最小尺寸限制。"},
-            {"question": "工作区快照会同步到云端吗？", "answer": "不会。工作区快照保存在你的 Mac 本机，用于恢复窗口位置和显示器布局。"},
-            {"question": "可以撤销布局动作吗？", "answer": "可以。每次排列前应用都会记录上一次窗口位置，可从应用或快捷键撤销。"},
-            {"question": "会上传窗口标题或应用列表吗？", "answer": "不会。窗口标题、应用名称和窗口位置只在本机用于布局和匹配，不会上传到服务器。"}
-          ]},
-          {"heading": "故障排查清单", "bullets": ["确认正在运行的是 /Applications/ScreenSplitAssist.app，而不是 Xcode DerivedData 或 .build 里的副本。", "如权限状态异常，删除旧授权条目后重新启动并授权。", "确保要排列的窗口没有全屏或最小化。", "点击刷新，确认窗口队列包含你要排列的窗口。", "在多显示器环境中确认目标显示器选择正确。", "如果某个 App 保持较大尺寸，先手动缩小一次，确认该 App 是否有最小窗口限制。"]},
-          {"heading": "隐私提醒", "paragraphs": ["请只发送解决问题所需的最少信息。如果截图包含隐私内容，请先打码。支持邮件不需要密码、私钥、授权码、机密文件或私人窗口内容。"]}
-        ],
-        "links": [{"label": "隐私政策", "href": "../Privacy/index.html"}, {"label": "适龄信息", "href": "../AgeRating/index.html"}]
-      },
-      "zh-Hant": {
-        "metaTitle": "ScreenSplitAssist 支援",
-        "description": "ScreenSplitAssist / 窗格大師支援頁面：輔助功能權限、視窗佈局、工作區快照和聯絡方式。",
-        "eyebrow": "ScreenSplitAssist / 窗格大師 for Mac",
-        "title": "支援",
-        "updated": "最後更新日期：2026 年 7 月 5 日",
-        "intro": "如果你在使用 ScreenSplitAssist 時需要協助，請透過電子郵件聯絡我們，並盡量提供下面的資訊。這樣我們可以更快重現問題並給出有效建議。",
-        "notice": "ScreenSplitAssist 是本地優先的視窗工作區工具。它沒有帳號、雲端同步、廣告、追蹤、訂閱或 App 內購買；視窗排列需要使用者在 macOS 中授予輔助功能權限。",
-        "cards": [
-          {"title": "信箱", "value": "kibernet@sina.com", "href": "mailto:kibernet@sina.com"},
-          {"title": "App", "value": "ScreenSplitAssist / 窗格大師 for Mac"},
-          {"title": "平台", "value": "macOS 14 或更高版本"},
-          {"title": "支援範圍", "value": "視窗佈局、權限、快照、快捷鍵和可重現 Bug"}
-        ],
-        "sections": [
-          {"heading": "快速設定", "bullets": ["安裝後啟動 ScreenSplitAssist。", "依應用程式引導開啟系統設定，並在隱私權與安全性 -> 輔助功能中允許 ScreenSplitAssist。", "回到應用程式，點擊重新整理，讓視窗佇列重新讀取目前可管理視窗。", "選擇目標顯示器、佈局場景、預設或自訂分屏比例。", "點擊套用佈局；如使用快捷鍵，請先確認選單列圖示正在執行。"]},
-          {"heading": "郵件中建議包含", "bullets": ["你的 macOS 版本、Mac 型號、ScreenSplitAssist 版本和介面語言。", "是否已從 /Applications/ScreenSplitAssist.app 啟動，且輔助功能中是否只有這一份應用程式授權。", "顯示器數量、解析度、Dock 位置和是否啟用了「使用顯示器可見區域」。", "使用的佈局名稱、視窗數量、受影響 App 名稱，以及問題發生前的操作步驟。", "錯誤提示、截圖或支援診斷。請不要傳送密碼、私鑰、機密文件或私人視窗內容。"]},
-          {"heading": "核心工作流程", "bullets": ["按預設批次排列視窗，例如平衡雙欄、主視窗加側欄、三欄開發佈局、會議工作台和四宮格。", "透過自訂分屏編輯器調整主視窗寬度和右側上下比例。", "儲存工作區快照，之後恢復視窗位置。", "啟用智慧槽位匹配，讓 IDE、瀏覽器、終端機、會議、筆記和聊天視窗進入合適區域。", "避讓全螢幕、最小化和受保護系統視窗，減少誤操作。", "使用選單列入口和全域快捷鍵快速套用佈局或撤銷上一次排列。"]},
-          {"heading": "常見問題", "faq": [
-            {"question": "為什麼需要輔助功能權限？", "answer": "macOS 要求第三方應用程式取得輔助功能權限後，才能讀取視窗元資料並移動或調整其他 App 的視窗。ScreenSplitAssist 只在你觸發佈局動作時使用該權限。"},
-            {"question": "為什麼已經授權後還會彈出權限提示？", "answer": "請退出應用程式，刪除系統設定輔助功能中舊的 ScreenSplitAssist 或窗格大師項目，只從 /Applications/ScreenSplitAssist.app 啟動並重新授權。macOS 會把授權綁定到具體 App 副本和簽名，DerivedData 或重複副本可能造成混淆。"},
-            {"question": "為什麼某個視窗沒有移動？", "answer": "全螢幕視窗、最小化視窗、系統受保護對話框，以及部分限制自動化的 App 視窗可能無法移動。ScreenSplitAssist 會盡量避讓這些視窗。"},
-            {"question": "右側視窗為什麼有時不能縮到預期寬度？", "answer": "部分 App 有最小視窗尺寸。ScreenSplitAssist 會讀取實際尺寸並把視窗重新收回可見螢幕內，但不能突破目標 App 自身的最小尺寸限制。"},
-            {"question": "工作區快照會同步到雲端嗎？", "answer": "不會。工作區快照儲存在你的 Mac 本機，用於恢復視窗位置和顯示器佈局。"},
-            {"question": "可以撤銷佈局動作嗎？", "answer": "可以。每次排列前應用程式都會記錄上一次視窗位置，可從應用程式或快捷鍵撤銷。"},
-            {"question": "會上傳視窗標題或應用程式清單嗎？", "answer": "不會。視窗標題、應用程式名稱和視窗位置只在本機用於佈局和匹配，不會上傳到伺服器。"}
-          ]},
-          {"heading": "故障排查清單", "bullets": ["確認正在執行的是 /Applications/ScreenSplitAssist.app，而不是 Xcode DerivedData 或 .build 裡的副本。", "如權限狀態異常，刪除舊授權項目後重新啟動並授權。", "確保要排列的視窗沒有全螢幕或最小化。", "點擊重新整理，確認視窗佇列包含你要排列的視窗。", "在多顯示器環境中確認目標顯示器選擇正確。", "如果某個 App 保持較大尺寸，先手動縮小一次，確認該 App 是否有最小視窗限制。"]},
-          {"heading": "隱私提醒", "paragraphs": ["請只傳送解決問題所需的最少資訊。如果截圖包含隱私內容，請先遮蔽。支援郵件不需要密碼、私鑰、授權碼、機密文件或私人視窗內容。"]}
-        ],
-        "links": [{"label": "隱私權政策", "href": "../Privacy/index.html"}, {"label": "適齡資訊", "href": "../AgeRating/index.html"}]
-      },
-      "en": {
-        "metaTitle": "ScreenSplitAssist Support",
-        "description": "Support page for ScreenSplitAssist, including Accessibility permission, window layouts, workspace snapshots, shortcuts, and contact information.",
-        "eyebrow": "ScreenSplitAssist / 窗格大师 for Mac",
-        "title": "Support",
-        "updated": "Last updated: July 5, 2026",
-        "intro": "Need help with ScreenSplitAssist? Email us with the details below so we can reproduce the issue and respond with a useful fix or workaround.",
-        "notice": "ScreenSplitAssist is a local-first window workspace utility. It has no account, cloud sync, ads, tracking, subscriptions, or in-app purchases. Window arrangement requires the user to grant Accessibility permission in macOS.",
-        "cards": [
-          {"title": "Email", "value": "kibernet@sina.com", "href": "mailto:kibernet@sina.com"},
-          {"title": "App", "value": "ScreenSplitAssist / 窗格大师 for Mac"},
-          {"title": "Platform", "value": "macOS 14 or later"},
-          {"title": "Support Scope", "value": "Window layouts, permissions, snapshots, shortcuts, and reproducible bugs"}
-        ],
-        "sections": [
-          {"heading": "Quick Setup", "bullets": ["Launch ScreenSplitAssist after installation.", "Follow the in-app guide to open System Settings, then allow ScreenSplitAssist under Privacy & Security -> Accessibility.", "Return to the app and click Refresh so the window queue reads current manageable windows.", "Choose the target display, layout scene, preset, or custom split ratio.", "Click Apply Layout. If you use shortcuts, confirm the menu bar icon is running first."]},
-          {"heading": "What to Include in Support Email", "bullets": ["Your macOS version, Mac model, ScreenSplitAssist version, and app language.", "Whether the app was launched from /Applications/ScreenSplitAssist.app and whether Accessibility lists only that app copy.", "Number of displays, resolution, Dock position, and whether Use display visible area is enabled.", "The layout name, window count, affected app names, and steps taken before the issue.", "Exact error text, screenshots, or support diagnostics. Do not send passwords, private keys, confidential files, or private window contents."]},
-          {"heading": "Core Workflows", "bullets": ["Batch-arrange windows with presets such as balanced halves, main plus side, developer three column, meeting desk, and four-up grid.", "Adjust main-window width and side split ratios in the custom split editor.", "Save workspace snapshots and restore window positions later.", "Use smart slot matching so IDE, browser, terminal, meeting, notes, and chat windows land in suitable areas.", "Avoid full-screen, minimized, and protected system windows to reduce disruption.", "Use the menu bar entry and global shortcuts to apply layouts or undo the last arrangement."]},
-          {"heading": "Frequently Asked Questions", "faq": [
-            {"question": "Why is Accessibility permission required?", "answer": "macOS requires Accessibility permission before a third-party app can read window metadata and move or resize windows from other apps. ScreenSplitAssist uses it only for layout actions you trigger."},
-            {"question": "Why does macOS still ask after permission is enabled?", "answer": "Quit the app, remove old ScreenSplitAssist or 窗格大师 entries from Accessibility settings, then launch only /Applications/ScreenSplitAssist.app and authorize it again. macOS ties approval to the exact app copy and signature, so DerivedData or duplicate copies can confuse the permission state."},
-            {"question": "Why did a window not move?", "answer": "Full-screen windows, minimized windows, protected system dialogs, and some automation-restricted app windows may not be movable. ScreenSplitAssist tries to avoid these windows."},
-            {"question": "Why can a right-side window be wider than expected?", "answer": "Some apps enforce a minimum window size. ScreenSplitAssist reads the actual size and pulls the window back inside the visible screen, but it cannot bypass the target app's own minimum size."},
-            {"question": "Do workspace snapshots sync to cloud?", "answer": "No. Workspace snapshots are stored locally on your Mac and are used to restore window positions and display placement."},
-            {"question": "Can I undo a layout action?", "answer": "Yes. The app records previous window positions before each arrangement, so you can undo from the app or shortcut."},
-            {"question": "Does ScreenSplitAssist upload window titles or app lists?", "answer": "No. Window titles, app names, and positions are processed locally for layout and matching only, and are not uploaded to a server."}
-          ]},
-          {"heading": "Troubleshooting Checklist", "bullets": ["Confirm the running app is /Applications/ScreenSplitAssist.app, not a copy from Xcode DerivedData or .build.", "If permission state looks wrong, remove old Accessibility entries, relaunch, and authorize again.", "Make sure the target windows are not full-screen or minimized.", "Click Refresh and confirm the window queue includes the windows you want to arrange.", "In a multi-display setup, confirm the target display is selected correctly.", "If one app remains large, manually resize it once to check whether the app has a minimum window size."]},
-          {"heading": "Privacy Reminder", "paragraphs": ["Send only the minimum information needed for support. If a screenshot contains private information, redact it first. Support email does not require passwords, private keys, license secrets, confidential files, or private window contents."]}
-        ],
-        "links": [{"label": "Privacy Policy", "href": "../Privacy/index.html"}, {"label": "Age Rating Information", "href": "../AgeRating/index.html"}]
-      },
-      "ja": {
-        "metaTitle": "ScreenSplitAssist サポート",
-        "description": "ScreenSplitAssist のサポートページ。アクセシビリティ権限、ウィンドウレイアウト、ワークスペーススナップショット、ショートカット、連絡先情報を含みます。",
-        "eyebrow": "ScreenSplitAssist / 窗格大师 for Mac",
-        "title": "サポート",
-        "updated": "最終更新日：2026年7月5日",
-        "intro": "ScreenSplitAssist についてサポートが必要な場合は、以下の情報を添えてメールでご連絡ください。問題を再現し、有用な修正または回避策を案内しやすくなります。",
-        "notice": "ScreenSplitAssist はローカル優先のウィンドウワークスペースユーティリティです。アカウント、クラウド同期、広告、追跡、サブスクリプション、アプリ内購入はありません。ウィンドウ配置には、macOS でユーザーがアクセシビリティ権限を付与する必要があります。",
-        "cards": [
-          {"title": "メール", "value": "kibernet@sina.com", "href": "mailto:kibernet@sina.com"},
-          {"title": "App", "value": "ScreenSplitAssist / 窗格大师 for Mac"},
-          {"title": "プラットフォーム", "value": "macOS 14 以降"},
-          {"title": "サポート範囲", "value": "ウィンドウレイアウト、権限、スナップショット、ショートカット、再現可能な不具合"}
-        ],
-        "sections": [
-          {"heading": "クイック設定", "bullets": ["インストール後に ScreenSplitAssist を起動します。", "アプリ内ガイドに従ってシステム設定を開き、プライバシーとセキュリティ -> アクセシビリティで ScreenSplitAssist を許可します。", "アプリに戻り、更新をクリックして現在管理可能なウィンドウを読み込みます。", "対象ディスプレイ、レイアウトシーン、プリセット、またはカスタム分割比率を選択します。", "レイアウトを適用をクリックします。ショートカットを使う場合は、先にメニューバーアイコンが動作していることを確認します。"]},
-          {"heading": "サポートメールに含める内容", "bullets": ["macOS バージョン、Mac モデル、ScreenSplitAssist バージョン、アプリ言語。", "アプリを /Applications/ScreenSplitAssist.app から起動したか、アクセシビリティにそのコピーだけが表示されているか。", "ディスプレイ数、解像度、Dock 位置、表示可能領域を使う設定の有無。", "レイアウト名、ウィンドウ数、影響を受けたアプリ名、問題発生前の手順。", "正確なエラー文、スクリーンショット、またはサポート診断。パスワード、秘密鍵、機密ファイル、個人的なウィンドウ内容は送信しないでください。"]},
-          {"heading": "主なワークフロー", "bullets": ["左右分割、メインとサイド、開発用三列、会議デスク、四分割などのプリセットでウィンドウを一括配置します。", "カスタム分割エディタでメインウィンドウ幅とサイド上下比率を調整します。", "ワークスペーススナップショットを保存し、後でウィンドウ位置を復元します。", "スマートスロット照合により、IDE、ブラウザ、ターミナル、会議、メモ、チャットのウィンドウを適切な領域に配置します。", "全画面、最小化、保護されたシステムウィンドウを避け、予期しない操作を減らします。", "メニューバー項目とグローバルショートカットでレイアウト適用や直前の配置の取り消しを行います。"]},
-          {"heading": "よくある質問", "faq": [
-            {"question": "なぜアクセシビリティ権限が必要ですか？", "answer": "macOS では、第三者アプリが他のアプリのウィンドウメタデータを読み取り、移動やサイズ変更を行う前にアクセシビリティ権限が必要です。ScreenSplitAssist はユーザーが実行したレイアウト操作にのみ使用します。"},
-            {"question": "権限を有効にしても macOS が再度求めるのはなぜですか？", "answer": "アプリを終了し、アクセシビリティ設定から古い ScreenSplitAssist または窗格大师 の項目を削除してから、/Applications/ScreenSplitAssist.app だけを起動して再承認してください。macOS は承認を正確なアプリコピーと署名に結び付けるため、DerivedData や重複コピーが状態を混乱させることがあります。"},
-            {"question": "なぜ一部のウィンドウが動きませんか？", "answer": "全画面ウィンドウ、最小化ウィンドウ、保護されたシステムダイアログ、一部の自動化を制限するアプリのウィンドウは移動できない場合があります。ScreenSplitAssist はこれらを避けようとします。"},
-            {"question": "右側のウィンドウが予想より広いことがあるのはなぜですか？", "answer": "一部のアプリは最小ウィンドウサイズを強制します。ScreenSplitAssist は実際のサイズを読み取り、表示可能な画面内に戻しますが、対象アプリ自体の最小サイズ制限を超えることはできません。"},
-            {"question": "ワークスペーススナップショットはクラウド同期されますか？", "answer": "いいえ。スナップショットは Mac にローカル保存され、ウィンドウ位置とディスプレイ配置の復元に使用されます。"},
-            {"question": "レイアウト操作を取り消せますか？", "answer": "はい。各配置の前に以前のウィンドウ位置を記録するため、アプリまたはショートカットから取り消せます。"},
-            {"question": "ウィンドウタイトルやアプリ一覧はアップロードされますか？", "answer": "いいえ。ウィンドウタイトル、アプリ名、位置はローカルでレイアウトと照合のためだけに処理され、サーバーにはアップロードされません。"}
-          ]},
-          {"heading": "トラブルシューティングチェックリスト", "bullets": ["実行中のアプリが Xcode DerivedData や .build ではなく /Applications/ScreenSplitAssist.app であることを確認します。", "権限状態が不正に見える場合は古いアクセシビリティ項目を削除し、再起動して再承認します。", "対象ウィンドウが全画面または最小化されていないことを確認します。", "更新をクリックし、配置したいウィンドウがキューに含まれていることを確認します。", "複数ディスプレイ環境では対象ディスプレイが正しいことを確認します。", "特定のアプリが大きいままの場合は、一度手動で縮小して最小ウィンドウサイズがあるか確認します。"]},
-          {"heading": "プライバシーの注意", "paragraphs": ["サポートに必要な最小限の情報だけを送信してください。スクリーンショットに個人情報が含まれる場合は事前に編集してください。サポートメールにパスワード、秘密鍵、ライセンス情報、機密ファイル、個人的なウィンドウ内容は不要です。"]}
-        ],
-        "links": [{"label": "プライバシーポリシー", "href": "../Privacy/index.html"}, {"label": "年齢制限情報", "href": "../AgeRating/index.html"}]
-      },
-      "ko": {
-        "metaTitle": "ScreenSplitAssist 지원",
-        "description": "ScreenSplitAssist 지원 페이지: 손쉬운 사용 권한, 창 레이아웃, 작업 공간 스냅샷, 단축키 및 연락처 정보.",
-        "eyebrow": "ScreenSplitAssist / 窗格大师 for Mac",
-        "title": "지원",
-        "updated": "최종 업데이트: 2026년 7월 5일",
-        "intro": "ScreenSplitAssist 사용 중 도움이 필요하면 아래 정보를 포함해 이메일로 문의해 주세요. 문제를 재현하고 유용한 해결책이나 우회 방법을 안내하는 데 도움이 됩니다.",
-        "notice": "ScreenSplitAssist는 로컬 우선 창 작업 공간 유틸리티입니다. 계정, 클라우드 동기화, 광고, 추적, 구독 또는 앱 내 구입이 없습니다. 창 정렬에는 사용자가 macOS에서 손쉬운 사용 권한을 부여해야 합니다.",
-        "cards": [
-          {"title": "이메일", "value": "kibernet@sina.com", "href": "mailto:kibernet@sina.com"},
-          {"title": "App", "value": "ScreenSplitAssist / 窗格大师 for Mac"},
-          {"title": "플랫폼", "value": "macOS 14 이상"},
-          {"title": "지원 범위", "value": "창 레이아웃, 권한, 스냅샷, 단축키 및 재현 가능한 버그"}
-        ],
-        "sections": [
-          {"heading": "빠른 설정", "bullets": ["설치 후 ScreenSplitAssist를 실행합니다.", "앱 안내에 따라 시스템 설정을 열고 개인정보 보호 및 보안 -> 손쉬운 사용에서 ScreenSplitAssist를 허용합니다.", "앱으로 돌아와 새로 고침을 클릭하여 현재 관리 가능한 창을 읽습니다.", "대상 디스플레이, 레이아웃 장면, 프리셋 또는 사용자 지정 분할 비율을 선택합니다.", "레이아웃 적용을 클릭합니다. 단축키를 사용하는 경우 먼저 메뉴 막대 아이콘이 실행 중인지 확인합니다."]},
-          {"heading": "지원 이메일에 포함할 내용", "bullets": ["macOS 버전, Mac 모델, ScreenSplitAssist 버전 및 앱 언어.", "앱을 /Applications/ScreenSplitAssist.app에서 실행했는지, 손쉬운 사용 목록에 해당 앱 복사본만 있는지.", "디스플레이 수, 해상도, Dock 위치 및 디스플레이 가시 영역 사용 설정 여부.", "레이아웃 이름, 창 수, 영향을 받은 앱 이름 및 문제 전 단계.", "정확한 오류 문구, 스크린샷 또는 지원 진단. 비밀번호, 개인 키, 기밀 파일 또는 개인 창 내용을 보내지 마십시오."]},
-          {"heading": "핵심 워크플로", "bullets": ["균형 분할, 메인+사이드, 개발자 3열, 회의 데스크, 4분할 그리드와 같은 프리셋으로 창을 일괄 정렬합니다.", "사용자 지정 분할 편집기에서 메인 창 너비와 사이드 상하 비율을 조정합니다.", "작업 공간 스냅샷을 저장하고 나중에 창 위치를 복원합니다.", "스마트 슬롯 매칭으로 IDE, 브라우저, 터미널, 회의, 노트, 채팅 창을 적절한 영역에 배치합니다.", "전체 화면, 최소화 및 보호된 시스템 창을 피하여 방해를 줄입니다.", "메뉴 막대 항목과 전역 단축키로 레이아웃 적용 또는 마지막 정렬 실행 취소를 수행합니다."]},
-          {"heading": "자주 묻는 질문", "faq": [
-            {"question": "왜 손쉬운 사용 권한이 필요한가요?", "answer": "macOS는 타사 앱이 다른 앱의 창 메타데이터를 읽고 창을 이동하거나 크기를 조정하기 전에 손쉬운 사용 권한을 요구합니다. ScreenSplitAssist는 사용자가 트리거한 레이아웃 작업에만 이 권한을 사용합니다."},
-            {"question": "권한을 켰는데도 macOS가 다시 요청하는 이유는 무엇인가요?", "answer": "앱을 종료하고 손쉬운 사용 설정에서 오래된 ScreenSplitAssist 또는 窗格大师 항목을 삭제한 뒤 /Applications/ScreenSplitAssist.app만 실행하여 다시 승인하세요. macOS는 승인을 정확한 앱 복사본과 서명에 연결하므로 DerivedData 또는 중복 복사본이 권한 상태를 혼동시킬 수 있습니다."},
-            {"question": "왜 어떤 창은 움직이지 않나요?", "answer": "전체 화면 창, 최소화된 창, 보호된 시스템 대화상자 및 일부 자동화가 제한된 앱 창은 이동할 수 없을 수 있습니다. ScreenSplitAssist는 이러한 창을 피하려고 합니다."},
-            {"question": "오른쪽 창이 예상보다 넓은 이유는 무엇인가요?", "answer": "일부 앱은 최소 창 크기를 강제합니다. ScreenSplitAssist는 실제 크기를 읽고 창을 보이는 화면 안으로 다시 이동하지만 대상 앱 자체의 최소 크기 제한을 우회할 수는 없습니다."},
-            {"question": "작업 공간 스냅샷이 클라우드에 동기화되나요?", "answer": "아니요. 스냅샷은 Mac에 로컬로 저장되며 창 위치와 디스플레이 배치를 복원하는 데 사용됩니다."},
-            {"question": "레이아웃 작업을 취소할 수 있나요?", "answer": "예. 앱은 각 정렬 전에 이전 창 위치를 기록하므로 앱이나 단축키에서 실행 취소할 수 있습니다."},
-            {"question": "창 제목이나 앱 목록이 업로드되나요?", "answer": "아니요. 창 제목, 앱 이름, 위치는 레이아웃과 매칭을 위해 로컬에서만 처리되며 서버로 업로드되지 않습니다."}
-          ]},
-          {"heading": "문제 해결 체크리스트", "bullets": ["실행 중인 앱이 Xcode DerivedData 또는 .build 복사본이 아니라 /Applications/ScreenSplitAssist.app인지 확인합니다.", "권한 상태가 이상하면 오래된 손쉬운 사용 항목을 삭제하고 다시 실행한 뒤 승인합니다.", "대상 창이 전체 화면 또는 최소화 상태가 아닌지 확인합니다.", "새로 고침을 클릭하고 정렬할 창이 창 대기열에 포함되어 있는지 확인합니다.", "여러 디스플레이 환경에서는 대상 디스플레이가 올바른지 확인합니다.", "특정 앱이 계속 크게 유지되면 한 번 수동으로 줄여 최소 창 크기가 있는지 확인합니다."]},
-          {"heading": "개인정보 알림", "paragraphs": ["지원에 필요한 최소한의 정보만 보내 주세요. 스크린샷에 개인정보가 포함되어 있으면 먼저 가리십시오. 지원 이메일에는 비밀번호, 개인 키, 라이선스 비밀, 기밀 파일 또는 개인 창 내용이 필요하지 않습니다."]}
-        ],
-        "links": [{"label": "개인정보 처리방침", "href": "../Privacy/index.html"}, {"label": "연령 등급 정보", "href": "../AgeRating/index.html"}]
-      },
-      "es": {
-        "metaTitle": "Soporte de ScreenSplitAssist",
-        "description": "Página de soporte de ScreenSplitAssist, con permiso de Accesibilidad, diseños de ventanas, instantáneas de espacios de trabajo, atajos e información de contacto.",
-        "eyebrow": "ScreenSplitAssist / 窗格大师 para Mac",
-        "title": "Soporte",
-        "updated": "Última actualización: 5 de julio de 2026",
-        "intro": "¿Necesitas ayuda con ScreenSplitAssist? Escríbenos con los detalles siguientes para que podamos reproducir el problema y responder con una solución o alternativa útil.",
-        "notice": "ScreenSplitAssist es una utilidad local de espacios de trabajo de ventanas. No tiene cuenta, sincronización en la nube, anuncios, seguimiento, suscripciones ni compras dentro de la app. La organización de ventanas requiere que el usuario conceda el permiso de Accesibilidad en macOS.",
-        "cards": [
-          {"title": "Correo", "value": "kibernet@sina.com", "href": "mailto:kibernet@sina.com"},
-          {"title": "App", "value": "ScreenSplitAssist / 窗格大师 para Mac"},
-          {"title": "Plataforma", "value": "macOS 14 o posterior"},
-          {"title": "Alcance del soporte", "value": "Diseños, permisos, instantáneas, atajos y errores reproducibles"}
-        ],
-        "sections": [
-          {"heading": "Configuración rápida", "bullets": ["Inicia ScreenSplitAssist después de instalarlo.", "Sigue la guía de la app para abrir Ajustes del Sistema y permite ScreenSplitAssist en Privacidad y seguridad -> Accesibilidad.", "Vuelve a la app y pulsa Actualizar para que la cola de ventanas lea las ventanas manejables actuales.", "Elige la pantalla de destino, escena de diseño, preajuste o proporción personalizada.", "Pulsa Aplicar diseño. Si usas atajos, confirma primero que el icono de la barra de menús está activo."]},
-          {"heading": "Qué incluir en el correo de soporte", "bullets": ["Tu versión de macOS, modelo de Mac, versión de ScreenSplitAssist e idioma de la app.", "Si la app se inició desde /Applications/ScreenSplitAssist.app y si Accesibilidad muestra solo esa copia.", "Número de pantallas, resolución, posición del Dock y si está activado Usar área visible de la pantalla.", "Nombre del diseño, número de ventanas, apps afectadas y pasos previos al problema.", "Texto exacto del error, capturas o diagnósticos de soporte. No envíes contraseñas, claves privadas, archivos confidenciales ni contenido privado de ventanas."]},
-          {"heading": "Flujos principales", "bullets": ["Organiza ventanas por lotes con preajustes como mitades equilibradas, principal con lateral, tres columnas para desarrollo, escritorio de reuniones y cuadrícula 2x2.", "Ajusta el ancho de la ventana principal y las proporciones laterales en el editor personalizado.", "Guarda instantáneas de espacios de trabajo y restaura posiciones de ventanas más tarde.", "Usa coincidencia inteligente para colocar IDE, navegador, terminal, reuniones, notas y chats en zonas adecuadas.", "Evita ventanas en pantalla completa, minimizadas y protegidas del sistema para reducir interrupciones.", "Usa la barra de menús y atajos globales para aplicar diseños o deshacer la última organización."]},
-          {"heading": "Preguntas frecuentes", "faq": [
-            {"question": "¿Por qué se requiere el permiso de Accesibilidad?", "answer": "macOS exige este permiso antes de que una app de terceros pueda leer metadatos de ventanas y mover o redimensionar ventanas de otras apps. ScreenSplitAssist lo usa solo para acciones de diseño que tú activas."},
-            {"question": "¿Por qué macOS sigue pidiendo permiso si ya está activado?", "answer": "Cierra la app, elimina entradas antiguas de ScreenSplitAssist o 窗格大师 en Accesibilidad, inicia solo /Applications/ScreenSplitAssist.app y autorízala de nuevo. macOS vincula la aprobación a la copia exacta y a su firma; copias de DerivedData o duplicadas pueden confundir el estado."},
-            {"question": "¿Por qué una ventana no se movió?", "answer": "Las ventanas a pantalla completa, minimizadas, diálogos protegidos del sistema y algunas ventanas de apps con automatización restringida pueden no moverse. ScreenSplitAssist intenta evitarlas."},
-            {"question": "¿Por qué una ventana derecha puede ser más ancha de lo esperado?", "answer": "Algunas apps imponen un tamaño mínimo. ScreenSplitAssist lee el tamaño real y devuelve la ventana dentro de la pantalla visible, pero no puede saltarse el mínimo propio de la app."},
-            {"question": "¿Las instantáneas se sincronizan con la nube?", "answer": "No. Se guardan localmente en tu Mac y se usan para restaurar posiciones y ubicación en pantallas."},
-            {"question": "¿Puedo deshacer una acción de diseño?", "answer": "Sí. La app registra las posiciones anteriores antes de cada organización para que puedas deshacer desde la app o con un atajo."},
-            {"question": "¿ScreenSplitAssist sube títulos de ventanas o listas de apps?", "answer": "No. Los títulos, nombres de apps y posiciones se procesan localmente solo para diseño y coincidencia, y no se suben a un servidor."}
-          ]},
-          {"heading": "Lista de comprobación", "bullets": ["Confirma que la app en ejecución es /Applications/ScreenSplitAssist.app, no una copia de Xcode DerivedData o .build.", "Si el permiso parece incorrecto, elimina entradas antiguas, reinicia y autoriza de nuevo.", "Asegúrate de que las ventanas objetivo no estén en pantalla completa ni minimizadas.", "Pulsa Actualizar y confirma que la cola incluye las ventanas que quieres organizar.", "En varios monitores, confirma que la pantalla de destino es correcta.", "Si una app sigue grande, redimensiónala manualmente una vez para comprobar si tiene tamaño mínimo."]},
-          {"heading": "Recordatorio de privacidad", "paragraphs": ["Envía solo la información mínima necesaria para el soporte. Si una captura contiene información privada, ocúltala antes. El correo de soporte no requiere contraseñas, claves privadas, licencias, archivos confidenciales ni contenido privado de ventanas."]}
-        ],
-        "links": [{"label": "Política de privacidad", "href": "../Privacy/index.html"}, {"label": "Información de edad", "href": "../AgeRating/index.html"}]
-      },
-      "fr": {
-        "metaTitle": "Assistance ScreenSplitAssist",
-        "description": "Page d’assistance de ScreenSplitAssist : autorisation Accessibilité, dispositions de fenêtres, instantanés d’espace de travail, raccourcis et contact.",
-        "eyebrow": "ScreenSplitAssist / 窗格大师 pour Mac",
-        "title": "Assistance",
-        "updated": "Dernière mise à jour : 5 juillet 2026",
-        "intro": "Besoin d’aide avec ScreenSplitAssist ? Envoyez-nous les informations ci-dessous afin que nous puissions reproduire le problème et répondre avec une correction ou solution utile.",
-        "notice": "ScreenSplitAssist est un utilitaire local d’espace de travail de fenêtres. Il n’a pas de compte, synchronisation cloud, publicité, suivi, abonnement ni achat intégré. L’organisation des fenêtres nécessite l’autorisation Accessibilité accordée par l’utilisateur dans macOS.",
-        "cards": [
-          {"title": "E-mail", "value": "kibernet@sina.com", "href": "mailto:kibernet@sina.com"},
-          {"title": "App", "value": "ScreenSplitAssist / 窗格大师 pour Mac"},
-          {"title": "Plateforme", "value": "macOS 14 ou version ultérieure"},
-          {"title": "Portée de l’assistance", "value": "Dispositions, permissions, instantanés, raccourcis et bogues reproductibles"}
-        ],
-        "sections": [
-          {"heading": "Configuration rapide", "bullets": ["Lancez ScreenSplitAssist après l’installation.", "Suivez le guide intégré pour ouvrir Réglages Système, puis autorisez ScreenSplitAssist dans Confidentialité et sécurité -> Accessibilité.", "Revenez dans l’app et cliquez sur Actualiser afin que la file de fenêtres lise les fenêtres gérables actuelles.", "Choisissez l’écran cible, la scène, le préréglage ou le ratio personnalisé.", "Cliquez sur Appliquer la disposition. Si vous utilisez des raccourcis, vérifiez d’abord que l’icône de barre de menus est active."]},
-          {"heading": "À inclure dans l’e-mail", "bullets": ["Votre version de macOS, modèle de Mac, version de ScreenSplitAssist et langue de l’app.", "Si l’app a été lancée depuis /Applications/ScreenSplitAssist.app et si Accessibilité ne liste que cette copie.", "Nombre d’écrans, résolution, position du Dock et activation de l’option Utiliser la zone visible de l’écran.", "Nom de la disposition, nombre de fenêtres, apps concernées et étapes avant le problème.", "Texte exact de l’erreur, captures ou diagnostics. N’envoyez pas de mots de passe, clés privées, fichiers confidentiels ou contenu privé de fenêtres."]},
-          {"heading": "Flux principaux", "bullets": ["Organiser des fenêtres par lots avec des préréglages comme moitiés équilibrées, principal avec côté, trois colonnes de développement, bureau de réunion et grille quatre zones.", "Ajuster la largeur principale et les ratios latéraux dans l’éditeur personnalisé.", "Enregistrer des instantanés d’espace de travail et restaurer les positions plus tard.", "Utiliser la correspondance intelligente pour placer IDE, navigateur, terminal, réunion, notes et chat dans les zones adaptées.", "Éviter les fenêtres plein écran, réduites et protégées du système pour limiter les perturbations.", "Utiliser la barre de menus et les raccourcis globaux pour appliquer une disposition ou annuler la dernière organisation."]},
-          {"heading": "Questions fréquentes", "faq": [
-            {"question": "Pourquoi l’autorisation Accessibilité est-elle nécessaire ?", "answer": "macOS exige cette autorisation avant qu’une app tierce puisse lire les métadonnées de fenêtres et déplacer ou redimensionner des fenêtres d’autres apps. ScreenSplitAssist l’utilise uniquement pour les actions que vous déclenchez."},
-            {"question": "Pourquoi macOS redemande l’autorisation ?", "answer": "Quittez l’app, supprimez les anciennes entrées ScreenSplitAssist ou 窗格大师 dans Accessibilité, puis lancez uniquement /Applications/ScreenSplitAssist.app et autorisez-la à nouveau. macOS lie l’autorisation à la copie exacte et à sa signature ; les copies DerivedData ou dupliquées peuvent créer une confusion."},
-            {"question": "Pourquoi une fenêtre n’a-t-elle pas bougé ?", "answer": "Les fenêtres plein écran, réduites, dialogues système protégés et certaines fenêtres d’apps limitant l’automatisation peuvent ne pas être déplaçables. ScreenSplitAssist tente de les éviter."},
-            {"question": "Pourquoi une fenêtre de droite peut-elle être plus large que prévu ?", "answer": "Certaines apps imposent une taille minimale. ScreenSplitAssist lit la taille réelle et replace la fenêtre dans l’écran visible, mais ne peut pas contourner la taille minimale de l’app cible."},
-            {"question": "Les instantanés se synchronisent-ils dans le cloud ?", "answer": "Non. Ils sont stockés localement sur votre Mac et servent à restaurer positions et placement sur écrans."},
-            {"question": "Puis-je annuler une disposition ?", "answer": "Oui. L’app enregistre les positions précédentes avant chaque organisation, vous pouvez donc annuler depuis l’app ou un raccourci."},
-            {"question": "ScreenSplitAssist téléverse-t-il les titres de fenêtres ou listes d’apps ?", "answer": "Non. Les titres, noms d’apps et positions sont traités localement uniquement pour la disposition et la correspondance, sans téléversement vers un serveur."}
-          ]},
-          {"heading": "Liste de dépannage", "bullets": ["Confirmez que l’app en cours d’exécution est /Applications/ScreenSplitAssist.app, pas une copie Xcode DerivedData ou .build.", "Si l’état de permission semble incorrect, supprimez les anciennes entrées Accessibilité, relancez et autorisez à nouveau.", "Assurez-vous que les fenêtres cibles ne sont pas plein écran ni réduites.", "Cliquez sur Actualiser et confirmez que la file contient les fenêtres à organiser.", "En configuration multi-écrans, vérifiez que l’écran cible est correct.", "Si une app reste grande, réduisez-la manuellement une fois pour vérifier une taille minimale."]},
-          {"heading": "Rappel de confidentialité", "paragraphs": ["N’envoyez que le minimum nécessaire au support. Si une capture contient des informations privées, masquez-les d’abord. L’e-mail de support ne nécessite pas de mots de passe, clés privées, secrets de licence, fichiers confidentiels ou contenu privé de fenêtres."]}
-        ],
-        "links": [{"label": "Politique de confidentialité", "href": "../Privacy/index.html"}, {"label": "Informations d’âge", "href": "../AgeRating/index.html"}]
-      },
-      "de": {
-        "metaTitle": "ScreenSplitAssist Support",
-        "description": "Supportseite für ScreenSplitAssist mit Bedienungshilfen-Berechtigung, Fensterlayouts, Arbeitsbereich-Schnappschüssen, Kurzbefehlen und Kontaktinformationen.",
-        "eyebrow": "ScreenSplitAssist / 窗格大师 für Mac",
-        "title": "Support",
-        "updated": "Zuletzt aktualisiert: 5. Juli 2026",
-        "intro": "Benötigen Sie Hilfe mit ScreenSplitAssist? Schreiben Sie uns mit den unten genannten Details, damit wir das Problem reproduzieren und eine passende Lösung oder Umgehung anbieten können.",
-        "notice": "ScreenSplitAssist ist ein lokal arbeitendes Fenster-Arbeitsbereichswerkzeug. Es gibt kein Konto, keine Cloud-Synchronisierung, Werbung, Tracking, Abonnements oder In-App-Käufe. Fensteranordnung erfordert die vom Benutzer erteilte macOS-Berechtigung für Bedienungshilfen.",
-        "cards": [
-          {"title": "E-Mail", "value": "kibernet@sina.com", "href": "mailto:kibernet@sina.com"},
-          {"title": "App", "value": "ScreenSplitAssist / 窗格大师 für Mac"},
-          {"title": "Plattform", "value": "macOS 14 oder neuer"},
-          {"title": "Supportumfang", "value": "Fensterlayouts, Berechtigungen, Schnappschüsse, Kurzbefehle und reproduzierbare Fehler"}
-        ],
-        "sections": [
-          {"heading": "Schnelle Einrichtung", "bullets": ["Starten Sie ScreenSplitAssist nach der Installation.", "Folgen Sie der Anleitung in der App, öffnen Sie Systemeinstellungen und erlauben Sie ScreenSplitAssist unter Datenschutz & Sicherheit -> Bedienungshilfen.", "Kehren Sie zur App zurück und klicken Sie auf Aktualisieren, damit die Fensterwarteschlange aktuelle verwaltbare Fenster liest.", "Wählen Sie Zielanzeige, Layoutszene, Vorlage oder eigenes Teilungsverhältnis.", "Klicken Sie auf Layout anwenden. Wenn Sie Kurzbefehle verwenden, prüfen Sie zuerst, dass das Menüleistensymbol läuft."]},
-          {"heading": "Was in die Support-E-Mail gehört", "bullets": ["Ihre macOS-Version, Ihr Mac-Modell, die ScreenSplitAssist-Version und App-Sprache.", "Ob die App aus /Applications/ScreenSplitAssist.app gestartet wurde und ob Bedienungshilfen nur diese App-Kopie aufführt.", "Anzahl der Displays, Auflösung, Dock-Position und ob sichtbarer Displaybereich aktiviert ist.", "Layoutname, Fensteranzahl, betroffene App-Namen und Schritte vor dem Problem.", "Exakte Fehlermeldung, Screenshots oder Supportdiagnose. Senden Sie keine Passwörter, privaten Schlüssel, vertraulichen Dateien oder privaten Fensterinhalte."]},
-          {"heading": "Kernabläufe", "bullets": ["Fenster stapelweise mit Vorlagen wie ausgeglichene Hälften, Hauptfenster plus Seite, Entwickler-Dreispalte, Meeting-Schreibtisch und Vierer-Raster anordnen.", "Hauptfensterbreite und Seitenverhältnisse im eigenen Split-Editor anpassen.", "Arbeitsbereich-Schnappschüsse speichern und Fensterpositionen später wiederherstellen.", "Intelligente Slot-Zuordnung nutzen, damit IDE, Browser, Terminal, Meetings, Notizen und Chat in passende Bereiche gelangen.", "Vollbild-, minimierte und geschützte Systemfenster vermeiden, um Störungen zu reduzieren.", "Menüleisteneintrag und globale Kurzbefehle zum Anwenden von Layouts oder Rückgängigmachen der letzten Anordnung verwenden."]},
-          {"heading": "Häufige Fragen", "faq": [
-            {"question": "Warum ist die Berechtigung für Bedienungshilfen erforderlich?", "answer": "macOS verlangt diese Berechtigung, bevor eine Drittanbieter-App Fenstermetadaten lesen und Fenster anderer Apps verschieben oder skalieren kann. ScreenSplitAssist verwendet sie nur für von Ihnen ausgelöste Layoutaktionen."},
-            {"question": "Warum fragt macOS trotz aktivierter Berechtigung erneut?", "answer": "Beenden Sie die App, entfernen Sie alte ScreenSplitAssist- oder 窗格大师-Einträge aus Bedienungshilfen, starten Sie nur /Applications/ScreenSplitAssist.app und autorisieren Sie erneut. macOS bindet die Freigabe an die exakte App-Kopie und Signatur; DerivedData- oder doppelte Kopien können den Status verwirren."},
-            {"question": "Warum wurde ein Fenster nicht bewegt?", "answer": "Vollbildfenster, minimierte Fenster, geschützte Systemdialoge und einige Apps mit eingeschränkter Automatisierung sind möglicherweise nicht verschiebbar. ScreenSplitAssist versucht, diese Fenster zu vermeiden."},
-            {"question": "Warum kann ein rechtes Fenster breiter sein als erwartet?", "answer": "Einige Apps erzwingen eine Mindestfenstergröße. ScreenSplitAssist liest die tatsächliche Größe und zieht das Fenster zurück in den sichtbaren Bereich, kann aber die Mindestgröße der Ziel-App nicht umgehen."},
-            {"question": "Synchronisieren Arbeitsbereich-Schnappschüsse mit der Cloud?", "answer": "Nein. Sie werden lokal auf Ihrem Mac gespeichert und dienen zur Wiederherstellung von Fensterpositionen und Displayplatzierung."},
-            {"question": "Kann ich eine Layoutaktion rückgängig machen?", "answer": "Ja. Die App zeichnet vor jeder Anordnung die vorherigen Fensterpositionen auf, sodass Sie in der App oder per Kurzbefehl rückgängig machen können."},
-            {"question": "Lädt ScreenSplitAssist Fenstertitel oder App-Listen hoch?", "answer": "Nein. Fenstertitel, App-Namen und Positionen werden nur lokal für Layout und Zuordnung verarbeitet und nicht auf einen Server hochgeladen."}
-          ]},
-          {"heading": "Fehlerbehebung", "bullets": ["Bestätigen Sie, dass die laufende App /Applications/ScreenSplitAssist.app ist, nicht eine Kopie aus Xcode DerivedData oder .build.", "Wenn der Berechtigungsstatus falsch wirkt, entfernen Sie alte Bedienungshilfen-Einträge, starten Sie neu und autorisieren Sie erneut.", "Stellen Sie sicher, dass Zielfenster nicht im Vollbild oder minimiert sind.", "Klicken Sie auf Aktualisieren und prüfen Sie, dass die Fensterwarteschlange die gewünschten Fenster enthält.", "Bei mehreren Displays prüfen Sie, dass das Ziel-Display korrekt gewählt ist.", "Wenn eine App groß bleibt, verkleinern Sie sie einmal manuell, um eine Mindestfenstergröße zu prüfen."]},
-          {"heading": "Datenschutzhinweis", "paragraphs": ["Senden Sie nur die minimal notwendigen Informationen für den Support. Wenn ein Screenshot private Informationen enthält, schwärzen Sie diese zuerst. Support-E-Mails benötigen keine Passwörter, privaten Schlüssel, Lizenzgeheimnisse, vertraulichen Dateien oder privaten Fensterinhalte."]}
-        ],
-        "links": [{"label": "Datenschutzrichtlinie", "href": "../Privacy/index.html"}, {"label": "Altersfreigabe", "href": "../AgeRating/index.html"}]
-      }
+    {
+      "code": "zh-Hant",
+      "htmlLang": "zh-TW",
+      "label": "繁體中文",
+      "dir": "ltr"
+    },
+    {
+      "code": "en",
+      "htmlLang": "en",
+      "label": "English",
+      "dir": "ltr"
+    },
+    {
+      "code": "ja",
+      "htmlLang": "ja",
+      "label": "日本語",
+      "dir": "ltr"
+    },
+    {
+      "code": "ko",
+      "htmlLang": "ko",
+      "label": "한국어",
+      "dir": "ltr"
+    },
+    {
+      "code": "es",
+      "htmlLang": "es",
+      "label": "Español",
+      "dir": "ltr"
+    },
+    {
+      "code": "fr",
+      "htmlLang": "fr",
+      "label": "Français",
+      "dir": "ltr"
+    },
+    {
+      "code": "de",
+      "htmlLang": "de",
+      "label": "Deutsch",
+      "dir": "ltr"
+    }
+  ],
+  "ui": {
+    "zh-Hans": {
+      "language": "语言",
+      "chooseLanguage": "选择语言",
+      "privacy": "隐私",
+      "support": "支持",
+      "age": "适龄"
+    },
+    "zh-Hant": {
+      "language": "語言",
+      "chooseLanguage": "選擇語言",
+      "privacy": "隱私",
+      "support": "支援",
+      "age": "適齡"
+    },
+    "en": {
+      "language": "Language",
+      "chooseLanguage": "Choose language",
+      "privacy": "Privacy",
+      "support": "Support",
+      "age": "Age Rating"
+    },
+    "ja": {
+      "language": "言語",
+      "chooseLanguage": "言語を選択",
+      "privacy": "プライバシー",
+      "support": "サポート",
+      "age": "年齢制限"
+    },
+    "ko": {
+      "language": "언어",
+      "chooseLanguage": "언어 선택",
+      "privacy": "개인정보",
+      "support": "지원",
+      "age": "연령 등급"
+    },
+    "es": {
+      "language": "Idioma",
+      "chooseLanguage": "Elegir idioma",
+      "privacy": "Privacidad",
+      "support": "Soporte",
+      "age": "Edad"
+    },
+    "fr": {
+      "language": "Langue",
+      "chooseLanguage": "Choisir la langue",
+      "privacy": "Confidentialité",
+      "support": "Assistance",
+      "age": "Âge"
+    },
+    "de": {
+      "language": "Sprache",
+      "chooseLanguage": "Sprache auswählen",
+      "privacy": "Datenschutz",
+      "support": "Support",
+      "age": "Alter"
+    }
+  },
+  "content": {
+    "zh-Hans": {
+      "metaTitle": "ScreenSplitAssist 支持",
+      "description": "ScreenSplitAssist / 窗格大师支持页面：自动窗口布局、Apple 快捷指令、模板、多显示器和联系方式。",
+      "eyebrow": "ScreenSplitAssist / 窗格大师 for Mac",
+      "title": "支持",
+      "updated": "最后更新日期：2026 年 7 月 10 日",
+      "intro": "如果你在使用 ScreenSplitAssist 时需要帮助，请通过邮件联系我们，并尽量提供下面的信息。",
+      "notice": "ScreenSplitAssist 通过用户确认添加的 Apple 快捷指令自动排列窗口。App 本体不申请辅助功能、屏幕录制或 Apple Events 权限，也没有账号、云同步、广告、追踪、订阅或 App 内购买。",
+      "cards": [
+        {
+          "title": "邮箱",
+          "value": "kibernet@sina.com",
+          "href": "mailto:kibernet@sina.com"
+        },
+        {
+          "title": "App",
+          "value": "ScreenSplitAssist / 窗格大师 for Mac"
+        },
+        {
+          "title": "平台",
+          "value": "macOS 14.4 或更高版本"
+        },
+        {
+          "title": "支持范围",
+          "value": "自动排列、快捷指令安装、布局模板、多显示器和可复现 Bug"
+        }
+      ],
+      "sections": [
+        {
+          "heading": "快速设置",
+          "bullets": [
+            "启动 ScreenSplitAssist。",
+            "点击“安装快捷指令”，并在 Apple“快捷指令”中确认添加 ScreenSplitAssist Bridge。",
+            "返回 App，打开要排列的普通窗口。",
+            "选择目标显示器和布局，然后点击“自动排列窗口”。",
+            "可保存布局模板，之后一键自动复用。"
+          ]
+        },
+        {
+          "heading": "邮件中建议包含",
+          "bullets": [
+            "macOS 版本、Mac 型号、ScreenSplitAssist 版本和界面语言。",
+            "显示器数量、分辨率、Dock 位置和目标显示器。",
+            "使用的布局名称、自定义比例或快照名称。",
+            "问题发生前的操作步骤、错误提示、截图或支持诊断。",
+            "请不要发送密码、私钥、机密文件或私人窗口内容。"
+          ]
+        },
+        {
+          "heading": "核心工作流",
+          "bullets": [
+            "自动移动并缩放最前面的可见窗口。",
+            "使用平衡双栏、黄金主副屏、开发三栏、会议工作台、写作台、四宫格和超宽屏控制台等预设。",
+            "在自定义分屏编辑器中调整主区域和侧边区域比例。",
+            "保存布局模板和工作区布局。",
+            "使用菜单栏入口和全局快捷键直接运行常用布局。"
+          ]
+        },
+        {
+          "heading": "常见问题",
+          "faq": [
+            {
+              "question": "自动排列是怎样实现的？",
+              "answer": "ScreenSplitAssist 只计算并发送目标矩形；用户安装的 Apple 快捷指令使用系统“查找窗口”“调整窗口大小”和“移动窗口”动作在本机完成排列。"
+            },
+            {
+              "question": "需要打开系统权限吗？",
+              "answer": "不需要为 ScreenSplitAssist 打开辅助功能、屏幕录制或 Apple Events 权限。首次使用只需在 Apple“快捷指令”中确认添加内置快捷指令。"
+            },
+            {
+              "question": "会上传窗口标题或应用列表吗？",
+              "answer": "不会。ScreenSplitAssist 不接收这些信息；Apple 快捷指令只在设备本地处理可见窗口，并返回完成数量。"
+            },
+            {
+              "question": "点击排列后为什么没有反应？",
+              "answer": "请确认 Apple“快捷指令”中存在名称完全相同的 ScreenSplitAssist Bridge，并打开至少一个普通可见窗口。快捷指令被删除或改名时，请从 App 重新安装。"
+            },
+            {
+              "question": "可以在多显示器上使用吗？",
+              "answer": "可以。请选择目标显示器，App 会根据该显示器避开菜单栏和 Dock 后的可见区域计算坐标。"
+            }
+          ]
+        },
+        {
+          "heading": "故障排查清单",
+          "bullets": [
+            "确认正在运行的是最新 Mac App Store 构建。",
+            "确认 Apple“快捷指令”中已安装 ScreenSplitAssist Bridge，且名称没有改变。",
+            "确认待排列窗口处于当前桌面并且没有最小化或进入全屏 Space。",
+            "如果全局快捷键无响应，检查是否被其他 App 或系统快捷键占用。",
+            "如果模板没有保存，确认模板名称不是空白。"
+          ]
+        },
+        {
+          "heading": "隐私提醒",
+          "paragraphs": [
+            "请只发送解决问题所需的最少信息。截图包含隐私内容时请先打码。"
+          ]
+        }
+      ],
+      "links": [
+        {
+          "label": "隐私政策",
+          "href": "../Privacy/index.html"
+        },
+        {
+          "label": "适龄信息",
+          "href": "../AgeRating/index.html"
+        }
+      ]
+    },
+    "zh-Hant": {
+      "metaTitle": "ScreenSplitAssist 支援",
+      "description": "ScreenSplitAssist / 窗格大師支援頁面：自動視窗佈局、Apple 捷徑、模板、多顯示器和聯絡方式。",
+      "eyebrow": "ScreenSplitAssist / 窗格大師 for Mac",
+      "title": "支援",
+      "updated": "最後更新日期：2026 年 7 月 10 日",
+      "intro": "如果你在使用 ScreenSplitAssist 時需要協助，請透過電子郵件聯絡我們，並盡量提供下面的資訊。",
+      "notice": "ScreenSplitAssist 透過使用者確認加入的 Apple 捷徑自動排列視窗。App 本體不要求輔助使用、螢幕錄製或 Apple Events 權限，也沒有帳號、雲端同步、廣告、追蹤、訂閱或 App 內購買。",
+      "cards": [
+        {
+          "title": "信箱",
+          "value": "kibernet@sina.com",
+          "href": "mailto:kibernet@sina.com"
+        },
+        {
+          "title": "App",
+          "value": "ScreenSplitAssist / 窗格大師 for Mac"
+        },
+        {
+          "title": "平台",
+          "value": "macOS 14.4 或更高版本"
+        },
+        {
+          "title": "支援範圍",
+          "value": "自動排列、捷徑安裝、佈局模板、多顯示器和可重現 Bug"
+        }
+      ],
+      "sections": [
+        {
+          "heading": "快速設定",
+          "bullets": [
+            "啟動 ScreenSplitAssist。",
+            "按一下「安裝捷徑」，並在 Apple「捷徑」中確認加入 ScreenSplitAssist Bridge。",
+            "返回 App，開啟要排列的普通視窗。",
+            "選擇目標顯示器和佈局，然後按一下「自動排列視窗」。",
+            "可儲存佈局模板，之後一鍵自動重複使用。"
+          ]
+        },
+        {
+          "heading": "郵件中建議包含",
+          "bullets": [
+            "macOS 版本、Mac 型號、ScreenSplitAssist 版本和介面語言。",
+            "顯示器數量、解析度、Dock 位置和目標顯示器。",
+            "使用的佈局名稱、自訂比例或快照名稱。",
+            "問題發生前的操作步驟、錯誤提示、截圖或支援診斷。",
+            "請不要傳送密碼、私鑰、機密檔案或私人視窗內容。"
+          ]
+        },
+        {
+          "heading": "核心工作流程",
+          "bullets": [
+            "自動移動並調整最前方可見視窗的大小。",
+            "使用平衡雙欄、黃金主副屏、開發三欄、會議工作台、寫作台、四宮格和超寬屏控制台等預設。",
+            "在自訂分屏編輯器中調整主區域和側邊區域比例。",
+            "儲存佈局模板和工作區佈局。",
+            "使用選單列和全域快捷鍵直接執行常用佈局。"
+          ]
+        },
+        {
+          "heading": "常見問題",
+          "faq": [
+            {
+              "question": "自動排列如何運作？",
+              "answer": "ScreenSplitAssist 只計算並傳送目標矩形；使用者安裝的 Apple 捷徑使用系統「尋找視窗」「調整視窗大小」和「移動視窗」動作在本機完成排列。"
+            },
+            {
+              "question": "需要開啟系統權限嗎？",
+              "answer": "不需要為 ScreenSplitAssist 開啟輔助使用、螢幕錄製或 Apple Events 權限。首次使用只需在 Apple「捷徑」中確認加入內建捷徑。"
+            },
+            {
+              "question": "會上傳視窗標題或應用程式清單嗎？",
+              "answer": "不會。ScreenSplitAssist 不接收這些資訊；Apple 捷徑只在裝置本機處理可見視窗，並傳回完成數量。"
+            },
+            {
+              "question": "按下排列後為什麼沒有反應？",
+              "answer": "請確認 Apple「捷徑」中存在名稱完全相同的 ScreenSplitAssist Bridge，並至少開啟一個普通可見視窗。捷徑被刪除或改名時，請從 App 重新安裝。"
+            },
+            {
+              "question": "可以在多顯示器上使用嗎？",
+              "answer": "可以。請選擇目標顯示器，App 會根據避開選單列和 Dock 後的可見區域計算座標。"
+            }
+          ]
+        },
+        {
+          "heading": "故障排查清單",
+          "bullets": [
+            "確認正在執行的是最新 Mac App Store 構建。",
+            "確認 Apple「捷徑」中已安裝 ScreenSplitAssist Bridge，且名稱沒有變更。",
+            "確認待排列視窗位於目前桌面，沒有最小化或進入全螢幕 Space。",
+            "如果全域快捷鍵無反應，檢查是否被其他 App 或系統快捷鍵占用。",
+            "如果模板沒有儲存，確認模板名稱不是空白。"
+          ]
+        },
+        {
+          "heading": "隱私提醒",
+          "paragraphs": [
+            "請只傳送解決問題所需的最少資訊。截圖包含隱私內容時請先遮蔽。"
+          ]
+        }
+      ],
+      "links": [
+        {
+          "label": "隱私權政策",
+          "href": "../Privacy/index.html"
+        },
+        {
+          "label": "適齡資訊",
+          "href": "../AgeRating/index.html"
+        }
+      ]
+    },
+    "en": {
+      "metaTitle": "ScreenSplitAssist Support",
+      "description": "Support for ScreenSplitAssist automatic window layouts, Apple Shortcuts setup, templates, displays, and contact information.",
+      "eyebrow": "ScreenSplitAssist / 窗格大师 for Mac",
+      "title": "Support",
+      "updated": "Last updated: July 10, 2026",
+      "intro": "Need help with ScreenSplitAssist? Email us with the details below so we can reproduce the issue and respond with a useful fix or workaround.",
+      "notice": "ScreenSplitAssist automatically arranges windows through an Apple Shortcut that the user explicitly adds. The app itself requests no Accessibility, Screen Recording, or Apple Events permission and has no account, cloud sync, ads, tracking, subscriptions, or in-app purchases.",
+      "cards": [
+        {
+          "title": "Email",
+          "value": "kibernet@sina.com",
+          "href": "mailto:kibernet@sina.com"
+        },
+        {
+          "title": "App",
+          "value": "ScreenSplitAssist / 窗格大师 for Mac"
+        },
+        {
+          "title": "Platform",
+          "value": "macOS 14.4 or later"
+        },
+        {
+          "title": "Support Scope",
+          "value": "Automatic arrangement, Shortcut setup, templates, displays, and reproducible bugs"
+        }
+      ],
+      "sections": [
+        {
+          "heading": "Quick Setup",
+          "bullets": [
+            "Launch ScreenSplitAssist.",
+            "Click Install System Shortcut and confirm Add Shortcut in Apple Shortcuts.",
+            "Return to the app and open the ordinary windows you want to arrange.",
+            "Choose the target display and layout, then click Arrange Windows.",
+            "Save layout templates for one-click automatic reuse."
+          ]
+        },
+        {
+          "heading": "What to Include in Support Email",
+          "bullets": [
+            "Your macOS version, Mac model, ScreenSplitAssist version, and app language.",
+            "Number of displays, resolution, Dock position, and target display.",
+            "The layout name, custom ratios, or snapshot name you used.",
+            "Steps before the issue, exact error text, screenshots, or support diagnostics.",
+            "Do not send passwords, private keys, confidential files, or private window contents."
+          ]
+        },
+        {
+          "heading": "Core Workflows",
+          "bullets": [
+            "Automatically move and resize the frontmost visible windows.",
+            "Use presets such as balanced halves, golden main/side, developer three column, meeting desk, writing desk, four-up grid, and ultra-wide console.",
+            "Adjust primary and side-area ratios in the custom split editor.",
+            "Save layout templates and workspace layouts.",
+            "Use the menu bar and global shortcuts to run favorite layouts."
+          ]
+        },
+        {
+          "heading": "Frequently Asked Questions",
+          "faq": [
+            {
+              "question": "How does automatic arrangement work?",
+              "answer": "ScreenSplitAssist calculates and sends target rectangles. The user-installed Apple Shortcut uses the system Find Windows, Resize Window, and Move Window actions to arrange windows locally."
+            },
+            {
+              "question": "Do I need to enable system permissions?",
+              "answer": "You do not enable Accessibility, Screen Recording, or Apple Events for ScreenSplitAssist. On first use, you only confirm adding the bundled Shortcut in Apple Shortcuts."
+            },
+            {
+              "question": "Does ScreenSplitAssist upload window titles or app lists?",
+              "answer": "No. ScreenSplitAssist does not receive that information. Apple Shortcuts processes visible windows locally and returns only a completion count."
+            },
+            {
+              "question": "Why did nothing happen after I clicked Arrange?",
+              "answer": "Confirm that Apple Shortcuts contains a Shortcut named exactly ScreenSplitAssist Bridge and that at least one ordinary window is visible. Reinstall it from the app if it was deleted or renamed."
+            },
+            {
+              "question": "Can I use it with multiple displays?",
+              "answer": "Yes. Select the target display and the app calculates coordinates from its visible area after accounting for the menu bar and Dock."
+            }
+          ]
+        },
+        {
+          "heading": "Troubleshooting Checklist",
+          "bullets": [
+            "Confirm you are running the current Mac App Store build.",
+            "Confirm that ScreenSplitAssist Bridge is installed in Apple Shortcuts and has not been renamed.",
+            "Keep target windows visible on the current desktop, not minimized or in a full-screen Space.",
+            "If a global shortcut does not respond, check whether another app or system shortcut owns it.",
+            "If a template is not saved, confirm the template name is not blank."
+          ]
+        },
+        {
+          "heading": "Privacy Reminder",
+          "paragraphs": [
+            "Send only the minimum information needed for support. Redact screenshots if they contain private information."
+          ]
+        }
+      ],
+      "links": [
+        {
+          "label": "Privacy Policy",
+          "href": "../Privacy/index.html"
+        },
+        {
+          "label": "Age Rating Information",
+          "href": "../AgeRating/index.html"
+        }
+      ]
+    },
+    "ja": {
+      "metaTitle": "ScreenSplitAssist サポート",
+      "description": "ScreenSplitAssist の自動ウインドウレイアウト、Apple ショートカット設定、テンプレート、ディスプレイに関するサポートです。",
+      "eyebrow": "ScreenSplitAssist / 窗格大师 for Mac",
+      "title": "サポート",
+      "updated": "最終更新日：2026年7月10日",
+      "intro": "ScreenSplitAssist についてサポートが必要な場合は、問題を再現できるよう下記の情報を添えてメールでご連絡ください。",
+      "notice": "ScreenSplitAssist は、ユーザーが明示的に追加した Apple ショートカットでウインドウを自動整列します。App 本体はアクセシビリティ、画面収録、Apple Events の権限を要求せず、アカウント、クラウド同期、広告、追跡、サブスクリプション、アプリ内購入もありません。",
+      "cards": [
+        {
+          "title": "メール",
+          "value": "kibernet@sina.com",
+          "href": "mailto:kibernet@sina.com"
+        },
+        {
+          "title": "App",
+          "value": "ScreenSplitAssist / 窗格大师 for Mac"
+        },
+        {
+          "title": "プラットフォーム",
+          "value": "macOS 14.4 以降"
+        },
+        {
+          "title": "サポート範囲",
+          "value": "自動整列、ショートカット設定、テンプレート、ディスプレイ、再現可能な不具合"
+        }
+      ],
+      "sections": [
+        {
+          "heading": "クイック設定",
+          "bullets": [
+            "ScreenSplitAssist を起動します。",
+            "「システムショートカットをインストール」を押し、Apple ショートカットで「ショートカットを追加」を確認します。",
+            "App に戻り、整列したい通常のウインドウを開きます。",
+            "対象ディスプレイとレイアウトを選び、「ウインドウを整列」を押します。",
+            "レイアウトテンプレートを保存すれば、次回からワンクリックで自動適用できます。"
+          ]
+        },
+        {
+          "heading": "サポートメールに含める情報",
+          "bullets": [
+            "macOS のバージョン、Mac のモデル、ScreenSplitAssist のバージョン、表示言語。",
+            "ディスプレイ数、解像度、Dock の位置、対象ディスプレイ。",
+            "使用したレイアウト名、カスタム比率、保存レイアウト名。",
+            "問題直前の手順、正確なエラー表示、スクリーンショット、サポート診断。",
+            "パスワード、秘密鍵、機密ファイル、非公開のウインドウ内容は送信しないでください。"
+          ]
+        },
+        {
+          "heading": "主なワークフロー",
+          "bullets": [
+            "手前の表示中ウインドウを自動で移動・サイズ変更します。",
+            "左右均等、メイン＋サイド、開発3列、会議、執筆、4分割、ウルトラワイドなどのプリセットを使用します。",
+            "カスタム分割エディタでメイン領域とサイド領域の比率を調整します。",
+            "レイアウトテンプレートとワークスペースレイアウトを保存します。",
+            "メニューバーとグローバルショートカットからよく使うレイアウトを実行します。"
+          ]
+        },
+        {
+          "heading": "よくある質問",
+          "faq": [
+            {
+              "question": "自動整列はどのように動作しますか？",
+              "answer": "ScreenSplitAssist は対象矩形だけを計算して送信します。ユーザーが追加した Apple ショートカットが、システムの「ウインドウを検索」「ウインドウのサイズを変更」「ウインドウを移動」アクションで端末内の整列を行います。"
+            },
+            {
+              "question": "システム権限を有効にする必要がありますか？",
+              "answer": "ScreenSplitAssist にアクセシビリティ、画面収録、Apple Events の権限を与える必要はありません。初回のみ Apple ショートカットで同梱ショートカットの追加を確認します。"
+            },
+            {
+              "question": "ウインドウタイトルや App 一覧をアップロードしますか？",
+              "answer": "いいえ。ScreenSplitAssist はそれらを受け取りません。Apple ショートカットが表示中ウインドウを端末内で処理し、完了件数だけを返します。"
+            },
+            {
+              "question": "「整列」を押しても何も起きないのはなぜですか？",
+              "answer": "Apple ショートカットに ScreenSplitAssist Bridge という正確な名前のショートカットがあり、通常のウインドウが1つ以上表示されていることを確認してください。削除または改名した場合は App から再インストールします。"
+            },
+            {
+              "question": "複数のディスプレイで使えますか？",
+              "answer": "はい。対象ディスプレイを選ぶと、メニューバーと Dock を除いた表示領域から座標を計算します。"
+            }
+          ]
+        },
+        {
+          "heading": "トラブルシューティング",
+          "bullets": [
+            "最新の Mac App Store ビルドを実行していることを確認します。",
+            "Apple ショートカットに ScreenSplitAssist Bridge があり、名前が変更されていないことを確認します。",
+            "対象ウインドウを現在のデスクトップに表示し、最小化やフルスクリーン Space を解除します。",
+            "グローバルショートカットが反応しない場合は、他の App やシステムとの競合を確認します。",
+            "テンプレートを保存できない場合は、名前が空欄でないことを確認します。"
+          ]
+        },
+        {
+          "heading": "プライバシーに関する注意",
+          "paragraphs": [
+            "サポートに必要な最小限の情報だけを送信し、個人情報を含むスクリーンショットは編集してください。"
+          ]
+        }
+      ],
+      "links": [
+        {
+          "label": "プライバシーポリシー",
+          "href": "../Privacy/index.html"
+        },
+        {
+          "label": "年齢制限情報",
+          "href": "../AgeRating/index.html"
+        }
+      ]
+    },
+    "ko": {
+      "metaTitle": "ScreenSplitAssist 지원",
+      "description": "ScreenSplitAssist 자동 창 레이아웃, Apple 단축어 설정, 템플릿, 디스플레이 및 연락처 지원 정보입니다.",
+      "eyebrow": "ScreenSplitAssist / 窗格大师 for Mac",
+      "title": "지원",
+      "updated": "최종 업데이트: 2026년 7월 10일",
+      "intro": "ScreenSplitAssist 사용에 도움이 필요하면 문제를 재현할 수 있도록 아래 정보를 포함해 이메일로 문의해 주세요.",
+      "notice": "ScreenSplitAssist는 사용자가 명시적으로 추가한 Apple 단축어로 창을 자동 정렬합니다. 앱 자체는 손쉬운 사용, 화면 기록 또는 Apple Events 권한을 요청하지 않으며 계정, 클라우드 동기화, 광고, 추적, 구독 또는 앱 내 구입이 없습니다.",
+      "cards": [
+        {
+          "title": "이메일",
+          "value": "kibernet@sina.com",
+          "href": "mailto:kibernet@sina.com"
+        },
+        {
+          "title": "앱",
+          "value": "ScreenSplitAssist / 窗格大师 for Mac"
+        },
+        {
+          "title": "플랫폼",
+          "value": "macOS 14.4 이상"
+        },
+        {
+          "title": "지원 범위",
+          "value": "자동 정렬, 단축어 설정, 템플릿, 디스플레이 및 재현 가능한 버그"
+        }
+      ],
+      "sections": [
+        {
+          "heading": "빠른 설정",
+          "bullets": [
+            "ScreenSplitAssist를 실행합니다.",
+            "시스템 단축어 설치를 누르고 Apple 단축어에서 단축어 추가를 확인합니다.",
+            "앱으로 돌아와 정렬할 일반 창을 엽니다.",
+            "대상 디스플레이와 레이아웃을 선택한 다음 창 정렬을 누릅니다.",
+            "레이아웃 템플릿을 저장하면 다음부터 한 번의 클릭으로 자동 적용할 수 있습니다."
+          ]
+        },
+        {
+          "heading": "지원 이메일에 포함할 내용",
+          "bullets": [
+            "macOS 버전, Mac 모델, ScreenSplitAssist 버전 및 앱 언어.",
+            "디스플레이 수, 해상도, Dock 위치 및 대상 디스플레이.",
+            "사용한 레이아웃 이름, 사용자 지정 비율 또는 저장된 레이아웃 이름.",
+            "문제 발생 전 단계, 정확한 오류 문구, 스크린샷 또는 지원 진단.",
+            "비밀번호, 개인 키, 기밀 파일 또는 비공개 창 내용을 보내지 마십시오."
+          ]
+        },
+        {
+          "heading": "핵심 작업",
+          "bullets": [
+            "앞쪽의 보이는 창을 자동으로 이동하고 크기를 조절합니다.",
+            "균등 분할, 메인과 보조, 개발 3열, 회의, 글쓰기, 4분할 및 울트라와이드 프리셋을 사용합니다.",
+            "사용자 지정 분할 편집기에서 주 영역과 보조 영역 비율을 조절합니다.",
+            "레이아웃 템플릿과 작업 공간 레이아웃을 저장합니다.",
+            "메뉴 막대와 전역 단축키로 자주 쓰는 레이아웃을 실행합니다."
+          ]
+        },
+        {
+          "heading": "자주 묻는 질문",
+          "faq": [
+            {
+              "question": "자동 정렬은 어떻게 작동하나요?",
+              "answer": "ScreenSplitAssist는 대상 사각형만 계산해 전달합니다. 사용자가 추가한 Apple 단축어가 시스템의 창 찾기, 창 크기 조절 및 창 이동 동작으로 기기에서 로컬 정렬을 수행합니다."
+            },
+            {
+              "question": "시스템 권한을 활성화해야 하나요?",
+              "answer": "ScreenSplitAssist에 손쉬운 사용, 화면 기록 또는 Apple Events 권한을 줄 필요가 없습니다. 처음 사용할 때 Apple 단축어에서 번들 단축어 추가만 확인합니다."
+            },
+            {
+              "question": "창 제목이나 앱 목록을 업로드하나요?",
+              "answer": "아니요. ScreenSplitAssist는 해당 정보를 받지 않습니다. Apple 단축어가 보이는 창을 기기에서 처리하고 완료 개수만 반환합니다."
+            },
+            {
+              "question": "정렬을 눌러도 아무 일도 일어나지 않는 이유는 무엇인가요?",
+              "answer": "Apple 단축어에 이름이 정확히 ScreenSplitAssist Bridge인 단축어가 있고 일반 창이 하나 이상 보이는지 확인하세요. 삭제하거나 이름을 바꿨다면 앱에서 다시 설치하세요."
+            },
+            {
+              "question": "여러 디스플레이에서 사용할 수 있나요?",
+              "answer": "예. 대상 디스플레이를 선택하면 메뉴 막대와 Dock을 제외한 보이는 영역에서 좌표를 계산합니다."
+            }
+          ]
+        },
+        {
+          "heading": "문제 해결",
+          "bullets": [
+            "최신 Mac App Store 빌드를 실행 중인지 확인합니다.",
+            "Apple 단축어에 ScreenSplitAssist Bridge가 설치되어 있고 이름이 바뀌지 않았는지 확인합니다.",
+            "대상 창을 현재 데스크톱에 표시하고 최소화 또는 전체 화면 Space를 해제합니다.",
+            "전역 단축키가 반응하지 않으면 다른 앱이나 시스템 단축키와의 충돌을 확인합니다.",
+            "템플릿이 저장되지 않으면 이름이 비어 있지 않은지 확인합니다."
+          ]
+        },
+        {
+          "heading": "개인정보 안내",
+          "paragraphs": [
+            "지원에 필요한 최소한의 정보만 보내고 개인정보가 포함된 스크린샷은 가려 주세요."
+          ]
+        }
+      ],
+      "links": [
+        {
+          "label": "개인정보 처리방침",
+          "href": "../Privacy/index.html"
+        },
+        {
+          "label": "연령 등급 정보",
+          "href": "../AgeRating/index.html"
+        }
+      ]
+    },
+    "es": {
+      "metaTitle": "Soporte de ScreenSplitAssist",
+      "description": "Soporte de ScreenSplitAssist para diseños automáticos de ventanas, configuración de Atajos de Apple, plantillas y pantallas.",
+      "eyebrow": "ScreenSplitAssist / 窗格大师 para Mac",
+      "title": "Soporte",
+      "updated": "Última actualización: 10 de julio de 2026",
+      "intro": "Si necesitas ayuda con ScreenSplitAssist, envíanos un correo con la información indicada para que podamos reproducir el problema.",
+      "notice": "ScreenSplitAssist organiza ventanas mediante un atajo de Apple que el usuario añade expresamente. La app no solicita Accesibilidad, Grabación de pantalla ni Apple Events y no tiene cuenta, nube, anuncios, seguimiento, suscripciones ni compras integradas.",
+      "cards": [
+        {
+          "title": "Correo",
+          "value": "kibernet@sina.com",
+          "href": "mailto:kibernet@sina.com"
+        },
+        {
+          "title": "App",
+          "value": "ScreenSplitAssist / 窗格大师 para Mac"
+        },
+        {
+          "title": "Plataforma",
+          "value": "macOS 14.4 o posterior"
+        },
+        {
+          "title": "Ámbito de soporte",
+          "value": "Organización automática, atajo, plantillas, pantallas y errores reproducibles"
+        }
+      ],
+      "sections": [
+        {
+          "heading": "Configuración rápida",
+          "bullets": [
+            "Abre ScreenSplitAssist.",
+            "Pulsa Instalar atajo del sistema y confirma Añadir atajo en Atajos de Apple.",
+            "Vuelve a la app y abre las ventanas normales que quieras organizar.",
+            "Elige la pantalla y el diseño, y pulsa Organizar ventanas.",
+            "Guarda plantillas para volver a aplicarlas automáticamente con un clic."
+          ]
+        },
+        {
+          "heading": "Qué incluir en el correo de soporte",
+          "bullets": [
+            "Versión de macOS, modelo de Mac, versión de ScreenSplitAssist e idioma.",
+            "Número de pantallas, resolución, posición del Dock y pantalla de destino.",
+            "Nombre del diseño, proporciones personalizadas o diseño guardado.",
+            "Pasos previos, texto exacto del error, capturas o diagnóstico de soporte.",
+            "No envíes contraseñas, claves privadas, archivos confidenciales ni contenido privado de ventanas."
+          ]
+        },
+        {
+          "heading": "Flujos principales",
+          "bullets": [
+            "Mueve y redimensiona automáticamente las ventanas visibles situadas al frente.",
+            "Usa diseños de mitades, principal y lateral, desarrollo en tres columnas, reuniones, escritura, cuadrícula y ultraancho.",
+            "Ajusta las proporciones en el editor de división personalizada.",
+            "Guarda plantillas y diseños de espacio de trabajo.",
+            "Ejecuta diseños favoritos desde la barra de menús o atajos globales."
+          ]
+        },
+        {
+          "heading": "Preguntas frecuentes",
+          "faq": [
+            {
+              "question": "¿Cómo funciona la organización automática?",
+              "answer": "ScreenSplitAssist calcula y envía los rectángulos de destino. El atajo de Apple añadido por el usuario usa las acciones del sistema Buscar ventanas, Cambiar tamaño y Mover ventana para organizar todo localmente."
+            },
+            {
+              "question": "¿Debo activar permisos del sistema?",
+              "answer": "No debes conceder Accesibilidad, Grabación de pantalla ni Apple Events a ScreenSplitAssist. La primera vez solo confirmas añadir el atajo incluido en Atajos de Apple."
+            },
+            {
+              "question": "¿Se suben títulos de ventanas o listas de apps?",
+              "answer": "No. ScreenSplitAssist no recibe esa información. Atajos de Apple procesa las ventanas visibles localmente y devuelve solo una cantidad completada."
+            },
+            {
+              "question": "¿Por qué no ocurre nada al pulsar Organizar?",
+              "answer": "Comprueba que Atajos de Apple contenga un atajo llamado exactamente ScreenSplitAssist Bridge y que haya al menos una ventana normal visible. Reinstálalo desde la app si se eliminó o cambió de nombre."
+            },
+            {
+              "question": "¿Funciona con varias pantallas?",
+              "answer": "Sí. Selecciona la pantalla y la app calcula coordenadas en su zona visible, teniendo en cuenta la barra de menús y el Dock."
+            }
+          ]
+        },
+        {
+          "heading": "Solución de problemas",
+          "bullets": [
+            "Confirma que usas la versión actual de Mac App Store.",
+            "Comprueba que ScreenSplitAssist Bridge esté instalado y no se haya renombrado.",
+            "Mantén las ventanas visibles en el escritorio actual, sin minimizar ni usar un Space a pantalla completa.",
+            "Si un atajo global no responde, comprueba conflictos con otras apps o el sistema.",
+            "Si una plantilla no se guarda, comprueba que su nombre no esté vacío."
+          ]
+        },
+        {
+          "heading": "Recordatorio de privacidad",
+          "paragraphs": [
+            "Envía solo la información mínima necesaria y oculta los datos privados de las capturas."
+          ]
+        }
+      ],
+      "links": [
+        {
+          "label": "Política de privacidad",
+          "href": "../Privacy/index.html"
+        },
+        {
+          "label": "Información de edad",
+          "href": "../AgeRating/index.html"
+        }
+      ]
+    },
+    "fr": {
+      "metaTitle": "Assistance ScreenSplitAssist",
+      "description": "Assistance ScreenSplitAssist pour l’organisation automatique des fenêtres, la configuration de Raccourcis Apple, les modèles et les écrans.",
+      "eyebrow": "ScreenSplitAssist / 窗格大师 pour Mac",
+      "title": "Assistance",
+      "updated": "Dernière mise à jour : 10 juillet 2026",
+      "intro": "Pour obtenir de l’aide avec ScreenSplitAssist, envoyez-nous un e-mail avec les informations ci-dessous afin que nous puissions reproduire le problème.",
+      "notice": "ScreenSplitAssist organise les fenêtres au moyen d’un raccourci Apple ajouté explicitement par l’utilisateur. L’app ne demande pas Accessibilité, Enregistrement de l’écran ou Apple Events et n’inclut ni compte, cloud, publicité, suivi, abonnement ou achat intégré.",
+      "cards": [
+        {
+          "title": "E-mail",
+          "value": "kibernet@sina.com",
+          "href": "mailto:kibernet@sina.com"
+        },
+        {
+          "title": "App",
+          "value": "ScreenSplitAssist / 窗格大师 pour Mac"
+        },
+        {
+          "title": "Plateforme",
+          "value": "macOS 14.4 ou version ultérieure"
+        },
+        {
+          "title": "Périmètre",
+          "value": "Organisation automatique, raccourci, modèles, écrans et bugs reproductibles"
+        }
+      ],
+      "sections": [
+        {
+          "heading": "Configuration rapide",
+          "bullets": [
+            "Lancez ScreenSplitAssist.",
+            "Cliquez sur Installer le raccourci système et confirmez Ajouter le raccourci dans Raccourcis Apple.",
+            "Revenez dans l’app et ouvrez les fenêtres ordinaires à organiser.",
+            "Choisissez l’écran et la disposition, puis cliquez sur Organiser les fenêtres.",
+            "Enregistrez des modèles pour les réappliquer automatiquement en un clic."
+          ]
+        },
+        {
+          "heading": "Informations à joindre au message",
+          "bullets": [
+            "Version de macOS, modèle du Mac, version de ScreenSplitAssist et langue.",
+            "Nombre d’écrans, résolution, position du Dock et écran cible.",
+            "Nom de la disposition, proportions personnalisées ou disposition enregistrée.",
+            "Étapes précédentes, texte exact de l’erreur, captures ou diagnostic d’assistance.",
+            "N’envoyez pas de mots de passe, clés privées, fichiers confidentiels ou contenu privé de fenêtres."
+          ]
+        },
+        {
+          "heading": "Principaux flux",
+          "bullets": [
+            "Déplace et redimensionne automatiquement les fenêtres visibles au premier plan.",
+            "Utilise des dispositions en moitiés, principale et latérale, développement trois colonnes, réunion, écriture, grille et ultra-large.",
+            "Ajuste les proportions dans l’éditeur de division personnalisée.",
+            "Enregistre des modèles et des dispositions d’espace de travail.",
+            "Exécute les dispositions favorites depuis la barre des menus ou les raccourcis globaux."
+          ]
+        },
+        {
+          "heading": "Questions fréquentes",
+          "faq": [
+            {
+              "question": "Comment fonctionne l’organisation automatique ?",
+              "answer": "ScreenSplitAssist calcule et transmet les rectangles cibles. Le raccourci Apple ajouté par l’utilisateur emploie les actions système Rechercher des fenêtres, Redimensionner et Déplacer la fenêtre pour tout organiser localement."
+            },
+            {
+              "question": "Dois-je activer des autorisations système ?",
+              "answer": "Vous n’accordez pas Accessibilité, Enregistrement de l’écran ou Apple Events à ScreenSplitAssist. Lors de la première utilisation, vous confirmez seulement l’ajout du raccourci fourni dans Raccourcis Apple."
+            },
+            {
+              "question": "Les titres de fenêtres ou listes d’apps sont-ils envoyés ?",
+              "answer": "Non. ScreenSplitAssist ne reçoit pas ces informations. Raccourcis Apple traite localement les fenêtres visibles et ne renvoie qu’un nombre d’éléments traités."
+            },
+            {
+              "question": "Pourquoi rien ne se passe après Organiser ?",
+              "answer": "Vérifiez que Raccourcis Apple contient un raccourci nommé exactement ScreenSplitAssist Bridge et qu’au moins une fenêtre ordinaire est visible. Réinstallez-le depuis l’app s’il a été supprimé ou renommé."
+            },
+            {
+              "question": "Puis-je utiliser plusieurs écrans ?",
+              "answer": "Oui. Sélectionnez l’écran cible ; l’app calcule les coordonnées dans sa zone visible en tenant compte de la barre des menus et du Dock."
+            }
+          ]
+        },
+        {
+          "heading": "Dépannage",
+          "bullets": [
+            "Vérifiez que vous utilisez la version Mac App Store actuelle.",
+            "Vérifiez que ScreenSplitAssist Bridge est installé et n’a pas été renommé.",
+            "Gardez les fenêtres visibles sur le bureau actuel, ni réduites ni dans un espace plein écran.",
+            "Si un raccourci global ne répond pas, recherchez un conflit avec une autre app ou le système.",
+            "Si un modèle n’est pas enregistré, vérifiez que son nom n’est pas vide."
+          ]
+        },
+        {
+          "heading": "Rappel de confidentialité",
+          "paragraphs": [
+            "Envoyez uniquement les informations minimales nécessaires et masquez les données privées des captures."
+          ]
+        }
+      ],
+      "links": [
+        {
+          "label": "Politique de confidentialité",
+          "href": "../Privacy/index.html"
+        },
+        {
+          "label": "Informations d’âge",
+          "href": "../AgeRating/index.html"
+        }
+      ]
+    },
+    "de": {
+      "metaTitle": "ScreenSplitAssist Support",
+      "description": "Support für ScreenSplitAssist: automatische Fensterlayouts, Einrichtung von Apple Kurzbefehle, Vorlagen und Displays.",
+      "eyebrow": "ScreenSplitAssist / 窗格大师 für Mac",
+      "title": "Support",
+      "updated": "Zuletzt aktualisiert: 10. Juli 2026",
+      "intro": "Wenn Sie Hilfe mit ScreenSplitAssist benötigen, senden Sie uns eine E-Mail mit den folgenden Angaben, damit wir das Problem reproduzieren können.",
+      "notice": "ScreenSplitAssist ordnet Fenster über einen Apple-Kurzbefehl an, den der Benutzer ausdrücklich hinzufügt. Die App fordert keine Bedienungshilfen-, Bildschirmaufnahme- oder Apple-Events-Berechtigung an und enthält weder Konto, Cloud, Werbung, Tracking, Abonnement noch In-App-Kauf.",
+      "cards": [
+        {
+          "title": "E-Mail",
+          "value": "kibernet@sina.com",
+          "href": "mailto:kibernet@sina.com"
+        },
+        {
+          "title": "App",
+          "value": "ScreenSplitAssist / 窗格大师 für Mac"
+        },
+        {
+          "title": "Plattform",
+          "value": "macOS 14.4 oder neuer"
+        },
+        {
+          "title": "Supportumfang",
+          "value": "Automatische Anordnung, Kurzbefehl, Vorlagen, Displays und reproduzierbare Fehler"
+        }
+      ],
+      "sections": [
+        {
+          "heading": "Schnelle Einrichtung",
+          "bullets": [
+            "Starten Sie ScreenSplitAssist.",
+            "Klicken Sie auf Systemkurzbefehl installieren und bestätigen Sie Kurzbefehl hinzufügen in Apple Kurzbefehle.",
+            "Kehren Sie zur App zurück und öffnen Sie die normalen Fenster, die angeordnet werden sollen.",
+            "Wählen Sie Zielbildschirm und Layout, dann klicken Sie auf Fenster anordnen.",
+            "Speichern Sie Vorlagen, um sie später mit einem Klick automatisch anzuwenden."
+          ]
+        },
+        {
+          "heading": "Angaben für die Support-E-Mail",
+          "bullets": [
+            "macOS-Version, Mac-Modell, ScreenSplitAssist-Version und App-Sprache.",
+            "Anzahl der Displays, Auflösung, Dock-Position und Zielbildschirm.",
+            "Layoutname, eigene Verhältnisse oder gespeichertes Layout.",
+            "Schritte vor dem Problem, genauer Fehlertext, Bildschirmfoto oder Supportdiagnose.",
+            "Senden Sie keine Passwörter, privaten Schlüssel, vertraulichen Dateien oder privaten Fensterinhalte."
+          ]
+        },
+        {
+          "heading": "Wichtige Abläufe",
+          "bullets": [
+            "Verschiebt und skaliert die vordersten sichtbaren Fenster automatisch.",
+            "Verwendet Layouts für Hälften, Haupt- und Seitenbereich, drei Entwicklungsspalten, Meetings, Schreiben, Raster und Ultrawide.",
+            "Passt Verhältnisse im Editor für eigene Teilungen an.",
+            "Speichert Layoutvorlagen und Arbeitsbereichslayouts.",
+            "Führt bevorzugte Layouts über Menüleiste oder globale Kurzbefehle aus."
+          ]
+        },
+        {
+          "heading": "Häufig gestellte Fragen",
+          "faq": [
+            {
+              "question": "Wie funktioniert die automatische Anordnung?",
+              "answer": "ScreenSplitAssist berechnet und übergibt nur Zielrechtecke. Der vom Benutzer hinzugefügte Apple-Kurzbefehl nutzt die Systemaktionen Fenster suchen, Fenstergröße ändern und Fenster bewegen, um lokal anzuordnen."
+            },
+            {
+              "question": "Muss ich Systemberechtigungen aktivieren?",
+              "answer": "Sie erteilen ScreenSplitAssist keine Bedienungshilfen-, Bildschirmaufnahme- oder Apple-Events-Berechtigung. Beim ersten Start bestätigen Sie nur den mitgelieferten Kurzbefehl in Apple Kurzbefehle."
+            },
+            {
+              "question": "Werden Fenstertitel oder App-Listen hochgeladen?",
+              "answer": "Nein. ScreenSplitAssist erhält diese Informationen nicht. Apple Kurzbefehle verarbeitet sichtbare Fenster lokal und gibt nur die Anzahl abgeschlossener Vorgänge zurück."
+            },
+            {
+              "question": "Warum passiert nach Anordnen nichts?",
+              "answer": "Prüfen Sie, ob Apple Kurzbefehle einen Kurzbefehl mit dem exakten Namen ScreenSplitAssist Bridge enthält und mindestens ein normales Fenster sichtbar ist. Installieren Sie ihn aus der App neu, falls er gelöscht oder umbenannt wurde."
+            },
+            {
+              "question": "Kann ich mehrere Displays verwenden?",
+              "answer": "Ja. Wählen Sie den Zielbildschirm; die App berechnet Koordinaten in dessen sichtbarem Bereich unter Berücksichtigung von Menüleiste und Dock."
+            }
+          ]
+        },
+        {
+          "heading": "Fehlerbehebung",
+          "bullets": [
+            "Stellen Sie sicher, dass Sie den aktuellen Mac-App-Store-Build verwenden.",
+            "Prüfen Sie, ob ScreenSplitAssist Bridge installiert und nicht umbenannt wurde.",
+            "Lassen Sie Zielfenster auf dem aktuellen Schreibtisch sichtbar, nicht minimiert oder in einem Vollbild-Space.",
+            "Reagiert ein globaler Kurzbefehl nicht, prüfen Sie Konflikte mit anderen Apps oder dem System.",
+            "Wird eine Vorlage nicht gespeichert, prüfen Sie, ob der Name leer ist."
+          ]
+        },
+        {
+          "heading": "Datenschutzhinweis",
+          "paragraphs": [
+            "Senden Sie nur die für den Support nötigen Mindestangaben und schwärzen Sie private Daten in Bildschirmfotos."
+          ]
+        }
+      ],
+      "links": [
+        {
+          "label": "Datenschutzrichtlinie",
+          "href": "../Privacy/index.html"
+        },
+        {
+          "label": "Altersfreigabe",
+          "href": "../AgeRating/index.html"
+        }
+      ]
     }
   }
+}
+
   </script>
   <script>
     (() => {

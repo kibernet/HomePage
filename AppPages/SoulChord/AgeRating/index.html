@@ -1,198 +1,38 @@
 <!doctype html>
 <html lang="en" dir="ltr">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SoulMetronome Age Rating</title>
-  <meta name="description" content="Age rating information for SoulMetronome / 时光节拍器.">
-  <link rel="stylesheet" href="../assets/pages.css">
+  <title>SoulChord Age Rating Information</title>
+  <meta name="description" content="Age rating information for SoulChord, a metronome, tuner, and rhythm practice utility.">
+  <style>
+    :root{color-scheme:light;--bg:#f5f1e9;--paper:#fffdf8;--text:#24282c;--muted:#5f6565;--quiet:#858782;--line:#ddd6ca;--accent:#248d83;--accent2:#a77c39;--soft:#f2eee6;--ok:#287b53}*{box-sizing:border-box}body{margin:0;min-height:100vh;color:var(--text);background:linear-gradient(135deg,#fffdf8 0%,var(--bg) 55%,#ece5da 100%);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",sans-serif;line-height:1.65}.page{width:min(980px,calc(100% - 32px));margin:0 auto;padding:32px 0 52px}.shell{overflow:hidden;border:1px solid var(--line);border-radius:18px;background:rgba(255,253,248,.96);box-shadow:0 24px 70px rgba(70,55,35,.12)}.topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:17px 20px;border-bottom:1px solid var(--line);background:rgba(242,238,230,.8)}.brand{display:flex;align-items:center;gap:10px;color:var(--text);text-decoration:none;font-weight:760}.mark{display:grid;place-items:center;width:34px;height:34px;border:1px solid #a9d7d1;border-radius:10px;color:var(--accent);background:#edf9f7;font-weight:820}nav{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-end;gap:8px}nav a,.language{border:1px solid var(--line);border-radius:9px;background:#fffdf8;color:var(--muted);font-size:.93rem}nav a{padding:7px 10px;text-decoration:none}nav a[aria-current=page]{border-color:#9bcfc9;color:var(--accent);background:#edf9f7}.language{display:flex;align-items:center;gap:7px;padding:6px 8px}.language label{color:var(--quiet);font-size:.86rem;white-space:nowrap}select{min-width:148px;border:0;outline:0;color:var(--text);background:transparent;font:inherit}main{padding:clamp(26px,5vw,52px)}h1{margin:0 0 10px;font-size:clamp(2.1rem,6vw,3.4rem);line-height:1.08}h2{margin:32px 0 9px;font-size:1.18rem}p,li,td,th{color:var(--muted);overflow-wrap:anywhere}.eyebrow{margin:0 0 18px;color:var(--accent);font-weight:760}.updated{color:var(--quiet);font-size:.94rem}.intro{font-size:1.05rem}.rating{display:inline-flex;margin:18px 0 10px;padding:10px 15px;border:1px solid #a8d4bc;border-radius:10px;color:var(--ok);background:#eff9f3;font-weight:800}table{width:100%;border-collapse:separate;border-spacing:0;overflow:hidden;border:1px solid var(--line);border-radius:10px;background:#fff}th,td{padding:12px 14px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{color:var(--text);background:var(--soft)}tr:last-child td{border-bottom:0}a{color:var(--accent)}.links{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}.pill{padding:8px 11px;border:1px solid var(--line);border-radius:9px;background:var(--soft);color:var(--text);text-decoration:none}@media(max-width:720px){.page{width:min(100% - 20px,980px);padding:12px 0 28px}.topbar{align-items:stretch;flex-direction:column}nav{justify-content:flex-start}.language{width:100%}.language select{width:100%;min-width:0}main{padding:25px 20px}th,td{padding:10px 9px}}
+  </style>
 </head>
 <body>
-  <div class="page">
-    <main class="document">
-      <div class="toolbar">
-        <div class="language-control">
-          <label id="language-label" for="language-select">Language</label>
-          <select id="language-select" aria-label="Choose language"></select>
-        </div>
-      </div>
-      <p class="eyebrow" id="eyebrow"></p>
-      <h1 id="title"></h1>
-      <p class="updated" id="updated"></p>
-      <p id="intro"></p>
-      <div class="rating" id="rating"></div>
-      <h2 id="summary-title"></h2>
-      <table>
-        <thead><tr><th id="category-header"></th><th id="status-header"></th></tr></thead>
-        <tbody id="rating-table"></tbody>
-      </table>
-      <h2 id="use-title"></h2>
-      <p id="use-body"></p>
-      <h2 id="safety-title"></h2>
-      <ul id="safety-list"></ul>
-      <h2 id="links-title"></h2>
-      <div class="links">
-        <span class="pill"><a id="privacy-link" data-localized-link href="../Privacy/index.html"></a></span>
-        <span class="pill"><a id="support-link" data-localized-link href="../Support/index.html"></a></span>
-      </div>
-    </main>
-  </div>
-  <script>
-    const ageRows = {
-      en: [["Violence", "None"], ["Mature or suggestive themes", "None"], ["Medical, health, or treatment claims", "None"], ["Gambling, contests, or loot boxes", "None"], ["User-generated public content", "None"], ["Unrestricted web access", "No"], ["Location tracking", "No"], ["Microphone and torch permissions", "Optional, user-controlled beat feedback and rhythm timing only"]],
-      "zh-Hans": [["暴力内容", "无"], ["成人或暗示性主题", "无"], ["医疗、健康或治疗主张", "无"], ["赌博、竞赛或抽奖箱", "无"], ["用户生成公开内容", "无"], ["不受限制的网页访问", "无"], ["位置追踪", "无"], ["麦克风与闪光灯权限", "可选，仅用于用户控制的节拍反馈和节奏时值分析"]],
-      "zh-Hant": [["暴力內容", "無"], ["成人或暗示性主題", "無"], ["醫療、健康或治療主張", "無"], ["賭博、競賽或抽獎箱", "無"], ["使用者生成公開內容", "無"], ["不受限制的網頁存取", "無"], ["位置追蹤", "無"], ["麥克風與閃光燈權限", "可選，僅用於使用者控制的節拍回饋和節奏時值分析"]]
-    };
-
-    const ageContent = {
-      en: {
-        docTitle: "SoulMetronome Age Rating",
-        docDescription: "Age rating information for SoulMetronome / 时光节拍器.",
-        language: "Language",
-        chooseLanguage: "Choose language",
-        eyebrow: "SoulMetronome / 时光节拍器",
-        title: "Age Rating",
-        updated: "Last updated: July 1, 2026",
-        intro: "SoulMetronome is a music utility for tempo practice, beat feedback, and rhythm timing.",
-        rating: "Suggested App Store age rating: 4+",
-        summaryTitle: "Content Summary",
-        categoryHeader: "Category",
-        statusHeader: "Status",
-        useTitle: "Intended Use",
-        useBody: "The app is designed for music practice and utility use. It does not provide social feeds, public chat, games, gambling, medical advice, or unrestricted web browsing.",
-        safetyTitle: "Safety Controls",
-        safety: ["The metronome works without an account.", "Microphone listening is optional and user controlled.", "Flash feedback is optional and uses the torch only while the feature is enabled.", "Practice settings and saved tempos stay on the device unless the user chooses to share information in a support request."],
-        linksTitle: "Related Pages",
-        privacyLink: "Privacy Policy",
-        supportLink: "Support",
-        rows: ageRows.en
-      },
-      "zh-Hans": {
-        docTitle: "时光节拍器适龄说明",
-        docDescription: "时光节拍器适龄说明。",
-        language: "语言",
-        chooseLanguage: "选择语言",
-        eyebrow: "SoulMetronome / 时光节拍器",
-        title: "适龄说明",
-        updated: "最后更新：2026 年 7 月 1 日",
-        intro: "时光节拍器是一款用于速度练习、节拍反馈和节奏时值分析的音乐工具。",
-        rating: "建议 App Store 年龄分级：4+",
-        summaryTitle: "内容摘要",
-        categoryHeader: "类别",
-        statusHeader: "状态",
-        useTitle: "预期用途",
-        useBody: "App 面向音乐练习和工具使用，不提供社交信息流、公开聊天、游戏、赌博、医疗建议或不受限制的网页浏览。",
-        safetyTitle: "安全控制",
-        safety: ["节拍器无需账号即可使用。", "麦克风监听是可选功能，由用户主动控制。", "闪光反馈是可选功能，仅在开启期间调用闪光灯。", "练习设置和保存速度默认留在设备本地；只有用户主动联系支持时才会分享所选择的信息。"],
-        linksTitle: "相关页面",
-        privacyLink: "隐私政策",
-        supportLink: "支持",
-        rows: ageRows["zh-Hans"]
-      },
-      "zh-Hant": {
-        docTitle: "時光節拍器適齡說明",
-        docDescription: "時光節拍器適齡說明。",
-        language: "語言",
-        chooseLanguage: "選擇語言",
-        eyebrow: "SoulMetronome / 時光節拍器",
-        title: "適齡說明",
-        updated: "最後更新：2026 年 7 月 1 日",
-        intro: "時光節拍器是一款用於速度練習、節拍回饋和節奏時值分析的音樂工具。",
-        rating: "建議 App Store 年齡分級：4+",
-        summaryTitle: "內容摘要",
-        categoryHeader: "類別",
-        statusHeader: "狀態",
-        useTitle: "預期用途",
-        useBody: "App 面向音樂練習和工具使用，不提供社交資訊流、公開聊天、遊戲、賭博、醫療建議或不受限制的網頁瀏覽。",
-        safetyTitle: "安全控制",
-        safety: ["節拍器無需帳號即可使用。", "麥克風聆聽是可選功能，由使用者主動控制。", "閃光回饋是可選功能，僅在開啟期間呼叫閃光燈。", "練習設定和保存速度預設留在裝置本機；只有使用者主動聯絡支援時才會分享所選擇的資訊。"],
-        linksTitle: "相關頁面",
-        privacyLink: "隱私權政策",
-        supportLink: "支援",
-        rows: ageRows["zh-Hant"]
-      }
-    };
-
-    const ageLocalized = {
-      ja: ["SoulMetronome 年齢レーティング", "言語", "言語を選択", "年齢レーティング", "最終更新日: 2026年7月1日", "SoulMetronome はテンポ練習、拍のフィードバック、リズムタイミング用の音楽ユーティリティです。", "推奨 App Store 年齢レーティング: 4+", "コンテンツ概要", "カテゴリ", "状態", "想定用途", "このアプリは音楽練習とユーティリティ用途向けです。ソーシャル、公開チャット、ゲーム、ギャンブル、医療助言、無制限の Web 閲覧は提供しません。", "安全機能", ["アカウントなしで使えます。", "マイク聴取は任意でユーザーが制御します。", "フラッシュは有効時のみライトを使います。", "設定と保存テンポは端末に保持されます。"], "関連ページ", "プライバシーポリシー", "サポート"],
-      ko: ["SoulMetronome 연령 등급", "언어", "언어 선택", "연령 등급", "마지막 업데이트: 2026년 7월 1일", "SoulMetronome은 템포 연습, 박자 피드백, 리듬 타이밍을 위한 음악 유틸리티입니다.", "권장 App Store 연령 등급: 4+", "콘텐츠 요약", "카테고리", "상태", "사용 목적", "음악 연습과 유틸리티 사용을 위한 앱이며 소셜 피드, 공개 채팅, 게임, 도박, 의료 조언, 무제한 웹 탐색을 제공하지 않습니다.", "안전 제어", ["계정 없이 사용할 수 있습니다.", "마이크 청취는 선택 사항이며 사용자가 제어합니다.", "플래시는 기능이 켜진 동안에만 사용됩니다.", "설정과 저장 템포는 기기에 남습니다."], "관련 페이지", "개인정보 처리방침", "지원"],
-      fr: ["Classification d'âge de SoulMetronome", "Langue", "Choisir la langue", "Classification d'âge", "Dernière mise à jour : 1 juillet 2026", "SoulMetronome est un utilitaire musical pour la pratique du tempo, le retour de battement et le timing rythmique.", "Classification App Store suggérée : 4+", "Résumé du contenu", "Catégorie", "Statut", "Utilisation prévue", "L'app est destinée à la pratique musicale. Elle ne propose pas de flux social, chat public, jeux, hasard, conseil médical ou navigation Web illimitée.", "Contrôles de sécurité", ["Fonctionne sans compte.", "L'écoute micro est optionnelle et contrôlée par l'utilisateur.", "Le flash n'utilise la torche que lorsque la fonction est activée.", "Les réglages et tempos restent sur l'appareil."], "Pages liées", "Confidentialité", "Assistance"],
-      de: ["SoulMetronome Altersfreigabe", "Sprache", "Sprache auswählen", "Altersfreigabe", "Zuletzt aktualisiert: 1. Juli 2026", "SoulMetronome ist ein Musikwerkzeug für Tempotraining, Beat-Feedback und Rhythmus-Timing.", "Empfohlene App Store Altersfreigabe: 4+", "Inhaltsübersicht", "Kategorie", "Status", "Vorgesehene Nutzung", "Die App dient Musikübung und Utility-Nutzung. Sie bietet keine Social-Feeds, öffentlichen Chats, Spiele, Glücksspiel, medizinische Beratung oder uneingeschränktes Web-Browsing.", "Sicherheitskontrollen", ["Ohne Konto nutzbar.", "Mikrofonhören ist optional und nutzergesteuert.", "Flash nutzt die Taschenlampe nur bei aktivierter Funktion.", "Einstellungen und Tempi bleiben auf dem Gerät."], "Verwandte Seiten", "Datenschutz", "Support"],
-      es: ["Clasificación por edad de SoulMetronome", "Idioma", "Elegir idioma", "Clasificación por edad", "Última actualización: 1 de julio de 2026", "SoulMetronome es una utilidad musical para practicar tempo, feedback del pulso y timing rítmico.", "Clasificación sugerida en App Store: 4+", "Resumen de contenido", "Categoría", "Estado", "Uso previsto", "La app es para práctica musical y utilidad. No ofrece redes sociales, chat público, juegos, apuestas, consejo médico ni navegación web sin límites.", "Controles de seguridad", ["Funciona sin cuenta.", "El micrófono es opcional y controlado por el usuario.", "El flash usa la linterna solo cuando la función está activa.", "Los ajustes y tempos quedan en el dispositivo."], "Páginas relacionadas", "Privacidad", "Soporte"],
-      it: ["Classificazione età di SoulMetronome", "Lingua", "Scegli lingua", "Classificazione età", "Ultimo aggiornamento: 1 luglio 2026", "SoulMetronome è un'utilità musicale per pratica del tempo, feedback del beat e timing ritmico.", "Classificazione App Store suggerita: 4+", "Riepilogo contenuti", "Categoria", "Stato", "Uso previsto", "L'app è pensata per pratica musicale e utilità. Non offre social, chat pubbliche, giochi, scommesse, consigli medici o navigazione web libera.", "Controlli di sicurezza", ["Funziona senza account.", "Il microfono è opzionale e controllato dall'utente.", "Il flash usa la torcia solo quando attivo.", "Impostazioni e tempi restano sul dispositivo."], "Pagine correlate", "Privacy", "Supporto"],
-      "pt-BR": ["Classificação etária do SoulMetronome", "Idioma", "Escolher idioma", "Classificação etária", "Última atualização: 1 de julho de 2026", "SoulMetronome é um utilitário musical para prática de tempo, feedback de batida e timing rítmico.", "Classificação sugerida na App Store: 4+", "Resumo de conteúdo", "Categoria", "Status", "Uso previsto", "O app é voltado à prática musical e utilidade. Não oferece rede social, chat público, jogos, apostas, conselho médico ou navegação web irrestrita.", "Controles de segurança", ["Funciona sem conta.", "O microfone é opcional e controlado pelo usuário.", "O flash usa a lanterna apenas quando ativo.", "Configurações e tempos ficam no dispositivo."], "Páginas relacionadas", "Privacidade", "Suporte"],
-      ru: ["Возрастной рейтинг SoulMetronome", "Язык", "Выбрать язык", "Возрастной рейтинг", "Обновлено: 1 июля 2026 г.", "SoulMetronome — музыкальная утилита для практики темпа, обратной связи по биту и ритмического тайминга.", "Рекомендуемый рейтинг App Store: 4+", "Сводка контента", "Категория", "Статус", "Назначение", "Приложение предназначено для музыкальной практики. В нем нет соцлент, публичного чата, игр, азартных функций, медицинских советов или неограниченного веб-доступа.", "Меры безопасности", ["Работает без аккаунта.", "Микрофон опционален и управляется пользователем.", "Фонарик используется только при включенной функции.", "Настройки и темпы остаются на устройстве."], "Связанные страницы", "Конфиденциальность", "Поддержка"],
-      ar: ["تصنيف العمر في SoulMetronome", "اللغة", "اختر اللغة", "تصنيف العمر", "آخر تحديث: 1 يوليو 2026", "SoulMetronome أداة موسيقية للتدرب على السرعة والتغذية الراجعة للإيقاع وتوقيت الإيقاع.", "تصنيف App Store المقترح: +4", "ملخص المحتوى", "الفئة", "الحالة", "الاستخدام المقصود", "التطبيق مخصص للتدريب الموسيقي ولا يقدم شبكات اجتماعية أو دردشة عامة أو ألعابا أو مقامرة أو نصائح طبية أو تصفحا غير مقيد.", "عناصر الأمان", ["يعمل دون حساب.", "الميكروفون اختياري ويتحكم به المستخدم.", "الفلاش يستخدم المصباح فقط عند تفعيل الميزة.", "الإعدادات والإيقاعات تبقى على الجهاز."], "صفحات ذات صلة", "الخصوصية", "الدعم"],
-      hi: ["SoulMetronome आयु रेटिंग", "भाषा", "भाषा चुनें", "आयु रेटिंग", "अंतिम अपडेट: 1 जुलाई 2026", "SoulMetronome tempo practice, beat feedback और rhythm timing के लिए संगीत utility है.", "सुझाई गई App Store आयु रेटिंग: 4+", "सामग्री सारांश", "श्रेणी", "स्थिति", "उपयोग", "ऐप संगीत अभ्यास और utility उपयोग के लिए है. इसमें social feed, public chat, games, gambling, medical advice या unrestricted web browsing नहीं है.", "सुरक्षा नियंत्रण", ["बिना account उपयोग कर सकते हैं.", "माइक्रोफोन वैकल्पिक और user-controlled है.", "flash केवल feature चालू होने पर torch उपयोग करता है.", "settings और tempos device पर रहते हैं."], "संबंधित पृष्ठ", "गोपनीयता नीति", "सहायता"],
-      id: ["Peringkat Usia SoulMetronome", "Bahasa", "Pilih bahasa", "Peringkat Usia", "Terakhir diperbarui: 1 Juli 2026", "SoulMetronome adalah utilitas musik untuk latihan tempo, feedback ketukan, dan timing ritme.", "Peringkat usia App Store yang disarankan: 4+", "Ringkasan Konten", "Kategori", "Status", "Penggunaan", "Aplikasi ini untuk latihan musik dan utilitas. Tidak ada feed sosial, chat publik, game, perjudian, saran medis, atau akses web tak terbatas.", "Kontrol Keamanan", ["Berfungsi tanpa akun.", "Mikrofon opsional dan dikontrol pengguna.", "Flash memakai senter hanya saat fitur aktif.", "Pengaturan dan tempo tetap di perangkat."], "Halaman Terkait", "Privasi", "Dukungan"],
-      vi: ["Xếp hạng độ tuổi SoulMetronome", "Ngôn ngữ", "Chọn ngôn ngữ", "Xếp hạng độ tuổi", "Cập nhật lần cuối: 1 tháng 7, 2026", "SoulMetronome là tiện ích âm nhạc để luyện tempo, phản hồi nhịp và timing tiết tấu.", "Xếp hạng App Store đề xuất: 4+", "Tóm tắt nội dung", "Danh mục", "Trạng thái", "Mục đích sử dụng", "Ứng dụng dành cho luyện nhạc và tiện ích. Không có mạng xã hội, chat công khai, trò chơi, cờ bạc, tư vấn y tế hoặc duyệt web không giới hạn.", "Kiểm soát an toàn", ["Hoạt động không cần tài khoản.", "Micro là tùy chọn và do người dùng kiểm soát.", "Flash chỉ dùng đèn pin khi bật tính năng.", "Cài đặt và tempo ở trên thiết bị."], "Trang liên quan", "Quyền riêng tư", "Hỗ trợ"],
-      th: ["การจัดระดับอายุ SoulMetronome", "ภาษา", "เลือกภาษา", "การจัดระดับอายุ", "อัปเดตล่าสุด: 1 กรกฎาคม 2026", "SoulMetronome เป็นเครื่องมือดนตรีสำหรับฝึก tempo, beat feedback และ timing จังหวะ", "ระดับอายุ App Store ที่แนะนำ: 4+", "สรุปเนื้อหา", "หมวดหมู่", "สถานะ", "การใช้งาน", "แอปนี้ใช้สำหรับฝึกดนตรีและเครื่องมือ ไม่มี social feed, chat สาธารณะ, เกม, การพนัน, คำแนะนำทางการแพทย์ หรือเว็บไม่จำกัด", "การควบคุมความปลอดภัย", ["ใช้ได้โดยไม่ต้องมีบัญชี", "ไมโครโฟนเป็นทางเลือกและผู้ใช้ควบคุม", "flash ใช้ไฟฉายเมื่อเปิดฟีเจอร์เท่านั้น", "settings และ tempos อยู่บนอุปกรณ์"], "หน้าที่เกี่ยวข้อง", "ความเป็นส่วนตัว", "สนับสนุน"]
-    };
-
-    const defaultRows = {
-      ja: [["暴力", "なし"], ["成人または示唆的テーマ", "なし"], ["医療または治療情報", "なし"], ["ギャンブル、コンテスト、ルートボックス", "なし"], ["公開ユーザー生成コンテンツ", "なし"], ["無制限の Web アクセス", "なし"], ["位置追跡", "なし"], ["マイクとライト", "任意、拍のフィードバックとタイミング分析のみ"]],
-      ko: [["폭력", "없음"], ["성인 또는 선정적 주제", "없음"], ["의료 또는 치료 정보", "없음"], ["도박, 경연, loot box", "없음"], ["공개 사용자 생성 콘텐츠", "없음"], ["무제한 웹 접근", "없음"], ["위치 추적", "없음"], ["마이크와 플래시", "선택 사항, 박자 피드백과 타이밍 분석용"]],
-      fr: [["Violence", "Aucune"], ["Thèmes adultes ou suggestifs", "Aucun"], ["Informations médicales", "Aucune"], ["Jeux d'argent ou concours", "Aucun"], ["Contenu public généré par l'utilisateur", "Aucun"], ["Accès Web illimité", "Non"], ["Suivi de position", "Non"], ["Micro et torche", "Optionnels, uniquement pour le beat et le timing"]],
-      de: [["Gewalt", "Keine"], ["Erwachsene oder suggestive Themen", "Keine"], ["Medizinische Angaben", "Keine"], ["Glücksspiel oder Wettbewerbe", "Keine"], ["Öffentliche nutzergenerierte Inhalte", "Keine"], ["Uneingeschränkter Webzugang", "Nein"], ["Standortverfolgung", "Nein"], ["Mikrofon und Blitz", "Optional, nur Beat-Feedback und Timing"]],
-      es: [["Violencia", "Ninguna"], ["Temas adultos o sugerentes", "Ninguno"], ["Información médica", "Ninguna"], ["Apuestas, concursos o loot boxes", "Ninguno"], ["Contenido público generado por usuarios", "Ninguno"], ["Acceso web sin restricciones", "No"], ["Seguimiento de ubicación", "No"], ["Micrófono y flash", "Opcionales, solo para pulso y timing"]],
-      it: [["Violenza", "Nessuna"], ["Temi maturi o suggestivi", "Nessuno"], ["Informazioni mediche", "Nessuna"], ["Gioco d'azzardo o concorsi", "Nessuno"], ["Contenuti pubblici generati dagli utenti", "Nessuno"], ["Accesso web illimitato", "No"], ["Tracciamento posizione", "No"], ["Microfono e flash", "Opzionali, solo beat e timing"]],
-      "pt-BR": [["Violência", "Nenhuma"], ["Temas adultos ou sugestivos", "Nenhum"], ["Informações médicas", "Nenhuma"], ["Apostas, concursos ou loot boxes", "Nenhum"], ["Conteúdo público de usuários", "Nenhum"], ["Acesso web irrestrito", "Não"], ["Rastreamento de localização", "Não"], ["Microfone e flash", "Opcionais, apenas batida e timing"]],
-      ru: [["Насилие", "Нет"], ["Взрослые или suggestive темы", "Нет"], ["Медицинская информация", "Нет"], ["Азартные функции или конкурсы", "Нет"], ["Публичный пользовательский контент", "Нет"], ["Неограниченный веб-доступ", "Нет"], ["Отслеживание местоположения", "Нет"], ["Микрофон и фонарик", "Опционально, только бит и тайминг"]],
-      ar: [["العنف", "لا يوجد"], ["موضوعات للبالغين أو إيحائية", "لا يوجد"], ["معلومات طبية", "لا يوجد"], ["مقامرة أو مسابقات", "لا يوجد"], ["محتوى عام من المستخدمين", "لا يوجد"], ["وصول ويب غير مقيد", "لا"], ["تتبع الموقع", "لا"], ["الميكروفون والفلاش", "اختياريان، للإيقاع والتوقيت فقط"]],
-      hi: [["हिंसा", "नहीं"], ["वयस्क या संकेतात्मक विषय", "नहीं"], ["चिकित्सा जानकारी", "नहीं"], ["जुआ या प्रतियोगिता", "नहीं"], ["सार्वजनिक user content", "नहीं"], ["unrestricted web access", "नहीं"], ["location tracking", "नहीं"], ["microphone और flash", "वैकल्पिक, केवल beat और timing के लिए"]],
-      id: [["Kekerasan", "Tidak ada"], ["Tema dewasa atau sugestif", "Tidak ada"], ["Informasi medis", "Tidak ada"], ["Perjudian atau kontes", "Tidak ada"], ["Konten publik pengguna", "Tidak ada"], ["Akses web tak terbatas", "Tidak"], ["Pelacakan lokasi", "Tidak"], ["Mikrofon dan flash", "Opsional, hanya ketukan dan timing"]],
-      vi: [["Bạo lực", "Không"], ["Chủ đề người lớn hoặc gợi ý", "Không"], ["Thông tin y tế", "Không"], ["Cờ bạc hoặc cuộc thi", "Không"], ["Nội dung công khai do người dùng tạo", "Không"], ["Truy cập web không giới hạn", "Không"], ["Theo dõi vị trí", "Không"], ["Micro và flash", "Tùy chọn, chỉ cho nhịp và timing"]],
-      th: [["ความรุนแรง", "ไม่มี"], ["เนื้อหาผู้ใหญ่หรือชี้นำ", "ไม่มี"], ["ข้อมูลทางการแพทย์", "ไม่มี"], ["การพนันหรือการแข่งขัน", "ไม่มี"], ["เนื้อหาสาธารณะจากผู้ใช้", "ไม่มี"], ["เว็บไม่จำกัด", "ไม่มี"], ["ติดตามตำแหน่ง", "ไม่มี"], ["ไมโครโฟนและแฟลช", "ทางเลือก ใช้กับจังหวะและ timing เท่านั้น"]]
-    };
-
-    for (const [code, values] of Object.entries(ageLocalized)) {
-      ageContent[code] = {
-        docTitle: values[0],
-        docDescription: values[0],
-        language: values[1],
-        chooseLanguage: values[2],
-        eyebrow: "SoulMetronome / 时光节拍器",
-        title: values[3],
-        updated: values[4],
-        intro: values[5],
-        rating: values[6],
-        summaryTitle: values[7],
-        categoryHeader: values[8],
-        statusHeader: values[9],
-        useTitle: values[10],
-        useBody: values[11],
-        safetyTitle: values[12],
-        safety: values[13],
-        linksTitle: values[14],
-        privacyLink: values[15],
-        supportLink: values[16],
-        rows: defaultRows[code]
-      };
+  <div class="page"><div class="shell">
+    <header class="topbar"><a class="brand" href="../Support/index.html"><span class="mark">SC</span><span>SoulChord</span></a><nav aria-label="SoulChord policy pages"><a id="nav-privacy" href="../Privacy/index.html">Privacy</a><a id="nav-support" href="../Support/index.html">Support</a><a id="nav-age" aria-current="page" href="../AgeRating/index.html">Age Rating</a><span class="language"><label id="language-label" for="language-select">Language</label><select id="language-select"></select></span></nav></header>
+    <main id="content"></main>
+  </div></div>
+  <script type="application/json" id="page-data">
+  {
+    "defaultLanguage":"en",
+    "languages":[{"code":"zh-Hans","htmlLang":"zh-CN","label":"简体中文","dir":"ltr"},{"code":"zh-Hant","htmlLang":"zh-TW","label":"繁體中文","dir":"ltr"},{"code":"en","htmlLang":"en","label":"English","dir":"ltr"},{"code":"ja","htmlLang":"ja","label":"日本語","dir":"ltr"},{"code":"ko","htmlLang":"ko","label":"한국어","dir":"ltr"},{"code":"es","htmlLang":"es","label":"Español","dir":"ltr"},{"code":"fr","htmlLang":"fr","label":"Français","dir":"ltr"},{"code":"de","htmlLang":"de","label":"Deutsch","dir":"ltr"}],
+    "ui":{"zh-Hans":{"language":"语言","chooseLanguage":"选择语言","privacy":"隐私","support":"支持","age":"适龄"},"zh-Hant":{"language":"語言","chooseLanguage":"選擇語言","privacy":"隱私","support":"支援","age":"年齡分級"},"en":{"language":"Language","chooseLanguage":"Choose language","privacy":"Privacy","support":"Support","age":"Age Rating"},"ja":{"language":"言語","chooseLanguage":"言語を選択","privacy":"プライバシー","support":"サポート","age":"年齢区分"},"ko":{"language":"언어","chooseLanguage":"언어 선택","privacy":"개인정보","support":"지원","age":"연령 등급"},"es":{"language":"Idioma","chooseLanguage":"Elegir idioma","privacy":"Privacidad","support":"Soporte","age":"Clasificación"},"fr":{"language":"Langue","chooseLanguage":"Choisir la langue","privacy":"Confidentialité","support":"Assistance","age":"Classification"},"de":{"language":"Sprache","chooseLanguage":"Sprache auswählen","privacy":"Datenschutz","support":"Support","age":"Altersfreigabe"}},
+    "content":{
+      "zh-Hans":{"metaTitle":"SoulChord 年龄分级信息","metaDescription":"SoulChord（时光节拍器）的 App Store 年龄分级说明。","eyebrow":"SoulChord / 时光节拍器","title":"年龄分级信息","updated":"最后更新：2026 年 7 月 12 日","intro":"SoulChord 是通用音乐练习工具，不包含社交、网页浏览、广告或受限内容。","rating":"预期 App Store 年龄分级：4+","tableTitle":"Apple 问卷事实摘要","categoryHeader":"内容类别","statusHeader":"SoulChord 状态","rows":[["卡通、幻想或写实暴力","无"],["亵渎、粗俗或恐怖内容","无"],["成人、性暗示或裸露内容","无"],["酒精、烟草或毒品内容","无"],["医疗或治疗信息","无"],["赌博、竞赛或抽奖","无"],["用户生成内容或公开交流","无"],["不受限网页访问","无"],["广告","无"],["追踪","无"],["位置服务","无"],["麦克风和闪光灯","可选；仅用于本机调音、节奏分析和节拍闪光"]],"audienceTitle":"适用人群","audienceBody":"适合学习乐器、排练、练习节奏或调音的一般用户，包括儿童在家长或教师指导下使用。App 不提供医疗建议或安全关键指导。","notesTitle":"分级依据","notes":["无需账号，没有公开个人资料、聊天、评论或内容上传。","没有购买、订阅、广告、抽奖、战利品箱或赌博机制。","麦克风数据在设备本地实时分析；闪光灯只在用户主动开启时工作。","最终年龄分级由 Apple 根据 App Store Connect 中提交的问卷决定。"],"linksTitle":"相关页面"},
+      "zh-Hant":{"metaTitle":"SoulChord 年齡分級資訊","metaDescription":"SoulChord（時光節拍器）的 App Store 年齡分級說明。","eyebrow":"SoulChord / 時光節拍器","title":"年齡分級資訊","updated":"最後更新：2026 年 7 月 12 日","intro":"SoulChord 是一般音樂練習工具，不包含社交、網頁瀏覽、廣告或限制級內容。","rating":"預期 App Store 年齡分級：4+","tableTitle":"Apple 問卷事實摘要","categoryHeader":"內容類別","statusHeader":"SoulChord 狀態","rows":[["卡通、幻想或寫實暴力","無"],["粗俗、恐怖內容","無"],["成人、性暗示或裸露內容","無"],["酒精、煙草或毒品內容","無"],["醫療或治療資訊","無"],["賭博、競賽或抽獎","無"],["使用者生成內容或公開交流","無"],["不受限制的網頁存取","無"],["廣告","無"],["追蹤","無"],["定位服務","無"],["麥克風與閃光燈","選用；僅用於本機調音、節奏分析和節拍閃光"]],"audienceTitle":"適用對象","audienceBody":"適合學習樂器、排練、節奏練習或調音的一般使用者，包括兒童在家長或教師指導下使用。App 不提供醫療建議或安全關鍵指示。","notesTitle":"分級依據","notes":["無需帳號，沒有公開個人檔案、聊天、留言或內容上傳。","沒有購買、訂閱、廣告、抽獎、戰利品箱或賭博機制。","麥克風資料在裝置本機即時分析；閃光燈只在使用者主動開啟時運作。","最終分級由 Apple 根據 App Store Connect 問卷決定。"],"linksTitle":"相關頁面"},
+      "en":{"metaTitle":"SoulChord Age Rating Information","metaDescription":"App Store age rating information for SoulChord.","eyebrow":"SoulChord","title":"Age Rating Information","updated":"Last updated: July 12, 2026","intro":"SoulChord is a general-audience music-practice utility with no social networking, web browsing, advertising, or restricted content.","rating":"Expected App Store age rating: 4+","tableTitle":"Apple questionnaire facts","categoryHeader":"Content category","statusHeader":"SoulChord status","rows":[["Cartoon, fantasy, or realistic violence","None"],["Profanity, crude humor, or horror","None"],["Mature, suggestive, sexual content, or nudity","None"],["Alcohol, tobacco, or drug content","None"],["Medical or treatment information","None"],["Gambling, contests, or sweepstakes","None"],["User-generated content or public communication","None"],["Unrestricted web access","None"],["Advertising","None"],["Tracking","None"],["Location services","None"],["Microphone and camera torch","Optional; only for on-device tuning, rhythm analysis, and beat flash"]],"audienceTitle":"Intended audience","audienceBody":"Suitable for general users learning an instrument, rehearsing, practicing rhythm, or tuning, including children with parent or teacher guidance. The app does not provide medical advice or safety-critical instruction.","notesTitle":"Rating basis","notes":["No account, public profile, chat, comments, or content uploads.","No purchases, subscriptions, ads, contests, loot boxes, or gambling mechanics.","Microphone input is analyzed in real time on the device; the torch works only after the user enables it.","Apple determines the final rating from the questionnaire submitted in App Store Connect."],"linksTitle":"Related pages"},
+      "ja":{"metaTitle":"SoulChord 年齢区分情報","metaDescription":"SoulChord の App Store 年齢区分情報。","eyebrow":"SoulChord","title":"年齢区分情報","updated":"最終更新日：2026年7月12日","intro":"SoulChord はソーシャル、Web 閲覧、広告、制限コンテンツを含まない一般向け音楽練習ツールです。","rating":"想定 App Store 年齢区分：4+","tableTitle":"Apple 質問票の事実","categoryHeader":"コンテンツ区分","statusHeader":"SoulChord の状態","rows":[["アニメ、ファンタジー、写実的な暴力","なし"],["不適切な言葉、下品なユーモア、恐怖","なし"],["成人向け、示唆的、性的内容、ヌード","なし"],["酒、たばこ、薬物","なし"],["医療または治療情報","なし"],["ギャンブル、コンテスト、懸賞","なし"],["ユーザー生成コンテンツまたは公開交流","なし"],["無制限の Web アクセス","なし"],["広告","なし"],["追跡","なし"],["位置情報","なし"],["マイクとカメラライト","任意。端末内の調音、リズム解析、拍のライトのみ"]],"audienceTitle":"対象者","audienceBody":"楽器学習、リハーサル、リズム練習、調音を行う一般ユーザー向けです。子どもは保護者または教師の指導下で利用できます。医療助言や安全上重要な指示は提供しません。","notesTitle":"区分の根拠","notes":["アカウント、公開プロフィール、チャット、コメント、アップロードはありません。","購入、購読、広告、コンテスト、ルートボックス、ギャンブルはありません。","マイクは端末内で解析され、ライトはユーザーが有効にした場合のみ動作します。","最終区分は App Store Connect の回答に基づき Apple が決定します。"],"linksTitle":"関連ページ"},
+      "ko":{"metaTitle":"SoulChord 연령 등급 정보","metaDescription":"SoulChord의 App Store 연령 등급 정보입니다.","eyebrow":"SoulChord","title":"연령 등급 정보","updated":"최종 업데이트: 2026년 7월 12일","intro":"SoulChord는 소셜 네트워크, 웹 탐색, 광고 또는 제한 콘텐츠가 없는 일반 사용자용 음악 연습 도구입니다.","rating":"예상 App Store 연령 등급: 4+","tableTitle":"Apple 설문 사실","categoryHeader":"콘텐츠 범주","statusHeader":"SoulChord 상태","rows":[["만화, 판타지 또는 사실적 폭력","없음"],["욕설, 저속한 유머 또는 공포","없음"],["성인, 선정적, 성적 콘텐츠 또는 노출","없음"],["술, 담배 또는 약물","없음"],["의료 또는 치료 정보","없음"],["도박, 경연 또는 추첨","없음"],["사용자 생성 콘텐츠 또는 공개 소통","없음"],["무제한 웹 접근","없음"],["광고","없음"],["추적","없음"],["위치 서비스","없음"],["마이크와 카메라 플래시","선택 사항; 기기 내 튜닝, 리듬 분석 및 박자 플래시에만 사용"]],"audienceTitle":"대상 사용자","audienceBody":"악기 학습, 리허설, 리듬 연습 또는 튜닝을 하는 일반 사용자에게 적합하며 어린이는 부모나 교사의 지도 아래 사용할 수 있습니다. 의료 조언이나 안전 필수 지침을 제공하지 않습니다.","notesTitle":"등급 근거","notes":["계정, 공개 프로필, 채팅, 댓글 또는 업로드가 없습니다.","구매, 구독, 광고, 경연, 전리품 상자 또는 도박이 없습니다.","마이크 입력은 기기에서 실시간 분석되며 플래시는 사용자가 켠 경우에만 작동합니다.","최종 등급은 App Store Connect 설문을 바탕으로 Apple이 결정합니다."],"linksTitle":"관련 페이지"},
+      "es":{"metaTitle":"Clasificación por edad de SoulChord","metaDescription":"Información de clasificación por edad de SoulChord.","eyebrow":"SoulChord","title":"Clasificación por edad","updated":"Última actualización: 12 de julio de 2026","intro":"SoulChord es una herramienta musical para todos los públicos, sin red social, navegación web, publicidad ni contenido restringido.","rating":"Clasificación esperada en App Store: 4+","tableTitle":"Datos del cuestionario de Apple","categoryHeader":"Categoría de contenido","statusHeader":"Estado en SoulChord","rows":[["Violencia de dibujos, fantasía o realista","Ninguna"],["Lenguaje vulgar, humor crudo o terror","Ninguno"],["Contenido adulto, sugerente, sexual o desnudez","Ninguno"],["Alcohol, tabaco o drogas","Ninguno"],["Información médica o de tratamiento","Ninguna"],["Apuestas, concursos o sorteos","Ninguno"],["Contenido de usuarios o comunicación pública","Ninguno"],["Acceso web sin restricciones","Ninguno"],["Publicidad","Ninguna"],["Seguimiento","Ninguno"],["Ubicación","Ninguna"],["Micrófono y linterna","Opcionales; solo afinación, análisis rítmico y flash local"]],"audienceTitle":"Público previsto","audienceBody":"Apto para usuarios que estudian un instrumento, ensayan, practican ritmo o afinan, incluidos menores con guía de padres o docentes. No ofrece asesoramiento médico ni instrucciones críticas de seguridad.","notesTitle":"Base de la clasificación","notes":["Sin cuenta, perfil público, chat, comentarios ni cargas de contenido.","Sin compras, suscripciones, anuncios, concursos, cajas de botín ni apuestas.","El micrófono se analiza en el dispositivo; la linterna solo funciona tras activarla.","Apple determina la clasificación final según el cuestionario de App Store Connect."],"linksTitle":"Páginas relacionadas"},
+      "fr":{"metaTitle":"Classification d'âge de SoulChord","metaDescription":"Informations de classification d'âge pour SoulChord.","eyebrow":"SoulChord","title":"Classification d'âge","updated":"Dernière mise à jour : 12 juillet 2026","intro":"SoulChord est un outil de pratique musicale tout public, sans réseau social, navigation Web, publicité ou contenu restreint.","rating":"Classification App Store attendue : 4+","tableTitle":"Faits du questionnaire Apple","categoryHeader":"Catégorie de contenu","statusHeader":"État dans SoulChord","rows":[["Violence animée, fantastique ou réaliste","Aucune"],["Grossièretés, humour cru ou horreur","Aucun"],["Contenu adulte, suggestif, sexuel ou nudité","Aucun"],["Alcool, tabac ou drogues","Aucun"],["Informations médicales ou de traitement","Aucune"],["Jeux d'argent, concours ou tirages","Aucun"],["Contenu utilisateur ou communication publique","Aucun"],["Accès Web illimité","Aucun"],["Publicité","Aucune"],["Suivi","Aucun"],["Localisation","Aucune"],["Micro et torche","Facultatifs ; uniquement accordage, analyse rythmique et flash local"]],"audienceTitle":"Public visé","audienceBody":"Convient aux personnes apprenant un instrument, répétant, travaillant le rythme ou s'accordant, y compris les enfants guidés par un parent ou professeur. Aucune recommandation médicale ou instruction de sécurité critique.","notesTitle":"Base de la classification","notes":["Aucun compte, profil public, chat, commentaire ou envoi de contenu.","Aucun achat, abonnement, publicité, concours, coffre à butin ou jeu d'argent.","Le micro est analysé sur l'appareil ; la torche fonctionne seulement après activation.","Apple fixe la classification finale selon le questionnaire App Store Connect."],"linksTitle":"Pages associées"},
+      "de":{"metaTitle":"SoulChord Altersfreigabe","metaDescription":"Informationen zur App-Store-Altersfreigabe von SoulChord.","eyebrow":"SoulChord","title":"Informationen zur Altersfreigabe","updated":"Zuletzt aktualisiert: 12. Juli 2026","intro":"SoulChord ist ein Musikübungswerkzeug für alle Altersgruppen ohne soziale Netzwerke, Webbrowser, Werbung oder eingeschränkte Inhalte.","rating":"Erwartete App-Store-Altersfreigabe: 4+","tableTitle":"Fakten für den Apple-Fragebogen","categoryHeader":"Inhaltskategorie","statusHeader":"SoulChord-Status","rows":[["Comic-, Fantasy- oder realistische Gewalt","Keine"],["Kraftausdrücke, derber Humor oder Horror","Keine"],["Erwachsene, anzügliche, sexuelle Inhalte oder Nacktheit","Keine"],["Alkohol, Tabak oder Drogen","Keine"],["Medizinische oder Behandlungsinformationen","Keine"],["Glücksspiel, Wettbewerbe oder Verlosungen","Keine"],["Nutzerinhalte oder öffentliche Kommunikation","Keine"],["Uneingeschränkter Webzugang","Keiner"],["Werbung","Keine"],["Tracking","Keines"],["Standortdienste","Keine"],["Mikrofon und Kameralampe","Optional; nur lokale Stimmung, Rhythmusanalyse und Beat-Blitz"]],"audienceTitle":"Zielgruppe","audienceBody":"Geeignet für allgemeine Nutzer beim Instrumentlernen, Proben, Rhythmusüben oder Stimmen, einschließlich Kindern unter Anleitung von Eltern oder Lehrkräften. Keine medizinische Beratung oder sicherheitskritische Anleitung.","notesTitle":"Grundlage der Freigabe","notes":["Kein Konto, öffentliches Profil, Chat, Kommentare oder Uploads.","Keine Käufe, Abonnements, Werbung, Wettbewerbe, Lootboxen oder Glücksspiele.","Mikrofonanalyse erfolgt auf dem Gerät; die Lampe arbeitet nur nach Aktivierung.","Apple bestimmt die endgültige Freigabe anhand des App-Store-Connect-Fragebogens."],"linksTitle":"Verwandte Seiten"}
     }
-
-    window.SoulMetronomePage = {
-      storageKey: "soulmetronome-age-language",
-      content: ageContent,
-      render(data, helpers) {
-        helpers.setText("eyebrow", data.eyebrow);
-        helpers.setText("title", data.title);
-        helpers.setText("updated", data.updated);
-        helpers.setText("intro", data.intro);
-        helpers.setText("rating", data.rating);
-        helpers.setText("summary-title", data.summaryTitle);
-        helpers.setText("category-header", data.categoryHeader);
-        helpers.setText("status-header", data.statusHeader);
-        helpers.renderTable("rating-table", data.rows);
-        helpers.setText("use-title", data.useTitle);
-        helpers.setText("use-body", data.useBody);
-        helpers.setText("safety-title", data.safetyTitle);
-        helpers.renderList("safety-list", data.safety);
-        helpers.setText("links-title", data.linksTitle);
-        helpers.setText("privacy-link", data.privacyLink);
-        helpers.setText("support-link", data.supportLink);
-      }
-    };
+  }
   </script>
-  <script src="../assets/page-runtime.js"></script>
+  <script>
+    (()=>{const d=JSON.parse(document.getElementById('page-data').textContent),s=document.getElementById('language-select'),c=document.getElementById('content'),key='soulchord-page-language';const norm=v=>{if(!v)return'';v=v.toLowerCase();if(v==='zh'||v.startsWith('zh-cn')||v.startsWith('zh-sg')||v.includes('hans'))return'zh-Hans';if(v.startsWith('zh-tw')||v.startsWith('zh-hk')||v.startsWith('zh-mo')||v.includes('hant'))return'zh-Hant';const b=v.split(/[-_]/)[0];return d.languages.find(x=>x.code.toLowerCase()===v||x.htmlLang.toLowerCase()===v||x.code.toLowerCase().split('-')[0]===b)?.code||''};const pick=()=>{const h=norm(location.hash.slice(1));if(h)return h;try{const x=norm(localStorage.getItem(key));if(x)return x}catch{}for(const x of navigator.languages||[navigator.language]){const n=norm(x);if(n)return n}return d.defaultLanguage};const render=code=>{const lang=d.languages.find(x=>x.code===code)||d.languages.find(x=>x.code===d.defaultLanguage),u=d.ui[lang.code],x=d.content[lang.code];document.documentElement.lang=lang.htmlLang;document.documentElement.dir=lang.dir;document.title=x.metaTitle;document.querySelector('meta[name=description]').content=x.metaDescription;document.getElementById('language-label').textContent=u.language;s.setAttribute('aria-label',u.chooseLanguage);document.getElementById('nav-privacy').textContent=u.privacy;document.getElementById('nav-support').textContent=u.support;document.getElementById('nav-age').textContent=u.age;s.value=lang.code;document.querySelectorAll('nav a,.brand').forEach(a=>{const b=a.getAttribute('href').split('#')[0];a.href=lang.code===d.defaultLanguage?b:`${b}#${lang.code}`});c.replaceChildren();const add=(tag,text,cls)=>{const e=document.createElement(tag);e.textContent=text;if(cls)e.className=cls;c.append(e);return e};add('p',x.eyebrow,'eyebrow');add('h1',x.title);add('p',x.updated,'updated');add('p',x.intro,'intro');add('div',x.rating,'rating');add('h2',x.tableTitle);const table=document.createElement('table'),thead=document.createElement('thead'),tr=document.createElement('tr');[x.categoryHeader,x.statusHeader].forEach(t=>{const th=document.createElement('th');th.textContent=t;tr.append(th)});thead.append(tr);table.append(thead);const tb=document.createElement('tbody');x.rows.forEach(([a,b])=>{const r=document.createElement('tr');[a,b].forEach(t=>{const td=document.createElement('td');td.textContent=t;r.append(td)});tb.append(r)});table.append(tb);c.append(table);add('h2',x.audienceTitle);add('p',x.audienceBody);add('h2',x.notesTitle);const ul=document.createElement('ul');x.notes.forEach(t=>{const li=document.createElement('li');li.textContent=t;ul.append(li)});c.append(ul);add('h2',x.linksTitle);const row=document.createElement('div');row.className='links';[[u.privacy,'../Privacy/index.html'],[u.support,'../Support/index.html']].forEach(([t,h])=>{const a=document.createElement('a');a.className='pill';a.textContent=t;a.href=lang.code===d.defaultLanguage?h:`${h}#${lang.code}`;row.append(a)});c.append(row);try{localStorage.setItem(key,lang.code)}catch{}};d.languages.forEach(x=>{const o=document.createElement('option');o.value=x.code;o.textContent=x.label;s.append(o)});s.addEventListener('change',()=>{history.replaceState(null,'',s.value===d.defaultLanguage?location.pathname:`#${s.value}`);render(s.value)});render(pick())})();
+  </script>
 </body>
 </html>
